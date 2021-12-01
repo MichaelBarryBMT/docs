@@ -1,0 +1,79 @@
+/* All header section numbers*/
+.header-section-number {
+  padding-right: .2em;
+  font-weight: 500;
+  font-family: Arial, "Sans-Serif";
+}
+/* Individual header section numbers*/
+.level1 .header-section-number {
+  display: inline-block;
+  color: rgb(0,85,129);
+  font-weight: bold;
+}
+.level2 .header-section-number {
+  display: inline-block;
+  color: rgb(26,189,201);
+  font-weight: bold;
+}
+.level3 .header-section-number {
+  display: inline-block;
+  color: rgb(26,189,201);
+  font-weight: bold;
+}
+.level4 .header-section-number {
+  display: inline-block;
+  color: rgb(26,189,201);
+  font-weight: bold;
+}
+.level5 .header-section-number {
+  display: inline-block;
+  color: black;
+  font-weight: normal;
+}
+.level6 .header-section-number {
+  display: inline-block;
+  font-weight: normal;
+}
+/* Individual header section titles*/
+.level1 h1 {
+  border-bottom: 1px solid;
+  color: rgb(0,85,129);
+  font-weight: bold;
+}
+.level1 h2 {
+  color: rgb(26,189,201);
+  font-weight: bold;
+}
+.level1 h3 {
+  color: rgb(26,189,201);
+  font-weight: bold;
+}
+.level1 h4 {
+  color: rgb(26,189,201);
+  font-weight: bold;
+  font-style: italic;
+}
+.level1 h5 {
+  color: black;
+  font-weight: normal;
+}
+.level1 h6 {
+  color: black;
+  font-weight: normal;
+}
+
+.book .book-body .page-wrapper .page-inner {
+  max-width: 75%;
+}
+
+body {
+  text-align: justify;
+}
+
+bmtgreen {
+  color: rgb(26,189,201);
+}
+
+bmtpink {
+  color: rgb(226,1,119);
+}

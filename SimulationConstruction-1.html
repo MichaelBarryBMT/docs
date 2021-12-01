@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 4 Simulation Construction | TUFLOW FV Water Quality Module User Manual</title>
+  <meta name="description" content="User manual" />
+  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 4 Simulation Construction | TUFLOW FV Water Quality Module User Manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="User manual" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 4 Simulation Construction | TUFLOW FV Water Quality Module User Manual" />
+  
+  <meta name="twitter:description" content="User manual" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ProcessDescriptions-1.html"/>
+<link rel="next" href="AppSyntax.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.4.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<link href="libs/vis-4.20.1/vis.css" rel="stylesheet" />
+<script src="libs/vis-4.20.1/vis.min.js"></script>
+<script src="libs/visNetwork-binding-2.0.9/visNetwork.js"></script>
+\usepackage{booktabs}
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/toc.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://www.tuflow.com"><img src="images/tuflow.png" style="width:246px;height:68px;"></a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#section"></a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#about-this-manual"><i class="fa fa-check"></i>About this manual</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#how-to-use-this-manual"><i class="fa fa-check"></i>How to use this manual</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#navigation"><i class="fa fa-check"></i>Navigation</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#searching"><i class="fa fa-check"></i>Searching</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#tables"><i class="fa fa-check"></i>Tables</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#figures"><i class="fa fa-check"></i>Figures</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#networks"><i class="fa fa-check"></i>Networks</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#commands"><i class="fa fa-check"></i>Commands</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#parameter-notation"><i class="fa fa-check"></i>Parameter notation</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#concentration-nomenclature"><i class="fa fa-check"></i>Concentration nomenclature</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#feedback"><i class="fa fa-check"></i>Feedback</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="Overview-1.html"><a href="Overview-1.html"><i class="fa fa-check"></i><b>1</b> Overview</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="Overview-1.html"><a href="Overview-1.html#OverviewContext-2"><i class="fa fa-check"></i><b>1.1</b> Context</a></li>
+<li class="chapter" data-level="1.2" data-path="Overview-1.html"><a href="Overview-1.html#Features-2"><i class="fa fa-check"></i><b>1.2</b> Features</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="Overview-1.html"><a href="Overview-1.html#Usability-3"><i class="fa fa-check"></i><b>1.2.1</b> Usability</a></li>
+<li class="chapter" data-level="1.2.2" data-path="Overview-1.html"><a href="Overview-1.html#CnsFeats-3"><i class="fa fa-check"></i><b>1.2.2</b> Constituents and processes</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="Overview-1.html"><a href="Overview-1.html#Science-2"><i class="fa fa-check"></i><b>1.3</b> Science</a></li>
+<li class="chapter" data-level="1.4" data-path="Overview-1.html"><a href="Overview-1.html#Support-2"><i class="fa fa-check"></i><b>1.4</b> Support</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="Architecture-1.html"><a href="Architecture-1.html"><i class="fa fa-check"></i><b>2</b> Architecture</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="Architecture-1.html"><a href="Architecture-1.html#ArchitectureContext-2"><i class="fa fa-check"></i><b>2.1</b> Context</a></li>
+<li class="chapter" data-level="2.2" data-path="Architecture-1.html"><a href="Architecture-1.html#SimulationTiers-2"><i class="fa fa-check"></i><b>2.2</b> Simulation Tiers</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="Architecture-1.html"><a href="Architecture-1.html#SimulationClass-3"><i class="fa fa-check"></i><b>2.2.1</b> Tier 1: Simulation Class</a></li>
+<li class="chapter" data-level="2.2.2" data-path="Architecture-1.html"><a href="Architecture-1.html#ConstituentModel-3"><i class="fa fa-check"></i><b>2.2.2</b> Tier 2: Model Class</a></li>
+<li class="chapter" data-level="2.2.3" data-path="Architecture-1.html"><a href="Architecture-1.html#ConMod-3"><i class="fa fa-check"></i><b>2.2.3</b> Tier 3: Constituent Model</a></li>
+<li class="chapter" data-level="2.2.4" data-path="Architecture-1.html"><a href="Architecture-1.html#ComputedVariableParameters-3"><i class="fa fa-check"></i><b>2.2.4</b> Tier 4: Computed Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="Architecture-1.html"><a href="Architecture-1.html#ArchitectureLinkageWithFV-2"><i class="fa fa-check"></i><b>2.3</b> Linkage with TUFLOW FV</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="Architecture-1.html"><a href="Architecture-1.html#ArchProc-3"><i class="fa fa-check"></i><b>2.3.1</b> Process</a></li>
+<li class="chapter" data-level="2.3.2" data-path="Architecture-1.html"><a href="Architecture-1.html#ProcessDescriptionsLight-3"><i class="fa fa-check"></i><b>2.3.2</b> Treatment of light</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="Architecture-1.html"><a href="Architecture-1.html#ArchAPI"><i class="fa fa-check"></i><b>2.4</b> Linkage with Other Hydrodynamic Models</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html"><i class="fa fa-check"></i><b>3</b> Process Descriptions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#SimProcSimuClDO-2"><i class="fa fa-check"></i><b>3.1</b> Simulation Class: DO</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#DOOverview-3"><i class="fa fa-check"></i><b>3.1.1</b> Overview</a></li>
+<li class="chapter" data-level="3.1.2" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModDODO-3"><i class="fa fa-check"></i><b>3.1.2</b> Model Class: Oxygen</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#SimProcSimuClInorg-2"><i class="fa fa-check"></i><b>3.2</b> Simulation Class: Inorganics</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#InorgOverview-3"><i class="fa fa-check"></i><b>3.2.1</b> Overview</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgDO-3"><i class="fa fa-check"></i><b>3.2.2</b> Model Class: Oxygen</a></li>
+<li class="chapter" data-level="3.2.3" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgSi-3"><i class="fa fa-check"></i><b>3.2.3</b> Model Class: Silicate</a></li>
+<li class="chapter" data-level="3.2.4" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgN-3"><i class="fa fa-check"></i><b>3.2.4</b> Model Class: Inorganic nitrogen</a></li>
+<li class="chapter" data-level="3.2.5" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgP-3"><i class="fa fa-check"></i><b>3.2.5</b> Model Class: Inorganic phosphorus</a></li>
+<li class="chapter" data-level="3.2.6" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgPhy-3"><i class="fa fa-check"></i><b>3.2.6</b> Model Class: Phytoplankton</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#SimProcSimuClOrg-2"><i class="fa fa-check"></i><b>3.3</b> Simulation Class: Organics</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#OrgOverview-3"><i class="fa fa-check"></i><b>3.3.1</b> Overview</a></li>
+<li class="chapter" data-level="3.3.2" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgDO-3"><i class="fa fa-check"></i><b>3.3.2</b> Constituent Model Class: Oxygen</a></li>
+<li class="chapter" data-level="3.3.3" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgSi-3"><i class="fa fa-check"></i><b>3.3.3</b> Constituent Model Class: Silicate</a></li>
+<li class="chapter" data-level="3.3.4" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgN-3"><i class="fa fa-check"></i><b>3.3.4</b> Constituent Model Class: Nitrogen</a></li>
+<li class="chapter" data-level="3.3.5" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgP-3"><i class="fa fa-check"></i><b>3.3.5</b> Constituent Model Class: Phosphorus</a></li>
+<li class="chapter" data-level="3.3.6" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgOrg-3"><i class="fa fa-check"></i><b>3.3.6</b> Constituent Model Class: Organics</a></li>
+<li class="chapter" data-level="3.3.7" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgPhy-3"><i class="fa fa-check"></i><b>3.3.7</b> Constituent Model Class: Phytoplankton</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html"><i class="fa fa-check"></i><b>4</b> Simulation Construction</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimulationConstructionContext-2"><i class="fa fa-check"></i><b>4.1</b> Context</a></li>
+<li class="chapter" data-level="4.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimUnits-2"><i class="fa fa-check"></i><b>4.2</b> Units</a></li>
+<li class="chapter" data-level="4.3" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#TFVGeneral-2"><i class="fa fa-check"></i><b>4.3</b> General arrangement</a></li>
+<li class="chapter" data-level="4.4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#TFVCommands-2"><i class="fa fa-check"></i><b>4.4</b> TUFLOW FV control file commands</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMActivation-3"><i class="fa fa-check"></i><b>4.4.1</b> WQM activation</a></li>
+<li class="chapter" data-level="4.4.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#InitBCCond-3"><i class="fa fa-check"></i><b>4.4.2</b> Initial and boundary conditions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQctrlfil-2"><i class="fa fa-check"></i><b>4.5</b> Water quality control file commands</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimCtrls-3"><i class="fa fa-check"></i><b>4.5.1</b> Part 1: Simulation controls</a></li>
+<li class="chapter" data-level="4.5.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ConModSttngs-3"><i class="fa fa-check"></i><b>4.5.2</b> Part 2: Constituent model settings</a></li>
+<li class="chapter" data-level="4.5.3" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#MatSpecs-3"><i class="fa fa-check"></i><b>4.5.3</b> Part 3: Material specifications</a></li>
+<li class="chapter" data-level="4.5.4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimSetSum-2"><i class="fa fa-check"></i><b>4.5.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimSetSimClDO-2"><i class="fa fa-check"></i><b>4.6</b> Simulation Class: DO</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#PrereqDO-3"><i class="fa fa-check"></i><b>4.6.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="4.6.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimCtrlsDO-3"><i class="fa fa-check"></i><b>4.6.2</b> Part 1: Simulation specification</a></li>
+<li class="chapter" data-level="4.6.3" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ConModSttngsDO-3"><i class="fa fa-check"></i><b>4.6.3</b> Part 2: Constituent model specification</a></li>
+<li class="chapter" data-level="4.6.4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#MatSpecsDO-3"><i class="fa fa-check"></i><b>4.6.4</b> Part 3: Material specification</a></li>
+<li class="chapter" data-level="4.6.5" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ConOrdDO-3"><i class="fa fa-check"></i><b>4.6.5</b> Constituent ordering</a></li>
+<li class="chapter" data-level="4.6.6" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ExampleDO"><i class="fa fa-check"></i><b>4.6.6</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimSetSimClInorg-2"><i class="fa fa-check"></i><b>4.7</b> Simulation Class: Inorganics</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#PrereqInorg-3"><i class="fa fa-check"></i><b>4.7.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="4.7.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimCtrlsInorg-3"><i class="fa fa-check"></i><b>4.7.2</b> Part 1: Simulation specification</a></li>
+<li class="chapter" data-level="4.7.3" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ConModSttngsInorg-3"><i class="fa fa-check"></i><b>4.7.3</b> Part 2: Constituent model specification</a></li>
+<li class="chapter" data-level="4.7.4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#MatSpecsInorg-3"><i class="fa fa-check"></i><b>4.7.4</b> Part 3: Material specification</a></li>
+<li class="chapter" data-level="4.7.5" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ConOrdInorg-3"><i class="fa fa-check"></i><b>4.7.5</b> Constituent ordering</a></li>
+<li class="chapter" data-level="4.7.6" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ExampleInorg"><i class="fa fa-check"></i><b>4.7.6</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimSetSimClOrg-2"><i class="fa fa-check"></i><b>4.8</b> Simulation Class: Organics</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#PrereqOrg-3"><i class="fa fa-check"></i><b>4.8.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="4.8.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimCtrlsOrg-3"><i class="fa fa-check"></i><b>4.8.2</b> Part 1: Simulation specification</a></li>
+<li class="chapter" data-level="4.8.3" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ConModSttngsOrg-3"><i class="fa fa-check"></i><b>4.8.3</b> Part 2: Constituent model specification</a></li>
+<li class="chapter" data-level="4.8.4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#MatSpecsOrg-3"><i class="fa fa-check"></i><b>4.8.4</b> Part 3: Material specification</a></li>
+<li class="chapter" data-level="4.8.5" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ConOrdOrg-3"><i class="fa fa-check"></i><b>4.8.5</b> Constituent ordering</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="AppSyntax.html"><a href="AppSyntax.html"><i class="fa fa-check"></i><b>A</b> Syntax of command descriptions</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="AppSyntax.html"><a href="AppSyntax.html#Appcmds"><i class="fa fa-check"></i><b>A.1</b> Commands</a></li>
+<li class="chapter" data-level="A.2" data-path="AppSyntax.html"><a href="AppSyntax.html#Appargmts"><i class="fa fa-check"></i><b>A.2</b> Arguments</a></li>
+<li class="chapter" data-level="A.3" data-path="AppSyntax.html"><a href="AppSyntax.html#Appdflts"><i class="fa fa-check"></i><b>A.3</b> Defaults</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="AppCommands.html"><a href="AppCommands.html"><i class="fa fa-check"></i><b>B</b> Commands</a></li>
+<li class="chapter" data-level="C" data-path="AppConstits.html"><a href="AppConstits.html"><i class="fa fa-check"></i><b>C</b> Constituents</a></li>
+<li class="chapter" data-level="D" data-path="AppProcesses.html"><a href="AppProcesses.html"><i class="fa fa-check"></i><b>D</b> Process Equations</a>
+<ul>
+<li class="chapter" data-level="D.1" data-path="AppProcesses.html"><a href="AppProcesses.html#AppDemoModel"><i class="fa fa-check"></i><b>D.1</b> Demonstration model</a></li>
+<li class="chapter" data-level="D.2" data-path="AppProcesses.html"><a href="AppProcesses.html#AppO"><i class="fa fa-check"></i><b>D.2</b> Oxygen</a>
+<ul>
+<li class="chapter" data-level="D.2.1" data-path="AppProcesses.html"><a href="AppProcesses.html#AtmosphericAeration-3"><i class="fa fa-check"></i><b>D.2.1</b> Atmospheric aeration</a></li>
+<li class="chapter" data-level="D.2.2" data-path="AppProcesses.html"><a href="AppProcesses.html#SedOxyCons-3"><i class="fa fa-check"></i><b>D.2.2</b> Sediment oxygen flux</a></li>
+</ul></li>
+<li class="chapter" data-level="D.3" data-path="AppProcesses.html"><a href="AppProcesses.html#AppSil"><i class="fa fa-check"></i><b>D.3</b> Silicate</a>
+<ul>
+<li class="chapter" data-level="D.3.1" data-path="AppProcesses.html"><a href="AppProcesses.html#SedSilProd-3"><i class="fa fa-check"></i><b>D.3.1</b> Sediment silicate flux</a></li>
+</ul></li>
+<li class="chapter" data-level="D.4" data-path="AppProcesses.html"><a href="AppProcesses.html#AppIN"><i class="fa fa-check"></i><b>D.4</b> Inorganic nitrogen</a>
+<ul>
+<li class="chapter" data-level="D.4.1" data-path="AppProcesses.html"><a href="AppProcesses.html#SedAmmNitProd-3"><i class="fa fa-check"></i><b>D.4.1</b> Sediment ammonium and nitrate flux</a></li>
+<li class="chapter" data-level="D.4.2" data-path="AppProcesses.html"><a href="AppProcesses.html#Nitrif-3"><i class="fa fa-check"></i><b>D.4.2</b> Nitrification</a></li>
+<li class="chapter" data-level="D.4.3" data-path="AppProcesses.html"><a href="AppProcesses.html#Denitrif-3"><i class="fa fa-check"></i><b>D.4.3</b> Denitrification</a></li>
+<li class="chapter" data-level="D.4.4" data-path="AppProcesses.html"><a href="AppProcesses.html#WetDepIN-3"><i class="fa fa-check"></i><b>D.4.4</b> Wet deposition of inorganic nitrogen</a></li>
+<li class="chapter" data-level="D.4.5" data-path="AppProcesses.html"><a href="AppProcesses.html#DryDepIN-3"><i class="fa fa-check"></i><b>D.4.5</b> Dry deposition of inorganic nitrogen</a></li>
+</ul></li>
+<li class="chapter" data-level="D.5" data-path="AppProcesses.html"><a href="AppProcesses.html#AppIP"><i class="fa fa-check"></i><b>D.5</b> Inorganic phosphorus</a>
+<ul>
+<li class="chapter" data-level="D.5.1" data-path="AppProcesses.html"><a href="AppProcesses.html#SedFRPhsProd-3"><i class="fa fa-check"></i><b>D.5.1</b> Sediment FRP flux</a></li>
+<li class="chapter" data-level="D.5.2" data-path="AppProcesses.html"><a href="AppProcesses.html#WetDepIP-3"><i class="fa fa-check"></i><b>D.5.2</b> Wet deposition of inorganic phosphorus</a></li>
+<li class="chapter" data-level="D.5.3" data-path="AppProcesses.html"><a href="AppProcesses.html#DryDepIP-3"><i class="fa fa-check"></i><b>D.5.3</b> Dry deposition of inorganic phosphorus</a></li>
+<li class="chapter" data-level="D.5.4" data-path="AppProcesses.html"><a href="AppProcesses.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>D.5.4</b> Adsorption and Desorption</a></li>
+<li class="chapter" data-level="D.5.5" data-path="AppProcesses.html"><a href="AppProcesses.html#SettlingIP-3"><i class="fa fa-check"></i><b>D.5.5</b> Settling</a></li>
+</ul></li>
+<li class="chapter" data-level="D.6" data-path="AppProcesses.html"><a href="AppProcesses.html#AppPhy"><i class="fa fa-check"></i><b>D.6</b> Phytoplankton</a>
+<ul>
+<li class="chapter" data-level="D.6.1" data-path="AppProcesses.html"><a href="AppProcesses.html#PhyGeneral-3"><i class="fa fa-check"></i><b>D.6.1</b> General</a></li>
+<li class="chapter" data-level="D.6.2" data-path="AppProcesses.html"><a href="AppProcesses.html#PhyUnits-3"><i class="fa fa-check"></i><b>D.6.2</b> Units</a></li>
+<li class="chapter" data-level="D.6.3" data-path="AppProcesses.html"><a href="AppProcesses.html#PhyRates-3"><i class="fa fa-check"></i><b>D.6.3</b> Biomass determining rates</a></li>
+<li class="chapter" data-level="D.6.4" data-path="AppProcesses.html"><a href="AppProcesses.html#PhyLimits-3"><i class="fa fa-check"></i><b>D.6.4</b> Limitation functions</a></li>
+<li class="chapter" data-level="D.6.5" data-path="AppProcesses.html"><a href="AppProcesses.html#PhyUptake-3"><i class="fa fa-check"></i><b>D.6.5</b> Uptake</a></li>
+<li class="chapter" data-level="D.6.6" data-path="AppProcesses.html"><a href="AppProcesses.html#PhyLosses-3"><i class="fa fa-check"></i><b>D.6.6</b> Losses</a></li>
+<li class="chapter" data-level="D.6.7" data-path="AppProcesses.html"><a href="AppProcesses.html#PhySelfShad-3"><i class="fa fa-check"></i><b>D.6.7</b> Self shading</a></li>
+<li class="chapter" data-level="D.6.8" data-path="AppProcesses.html"><a href="AppProcesses.html#PhyCellDens-3"><i class="fa fa-check"></i><b>D.6.8</b> Cell density</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="E" data-path="AppParams.html"><a href="AppParams.html"><i class="fa fa-check"></i><b>E</b> Parameters</a></li>
+<li class="chapter" data-level="F" data-path="AppCompQuans.html"><a href="AppCompQuans.html"><i class="fa fa-check"></i><b>F</b> Computed quantities</a></li>
+<li class="chapter" data-level="G" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>G</b> Mass Balance</a></li>
+<li class="divider"></li>
+<li><a href="https://www.tuflow.com"><img src="images/tuflow.png" style="width:246px;height:68px;"></a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><h0 style="color:rgb(0,85,129);">TUFLOW FV Water Quality Module User Manual</h0></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="SimulationConstruction-1" class="section level1" number="4">
+<h1><span class="header-section-number">Section 4</span> Simulation Construction</h1>
+<div id="SimulationConstructionContext-2" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Context</h2>
+<p>Previous sections have presented the architecture and water quality processes available within the WQM. This section describes the construction of a TUFLOW simulation with the WQM activated. This includes descriptions of all commands, with hyperlinks to the Appendices where commands and explanations are listed in a searchable and sortable table for ease of access. TUFLOW FV is the hydrodynamic model used in all descriptions that follow.</p>
+</div>
+<div id="SimUnits-2" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Units</h2>
+<p>The WQM allows for simulation construction in one of two unit systems (see Section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>):</p>
+<ul>
+<li>A milligrams per litre system (which includes micrograms per litre for phytoplankton) that aligns with typical units of laboratory reporting, and</li>
+<li>A millimoles per cubic metre system</li>
+</ul>
+<p>A single units system must be adopted for a WQM simulation, and unit systems cannot be mixed within a simulation. This specification has implications for at least the setting of numerical values for:</p>
+<ul>
+<li>Initial conditions</li>
+<li>Boundary conditions</li>
+<li>Computed variable parameters</li>
+</ul>
+<p>When the milligrams per litre system is used, the WQM executes internal conversions between milligrams and millimoles, because millimoles are the units expected by the core water quality calculation routines. This conversion follows the form:</p>
+<p><span class="math display" id="eq:equ-massmoles">\[\begin{equation}
+  n = \frac{m}{M} \tag{4.1}
+\end{equation}\]</span>
+where <span class="math inline">\(n\)</span> is millimoles (mmol), <span class="math inline">\(m\)</span> is mass (mg) and <span class="math inline">\(M\)</span> is molar weight (mg/mmol). A similar concept applies to concentration and flux quantities. As such, the WQM assigns values to <span class="math inline">\(M\)</span> in converting from milligrams to millimoles, i.e. from user specified milligram initial conditions, boundary conditions and computed variable parameters, to the equivalent millimole quantities. The complete list of values of <span class="math inline">\(M\)</span> for all simulated constituents is provided in Table <a href="AppConstits.html#tab:tab-variables2">C.1</a>. The two possibilities for units for each parameter are provided in Appendix <a href="AppParams.html#AppParams">E</a>, where relevant.</p>
+<p>As an example, if a user specifies the milligrams per litre units system (or allows the same default to be set) and a <code>FRP flux == 3.1</code> in a materials block, then this value of 3.1 is assumed to be mg/m<span class="math inline">\(^2\)</span>/day. Consistent with typical laboratory reporting conventions (see below), this mass flux is taken to be that of elemental phosphorus <span class="math inline">\(P\)</span>, not that of the phosphate molecule <span class="math inline">\(PO_4^{3-}\)</span>. This would mean (using Table <a href="AppConstits.html#tab:tab-variables2">C.1</a> and Equation <a href="SimulationConstruction-1.html#eq:equ-massmoles">(4.1)</a>) that the equivalent millimole rate would be computed as:
+<span class="math display" id="eq:equ-massmoleseg">\[\begin{equation}
+  n = \frac{3.1}{31} = 0.1 \hspace{0.1cm} \text{mmol/m$^2$/day of P} \tag{4.2}
+\end{equation}\]</span></p>
+<p>Given the above, users opting to construct WQM simulations in the milligrams units system need to clearly understand what is being reported in:</p>
+<ul>
+<li>Field and/or laboratory measurements, and</li>
+<li>Other numerical model predictions that may be used as WQM boundary conditions (such as catchment pollutant export models)</li>
+</ul>
+<p>In the case of laboratory nutrient measurements, it is conventional to report concentrations of the typical quantities used by the WQM as silicate-Si, ammonium-N, nitrate-N, FRP-P, organic-C, organic-N, and organic-P. Whilst these quantities might be referred to informally as (for example) “nitrate concentrations”, the reported number is most commonly the concentration of elemental nitrogen contained within nitrate. To be clear, if a nitrate-N concentration is reported by a laboratory to be 3.5 mg/L, this means that in every litre of water, there are 3.5 milligrams of elemental nitrogen contained within nitrate molecules. Given the molar masses of elemental nitrogen and nitrate, this 3.5 milligrams of elemental N means that there are 15.5 milligrams of nitrate molecules (15.5 = 3.5 x 62/14) in the same litre of water. In this example, the concentration with which the WQM expects to be provided is 3.5 mg/L, not 15.5 mg/L.</p>
+<p>The use of other model data to force WQM boundary conditions is also interpreted in this way. For example, a catchment model might report that an inflow to the WQM at an upstream riverine boundary condition has a “total nitrogen” concentration of 10.0 mg/L, and a user may have then speciated this to nitrate by applying a multiplicative factor of 0.15. If this resulting nitrate concentration of 1.5 mg/L is applied to the WQM as a boundary condition, it must be a concentration of elemental nitrogen within nitrate, which is consistent with what would be reported by a laboratory. This means that the user must be sure that the “total nitrogen” reported by the catchment model is in fact an elemental nitrogen concentration.</p>
+<p>If users elect to construct WQM simulations in units of millimoles, then no internal WQM conversions take place, and the nature of the quantity (molecular or elemental) being specified is not relevant. For example, the user could specify millimoles units and a “FRP flux” of 0.1. This could be interpreted as a mmol/m<span class="math inline">\(^2\)</span>/day rate of either the <span class="math inline">\(PO_4^{3-}\)</span> molecule, or just phosphorus <span class="math inline">\(P\)</span>. This is because in one millimole of <span class="math inline">\(PO_4^{3-}\)</span>, there is also one millimole of elemental <span class="math inline">\(P\)</span>. The same one to one relationship holds for all other WQM relevant computed quantities (see Table <a href="AppConstits.html#tab:tab-variables2">C.1</a>), other than oxygen which is treated as a diatomic molecule.</p>
+</div>
+<div id="TFVGeneral-2" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> General arrangement</h2>
+<p>A water quality simulation is set up and executed under the umbrella of a TUFLOW FV control file (Figure <a href="SimulationConstruction-1.html#fig:fig-InteractionWithFV">4.1</a>, with other optional modules shown for illustrative purposes). That is:</p>
+<ul>
+<li>The TUFLOW FV control file (*.fvc) file remains the central file that initiates and coordinates an overall simulation. This mirrors the way in which other TUFLOW FV modules, such as the STM and PTM, are activated and executed</li>
+<li>The TUFLOW FV control file contains a path to a separate WQM control file (*.fvwq) that in turn contains all the commands required to configure a WQM simulation</li>
+</ul>
+<span class="math inline">\(\newcommand{\blockindent}{\hspace{0.5cm}}\)</span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-InteractionWithFV"></span>
+<img src="images/InteractionWithFV.jpg" alt="**Simulation Coordination**" width="100%" />
+<p class="caption">
+Figure 4.1: <strong>Simulation Coordination</strong>
+</p>
+</div>
+<p>TUFLOW FV and WQM control file commands are presented following.</p>
+</div>
+<div id="TFVCommands-2" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> TUFLOW FV control file commands</h2>
+<p>A TUFLOW FV simulation is executed as described in the TUFLOW FV user manual. If the WQM is to be activated in a simulation then the following commands are to be included.</p>
+<div id="WQMActivation-3" class="section level3" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> WQM activation</h3>
+<p>Activation of the WQM is affected by specification of the following mandatory command in the TUFLOW control file:</p>
+<blockquote>
+<p><a href="#FVActivateWQM">water quality model ==</a> <a href="#FVActivateWQM">TUFLOW</a></p>
+</blockquote>
+<p>Following this activation, TUFLOW FV will look for the specification of the name of the separate WQM control file via the following mandatory command:</p>
+<blockquote>
+<p><a href="#FVWQMCtrlFl">water quality control file ==</a> <a href="#FVWQMCtrlFl"><span class="math inline">\(\langle\)</span>water quality control file name<span class="math inline">\(\rangle\)</span>.fvwq</a></p>
+</blockquote>
+<p>This *.fvwq is separate to the *.fvc and contains user specified information that describes the configuration of the water quality simulation. If the *.fvwq is located in the same directory as the *.fvc, then this filename specification needs no associated path. It is recommended however that the *.fvwq be located in a directory separate to the *.fvc so that log and other related water quality specific files can be easily curated. If this approach is adopted, the following additional *.fvc command is required, noting that the folder path is specified as relative to the folder in which the *.fvc resides:</p>
+<blockquote>
+<p><a href="#FVWQMCtrlDr">water quality model directory ==</a> <a href="#FVWQMCtrlDr">&lt;relative path ..<span class="math inline">\(\backslash\)</span>.. to WQ directory&gt;<span class="math inline">\(\backslash\)</span></a></p>
+</blockquote>
+<p>This command must terminate in a <span class="math inline">\(\backslash\)</span> character.</p>
+<p>An example block of these three commands that together activate the WQM and point TUFLOW to the water quality control file ..<span class="math inline">\(\backslash\)</span>WQ<span class="math inline">\(\backslash\)</span>Model_000.fvwq is:</p>
+<pre><code>water quality model == TUFLOW
+water quality model dir == ..\WQ\
+water quality control file == .\Model_000.fvwq</code></pre>
+</div>
+<div id="InitBCCond-3" class="section level3" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Initial and boundary conditions</h3>
+<p>In addition to activating the WQM and specifying its control file, WQM initial and boundary condition information is also set through the TUFLOW FV control file. The processes for doing so are described below. These are followed by discussion of the related matter of constituent ordering within initial and boundary condition specifications.</p>
+<div id="ICGeneral-4" class="section level4" number="4.4.2.1">
+<h4><span class="header-section-number">4.4.2.1</span> Initial conditions</h4>
+<p>Water quality initial conditions are specified within the TUFLOW FV control file, akin to the manner in which the sediment initial conditions are set on behalf of the sediment transport module. This specification is mandatory.</p>
+<p>There are currently a number of ways that water quality initial conditions may be specified, and all are affected through TUFLOW FV commands. If no water quality initial conditions are specified, then a simulation will not execute.</p>
+<p>Restart files generated from previous simulations can be used to initialise water quality simulations, provided that the restart and simulation model geometries, and water quality simulation computed variables and units are identical. A restart file is specified for all simulated quantities (not just water quality) and is controlled through commands described in the TUFLOW FV user manual. The key command is</p>
+<blockquote>
+<p><a href="#FVRestart">restart ==</a> <a href="#FVRestart"><span class="math inline">\(\langle\)</span>restart file name<span class="math inline">\(\rangle\)</span>.rst</a></p>
+</blockquote>
+<p>Other than a restart file, there are a number of ways that water quality initial conditions can be specified, all of which utilise existing TUFLOW FV methods. These are described in the TUFLOW FV user manual, of which some of the following are included:</p>
+<ul>
+<li>Globally uniform<br></li>
+</ul>
+<blockquote>
+<p><a href="#FVInitWQGlob">initial wq concentration ==</a> <a href="#FVInitWQGlob">ordered initial conditions</a></p>
+</blockquote>
+<ul>
+<li>Globally laterally uniform, but varying with depth<br></li>
+</ul>
+<blockquote>
+<p><a href="#FVInitWQProf">initial scalar profile ==</a> <a href="#FVInitWQProf"><span class="math inline">\(\langle\)</span>initial conditon file name<span class="math inline">\(\rangle\)</span>.csv</a></p>
+</blockquote>
+<ul>
+<li>Globally vertically uniform, but varying laterally<br></li>
+</ul>
+<blockquote>
+<p><a href="#FVInitWQ2D">initial condition 2d ==</a> <a href="#FVInitWQ2D"><span class="math inline">\(\langle\)</span>initial conditon file name<span class="math inline">\(\rangle\)</span>.csv</a></p>
+</blockquote>
+<ul>
+<li>Three dimensional spatially varying<br></li>
+</ul>
+<blockquote>
+<p><a href="#FVInitWQ3D">initial condition 3d ==</a> <a href="#FVInitWQ3D"><span class="math inline">\(\langle\)</span>initial conditon file name<span class="math inline">\(\rangle\)</span>.csv</a></p>
+</blockquote>
+<p>Initial conditions that use columnar data structures (e.g. *.csv files, and all of the above commands) are interpreted using the <a href="SimulationConstruction-1.html#Ordering-4">ordering rules</a> noted below. The required ordering for each WQM simulation class is provided subsequently (sections <a href="SimulationConstruction-1.html#SimSetSimClDO-2">4.6</a>, <a href="SimulationConstruction-1.html#SimSetSimClInorg-2">4.7</a> and <a href="SimulationConstruction-1.html#SimSetSimClOrg-2">4.8</a> for simulation classes DO, inorganics and organics, respectively).</p>
+</div>
+<div id="BCGeneral-4" class="section level4" number="4.4.2.2">
+<h4><span class="header-section-number">4.4.2.2</span> Boundary conditions</h4>
+<p>Water quality boundary conditions are also specified via the *.fvc file, either directly or via an include statement that points TUFLOW FV to a subsidiary boundary condition control file(s). This specification of water quality variable concentrations is optional, so in early water quality model construction stages this specification can be omitted. Omitted water quality boundary conditions will be set to zero. It is not recommended that this approach be taken beyond initial simulation setup stages, but that it be used only to develop a water quality simulation to the point where it executes without issuing error or unwanted warning messages. At this point, all water quality boundary conditions should be assigned.</p>
+<p>All TUFLOW boundary conditions that specify water temperature or salinity will also require specification of the behaviour of simulated water quality variables. Common boundary conditions to which this applies include inflows (e.g. types Q, QC, QN, QG and others) and tidal boundaries (e.g. types WLS). Wave and meteorological boundary conditions do not need specification of water quality conditions.</p>
+<p>As for initial conditions, boundary conditions that use columnar data structures (e.g. *.csv files) are interpreted using column headers specified in an <a href="SimulationConstruction-1.html#Ordering-4">expected order</a> within calling TUFLOW FV BC blocks. Further detail and the associated ordering is provided in the following sections (sections <a href="SimulationConstruction-1.html#SimSetSimClDO-2">4.6</a>, <a href="SimulationConstruction-1.html#SimSetSimClInorg-2">4.7</a> and <a href="SimulationConstruction-1.html#SimSetSimClOrg-2">4.8</a> for simulation classes DO, inorganics and organics, respectively).</p>
+</div>
+<div id="Ordering-4" class="section level4" number="4.4.2.3">
+<h4><span class="header-section-number">4.4.2.3</span> Ordering</h4>
+<p>Specification of initial conditions and most boundary conditions presently relies on listing water quality variables in a particular order. This applies in all instances when water quality initial or boundary conditions are provided in columnar or list form, which is most frequently in text file format. This is conceptually similar to the manner in which TUFLOW FV also relies on ordering of its initial and boundary conditions.</p>
+<p>Future releases of TUFLOW FV will allow alternative methods for specification of initial and boundary conditions that do not rely on assumed ordering. In the interim however, the following applies.</p>
+<div id="OrderIC-5" class="section level5" number="4.4.2.3.1">
+<h5><span class="header-section-number">4.4.2.3.1</span> Initial Conditions</h5>
+<p>Initial conditions, if set using means other than a restart file, must be specified with water quality constituents in a preset order. Header information is not used in setting water quality initial conditions - the ordering of values or columns is the sole means by which text based initial conditions are set. For example, the following *.fvc command sets globally uniform initial conditions for a typical inorganics simulation class:</p>
+<blockquote>
+<p><a href="#FVInitWQGlob">initial wq concentration ==</a> 7.5, 0.0, 4.2, 10.5, 0.6, 5.5</p>
+</blockquote>
+<p>There are no references to headers or variable names, but TUFLOW FV assumes that these numbers correspond to the ordered variables of the particular configuration of the inorganics simulation class returned to it from the WQM. In this example, this ordering is:</p>
+<ul>
+<li>Dissolved oxygen (7.5 mg/L)</li>
+<li>Silicate (0.0 mg/L)</li>
+<li>Ammonium (4.2 mg/L)</li>
+<li>Nitrate (10.5 mg/L)</li>
+<li>Free reactive phosphorus (0.6 mg/L), and</li>
+<li>One phytoplankton group (5.5 <span class="math inline">\(\mu\)</span>g/L)</li>
+</ul>
+<p>Similarly, the expected ordering of columns in profile, 2D or 3D options is the only means by which TUFLOW FV interprets initial conditions: headers in these files are ignored.</p>
+<p>The expected ordering is the same as that for boundary condition specifications, as described below.</p>
+</div>
+<div id="OrderBC-5" class="section level5" number="4.4.2.3.2">
+<h5><span class="header-section-number">4.4.2.3.2</span> Boundary Conditions</h5>
+<p>Ordering of water quality boundary conditions is only important when specifying header information via the <code>bc header ==</code> (or equivalent) command within a TUFLOW FV *.fvc file BC block. It is in these commands (where comma separated header strings are specified) that TUFLOW FV expects a particular order of TUFLOW FV and WQM constituents. No column ordering is expected in boundary condition data files themselves. Ordering is only expected in the order of headers specified within a BC block within an TUFLOW FV control file. This is best illustrated by example.</p>
+<p>If a user has elected to deploy the inorganics simulation class without sediment, then the following will be simulated (beyond the basic velocity and water level hydrodynamic variable suite):</p>
+<ul>
+<li>Salinity</li>
+<li>Temperature</li>
+<li>Dissolved oxygen</li>
+<li>Silicate</li>
+<li>Ammonium</li>
+<li>Nitrate</li>
+<li>Free reactive phosphorus</li>
+<li>One (assumed for this example, but can be multiple) phytoplankton group</li>
+</ul>
+<p>These will eventually need proper boundary condition specification in boundary condition blocks and have supporting data provided in (usually) text files. In a simple model with only one WL boundary condition, a <code>bc block</code> of the following form would be required as a minimum to properly specify the hydrodynamic and water quality boundaries:</p>
+<blockquote>
+<p>bc == WL, 1, datafile.csv <br>
+<span class="math inline">\(\blockindent\)</span> bc header == time, wsel, sali, temp, DOxy, SiO4, NH41, nitr, frph, bluegreen <br>
+end bc <br></p>
+</blockquote>
+<p>To be clear:</p>
+<ul>
+<li><p>The names listed on the <code>bc header ==</code> line (time, wse etc.) are not keywords or special names, and can be any names that a user chooses</p></li>
+<li><p>TUFLOW FV will however, assume that these names (whatever they have been set to) have been listed in such an order that they have a one to one correspondence to the ten computed variables as follows:</p>
+<ol style="list-style-type: decimal">
+<li>time <span class="math inline">\(\rightarrow\)</span> Time stamp</li>
+<li>wsel <span class="math inline">\(\rightarrow\)</span> Water surface elevation</li>
+<li>sali <span class="math inline">\(\rightarrow\)</span> Salinity</li>
+<li>temp <span class="math inline">\(\rightarrow\)</span> Temperature</li>
+<li>DOxy <span class="math inline">\(\rightarrow\)</span> Dissolved oxygen</li>
+<li>SiO4 <span class="math inline">\(\rightarrow\)</span> Silicate</li>
+<li>NH41 <span class="math inline">\(\rightarrow\)</span> Ammonium</li>
+<li>nitr <span class="math inline">\(\rightarrow\)</span> Nitrate</li>
+<li>frph <span class="math inline">\(\rightarrow\)</span> Free reactive phosphorus</li>
+<li>bluegreen <span class="math inline">\(\rightarrow\)</span> Phytoplankton group one</li>
+</ol></li>
+<li><p>TUFLOW then matches the user specified names to the expected simulation variables, based on this ordering, to then interrogate boundary condition files.</p></li>
+</ul>
+<p>Following the above matching, TUFLOW FV interrogates the relevant boundary condition file (“datafile.csv” in the example above), where this file can have its columns arranged in any order: the order of these columns does not matter because TUFLOW FV will use the mapping previously developed via the <code>bc header ==</code> command to look through all data file columns one by one, searching for the headers specified, regardless of the actual ordering of boundary condition file columns. For example, the silicate boundary condition data could be positioned in column 14 of the boundary condition file, but as long as it is labelled with the correct header (“SiO4” as specified in <code>bc header ==</code>), TUFLOW FV will know to assign column 14 of the boundary condition data file to the silicate computed variable.</p>
+<p>Ordering is set by the user’s selection of simulation class and constituent models, and is explicitly listed in each simulation class section (Sections <a href="SimulationConstruction-1.html#ConOrdDO-3">4.6.5</a>, <a href="SimulationConstruction-1.html#ConOrdInorg-3">4.7.5</a> and <a href="SimulationConstruction-1.html#ConOrdOrg-3">4.8.5</a> for DO, inorganics and organics, respectively). The expected ordering for a particular simulation is also reported in the simulation water quality log file for checking.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="WQctrlfil-2" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Water quality control file commands</h2>
+<p>The water quality control file comprises three parts, with each part containing different types of commands and flags. Whilst it is recommended that these parts be kept separate and in the order described below (especially given how complex water quality simulations can become), doing so is not mandatory and commands or command blocks may be entered in any order.</p>
+<p>These parts are as follows, with the first two mirroring the architecture described in Section <a href="Architecture-1.html#Architecture-1">2</a>:</p>
+<ol style="list-style-type: decimal">
+<li>Simulation controls (i.e. simulation class</li>
+<li>Constituent model settings (i.e. constituent model class)</li>
+<li>Material specifications</li>
+</ol>
+<p>Notwithstanding this, a WQM control file need not contain any commands, and can be completely blank. This is by design, and intended to allow users to rapidly set up and execute a TUFLOW water quality simulation. If the water quality control file is left blank, then the WQM will:</p>
+<ul>
+<li>Construct a simulation using the dissolved oxygen simulation class (which is the simplest class)</li>
+<li>Set the simulation units to mg/L</li>
+<li>Set library defaults for all parameters</li>
+<li>Set the water quality model timestep to the default</li>
+<li>Assign zero dissolved oxygen concentration to all boundary conditions. This is by design, and will assist in ensuring that the subsequent user-defined updating of boundary conditions is thorough and complete (zero dissolved oxygen boundary conditions are rare and therefore easily identifiable).</li>
+</ul>
+<p>Initial conditions will also need to be specified in the TUFLOW FV control file as per Section <a href="SimulationConstruction-1.html#InitBCCond-3">4.4.2</a>. Specification of boundary conditions can be deferred.</p>
+<p>The water quality control file sections are described below. Details specific to each simulation class and constituent model are provided in subsequent sections</p>
+<div id="SimCtrls-3" class="section level3" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Part 1: Simulation controls</h3>
+<p>Simulation controls set the high level operation of the WQM and are not specific to a simulation class. All are optional. Available commands set the:</p>
+<ul>
+<li>Simulation class via <a href="AppCommands.html#WQSimulationClass">simulation class ==</a></li>
+<li>Timestep <a href="AppParams.html#WQdt">dt</a> (in seconds) at which TUFLOW calls the WQM via <a href="AppCommands.html#WQWqDt">wq dt ==</a></li>
+<li>Units of simulation via <a href="AppCommands.html#WQWqUnits">wq units ==</a></li>
+</ul>
+<p>A typical simulation control section might therefore look like the following:</p>
+<pre><code>simulation class == DO
+wq dt == 600.0
+wq units == mgl</code></pre>
+</div>
+<div id="ConModSttngs-3" class="section level3" number="4.5.2">
+<h3><span class="header-section-number">4.5.2</span> Part 2: Constituent model settings</h3>
+<p>Constituent model settings are those that:</p>
+<ul>
+<li>Specify the constituent model to be used within each preset constituent model class. These are referred to as constituent model blocks</li>
+<li>Set the parameters for each of these constituent models, as commands within these blocks</li>
+</ul>
+<p>All are optional, however if a constituent model block is initiated then it requires an <code>end XXXX model</code> command to terminate the block, where XXXX is the name of the constituent model class, such as nitrogen. An example of a user selecting to use the adsorbed free reactive phosphorous constituent model (that is a model available within the phosphorus constituent model class), and setting some parameters within that model is as follows:</p>
+<pre><code>phosphorus model == frpads
+  atmospheric deposition == 12.6, 0.5
+end phosphorus model</code></pre>
+<p>Parameters not specified by the user are set to library defaults.</p>
+<p>All constituent models allow for constraining (and then reporting) the predictions of their respective computed variable concentrations via the setting of minimum and maximum limits, if desired. This is often useful in identifying unusual model behaviours or instabilities. Where exceedences of these limits are identified by the WQM:</p>
+<ul>
+<li>Time and model cell information is written to the WQM log file in real time. This allows for easy identification of potential model issues via periodic examination of the WQM log file, rather than waiting for simulation completion</li>
+<li>The WQM resets the computed concentration to the relevant specified minimum or maximum concentration</li>
+</ul>
+<p>The above resetting will result in mass conservation errors. It should not be relied on in any circumstances to artificially control the behaviour of an otherwise unstable or runaway water quality simulation. Rather, this functionality should be used as a convenient way to check model performance and flag potential issues, with a view to then implementing corrective action.</p>
+<p>These limits are optionally specified in each constituent model block. An example that sets these limits for ammonium is:</p>
+<blockquote>
+<p>ammonium min max == 0.0, 25.0</p>
+</blockquote>
+<p>Although in the strictest sense, sediment (benthic) flux half saturation concentrations and temperature coefficients are benthic properties, the WQM does not yet support these parameters being applied on a spatially varying basis (i.e. per material). As such, these are considered to be constituent model global parameters and so are set in this part of the water quality control file, i.e. within respective constituent model blocks. An example that sets an oxygen half saturation and temperature coefficient for benthic flux is:</p>
+<blockquote>
+<p>oxygen benthic == 5.0, 1.08</p>
+</blockquote>
+</div>
+<div id="MatSpecs-3" class="section level3" number="4.5.3">
+<h3><span class="header-section-number">4.5.3</span> Part 3: Material specifications</h3>
+<p>The final part of the water quality control file (*.fvwq) provides for specification of benthic (sediment) fluxes, via material blocks. The commands required to commence and terminate a materials block are as follows:</p>
+<blockquote>
+<p><a href="#WQInitMatBlck">material ==</a> <a href="#WQInitMatBlck"><span class="math inline">\(\langle \text{up to 10 comma separated material numbers, or &quot;default&quot;} \rangle\)</span></a></p>
+</blockquote>
+<p>and</p>
+<blockquote>
+<p><a href="#WQEndMatBlck">end material</a></p>
+</blockquote>
+<p>This material block nomenclature mirrors that used in the TUFLOW FV and sediment transport control files. An example of specifying oxygen and nitrate benthic fluxes for materials 2, 7 and 12 is:</p>
+<pre><code>material == 2, 7, 12
+  oxygen flux == -60.0
+  nitrate flux == 12.5
+end material</code></pre>
+<p>The WQM allows for specification of a default set of benthic fluxes that are applied across all materials, by using the key word <code>default</code> instead of specifying material numbers in a material block. These defaults can then be progressively overwritten on a material by material basis by specifying subsequent material blocks.</p>
+<p>For example, a model that has ten materials in total, eight of which have the same oxygen benthic flux (all materials except 4 and 7), can have its overall oxygen benthic flux specified as:</p>
+<pre><code>material == default
+  oxygen flux == -60.0
+end material
+
+material == 4, 7
+  oxygen benthic flux == -20.0
+end material</code></pre>
+</div>
+<div id="SimSetSum-2" class="section level3" number="4.5.4">
+<h3><span class="header-section-number">4.5.4</span> Summary</h3>
+<p>In order to set up and execute a water quality simulation using TUFLOW WQM, the following steps are required:</p>
+<ul>
+<li>Modify the TUFLOW FV control file:
+<ul>
+<li>Add at least the following commands to TUFLOW FV control file (*.fvc):
+<ul>
+<li><a href="#FVActivateWQM">water quality model ==</a> TUFLOW</li>
+<li><a href="#FVWQMCtrlFl">water quality control file ==</a> <span class="math inline">\(\langle\)</span>water quality control file name<span class="math inline">\(\rangle\)</span>.fvwq</li>
+</ul></li>
+<li>Optionally add a folder path command to the TUFLOW FV control file (*.fvc) with a trailing backslash:
+<ul>
+<li><a href="#FVWQMCtrlDr">water quality model dir ==</a> <span class="math inline">\(\langle\)</span>relative path to *.fvwq file<span class="math inline">\(\rangle\backslash\)</span></li>
+</ul></li>
+<li>Add appropriate initial conditions for all water quality constituents, observing <a href="SimulationConstruction-1.html#OrderIC-5">ordering rules</a></li>
+<li>Initially optionally add boundary conditions for all water quality constituents, observing <a href="SimulationConstruction-1.html#OrderBC-5">ordering rules</a> in <code>bc header ==</code> commands</li>
+</ul></li>
+<li>Create the water quality control file with the corresponding name and path</li>
+<li>Modify the water quality control file
+<ul>
+<li>Optionally add to the water quality control file:
+<ul>
+<li>Part 1: A simulation controls section</li>
+<li>Part 2: A constituent model setting section with one or more constituent model blocks with one or more parameter commands</li>
+<li>Part 3: A material block specifications section</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Once initially constructed, boundary conditions can be added (if not already in place), and progressive refinement and parameterisation of constituent models and benthic fluxes can be affected. Details of these commands and their options within each specific simulation class are provided in subsequent sections. Subsections are separated into the above water quality control file parts for ease and consistency of reference. All commands are optional.</p>
+
+</div>
+</div>
+<div id="SimSetSimClDO-2" class="section level2" number="4.6">
+<h2><span class="header-section-number">4.6</span> Simulation Class: DO</h2>
+<p>If no simulation class is specified then a simulation will be automatically constructed using this DO class, and populated with library defaults for all parameters. Computed variables will be:</p>
+<ul>
+<li>Dissolved oxygen</li>
+</ul>
+<div id="PrereqDO-3" class="section level3" number="4.6.1">
+<h3><span class="header-section-number">4.6.1</span> Prerequisites</h3>
+<p>The DO simulation class requires simulation of the following in TUFLOW FV:</p>
+<ul>
+<li>Hydrodynamics, in either two or three dimensions (including any internal one dimensional structures if present)</li>
+<li>Salinity</li>
+<li>Temperature</li>
+<li>Heat module on (i.e. meteorological forcing is required)</li>
+</ul>
+<p>Simulation of suspended sediment (via TUFLOW FV’s sediment transport module) is optional.</p>
+</div>
+<div id="SimCtrlsDO-3" class="section level3" number="4.6.2">
+<h3><span class="header-section-number">4.6.2</span> Part 1: Simulation specification</h3>
+<p>The DO simulation class is set via</p>
+<blockquote>
+<p><a href="AppCommands.html#WQSimulationClass">simulation class ==</a> DO</p>
+</blockquote>
+<p>The other commands in this part are not specific to this simulation class. See section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.</p>
+</div>
+<div id="ConModSttngsDO-3" class="section level3" number="4.6.3">
+<h3><span class="header-section-number">4.6.3</span> Part 2: Constituent model specification</h3>
+<p>As per Tables <a href="Architecture-1.html#tab:tab-ConClasses">2.2</a> and <a href="Architecture-1.html#tab:tab-ConClassMods">2.3</a>, oxygen is the only constituent model class available within the DO simulation class, and there is only one oxygen constituent model within that class, with code O2.</p>
+<div id="ConModClssOxy-4" class="section level4" number="4.6.3.1">
+<h4><span class="header-section-number">4.6.3.1</span> Constituent model class: Oxygen</h4>
+<div id="ConModO2-5" class="section level5" number="4.6.3.1.1">
+<h5><span class="header-section-number">4.6.3.1.1</span> Constituent model: O2</h5>
+<p>This constituent model is specified as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQOxyMod">oxygen model ==</a> O2</p>
+</blockquote>
+<p>Minimum and maximum concentrations are specified as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQOxyMinMax"><span class="math inline">\(\blockindent\)</span> oxygen min max ==</a> <a href="AppParams.html#WQParMinO2"><span class="math inline">\(\left[DO\right]_{min}^{O_2}\)</span></a>, <a href="AppParams.html#WQParMaxO2"><span class="math inline">\(\left[DO\right]_{max}^{O_2}\)</span></a></p>
+</blockquote>
+<p>Global benthic parameters (used in Equation <a href="AppProcesses.html#eq:equ-sed-do-flux">(D.3)</a>) are specified as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQOxyBenFlxPars"><span class="math inline">\(\blockindent\)</span> oxygen benthic ==</a> <a href="AppParams.html#WQParKsedO2"><span class="math inline">\(K_{sed-O_2}^{O_2}\)</span></a>, <a href="AppParams.html#WQParthetasedO2"><span class="math inline">\(\theta_{sed}^{O_2}\)</span></a></p>
+</blockquote>
+<p>Although not strictly necessary, the use of “oxygen” to prefix these block commands is deliberate so as to maintain consistency of command style with other constituent model blocks that include more than one computed variable, such as nitrogen, phosphorus and organics. Nonetheless, if the “oxygen” prefix is omitted within this constituent model block, the WQM will still interpret the above commands correctly.</p>
+<p>This constituent model block must be terminated using the command:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQOxyModEnd">end oxygen model</a></p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="MatSpecsDO-3" class="section level3" number="4.6.4">
+<h3><span class="header-section-number">4.6.4</span> Part 3: Material specification</h3>
+<p>Oxygen benthic flux (used in Equation <a href="AppProcesses.html#eq:equ-sed-do-flux">(D.3)</a>) is specified within both default and numbered material blocks as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQOxyBenFlx"><span class="math inline">\(\blockindent\)</span> oxygen flux ==</a> <a href="AppParams.html#WQParFsedO2"><span class="math inline">\(F_{sed}^{O_2}\)</span></a></p>
+</blockquote>
+</div>
+<div id="ConOrdDO-3" class="section level3" number="4.6.5">
+<h3><span class="header-section-number">4.6.5</span> Constituent ordering</h3>
+<p>Dissolved oxygen is the only constituent simulated by the WQM for this simulation class. In all columnar and list style initial conditions, oxygen concentration is specified as the first variable (shown in symbolic form below):</p>
+<blockquote>
+<p>initial wq concentration == <span class="math inline">\(\left[ DO \right]\)</span></p>
+</blockquote>
+<p>Similarly, in a <code>bc header</code> command within a bc block, oxygen is expected to be the first and only water quality variable after hydrodynamic boundary conditions.</p>
+<blockquote>
+<p><span class="math inline">\(\blockindent\)</span>bc header == time, water_elev, sal, temp, clay, sand, DO_mgL</p>
+</blockquote>
+<p>DO_mgL is the header used to designate oxygen in the related boundary condition file, noting that the DO_mgL column in the boundary condition file can appear in any column in the boundary condition file, and that it does not need to be the seventh column. The header text “DO_mgL” is just an example, and it can be any header desired, as long as it matches the correct column header in the boundary condition file.</p>
+</div>
+<div id="ExampleDO" class="section level3" number="4.6.6">
+<h3><span class="header-section-number">4.6.6</span> Example</h3>
+<p>Following is an example of all the available WQM <code>simulation class == DO</code> commands. A single material applied as zeros everywhere as the default, other than for materials 1 and 4 where the default flux is overwritten.</p>
+<pre><code>simulation class == DO
+wq dt == 3600
+units == mgl
+
+oxygen model == O2
+    oxygen benthic == 4.0, 1.05
+    min max == 0.0, 25.0
+end oxygen model
+
+material == default
+    oxygen flux == 0
+end material
+
+material == 1, 4
+    oxygen flux == -637.0
+end material</code></pre>
+
+</div>
+</div>
+<div id="SimSetSimClInorg-2" class="section level2" number="4.7">
+<h2><span class="header-section-number">4.7</span> Simulation Class: Inorganics</h2>
+<p>If the inorganics simulation class is specified with no subsequent constituent model blocks, then a simulation will be automatically constructed using this inorganics class, and populated with library defaults for all parameters. Computed variables will be:</p>
+<ul>
+<li>Dissolved oxygen</li>
+<li>Silicate</li>
+<li>Ammonium</li>
+<li>Nitrate</li>
+<li>Free reactive phosphorus</li>
+<li>One phytoplankton group named ‘dummy’ that uses the basic phytoplankton constituent model</li>
+</ul>
+<div id="PrereqInorg-3" class="section level3" number="4.7.1">
+<h3><span class="header-section-number">4.7.1</span> Prerequisites</h3>
+<p>The inorganics simulation class requires simulation of the following in TUFLOW FV:</p>
+<ul>
+<li>Hydrodynamics, in either two or three dimensions (including any internal one dimensional structures if present)</li>
+<li>Salinity</li>
+<li>Temperature</li>
+<li>Heat module on (i.e. meteorological forcing is required)</li>
+</ul>
+<p>Simulation of suspended sediment (via TUFLOW FV’s sediment transport module) is required only if adsorbed phosphorus is to be simulated by the WQM. This is affected through specification of the adsorbed phosphorus constituent model within the phosphorus constituent model class.</p>
+</div>
+<div id="SimCtrlsInorg-3" class="section level3" number="4.7.2">
+<h3><span class="header-section-number">4.7.2</span> Part 1: Simulation specification</h3>
+<p>The inorganics simulation class is set via</p>
+<blockquote>
+<p><a href="AppCommands.html#WQSimulationClass">simulation class ==</a> inorganics</p>
+</blockquote>
+<p>The other commands in this part are not specific to this simulation class. See section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.</p>
+</div>
+<div id="ConModSttngsInorg-3" class="section level3" number="4.7.3">
+<h3><span class="header-section-number">4.7.3</span> Part 2: Constituent model specification</h3>
+<p>As per Tables <a href="Architecture-1.html#tab:tab-ConClasses">2.2</a> and <a href="Architecture-1.html#tab:tab-ConClassMods">2.3</a>, there are several constituent model classes available within the inorganics simulation class. The commands for each are described following.</p>
+<div id="ConModClssInorg-4" class="section level4" number="4.7.3.1">
+<h4><span class="header-section-number">4.7.3.1</span> Constituent model class: Oxygen</h4>
+<div id="ConModO2-5a" class="section level5" number="4.7.3.1.1">
+<h5><span class="header-section-number">4.7.3.1.1</span> Constituent model: O2</h5>
+<p>The commands for this constituent model are described in Section <a href="SimulationConstruction-1.html#ConModO2-5">4.6.3.1.1</a>.</p>
+</div>
+</div>
+<div id="ConModClssSil-4" class="section level4" number="4.7.3.2">
+<h4><span class="header-section-number">4.7.3.2</span> Constituent model class: Silicate</h4>
+<div id="ConModSi-5" class="section level5" number="4.7.3.2.1">
+<h5><span class="header-section-number">4.7.3.2.1</span> Constituent model: Si</h5>
+<p>This constituent model is specified as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQSilMod">silicate model ==</a> Si</p>
+</blockquote>
+<p>Minimum and maximum concentrations are specified as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQSilMinMax"><span class="math inline">\(\blockindent\)</span> silicate min max ==</a> <a href="AppParams.html#WQParMinSil"><span class="math inline">\(\left[Si\right]_{min}^{Si}\)</span></a>, <a href="AppParams.html#WQParMaxSil"><span class="math inline">\(\left[Si\right]_{max}^{Si}\)</span></a></p>
+</blockquote>
+<p>Global benthic flux parameters (used in Equation <a href="AppProcesses.html#eq:equ-sed-sil-flux">(D.4)</a>) are specified as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQSilBenFlxPars"><span class="math inline">\(\blockindent\)</span> silicate benthic ==</a> <a href="AppParams.html#WQParKsedSi"><span class="math inline">\(K_{sed-O_2}^{Si}\)</span></a>, <a href="AppParams.html#WQParthetasedSi"><span class="math inline">\(\theta_{sed}^{Si}\)</span></a></p>
+</blockquote>
+<p>Although not strictly necessary, the use of “silicate” to prefix the above block commands is deliberate so as to maintain consistency of command style with other constituent model blocks that include more than one computed variable, such as nitrogen, phosphorus and organics.</p>
+<p>Silicate sediment flux calculations are set to be dependent on dissolved oxygen concentrations by default. Although not recommended, the following will switch off this dependence by setting the term labelled “Influence of oxygen” in Equation <a href="AppProcesses.html#eq:equ-sed-sil-flux">(D.4)</a> to a value of 1.0.</p>
+<blockquote>
+<p><span class="math inline">\(\blockindent\)</span> <a href="AppCommands.html#WQSilOxy">oxygen ==</a> off</p>
+</blockquote>
+<p>This constituent model block must be terminated using the command:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQSilModEnd">end silicate model</a></p>
+</blockquote>
+</div>
+</div>
+<div id="ConModClssNit-4" class="section level4" number="4.7.3.3">
+<h4><span class="header-section-number">4.7.3.3</span> Constituent model class: Inorganic nitrogen</h4>
+<div id="ConModAmmNit-5" class="section level5" number="4.7.3.3.1">
+<h5><span class="header-section-number">4.7.3.3.1</span> Constituent model: AmmoniumNitrate</h5>
+<p>This constituent model is specified as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQInorgNitMod">nitrogen model ==</a> AmmoniumNitrate</p>
+</blockquote>
+<p>Minimum and maximum concentrations for both ammonium and nitrate are specified as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQAmmMinMax"><span class="math inline">\(\blockindent\)</span> ammonium min max ==</a> <a href="AppParams.html#WQParMinAmm"><span class="math inline">\(\left[NH_4\right]_{min}^{NH_4}\)</span></a>, <a href="AppParams.html#WQParMaxAmm"><span class="math inline">\(\left[NH_4\right]_{max}^{NH_4}\)</span></a></p>
+</blockquote>
+<blockquote>
+<p><a href="AppCommands.html#WQNitMinMax"><span class="math inline">\(\blockindent\)</span> nitrate min max ==</a> <a href="AppParams.html#WQParMinNit"><span class="math inline">\(\left[NO_3\right]_{min}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParMaxNit"><span class="math inline">\(\left[NO_3\right]_{max}^{NO_3}\)</span></a></p>
+</blockquote>
+<p>Global benthic flux parameters (used in Equation <a href="AppProcesses.html#eq:equ-sed-amm-flux">(D.5)</a>) for ammonium and nitrate are specified as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQAmmBenFlxPars"><span class="math inline">\(\blockindent\)</span> ammonium benthic ==</a> <a href="AppParams.html#WQParKsedAmm"><span class="math inline">\(K_{sed-O_2}^{NH_4}\)</span></a>, <a href="AppParams.html#WQParthetasedAmm"><span class="math inline">\(\theta_{sed}^{NH_4}\)</span></a></p>
+</blockquote>
+<blockquote>
+<p><a href="AppCommands.html#WQAmmBenFlxPars"><span class="math inline">\(\blockindent\)</span> nitrate benthic ==</a> <a href="AppParams.html#WQParKsedNit"><span class="math inline">\(K_{sed-O_2}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParthetasedNit"><span class="math inline">\(\theta_{sed}^{NO_3}\)</span></a></p>
+</blockquote>
+<p>Nitrification parameters (used in <a href="AppProcesses.html#eq:equ-pel-nitrif-rate">(D.7)</a> and therefore <a href="AppProcesses.html#eq:equ-pel-nitrif-flux">(D.8)</a>) are set in a single command as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQNitrifPars"><span class="math inline">\(\blockindent\)</span> nitrification ==</a> <a href="AppParams.html#WQParRnitrif"><span class="math inline">\(R_{nitrif}^{NH_4}\)</span></a>, <a href="AppParams.html#WQParKNitrif"><span class="math inline">\(K_{nitrif-O_2}^{NH_4}\)</span></a>, <a href="AppParams.html#WQParthetaNitrif"><span class="math inline">\(\theta_{nitrif}^{NH_4}\)</span></a></p>
+</blockquote>
+<p>Denitrification parameters (used in Equation <a href="AppProcesses.html#eq:equ-pel-denit-rateMM">(D.9)</a> or Equation <a href="AppProcesses.html#eq:equ-pel-denit-rateExp">(D.10)</a>) are also set in a single command as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQDenitrifParsMM"><span class="math inline">\(\blockindent\)</span> denitrification ==</a> Michaelis Menten, <a href="AppParams.html#WQParRdenit"><span class="math inline">\(R_{denitrif}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParKdenitO2MM"><span class="math inline">\(K_{denitrif-O_2-MM}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParthetadenit"><span class="math inline">\(\theta_{denitrif}^{NO_3}\)</span></a></p>
+</blockquote>
+<p>or</p>
+<blockquote>
+<p><a href="AppCommands.html#WQDenitrifParsExp"><span class="math inline">\(\blockindent\)</span> denitrification ==</a> exponential, <a href="AppParams.html#WQParRdenit"><span class="math inline">\(R_{denitrif}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParKdenitO2Exp"><span class="math inline">\(K_{denitrif-O_2-exp}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParthetadenit"><span class="math inline">\(\theta_{denitrif}^{NO_3}\)</span></a></p>
+</blockquote>
+<p>The first argument either “michaelis menten” or “exponential”) activates a different denitrification model (Equation <a href="AppProcesses.html#eq:equ-pel-denit-rateMM">(D.9)</a> or Equation <a href="AppProcesses.html#eq:equ-pel-denit-rateExp">(D.10)</a>, respectively).</p>
+<p>Ammonium and nitrate sediment flux, nitrification and denitrification calculations are all set to be dependent on dissolved oxygen concentrations by default. Although not recommended, the following will switch off this dependence for all these processes by setting the term labelled “Influence of oxygen” in Equations <a href="AppProcesses.html#eq:equ-sed-amm-flux">(D.5)</a>, <a href="AppProcesses.html#eq:equ-pel-nitrif-rate">(D.7)</a> and <a href="AppProcesses.html#eq:equ-pel-denit-rateMM">(D.9)</a> or <a href="AppProcesses.html#eq:equ-pel-denit-rateExp">(D.10)</a> to a value of 1.0.</p>
+<blockquote>
+<p><a href="AppCommands.html#WQAmmOxy"><span class="math inline">\(\blockindent\)</span> oxygen ==</a> off</p>
+</blockquote>
+<p>Atmospheric deposition parameters (used in Equations <a href="AppProcesses.html#eq:equ-pel-atm-TN-wammsplit">(D.12)</a>, <a href="AppProcesses.html#eq:equ-pel-atm-TN-wnitsplit">(D.13)</a>, <a href="AppProcesses.html#eq:equ-pel-atm-TN-dammsplit">(D.16)</a> and <a href="AppProcesses.html#eq:equ-pel-atm-TN-ditsplit">(D.17)</a>) are set via the command:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQAtmNPars"><span class="math inline">\(\blockindent\)</span> atmospheric deposition ==</a> <a href="AppParams.html#WQParAtmWetTN"><span class="math inline">\(\left[TN\right]_{rain}\)</span></a>, <a href="AppParams.html#WQParAtmDryTN"><span class="math inline">\(R_{atm-dry}^{TN}\)</span></a>, <a href="AppParams.html#WQParAtmWetNFrac"><span class="math inline">\(f_{TN}^{NO_3}\)</span></a></p>
+</blockquote>
+<p>The same split of TN into ammonium and nitrate is applied to both <span class="math inline">\(\left[TN\right]_{rain}\)</span> and <span class="math inline">\(R_{atm-dry}^{TN}\)</span>.</p>
+<p>This constituent model block must be terminated using the command:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQNitModEnd">end nitrogen model</a></p>
+</blockquote>
+</div>
+</div>
+<div id="ConModClssPhs-4" class="section level4" number="4.7.3.4">
+<h4><span class="header-section-number">4.7.3.4</span> Constituent model class: Inorganic phosphorus</h4>
+<div id="ConModFRPhs-5" class="section level5" number="4.7.3.4.1">
+<h5><span class="header-section-number">4.7.3.4.1</span> Constituent model: FRPhs</h5>
+<p>This constituent model is specified as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQInorgFRPMod">phosphorus model ==</a> FRPhs</p>
+</blockquote>
+<p>Minimum and maximum concentrations for FRP are specified as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQFRPMinMax"><span class="math inline">\(\blockindent\)</span> FRP min max ==</a> <a href="AppParams.html#WQParMinFRP"><span class="math inline">\(\left[FRP\right]_{min}^{FRP}\)</span></a>, <a href="AppParams.html#WQParMaxFRP"><span class="math inline">\(\left[FRP\right]_{max}^{FRP}\)</span></a></p>
+</blockquote>
+<p>Global benthic flux parameters (used in Equation <a href="AppProcesses.html#eq:equ-sed-frp-flux">(D.20)</a>) are specified as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQFRPBenFlxPars"><span class="math inline">\(\blockindent\)</span> FRP benthic ==</a> <a href="AppParams.html#WQParKsedFRP"><span class="math inline">\(K_{sed-O_2}^{FRP}\)</span></a>, <a href="AppParams.html#WQParthetasedFRP"><span class="math inline">\(\theta_{sed}^{FRP}\)</span></a></p>
+</blockquote>
+<p>FRP sediment flux calculations are set to be dependent on dissolved oxygen concentrations by default. Although not recommended, the following will switch off this dependence by setting the term labelled “Influence of oxygen” in Equation <a href="AppProcesses.html#eq:equ-sed-frp-flux">(D.20)</a> to a value of 1.0.</p>
+<blockquote>
+<p><a href="AppCommands.html#WQFRPOxy"><span class="math inline">\(\blockindent\)</span> oxygen ==</a> off</p>
+</blockquote>
+<p>Wet atmospheric deposition parameters (used in Equation <a href="AppProcesses.html#eq:equ-pel-atm-frp-wflux">(D.21)</a>) are set via the command:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQAtmPPars"><span class="math inline">\(\blockindent\)</span> atmospheric deposition ==</a> <a href="AppParams.html#WQParAtmWetFRP"><span class="math inline">\(\left[FRP\right]_{rain}\)</span></a>, <a href="AppParams.html#WQParAtmDryFRP"><span class="math inline">\(R_{atm-dry}^{FRP}\)</span></a></p>
+</blockquote>
+<p><span class="math inline">\(R_{atm-dry}^{FRP}\)</span> (dry deposition) is ignored if adsorbed phosphorus is not included as a computed variable. Adsorbed phosphorus can be included via use of constituent model FRPhsads, which is described below.</p>
+<p>This constituent model block must be terminated using the command:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQFRPModEnd">end phosphorus model</a></p>
+</blockquote>
+</div>
+<div id="ConModFRPhsAds-5" class="section level5" number="4.7.3.4.2">
+<h5><span class="header-section-number">4.7.3.4.2</span> Constituent model: FRPhsads</h5>
+<p>This constituent model is specified as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQInorgFRPMod">phosphorus model ==</a> FRPhsads</p>
+</blockquote>
+<p>The TUFLOW FV sediment module (STM) must be used to simulate at least one sediment fraction in order to use this WQM constituent model.</p>
+<p>In addition to the commands described in Section <a href="SimulationConstruction-1.html#ConModFRPhs-5">4.7.3.4.1</a>, the following commands are available in this constituent model.</p>
+<p>Minimum and maximum concentrations for adsorbed FRP are specified as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQAdsFRPMinMax"><span class="math inline">\(\blockindent\)</span> ads FRP min max ==</a> <a href="AppParams.html#WQParMinadsFRP"><span class="math inline">\(\left[adsFRP\right]_{min}^{adsFRP}\)</span></a>, <a href="AppParams.html#WQParMaxadsFRP"><span class="math inline">\(\left[adsFRP\right]_{max}^{adsFRP}\)</span></a></p>
+</blockquote>
+<p>Two FRP adsorption models are available, as per Equations <a href="AppProcesses.html#eq:equ-pel-frpads-ji">(D.24)</a> and <a href="AppProcesses.html#eq:equ-pel-frpads-chao">(D.25)</a>. These require specification of two (linear) or three (quadratic) parameters, respectively after specification of the model to be used:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQAdsFRPParsL"><span class="math inline">\(\blockindent\)</span> adsorption ==</a> linear, <a href="#WQParLinSorp"><span class="math inline">\(K_{ads-L}^{FRP}\)</span></a>, <a href="AppParams.html#WQParD50Sorp"><span class="math inline">\(D50_{ads-max}^{FRP}\)</span></a></p>
+</blockquote>
+<p>or</p>
+<blockquote>
+<p><a href="AppCommands.html#WQAdsFRPParsQ"><span class="math inline">\(\blockindent\)</span> adsorption ==</a> quadratic, <a href="AppParams.html#WQParQSorpRatio"><span class="math inline">\(K_{ads-Q}^{FRP}\)</span></a>, <a href="AppParams.html#WQParQSorpMax"><span class="math inline">\(Q_{max}^{FRP}\)</span></a>, <a href="AppParams.html#WQParD50Sorp"><span class="math inline">\(D50_{ads-max}^{FRP}\)</span></a></p>
+</blockquote>
+<p>Dry atmospheric deposition of FRP is activated in this simulation model (used in Equation <a href="AppProcesses.html#eq:equ-pel-atm-frp-dflux">(D.22)</a>) and is specified via the same command as wet deposition:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQAtmPPars"><span class="math inline">\(\blockindent\)</span> atmospheric deposition ==</a> <a href="AppParams.html#WQParAtmWetFRP"><span class="math inline">\(\left[FRP\right]_{rain}\)</span></a>, <a href="AppParams.html#WQParAtmDryFRP"><span class="math inline">\(R_{atm-dry}^{FRP}\)</span></a></p>
+</blockquote>
+<p>This constituent model block must be terminated using the command:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQFRPModEnd">end phosphorus model</a></p>
+</blockquote>
+</div>
+</div>
+<div id="ConModClssPhy-4" class="section level4" number="4.7.3.5">
+<h4><span class="header-section-number">4.7.3.5</span> Constituent model class: Phytoplankton</h4>
+<p>Given the large number of potential commands and options for phytoplankton simulation, horizontal rules have been used to separate subsections below for clarity.</p>
+<div id="ConModPhyBas-5" class="section level5" number="4.7.3.5.1">
+<h5><span class="header-section-number">4.7.3.5.1</span> Constituent model: Basic</h5>
+<p>This constituent model is specified as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQPhyMod">phyto model ==</a> basic, <span class="math inline">\(\langle group\_name \rangle\)</span></p>
+</blockquote>
+<p><span class="math inline">\(\langle group\_name \rangle\)</span> is any user specified phytoplankton group name that uses only alphanumeric characters with no spaces.</p>
+<p>Minimum and maximum concentrations for a phytoplankton group are specified as follows. No prefix keyword (as was the case for constituents such as “ammonium”) is required:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQPhyMinMax"><span class="math inline">\(\blockindent\)</span> min max ==</a> <a href="AppParams.html#WQParMinPHY"><span class="math inline">\(\left[PHY\right]_{min}^{PHY}\)</span></a>, <a href="AppParams.html#WQParMaxPHY"><span class="math inline">\(\left[PHY\right]_{max}^{PHY}\)</span></a></p>
+</blockquote>
+<hr>
+<div id="ConModPhyTLim-6" class="section level6" number="4.7.3.5.1.1">
+<h6><span class="header-section-number">4.7.3.5.1.1</span> Temperature limitation</h6>
+<p>Temperature limitation can be specified by one of the following models:</p>
+<ul>
+<li>None (no temperature limitation applied)</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQPhyTLnone"><span class="math inline">\(\blockindent\)</span> temperature limitation ==</a> <a href="AppCommands.html#WQPhyTLnone">none</a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Standard (used in Equations <a href="AppProcesses.html#eq:eq-pel-phy-TLim1">(D.36)</a> through to <a href="AppProcesses.html#eq:eq-pel-phy-TLimg">(D.43)</a>)</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQPhyTLstd"><span class="math inline">\(\blockindent\)</span> temperature limitation ==</a> <a href="AppCommands.html#WQPhyTLstd">standard</a>, <a href="AppParams.html#WQParTstdPHY"><span class="math inline">\(T_{std}^{phy}\)</span></a>, <a href="AppParams.html#WQParToptPHY"><span class="math inline">\(T_{opt}^{phy}\)</span></a>, <a href="AppParams.html#WQParTmaxPHY"><span class="math inline">\(T_{max}^{phy}\)</span></a></p>
+</blockquote>
+<hr>
+</div>
+<div id="ConModPhySLim-6" class="section level6" number="4.7.3.5.1.2">
+<h6><span class="header-section-number">4.7.3.5.1.2</span> Salinity limitation</h6>
+<p>Salinity limitation can be specified by one of the following models:</p>
+<ul>
+<li>None (no salinity limitation applied)</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQPhySLnone"><span class="math inline">\(\blockindent\)</span> salinity limitation ==</a> <a href="AppCommands.html#WQPhySLnone">none</a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Fresh (used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-SalLim1">(D.62)</a>)</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQPhySLfresh"><span class="math inline">\(\blockindent\)</span> salinity limitation ==</a> <a href="AppCommands.html#WQPhySLfresh">fresh</a>, <a href="AppParams.html#WQParSoptfreshPHY"><span class="math inline">\(S_{opt-fresh}^{phy}\)</span></a>, <a href="AppParams.html#WQParSmaxfreshPHY"><span class="math inline">\(S_{max-fresh}^{phy}\)</span></a>, <a href="AppParams.html#WQParLmaxfreshPHY"><span class="math inline">\(L_{max-fresh}^{phy}\)</span></a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Marine (used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-SalLim2">(D.63)</a>)</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQPhySLmarine"><span class="math inline">\(\blockindent\)</span> salinity limitation ==</a> <a href="AppCommands.html#WQPhySLmarine">marine</a>, <a href="AppParams.html#WQParSoptmarinePHY"><span class="math inline">\(S_{opt-marine}^{phy}\)</span></a>, <a href="AppParams.html#WQParLzeromarinePHY"><span class="math inline">\(L_{zero}^{phy}\)</span></a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Mixed (used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-SalLim3">(D.64)</a>)</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQPhySLmixed"><span class="math inline">\(\blockindent\)</span> salinity limitation ==</a> <a href="AppCommands.html#WQPhySLmixed">mixed</a>, <a href="AppParams.html#WQParSoptmixPHY"><span class="math inline">\(S_{opt-mix}^{phy}\)</span></a>, <a href="AppParams.html#WQParSmaxmixPHY"><span class="math inline">\(S_{max-mix}^{phy}\)</span></a>, <a href="AppParams.html#WQParLzeromixPHY"><span class="math inline">\(L_{zero}^{phy}\)</span></a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Estuarine (used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-SalLim4">(D.65)</a>)</li>
+</ul>
+<blockquote>
+<p><a href="#"><span class="math inline">\(\blockindent\)</span> salinity limitation ==</a> <a href="AppProcesses.html#PhyLimEstuarine-5">estuarine</a>, <a href="AppParams.html#WQParSoptestPHY"><span class="math inline">\(S_{opt-est}^{phy}\)</span></a>, <a href="AppParams.html#WQParSmaxestPHY"><span class="math inline">\(S_{max-est}^{phy}\)</span></a>, <a href="AppParams.html#WQParPestPHY"><span class="math inline">\(P_{est}^{phy}\)</span></a></p>
+</blockquote>
+<hr>
+</div>
+<div id="ConModPhyLghtLim-6" class="section level6" number="4.7.3.5.1.3">
+<h6><span class="header-section-number">4.7.3.5.1.3</span> Light limitation</h6>
+<p>Light limitation can be specified by one of the following models:</p>
+<ul>
+<li>Basic (used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-LightLim0">(D.54)</a>)</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQPhyLghtLbasic"><span class="math inline">\(\blockindent\)</span> light limitation ==</a> <a href="AppCommands.html#WQPhyLghtLbasic">basic</a>, <a href="AppParams.html#WQParKbasLghtlim"><span class="math inline">\(I_{K-bas}\)</span></a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Monod (used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-LightLim1">(D.55)</a>)</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQPhyLghtLmonod"><span class="math inline">\(\blockindent\)</span> light limitation ==</a> <a href="AppCommands.html#WQPhyLghtLmonod">monod</a>, <a href="AppParams.html#WQParKmonLghtlim"><span class="math inline">\(I_{K-mon}\)</span></a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Steele (used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-LightLim2">(D.56)</a>)</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQPhyLghtLsteele"><span class="math inline">\(\blockindent\)</span> light limitation ==</a> <a href="AppCommands.html#WQPhyLghtLsteele">steele</a>, <a href="AppParams.html#WQParSatsteLghtlim"><span class="math inline">\(I_{S-ste}\)</span></a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Webb (used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-LightLim3">(D.57)</a>)</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQPhyLghtLwebb"><span class="math inline">\(\blockindent\)</span> light limitation ==</a> <a href="AppCommands.html#WQPhyLghtLwebb">webb</a>, <a href="AppParams.html#WQParKwebLghtlim"><span class="math inline">\(I_{K-web}\)</span></a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Jassby (used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-LightLim4">(D.58)</a>)</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQPhyLghtLjassby"><span class="math inline">\(\blockindent\)</span> light limitation ==</a> <a href="AppCommands.html#WQPhyLghtLjassby">jassby</a>, <a href="AppParams.html#WQParKjasLghtlim"><span class="math inline">\(I_{K-jas}\)</span></a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Chalker (used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-LightLim5">(D.59)</a>)</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQPhyLghtLchalker"><span class="math inline">\(\blockindent\)</span> light limitation ==</a> <a href="AppCommands.html#WQPhyLghtLchalker">chalker</a>, <a href="AppParams.html#WQParKchaLghtlim"><span class="math inline">\(I_{K-cha}\)</span></a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Klepper (used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-LightLim6">(D.60)</a>)</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQPhyLghtLklepper"><span class="math inline">\(\blockindent\)</span> light limitation ==</a> <a href="AppCommands.html#WQPhyLghtLklepper">klepper</a>, <a href="AppParams.html#WQParSatkleLghtlim"><span class="math inline">\(I_{S-kle}\)</span></a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Integrated (used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-LightLim7">(D.61)</a>)</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQPhyLghtLintegrated"><span class="math inline">\(\blockindent\)</span> light limitation ==</a> <a href="AppCommands.html#WQPhyLghtLintegrated">integrated</a>, <a href="#WQParSatinyLghtlim"><span class="math inline">\(I_{S-int}\)</span></a></p>
+</blockquote>
+<hr>
+</div>
+<div id="ConModPhyNLimB-6" class="section level6" number="4.7.3.5.1.4">
+<h6><span class="header-section-number">4.7.3.5.1.4</span> Nitrogen limitation</h6>
+<p>Nitrogen limitation parameters (used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-NLim1">(D.44)</a>, Section <a href="AppProcesses.html#PhyLimisNB-5">D.6.4.3.1</a>) are set via the command:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQPhyNLBas"><span class="math inline">\(\blockindent\)</span> nitrogen limitation ==</a> <a href="AppParams.html#WQParMinNlim"><span class="math inline">\(\left[N\right]_{min}^{phy}\)</span></a>, <a href="AppParams.html#WQParKNlim"><span class="math inline">\(K_{lim-N}^{phy}\)</span></a></p>
+</blockquote>
+<p>These, together with additional parameters, are the same as those used in specifying the nitrogen limitation behaviour of the advanced phytoplankton model (Section <a href="SimulationConstruction-1.html#ConModPhyNLimA-6">4.7.3.5.2.1</a>.</p>
+<hr>
+</div>
+<div id="ConModPhyPLimB-6" class="section level6" number="4.7.3.5.1.5">
+<h6><span class="header-section-number">4.7.3.5.1.5</span> Phosphorus limitation</h6>
+<p>Phosphorus limitation parameters (used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-PLim1">(D.48)</a>, Section <a href="AppProcesses.html#PhyLimisPB-5">D.6.4.4.1</a>) are set via the command:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQPhyPLBas"><span class="math inline">\(\blockindent\)</span> phosphorus limitation ==</a> <a href="AppParams.html#WQParMinPlim"><span class="math inline">\(\left[P\right]_{min}^{phy}\)</span></a>, <a href="AppParams.html#WQParKPlim"><span class="math inline">\(K_{lim-P}^{phy}\)</span></a></p>
+</blockquote>
+<p>These, together with additional parameters, are the same as those used in specifying the phosphorus limitation behaviour of the advanced phytoplankton model (Section <a href="SimulationConstruction-1.html#ConModPhyPLimA-6">4.7.3.5.2.2</a>).</p>
+<hr>
+</div>
+<div id="ConModPhySiLimB-6" class="section level6" number="4.7.3.5.1.6">
+<h6><span class="header-section-number">4.7.3.5.1.6</span> Silicate limitation</h6>
+<p>Silicate limitation parameters (used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-SiLim1">(D.52)</a>, Section <a href="AppProcesses.html#PhyLimSi-4">D.6.4.5</a>) are set via the command:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQPhyNSiBas"><span class="math inline">\(\blockindent\)</span> silicate limitation ==</a> <a href="AppParams.html#WQParMinSilim"><span class="math inline">\(\left[Si\right]_{min}^{phy}\)</span></a>, <a href="AppParams.html#WQParKSilim"><span class="math inline">\(K_{lim-Si}^{phy}\)</span></a></p>
+</blockquote>
+<p>Specification of this limitation triggers the uptake of silicate to be on in the phytoplankton group’s block in which the command appears. Omit this command to set silicate uptake to off for a given phytoplankton group.</p>
+<hr>
+</div>
+<div id="ConModPhyUptakeB-6" class="section level6" number="4.7.3.5.1.7">
+<h6><span class="header-section-number">4.7.3.5.1.7</span> Uptake</h6>
+<p>Nutrient uptake parameters for nitrogen, phosphorus and silicate (if relevant) (used in Equations <a href="AppProcesses.html#eq:eq-pel-phy-NUp">(D.67)</a>, <a href="AppProcesses.html#eq:eq-pel-phy-PUp">(D.72)</a> and <a href="AppProcesses.html#eq:eq-pel-phy-SiUp">(D.74)</a> respectively) are set via the command:</p>
+<blockquote>
+<p><a href="#WQPhyConstIntRat"><span class="math inline">\(\blockindent\)</span> uptake ==</a> <a href="AppParams.html#WQParConNCRat"><span class="math inline">\(X_{N-C-con}^{phy}\)</span></a>, <a href="AppParams.html#WQParConPCRat"><span class="math inline">\(X_{P-C-con}^{phy}\)</span></a>, <a href="AppParams.html#WQParConSiCRat"><span class="math inline">\(X_{Si-C-con}^{phy}\)</span></a></p>
+</blockquote>
+<p>If specified, the value of <span class="math inline">\(X_{Si-C-con}^{phy}\)</span> is ignored if silicate uptake has not been triggered via specification of silicate limitation parameters via <a href="AppCommands.html#WQPhyNSiBas">silicate limitation ==</a>.</p>
+<hr>
+</div>
+<div id="ConModPhyPP-6" class="section level6" number="4.7.3.5.1.8">
+<h6><span class="header-section-number">4.7.3.5.1.8</span> Primary productivity</h6>
+<p>Primary productivity (growth) parameters (used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-pprod">(D.27)</a>) are set via the command:</p>
+<blockquote>
+<p><a href="#WQPhyGrowth"><span class="math inline">\(\blockindent\)</span> growth ==</a> <a href="#WQParRPrimProd"><span class="math inline">\(R_{prod}^{phy}\)</span></a>, <a href="#WQParthetatempPhy"><span class="math inline">\(\theta_{prod}^{phy}\)</span></a></p>
+</blockquote>
+<hr>
+</div>
+<div id="ConModPhyResp-6" class="section level6" number="4.7.3.5.1.9">
+<h6><span class="header-section-number">4.7.3.5.1.9</span> Respiration</h6>
+<p>Respiration parameters are set via the following command. The first two parameters are used directly to compute the respiration rate <span class="math inline">\(R_{resp\langle computed\rangle}^{phy}\)</span> via Equation <a href="AppProcesses.html#eq:eq-pel-phy-resp">(D.31)</a>. The third and fourth parameters are used to compute excretive and mortality fluxes in Equations <a href="AppProcesses.html#eq:eq-pel-phy-Cexcr">(D.75)</a> and <a href="AppProcesses.html#eq:eq-pel-phy-Cmort">(D.76)</a>, respectively. Both these equations use the respiration rate computed from the first two parameters <span class="math inline">\(R_{resp}^{phy}\)</span> and <span class="math inline">\(\theta_{resp}^{phy}\)</span>. Although not strictly related to respiration, the final parameter does represent a reduction of biomass and is used to compute exudation loss using Equation <a href="AppProcesses.html#eq:eq-pel-phy-exud">(D.33)</a>.</p>
+<blockquote>
+<p><a href="#WQPhyResp"><span class="math inline">\(\blockindent\)</span> respiration ==</a> <a href="#WQParRRespPhy"><span class="math inline">\(R_{resp}^{phy}\)</span></a>, <a href="#WQParthetarespphy"><span class="math inline">\(\theta_{resp}^{phy}\)</span></a>, <a href="#WQParftrueresp"><span class="math inline">\(f_{true-resp}^{phy}\)</span></a>, <a href="#WQParfdomloss"><span class="math inline">\(f_{DOM-loss}^{phy}\)</span></a>, <a href="#WQParfracexud"><span class="math inline">\(f_{exud}^{phy}\)</span></a></p>
+</blockquote>
+<hr>
+</div>
+<div id="ConModPhyXcc-6" class="section level6" number="4.7.3.5.1.10">
+<h6><span class="header-section-number">4.7.3.5.1.10</span> Carbon to Chlorophyll <em>a</em> ratio</h6>
+<p>The carbon to chlorophyll <em>a</em> ratio (used in converting between simulation units, and reporting total chlorophyll <em>a</em> as a diagnostic variable if the mmmol units system is used) is specified via the command:</p>
+<blockquote>
+<p><a href="#WQPhyXcc"><span class="math inline">\(\blockindent\)</span> carbon chla ratio ==</a> <a href="#WQParXcc"><span class="math inline">\(X_{cc}^{phy}\)</span></a></p>
+</blockquote>
+<hr>
+</div>
+<div id="ConModPhyNFix-6" class="section level6" number="4.7.3.5.1.11">
+<h6><span class="header-section-number">4.7.3.5.1.11</span> Nitrogen fixing</h6>
+<p>Nitrogen fixing parameters are specified as follows. The first parameter is used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-NUp">(D.67)</a> to compute the nitrogen fixation flux, and the second parameter modifies computed primary productivity via Equation <a href="AppProcesses.html#eq:eq-pel-phy-pprodNfx">(D.28)</a>.</p>
+<blockquote>
+<p><a href="#WQPhyNFixRate"><span class="math inline">\(\blockindent\)</span> nitrogen fixing ==</a> <a href="#WQParRNFix"><span class="math inline">\(R_{nfix}^{N_2}\)</span></a>, <a href="#WQParkNFix"><span class="math inline">\(f_{nfix}^{phy}\)</span></a></p>
+</blockquote>
+<p>Setting this command triggers nitrogen fixing to be on, otherwise it is off by default.</p>
+<hr>
+</div>
+<div id="ConModPhySettleB-6" class="section level6" number="4.7.3.5.1.12">
+<h6><span class="header-section-number">4.7.3.5.1.12</span> Settling</h6>
+<p>Settling can be specified by one of the following models:</p>
+<ul>
+<li>None</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQPhySettNone"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="AppCommands.html#WQPhySettNone">none</a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Constant</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQPhySettConst"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="AppCommands.html#WQPhySettConst">constant</a>, <a href="AppParams.html#WQParConV"><span class="math inline">\(V_{sett}^{phy}\)</span></a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Constant with density correction (as per Equation <a href="AppProcesses.html#eq:eq-pel-phy-settdens">(D.34)</a>)</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQPhySettRho"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="AppCommands.html#WQPhySettRho">thermal</a>, <a href="AppParams.html#WQParThermV"><span class="math inline">\(V_{sett}^{phy}\)</span></a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Stokes (used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-settstokes">(D.35)</a>), where density is required to be simulated as a computed variable, and thus requires the specification of <span class="math inline">\(I_K\)</span>.</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQPhySettStokes"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="AppCommands.html#WQPhySettStokes">stokes</a>, <a href="AppParams.html#WQParKstoSett"><span class="math inline">\(I_{K-sto}\)</span></a></p>
+</blockquote>
+<p>If <span class="math inline">\(I_K\)</span> is specified in any light limitation model applied to a phytoplankton group with stokes settling, then a value of <span class="math inline">\(I_{K-sto}\)</span> specified in the stokes model will be ignored. Cell density limits are applied as the defaults and are not user specifiable.</p>
+<hr>
+</div>
+<div id="ConModPhyTerm-6" class="section level6" number="4.7.3.5.1.13">
+<h6><span class="header-section-number">4.7.3.5.1.13</span> Termination</h6>
+<p>This constituent model block must be terminated using the command:</p>
+<blockquote>
+<p><a href="#WQPhyModEnd">end phyto model</a></p>
+</blockquote>
+</div>
+</div>
+<div id="ConModPhyAdv-5" class="section level5" number="4.7.3.5.2">
+<h5><span class="header-section-number">4.7.3.5.2</span> Constituent model: Advanced</h5>
+<p>This constituent model is specified as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQPhyMod">phyto model ==</a> advanced, <span class="math inline">\(\langle group\_name \rangle\)</span></p>
+</blockquote>
+<p><span class="math inline">\(\langle group\_name \rangle\)</span> is any user specified phytoplankton group name that uses only alphanumeric characters with no spaces.</p>
+<hr>
+<p>The following commands are the same as those described for the basic phytoplankton model in Section <a href="SimulationConstruction-1.html#ConModPhyBas-5">4.7.3.5.1</a>:</p>
+<blockquote>
+<p><a href="SimulationConstruction-1.html#ConModPhyBas-5"><span class="math inline">\(\blockindent\)</span> min max ==</a></p>
+</blockquote>
+<blockquote>
+<p><a href="SimulationConstruction-1.html#ConModPhyTLim-6"><span class="math inline">\(\blockindent\)</span> temperature limitation ==</a></p>
+</blockquote>
+<blockquote>
+<p><a href="SimulationConstruction-1.html#ConModPhyLghtLim-6"><span class="math inline">\(\blockindent\)</span> light limitation ==</a></p>
+</blockquote>
+<blockquote>
+<p><a href="#ConModPhySiLim-6"><span class="math inline">\(\blockindent\)</span> silicate limitation ==</a></p>
+</blockquote>
+<blockquote>
+<p><a href="#"><span class="math inline">\(\blockindent\)</span> growth ==</a></p>
+</blockquote>
+<blockquote>
+<p><a href="#"><span class="math inline">\(\blockindent\)</span> respiration ==</a></p>
+</blockquote>
+<blockquote>
+<p><a href="SimulationConstruction-1.html#ConModPhyXcc-6"><span class="math inline">\(\blockindent\)</span> carbon chla ratio ==</a></p>
+</blockquote>
+<blockquote>
+<p><a href="#"><span class="math inline">\(\blockindent\)</span> nitrogen fixing ==</a></p>
+</blockquote>
+<blockquote>
+<p><a href="SimulationConstruction-1.html#ConModPhySettleB-6"><span class="math inline">\(\blockindent\)</span> settling ==</a></p>
+</blockquote>
+<blockquote>
+<p><a href="#WQPhyModEnd">end phyto model</a></p>
+</blockquote>
+<p>The following commands differ for the advanced phytoplankton model compared to the basic model.</p>
+<hr>
+<div id="ConModPhyNLimA-6" class="section level6" number="4.7.3.5.2.1">
+<h6><span class="header-section-number">4.7.3.5.2.1</span> Nitrogen limitation</h6>
+<p>Nitrogen limitation parameters (used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-NLimA1">(D.46)</a>, Section <a href="AppProcesses.html#PhyLimisNA-5">D.6.4.3.2</a>) are set via the command:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQPhyNLAdv"><span class="math inline">\(\blockindent\)</span> nitrogen limitation ==</a> <a href="AppParams.html#WQParMinNlim"><span class="math inline">\(\left[N\right]_{min}^{phy}\)</span></a>, <a href="AppParams.html#WQParKNlim"><span class="math inline">\(K_{N}^{phy}\)</span></a>, <a href="AppParams.html#WQParMinNClim"><span class="math inline">\(X_{N-C-min}^{phy}\)</span></a>, <a href="AppParams.html#WQParMaxNClim"><span class="math inline">\(X_{N-C-max}^{phy}\)</span></a></p>
+</blockquote>
+<p>The first two parameters are the same as those that would be specified using the same command in the basic phytoplankton model (Section <a href="SimulationConstruction-1.html#ConModPhyNLimB-6">4.7.3.5.1.4</a>).</p>
+<hr>
+</div>
+<div id="ConModPhyPLimA-6" class="section level6" number="4.7.3.5.2.2">
+<h6><span class="header-section-number">4.7.3.5.2.2</span> Phosphorus limitation</h6>
+<p>Phosphorus limitation parameters (used in Equation <a href="AppProcesses.html#eq:eq-pel-phy-PLimA1">(D.50)</a>, Section <a href="AppProcesses.html#PhyLimisPA-5">D.6.4.4.2</a>) are set via the command:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQPhyPLAdv"><span class="math inline">\(\blockindent\)</span> phosphorus limitation ==</a> <a href="AppParams.html#WQParMinPlim"><span class="math inline">\(\left[P\right]_{min}^{phy}\)</span></a>, <a href="AppParams.html#WQParKPlim"><span class="math inline">\(K_{P}^{phy}\)</span></a>, <a href="AppParams.html#WQParMinPClim"><span class="math inline">\(X_{P-C-min}^{phy}\)</span></a>, <a href="AppParams.html#WQParMaxPClim"><span class="math inline">\(X_{P-C-max}^{phy}\)</span></a></p>
+</blockquote>
+<p>The first two parameters are the same as those that would be specified using the same command in the basic phytoplankton model (Section <a href="SimulationConstruction-1.html#ConModPhyPLimB-6">4.7.3.5.1.5</a>).</p>
+<hr>
+</div>
+<div id="ConModPhyUptakeA-6" class="section level6" number="4.7.3.5.2.3">
+<h6><span class="header-section-number">4.7.3.5.2.3</span> Uptake</h6>
+<p>Nutrient uptake parameters for nitrogen, phosphorus and silicate (if relevant) (used in Equations <a href="AppProcesses.html#eq:eq-pel-phy-NUpA">(D.69)</a>, <a href="AppProcesses.html#eq:eq-pel-phy-PUpA">(D.73)</a> and <a href="AppProcesses.html#eq:eq-pel-phy-SiUp">(D.74)</a> respectively) are set via the command:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQPhyUptakeAdv"><span class="math inline">\(\blockindent\)</span> uptake ==</a> <a href="AppParams.html#WQParNuptake"><span class="math inline">\(R_{upt-N}^{phy}\)</span></a>, <a href="AppParams.html#WQParPuptake"><span class="math inline">\(R_{upt-P}^{phy}\)</span></a>, <a href="AppParams.html#WQParConSiCRat"><span class="math inline">\(X_{Si-C-con}^{phy}\)</span></a></p>
+</blockquote>
+<p>The value of <span class="math inline">\(X_{Si-C-con}^{phy}\)</span> is ignored if silicate uptake has not been triggered through specification of a silicate limitation function.</p>
+<hr>
+</div>
+<div id="ConModPhySettleA-6" class="section level6" number="4.7.3.5.2.4">
+<h6><span class="header-section-number">4.7.3.5.2.4</span> Settling</h6>
+<p>An additional settling model can be specified in the advanced phytoplankton constituent model as:</p>
+<ul>
+<li>Motile (Section <a href="AppProcesses.html#PhySettleMotile-5">D.6.3.4.5</a>), where internal nutrient simulation is required to simulate motility</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQPhySettMotile"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="AppCommands.html#WQPhySettMotile">motile</a>, <a href="AppParams.html#WQParMotV"><span class="math inline">\(V_{mot}^{phy}\)</span></a>, <a href="AppParams.html#WQParKmotSett"><span class="math inline">\(I_{K-mot}\)</span></a></p>
+</blockquote>
+<p>If <span class="math inline">\(I_K\)</span> is specified in any light limitation model applied to an advanced constituent model phytoplankton group with motile settling, then a value of <span class="math inline">\(I_{K-mot}\)</span> specified in the motile model will be ignored. Cell density limits are applied as the defaults and are not user specifiable.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="MatSpecsInorg-3" class="section level3" number="4.7.4">
+<h3><span class="header-section-number">4.7.4</span> Part 3: Material specification</h3>
+<p>Oxygen, silicate, ammonium, nitrate and FRP benthic fluxes are specified within both default and numbered material blocks as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQOxyBenFlx"><span class="math inline">\(\blockindent\)</span> oxygen flux ==</a> <a href="AppParams.html#WQParFsedO2"><span class="math inline">\(F_{sed}^{O_2}\)</span></a> <br> <br>
+<a href="AppCommands.html#WQSilBenFlx"><span class="math inline">\(\blockindent\)</span> silicate flux ==</a> <a href="#WQParFsedSil"><span class="math inline">\(F_{sed}^{sil}\)</span></a> <br> <br>
+<a href="AppCommands.html#WQAmmBenFlx"><span class="math inline">\(\blockindent\)</span> ammonium flux ==</a> <a href="AppParams.html#WQParFsedAmm"><span class="math inline">\(F_{sed}^{NH_4}\)</span></a> <br> <br>
+<a href="AppCommands.html#WQNitBenFlx"><span class="math inline">\(\blockindent\)</span> nitrate flux ==</a> <a href="AppParams.html#WQParFsedNit"><span class="math inline">\(F_{sed}^{NO_3}\)</span></a> <br> <br>
+<a href="AppCommands.html#WQFRPBenFlx"><span class="math inline">\(\blockindent\)</span> FRP flux ==</a> <a href="AppParams.html#WQParFsedFRP"><span class="math inline">\(F_{sed}^{FRP}\)</span></a></p>
+</blockquote>
+<p>No adsorbed FRP or phytoplankton sediment fluxes are required.</p>
+</div>
+<div id="ConOrdInorg-3" class="section level3" number="4.7.5">
+<h3><span class="header-section-number">4.7.5</span> Constituent ordering</h3>
+<p>Different constituent model selections result in different ordering requirements for specifying computed variable initial conditions and <code>bc header ==</code> commands. For clarity, these are initially presented below using only phytoplankton placeholders in lists. This is possible because phytoplankton specifications are always appended at the end of initial condition or <code>bc header ==</code> lists. Phytoplankton specifications are then presented as additive to these lists in subsequent sections. This is not meant to imply that phytoplankton simulation is optional in the inorganics simulation class - it is mandatory and has only been described separately here for presentation purposes.</p>
+<div id="ConOrdExPhy-4" class="section level4" number="4.7.5.1">
+<h4><span class="header-section-number">4.7.5.1</span> Excluding phytoplankton</h4>
+<p>The only constituent model choice that influences ordering (other than phytoplankton) is the phosphorus model. These two possibilities are described below.</p>
+<div id="ConOrdInorgFRPhs-5" class="section level5" number="4.7.5.1.1">
+<h5><span class="header-section-number">4.7.5.1.1</span> Phosphorus model FRPhs</h5>
+<p>If adsorbed FRP is not simulated (i.e. <code>phosphorus model == FRPhs</code>), then in all columnar and list style initial conditions, computed variables are expected in the following order:</p>
+<blockquote>
+<p>initial wq concentration == <span class="math inline">\(\left[ DO \right]\)</span>, <span class="math inline">\(\left[ Si \right]\)</span>, <span class="math inline">\(\left[ NH_4 \right]\)</span>, <span class="math inline">\(\left[ NO_3 \right]\)</span>, <span class="math inline">\(\left[ FRP \right]\)</span>, <span class="math inline">\(\ldots\)</span> {phytoplankton placeholder/s}</p>
+</blockquote>
+<p>Similarly, in a <code>bc header</code> command within a bc block, the following order of computed variables is expected after hydrodynamic (HD BCs) boundary conditions:</p>
+<blockquote>
+<p><span class="math inline">\(\blockindent\)</span>bc header == {HD BCs} <span class="math inline">\(\ldots\)</span> DO_mgL, Si_mgL, Amm_mgL, Nit_mgL, FRP_mgL, <span class="math inline">\(\ldots\)</span> {phytoplankton placeholder/s}</p>
+</blockquote>
+<p>With regard to the above<code>bc header ==</code> command:</p>
+<ul>
+<li>DO_mgL, Si_mgL, Amm_mgL, Nit_mgL and FRP_mgL are the headers used to designate oxygen, silicate, ammonium, nitrate and FRP in the related boundary condition file, respectively</li>
+<li>Whilst this ordering in the command is fixed, the corresponding columnar data can appear in any order in the associated boundary condition file</li>
+<li>The header texts “DO_mgL”, “Si_mgL”, “Amm_mgL”, “Nit_mgL” and “FRP_mgL” are not special keywords. They can be any headers desired, as long as they match the correct respective boundary condition file column headers</li>
+</ul>
+</div>
+<div id="ConOrdInorgFRPhsads-5" class="section level5" number="4.7.5.1.2">
+<h5><span class="header-section-number">4.7.5.1.2</span> Phosphorus model FRPhsads</h5>
+<p>If adsorbed FRP is simulated (i.e. <code>phosphorus model == FRPhsads</code>), then in all columnar and list style initial conditions, computed variables are expected in the following order:</p>
+<blockquote>
+<p>initial wq concentration == <span class="math inline">\(\left[ DO \right]\)</span>, <span class="math inline">\(\left[ Si \right]\)</span>, <span class="math inline">\(\left[ NH_4 \right]\)</span>, <span class="math inline">\(\left[ NO_3 \right]\)</span>, <span class="math inline">\(\left[ FRP \right]\)</span>, <span class="math inline">\(\left[ FRPads \right]\)</span>, <span class="math inline">\(\ldots\)</span> {phytoplankton placeholder/s}</p>
+</blockquote>
+<p>Similarly, in a <code>bc header</code> command within a bc block, the following order of computed variables is expected after hydrodynamic boundary conditions:</p>
+<blockquote>
+<p><span class="math inline">\(\blockindent\)</span>bc header == {HD BCs} <span class="math inline">\(\ldots\)</span> DO_mgL, Si_mgL, Amm_mgL, Nit_mgL, FRP_mgL, FRP_ads_mgL, <span class="math inline">\(\ldots\)</span> {phytoplankton placeholder/s}</p>
+</blockquote>
+<p>With regard to the above<code>bc header ==</code> command:</p>
+<ul>
+<li>DO_mgL, Si_mgL, Amm_mgL, Nit_mgL, FRP_mgL and FRP_ads_mgL are the headers used to designate oxygen, silicate, ammonium, nitrate, FRP and adsorbed FRP in the related boundary condition file, respectively</li>
+<li>Whilst this ordering in the command is fixed, the corresponding columnar data can appear in any order in the associated boundary condition file</li>
+<li>The header texts “DO_mgL”, “Si_mgL”, “Amm_mgL”, “Nit_mgL”, “FRP_mgL” and “FRP_ads_mgL”are not special keywords. They can be any headers desired, as long as they match the correct respective boundary condition file column headers</li>
+</ul>
+</div>
+</div>
+<div id="ConOrdIncPhy-4" class="section level4" number="4.7.5.2">
+<h4><span class="header-section-number">4.7.5.2</span> Including phytoplankton</h4>
+<p>Phytoplankton initial conditions and <code>bc header ==</code> are appended directly to the above computed variable specifications, as denoted by the {phytoplankton placeholder/s} flag above.</p>
+<p>Each phytoplankton group is specified using a cluster of values (initial conditions) or headers (bc block) and these clusters must appear in the same order as phytoplankton groups are specified in the water quality control file. The content of each phytoplankton cluster is determined both by the phytoplankton constituent model used and the settling model selected. These are described below, using a placeholder for preceding computed variables for clarity. These are described above and can be interpreted as either of the orderings specified in sections <a href="SimulationConstruction-1.html#ConOrdInorgFRPhs-5">4.7.5.1.1</a> or <a href="SimulationConstruction-1.html#ConOrdInorgFRPhsads-5">4.7.5.1.2</a>.</p>
+<p>Two phytoplankton groups are used in all examples.</p>
+<div id="ConOrdPhyBas-5" class="section level5" number="4.7.5.2.1">
+<h5><span class="header-section-number">4.7.5.2.1</span> Phytoplankton model basic</h5>
+<p>If the basic phytoplankton constituent model is used, then in all columnar and list style initial conditions, computed variables are expected in the following order:</p>
+<blockquote>
+<p>initial wq concentration == {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{[PHY_1]}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{[PHY_2]}_{\text{Cluster 2}}\)</span></p>
+</blockquote>
+<p>In order to match water quality control file groups with initial conditions, it is assumed that the groups’ clusters of initial conditions are specified above in the same order that <code>phyto model ==</code> blocks are presented in the water quality control file.</p>
+<p>Similarly, in a <code>bc header</code> command within a bc block, the following order of computed variables is expected after hydrodynamic and non-phytoplankton boundary conditions:</p>
+<blockquote>
+<p><span class="math inline">\(\blockindent\)</span>bc header == {HD BCs} <span class="math inline">\(\ldots\)</span> {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{\text{phyto_green}}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{\text{phyto_bluegreen}}_{\text{Cluster 2}}\)</span></p>
+</blockquote>
+<p>With regard to the above<code>bc header ==</code> command:</p>
+<ul>
+<li>phyto_green and phyto_bluegreen are the headers used to designate the boundary concentrations of the two phytoplankton groups listed in the water quality control file</li>
+<li>In order to match water quality control file groups with these boundary condition clusters, it is assumed that the groups’ boundary condition header clusters are specified above in the same order that <code>phyto model ==</code> blocks appear in the water quality control file</li>
+<li>The names listed in the <code>bc header ==</code> command above do not need to match the names listed in the water quality control file phytoplankton blocks</li>
+<li>Whilst this ordering in the command is fixed, the corresponding columnar data can appear in any order in the associated boundary condition file</li>
+<li>The header texts “phyto_green” and “phyto_bluegreen” are not special keywords. They can be any headers desired, as long as they match the correct respective boundary condition file column headers</li>
+</ul>
+<p>If the command <code>settling == stokes</code> is used for a phytoplankton group, then phytoplankton cell density must be simulated as a computed variable that requires initial and boundary conditions. This therefore affects the clustering of phytoplankton initial and boundary conditions. For example, if the first phytoplankton group above used the stokes settling model, then the following initial condition command would be required:</p>
+<blockquote>
+<p><span class="math inline">\(\blockindent\)</span>initial wq concentration == {HD} <span class="math inline">\(\ldots\)</span> {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{[PHY_1],\rho_{phy1}}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{[PHY_2]}_{\text{Cluster 2}}\)</span></p>
+</blockquote>
+<p><span class="math inline">\(\rho_{phy1}\)</span> is the initial density of the first phytoplankton group’s cells.</p>
+<p>Similarly, in a <code>bc header</code> command within a bc block, the following order of computed variables is expected after hydrodynamic and non-phytoplankton boundary conditions:</p>
+<blockquote>
+<p><span class="math inline">\(\blockindent\)</span>bc header == {HD BCs} <span class="math inline">\(\ldots\)</span> {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{\text{phyto_green, phyto_green_density}}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{\text{phyto_bluegreen}}_{\text{Cluster 2}}\)</span></p>
+</blockquote>
+<p>If both phytoplankton groups simulated density then the corresponding initial condition and boundary condition commands would be as follows:</p>
+<blockquote>
+<p><span class="math inline">\(\blockindent\)</span>initial wq concentration == {HD} <span class="math inline">\(\ldots\)</span> {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{[PHY_1],\rho_{phy1}}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{[PHY_2],\rho_{phy2} }_{\text{Cluster 2}}\)</span></p>
+</blockquote>
+<blockquote>
+<p><span class="math inline">\(\blockindent\)</span>bc header == {HD BCs} <span class="math inline">\(\ldots\)</span> {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{\text{phyto_green, phyto_green_density}}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{\text{phyto_bluegreen, phyto_bluegreen_density}}_{\text{Cluster 2}}\)</span></p>
+</blockquote>
+<p><span class="math inline">\(\rho_{phy1}\)</span> and <span class="math inline">\(\rho_{phy1}\)</span> are the initial densities of the first and second phytoplankton group’s cells.</p>
+<p>The same notes provided above apply to these commands.</p>
+</div>
+<div id="ConOrdPhyAdv-5" class="section level5" number="4.7.5.2.2">
+<h5><span class="header-section-number">4.7.5.2.2</span> Phytoplankton model advanced</h5>
+<p>If the advanced phytoplankton constituent model is used, then in all columnar and list style initial conditions, computed variables are expected in the following order:</p>
+<blockquote>
+<p>initial wq concentration == {non-phytoplankton placeholderss} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{[PHY_1],[N_1]_{in},[P_1]_{in}}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{[PHY_2],[N_2]_{in},[P_2]_{in}}_{\text{Cluster 2}}\)</span></p>
+</blockquote>
+<p>In order to match water quality control file groups with initial conditions, it is assumed that the groups’ initial conditions are specified above in the same order that <code>phyto model ==</code> blocks are presented in the water quality control file.</p>
+<p>Similarly, in a <code>bc header</code> command within a bc block, the following order of computed variables is expected after hydrodynamic and non-phytoplankton boundary conditions:</p>
+<blockquote>
+<p><span class="math inline">\(\blockindent\)</span>bc header == {HD BCs} <span class="math inline">\(\ldots\)</span> {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{\text{phyto_gr, gr_intN, gr_intP}}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{\text{phyto_blgr, blgr_intN, blgr_intP}}_{\text{Cluster 2}}\)</span></p>
+</blockquote>
+<p>With regard to the above<code>bc header ==</code> command:</p>
+<ul>
+<li>phyto_gr and phyto_blgr are the headers used to designate the boundary concentrations of the two phytoplankton groups listed in the water quality control file</li>
+<li>gr_intN and gr_intP are the headers used to designate the boundary concentrations of internal nitrogen and internal phosphorus for the green phytoplankton group, respectively</li>
+<li>blgr_intN and blgr_intP are the headers used to designate the boundary concentrations of internal nitrogen and internal phosphorus for the bluegreen group, respectively</li>
+<li>In order to match water quality control file groups with these boundary conditions, it is assumed that the groups’ boundary condition header clusters are specified above in the same order that <code>phyto model ==</code> blocks appear in the water quality control file</li>
+<li>The names listed in the <code>bc header ==</code> command above do not need to match the names listed in the water quality control file phytoplankton blocks</li>
+<li>Whilst this ordering in the command is fixed, the corresponding columnar data can appear in any order in the associated boundary condition file</li>
+<li>The header texts “phyto_gr” and “phyto_blgr” are not special keywords. They can be any headers desired, as long as they match the correct respective boundary condition file column headers</li>
+</ul>
+<p>If the command <code>settling == stokes</code> is used for a phytoplankton group, then phytoplankton cell density must be simulated as a computed variable that requires initial and boundary conditions. This therefore affects the clustering of phytoplankton initial and boundary conditions. If the first phytoplankton group above used the advanced phytoplankton model with the stokes settling model, and the second group used the basic phytoplankton model without stokes settling, then the following commands would be required:</p>
+<blockquote>
+<p>initial wq concentration == {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{[PHY_1],\rho_{phy_1},[N_1]_{in},[P_1]_{in}}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{[PHY_2]}_{\text{Cluster 2}}\)</span></p>
+</blockquote>
+<p>Similarly, in a <code>bc header</code> command within a bc block, the following order of computed variables is expected after hydrodynamic and non-phytoplankton boundary conditions:</p>
+<blockquote>
+<p><span class="math inline">\(\blockindent\)</span>bc header == {HD BCs} <span class="math inline">\(\ldots\)</span> {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{\text{phyto_gr, gr_dens, gr_intN, gr_intP}}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{\text{phyto_blgr}}_{\text{Cluster 2}}\)</span></p>
+</blockquote>
+<p>If both phytoplankton groups simulated density, again with the first and second groups using the advanced and basic models respectively, then the corresponding commands would be as follows:</p>
+<blockquote>
+<p>initial wq concentration == {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{[PHY_1],\rho_{phy_1},[N_1]_{in},[P_1]_{in}}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{[PHY_2],\rho_{phy_2}}_{\text{Cluster 2}}\)</span></p>
+</blockquote>
+<blockquote>
+<p><span class="math inline">\(\blockindent\)</span>bc header == {HD BCs} <span class="math inline">\(\ldots\)</span> {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{\text{phyto_gr, gr_dens, gr_intN, gr_intP}}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{\text{phyto_blgr, blgr_dens}}_{\text{Cluster 2}}\)</span></p>
+</blockquote>
+<p>The same notes provided above apply to these commands.</p>
+</div>
+</div>
+</div>
+<div id="ExampleInorg" class="section level3" number="4.7.6">
+<h3><span class="header-section-number">4.7.6</span> Example</h3>
+<p>Following is an example of all the available WQM <code>simulation class == inorganics</code> commands, with a single material applied as zeros everywhere as the default, and then modified by a further specificatin for materials 3 and 7. Two phytoplankton groups (one each of the basic and advanced models) are set.</p>
+<pre><code>simulation class == inorganics
+wq dt == 3600
+units == mgl
+
+oxygen model == O2
+    benthic == 4.0, 1.05
+    min max == 0.0, 25.0
+end oxygen model
+
+silicate model == si
+    benthic == 4.0, 1.05
+    min max == 0.0, 2500.0
+    oxygen == on
+end silicate model  
+
+nitrogen model == AmmoniumNitrate
+    ammonium benthic == 4.0, 1.05
+    nitrate benthic == 4.0, 1.05
+    ammonium min max == 0.0, 150.0
+    nitrate min max == 0.0, 250.0
+    nitrification == 0.1, 4.0, 1.05
+    denitrification == exponential, 0.5, 8.0, 1.05
+    atmospheric deposition == 10.0, 2.4, 0.15
+    oxygen == on
+end nitrogen model
+    
+phosphorus model == frphsads
+    frp benthic == 4.0, 1.05
+    frp min max == 0.0, 150.0
+    frpads min max == 0.0, 150.0
+    atmospheric deposition == 5.0, 1.4
+    adsorption == quadratic, 1.5, 0.5, 0.00005
+    oxygen == on
+end phosphorus model    
+    
+phyto model == basic, green
+    min max == 0.01, 40.0
+    temperature limitation == standard, 11.0, 14.0, 30.0
+    salinity limitation == none 
+    light limitation == monod, 0.3, 70.0
+    settling == constant, 0.01
+    nitrogen limitation == 0.01, 1.5
+    phosphorus limitation == 0.001, 0.03
+    silicate limitation == 0.5, 7.0
+    uptake == 4.7, 0.6, 8.9
+    carbon chla ratio == 32.0
+    growth == 2.0, 1.06
+    respiration == 0.02, 1.04, 0.1, 0.05, 0.6
+end phyto model
+
+phyto model == advanced, bluegreen
+    min max == 0.5, 50.0
+    temperature limitation == standard, 10.0, 15.0, 25.0
+    salinity limitation == estuarine, 22.0, 35.0, 0.0 
+    light limitation == monod, 0.5, 51.0
+    settling == motile, 0.5
+    nitrogen limitation == 0.05, 2.5, 4.0, 5.0
+    phosphorus limitation == 0.01, 0.05, 0.64, 0.67
+    silicate limitation == 1.0, 5.0
+    uptake == 0.05, 0.05, 8.9
+    carbon chla ratio == 27.0
+    nitrogen fixing == 0.100, 0.100
+    growth == 1.0, 1.08
+    respiration == 0.01, 1.01, 0.2, 0.0, 0.4
+end phyto model
+
+material == default
+    oxygen flux == 0.0 
+    silicate flux == 0.0 
+    ammonium flux == 0.0 
+    nitrate flux == 0.0 
+    frp flux == 0.0 
+end material
+
+material == 3, 7
+    oxygen flux == -4800.0 
+    silicate flux == 122.0 
+    ammonium flux == 37.0 
+    nitrate flux == 3.7 
+    frp flux == 1.4 
+end material</code></pre>
+
+</div>
+</div>
+<div id="SimSetSimClOrg-2" class="section level2" number="4.8">
+<h2><span class="header-section-number">4.8</span> Simulation Class: Organics</h2>
+<p>If the organics simulation class is specified with no subsequent constituent model blocks, then a simulation will be automatically constructed using this organics class, and populated with library defaults for all parameters. Computed variables will be:</p>
+<ul>
+<li>Dissolved oxygen</li>
+<li>Silicate</li>
+<li>Ammonium</li>
+<li>Nitrate</li>
+<li>Free reactive phosphorus</li>
+<li>Dissolved organic carbon</li>
+<li>Dissolved organic nitrogen</li>
+<li>Dissolved organic phosphorus</li>
+<li>Particulate organic carbon</li>
+<li>Particulate organic nitrogen</li>
+<li>Particulate organic phosphorus</li>
+<li>One phytoplankton group named ‘dummy’ that uses the basic phytoplankton constituent model</li>
+</ul>
+<div id="PrereqOrg-3" class="section level3" number="4.8.1">
+<h3><span class="header-section-number">4.8.1</span> Prerequisites</h3>
+<p>The organics simulation class requires simulation of the following in TUFLOW FV:</p>
+<ul>
+<li>Hydrodynamics, in either two or three dimensions (including any internal one dimensional structures if present)</li>
+<li>Salinity</li>
+<li>Temperature</li>
+<li>Heat module on (i.e. meteorological forcing is required)</li>
+</ul>
+<p>Simulation of suspended sediment (via TUFLOW FV’s sediment transport module) is required only if adsorbed phosphorus is to be simulated by the WQM.</p>
+</div>
+<div id="SimCtrlsOrg-3" class="section level3" number="4.8.2">
+<h3><span class="header-section-number">4.8.2</span> Part 1: Simulation specification</h3>
+<p>The organics simulation class is set via</p>
+<blockquote>
+<p><a href="AppCommands.html#WQSimulationClass">simulation class ==</a> organics</p>
+</blockquote>
+<p>The other commands in this part are not specific to this simulation class. See section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.</p>
+</div>
+<div id="ConModSttngsOrg-3" class="section level3" number="4.8.3">
+<h3><span class="header-section-number">4.8.3</span> Part 2: Constituent model specification</h3>
+<p>As per Tables <a href="Architecture-1.html#tab:tab-ConClasses">2.2</a> and <a href="Architecture-1.html#tab:tab-ConClassMods">2.3</a>, there are several constituent model classes available within the organics simulation class. The commands for each are described following. To avoid repetition, cross references to explanations are provided for commands that are included in previous simulation classes and remain the same for this class.</p>
+<div id="ConModClssInorg-4a" class="section level4" number="4.8.3.1">
+<h4><span class="header-section-number">4.8.3.1</span> Constituent model class: Oxygen</h4>
+<div id="ConModO2-5b" class="section level5" number="4.8.3.1.1">
+<h5><span class="header-section-number">4.8.3.1.1</span> Constituent model: O2</h5>
+<p>The commands for this constituent model are described in Section <a href="SimulationConstruction-1.html#ConModO2-5a">4.7.3.1.1</a>.</p>
+</div>
+</div>
+<div id="ConModClssSil-4a" class="section level4" number="4.8.3.2">
+<h4><span class="header-section-number">4.8.3.2</span> Constituent model class: Silicate</h4>
+<div id="ConModSi-5a" class="section level5" number="4.8.3.2.1">
+<h5><span class="header-section-number">4.8.3.2.1</span> Constituent model: Si</h5>
+<p>The commands for this constituent model are described in Section <a href="SimulationConstruction-1.html#ConModSi-5">4.7.3.2.1</a>.</p>
+</div>
+</div>
+<div id="ConModClssNit-4a" class="section level4" number="4.8.3.3">
+<h4><span class="header-section-number">4.8.3.3</span> Constituent model class: Nitrogen</h4>
+<div id="ConModAmmNit-5a" class="section level5" number="4.8.3.3.1">
+<h5><span class="header-section-number">4.8.3.3.1</span> Constituent model: AmmoniumNitrate</h5>
+<p>The commands for this constituent model are described in Section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.</p>
+</div>
+</div>
+<div id="ConModClssPhs-4a" class="section level4" number="4.8.3.4">
+<h4><span class="header-section-number">4.8.3.4</span> Constituent model class: Phosphorus</h4>
+<div id="ConModFRPhs-5a" class="section level5" number="4.8.3.4.1">
+<h5><span class="header-section-number">4.8.3.4.1</span> Constituent model: FRPhs</h5>
+<p>The commands for this constituent model are described in Section <a href="SimulationConstruction-1.html#ConModFRPhs-5">4.7.3.4.1</a>.</p>
+</div>
+<div id="ConModFRPhsAds-5a" class="section level5" number="4.8.3.4.2">
+<h5><span class="header-section-number">4.8.3.4.2</span> Constituent model: FRPhsads</h5>
+<p>The commands for this constituent model are described in Section <a href="SimulationConstruction-1.html#ConModFRPhsAds-5">4.7.3.4.2</a>.</p>
+</div>
+</div>
+<div id="ConModClssPhy-4a" class="section level4" number="4.8.3.5">
+<h4><span class="header-section-number">4.8.3.5</span> Constituent model class: Phytoplankton</h4>
+<div id="ConModPhyBas-5a" class="section level5" number="4.8.3.5.1">
+<h5><span class="header-section-number">4.8.3.5.1</span> Constituent model: Basic</h5>
+<p>The commands for this constituent model are described in Section <a href="SimulationConstruction-1.html#ConModPhyBas-5">4.7.3.5.1</a>.</p>
+</div>
+<div id="ConModPhyAdv-5a" class="section level5" number="4.8.3.5.2">
+<h5><span class="header-section-number">4.8.3.5.2</span> Constituent model: Advanced</h5>
+<p>The commands for this constituent model are described in Section <a href="SimulationConstruction-1.html#ConModPhyAdv-5">4.7.3.5.2</a>.</p>
+</div>
+</div>
+<div id="ConModClssOrgs-4" class="section level4" number="4.8.3.6">
+<h4><span class="header-section-number">4.8.3.6</span> Constituent model class: Organics</h4>
+<div id="ConModOrgLab-5" class="section level5" number="4.8.3.6.1">
+<h5><span class="header-section-number">4.8.3.6.1</span> Constituent model: Labile</h5>
+</div>
+<div id="ConModOrgLRef-5" class="section level5" number="4.8.3.6.2">
+<h5><span class="header-section-number">4.8.3.6.2</span> Constituent model: Refractory</h5>
+</div>
+</div>
+</div>
+<div id="MatSpecsOrg-3" class="section level3" number="4.8.4">
+<h3><span class="header-section-number">4.8.4</span> Part 3: Material specification</h3>
+<p>Oxygen, silicate, ammonium, nitrate FRP, dissolved organic carbon, dissolved organic nitrogen and dissolved organic phosphorus benthic fluxes are specified within both default and numbered material blocks as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQOxyBenFlx"><span class="math inline">\(\blockindent\)</span> oxygen flux ==</a> <a href="AppParams.html#WQParFsedO2"><span class="math inline">\(F_{sed}^{O_2}\)</span></a> <br> <br>
+<a href="AppCommands.html#WQSilBenFlx"><span class="math inline">\(\blockindent\)</span> silicate flux ==</a> <a href="#WQParFsedSil"><span class="math inline">\(F_{sed}^{sil}\)</span></a> <br> <br>
+<a href="AppCommands.html#WQAmmBenFlx"><span class="math inline">\(\blockindent\)</span> ammonium flux ==</a> <a href="AppParams.html#WQParFsedAmm"><span class="math inline">\(F_{sed}^{NH_4}\)</span></a> <br> <br>
+<a href="AppCommands.html#WQNitBenFlx"><span class="math inline">\(\blockindent\)</span> nitrate flux ==</a> <a href="AppParams.html#WQParFsedNit"><span class="math inline">\(F_{sed}^{NO_3}\)</span></a> <br> <br>
+<a href="AppCommands.html#WQFRPBenFlx"><span class="math inline">\(\blockindent\)</span> FRP flux ==</a> <a href="AppParams.html#WQParFsedFRP"><span class="math inline">\(F_{sed}^{FRP}\)</span></a> <br> <br>
+<a href="#WQOrgCBenFlx"><span class="math inline">\(\blockindent\)</span> org c flux ==</a> <a href="#WQParFsedOrgC"><span class="math inline">\(F_{sed}^{OrgC}\)</span></a> <br> <br>
+<a href="#WQOrgNBenFlx"><span class="math inline">\(\blockindent\)</span> org n flux ==</a> <a href="#WQParFsedOrgN"><span class="math inline">\(F_{sed}^{OrgN}\)</span></a> <br> <br>
+<a href="#WQOrgPBenFlx"><span class="math inline">\(\blockindent\)</span> org p flux ==</a> <a href="#WQParFsedOrgP"><span class="math inline">\(F_{sed}^{OrgP}\)</span></a></p>
+</blockquote>
+<p>No adsorbed FRP or phytoplankton fluxes are required.</p>
+</div>
+<div id="ConOrdOrg-3" class="section level3" number="4.8.5">
+<h3><span class="header-section-number">4.8.5</span> Constituent ordering</h3>
+
+</div>
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ProcessDescriptions-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="AppSyntax.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["TUFLOWFV_WQM_Manual.pdf", "TUFLOWFV_WQM_Manual.epub"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

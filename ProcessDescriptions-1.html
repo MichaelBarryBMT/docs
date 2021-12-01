@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 3 Process Descriptions | TUFLOW FV Water Quality Module User Manual</title>
+  <meta name="description" content="User manual" />
+  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 3 Process Descriptions | TUFLOW FV Water Quality Module User Manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="User manual" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 3 Process Descriptions | TUFLOW FV Water Quality Module User Manual" />
+  
+  <meta name="twitter:description" content="User manual" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Architecture-1.html"/>
+<link rel="next" href="SimulationConstruction-1.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.4.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<link href="libs/vis-4.20.1/vis.css" rel="stylesheet" />
+<script src="libs/vis-4.20.1/vis.min.js"></script>
+<script src="libs/visNetwork-binding-2.0.9/visNetwork.js"></script>
+\usepackage{booktabs}
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/toc.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://www.tuflow.com"><img src="images/tuflow.png" style="width:246px;height:68px;"></a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#section"></a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#about-this-manual"><i class="fa fa-check"></i>About this manual</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#how-to-use-this-manual"><i class="fa fa-check"></i>How to use this manual</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#navigation"><i class="fa fa-check"></i>Navigation</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#searching"><i class="fa fa-check"></i>Searching</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#tables"><i class="fa fa-check"></i>Tables</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#figures"><i class="fa fa-check"></i>Figures</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#networks"><i class="fa fa-check"></i>Networks</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#commands"><i class="fa fa-check"></i>Commands</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#parameter-notation"><i class="fa fa-check"></i>Parameter notation</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#concentration-nomenclature"><i class="fa fa-check"></i>Concentration nomenclature</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#feedback"><i class="fa fa-check"></i>Feedback</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="Overview-1.html"><a href="Overview-1.html"><i class="fa fa-check"></i><b>1</b> Overview</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="Overview-1.html"><a href="Overview-1.html#OverviewContext-2"><i class="fa fa-check"></i><b>1.1</b> Context</a></li>
+<li class="chapter" data-level="1.2" data-path="Overview-1.html"><a href="Overview-1.html#Features-2"><i class="fa fa-check"></i><b>1.2</b> Features</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="Overview-1.html"><a href="Overview-1.html#Usability-3"><i class="fa fa-check"></i><b>1.2.1</b> Usability</a></li>
+<li class="chapter" data-level="1.2.2" data-path="Overview-1.html"><a href="Overview-1.html#CnsFeats-3"><i class="fa fa-check"></i><b>1.2.2</b> Constituents and processes</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="Overview-1.html"><a href="Overview-1.html#Science-2"><i class="fa fa-check"></i><b>1.3</b> Science</a></li>
+<li class="chapter" data-level="1.4" data-path="Overview-1.html"><a href="Overview-1.html#Support-2"><i class="fa fa-check"></i><b>1.4</b> Support</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="Architecture-1.html"><a href="Architecture-1.html"><i class="fa fa-check"></i><b>2</b> Architecture</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="Architecture-1.html"><a href="Architecture-1.html#ArchitectureContext-2"><i class="fa fa-check"></i><b>2.1</b> Context</a></li>
+<li class="chapter" data-level="2.2" data-path="Architecture-1.html"><a href="Architecture-1.html#SimulationTiers-2"><i class="fa fa-check"></i><b>2.2</b> Simulation Tiers</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="Architecture-1.html"><a href="Architecture-1.html#SimulationClass-3"><i class="fa fa-check"></i><b>2.2.1</b> Tier 1: Simulation Class</a></li>
+<li class="chapter" data-level="2.2.2" data-path="Architecture-1.html"><a href="Architecture-1.html#ConstituentModel-3"><i class="fa fa-check"></i><b>2.2.2</b> Tier 2: Model Class</a></li>
+<li class="chapter" data-level="2.2.3" data-path="Architecture-1.html"><a href="Architecture-1.html#ConMod-3"><i class="fa fa-check"></i><b>2.2.3</b> Tier 3: Constituent Model</a></li>
+<li class="chapter" data-level="2.2.4" data-path="Architecture-1.html"><a href="Architecture-1.html#ComputedVariableParameters-3"><i class="fa fa-check"></i><b>2.2.4</b> Tier 4: Computed Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="Architecture-1.html"><a href="Architecture-1.html#ArchitectureLinkageWithFV-2"><i class="fa fa-check"></i><b>2.3</b> Linkage with TUFLOW FV</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="Architecture-1.html"><a href="Architecture-1.html#ArchProc-3"><i class="fa fa-check"></i><b>2.3.1</b> Process</a></li>
+<li class="chapter" data-level="2.3.2" data-path="Architecture-1.html"><a href="Architecture-1.html#ProcessDescriptionsLight-3"><i class="fa fa-check"></i><b>2.3.2</b> Treatment of light</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="Architecture-1.html"><a href="Architecture-1.html#ArchAPI"><i class="fa fa-check"></i><b>2.4</b> Linkage with Other Hydrodynamic Models</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html"><i class="fa fa-check"></i><b>3</b> Process Descriptions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#SimProcSimuClDO-2"><i class="fa fa-check"></i><b>3.1</b> Simulation Class: DO</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#DOOverview-3"><i class="fa fa-check"></i><b>3.1.1</b> Overview</a></li>
+<li class="chapter" data-level="3.1.2" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModDODO-3"><i class="fa fa-check"></i><b>3.1.2</b> Model Class: Oxygen</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#SimProcSimuClInorg-2"><i class="fa fa-check"></i><b>3.2</b> Simulation Class: Inorganics</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#InorgOverview-3"><i class="fa fa-check"></i><b>3.2.1</b> Overview</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgDO-3"><i class="fa fa-check"></i><b>3.2.2</b> Model Class: Oxygen</a></li>
+<li class="chapter" data-level="3.2.3" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgSi-3"><i class="fa fa-check"></i><b>3.2.3</b> Model Class: Silicate</a></li>
+<li class="chapter" data-level="3.2.4" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgN-3"><i class="fa fa-check"></i><b>3.2.4</b> Model Class: Inorganic nitrogen</a></li>
+<li class="chapter" data-level="3.2.5" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgP-3"><i class="fa fa-check"></i><b>3.2.5</b> Model Class: Inorganic phosphorus</a></li>
+<li class="chapter" data-level="3.2.6" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgPhy-3"><i class="fa fa-check"></i><b>3.2.6</b> Model Class: Phytoplankton</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#SimProcSimuClOrg-2"><i class="fa fa-check"></i><b>3.3</b> Simulation Class: Organics</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#OrgOverview-3"><i class="fa fa-check"></i><b>3.3.1</b> Overview</a></li>
+<li class="chapter" data-level="3.3.2" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgDO-3"><i class="fa fa-check"></i><b>3.3.2</b> Constituent Model Class: Oxygen</a></li>
+<li class="chapter" data-level="3.3.3" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgSi-3"><i class="fa fa-check"></i><b>3.3.3</b> Constituent Model Class: Silicate</a></li>
+<li class="chapter" data-level="3.3.4" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgN-3"><i class="fa fa-check"></i><b>3.3.4</b> Constituent Model Class: Nitrogen</a></li>
+<li class="chapter" data-level="3.3.5" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgP-3"><i class="fa fa-check"></i><b>3.3.5</b> Constituent Model Class: Phosphorus</a></li>
+<li class="chapter" data-level="3.3.6" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgOrg-3"><i class="fa fa-check"></i><b>3.3.6</b> Constituent Model Class: Organics</a></li>
+<li class="chapter" data-level="3.3.7" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgPhy-3"><i class="fa fa-check"></i><b>3.3.7</b> Constituent Model Class: Phytoplankton</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html"><i class="fa fa-check"></i><b>4</b> Simulation Construction</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimulationConstructionContext-2"><i class="fa fa-check"></i><b>4.1</b> Context</a></li>
+<li class="chapter" data-level="4.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimUnits-2"><i class="fa fa-check"></i><b>4.2</b> Units</a></li>
+<li class="chapter" data-level="4.3" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#TFVGeneral-2"><i class="fa fa-check"></i><b>4.3</b> General arrangement</a></li>
+<li class="chapter" data-level="4.4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#TFVCommands-2"><i class="fa fa-check"></i><b>4.4</b> TUFLOW FV control file commands</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMActivation-3"><i class="fa fa-check"></i><b>4.4.1</b> WQM activation</a></li>
+<li class="chapter" data-level="4.4.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#InitBCCond-3"><i class="fa fa-check"></i><b>4.4.2</b> Initial and boundary conditions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQctrlfil-2"><i class="fa fa-check"></i><b>4.5</b> Water quality control file commands</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimCtrls-3"><i class="fa fa-check"></i><b>4.5.1</b> Part 1: Simulation controls</a></li>
+<li class="chapter" data-level="4.5.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ConModSttngs-3"><i class="fa fa-check"></i><b>4.5.2</b> Part 2: Constituent model settings</a></li>
+<li class="chapter" data-level="4.5.3" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#MatSpecs-3"><i class="fa fa-check"></i><b>4.5.3</b> Part 3: Material specifications</a></li>
+<li class="chapter" data-level="4.5.4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimSetSum-2"><i class="fa fa-check"></i><b>4.5.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimSetSimClDO-2"><i class="fa fa-check"></i><b>4.6</b> Simulation Class: DO</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#PrereqDO-3"><i class="fa fa-check"></i><b>4.6.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="4.6.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimCtrlsDO-3"><i class="fa fa-check"></i><b>4.6.2</b> Part 1: Simulation specification</a></li>
+<li class="chapter" data-level="4.6.3" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ConModSttngsDO-3"><i class="fa fa-check"></i><b>4.6.3</b> Part 2: Constituent model specification</a></li>
+<li class="chapter" data-level="4.6.4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#MatSpecsDO-3"><i class="fa fa-check"></i><b>4.6.4</b> Part 3: Material specification</a></li>
+<li class="chapter" data-level="4.6.5" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ConOrdDO-3"><i class="fa fa-check"></i><b>4.6.5</b> Constituent ordering</a></li>
+<li class="chapter" data-level="4.6.6" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ExampleDO"><i class="fa fa-check"></i><b>4.6.6</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimSetSimClInorg-2"><i class="fa fa-check"></i><b>4.7</b> Simulation Class: Inorganics</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#PrereqInorg-3"><i class="fa fa-check"></i><b>4.7.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="4.7.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimCtrlsInorg-3"><i class="fa fa-check"></i><b>4.7.2</b> Part 1: Simulation specification</a></li>
+<li class="chapter" data-level="4.7.3" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ConModSttngsInorg-3"><i class="fa fa-check"></i><b>4.7.3</b> Part 2: Constituent model specification</a></li>
+<li class="chapter" data-level="4.7.4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#MatSpecsInorg-3"><i class="fa fa-check"></i><b>4.7.4</b> Part 3: Material specification</a></li>
+<li class="chapter" data-level="4.7.5" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ConOrdInorg-3"><i class="fa fa-check"></i><b>4.7.5</b> Constituent ordering</a></li>
+<li class="chapter" data-level="4.7.6" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ExampleInorg"><i class="fa fa-check"></i><b>4.7.6</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimSetSimClOrg-2"><i class="fa fa-check"></i><b>4.8</b> Simulation Class: Organics</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#PrereqOrg-3"><i class="fa fa-check"></i><b>4.8.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="4.8.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimCtrlsOrg-3"><i class="fa fa-check"></i><b>4.8.2</b> Part 1: Simulation specification</a></li>
+<li class="chapter" data-level="4.8.3" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ConModSttngsOrg-3"><i class="fa fa-check"></i><b>4.8.3</b> Part 2: Constituent model specification</a></li>
+<li class="chapter" data-level="4.8.4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#MatSpecsOrg-3"><i class="fa fa-check"></i><b>4.8.4</b> Part 3: Material specification</a></li>
+<li class="chapter" data-level="4.8.5" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ConOrdOrg-3"><i class="fa fa-check"></i><b>4.8.5</b> Constituent ordering</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="AppSyntax.html"><a href="AppSyntax.html"><i class="fa fa-check"></i><b>A</b> Syntax of command descriptions</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="AppSyntax.html"><a href="AppSyntax.html#Appcmds"><i class="fa fa-check"></i><b>A.1</b> Commands</a></li>
+<li class="chapter" data-level="A.2" data-path="AppSyntax.html"><a href="AppSyntax.html#Appargmts"><i class="fa fa-check"></i><b>A.2</b> Arguments</a></li>
+<li class="chapter" data-level="A.3" data-path="AppSyntax.html"><a href="AppSyntax.html#Appdflts"><i class="fa fa-check"></i><b>A.3</b> Defaults</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="AppCommands.html"><a href="AppCommands.html"><i class="fa fa-check"></i><b>B</b> Commands</a></li>
+<li class="chapter" data-level="C" data-path="AppConstits.html"><a href="AppConstits.html"><i class="fa fa-check"></i><b>C</b> Constituents</a></li>
+<li class="chapter" data-level="D" data-path="AppProcesses.html"><a href="AppProcesses.html"><i class="fa fa-check"></i><b>D</b> Process Equations</a>
+<ul>
+<li class="chapter" data-level="D.1" data-path="AppProcesses.html"><a href="AppProcesses.html#AppDemoModel"><i class="fa fa-check"></i><b>D.1</b> Demonstration model</a></li>
+<li class="chapter" data-level="D.2" data-path="AppProcesses.html"><a href="AppProcesses.html#AppO"><i class="fa fa-check"></i><b>D.2</b> Oxygen</a>
+<ul>
+<li class="chapter" data-level="D.2.1" data-path="AppProcesses.html"><a href="AppProcesses.html#AtmosphericAeration-3"><i class="fa fa-check"></i><b>D.2.1</b> Atmospheric aeration</a></li>
+<li class="chapter" data-level="D.2.2" data-path="AppProcesses.html"><a href="AppProcesses.html#SedOxyCons-3"><i class="fa fa-check"></i><b>D.2.2</b> Sediment oxygen flux</a></li>
+</ul></li>
+<li class="chapter" data-level="D.3" data-path="AppProcesses.html"><a href="AppProcesses.html#AppSil"><i class="fa fa-check"></i><b>D.3</b> Silicate</a>
+<ul>
+<li class="chapter" data-level="D.3.1" data-path="AppProcesses.html"><a href="AppProcesses.html#SedSilProd-3"><i class="fa fa-check"></i><b>D.3.1</b> Sediment silicate flux</a></li>
+</ul></li>
+<li class="chapter" data-level="D.4" data-path="AppProcesses.html"><a href="AppProcesses.html#AppIN"><i class="fa fa-check"></i><b>D.4</b> Inorganic nitrogen</a>
+<ul>
+<li class="chapter" data-level="D.4.1" data-path="AppProcesses.html"><a href="AppProcesses.html#SedAmmNitProd-3"><i class="fa fa-check"></i><b>D.4.1</b> Sediment ammonium and nitrate flux</a></li>
+<li class="chapter" data-level="D.4.2" data-path="AppProcesses.html"><a href="AppProcesses.html#Nitrif-3"><i class="fa fa-check"></i><b>D.4.2</b> Nitrification</a></li>
+<li class="chapter" data-level="D.4.3" data-path="AppProcesses.html"><a href="AppProcesses.html#Denitrif-3"><i class="fa fa-check"></i><b>D.4.3</b> Denitrification</a></li>
+<li class="chapter" data-level="D.4.4" data-path="AppProcesses.html"><a href="AppProcesses.html#WetDepIN-3"><i class="fa fa-check"></i><b>D.4.4</b> Wet deposition of inorganic nitrogen</a></li>
+<li class="chapter" data-level="D.4.5" data-path="AppProcesses.html"><a href="AppProcesses.html#DryDepIN-3"><i class="fa fa-check"></i><b>D.4.5</b> Dry deposition of inorganic nitrogen</a></li>
+</ul></li>
+<li class="chapter" data-level="D.5" data-path="AppProcesses.html"><a href="AppProcesses.html#AppIP"><i class="fa fa-check"></i><b>D.5</b> Inorganic phosphorus</a>
+<ul>
+<li class="chapter" data-level="D.5.1" data-path="AppProcesses.html"><a href="AppProcesses.html#SedFRPhsProd-3"><i class="fa fa-check"></i><b>D.5.1</b> Sediment FRP flux</a></li>
+<li class="chapter" data-level="D.5.2" data-path="AppProcesses.html"><a href="AppProcesses.html#WetDepIP-3"><i class="fa fa-check"></i><b>D.5.2</b> Wet deposition of inorganic phosphorus</a></li>
+<li class="chapter" data-level="D.5.3" data-path="AppProcesses.html"><a href="AppProcesses.html#DryDepIP-3"><i class="fa fa-check"></i><b>D.5.3</b> Dry deposition of inorganic phosphorus</a></li>
+<li class="chapter" data-level="D.5.4" data-path="AppProcesses.html"><a href="AppProcesses.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>D.5.4</b> Adsorption and Desorption</a></li>
+<li class="chapter" data-level="D.5.5" data-path="AppProcesses.html"><a href="AppProcesses.html#SettlingIP-3"><i class="fa fa-check"></i><b>D.5.5</b> Settling</a></li>
+</ul></li>
+<li class="chapter" data-level="D.6" data-path="AppProcesses.html"><a href="AppProcesses.html#AppPhy"><i class="fa fa-check"></i><b>D.6</b> Phytoplankton</a>
+<ul>
+<li class="chapter" data-level="D.6.1" data-path="AppProcesses.html"><a href="AppProcesses.html#PhyGeneral-3"><i class="fa fa-check"></i><b>D.6.1</b> General</a></li>
+<li class="chapter" data-level="D.6.2" data-path="AppProcesses.html"><a href="AppProcesses.html#PhyUnits-3"><i class="fa fa-check"></i><b>D.6.2</b> Units</a></li>
+<li class="chapter" data-level="D.6.3" data-path="AppProcesses.html"><a href="AppProcesses.html#PhyRates-3"><i class="fa fa-check"></i><b>D.6.3</b> Biomass determining rates</a></li>
+<li class="chapter" data-level="D.6.4" data-path="AppProcesses.html"><a href="AppProcesses.html#PhyLimits-3"><i class="fa fa-check"></i><b>D.6.4</b> Limitation functions</a></li>
+<li class="chapter" data-level="D.6.5" data-path="AppProcesses.html"><a href="AppProcesses.html#PhyUptake-3"><i class="fa fa-check"></i><b>D.6.5</b> Uptake</a></li>
+<li class="chapter" data-level="D.6.6" data-path="AppProcesses.html"><a href="AppProcesses.html#PhyLosses-3"><i class="fa fa-check"></i><b>D.6.6</b> Losses</a></li>
+<li class="chapter" data-level="D.6.7" data-path="AppProcesses.html"><a href="AppProcesses.html#PhySelfShad-3"><i class="fa fa-check"></i><b>D.6.7</b> Self shading</a></li>
+<li class="chapter" data-level="D.6.8" data-path="AppProcesses.html"><a href="AppProcesses.html#PhyCellDens-3"><i class="fa fa-check"></i><b>D.6.8</b> Cell density</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="E" data-path="AppParams.html"><a href="AppParams.html"><i class="fa fa-check"></i><b>E</b> Parameters</a></li>
+<li class="chapter" data-level="F" data-path="AppCompQuans.html"><a href="AppCompQuans.html"><i class="fa fa-check"></i><b>F</b> Computed quantities</a></li>
+<li class="chapter" data-level="G" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>G</b> Mass Balance</a></li>
+<li class="divider"></li>
+<li><a href="https://www.tuflow.com"><img src="images/tuflow.png" style="width:246px;height:68px;"></a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><h0 style="color:rgb(0,85,129);">TUFLOW FV Water Quality Module User Manual</h0></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ProcessDescriptions-1" class="section level1" number="3">
+<h1><span class="header-section-number">Section 3</span> Process Descriptions</h1>
+<p>Previous chapters have presented an overview of the architecture and capabilities of the WQM, together with a summary of its interactions with TUFLOW FV. This chapter presents the details of each simulation class (see Table <a href="Architecture-1.html#tab:tab-SimClasses">2.1</a>) in terms of its available model classes, the constituent models within those model classes, and the associated computed variables.</p>
+<p>Process descriptions are listed in this section primarily by name in tables and/or networks, without inclusion of detail. This is deliberate. For clarity, equations supporting all process descriptions have been provided and explained in Appendix <a href="AppProcesses.html#AppProcesses">D</a>, and every process tabulated in this section has been hyperlinked to the relevant section in that Appendix. Tabular process hyperlinks are colour coded as <bmtgreen>sources</bmtgreen> or <bmtpink>sinks</bmtpink> relative to each computed variable, where applicable.</p>
+<p>Potential interactions of a computed variable with higher order computed variables (for example oxygen with phytoplankton) are included in this section only in descriptions of higher order variables. Where a computed variable’s process is modified by a lower order computed variable (e.g. silicate benthic flux modified by oxygen), then the lower order computed variable name is shown diagrammatically in a contrasting style overlying relevant process arrows in network diagrams. Computed variables listed in the tables are hyperlinked to basic molecular information in Appendix <a href="AppConstits.html#AppConstits">C</a>.</p>
+<p>The manual’s introduction should be reviewed for guidance on the use of interactive components deployed in this section.</p>
+<div id="SimProcSimuClDO-2" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Simulation Class: DO</h2>
+<div id="DOOverview-3" class="section level3" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Overview</h3>
+<p>The intent of this simulation class is that it provide a relatively simple entry point to commence water quality modelling. There are many applications for this class. For example it might be used to examine basic oxygen dynamics across seasons in a water supply reservoir or constructed urban lake, or the potential impacts of dense desalination plant return waters on local coastal sediment oxygenation processes.</p>
+<p>This simulation class includes only the oxygen model class, but given oxygen’s central role in environmental processes, it provides both a solid foundation for fundamental environmental investigations, and a platform from which to expand to more advanced simulation classes.</p>
+</div>
+<div id="ConModDODO-3" class="section level3" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Model Class: Oxygen</h3>
+<p>The following constituent models are available to select from within the oxygen model class.</p>
+<div id="ConModDOO2-4" class="section level4" number="3.1.2.1">
+<h4><span class="header-section-number">3.1.2.1</span> Constituent Model: O2</h4>
+<p>The constituent model code and associated computed variables, processes and potentially interacting simulated quantities are provided in Figure <a href="ProcessDescriptions-1.html#fig:fig-NtwkO2">3.1</a> and Table <a href="ProcessDescriptions-1.html#tab:tab-ConModDO">3.1</a>. <span class="math inline">\(\newcommand{\blockindent}{\hspace{0.5cm}}\)</span></p>
+<center>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-NtwkO2"></span>
+<img src="images/NetworkFigureCaptionBlank.png" alt="**Constituent model: DO**" width="1%" />
+<p class="caption">
+Figure 3.1: <strong>Constituent model: DO</strong>
+</p>
+</div>
+</center>
+<div id="htmlwidget-a345ba770827cbe92e5c" style="width:100%;height:480px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a345ba770827cbe92e5c">{"x":{"nodes":{"id":[1,2,3],"nodename":["Dissolved oxygen","Sediment flux","Atmospheric aeration"],"nodetype":["Computed variable","Sink","Source"],"label":["Dissolved oxygen","Sediment flux","Atmospheric aeration"],"color":["#005581","#E20177","#1ABDC9"],"font.color":["#005581","#E20177","#1ABDC9"],"shape":["square","dot","dot"],"group":["Computed variable","Sink","Source"]},"edges":{"from":["1","3"],"to":["2","1"],"origin":["Dissolved oxygen","Atmospheric aeration"],"destination":["Sediment flux","Dissolved oxygen"],"flux":["sink","source"],"label":["DO",null],"color":["#E20177","#1ABDC9"],"font.color":["#D8D0C7","#D8D0C7"],"font.size":[10,10]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","shadow":{"enabled":true,"size":10}},"manipulation":{"enabled":false},"edges":{"arrows":"to"},"interaction":{"hover":true},"autoResize":false,"clickToUse":true,"layout":{"hierarchical":{"enabled":true,"sortMethod":"directed"}}},"groups":["Computed variable","Sink","Source"],"width":"100%","height":null,"idselection":{"enabled":true,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);","highlight":{"enabled":true,"hoverNearest":true,"degree":1,"algorithm":"all","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":false,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"}},"evals":[],"jsHooks":[]}</script>
+<table>
+<caption>
+<span id="tab:tab-ConModDO">Table 3.1: </span><strong>Constituent model properties: O2</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Computed Variables
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Units
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Processes
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Interacting Quantities
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppDO">Dissolved<br>Oxygen</a>
+</td>
+<td style="text-align:left;">
+mg/L or mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#AtmosphericAeration-3"><bmtgreen>Atmospheric aeration</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Wind speed<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#SedOxyCons-3"><bmtpink>Sediment flux</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Sediment properties
+</td>
+</tr>
+</tbody>
+</table>
+<p>In this relatively simple model, the only process requiring parameterisation is the sediment flux of oxygen.</p>
+</div>
+</div>
+</div>
+<div id="SimProcSimuClInorg-2" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Simulation Class: Inorganics</h2>
+<div id="InorgOverview-3" class="section level3" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Overview</h3>
+<p>The intent of this simulation class is that it provide a framework for simulating typical water quality conditions where organic matter does not play a significant role in ecosystem processes. For example it might be used to examine basic inorganic nutrient processing in nearshore coastal environments that include relatively unimpacted sandy bed conditions, or mine voids that receive little catchment inflow. This simulation class could equally be applied to smaller, well flushed estuaries that receive relatively little catchment derived organic matter, or to basic studies of lakes and water supply reservoirs. The latter cases (amongst others) might also use this simulation class as a stepping stone towards subsequent and more detailed simulations that include organic matter cycling. This would simply require upgrade from this simulation class to the organics simulation class.</p>
+<p>This simulation class includes the oxygen, silicate, inorganic nitrogen, inorganic phosphorus and phytoplankton model classes.</p>
+</div>
+<div id="ConModInorgDO-3" class="section level3" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Model Class: Oxygen</h3>
+<p>This model class is the same as that described in Section <a href="ProcessDescriptions-1.html#ConModDODO-3">3.1.2</a>.</p>
+</div>
+<div id="ConModInorgSi-3" class="section level3" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Model Class: Silicate</h3>
+<p>The following constituent models are available to select from within the silicate model class.</p>
+<div id="ConModSiSi-4" class="section level4" number="3.2.3.1">
+<h4><span class="header-section-number">3.2.3.1</span> Constituent Model: Si</h4>
+<p>The constituent model code and associated variables, processes and potentially interacting simulated quantities are provided in Figure <a href="ProcessDescriptions-1.html#fig:fig-NtwkSi">3.2</a> and Table <a href="ProcessDescriptions-1.html#tab:tab-ConModSi">3.2</a>.</p>
+<center>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-NtwkSi"></span>
+<img src="images/NetworkFigureCaptionBlank.png" alt="**Constituent model: Si**" width="1%" />
+<p class="caption">
+Figure 3.2: <strong>Constituent model: Si</strong>
+</p>
+</div>
+</center>
+<div id="htmlwidget-c97c01f203f2a9116a6c" style="width:100%;height:480px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c97c01f203f2a9116a6c">{"x":{"nodes":{"id":[1,2],"nodename":["Silicate","Sediment flux"],"nodetype":["Computed variable","Source"],"label":["Silicate","Sediment flux"],"color":["#005581","#1ABDC9"],"font.color":["#005581","#1ABDC9"],"shape":["square","dot"],"group":["Computed variable","Source"]},"edges":{"from":["2"],"to":["1"],"origin":["Sediment flux"],"destination":["Silicate"],"flux":["source"],"label":["DO"],"color":["#1ABDC9"],"font.color":["#D8D0C7"],"font.size":[10]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","shadow":{"enabled":true,"size":10}},"manipulation":{"enabled":false},"edges":{"arrows":"to"},"interaction":{"hover":true},"autoResize":false,"clickToUse":true,"layout":{"hierarchical":{"enabled":true,"direction":"UD"}}},"groups":["Computed variable","Source"],"width":"100%","height":null,"idselection":{"enabled":true,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);","highlight":{"enabled":true,"hoverNearest":true,"degree":1,"algorithm":"all","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":false,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"}},"evals":[],"jsHooks":[]}</script>
+<table>
+<caption>
+<span id="tab:tab-ConModSi">Table 3.2: </span><strong>Constituent model properties: Si</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Computed Variables
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Units
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Processes
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Interacting Quantities
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppSi">Silicate</a>
+</td>
+<td style="text-align:left;">
+mg/L or mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#SedSilProd-3"><bmtgreen>Sediment flux</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Sediment properties
+</td>
+</tr>
+</tbody>
+</table>
+<p>This is a relatively simple model, with the only process requiring parameterisation being the sediment flux of silicate. This can optionally be set to depend on overlying oxygen concentration.</p>
+</div>
+</div>
+<div id="ConModInorgN-3" class="section level3" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> Model Class: Inorganic nitrogen</h3>
+<p>The following constituent models are available to select from within the inorganic nitrogen model class.</p>
+<div id="ConModNAmmNit-4" class="section level4" number="3.2.4.1">
+<h4><span class="header-section-number">3.2.4.1</span> Constituent Model: AmmoniumNitrate</h4>
+<p>The constituent model code and associated variables, processes and potentially interacting simulated quantities are provided in Figure <a href="ProcessDescriptions-1.html#fig:fig-NtwkAmmNit">3.3</a> and Table <a href="ProcessDescriptions-1.html#tab:tab-ConModAmmNit">3.3</a>.</p>
+<center>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-NtwkAmmNit"></span>
+<img src="images/NetworkFigureCaptionBlank.png" alt="**Constituent model: AmmoniumNitrate**" width="1%" />
+<p class="caption">
+Figure 3.3: <strong>Constituent model: AmmoniumNitrate</strong>
+</p>
+</div>
+</center>
+<div id="htmlwidget-eb27b7e6bef6740c20a9" style="width:100%;height:480px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-eb27b7e6bef6740c20a9">{"x":{"nodes":{"id":[1,2,3,4,5,6,7],"nodename":["Ammonium","Nitrate","Wet\r\ndeposition","Dry\r\ndeposition","Sediment flux","Nitrification","Denitrification"],"nodetype":["Computed variable","Computed variable","Source","Source","Source","Both","Sink"],"level":[2,2,1,1,3,2,2],"label":["Ammonium","Nitrate","Wet\r\ndeposition","Dry\r\ndeposition","Sediment flux","Nitrification","Denitrification"],"color.background":["#005581","#005581","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#E20177"],"color.border":["#005581","#005581","#1ABDC9","#1ABDC9","#1ABDC9","#E20177","#E20177"],"font.color":["#005581","#005581","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#E20177"],"shape":["square","square","dot","dot","dot","dot","dot"],"group":["Computed variable","Computed variable","Source","Source","Source","Both","Sink"],"x":[-0.646689359777615,0.0832883604915984,0.37173856714508,-0.382566621969393,-1,-0.317049495332206,1],"y":[0.211288772739262,-0.176250815391748,0.70689866633848,1,-0.530073279323216,-1,-0.662926012929241]},"edges":{"from":["3","4","3","4","5","5","1","6","2"],"to":["1","1","2","2","1","2","6","2","7"],"origin":["Wet\r\ndeposition","Dry\r\ndeposition","Wet\r\ndeposition","Dry\r\ndeposition","Sediment flux","Sediment flux","Ammonium","Nitrification","Nitrate"],"destination":["Ammonium","Ammonium","Nitrate","Nitrate","Ammonium","Nitrate","Nitrification","Nitrate","Denitrification"],"flux":["source","source","source","source","source","source","sink","source","sink"],"label":[null,null,null,null,"DO","DO","DO","DO","DO"],"color":["#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#E20177","#1ABDC9","#E20177"],"font.color":["#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7"],"font.size":[10,10,10,10,10,10,10,10,10]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false,"shadow":{"enabled":true,"size":10}},"manipulation":{"enabled":false},"edges":{"smooth":false,"arrows":"to"},"physics":{"stabilization":false},"layout":{"randomSeed":3,"hierarchical":{"enabled":true,"blockShifting":true,"edgeMinimization":false}},"interaction":{"hover":true},"autoResize":true,"clickToUse":true},"groups":["Computed variable","Source","Both","Sink"],"width":"100%","height":null,"idselection":{"enabled":true,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","igraphlayout":{"type":"square"},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);","highlight":{"enabled":true,"hoverNearest":true,"degree":1,"algorithm":"all","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":false,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"}},"evals":[],"jsHooks":[]}</script>
+<table>
+<caption>
+<span id="tab:tab-ConModAmmNit">Table 3.3: </span><strong>Constituent model properties: AmmoniumNitrate</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Computed Variables
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Units
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Processes
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Interacting Quantities
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppAmm">Ammonium</a>
+</td>
+<td style="text-align:left;">
+mg/L or mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#SedAmmNitProd-3"><bmtgreen>Sediment flux</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Sediment properties
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#Nitrif-3"><bmtpink>Nitrification</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrification parameters<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#WetDepIN-3"><bmtgreen>Wet atmospheric deposition</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Rainfall
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#DryDepIN-3"><bmtgreen>Dry atmospheric deposition</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Atmospheric parameters
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppNit">Nitrate</a>
+</td>
+<td style="text-align:left;">
+mg/L or mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#SedAmmNitProd-3"><bmtgreen>Sediment flux</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Sediment properties
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#Nitrif-3"><bmtgreen>Nitrification</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrification parameters<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#Denitrif-3"><bmtpink>Denitrification</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Denitrification parameters<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#WetDepIN-3"><bmtgreen>Wet atmospheric deposition</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Rainfall
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#DryDepIN-3"><bmtgreen>Dry atmospheric deposition</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Atmospheric parameters
+</td>
+</tr>
+</tbody>
+</table>
+<p>This is a slightly more complex model than those described previously, and this reflects the complexity of nitrogenous environmental chemistry. In addition to specification of two computed variables and their respective sediment flux properties, rates and related parameters for nitrification and denitrification are also specifiable. By design, the library defaults for these processes are set to zero so that all processes are initially inactive. Users may activate these processes by specifying non-zero rate parameters.</p>
+<p>Whilst dissolved oxygen potentially modifies some processes described to this point (e.g. computed sediment flux rates), nitrification is the first of these processes that also potentially consumes dissolved oxygen. Specifically, if nitrification is simulated (i.e. non-zero rate parameters are specified) and allowed to include the effect of dissolved oxygen (the default), then dissolved oxygen concentrations are drawn down as the process operates.</p>
+<table>
+<caption>
+<span id="tab:tab-ConModANDO">Table 3.4: </span><strong>Complementary lower order computed variables: AmmoniumNitrate</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Computed Variables
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Units
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Processes
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Interacting Quantities
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppDO">Dissolved Oxygen</a>
+</td>
+<td style="text-align:left;">
+mg/L or mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#Nitrif-3"><bmtpink>Nitrification</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrification parameters<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium
+</td>
+</tr>
+</tbody>
+</table>
+<p>Other inorganic nitrogen processes are also available within the WQM, including anaerobic oxidation of ammonia and dissimilatory nitrate reduction to ammonium (DNRA), however these require the intermediate nitrogen computed variables noted in Appendix <a href="AppProcesses.html#Nitrif-3">D.4.2</a>. Contact <a href="mailto:support@tuflow.com" class="email">support@tuflow.com</a> for assistance.</p>
+</div>
+</div>
+<div id="ConModInorgP-3" class="section level3" number="3.2.5">
+<h3><span class="header-section-number">3.2.5</span> Model Class: Inorganic phosphorus</h3>
+<p>The following constituent models are available to select from within the phosphorus model class.</p>
+<div id="ConModFRPhs-4" class="section level4" number="3.2.5.1">
+<h4><span class="header-section-number">3.2.5.1</span> Constituent Model: FRPhs</h4>
+<p>The constituent model code and associated variables, processes and potentially interacting simulated quantities are provided in Figure <a href="ProcessDescriptions-1.html#fig:fig-NtwkFRPhs">3.4</a> and Table <a href="ProcessDescriptions-1.html#tab:tab-ConModFRPhs">3.5</a>.</p>
+<center>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-NtwkFRPhs"></span>
+<img src="images/NetworkFigureCaptionBlank.png" alt="**Constituent model: FRPhs**" width="1%" />
+<p class="caption">
+Figure 3.4: <strong>Constituent model: FRPhs</strong>
+</p>
+</div>
+</center>
+<div id="htmlwidget-8719f65b9f2e6a6a1891" style="width:100%;height:480px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8719f65b9f2e6a6a1891">{"x":{"nodes":{"id":[1,2,3],"nodename":["FRP","Wet\r\ndeposition","Sediment flux"],"nodetype":["Computed variable","Source","Source"],"level":[2,1,3],"label":["FRP","Wet\r\ndeposition","Sediment flux"],"color.background":["#005581","#1ABDC9","#1ABDC9"],"color.border":["#005581","#1ABDC9","#1ABDC9"],"font.color":["#005581","#1ABDC9","#1ABDC9"],"shape":["square","dot","dot"],"group":["Computed variable","Source","Source"],"x":[-5.41805762699354e-07,-1,1],"y":[-1.42190373919604e-08,1,-1]},"edges":{"from":["2","3"],"to":["1","1"],"origin":["Wet\r\ndeposition","Sediment flux"],"destination":["FRP","FRP"],"flux":["source","source"],"label":[null,"DO"],"color":["#1ABDC9","#1ABDC9"],"font.color":["#D8D0C7","#D8D0C7"],"font.size":[10,10]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false,"shadow":{"enabled":true,"size":10}},"manipulation":{"enabled":false},"edges":{"smooth":false,"arrows":"to"},"physics":{"stabilization":false},"layout":{"randomSeed":3,"hierarchical":{"enabled":true,"blockShifting":true,"edgeMinimization":false}},"interaction":{"hover":true},"autoResize":true,"clickToUse":true},"groups":["Computed variable","Source"],"width":"100%","height":null,"idselection":{"enabled":true,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","igraphlayout":{"type":"square"},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);","highlight":{"enabled":true,"hoverNearest":true,"degree":1,"algorithm":"all","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":false,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"}},"evals":[],"jsHooks":[]}</script>
+<table>
+<caption>
+<span id="tab:tab-ConModFRPhs">Table 3.5: </span><strong>Constituent model properties: FRPhs</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Computed Variables
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Units
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Processes
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Interacting Quantities
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppFRP">Free Reactive Phosphorus</a>
+</td>
+<td style="text-align:left;">
+mg/L or mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#SedFRPhsProd-3"><bmtgreen>Sediment flux</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Sediment properties
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#WetDepIP-3"><bmtgreen>Wet atmospheric deposition</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Rainfall
+</td>
+</tr>
+</tbody>
+</table>
+<p>This is a reltively simple constituent model, but one that is critical to the simulation of higher order computed variables such as phytoplankton.</p>
+</div>
+<div id="ConModFRPhsAds-4" class="section level4" number="3.2.5.2">
+<h4><span class="header-section-number">3.2.5.2</span> Constituent Model: FRPhsAds</h4>
+<p>The constituent model code and associated variables, processes and potentially interacting simulated quantities are provided in Figure <a href="ProcessDescriptions-1.html#fig:fig-NtwkFRPhsAds">3.5</a> and Table <a href="ProcessDescriptions-1.html#tab:tab-ConModFRPhsAds">3.6</a>.</p>
+<center>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-NtwkFRPhsAds"></span>
+<img src="images/NetworkFigureCaptionBlank.png" alt="**Constituent Model: FRPhsAds**" width="1%" />
+<p class="caption">
+Figure 3.5: <strong>Constituent Model: FRPhsAds</strong>
+</p>
+</div>
+</center>
+<div id="htmlwidget-d80fd0b39a133cea934d" style="width:100%;height:480px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d80fd0b39a133cea934d">{"x":{"nodes":{"id":[1,2,3,4,5,6,7,8],"nodename":["FRP","FRPAds","Wet\r\ndeposition","Dry\r\ndeposition","Sediment flux","Adsorption","Desorption","Settling"],"nodetype":["Computed variable","Computed variable","Source","Source","Source","Both","Both","Sink"],"level":[2,2,1,1,2,2,3,3],"label":["FRP","FRPAds","Wet\r\ndeposition","Dry\r\ndeposition","Sediment flux","Adsorption","Desorption","Settling"],"color.background":["#005581","#005581","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#E20177"],"color.border":["#005581","#005581","#1ABDC9","#1ABDC9","#1ABDC9","#E20177","#E20177","#E20177"],"font.color":["#005581","#005581","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#E20177"],"shape":["square","square","dot","dot","dot","dot","dot","dot"],"group":["Computed variable","Computed variable","Source","Source","Source","Both","Both","Sink"],"x":[-0.374637048437786,0.374637048437786,-0.34900406488248,1,-1,0.233632851958997,-0.233632851958997,0.34900406488248],"y":[0.38522060004364,-0.385220600043641,1,-0.387113627715965,0.387113627715965,0.219955891211016,-0.219955891211016,-1]},"edges":{"from":["3","4","5","7","2","1","6","2"],"to":["1","2","1","1","7","6","2","8"],"origin":["Wet\r\ndeposition","Dry\r\ndeposition","Sediment flux","Desorption","FRPAds","FRP","Adsorption","FRPAds"],"destination":["FRP","FRPAds","FRP","FRP","Desorption","Adsorption","FRPAds","Settling"],"flux":["source","source","source","source","sink","sink","source","sink"],"label":[null,null,"DO","TSS","TSS","TSS","TSS","TSS"],"color":["#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#E20177","#E20177","#1ABDC9","#E20177"],"font.color":["#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7"],"font.size":[10,10,10,10,10,10,10,10]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false,"shadow":{"enabled":true,"size":10}},"manipulation":{"enabled":false},"edges":{"smooth":false,"arrows":"to"},"physics":{"stabilization":false},"layout":{"hierarchical":{"enabled":true,"blockShifting":true,"edgeMinimization":false,"parentCentralization":false}},"interaction":{"hover":true},"autoResize":true,"clickToUse":true},"groups":["Computed variable","Source","Both","Sink"],"width":"100%","height":null,"idselection":{"enabled":true,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","igraphlayout":{"type":"square"},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);","highlight":{"enabled":true,"hoverNearest":true,"degree":1,"algorithm":"all","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":false,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"}},"evals":[],"jsHooks":[]}</script>
+<table>
+<caption>
+<span id="tab:tab-ConModFRPhsAds">Table 3.6: </span><strong>Constituent model properties: FRPhsAds</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Computed Variables
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Units
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Processes
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Interacting Quantities
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppFRP">Free Reactive Phosphorus</a>
+</td>
+<td style="text-align:left;">
+mg/L or mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#SedFRPhsProd-3"><bmtgreen>Sediment flux</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Sediment properties
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#WetDepIP-3"><bmtgreen>Wet atmospheric deposition</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Rainfall
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#FRPhsAdsDsp-3"><bmtpink>Adsorption</bmtpink> <black>and</black> <bmtgreen>desorption</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Total suspended solids<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Adorption parameters
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppFRPAds">Adsorbed Free Reactive Phosphorus</a>
+</td>
+<td style="text-align:left;">
+mg/L or mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#FRPhsAdsDsp-3"><bmtgreen>Adsorption</bmtgreen> <black>and</black> <bmtpink>desorption</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Total suspended solids<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Adorption parameters
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#SettlingIP-3"><bmtpink>Settling</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Total suspended solids<br><span class="math inline">\(\cdot\blockindent\)</span>Total suspended solids settling parameters
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#DryDepIP-3"><bmtgreen>Dry atmospheric deposition</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Atmospheric parameters
+</td>
+</tr>
+</tbody>
+</table>
+<p>In order for this constituent model to be used, the TUFLOW FV Sediment Transport module (STM) must be activated to simulate total suspended sediment. A WQM simulation will not start if the TUFLOW STM is not activated. The WQM does not support simulation of suspended sediment in its own right, but does rely on TUFLOW FV to provide this information at each water quality timestep. In order to use this FRPhsAds constituent model therefore, the following must be in place:</p>
+<ul>
+<li>The TUFLOW FV STM must be activated and implemented</li>
+<li>At least one sediment fraction must be set up and executed within TUFLOW FV via the inclusion of a sediment control file, and specification of either of the following TUFLOW FV commands:</li>
+</ul>
+<blockquote>
+<p><a href="#FVIncludeSed">include sediment == 1,0</a> ! Do not include sediment in density calculations</p>
+</blockquote>
+<p>or</p>
+<blockquote>
+<p><a href="#FVIncludeSed">include sediment == 1,1</a> ! Include sediment in density calculations</p>
+</blockquote>
+<p>If multiple sediment fractions are specified to be simulated by the STM, then TUFLOW FV sends all these fractions individually through the API to the WQM, together with their respective metadata fields. Specifically, for each sediment fraction simulated in the TUFLOW FV STM, the WQM is sent:</p>
+<ul>
+<li>Concentration</li>
+<li>Settling velocity</li>
+<li>Uplift velocity, and</li>
+<li>D<span class="math inline">\(_{50}\)</span> particle diameter</li>
+</ul>
+<p>The WQM uses this information to compute FRP adsorption and loss of adsorbed FRP through settling, using only those sediment fractions that meet a user specified maximum <span class="math inline">\(D_{50}\)</span> criterion.</p>
+</div>
+</div>
+<div id="ConModInorgPhy-3" class="section level3" number="3.2.6">
+<h3><span class="header-section-number">3.2.6</span> Model Class: Phytoplankton</h3>
+<p>The following constituent models are available to select from within the phytoplankton model class. The differentiator between constituent models is the treatment of internal (to a phytoplankton cell) nutrient simulation.</p>
+<div id="ConModPhyBas-4" class="section level4" number="3.2.6.1">
+<h4><span class="header-section-number">3.2.6.1</span> Constituent Model: Basic</h4>
+<p>This phytoplankton constituent model assumes that the ratios of both internal nitrogen and phosphorus concentrations to internal chlorophyll <em>a</em> (or carbon) concentration are fixed. These internal nutrients are not simulated explicitly, but increase and decrease proportionately with increasing and decreasing carbonaceous biomass, according to the specified (or default) nitrogen-chlorophyll <em>a</em> and phosphorus-chlorophyll <em>a</em> (or their carbon equivalents) ratios. Carbonaceous biomass is simulated dynamically and is the measure of phytoplankton concentration. Internal nutrient concentrations are not required to be specified as initial or boundary conditions, and are not treated as computed variables.</p>
+<p>The constituent model code and associated computed variables, processes and potentially interacting simulated quantities are provided in Figure <a href="ProcessDescriptions-1.html#fig:fig-NtwkPhyBas">3.6</a> and Table <a href="ProcessDescriptions-1.html#tab:tab-ConModPhyBas">3.7</a>. Silicate interactions only apply if phytoplankton is set to uptake silicate via specification of silicate limitation function parameters (section <a href="SimulationConstruction-1.html#ConModPhyBas-5">4.7.3.5.1</a>). The configuration for phytoplankton simulation presented below applies only to the inorganics simulation class. A different, and expanded, configuration applies when phytoplankton is simulated using this basic constituent model in the organics simulation class. This expanded configuration is described in section <a href="ProcessDescriptions-1.html#ConModOrgPhy-3">3.3.7</a>.</p>
+<center>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-NtwkPhyBas"></span>
+<img src="images/NetworkFigureCaptionBlank.png" alt="**Constituent model: Basic**" width="1%" />
+<p class="caption">
+Figure 3.6: <strong>Constituent model: Basic</strong>
+</p>
+</div>
+</center>
+<div id="htmlwidget-8608b51b493904c155f6" style="width:100%;height:480px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8608b51b493904c155f6">{"x":{"nodes":{"id":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],"nodename":["Phytoplankton","FRP","Nitrate","Ammonium","Dissolved Oxygen","Light","Silicate","Productivity","Respiration","Exudation","Settling","Excretion","Mortality","Temperature","Salinity"],"nodetype":["Computed variable","Computed variable","Computed variable","Computed variable","Computed variable","Computed variable","Computed variable","Both","Sink","Sink","Sink","Both","Both","Computed variable","Computed variable"],"label":["Phytoplankton","FRP","Nitrate","Ammonium","Dissolved Oxygen","Light","Silicate","Productivity","Respiration","Exudation","Settling","Excretion","Mortality","Temperature","Salinity"],"color.background":["#005581","#005581","#005581","#005581","#005581","#005581","#005581","#1ABDC9","#E20177","#E20177","#E20177","#1ABDC9","#1ABDC9","#005581","#005581"],"color.border":["#005581","#005581","#005581","#005581","#005581","#005581","#005581","#E20177","#E20177","#E20177","#E20177","#E20177","#E20177","#005581","#005581"],"font.color":["#005581","#005581","#005581","#005581","#005581","#005581","#005581","#1ABDC9","#E20177","#E20177","#E20177","#1ABDC9","#1ABDC9","#005581","#005581"],"shape":["square","square","square","square","square","square","square","dot","dot","dot","dot","dot","dot","square","square"],"group":["Computed variable","Computed variable","Computed variable","Computed variable","Computed variable","Computed variable","Computed variable","Both","Sink","Sink","Sink","Both","Both","Computed variable","Computed variable"],"x":[0.520546603602073,-0.174600797103776,-0.971011896813531,-0.432201341580095,-0.142965796179851,-1,-0.0252528957890399,-0.255637502697118,-0.195577871687916,1,0.899055795717276,0.38389404189195,-0.788699422312074,-0.845458588437294,-0.615623749006189],"y":[-0.454095951271211,0.661363655742119,0.222960312217432,1,-0.800748737485286,-0.213205481341766,0.996930199897427,0.0765483986594346,-0.239098067053319,0.0570250549402742,-1,0.484146855757695,0.687965841626977,-0.532503859634194,-0.780791326665593]},"edges":{"from":["1","1","9","10","9","12","12","12","13","13","13","8","6","5","8","2","7","4","3","1","14","15","14","15","6"],"to":["9","10","12","12","13","4","2","7","4","2","7","1","8","9","5","8","8","8","8","11","8","8","9","9","9"],"origin":["Phytoplankton","Phytoplankton","Respiration","Exudation","Respiration","Excretion","Excretion","Excretion","Mortality","Mortality","Mortality","Productivity","Light","Dissolved Oxygen","Productivity","FRP","Silicate","Ammonium","Nitrate","Phytoplankton","Temperature","Salinity","Temperature","Salinity","Light"],"destination":["Respiration","Exudation","Excretion","Excretion","Mortality","Ammonium","FRP","Silicate","Ammonium","FRP","Silicate","Phytoplankton","Productivity","Respiration","Dissolved Oxygen","Productivity","Productivity","Productivity","Productivity","Settling","Productivity","Productivity","Respiration","Respiration","Respiration"],"flux":["sink","sink","sink","sink","sink","source","source","source","source","source","source","source",null,"sink","source","sink","sink","sink","sink","sink",null,null,null,null,null],"label":[null,null,null,null,null,null,null,null,null,null,null,null,"TSS",null,null,null,null,null,null,"T,  Cell density",null,null,null,null,null],"color":["#E20177","#E20177","#E20177","#E20177","#E20177","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9",null,"#E20177","#1ABDC9","#E20177","#E20177","#E20177","#E20177","#E20177",null,null,null,null,null],"font.color":["#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7"],"font.size":[10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false,"shadow":{"enabled":true,"size":10}},"manipulation":{"enabled":false},"edges":{"smooth":false,"arrows":"to"},"physics":{"stabilization":false},"layout":{"randomSeed":153},"interaction":{"hover":true},"autoResize":true,"clickToUse":true},"groups":["Computed variable","Both","Sink"],"width":"100%","height":null,"idselection":{"enabled":true,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","igraphlayout":{"type":"square"},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);","highlight":{"enabled":true,"hoverNearest":true,"degree":1,"algorithm":"all","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":false,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"}},"evals":[],"jsHooks":[]}</script>
+<table>
+<caption>
+<span id="tab:tab-ConModPhyBas">Table 3.7: </span><strong>Constituent model properties: Basic</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Computed Variables
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Units
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Processes
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Interacting Quantities
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="AppProcesses.html#AppPhy">Phytoplankton</a>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\mu\)</span>g Chl <em>a</em>/L or mmol C/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyProd-4"><bmtgreen>Primary productivity</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyResp-4"><bmtpink>Respiration</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtpink>Excretion</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtpink>Mortality</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhySettle-4"><bmtpink>Settling</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Settling model<br><span class="math inline">\(\cdot\blockindent\)</span>Cell density
+</td>
+</tr>
+</tbody>
+</table>
+<p>The three processes that govern phytoplankton behaviour are:</p>
+<ul>
+<li>Primary productivity (the photosynthetic conversion of light and carbon to stored energy and oxygen, also referred to as growth)</li>
+<li>Respiration (the expenditure of stored energy and oxygen to produce carbon), and</li>
+<li>Settling</li>
+</ul>
+<p>A range of light, temperature, salinity, nitrogen, phosphorus and silicate limitation functions can be parameterised and applied in various combinations to the first two processes above, and a range of settling models are available to tailor the third. By design, the associated library default rates are set to zero so as to render all processes initially inactive. Specification of non-zero rates activates these processes.</p>
+<p>The distinguishing property of this phytoplankton constituent model is that internal (phytoplankton cell) nutrient concentrations are considered to be fixed proportions of cell chlorophyll <em>a</em> (or carbon) concentrations. They are therefore not treated as computed variables, but rather as multiples of phytoplankton chlorophyll <em>a</em> (or carbon) (which is treated as a computed variable). The key implication of this is the method of calculation of the nitrogen and phosphorus uptake and limitation functions applied to primary productivity. These calculations depend only on ambient (i.e. external to a phytoplankton cell) water column nitrogen and phosphorus concentrations.</p>
+<p>Simulation of phytoplankton dynamics in the inorganics simulation class directly modifies the concentrations of a range of other computed variables. These are listed in Table <a href="ProcessDescriptions-1.html#tab:tab-ConModPhyBasEx">3.8</a>. Silicate interactions only apply if phytoplankton is set to uptake silicate.</p>
+<table>
+<caption>
+<span id="tab:tab-ConModPhyBasEx">Table 3.8: </span><strong>Complementary lower order computed variables: Basic</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Computed Variables
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Units
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Processes
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Interacting Quantities
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppDO">Dissolved Oxygen</a>
+</td>
+<td style="text-align:left;">
+mg/L or mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyProd-4"><bmtgreen>Primary productivity</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyResp-4"><bmtpink>Respiration</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppAmm">Ammonium</a>
+</td>
+<td style="text-align:left;">
+mg/L or mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtgreen>Excretion</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtgreen>Mortality</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppNit">Nitrate</a>
+</td>
+<td style="text-align:left;">
+mg/L or mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppFRP">FRP</a>
+</td>
+<td style="text-align:left;">
+mg/L or mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtgreen>Excretion</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtgreen>Mortality</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppSi">Silicate</a>
+</td>
+<td style="text-align:left;">
+mg/L or mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtgreen>Excretion</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtgreen>Mortality</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="ConModPhyAdv-4" class="section level4" number="3.2.6.2">
+<h4><span class="header-section-number">3.2.6.2</span> Constituent Model: Advanced</h4>
+<p>This phytoplankton constituent model directly simulates internal (phytoplankton cell) nitrogen and phosphorus concentrations. These are allowed to vary between upper and lower limits, expressed as ratios to chlorophyll <em>a</em> (or carbon) concentrations. Internal nutrient concentrations (not as ratios) are required to be specified as initial and boundary conditions, and are treated as computed variables.</p>
+<p>The constituent model code and associated variables, processes and potentially interacting simulated quantities are provided in Figure <a href="ProcessDescriptions-1.html#fig:fig-NtwkPhyAdv">3.7</a> and Table <a href="ProcessDescriptions-1.html#tab:tab-ConModPhyAdv">3.9</a>. Silicate interactions only apply if phytoplankton is set to uptake silicate. The configuration for phytoplankton simulation presented below applies only to the inorganics simulation class. A different, and expanded, configuration applies when phytoplankton is simulated using this basic constituent model in the organics simulation class. This expanded configuration is described in section <a href="ProcessDescriptions-1.html#ConModOrgPhy-3">3.3.7</a>.</p>
+<center>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-NtwkPhyAdv"></span>
+<img src="images/NetworkFigureCaptionBlank.png" alt="**Constituent model: Advanced**" width="1%" />
+<p class="caption">
+Figure 3.7: <strong>Constituent model: Advanced</strong>
+</p>
+</div>
+</center>
+<div id="htmlwidget-953bbe9c31526d89ad6f" style="width:100%;height:480px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-953bbe9c31526d89ad6f">{"x":{"nodes":{"id":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17],"nodename":["Phytoplankton","FRP","Nitrate","Ammonium","Dissolved Oxygen","Light","Silicate","Internal nitrogen","Internal phosphorus","Productivity","Respiration","Exudation","Settling","Excretion","Mortality","Temperature","Salinity"],"nodetype":["Computed variable","Computed variable","Computed variable","Computed variable","Computed variable","Computed variable","Computed variable","Computed variable","Computed variable","Both","Sink","Sink","Sink","Both","Both","Computed variable","Computed variable"],"label":["Phytoplankton","FRP","Nitrate","Ammonium","Dissolved Oxygen","Light","Silicate","Internal nitrogen","Internal phosphorus","Productivity","Respiration","Exudation","Settling","Excretion","Mortality","Temperature","Salinity"],"color.background":["#005581","#005581","#005581","#005581","#005581","#005581","#005581","#005581","#005581","#1ABDC9","#E20177","#E20177","#E20177","#1ABDC9","#1ABDC9","#005581","#005581"],"color.border":["#005581","#005581","#005581","#005581","#005581","#005581","#005581","#005581","#005581","#E20177","#E20177","#E20177","#E20177","#E20177","#E20177","#005581","#005581"],"font.color":["#005581","#005581","#005581","#005581","#005581","#005581","#005581","#005581","#005581","#1ABDC9","#E20177","#E20177","#E20177","#1ABDC9","#1ABDC9","#005581","#005581"],"shape":["square","square","square","square","square","square","square","square","square","dot","dot","dot","dot","dot","dot","square","square"],"group":["Computed variable","Computed variable","Computed variable","Computed variable","Computed variable","Computed variable","Computed variable","Computed variable","Computed variable","Both","Sink","Sink","Sink","Both","Both","Computed variable","Computed variable"],"x":[-0.566778908642022,1,-0.474927470218834,0.448894609518924,-0.143680090807182,0.345762757407474,0.592617003041776,-0.0687230229345893,0.653927864804832,-0.022092339857366,0.15350732137938,-0.333704920055471,-1,0.313931216073793,0.705462897601541,-0.331693486469156,0.103614209526136],"y":[-0.318024302713128,0.0340732049373837,1,0.999053286629078,-0.881525950773262,-0.813223486560911,-0.0436680854941667,0.764002305799082,-0.446627228170257,-0.135897303582052,-0.314677462377156,0.242285782273325,-0.663474360291464,0.33915181099782,0.398161658191087,-0.644910862138214,-1]},"edges":{"from":["1","1","11","12","11","14","14","14","15","15","15","10","6","5","10","2","7","4","3","1","8","9","16","17","16","17","6"],"to":["11","12","14","14","15","4","2","7","4","2","7","1","10","11","5","9","10","8","8","13","10","10","10","10","11","11","11"],"origin":["Phytoplankton","Phytoplankton","Respiration","Exudation","Respiration","Excretion","Excretion","Excretion","Mortality","Mortality","Mortality","Productivity","Light","Dissolved Oxygen","Productivity","FRP","Silicate","Ammonium","Nitrate","Phytoplankton","Internal nitrogen","Internal phosphorus","Temperature","Salinity","Temperature","Salinity","Light"],"destination":["Respiration","Exudation","Excretion","Excretion","Mortality","Ammonium","FRP","Silicate","Ammonium","FRP","Silicate","Phytoplankton","Productivity","Respiration","Dissolved Oxygen","Internal phosphorus","Productivity","Internal nitrogen","Internal nitrogen","Settling","Productivity","Productivity","Productivity","Productivity","Respiration","Respiration","Respiration"],"flux":["sink","sink","sink","sink","sink","source","source","source","source","source","source","source",null,"sink","source","sink","sink","sink","sink","sink","sink","sink",null,null,null,null,null],"label":[null,null,null,null,null,null,null,null,null,null,null,null,"TSS",null,null,null,null,null,null,"T,  Cell density",null,null,null,null,null,null,null],"color":["#E20177","#E20177","#E20177","#E20177","#E20177","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9",null,"#E20177","#1ABDC9","#E20177","#E20177","#E20177","#E20177","#E20177","#E20177","#E20177",null,null,null,null,null],"font.color":["#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7","#D8D0C7"],"font.size":[10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false,"shadow":{"enabled":true,"size":10}},"manipulation":{"enabled":false},"edges":{"smooth":false,"arrows":"to"},"physics":{"stabilization":false},"layout":{"randomSeed":153},"interaction":{"hover":true},"autoResize":true,"clickToUse":true},"groups":["Computed variable","Both","Sink"],"width":"100%","height":null,"idselection":{"enabled":true,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","igraphlayout":{"type":"square"},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);","highlight":{"enabled":true,"hoverNearest":true,"degree":1,"algorithm":"all","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":false,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"}},"evals":[],"jsHooks":[]}</script>
+<table>
+<caption>
+<span id="tab:tab-ConModPhyAdv">Table 3.9: </span><strong>Constituent model properties: Advanced</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Computed Variables
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Units
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Processes
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Interacting Quantities
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="AppProcesses.html#AppPhy">Phytoplankton</a>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\mu\)</span>g Chl <em>a</em>/L or mmol C/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyProd-4"><bmtgreen>Primary productivity</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyResp-4"><bmtpink>Respiration</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtpink>Excretion</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtpink>Mortality</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhySettle-4"><bmtpink>Settling</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Settling model<br><span class="math inline">\(\cdot\blockindent\)</span>Cell density<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppIntNit">Internal nitrogen</a>
+</td>
+<td style="text-align:left;">
+mg N/L or mmol N/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyUptake-3"><bmtgreen>Uptake</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyResp-4"><bmtpink>Respiration</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtpink>Excretion</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtpink>Mortality</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhySettle-4"><bmtpink>Settling</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Settling model<br><span class="math inline">\(\cdot\blockindent\)</span>Cell density<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppIntPhs">Internal phosphorus</a>
+</td>
+<td style="text-align:left;">
+mg P/L or mmol P/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyUptake-3"><bmtgreen>Uptake</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyResp-4"><bmtpink>Respiration</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtpink>Excretion</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtpink>Mortality</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhySettle-4"><bmtpink>Settling</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Settling model<br><span class="math inline">\(\cdot\blockindent\)</span>Cell density<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen
+</td>
+</tr>
+</tbody>
+</table>
+<p>The three processes that govern phytoplankton behaviour are:</p>
+<ul>
+<li>Primary productivity (the photosynthetic conversion of light and carbon to stored energy and oxygen, also referred to as growth)</li>
+<li>Respiration (the expenditure of stored energy and oxygen to produce carbon), and</li>
+<li>Settling</li>
+</ul>
+<p>A range of light, temperature, salinity, nitrogen, phosphorus and silicate limitation functions can be parameterised and applied in various combinations to the first two processes above, and a range of settling models are available to tailor the third. By design, the associated library default rates are set to zero so as to render all processes initially inactive. Specification of non-zero rates activates these processes.</p>
+<p>The distinguishing property of this phytoplankton constituent model is that internal (phytoplankton cell) nutrient concentrations are simulated directly. They are therefore treated as computed variables. The key implication of this is the method of calculation of the nitrogen and phosphorus uptake and limitation functions applied to primary productivity. These calculations depend on both internal nutrient stores and ambient (i.e. external to a phytoplankton cell) water column nitrogen and phosphorus concentrations.</p>
+<p>Simulation of phytoplankton dynamics in the inorganics simulation class directly modifies the concentrations of a range of other computed variables. These are listed in Table <a href="ProcessDescriptions-1.html#tab:tab-ConModPhyAdvEx">3.10</a>. Silicate interactions only apply if phytoplankton is set to uptake silicate.</p>
+<table>
+<caption>
+<span id="tab:tab-ConModPhyAdvEx">Table 3.10: </span><strong>Complementary lower order computed variables: Basic</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Computed Variables
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Units
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Processes
+</th>
+<th style="text-align:left;font-weight: bold;color: WHITE !important;background-color: #1ABDC9 !important;">
+Interacting Quantities
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppDO">Dissolved Oxygen</a>
+</td>
+<td style="text-align:left;">
+mg/L or mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyProd-4"><bmtgreen>Primary productivity</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyResp-4"><bmtpink>Respiration</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppAmm">Ammonium</a>
+</td>
+<td style="text-align:left;">
+mg/L or mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtgreen>Excretion</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtgreen>Mortality</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppNit">Nitrate</a>
+</td>
+<td style="text-align:left;">
+mg/L or mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppFRP">FRP</a>
+</td>
+<td style="text-align:left;">
+mg/L or mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtgreen>Excretion</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtgreen>Mortality</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<a href="AppConstits.html#AppSi">Silicate</a>
+</td>
+<td style="text-align:left;">
+mg/L or mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtgreen>Excretion</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppProcesses.html#PhyLosses-3"><bmtgreen>Mortality</bmtgreen></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="SimProcSimuClOrg-2" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Simulation Class: Organics</h2>
+<div id="OrgOverview-3" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Overview</h3>
+</div>
+<div id="ConModOrgDO-3" class="section level3" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Constituent Model Class: Oxygen</h3>
+<p>This constituent model class is the same as that described in Section <a href="ProcessDescriptions-1.html#ConModDODO-3">3.1.2</a></p>
+</div>
+<div id="ConModOrgSi-3" class="section level3" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Constituent Model Class: Silicate</h3>
+<p>This constituent model class is the same as that described in Section <a href="ProcessDescriptions-1.html#ConModInorgSi-3">3.2.3</a></p>
+</div>
+<div id="ConModOrgN-3" class="section level3" number="3.3.4">
+<h3><span class="header-section-number">3.3.4</span> Constituent Model Class: Nitrogen</h3>
+<p>This constituent model class is the same as that described in Section <a href="ProcessDescriptions-1.html#ConModInorgN-3">3.2.4</a></p>
+</div>
+<div id="ConModOrgP-3" class="section level3" number="3.3.5">
+<h3><span class="header-section-number">3.3.5</span> Constituent Model Class: Phosphorus</h3>
+<p>This constituent model class is the same as that described in Section <a href="ProcessDescriptions-1.html#ConModInorgP-3">3.2.5</a></p>
+</div>
+<div id="ConModOrgOrg-3" class="section level3" number="3.3.6">
+<h3><span class="header-section-number">3.3.6</span> Constituent Model Class: Organics</h3>
+</div>
+<div id="ConModOrgPhy-3" class="section level3" number="3.3.7">
+<h3><span class="header-section-number">3.3.7</span> Constituent Model Class: Phytoplankton</h3>
+<p>This constituent model class is the same as that described in Section <a href="ProcessDescriptions-1.html#ConModInorgPhy-3">3.2.6</a>, other than the addition of phytoplanktonic losses to organic matter as part of exudation and respiration (via excretion and mortality). Those processes and interactions are described below.</p>
+<p><img src="images/WQFooter.jpg" width="100%" /></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Architecture-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="SimulationConstruction-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["TUFLOWFV_WQM_Manual.pdf", "TUFLOWFV_WQM_Manual.epub"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
