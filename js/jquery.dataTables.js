@@ -10367,7 +10367,7 @@
 		 *      } );
 		 *    } );
 		 */
-		"aLengthMenu": [[ 10, 25, 50, -1 ], [10, 25, 50, "All"]],
+		"aLengthMenu": [[ 5, 10, 25, 50, -1 ], [5, 10, 25, 50, "All"]],
 
 		/**
 		 * The `columns` option in the initialisation parameter allows you to define

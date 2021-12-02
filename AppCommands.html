@@ -4,22 +4,22 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Appendix B Commands | TUFLOW FV Water Quality Module User Manual</title>
-  <meta name="description" content="User manual" />
+  <title>Appendix B Commands | TUFLOW FV Water Quality Module  User Manual</title>
+  <meta name="description" content="TUFLOW FV Water Quality Module User Manual" />
   <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Appendix B Commands | TUFLOW FV Water Quality Module User Manual" />
+  <meta property="og:title" content="Appendix B Commands | TUFLOW FV Water Quality Module  User Manual" />
   <meta property="og:type" content="book" />
   
-  
-  <meta property="og:description" content="User manual" />
+  <meta property="og:image" content="/images/tuflow.png" />
+  <meta property="og:description" content="TUFLOW FV Water Quality Module User Manual" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Appendix B Commands | TUFLOW FV Water Quality Module User Manual" />
+  <meta name="twitter:title" content="Appendix B Commands | TUFLOW FV Water Quality Module  User Manual" />
   
-  <meta name="twitter:description" content="User manual" />
-  
+  <meta name="twitter:description" content="TUFLOW FV Water Quality Module User Manual" />
+  <meta name="twitter:image" content="/images/tuflow.png" />
 
 
 
@@ -331,7 +331,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><h0 style="color:rgb(0,85,129);">TUFLOW FV Water Quality Module User Manual</h0></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><h0 style="color:rgb(0,85,129);">TUFLOW FV Water Quality Module<br> User Manual</h0></a>
           </h1>
         </div>
 
@@ -348,13 +348,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 }
 </style>
 <!-- Table properties -->
-<link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.5/css/jquery.dataTables.min.css">
-<script src="http://code.jquery.com/jquery-2.1.2.min.js"></script>
-<script src=js/jquery.dataTables.min.js></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="js/jquery.dataTables.js">
+<script src="js/jquery-2.1.2.min.js"></script>
 <script type="text/javascript">
          $(document).ready(function() {
              $("table").DataTable( {
-              "pageLength": 500
+              "pageLength": -1
              });
          } );
 </script>
@@ -363,16 +363,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use the search box to dynamically filter the table</li>
 <li>Sort the filtered (or unfiltered) table by clicking the arrows at the top of each column</li>
 <li>Use “s” on your keyboard to toggle the contents pane on and off to provide more screen width if needed</li>
-<li>Commands are <bmtpink>coloured</bmtpink> and where arguments are required are suffixed with ‘==’. These <bmtpink>coloured</bmtpink> commands can be copied and pasted directly into relevant control file/s, as appropriate</li>
-<li>Corresponding arguments (presented as their symbols) are <bmtblue>coloured</bmtblue> and listed in the required order within angled parentheses following each <bmtpink>command ==</bmtpink>. In addition:
+<li>Commands are <bmtpink>coloured</bmtpink> and where arguments are required are suffixed with ‘==’. These <bmtpink>coloured</bmtpink> commands can be copied and pasted directly into relevant control file/s, as appropriate. Although they show as underlined on mouse hover, these are not hyperlinked</li>
+<li>Corresponding arguments (presented as their symbols) are <bmtgreen>coloured</bmtgreen> and listed in the required order within angled parentheses following each <bmtpink>command ==</bmtpink>. In addition:
 <ul>
 <li>Where multiple arguments are required, these are separated by commas</li>
-<li>Where multiple options exist for an argument, these are separated by semicolons. In this case, the default is listed first in a group of semicolon delimited options</li>
-<li>Each argument is a link to its detailed description in Appendix <a href="AppParams.html#AppParams">E</a></li>
+<li>Each argument is a hyperlink to its description in Appendix <a href="AppParams.html#AppParams">E</a>. This descripotion then includes hyperlinks to the relevant science (Appendix <a href="AppProcesses.html#AppProcesses">D</a>) and command syntax (Section <a href="SimulationConstruction-1.html#SimulationConstruction-1">4</a>). This allows easy navigation between command, parameter and scientific information</li>
 </ul></li>
-<li>The final text of each description is ‘Section …’ and is a link to the relevant part of Section <a href="SimulationConstruction-1.html#SimulationConstruction-1">4</a> where the command is presented in context</li>
+<li>The final text of each description is ‘Simulation construction section …’ and is a link to the relevant part of Section <a href="SimulationConstruction-1.html#SimulationConstruction-1">4</a> where the command syntax is presented in context. More parameter details and descriptions are subsequently available via further hyperlinks included in the construction section<br />
+</li>
 <li>Commands that have only one argument but multiple options for that argument are presented in single table entries, with options separated by semicolons</li>
-<li>Commands that have multiple possible combinations of more than one argument are presented as separate table entries. These related entries (that share the same command) are easily navigable by use of the links provided in the right hand table column</li>
+<li>Commands that have multiple possible combinations of more than one argument are presented as separate table entries. These related entries (that share the same command) are easily navigable by use of the links provided in the right hand table column, headed “Links”</li>
 </ul>
 <table>
 <caption>
@@ -397,7 +397,7 @@ Links
 <a id="WQOxyBenFlx"><bmtpink>oxygen flux == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParFsedO2"><span class="math inline">\(F_{sed}^{O_2}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a materials block to control the sediment flux rate of oxyegn. Section <a href="SimulationConstruction-1.html#MatSpecsDO-3">4.6.4</a>.
+Used in a materials block to control the sediment flux rate of oxyegn. Simulation construction section <a href="SimulationConstruction-1.html#MatSpecsDO-3">4.6.4</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -408,7 +408,7 @@ Used in a materials block to control the sediment flux rate of oxyegn. Section <
 <a id="WQOxyBenFlxPars"><bmtpink>oxygen benthic == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParKsedO2"><span class="math inline">\(K_{sed-O_2}^{O_2}\)</span></a>,<a href="AppParams.html#WQParthetasedO2"><span class="math inline">\(\theta_{sed}^{O_2}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an oxygen constituent model block to control the response of benthic oxygen flux to temperature and oxygen concentration. Section <a href="SimulationConstruction-1.html#ConModO2-5">4.6.3.1.1</a>.
+Used in an oxygen constituent model block to control the response of benthic oxygen flux to temperature and oxygen concentration. Simulation construction section <a href="SimulationConstruction-1.html#ConModO2-5">4.6.3.1.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -419,7 +419,7 @@ Used in an oxygen constituent model block to control the response of benthic oxy
 <a id="WQOxyMod"><bmtpink>oxygen model == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="ProcessDescriptions-1.html#ConModDOO2-4">O2</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used to commence an oxygen constituent model block via specification of a constituent model from the oxygen constituent model class. Section <a href="SimulationConstruction-1.html#ConModClssOxy-4">4.6.3.1</a>.
+Used to commence an oxygen constituent model block via specification of a constituent model from the oxygen constituent model class. Simulation construction section <a href="SimulationConstruction-1.html#ConModClssOxy-4">4.6.3.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -430,7 +430,7 @@ Used to commence an oxygen constituent model block via specification of a consti
 <a id="WQOxyMinMax"><bmtpink>oxygen min max == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParMinO2"><span class="math inline">\(\left[DO\right]_{min}^{O_2}\)</span></a>,<a href="AppParams.html#WQParMaxO2"><span class="math inline">\(\left[DO\right]_{max}^{O_2}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an oxygen constituent model block to set minimum and maximum dissolved oxygen concentrations. Section <a href="SimulationConstruction-1.html#ConModO2-5">4.6.3.1.1</a>.
+Used in an oxygen constituent model block to set minimum and maximum dissolved oxygen concentrations. Simulation construction section <a href="SimulationConstruction-1.html#ConModO2-5">4.6.3.1.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -441,7 +441,7 @@ Used in an oxygen constituent model block to set minimum and maximum dissolved o
 <a id="WQSimulationClass"><bmtpink>simulation class == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="ProcessDescriptions-1.html#SimProcSimuClDO-2">DO</a>;<a href="ProcessDescriptions-1.html#SimProcSimuClInorg-2">inorganics</a>;<a href="ProcessDescriptions-1.html#SimProcSimuClOrg-2">organics</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in Part 1: Simulation controls of WQM control file to specify water quality simulation class. If not specified, “DO” is assumed and all associated “DO” class default parameters are applied. Section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.
+Used in Part 1: Simulation controls of WQM control file to specify water quality simulation class. If not specified, “DO” is assumed and all associated “DO” class default parameters are applied. Simulation construction section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -452,7 +452,7 @@ Used in Part 1: Simulation controls of WQM control file to specify water quality
 <a id="WQOxyModEnd"><bmtpink>end oxygen model </bmtpink></a>
 </td>
 <td style="text-align:left;">
-Used to terminate an oxygen constituent model block. Must follow an <a href="AppCommands.html#WQOxyMod">oxygen model ==</a> command. Section <a href="SimulationConstruction-1.html#ConModO2-5">4.6.3.1.1</a>.
+Used to terminate an oxygen constituent model block. Must follow an <a href="AppCommands.html#WQOxyMod">oxygen model ==</a> command. Simulation construction section <a href="SimulationConstruction-1.html#ConModO2-5">4.6.3.1.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -463,7 +463,7 @@ Used to terminate an oxygen constituent model block. Must follow an <a href="App
 <a id="WQWqUnits"><bmtpink>wq units == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="SimulationConstruction-1.html#SimUnits-2">mgl;mmm</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in Part 1: Simulation controls of WQM control file to set the units used for water quality simulation. Milligrams per litre and millimoles per cubic metre are “mgl” and “mmm”, respectively. Section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.
+Used in Part 1: Simulation controls of WQM control file to set the units used for water quality simulation. Milligrams per litre and millimoles per cubic metre are “mgl” and “mmm”, respectively. Simulation construction section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -474,7 +474,7 @@ Used in Part 1: Simulation controls of WQM control file to set the units used fo
 <a id="WQWqDt"><bmtpink>wq dt == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQdt">timestep</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in Part 1: Simulation controls of WQM control file to set the timestep at which TUFLOW calls the WQM to undertake noncenservative water quality calculations, in seconds. Section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.
+Used in Part 1: Simulation controls of WQM control file to set the timestep at which TUFLOW calls the WQM to undertake noncenservative water quality calculations, in seconds. Simulation construction section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -485,7 +485,7 @@ Used in Part 1: Simulation controls of WQM control file to set the timestep at w
 <a id="WQSilBenFlx"><bmtpink>silicate flux == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParFsedSi"><span class="math inline">\(F_{sed}^{Si}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a materials block to control the sediment flux rate of silicate. Section <a href="SimulationConstruction-1.html#MatSpecsInorg-3">4.7.4</a>.
+Used in a materials block to control the sediment flux rate of silicate. Simulation construction section <a href="SimulationConstruction-1.html#MatSpecsInorg-3">4.7.4</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -496,7 +496,7 @@ Used in a materials block to control the sediment flux rate of silicate. Section
 <a id="WQSilBenFlxPars"><bmtpink>silicate benthic == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParKsedSi"><span class="math inline">\(K_{sed-O_2}^{Si}\)</span></a>,<a href="AppParams.html#WQParthetasedSi"><span class="math inline">\(\theta_{sed}^{Si}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a silicate constituent model block to control the response of benthic silicate flux to temperature and oxygen concentration. Section <a href="SimulationConstruction-1.html#ConModSi-5">4.7.3.2.1</a>.
+Used in a silicate constituent model block to control the response of benthic silicate flux to temperature and oxygen concentration. Simulation construction section <a href="SimulationConstruction-1.html#ConModSi-5">4.7.3.2.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -507,7 +507,7 @@ Used in a silicate constituent model block to control the response of benthic si
 <a id="WQSilMinMax"><bmtpink>silicate min max == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParMinSil"><span class="math inline">\(\left[Si\right]_{min}^{Si}\)</span></a>,<a href="AppParams.html#WQParMaxSil"><span class="math inline">\(\left[Si\right]_{max}^{Si}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a silicate constituent model block to set minimum and maximum silicate concentrations. Section <a href="SimulationConstruction-1.html#ConModSi-5">4.7.3.2.1</a>.
+Used in a silicate constituent model block to set minimum and maximum silicate concentrations. Simulation construction section <a href="SimulationConstruction-1.html#ConModSi-5">4.7.3.2.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -518,7 +518,7 @@ Used in a silicate constituent model block to set minimum and maximum silicate c
 <a id="WQSilMod"><bmtpink>silicate model == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="ProcessDescriptions-1.html#ConModSiSi-4">Si</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used to commence a silicate constituent model block via specification of a constituent model from the silicate constituent model class. Section <a href="SimulationConstruction-1.html#ConModClssSil-4">4.7.3.2</a>.
+Used to commence a silicate constituent model block via specification of a constituent model from the silicate constituent model class. Simulation construction section <a href="SimulationConstruction-1.html#ConModClssSil-4">4.7.3.2</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -529,7 +529,7 @@ Used to commence a silicate constituent model block via specification of a const
 <a id="WQSilOxy"><bmtpink>oxygen == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#SedSilProd-3">on;off</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a silicate constituent model block to switch the dependence of silicate processes on dissolved oxygen on or off. Section <a href="SimulationConstruction-1.html#ConModSi-5">4.7.3.2.1</a>.
+Used in a silicate constituent model block to switch the dependence of silicate processes on dissolved oxygen on or off. Simulation construction section <a href="SimulationConstruction-1.html#ConModSi-5">4.7.3.2.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -540,7 +540,7 @@ Used in a silicate constituent model block to switch the dependence of silicate 
 <a id="WQAmmBenFlx"><bmtpink>ammonium flux == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParFsedAmm"><span class="math inline">\(F_{sed}^{NH_4}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a materials block to control the sediment flux rate of ammonium. Section <a href="SimulationConstruction-1.html#MatSpecsInorg-3">4.7.4</a>.
+Used in a materials block to control the sediment flux rate of ammonium. Simulation construction section <a href="SimulationConstruction-1.html#MatSpecsInorg-3">4.7.4</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -551,7 +551,7 @@ Used in a materials block to control the sediment flux rate of ammonium. Section
 <a id="WQAmmBenFlxPars"><bmtpink>ammonium benthic == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParKsedAmm"><span class="math inline">\(K_{sed-O_2}^{NH_4}\)</span></a>,<a href="AppParams.html#WQParthetasedAmm"><span class="math inline">\(\theta_{sed}^{NH_4}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an inorganic nitrogen constituent model block to control the response of benthic ammonium flux to temperature and oxygen concentration. Section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
+Used in an inorganic nitrogen constituent model block to control the response of benthic ammonium flux to temperature and oxygen concentration. Simulation construction section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -562,7 +562,7 @@ Used in an inorganic nitrogen constituent model block to control the response of
 <a id="WQAmmMinMax"><bmtpink>ammonium min max == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParMinAmm"><span class="math inline">\(\left[NH_4\right]_{min}^{NH_4}\)</span></a>,<a href="AppParams.html#WQParMaxAmm"><span class="math inline">\(\left[NH_4\right]_{max}^{NH_4}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an inorganic nitrogen constituent model block to set minimum and maximum ammonium concentrations. Section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
+Used in an inorganic nitrogen constituent model block to set minimum and maximum ammonium concentrations. Simulation construction section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -573,7 +573,7 @@ Used in an inorganic nitrogen constituent model block to set minimum and maximum
 <a id="WQInorgNitMod"><bmtpink>nitrogen model == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="ProcessDescriptions-1.html#ConModNAmmNit-4">AmmoniumNitrate</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used to commence an inorganic nitrogen constituent model block via specification of a constituent model from the inorganic nitrogen constituent model class. Section <a href="SimulationConstruction-1.html#ConModClssNit-4">4.7.3.3</a>.
+Used to commence an inorganic nitrogen constituent model block via specification of a constituent model from the inorganic nitrogen constituent model class. Simulation construction section <a href="SimulationConstruction-1.html#ConModClssNit-4">4.7.3.3</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -584,7 +584,7 @@ Used to commence an inorganic nitrogen constituent model block via specification
 <a id="WQAmmOxy"><bmtpink>oxygen == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#SedAmmNitProd-3">on;off</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an inorganic nitrogen constituent model block to switch the dependence of all nitrogen (ammonium and nitrate) processes on dissolved oxygen on or off. Section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
+Used in an inorganic nitrogen constituent model block to switch the dependence of all nitrogen (ammonium and nitrate) processes on dissolved oxygen on or off. Simulation construction section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -595,7 +595,7 @@ Used in an inorganic nitrogen constituent model block to switch the dependence o
 <a id="WQSilModEnd"><bmtpink>end silicate model </bmtpink></a>
 </td>
 <td style="text-align:left;">
-Used to terminate a silicate constituent model block. Must follow a <a href="AppCommands.html#WQSilMod">silicate model ==</a> command. Section <a href="SimulationConstruction-1.html#ConModSi-5">4.7.3.2.1</a>.
+Used to terminate a silicate constituent model block. Must follow a <a href="AppCommands.html#WQSilMod">silicate model ==</a> command. Simulation construction section <a href="SimulationConstruction-1.html#ConModSi-5">4.7.3.2.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -606,7 +606,7 @@ Used to terminate a silicate constituent model block. Must follow a <a href="App
 <a id="WQNitModEnd"><bmtpink>end nitrogen model </bmtpink></a>
 </td>
 <td style="text-align:left;">
-Used to terminate an inorganic nitrogen nitrogen constituent model block. Must follow an <a href="AppCommands.html#WQInorgNitMod">nitrogen model ==</a> command. Section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
+Used to terminate an inorganic nitrogen nitrogen constituent model block. Must follow an <a href="AppCommands.html#WQInorgNitMod">nitrogen model ==</a> command. Simulation construction section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -617,7 +617,7 @@ Used to terminate an inorganic nitrogen nitrogen constituent model block. Must f
 <a id="WQNitBenFlx"><bmtpink>nitrate flux == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParFsedNit"><span class="math inline">\(F_{sed}^{NO_3}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a materials block to control the sediment flux rate of nitrate. Section <a href="SimulationConstruction-1.html#MatSpecsInorg-3">4.7.4</a>.
+Used in a materials block to control the sediment flux rate of nitrate. Simulation construction section <a href="SimulationConstruction-1.html#MatSpecsInorg-3">4.7.4</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -628,7 +628,7 @@ Used in a materials block to control the sediment flux rate of nitrate. Section 
 <a id="WQNitBenFlxPars"><bmtpink>nitrate benthic == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParKsedNit"><span class="math inline">\(K_{sed-O_2}^{NO_3}\)</span></a>,<a href="AppParams.html#WQParthetasedNit"><span class="math inline">\(\theta_{sed}^{NO_3}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an inorganic nitrogen constituent model block to control the response of benthic nitrate flux to temperature and oxygen concentration. Section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
+Used in an inorganic nitrogen constituent model block to control the response of benthic nitrate flux to temperature and oxygen concentration. Simulation construction section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -639,7 +639,7 @@ Used in an inorganic nitrogen constituent model block to control the response of
 <a id="WQNitMinMax"><bmtpink>nitrate min max == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParMinNit"><span class="math inline">\(\left[NO_3\right]_{min}^{NO_3}\)</span></a>,<a href="AppParams.html#WQParMaxNit"><span class="math inline">\(\left[NO_3\right]_{max}^{NO_3}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an inorganic nitrogen constituent model block to set minimum and maximum nitrate concentrations. Section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
+Used in an inorganic nitrogen constituent model block to set minimum and maximum nitrate concentrations. Simulation construction section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -650,7 +650,7 @@ Used in an inorganic nitrogen constituent model block to set minimum and maximum
 <a id="WQNitrifPars"><bmtpink>nitrification == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParRnitrif"><span class="math inline">\(R_{nitrif}^{NH_4}\)</span></a>,<a href="AppParams.html#WQParKNitrif"><span class="math inline">\(K_{nitrif-O_2}^{NH_4}\)</span></a>,<a href="AppParams.html#WQParthetaNitrif"><span class="math inline">\(\theta_{nitrif}^{NH_4}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an inorganic nitrogen constituent model block to control nitrification and its response to oxygen concentration and temperature. Section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
+Used in an inorganic nitrogen constituent model block to control nitrification and its response to oxygen concentration and temperature. Simulation construction section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -661,7 +661,7 @@ Used in an inorganic nitrogen constituent model block to control nitrification a
 <a id="WQDenitrifParsMM"><bmtpink>denitrification == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#Denitrif-3">Michaelis Menten</a>,<a href="AppParams.html#WQParRdenit"><span class="math inline">\(R_{denit}^{NO_3}\)</span></a>,<a href="AppParams.html#WQParKdenitO2MM"><span class="math inline">\(K_{denit-O2-MM}^{NO_3}\)</span></a>,<a href="AppParams.html#WQParthetadenit"><span class="math inline">\(\theta_{denit}^{NO_3}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an inorganic nitrogen constituent model block to activate the Michaelis Menten model and control denitrification and its response to ambient oxygen concentrations and temperature. Section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
+Used in an inorganic nitrogen constituent model block to activate the Michaelis Menten model and control denitrification and its response to ambient oxygen concentrations and temperature. Simulation construction section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQDenitrifParsExp">exponential</a>
@@ -672,7 +672,7 @@ Used in an inorganic nitrogen constituent model block to activate the Michaelis 
 <a id="WQDenitrifParsExp"><bmtpink>denitrification == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#Denitrif-3">exponential</a>,<a href="AppParams.html#WQParRdenit"><span class="math inline">\(R_{denit}^{NO_3}\)</span></a>,<a href="AppParams.html#WQParKdenitO2Exp"><span class="math inline">\(K_{denit-O2-exp}^{NO_3}\)</span></a>,<a href="AppParams.html#WQParthetadenit"><span class="math inline">\(\theta_{denit}^{NO_3}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an inorganic nitrogen constituent model block to activate the exponential model and control denitrification and its response to ambient oxygen concentrations and temperature. Section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
+Used in an inorganic nitrogen constituent model block to activate the exponential model and control denitrification and its response to ambient oxygen concentrations and temperature. Simulation construction section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQDenitrifParsMM">Michaelis Menten</a>
@@ -683,7 +683,7 @@ Used in an inorganic nitrogen constituent model block to activate the exponentia
 <a id="WQAtmNPars"><bmtpink>atmospheric deposition == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParAtmWetTN"><span class="math inline">\(\left[{TN}\right]_{rain}\)</span></a>,<a href="AppParams.html#WQParAtmDryTN"><span class="math inline">\(R_{atm-dry}^{TN}\)</span></a>,<a href="AppParams.html#WQParAtmWetNFrac"><span class="math inline">\(f_{TN}^{NO_3}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an inorganic nitrogen constituent model block to control the wet and dry atmospheric deposition of inorganic nitrogen. Section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
+Used in an inorganic nitrogen constituent model block to control the wet and dry atmospheric deposition of inorganic nitrogen. Simulation construction section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -694,7 +694,7 @@ Used in an inorganic nitrogen constituent model block to control the wet and dry
 <a id="WQInorgFRPMod"><bmtpink>phosphorus model == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="ProcessDescriptions-1.html#ConModFRPhs-4">FRPhs</a>;<a href="ProcessDescriptions-1.html#ConModFRPhsAds-4">FRPhsads</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used to commence an inorganic phosphorus constituent model block via specification of a constituent model from the inorganic phosphorus constituent model class. Section <a href="SimulationConstruction-1.html#ConModClssPhs-4">4.7.3.4</a>.
+Used to commence an inorganic phosphorus constituent model block via specification of a constituent model from the inorganic phosphorus constituent model class. Simulation construction section <a href="SimulationConstruction-1.html#ConModClssPhs-4">4.7.3.4</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -705,7 +705,7 @@ Used to commence an inorganic phosphorus constituent model block via specificati
 <a id="WQFRPModEnd"><bmtpink>end phosphorus model </bmtpink></a>
 </td>
 <td style="text-align:left;">
-Used to terminate an inorganic phosphorus phosphorus constituent model block. Must follow a <a href="AppCommands.html#WQInorgFRPMod">phosphorus model ==</a> command. Section <a href="SimulationConstruction-1.html#ConModFRPhs-5">4.7.3.4.1</a>.
+Used to terminate an inorganic phosphorus phosphorus constituent model block. Must follow a <a href="AppCommands.html#WQInorgFRPMod">phosphorus model ==</a> command. Simulation construction section <a href="SimulationConstruction-1.html#ConModFRPhs-5">4.7.3.4.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -716,7 +716,7 @@ Used to terminate an inorganic phosphorus phosphorus constituent model block. Mu
 <a id="WQFRPMinMax"><bmtpink>FRP min max == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParMinFRP"><span class="math inline">\(\left[FRP\right]_{min}^{FRP}\)</span></a>,<a href="AppParams.html#WQParMaxFRP"><span class="math inline">\(\left[FRP\right]_{max}^{FRP}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an inorganic phosphorus constituent model block to set minimum and maximum FRP concentrations. Section <a href="SimulationConstruction-1.html#ConModFRPhs-5">4.7.3.4.1</a>.
+Used in an inorganic phosphorus constituent model block to set minimum and maximum FRP concentrations. Simulation construction section <a href="SimulationConstruction-1.html#ConModFRPhs-5">4.7.3.4.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -727,7 +727,7 @@ Used in an inorganic phosphorus constituent model block to set minimum and maxim
 <a id="WQFRPBenFlx"><bmtpink>FRP flux == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParFsedFRP"><span class="math inline">\(F_{sed}^{FRP}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a materials block to control the sediment flux rate of FRP. Section <a href="SimulationConstruction-1.html#MatSpecsInorg-3">4.7.4</a>.
+Used in a materials block to control the sediment flux rate of FRP. Simulation construction section <a href="SimulationConstruction-1.html#MatSpecsInorg-3">4.7.4</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -738,7 +738,7 @@ Used in a materials block to control the sediment flux rate of FRP. Section <a h
 <a id="WQFRPBenFlxPars"><bmtpink>FRP benthic == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParKsedFRP"><span class="math inline">\(K_{sed-O_2}^{FRP}\)</span></a>,<a href="AppParams.html#WQParthetasedFRP"><span class="math inline">\(\theta_{sed}^{FRP}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an inorganic phosphorus constituent model block to control the response of benthic FRP flux to temperature and oxygen concentration. Section <a href="SimulationConstruction-1.html#ConModFRPhs-5">4.7.3.4.1</a>.
+Used in an inorganic phosphorus constituent model block to control the response of benthic FRP flux to temperature and oxygen concentration. Simulation construction section <a href="SimulationConstruction-1.html#ConModFRPhs-5">4.7.3.4.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -749,7 +749,7 @@ Used in an inorganic phosphorus constituent model block to control the response 
 <a id="WQFRPOxy"><bmtpink>oxygen == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#SedFRPhsProd-3">on;off</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an inorganic phosphorus constituent model block to switch the dependence of FRP processes on dissolved oxygen on or off. Section <a href="SimulationConstruction-1.html#ConModFRPhs-5">4.7.3.4.1</a>.
+Used in an inorganic phosphorus constituent model block to switch the dependence of FRP processes on dissolved oxygen on or off. Simulation construction section <a href="SimulationConstruction-1.html#ConModFRPhs-5">4.7.3.4.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -760,7 +760,7 @@ Used in an inorganic phosphorus constituent model block to switch the dependence
 <a id="WQAtmPPars"><bmtpink>atmospheric deposition == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParAtmWetFRP"><span class="math inline">\(\left[{FRP}\right]_{rain}\)</span></a>,<a href="AppParams.html#WQParAtmDryFRP"><span class="math inline">\(R_{atm-dry}^{adsFRP}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an inorganic phosphorus constituent model block to control the wet (and dry) atmospheric deposition of FRP (adsorbed FRP). Section <a href="SimulationConstruction-1.html#ConModFRPhs-5">4.7.3.4.1</a>.
+Used in an inorganic phosphorus constituent model block to control the wet (and dry) atmospheric deposition of FRP (adsorbed FRP). Simulation construction section <a href="SimulationConstruction-1.html#ConModFRPhs-5">4.7.3.4.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -771,7 +771,7 @@ Used in an inorganic phosphorus constituent model block to control the wet (and 
 <a id="WQAdsFRPMinMax"><bmtpink>ads FRP min max == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParMinadsFRP"><span class="math inline">\(\left[adsFRP\right]_{min}^{adsFRP}\)</span></a>,<a href="AppParams.html#WQParMaxadsFRP"><span class="math inline">\(\left[adsFRP\right]_{max}^{adsFRP}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an inorganic phosphorus constituent model block to set minimum and maximum adsorbed FRP concentrations. Section <a href="SimulationConstruction-1.html#ConModFRPhsAds-5">4.7.3.4.2</a>.
+Used in an inorganic phosphorus constituent model block to set minimum and maximum adsorbed FRP concentrations. Simulation construction section <a href="SimulationConstruction-1.html#ConModFRPhsAds-5">4.7.3.4.2</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -782,7 +782,7 @@ Used in an inorganic phosphorus constituent model block to set minimum and maxim
 <a id="WQAdsFRPParsL"><bmtpink>adsorption == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#FRPhsAdsDsp-3">linear</a>,<a href="AppParams.html#WQParLinSorpL"><span class="math inline">\(K_{ads-L}^{FRP}\)</span></a>,<a href="AppParams.html#WQParD50Sorp"><span class="math inline">\(D50_{ads-max}^{FRP}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an inorganic phosphorus constituent model block to set the paramters for the linear FRP adsorption model. Section <a href="SimulationConstruction-1.html#ConModFRPhsAds-5">4.7.3.4.2</a>.
+Used in an inorganic phosphorus constituent model block to set the paramters for the linear FRP adsorption model. Simulation construction section <a href="SimulationConstruction-1.html#ConModFRPhsAds-5">4.7.3.4.2</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQAdsFRPParsQ">quadratic</a>
@@ -793,7 +793,7 @@ Used in an inorganic phosphorus constituent model block to set the paramters for
 <a id="WQAdsFRPParsQ"><bmtpink>adsorption == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#FRPhsAdsDsp-3">quadratic</a>,<a href="AppParams.html#WQParQSorpRatio"><span class="math inline">\(K_{ads-Q}^{FRP}\)</span></a>,<a href="AppParams.html#WQParQSorpMax"><span class="math inline">\(Q^{FRP}_{max}\)</span></a>,<a href="AppParams.html#WQParD50Sorp"><span class="math inline">\(D50_{ads-max}^{FRP}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a constituent model block to set the paramters for the quadratic FRP adsorption model. Section <a href="SimulationConstruction-1.html#ConModFRPhsAds-5">4.7.3.4.2</a>.
+Used in a constituent model block to set the paramters for the quadratic FRP adsorption model. Simulation construction section <a href="SimulationConstruction-1.html#ConModFRPhsAds-5">4.7.3.4.2</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQAdsFRPParsL">linear</a>
@@ -804,7 +804,7 @@ Used in a constituent model block to set the paramters for the quadratic FRP ads
 <a id="WQPhyMod"><bmtpink>phyto model == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="ProcessDescriptions-1.html#ConModPhyBas-4">basic</a>;<a href="ProcessDescriptions-1.html#ConModPhyAdv-4">advanced</a>,<a href="#">group_name</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used to commence a phytoplankton constituent model block via specification of a model from the phytoplankton constituent model class, and a phytoplankton group name. The group name can be any name required. If the advanced phytoplankton model is used then internal nitrogen and phosphorus concentrations will be simulated as computed variables and therefore must have respective initial conditions and boundary conditions specified, paying attention to ordering rules as required. Section <a href="SimulationConstruction-1.html#ConModClssPhy-4">4.7.3.5</a>.
+Used to commence a phytoplankton constituent model block via specification of a model from the phytoplankton constituent model class, and a phytoplankton group name. The group name can be any name required. If the advanced phytoplankton model is used then internal nitrogen and phosphorus concentrations will be simulated as computed variables and therefore must have respective initial conditions and boundary conditions specified, paying attention to ordering rules as required. Simulation construction section <a href="SimulationConstruction-1.html#ConModClssPhy-4">4.7.3.5</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -815,7 +815,7 @@ Used to commence a phytoplankton constituent model block via specification of a 
 <a id="WQPhyMinMax"><bmtpink>min max == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParMinPHY"><span class="math inline">\(\left[PHY\right]_{min}^{PHY}\)</span></a>,<a href="AppParams.html#WQParMaxPHY"><span class="math inline">\(\left[PHY\right]_{max}^{PHY}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set minimum and maximum phytoplankton group concentrations. Section <a href="SimulationConstruction-1.html#ConModPhyBas-5">4.7.3.5.1</a>.
+Used in a phytoplankton constituent model block to set minimum and maximum phytoplankton group concentrations. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyBas-5">4.7.3.5.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -826,7 +826,7 @@ Used in a phytoplankton constituent model block to set minimum and maximum phyto
 <a id="WQPhyTLnone"><bmtpink>temperature limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#PhyLimT0">none</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to turn off phytoplankton group temperature limitation. Section <a href="SimulationConstruction-1.html#ConModPhyTLim-6">4.7.3.5.1.1</a>.
+Used in a phytoplankton constituent model block to turn off phytoplankton group temperature limitation. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyTLim-6">4.7.3.5.1.1</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhyTLstd">standard</a>
@@ -837,7 +837,7 @@ Used in a phytoplankton constituent model block to turn off phytoplankton group 
 <a id="WQPhyTLstd"><bmtpink>temperature limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#PhyLimT1">standard</a>,<a href="AppParams.html#WQParTstdPHY"><span class="math inline">\(T_{std}^{phy}\)</span></a>,<a href="AppParams.html#WQParToptPHY"><span class="math inline">\(T_{opt}^{phy}\)</span></a>,<a href="AppParams.html#WQParTmaxPHY"><span class="math inline">\(T_{max}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set the standard phytoplankton group temperature limitation function. Section <a href="SimulationConstruction-1.html#ConModPhyTLim-6">4.7.3.5.1.1</a>.
+Used in a phytoplankton constituent model block to set the standard phytoplankton group temperature limitation function. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyTLim-6">4.7.3.5.1.1</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhyTLnone">none</a>
@@ -848,7 +848,7 @@ Used in a phytoplankton constituent model block to set the standard phytoplankto
 <a id="WQPhySLnone"><bmtpink>salinity limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#PhyLimNone-5">none</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to turn off phytoplankton group salinity limitation. Section <a href="SimulationConstruction-1.html#ConModPhySLim-6">4.7.3.5.1.2</a>.
+Used in a phytoplankton constituent model block to turn off phytoplankton group salinity limitation. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySLim-6">4.7.3.5.1.2</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhySLfresh">fresh</a>,<a href="AppCommands.html#WQPhySLmarine">marine</a>,<br><a href="AppCommands.html#WQPhySLmixed">mixed</a>,<a href="AppCommands.html#WQPhySLestuarine">estuarine</a>
@@ -859,7 +859,7 @@ Used in a phytoplankton constituent model block to turn off phytoplankton group 
 <a id="WQPhySLfresh"><bmtpink>salinity limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#PhyLimFresh-5">fresh</a>,<a href="AppParams.html#WQParSoptfreshPHY"><span class="math inline">\(S_{opt-fresh}^{phy}\)</span></a>,<a href="AppParams.html#WQParSmaxfreshPHY"><span class="math inline">\(S_{max-fresh}^{phy}\)</span></a>,<a href="AppParams.html#WQParLmaxfreshPHY"><span class="math inline">\(L_{max-fresh}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to select the freshwater phytoplankton group salinity limitation. Section <a href="SimulationConstruction-1.html#ConModPhySLim-6">4.7.3.5.1.2</a>.
+Used in a phytoplankton constituent model block to select the freshwater phytoplankton group salinity limitation. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySLim-6">4.7.3.5.1.2</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhySLnone">none</a>,<a href="AppCommands.html#WQPhySLmarine">marine</a>,<br><a href="AppCommands.html#WQPhySLmixed">mixed</a>,<a href="AppCommands.html#WQPhySLestuarine">estuarine</a>
@@ -870,7 +870,7 @@ Used in a phytoplankton constituent model block to select the freshwater phytopl
 <a id="WQPhySLmarine"><bmtpink>salinity limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#PhyLimMarine-5">marine</a>,<a href="AppParams.html#WQParSoptmarinePHY"><span class="math inline">\(S_{opt-marine}^{phy}\)</span></a>,<a href="AppParams.html#WQParLzeromarinePHY"><span class="math inline">\(L_{max-fresh}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to select the marine phytoplankton group salinity limitation. Section <a href="SimulationConstruction-1.html#ConModPhySLim-6">4.7.3.5.1.2</a>.
+Used in a phytoplankton constituent model block to select the marine phytoplankton group salinity limitation. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySLim-6">4.7.3.5.1.2</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhySLnone">none</a>,<a href="AppCommands.html#WQPhySLfresh">fresh</a>,<br><a href="AppCommands.html#WQPhySLmixed">mixed</a>,<a href="AppCommands.html#WQPhySLestuarine">estuarine</a>
@@ -881,7 +881,7 @@ Used in a phytoplankton constituent model block to select the marine phytoplankt
 <a id="WQPhySLmixed"><bmtpink>salinity limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#PhyLimMixed-5">mixed</a>,<a href="AppParams.html#WQParSoptmixPHY"><span class="math inline">\(S_{opt-mix}^{phy}\)</span></a>,<a href="AppParams.html#WQParSmaxmixPHY"><span class="math inline">\(S_{max-mix}^{phy}\)</span></a>,<a href="AppParams.html#WQParLzeromixPHY"><span class="math inline">\(L_{zero-mix}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to select the mixed phytoplankton group salinity limitation. Section <a href="SimulationConstruction-1.html#ConModPhySLim-6">4.7.3.5.1.2</a>.
+Used in a phytoplankton constituent model block to select the mixed phytoplankton group salinity limitation. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySLim-6">4.7.3.5.1.2</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhySLnone">none</a>,<a href="AppCommands.html#WQPhySLmarine">marine</a>,<br><a href="AppCommands.html#WQPhySLmixed">mixed</a>,<a href="AppCommands.html#WQPhySLestuarine">estuarine</a>
@@ -892,7 +892,7 @@ Used in a phytoplankton constituent model block to select the mixed phytoplankto
 <a id="WQPhySLestuarine"><bmtpink>salinity limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#PhyLimEstuarine-5">estuarine</a>,<a href="AppParams.html#WQParSoptestPHY"><span class="math inline">\(S_{opt-est}^{phy}\)</span></a>,<a href="AppParams.html#WQParSmaxestPHY"><span class="math inline">\(S_{max-est}^{phy}\)</span></a>,<a href="AppParams.html#WQParPestPHY"><span class="math inline">\(P_{est}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to select the estuarine phytoplankton group salinity limitation. Section <a href="SimulationConstruction-1.html#ConModPhySLim-6">4.7.3.5.1.2</a>.
+Used in a phytoplankton constituent model block to select the estuarine phytoplankton group salinity limitation. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySLim-6">4.7.3.5.1.2</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhySLnone">none</a>,<a href="AppCommands.html#WQPhySLfresh">fresh</a>,<br><a href="AppCommands.html#WQPhySLmarine">marine</a>,<a href="AppCommands.html#WQPhySLmixed">mixed</a>
@@ -903,7 +903,7 @@ Used in a phytoplankton constituent model block to select the estuarine phytopla
 <a id="WQPhyNLBas"><bmtpink>nitrogen limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParMinNlim"><span class="math inline">\(\left[N\right]_{min}^{phy}\)</span></a>,<a href="AppParams.html#WQParKNlim"><span class="math inline">\(K_{lim-N}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set nitrogen limitation parameters for the basic phytoplankton model. Section <a href="SimulationConstruction-1.html#ConModPhyNLimB-6">4.7.3.5.1.4</a>.
+Used in a phytoplankton constituent model block to set nitrogen limitation parameters for the basic phytoplankton model. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyNLimB-6">4.7.3.5.1.4</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhyNLAdv">advanced</a>
@@ -914,7 +914,7 @@ Used in a phytoplankton constituent model block to set nitrogen limitation param
 <a id="WQPhyNLAdv"><bmtpink>nitrogen limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParMinNlim"><span class="math inline">\(\left[N\right]_{min}^{phy}\)</span></a>,<a href="AppParams.html#WQParKNlim"><span class="math inline">\(K_{lim-N}^{phy}\)</span></a>,<a href="AppParams.html#WQParMinNClim"><span class="math inline">\(X_{N-C-min}^{phy}\)</span></a>,<a href="AppParams.html#WQParMaxNClim"><span class="math inline">\(X_{N-C-max}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set nitrogen limitation parameters for the advanced phytoplankton model. Section <a href="SimulationConstruction-1.html#ConModPhyNLimA-6">4.7.3.5.2.1</a>.
+Used in a phytoplankton constituent model block to set nitrogen limitation parameters for the advanced phytoplankton model. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyNLimA-6">4.7.3.5.2.1</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhyNLBas">basic</a>
@@ -925,7 +925,7 @@ Used in a phytoplankton constituent model block to set nitrogen limitation param
 <a id="WQPhyPLBas"><bmtpink>phosphorus limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParMinPlim"><span class="math inline">\(\left[P\right]_{min}^{phy}\)</span></a>,<a href="AppParams.html#WQParKPlim"><span class="math inline">\(K_{lim-P}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set phosphorus limitation parameters for the basic phytoplankton model. Section <a href="SimulationConstruction-1.html#ConModPhyPLimB-6">4.7.3.5.1.5</a>.
+Used in a phytoplankton constituent model block to set phosphorus limitation parameters for the basic phytoplankton model. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyPLimB-6">4.7.3.5.1.5</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhyPLAdv">advanced</a>
@@ -936,7 +936,7 @@ Used in a phytoplankton constituent model block to set phosphorus limitation par
 <a id="WQPhyPLAdv"><bmtpink>phosphorus limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParMinPlim"><span class="math inline">\(\left[P\right]_{min}^{phy}\)</span></a>,<a href="AppParams.html#WQParKPlim"><span class="math inline">\(K_{lim-P}^{phy}\)</span></a>,<a href="AppParams.html#WQParMinPClim"><span class="math inline">\(X_{P-C-min}^{phy}\)</span></a>,<a href="AppParams.html#WQParMaxPClim"><span class="math inline">\(X_{P-C-max}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set phosphorus limitation parameters for the advanced phytoplankton model. Section <a href="SimulationConstruction-1.html#ConModPhyPLimA-6">4.7.3.5.2.2</a>.
+Used in a phytoplankton constituent model block to set phosphorus limitation parameters for the advanced phytoplankton model. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyPLimA-6">4.7.3.5.2.2</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhyPLBas">basic</a>
@@ -947,7 +947,7 @@ Used in a phytoplankton constituent model block to set phosphorus limitation par
 <a id="WQPhyNSiBas"><bmtpink>silicate limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParMinSilim"><span class="math inline">\(\left[Si\right]_{min}^{phy}\)</span></a>,<a href="AppParams.html#WQParKSilim"><span class="math inline">\(K_{lim-Si}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set silicate limitation parameters for the basic phytoplankton model. Specifying this command triggers silicate uptake. Section <a href="SimulationConstruction-1.html#ConModPhySiLimB-6">4.7.3.5.1.6</a>.
+Used in a phytoplankton constituent model block to set silicate limitation parameters for the basic phytoplankton model. Specifying this command triggers silicate uptake. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySiLimB-6">4.7.3.5.1.6</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -958,7 +958,7 @@ Used in a phytoplankton constituent model block to set silicate limitation param
 <a id="WQPhyLghtLbasic"><bmtpink>light limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#PhyLimBasic-5">basic</a>,<a href="AppParams.html#WQParKSilim"><span class="math inline">\(I_{K-bas}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set basic light limitation parameters for the basic and advanced phytoplankton constituent models. If stokes settling is used then the vlaue of <span class="math inline">\(I_K\)</span> specified in this command overrides any value specified using the <a href="AppCommands.html#WQPhySettStokes">settling == stokes , <span class="math inline">\(I_K\)</span></a> command. Section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
+Used in a phytoplankton constituent model block to set basic light limitation parameters for the basic and advanced phytoplankton constituent models. If stokes settling is used then the vlaue of <span class="math inline">\(I_K\)</span> specified in this command overrides any value specified using the <a href="AppCommands.html#WQPhySettStokes">settling == stokes , <span class="math inline">\(I_K\)</span></a> command. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhyLghtLmonod">monod</a>,<a href="AppCommands.html#WQPhyLghtLsteele">steele</a>,<br><a href="AppCommands.html#WQPhyLghtLwebb">webb</a>,<a href="AppCommands.html#WQPhyLghtLjassby">jassby</a>,<br><a href="AppCommands.html#WQPhyLghtLchalker">chalker</a>,<a href="AppCommands.html#WQPhyLghtLklepper">klepper</a>,<br><a href="AppCommands.html#WQPhyLghtLintegrated">integrated</a>,
@@ -969,7 +969,7 @@ Used in a phytoplankton constituent model block to set basic light limitation pa
 <a id="WQPhyLghtLmonod"><bmtpink>light limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#PhyLimMonod-5">monod</a>,<a href="AppParams.html#WQParKbasLghtlim"><span class="math inline">\(I_{K-mon}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set monod light limitation parameters for the basic and advanced phytoplankton constituent models. If stokes settling is used then the vlaue of <span class="math inline">\(I_K\)</span> specified in this command overrides any value specified using the <a href="AppCommands.html#WQPhySettStokes">settling == stokes , <span class="math inline">\(I_K\)</span></a> command. Section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
+Used in a phytoplankton constituent model block to set monod light limitation parameters for the basic and advanced phytoplankton constituent models. If stokes settling is used then the vlaue of <span class="math inline">\(I_K\)</span> specified in this command overrides any value specified using the <a href="AppCommands.html#WQPhySettStokes">settling == stokes , <span class="math inline">\(I_K\)</span></a> command. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhyLghtLbasic">basic</a>,<a href="AppCommands.html#WQPhyLghtLsteele">steele</a>,<br><a href="AppCommands.html#WQPhyLghtLwebb">webb</a>,<a href="AppCommands.html#WQPhyLghtLjassby">jassby</a>,<br><a href="AppCommands.html#WQPhyLghtLchalker">chalker</a>,<a href="AppCommands.html#WQPhyLghtLklepper">klepper</a>,<br><a href="AppCommands.html#WQPhyLghtLintegrated">integrated</a>,
@@ -980,7 +980,7 @@ Used in a phytoplankton constituent model block to set monod light limitation pa
 <a id="WQPhyLghtLsteele"><bmtpink>light limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#PhyLimSteele-5">steele</a>,<a href="AppParams.html#WQParKmonLghtlim"><span class="math inline">\(I_{S-ste}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set steele light limitation parameters for the basic and advanced phytoplankton constituent models. Section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
+Used in a phytoplankton constituent model block to set steele light limitation parameters for the basic and advanced phytoplankton constituent models. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhyLghtLbasic">basic</a>,<a href="AppCommands.html#WQPhyLghtLmonod">monod</a>,<br><a href="AppCommands.html#WQPhyLghtLwebb">webb</a>,<a href="AppCommands.html#WQPhyLghtLjassby">jassby</a>,<br><a href="AppCommands.html#WQPhyLghtLchalker">chalker</a>,<a href="AppCommands.html#WQPhyLghtLklepper">klepper</a>,<br><a href="AppCommands.html#WQPhyLghtLintegrated">integrated</a>,
@@ -991,7 +991,7 @@ Used in a phytoplankton constituent model block to set steele light limitation p
 <a id="WQPhyLghtLwebb"><bmtpink>light limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#PhyLimWebb-5">webb</a>,<a href="AppParams.html#WQParSatsteLghtlim"><span class="math inline">\(I_{K-web}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set webb light limitation parameters for the basic and advanced phytoplankton constituent models. If stokes settling is used then the vlaue of <span class="math inline">\(I_K\)</span> specified in this command overrides any value specified using the <a href="AppCommands.html#WQPhySettStokes">settling == stokes , <span class="math inline">\(I_K\)</span></a> command. Section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
+Used in a phytoplankton constituent model block to set webb light limitation parameters for the basic and advanced phytoplankton constituent models. If stokes settling is used then the vlaue of <span class="math inline">\(I_K\)</span> specified in this command overrides any value specified using the <a href="AppCommands.html#WQPhySettStokes">settling == stokes , <span class="math inline">\(I_K\)</span></a> command. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhyLghtLbasic">basic</a>,<a href="AppCommands.html#WQPhyLghtLsteele">steele</a>,<br><a href="AppCommands.html#WQPhyLghtLmonod">monod</a>,<a href="AppCommands.html#WQPhyLghtLjassby">jassby</a>,<br><a href="AppCommands.html#WQPhyLghtLchalker">chalker</a>,<a href="AppCommands.html#WQPhyLghtLklepper">klepper</a>,<br><a href="AppCommands.html#WQPhyLghtLintegrated">integrated</a>,
@@ -1002,7 +1002,7 @@ Used in a phytoplankton constituent model block to set webb light limitation par
 <a id="WQPhyLghtLjassby"><bmtpink>light limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#PhyLimJassby-5">jassby</a>,<a href="AppParams.html#WQParKwebLghtlim"><span class="math inline">\(I_{K-jas}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set jassby light limitation parameters for the basic and advanced phytoplankton constituent models. If stokes settling is used then the vlaue of <span class="math inline">\(I_K\)</span> specified in this command overrides any value specified using the <a href="AppCommands.html#WQPhySettStokes">settling == stokes , <span class="math inline">\(I_K\)</span></a> command. Section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
+Used in a phytoplankton constituent model block to set jassby light limitation parameters for the basic and advanced phytoplankton constituent models. If stokes settling is used then the vlaue of <span class="math inline">\(I_K\)</span> specified in this command overrides any value specified using the <a href="AppCommands.html#WQPhySettStokes">settling == stokes , <span class="math inline">\(I_K\)</span></a> command. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhyLghtLbasic">basic</a>,<a href="AppCommands.html#WQPhyLghtLsteele">steele</a>,<br><a href="AppCommands.html#WQPhyLghtLwebb">webb</a>,<a href="AppCommands.html#WQPhyLghtLmonod">monod</a>,<br><a href="AppCommands.html#WQPhyLghtLchalker">chalker</a>,<a href="AppCommands.html#WQPhyLghtLklepper">klepper</a>,<br><a href="AppCommands.html#WQPhyLghtLintegrated">integrated</a>,
@@ -1013,7 +1013,7 @@ Used in a phytoplankton constituent model block to set jassby light limitation p
 <a id="WQPhyLghtLchalker"><bmtpink>light limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#PhyLimChalker-5">chalker</a>,<a href="AppParams.html#WQParKjasLghtlim"><span class="math inline">\(I_{K-cha}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set chalker light limitation parameters for the basic and advanced phytoplankton constituent models. If stokes settling is used then the vlaue of <span class="math inline">\(I_K\)</span> specified in this command overrides any value specified using the <a href="AppCommands.html#WQPhySettStokes">settling == stokes , <span class="math inline">\(I_K\)</span></a> command. Section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
+Used in a phytoplankton constituent model block to set chalker light limitation parameters for the basic and advanced phytoplankton constituent models. If stokes settling is used then the vlaue of <span class="math inline">\(I_K\)</span> specified in this command overrides any value specified using the <a href="AppCommands.html#WQPhySettStokes">settling == stokes , <span class="math inline">\(I_K\)</span></a> command. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhyLghtLbasic">basic</a>,<a href="AppCommands.html#WQPhyLghtLsteele">steele</a>,<br><a href="AppCommands.html#WQPhyLghtLwebb">webb</a>,<a href="AppCommands.html#WQPhyLghtLjassby">jassby</a>,<br><a href="AppCommands.html#WQPhyLghtLmonod">monod</a>,<a href="AppCommands.html#WQPhyLghtLklepper">klepper</a>,<br><a href="AppCommands.html#WQPhyLghtLintegrated">integrated</a>,
@@ -1024,7 +1024,7 @@ Used in a phytoplankton constituent model block to set chalker light limitation 
 <a id="WQPhyLghtLklepper"><bmtpink>light limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#PhyLimKlepper-5">klepper</a>,<a href="AppParams.html#WQParKchaLghtlim"><span class="math inline">\(I_{S-kle}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set klepper light limitation parameters for the basic and advanced phytoplankton constituent models. Section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
+Used in a phytoplankton constituent model block to set klepper light limitation parameters for the basic and advanced phytoplankton constituent models. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhyLghtLbasic">basic</a>,<a href="AppCommands.html#WQPhyLghtLsteele">steele</a>,<br><a href="AppCommands.html#WQPhyLghtLwebb">webb</a>,<a href="AppCommands.html#WQPhyLghtLjassby">jassby</a>,<br><a href="AppCommands.html#WQPhyLghtLchalker">chalker</a>,<a href="AppCommands.html#WQPhyLghtLmonod">monod</a>,<br><a href="AppCommands.html#WQPhyLghtLintegrated">integrated</a>,
@@ -1035,7 +1035,7 @@ Used in a phytoplankton constituent model block to set klepper light limitation 
 <a id="WQPhyLghtLintegrated"><bmtpink>light limitation == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="#PhyLimIntegrated-5">integrated</a>,<a href="AppParams.html#WQParSatkleLghtlim"><span class="math inline">\(I_{S-int}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set integrated light limitation parameters for the basic and advanced phytoplankton constituent models. Section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
+Used in a phytoplankton constituent model block to set integrated light limitation parameters for the basic and advanced phytoplankton constituent models. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhyLghtLbasic">basic</a>,<a href="AppCommands.html#WQPhyLghtLsteele">steele</a>,<br><a href="AppCommands.html#WQPhyLghtLwebb">webb</a>,<a href="AppCommands.html#WQPhyLghtLjassby">jassby</a>,<br><a href="AppCommands.html#WQPhyLghtLchalker">chalker</a>,<a href="AppCommands.html#WQPhyLghtLklepper">klepper</a>,<br><a href="AppCommands.html#WQPhyLghtLmonod">monod</a>,
@@ -1046,7 +1046,7 @@ Used in a phytoplankton constituent model block to set integrated light limitati
 <a id="WQPhyUptakeBas"><bmtpink>uptake == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParConNCRat"><span class="math inline">\(X_{N-C-con}^{phy}\)</span></a>,<a href="AppParams.html#WQParConPCRat"><span class="math inline">\(X_{P-C-con}^{phy}\)</span></a>,<a href="AppParams.html#WQParConSiCRat"><span class="math inline">\(X_{Si-C-con}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set constant nitrogen, phosphorus and optionally silicate to biomass ratios for the basic phytoplankton constituent model only. Section <a href="SimulationConstruction-1.html#ConModPhyUptakeB-6">4.7.3.5.1.7</a>.
+Used in a phytoplankton constituent model block to set constant nitrogen, phosphorus and optionally silicate to biomass ratios for the basic phytoplankton constituent model only. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyUptakeB-6">4.7.3.5.1.7</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhyUptakeAdv">advanced</a>
@@ -1057,7 +1057,7 @@ Used in a phytoplankton constituent model block to set constant nitrogen, phosph
 <a id="WQPhyUptakeAdv"><bmtpink>uptake == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParNuptake"><span class="math inline">\(R_{N-uptake}^{phy}\)</span></a>,<a href="AppParams.html#WQParPuptake"><span class="math inline">\(R_{P-uptake}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set nitrogen and phosphorus uptake rates for the advanced phytoplankton constituent model only. Section <a href="SimulationConstruction-1.html#ConModPhyUptakeA-6">4.7.3.5.2.3</a>.
+Used in a phytoplankton constituent model block to set nitrogen and phosphorus uptake rates for the advanced phytoplankton constituent model only. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyUptakeA-6">4.7.3.5.2.3</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhyUptakeBas">basic</a>
@@ -1068,7 +1068,7 @@ Used in a phytoplankton constituent model block to set nitrogen and phosphorus u
 <a id="WQPhySettNone"><bmtpink>settling == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#PhySettleNone-5">none</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to turn off settling in both basic and advanced phytoplankton constituent models. Section <a href="SimulationConstruction-1.html#ConModPhySettleB-6">4.7.3.5.1.12</a>.
+Used in a phytoplankton constituent model block to turn off settling in both basic and advanced phytoplankton constituent models. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySettleB-6">4.7.3.5.1.12</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhySettConst">constant</a>,<a href="AppCommands.html#WQPhySettRho">thermal</a>,<br><a href="AppCommands.html#WQPhySettStokes">stokes</a>,<a href="AppCommands.html#WQPhySettMotile">motile</a>
@@ -1079,7 +1079,7 @@ Used in a phytoplankton constituent model block to turn off settling in both bas
 <a id="WQPhySettConst"><bmtpink>settling == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#PhySettleConst-5">constant</a>,<a href="AppParams.html#WQParConV"><span class="math inline">\(V_{sett-con}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set a constant settling velocity in both basic and advanced phytoplankton constituent models. A negative value specified in this command is a downwards velocity. Setting the settling velocity to zero in this model is the same as using settling == none. Section <a href="SimulationConstruction-1.html#ConModPhySettleB-6">4.7.3.5.1.12</a>.
+Used in a phytoplankton constituent model block to set a constant settling velocity in both basic and advanced phytoplankton constituent models. A negative value specified in this command is a downwards velocity. Setting the settling velocity to zero in this model is the same as using settling == none. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySettleB-6">4.7.3.5.1.12</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhySettNone">none</a>,<a href="AppCommands.html#WQPhySettRho">thermal</a>,<br><a href="AppCommands.html#WQPhySettStokes">stokes</a>,<a href="AppCommands.html#WQPhySettMotile">motile</a>
@@ -1090,7 +1090,7 @@ Used in a phytoplankton constituent model block to set a constant settling veloc
 <a id="WQPhySettRho"><bmtpink>settling == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#PhySettleConstD-5">thermal</a>,<a href="AppParams.html#WQParThermV"><span class="math inline">\(V_{sett-thr}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set a constant settling velocity in both basic and advanced phytoplankton constituent models, allowing for temperature effects to settling. A negative value specified in this command is a downwards velocity. Section <a href="SimulationConstruction-1.html#ConModPhySettleB-6">4.7.3.5.1.12</a>.
+Used in a phytoplankton constituent model block to set a constant settling velocity in both basic and advanced phytoplankton constituent models, allowing for temperature effects to settling. A negative value specified in this command is a downwards velocity. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySettleB-6">4.7.3.5.1.12</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhySettNone">none</a>,<a href="AppCommands.html#WQPhySettConst">constant</a>,<br><a href="AppCommands.html#WQPhySettStokes">stokes</a>,<a href="AppCommands.html#WQPhySettMotile">motile</a>
@@ -1101,7 +1101,7 @@ Used in a phytoplankton constituent model block to set a constant settling veloc
 <a id="WQPhySettStokes"><bmtpink>settling == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#PhySettleStokes-5">stokes</a>,<a href="AppParams.html#WQParKstoSett"><span class="math inline">\(I_{K-sto}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to compute settling velocity via stokes settling laws in both basic and advanced phytoplankton constituent models. Density must be simulated as a computed variable for each phytoplankton group that uses this model, so must have cell density initial conditions and boundary conditions specified as per ordering rules. The specification of <span class="math inline">\(I_K\)</span> is not mandatory in this command. If it is not specified then the <span class="math inline">\(I_K\)</span> specified in the phytoplankton constituent model’s light limitation model will be used. If a light limitaton model is not specified, or uses <span class="math inline">\(I_S\)</span> instead of <span class="math inline">\(I_K\)</span>, then the library default value of <span class="math inline">\(I_K\)</span> is used. If <span class="math inline">\(I_K\)</span> is specified both in this stokes settling command and a phytoplankton constituent model light limitation function, then the value specified in the “light limitation ==” command is used, and the value specified in this command is ignored. Section <a href="SimulationConstruction-1.html#ConModPhySettleB-6">4.7.3.5.1.12</a>.
+Used in a phytoplankton constituent model block to compute settling velocity via stokes settling laws in both basic and advanced phytoplankton constituent models. Density must be simulated as a computed variable for each phytoplankton group that uses this model, so must have cell density initial conditions and boundary conditions specified as per ordering rules. The specification of <span class="math inline">\(I_K\)</span> is not mandatory in this command. If it is not specified then the <span class="math inline">\(I_K\)</span> specified in the phytoplankton constituent model’s light limitation model will be used. If a light limitaton model is not specified, or uses <span class="math inline">\(I_S\)</span> instead of <span class="math inline">\(I_K\)</span>, then the library default value of <span class="math inline">\(I_K\)</span> is used. If <span class="math inline">\(I_K\)</span> is specified both in this stokes settling command and a phytoplankton constituent model light limitation function, then the value specified in the “light limitation ==” command is used, and the value specified in this command is ignored. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySettleB-6">4.7.3.5.1.12</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhySettNone">none</a>,<a href="AppCommands.html#WQPhySettConst">constant</a>,<br><a href="AppCommands.html#WQPhySettRho">thermal</a>,<a href="AppCommands.html#WQPhySettMotile">motile</a>
@@ -1112,7 +1112,7 @@ Used in a phytoplankton constituent model block to compute settling velocity via
 <a id="WQPhySettMotile"><bmtpink>settling == </bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppProcesses.html#PhySettleMotile-5">motile</a>,<a href="AppParams.html#WQParMotV"><span class="math inline">\(V_{mot}^{phy}\)</span></a>,<a href="AppParams.html#WQParKmotSett"><span class="math inline">\(I_{K-mot}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to compute settling velocity via motility functions that depend on ambient conditions, in only the advanced phytoplankton constituent model. The specification of <span class="math inline">\(I_K\)</span> is not mandatory in this command. If it is not specified then the <span class="math inline">\(I_K\)</span> specified in the phytoplankton constituent model’s light limitation model will be used. If a light limitaton model is not specified, or uses <span class="math inline">\(I_S\)</span> instead of <span class="math inline">\(I_K\)</span>, then the library default value of <span class="math inline">\(I_K\)</span> is used. If <span class="math inline">\(I_K\)</span> is specified both in this motile settling command and a phytoplankton constituent model light limitation function, then the value specified in the “light limitation ==” command is used, and the value specified in this command is ignored. Section <a href="SimulationConstruction-1.html#ConModPhySettleA-6">4.7.3.5.2.4</a>.
+Used in a phytoplankton constituent model block to compute settling velocity via motility functions that depend on ambient conditions, in only the advanced phytoplankton constituent model. The specification of <span class="math inline">\(I_K\)</span> is not mandatory in this command. If it is not specified then the <span class="math inline">\(I_K\)</span> specified in the phytoplankton constituent model’s light limitation model will be used. If a light limitaton model is not specified, or uses <span class="math inline">\(I_S\)</span> instead of <span class="math inline">\(I_K\)</span>, then the library default value of <span class="math inline">\(I_K\)</span> is used. If <span class="math inline">\(I_K\)</span> is specified both in this motile settling command and a phytoplankton constituent model light limitation function, then the value specified in the “light limitation ==” command is used, and the value specified in this command is ignored. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySettleA-6">4.7.3.5.2.4</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhySettNone">none</a>,<a href="AppCommands.html#WQPhySettConst">constant</a>,<br><a href="AppCommands.html#WQPhySettRho">thermal</a>,<a href="AppCommands.html#WQPhySettStokes">stokes</a>
@@ -1145,25 +1145,18 @@ Used in a phytoplankton constituent model block to compute settling velocity via
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
+"github": true,
 "facebook": true,
 "twitter": true,
-"linkedin": false,
+"linkedin": true,
 "weibo": false,
 "instapaper": false,
 "vk": false,
 "whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+"all": false
 },
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
+"fontsettings": false,
+"edit": null,
 "history": {
 "link": null,
 "text": null
@@ -1172,7 +1165,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["TUFLOWFV_WQM_Manual.pdf", "TUFLOWFV_WQM_Manual.epub"],
+"download": null,
 "search": {
 "engine": "lunr",
 "options": null
