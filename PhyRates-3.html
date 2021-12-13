@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 1 Overview | TUFLOW FV Water Quality Module User Manual</title>
-  <meta name="description" content="Section 1 Overview | TUFLOW FV Water Quality Module User Manual" />
+  <title>Appendix J Processes: phyto biomass rates | TUFLOW FV Water Quality Module User Manual</title>
+  <meta name="description" content="Appendix J Processes: phyto biomass rates | TUFLOW FV Water Quality Module User Manual" />
   <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 1 Overview | TUFLOW FV Water Quality Module User Manual" />
+  <meta property="og:title" content="Appendix J Processes: phyto biomass rates | TUFLOW FV Water Quality Module User Manual" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="/images/tuflow.png" />
-  <meta property="og:description" content="Section 1 Overview | TUFLOW FV Water Quality Module User Manual" />
+  <meta property="og:description" content="Appendix J Processes: phyto biomass rates | TUFLOW FV Water Quality Module User Manual" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 1 Overview | TUFLOW FV Water Quality Module User Manual" />
+  <meta name="twitter:title" content="Appendix J Processes: phyto biomass rates | TUFLOW FV Water Quality Module User Manual" />
   
-  <meta name="twitter:description" content="Section 1 Overview | TUFLOW FV Water Quality Module User Manual" />
+  <meta name="twitter:description" content="Appendix J Processes: phyto biomass rates | TUFLOW FV Water Quality Module User Manual" />
   <meta name="twitter:image" content="/images/tuflow.png" />
 
 
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introduction.html"/>
-<link rel="next" href="Architecture-1.html"/>
+<link rel="prev" href="AppPhy.html"/>
+<link rel="next" href="PhyLimits-3.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -411,83 +411,131 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="Overview-1" class="section level1" number="1">
-<h1><span class="header-section-number">Section 1</span> Overview</h1>
-<div id="OverviewContext-2" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Context</h2>
-<p>The TUFLOW Water Quality Module (WQM) enables the two- or three-dimensional simulation of water quality and ecological processes in natural and constructed waterways such as (but not limited to) lakes, tidal estuaries, river systems and coastal oceans. The module’s design is flexible so as to support tailoring of its setup to meet individual application demands and complexity. TUFLOW’s WQM is currently supported for use with <a href="https://www.tuflow.com/products/tuflow-fv/">TUFLOW FV</a>. <span class="math inline">\(\newcommand{\blockindent}{\hspace{0.5cm}}\)</span></p>
+<div id="PhyRates-3" class="section level1" number="14">
+<h1><span class="header-section-number">Appendix J</span> Processes: phyto biomass rates</h1>
+<p>The rates that determine the temporal evolution of phytoplankton group biomass are primary productivity, respiration, exudation and settling. In general terms these processes can be thought of as follows:</p>
+<ul>
+<li>Primary productivity is the consumption of carbon and the generation of oxygen and carbohydrate due to photosynthesis. Photosynthetically active radiation catalyses this process so it occurs only durinig daylight hours</li>
+<li>Respiration is the consumption of oxygen and carbohydrate and the production of carbon. This can be thought of as the reverse of primary productivity. Respiration dominates phytoplankton dynamics during nighttime hours, although can still operate during the day</li>
+<li>Exudation (also referred to as photo exudation) is the loss of phytoplankton biomass as a result of primary productivity</li>
+<li>Settling is the physical settling of phytoplankton groups, including motility</li>
+</ul>
+<p>The general form of the phytoplankton flux relationship for any given computational cell is therefore given by Equation <a href="PhyRates-3.html#eq:eq-pel-phy-gen">(J.1)</a>.</p>
+<p><span class="math display" id="eq:eq-pel-phy-gen">\[\begin{equation}
+  F^{phy} = \text{Primary productivity} - f(\text{Respiration, Exudation}) - \text{Settling}
+  \tag{J.1}
+\end{equation}\]</span></p>
+<p><span class="math inline">\(f\)</span> represents functions described in Section <a href="PhyLosses-3.html#PhyLosses-3">M</a>. The fundamental rates in Equation <a href="PhyRates-3.html#eq:eq-pel-phy-gen">(J.1)</a> are described following.</p>
+<div id="PhyProd-4" class="section level2" number="14.1">
+<h2><span class="header-section-number">J.1</span> Primary productivity</h2>
+<p>The primary productivity rate is computed in a series of stages within the WQM, where the combination of these stages used for any given phytoplankton group depends on group configuration. These stages are described below. For clarity, supporting functions nested within primary productivity rate calculations (such as limitation functions) are initially presented in passing, but are cross referenced to detailed descriptions in subsequent sections.</p>
+<p>The rate of primary productivity (often referred to as just productivity or growth rate) of a phytoplankton group is a /day rate. It is computed initially within the WQM as per Equation <a href="PhyRates-3.html#eq:eq-pel-phy-pprod">(J.2)</a>.</p>
+<p><span class="math display" id="eq:eq-pel-phy-pprod">\[\begin{equation}
+  R_{prod\langle computed\rangle}^{phy} = R_{prod}^{phy} \times L_T^{phy} \times \text{min}\left(L_{lght}^{phy},L_{nit}^{phy},L_{phs}^{phy},L_{sil}^{phy}\right)
+  \tag{J.2}
+\end{equation}\]</span></p>
+<p>For each phytoplankton group, <a href="#WQParRPrimProd"><span class="math inline">\(R_{prod}^{phy}\)</span></a> is the user specified (or default) phytoplankton productivity (growth) rate at 20<span class="math inline">\(^o\)</span>C with no light, temperature, salinty, silicate or nutrient limitation, and <a href="#WQParTLim"><span class="math inline">\(L_T^{phy}\)</span></a>, <a href="#WQParPARLim"><span class="math inline">\(L_{lght}^{phy}\)</span></a>, <a href="#WQParNitLim"><span class="math inline">\(L_{nit}^{phy}\)</span></a>, <a href="#WQParPhsLim"><span class="math inline">\(L_{phs}^{phy}\)</span></a>, <a href="#WQParSilLim"><span class="math inline">\(L_{sil}^{phy}\)</span></a> are the computed limitation functions for <a href="PhyLimits-3.html#PhyLimT-4">water temperature</a>, <a href="PhyLimits-3.html#PhyLimLght-4">light</a>, <a href="PhyLimits-3.html#PhyLimN-4">nitrogen</a>, <a href="##PhyLimP-4">phosphorus</a> and <a href="##PhyLimSi-4">silicate</a>, respectively. These functions act to modify <span class="math inline">\(R_{prod}^{phy}\)</span>, noting that only <span class="math inline">\(L_T^{phy}\)</span> always does so. The other limitation functions in Equation <a href="PhyRates-3.html#eq:eq-pel-phy-pprod">(J.2)</a> act collectively, with only the most limiting (i.e. the smallest function value) of <span class="math inline">\(L_{lght}^{phy}\)</span>, <span class="math inline">\(L_{nit}^{phy}\)</span>, <span class="math inline">\(L_{phs}^{phy}\)</span> and <span class="math inline">\(L_{sil}^{phy}\)</span> being selected to also multiplicatively modify <span class="math inline">\(R_{prod}^{phy}\)</span> with <span class="math inline">\(L_T^{phy}\)</span>.</p>
+<p>If nitrogen fixing is implemented, then the <span class="math inline">\(R_{prod\langle computed\rangle}^{phy}\)</span> computed in Equation <a href="PhyRates-3.html#eq:eq-pel-phy-pprod">(J.2)</a> is further modified as per Equation <a href="PhyRates-3.html#eq:eq-pel-phy-pprodNfx">(J.3)</a>.</p>
+<p><span class="math display" id="eq:eq-pel-phy-pprodNfx">\[\begin{equation}
+  R_{prod\langle computed\rangle}^{phy} = R_{prod\langle computed\rangle}^{phy} \times \left(L_{nit}^{phy} \times \left(1.0 - f_{nfix}^{phy}\right)\right)
+  \tag{J.3}
+\end{equation}\]</span></p>
+<p><a href="#WQParKnFix"><span class="math inline">\(f_{nfix}^{phy}\)</span></a> is the user (or default) rate modifier that accounts for the metabolic cost of nitrogen fixing on primary productivity. This modifier can be thought of as a penalty function, with values of zero and one corresponding to no and maximum penalties, respectively. Because this rate modifier is applied to <span class="math inline">\(R_{prod\langle computed\rangle}^{phy}\)</span> if a phytoplankton group is a nitrogen fixer, specification of a <span class="math inline">\(f_{nfix}^{phy}\)</span> of one will set <span class="math inline">\(R_{prod\langle computed\rangle}^{phy}\)</span> to zero: primary productivity will never occur. Conversely, if <span class="math inline">\(f_{nfix}^{phy}\)</span> is set to 0, then no metabolic penalty is applied as result of implementing nitrogen fixing. Expectation is that the true penalty lies not at either zero or one, but at <span class="math inline">\(0 \lt f_{nfix}^{phy} \lt 1\)</span>.</p>
+<p>If salinity limitation is implemented, then the <span class="math inline">\(R_{prod\langle computed\rangle}^{phy}\)</span> computed above is further modified as per Equation <a href="PhyRates-3.html#eq:eq-pel-phy-pprodSal">(J.4)</a>.</p>
+<p><span class="math display" id="eq:eq-pel-phy-pprodSal">\[\begin{equation}
+  R_{prod\langle computed\rangle}^{phy} = R_{prod\langle computed\rangle}^{phy} \times L_{sal}^{phy}
+  \tag{J.4}
+\end{equation}\]</span></p>
+<p><a href="#WQParSalLim"><span class="math inline">\(L^{phy}_{sal}\)</span></a> is the <a href="PhyLimits-3.html#PhyLimSal-4">limitation function due to salinity</a>.</p>
+<p>Once the rate of primary productivity has been computed by applying Equation <a href="PhyRates-3.html#eq:eq-pel-phy-pprod">(J.2)</a>, and potentially Equations <a href="PhyRates-3.html#eq:eq-pel-phy-pprodNfx">(J.3)</a> and <a href="PhyRates-3.html#eq:eq-pel-phy-pprodSal">(J.4)</a>, the corresponding flux of carbon (i.e. phytoplankton growth) to a phytoplankton group is computed as per Equation <a href="PhyRates-3.html#eq:eq-pel-phy-pprodflx">(J.5)</a>.</p>
+<p><span class="math display" id="eq:eq-pel-phy-pprodflx">\[\begin{equation}
+  F_{prod-C}^{phy} = R_{prod\langle computed\rangle}^{phy} \times \left[PHY\right]
+  \tag{J.5}
+\end{equation}\]</span></p>
+<p>The WQM uses a minimum concentration <a href="#WQParMinphy"><span class="math inline">\(\left[PHY\right]_{min}\)</span></a> to maintain phytoplankton concentrations above zero. This is because if concentrations decrease to zero, then by Equation <a href="PhyRates-3.html#eq:eq-pel-phy-pprodflx">(J.5)</a>, phytoplankton fluxes (and therefore concentrations) will remain at zero regardless of computed primary productivity rates.</p>
 </div>
-<div id="Features-2" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Features</h2>
-<div id="Usability-3" class="section level3" number="1.2.1">
-<h3><span class="header-section-number">1.2.1</span> Usability</h3>
-<p>Several key features have been included in the design of the WQM to support its use. Some are listed below.</p>
-<ul>
-<li><strong>Simulation units</strong>. The units of simulation (including specification of initial conditions, boundary conditions and computed variable parameters) can be selected as either the commonly used mg/L (and <span class="math inline">\(\mu\)</span>g/L for phytoplankton) system, or the mmol/m<span class="math inline">\(^3\)</span> system</li>
-<li><strong>Library defaults</strong>. The WQM comes packaged with a fully populated library of default settings for all computed variable parameters. This means that users can quickly set up water quality simulations that automatically draw on these library defaults, with a view to then progressively overriding these defaults and therefore customising simulations to suit</li>
-<li><strong>Command syntax</strong>. The WQM uses familiar TUFLOW style <code>command == argument(s)</code> syntax that has a long established pedigree within other TUFLOW products, for example:</li>
-</ul>
-<blockquote>
-<p><span class="math inline">\(\blockindent\)</span> oxygen benthic == 5.0, 1.07</p>
-</blockquote>
-<ul>
-<li><strong>Log file user feedback</strong>. WQM simulations generate a log file that reports all simulation configuration details for immediate review</li>
-<li><strong>Output variable names</strong>. The WQM output variable names are descriptive and include the units used, for example <code>WQ_DISSOLVED_OXYGEN_MGL</code></li>
-<li><strong>Specification of concentration limits</strong>. The WQM allows users to optionally specify minimum and maximum concentation limits for each computed variable, and the WQM will reset concentrations to these limits if exceedences are detected. All instances of resetting are reported to the WQM log file as continuous commentary</li>
-<li><span style="color: red"> <strong>Inbuilt guidance on parameter specification</strong>. The WQM checks all user specified parameters and compares them to typical ranges. If a parameter’s specified value falls outside a typical range, then a warning is reported to the WQM log file. These ranges are listed in Appendix <a href="AppParams.html#AppParams">O</a> of this manual </span></li>
-</ul>
+<div id="PhyResp-4" class="section level2" number="14.2">
+<h2><span class="header-section-number">J.2</span> Respiration</h2>
+<p>The respiration rate is computed in a series of stages within the WQM, where the combination of these stages used for any given phytoplankton group depends on group configuration. These stages are described below. For clarity, supporting functions nested within respiration rate calculations (such as limitation functions) are initially presented in passing, but are cross referenced to detailed descriptions in subsequent sections.</p>
+<p>The rate of respiration of a phytoplankton group is a /day rate. It is computed initially within the WQM as per Equation <a href="PhyRates-3.html#eq:eq-pel-phy-resp">(J.6)</a>.</p>
+<p><span class="math display" id="eq:eq-pel-phy-resp">\[\begin{equation}
+  R_{resp\langle computed\rangle}^{phy} = R_{resp}^{phy} \times \underbrace{\left[\theta_{resp}^{phy}\right]^{\left(T-20\right)}}_{\text{Influence of temperature}}
+  \tag{J.6}
+\end{equation}\]</span></p>
+<p><a href="#WQParRRespPhy"><span class="math inline">\(R_{resp}^{phy}\)</span></a> is the user specified phytoplankton respiration rate at 20<span class="math inline">\(^o\)</span>C, <a href="#WQParthetarespphy"><span class="math inline">\(\theta_{resp}^{phy}\)</span></a> is the temperature coefficient for respiration, and <span class="math inline">\(T\)</span> is ambient water temperature.</p>
+<div class="figure"><span style="display:block;" id="fig:fig-PhyRtheta"></span>
+<div id="htmlwidget-b296b0baf25fd4a07c61" style="width:100%;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b296b0baf25fd4a07c61">{"x":{"visdat":{"482445762aea":["function () ","plotlyVisDat"]},"cur_data":"482445762aea","attrs":{"482445762aea":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"name":"$\theta_{resp}^{phy}$","y":[0.0575313457724384,0.0634283087141134,0.06992971035731,0.0770975056689342,0.085,0.0937125,0.10331803125,0.113908129453125,0.12558371272207,0.0533300515640553,0.0599216459373725,0.0673279613752317,0.0756496974012104,0.085,0.095506,0.1073105416,0.12057412454176,0.135477086335122,0.0494707738880283,0.0566390890244036,0.0648460930240397,0.074242291903223,0.085,0.0973165,0.11141766085,0.127562079907165,0.146045825285713,0.0459228551826679,0.0535644182850639,0.0624775374876985,0.0728737997256516,0.085,0.099144,0.1156415616,0.13488431745024,0.15732906787396,0.0426586337721853,0.0506827227847333,0.0602161429405417,0.0715427994276576,0.085,0.1009885,0.11998443685,0.142553509421485,0.169367824543666,0.0396531273178273,0.0479802840545711,0.058056143706031,0.0702479338842975,0.085,0.10285,0.1244485,0.150582685,0.18220504885,0.0368837521853318,0.0454444710675473,0.055992132802325,0.0689879068257447,0.085,0.1047285,0.12903598485,0.158985236933685,0.195885710425993,0.0343300743782464,0.0430636453000723,0.0540190366644107,0.0677614795918367,0.085,0.106624,0.1337491456,0.16777492824064,0.210456869985059],"x":[12,14,16,18,20,22,24,26,28,12,14,16,18,20,22,24,26,28,12,14,16,18,20,22,24,26,28,12,14,16,18,20,22,24,26,28,12,14,16,18,20,22,24,26,28,12,14,16,18,20,22,24,26,28,12,14,16,18,20,22,24,26,28,12,14,16,18,20,22,24,26,28],"frame":[1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.06,1.06,1.06,1.06,1.06,1.06,1.06,1.06,1.06,1.07,1.07,1.07,1.07,1.07,1.07,1.07,1.07,1.07,1.08,1.08,1.08,1.08,1.08,1.08,1.08,1.08,1.08,1.09,1.09,1.09,1.09,1.09,1.09,1.09,1.09,1.09,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.11,1.11,1.11,1.11,1.11,1.11,1.11,1.11,1.11,1.12,1.12,1.12,1.12,1.12,1.12,1.12,1.12,1.12],"line":{"color":"rgb(26,189,201)"},"hovertemplate":"%{y:.1f}<extra><\/extra>","type":"scatter","mode":"lines","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"title":"Computed phytoplankton respiration rate (/day)","range":[0.0255237345979057,0.2192632097654]},"xaxis":{"domain":[0,1],"automargin":true,"title":"Temperature (<sup>o<\/sup>C)","range":[11.2,28.8]},"hovermode":"closest","showlegend":false,"sliders":[{"steps":[{"method":"animate","args":[["1.05"],{"transition":{"duration":25,"easing":"linear"},"frame":{"duration":750,"redraw":false},"mode":"immediate"}],"label":"1.05","value":"1.05"},{"method":"animate","args":[["1.06"],{"transition":{"duration":25,"easing":"linear"},"frame":{"duration":750,"redraw":false},"mode":"immediate"}],"label":"1.06","value":"1.06"},{"method":"animate","args":[["1.07"],{"transition":{"duration":25,"easing":"linear"},"frame":{"duration":750,"redraw":false},"mode":"immediate"}],"label":"1.07","value":"1.07"},{"method":"animate","args":[["1.08"],{"transition":{"duration":25,"easing":"linear"},"frame":{"duration":750,"redraw":false},"mode":"immediate"}],"label":"1.08","value":"1.08"},{"method":"animate","args":[["1.09"],{"transition":{"duration":25,"easing":"linear"},"frame":{"duration":750,"redraw":false},"mode":"immediate"}],"label":"1.09","value":"1.09"},{"method":"animate","args":[["1.1"],{"transition":{"duration":25,"easing":"linear"},"frame":{"duration":750,"redraw":false},"mode":"immediate"}],"label":"1.1","value":"1.1"},{"method":"animate","args":[["1.11"],{"transition":{"duration":25,"easing":"linear"},"frame":{"duration":750,"redraw":false},"mode":"immediate"}],"label":"1.11","value":"1.11"},{"method":"animate","args":[["1.12"],{"transition":{"duration":25,"easing":"linear"},"frame":{"duration":750,"redraw":false},"mode":"immediate"}],"label":"1.12","value":"1.12"}],"visible":true,"pad":{"t":40},"currentvalue":{"prefix":"Temperature coefficient (-): "}}],"updatemenus":[{"type":"buttons","direction":"right","showactive":false,"y":0,"x":0,"yanchor":"top","xanchor":"right","pad":{"t":60,"r":5},"buttons":[{"label":"Play","method":"animate","args":[null,{"fromcurrent":true,"mode":"immediate","transition":{"duration":25,"easing":"linear"},"frame":{"duration":750,"redraw":false}}]}]}]},"source":"A","config":{"showSendToCloud":false,"displayModeBar":false,"displaylogo":false},"data":[{"name":"$\theta_{resp}^{phy}$","y":[0.0575313457724384,0.0634283087141134,0.06992971035731,0.0770975056689342,0.085,0.0937125,0.10331803125,0.113908129453125,0.12558371272207],"x":[12,14,16,18,20,22,24,26,28],"frame":"1.05","line":{"color":"rgb(26,189,201)"},"hovertemplate":["%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>"],"type":"scatter","mode":"lines","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","visible":true}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"frames":[{"name":"1.05","data":[{"name":"$\theta_{resp}^{phy}$","y":[0.0575313457724384,0.0634283087141134,0.06992971035731,0.0770975056689342,0.085,0.0937125,0.10331803125,0.113908129453125,0.12558371272207],"x":[12,14,16,18,20,22,24,26,28],"frame":"1.05","line":{"color":"rgb(26,189,201)"},"hovertemplate":["%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>"],"type":"scatter","mode":"lines","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","visible":true}],"traces":[0]},{"name":"1.06","data":[{"name":"$\theta_{resp}^{phy}$","y":[0.0533300515640553,0.0599216459373725,0.0673279613752317,0.0756496974012104,0.085,0.095506,0.1073105416,0.12057412454176,0.135477086335122],"x":[12,14,16,18,20,22,24,26,28],"frame":"1.06","line":{"color":"rgb(26,189,201)"},"hovertemplate":["%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>"],"type":"scatter","mode":"lines","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","visible":true}],"traces":[0]},{"name":"1.07","data":[{"name":"$\theta_{resp}^{phy}$","y":[0.0494707738880283,0.0566390890244036,0.0648460930240397,0.074242291903223,0.085,0.0973165,0.11141766085,0.127562079907165,0.146045825285713],"x":[12,14,16,18,20,22,24,26,28],"frame":"1.07","line":{"color":"rgb(26,189,201)"},"hovertemplate":["%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>"],"type":"scatter","mode":"lines","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","visible":true}],"traces":[0]},{"name":"1.08","data":[{"name":"$\theta_{resp}^{phy}$","y":[0.0459228551826679,0.0535644182850639,0.0624775374876985,0.0728737997256516,0.085,0.099144,0.1156415616,0.13488431745024,0.15732906787396],"x":[12,14,16,18,20,22,24,26,28],"frame":"1.08","line":{"color":"rgb(26,189,201)"},"hovertemplate":["%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>"],"type":"scatter","mode":"lines","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","visible":true}],"traces":[0]},{"name":"1.09","data":[{"name":"$\theta_{resp}^{phy}$","y":[0.0426586337721853,0.0506827227847333,0.0602161429405417,0.0715427994276576,0.085,0.1009885,0.11998443685,0.142553509421485,0.169367824543666],"x":[12,14,16,18,20,22,24,26,28],"frame":"1.09","line":{"color":"rgb(26,189,201)"},"hovertemplate":["%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>"],"type":"scatter","mode":"lines","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","visible":true}],"traces":[0]},{"name":"1.1","data":[{"name":"$\theta_{resp}^{phy}$","y":[0.0396531273178273,0.0479802840545711,0.058056143706031,0.0702479338842975,0.085,0.10285,0.1244485,0.150582685,0.18220504885],"x":[12,14,16,18,20,22,24,26,28],"frame":"1.1","line":{"color":"rgb(26,189,201)"},"hovertemplate":["%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>"],"type":"scatter","mode":"lines","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","visible":true}],"traces":[0]},{"name":"1.11","data":[{"name":"$\theta_{resp}^{phy}$","y":[0.0368837521853318,0.0454444710675473,0.055992132802325,0.0689879068257447,0.085,0.1047285,0.12903598485,0.158985236933685,0.195885710425993],"x":[12,14,16,18,20,22,24,26,28],"frame":"1.11","line":{"color":"rgb(26,189,201)"},"hovertemplate":["%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>"],"type":"scatter","mode":"lines","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","visible":true}],"traces":[0]},{"name":"1.12","data":[{"name":"$\theta_{resp}^{phy}$","y":[0.0343300743782464,0.0430636453000723,0.0540190366644107,0.0677614795918367,0.085,0.106624,0.1337491456,0.16777492824064,0.210456869985059],"x":[12,14,16,18,20,22,24,26,28],"frame":"1.12","line":{"color":"rgb(26,189,201)"},"hovertemplate":["%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>","%{y:.1f}<extra><\/extra>"],"type":"scatter","mode":"lines","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","visible":true}],"traces":[0]}],"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+Figure J.1: <strong>Move the slider to see the effect of changing temperature coefficient on the computed phytoplankton respiration rate</strong>
+</p>
 </div>
-<div id="CnsFeats-3" class="section level3" number="1.2.2">
-<h3><span class="header-section-number">1.2.2</span> Constituents and processes</h3>
-<p>Constituents currently simulated by the WQM include:</p>
-<ul>
-<li>Dissolved oxygen</li>
-<li>Silicate</li>
-<li>Inorganic nitrogen</li>
-<li>Inorganic phosphorus</li>
-<li>Organic matter (labile and refractory), and</li>
-<li>Phytoplankton (multiple groups)</li>
-</ul>
-<p>Processes captured by the WQM include:</p>
-<ul>
-<li>Water column transformations between constituents (e.g. nitrification)</li>
-<li>Benthic sediment – water column interactions (e.g. sediment oxygen consumption)</li>
-<li>Atmospheric exchange (e.g. oxygen dissolution and rainfall deposition)</li>
-<li>Primary productivity, respiration and exudation of one or more phytoplankton groups</li>
-</ul>
-<p>Future near-term releases of the WQM will include the ability to simulate:</p>
-<ul>
-<li>Pathogens</li>
-<li>Zooplankton</li>
-<li>Biogeochemical particles (linked dynamically to TUFLOW FV’s Particle Tracking Module (PTM))</li>
-<li>Benthos (e.g. bivalves and macrophytes)</li>
-</ul>
-<p>Future mid-term releases will include:</p>
-<ul>
-<li>Sediment diagenesis</li>
-<li>Geochemistry</li>
-</ul>
+<p>If salinity limitation is implemented, and is one of the models XX, YY, ZZ, then the <span class="math inline">\(R_{resp\langle computed\rangle}^{phy}\)</span> computed above is further modified as per Equation <a href="PhyRates-3.html#eq:eq-pel-phy-respSal">(J.7)</a>.
+,
+<span class="math display" id="eq:eq-pel-phy-respSal">\[\begin{equation}
+  R_{resp\langle computed\rangle}^{phy} = R_{resp\langle computed\rangle}^{phy} \times L_{sal}^{phy}
+  \tag{J.7}
+\end{equation}\]</span></p>
+<p><a href="#WQParSalLim"><span class="math inline">\(L^{phy}_{sal}\)</span></a> is the limitation function on respiration due to salinity. If a group’s ambient phytoplankton concentration is less than the user defined (or default) minimum concentration <span class="math inline">\(\left[PHY\right]_{min}\)</span>, then respiration rate is set to zero.</p>
 </div>
+<div id="PhyExud-4" class="section level2" number="14.3">
+<h2><span class="header-section-number">J.3</span> Exudation</h2>
+<p>The exudation rate of a phytoplankton group is a /day rate. It is computed within the WQM as per Equation <a href="PhyRates-3.html#eq:eq-pel-phy-exud">(J.8)</a>.</p>
+<p><span class="math display" id="eq:eq-pel-phy-exud">\[\begin{equation}
+  R_{exud\langle computed\rangle}^{phy} = R_{prod\langle computed\rangle}^{phy} \times f_{exud}^{phy}
+  \tag{J.8}
+\end{equation}\]</span></p>
+<p><span class="math inline">\(R_{prod\langle computed\rangle}^{phy}\)</span> is the previously computed phytoplankton primary production rate (Equations <a href="PhyRates-3.html#eq:eq-pel-phy-pprod">(J.2)</a>, and potentially <a href="PhyRates-3.html#eq:eq-pel-phy-pprodNfx">(J.3)</a> and <a href="PhyRates-3.html#eq:eq-pel-phy-pprodSal">(J.4)</a>), and <a href="#WQParfracexud"><span class="math inline">\(f_{exud}^{phy}\)</span></a> is the user defined (or default) fraction of primary production lost to exudation. This exudation loss is a linear function.</p>
+<p>If a group’s ambient phytoplankton concentration is less than the user defined (or default) minimum concentration <span class="math inline">\(\left[PHY\right]_{min}\)</span>, then the exudation rate is set to zero.</p>
 </div>
-<div id="Science-2" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Science</h2>
-<p>The science underpinning the WQM is that developed at the School of Agriculture and Environment’s <a href="https://research-repository.uwa.edu.au/en/organisations/oceans-institute" target="_blank">Oceans Institute</a> at <a href="https://www.uwa.edu.au/" target="_blank">The University of Western Australia</a>. The WQM has wrapped this world class science into a form that is easily accessed via familiar TUFLOW style commands and workflows, and offers the additional features described in Section <a href="Overview-1.html#Usability-3">1.2.1</a>.</p>
+<div id="PhySettle-4" class="section level2" number="14.4">
+<h2><span class="header-section-number">J.4</span> Settling</h2>
+<p>The settling rate <a href="#WQParSettV"><span class="math inline">\(V_{sett}^{phy}\)</span></a> (also referred to as motility) of a phytoplankton group is computed within the WQM for each phytoplankton group, prior to the corresponding primary production, respiration and exudation rate calculations. There are several phytoplankton settling models available within the WQM. These are described following.</p>
+<div id="PhySettleNone-5" class="section level3" number="14.4.1">
+<h3><span class="header-section-number">J.4.1</span> None</h3>
+<p>In this model, phytoplankton settling is set to zero, and phytoplankton are simply advected by the hydrodynamic flow field.</p>
 </div>
-<div id="Support-2" class="section level2" number="1.4">
-<h2><span class="header-section-number">1.4</span> Support</h2>
-<p>BMT sells, distributes and supports the WQM. Contact <a href="mailto:support@tuflow.com" class="email">support@tuflow.com</a> or <a href="mailto:sales@tuflow.com" class="email">sales@tuflow.com</a> for support and sales inquiries, respectively.</p>
-<p>Several supporting appendices have also been included in this manual. These contain interactive content to assist users in understanding and applying the WQM, beyond what might typically be included in a static user manual. These Appendices are:</p>
+<div id="PhySettleConst-5" class="section level3" number="14.4.2">
+<h3><span class="header-section-number">J.4.2</span> Constant</h3>
+<p>In this model, phytoplankton settling is set to a constant value, and phytoplankton are settled at this velocity. A negative specification of this quantity corresponds to a downwards settling velocity.</p>
+</div>
+<div id="PhySettleConstD-5" class="section level3" number="14.4.3">
+<h3><span class="header-section-number">J.4.3</span> Constant with density correction</h3>
+<p>In this model, phytoplankton settling is set to a constant value, and phytoplankton are settled at this velocity, but corrected for ambient water density effects, as per Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settdens">(J.9)</a>.</p>
+<p><span class="math display" id="eq:eq-pel-phy-settdens">\[\begin{equation}
+  V_{sett\langle computed\rangle}^{phy} = V_{sett}^{phy} \times \frac{\mu_{20}\times\rho_w}{\mu\times\rho_{w20}}
+  \tag{J.9}
+\end{equation}\]</span></p>
+<p><a href="#WQParSettV"><span class="math inline">\(V_{sett}^{phy}\)</span></a> is the specified settling rate (velocity) at 20<span class="math inline">\(^o\)</span>C, <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\rho_w\)</span> are the ambient water dynamic viscosity (in Ns/m<span class="math inline">\(^2\)</span>) and density (in kg/m<span class="math inline">\(^3\)</span>), respectively, and <span class="math inline">\(\mu_{20}\)</span> and <span class="math inline">\(\rho_{w20}\)</span> are the dynamic viscosity and density of freshwater at 20<span class="math inline">\(^o\)</span>C, respectively. A negative specification of <span class="math inline">\(V_{sett}^{phy}\)</span> corresponds to a downwards settling velocity.</p>
+</div>
+<div id="PhySettleStokes-5" class="section level3" number="14.4.4">
+<h3><span class="header-section-number">J.4.4</span> Stokes</h3>
+<p>In this model, phytoplankton settling is computed using the Stokes equation and cell diameter and density, as per Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settstokes">(J.10)</a>.</p>
+<p><span class="math display" id="eq:eq-pel-phy-settstokes">\[\begin{equation}
+  V_{sett\langle computed\rangle}^{phy} = -g \times d_{phy}^2 \times \frac{\left(\rho_{phy}-\rho_w\right)}{18\mu}
+  \tag{J.10}
+\end{equation}\]</span></p>
+<p><span class="math inline">\(g\)</span> is acceleration due to gravity, <span class="math inline">\(d_{phy}\)</span> and <span class="math inline">\(\rho_{phy}\)</span> are phytoplankton cell diameter and density, respectively, and <span class="math inline">\(\rho_w\)</span> and <span class="math inline">\(\mu\)</span> are the ambient water density and dynamic viscosity, respectively. This model is only available if phytoplankton cell density is dynamically simulated. Cell density is therefore required to be simulated as a computed variable in both cases, with supporting initial and boundary condition specifications. Cell diameter is fixed at 1 <span class="math inline">\(\times\)</span> 10 <span class="math inline">\(^{-5}\)</span> m.</p>
+<p>Even though a half saturation light intensity <span class="math inline">\(I_K\)</span> is not required to compute the settling velocity directly, it is required to compute the cell density term in Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settstokes">(J.10)</a>. Cell density is computed as described in Section <a href="AppphyOther.html#PhyCellDens-3">N.2</a>. <span class="math inline">\(I_K\)</span> can therefore be specified in the command to set stokes settling (referred to as <span class="math inline">\(I_{K-sto}\)</span>(#WQParKstoSett)), if it is not already specified in a phytoplankton constituent model light limitation function.</p>
+</div>
+<div id="PhySettleMotile-5" class="section level3" number="14.4.5">
+<h3><span class="header-section-number">J.4.5</span> Motile</h3>
+<p>The motility settling model can only be used if internal nutrients are simulated, via deployment of the advanced phytoplankton constituent model.</p>
+<p>In this model, phytoplankton are permitted to be motile, with the motility velocity being either a user specified value (and either upwards or downwards), or zero. This motility behaviour is governed by phytoplankton internal nutrient status and ambient environmental conditions, as follows:</p>
 <ul>
-<li>Appendix <a href="AppSyntax.html#AppSyntax">A</a> Description of command syntax and nomenclature</li>
-<li>Appendix <a href="AppCommands.html#AppCommands">B</a> Listing of all commands, and their syntax, arguments, descriptions and cross references</li>
-<li>Appendix <a href="AppConstits.html#AppConstits">C</a> Listing and descriptions of all computed variables, with chemical information</li>
-<li>Appendices <a href="AppDemoModel.html#AppDemoModel">D</a> to <a href="AppphyOther.html#AppphyOther">N</a> Detailed process descriptions, including worked examples using a purpose built small demonstration model</li>
-<li>Appendix <a href="AppParams.html#AppParams">O</a> Explanations of all parameters, with symbology, minimums and maximum values, units and commentary</li>
-<li>Appendix <a href="AppCompQuans.html#AppCompQuans">P</a> Listing and explanation of intermediate quantities that influence the evolution of simulated computed variables</li>
-<li>Appendix <a href="AppMBal.html#AppMBal">Q</a> <span style="color: red">Demonstration of the mass balance properties of core WQM computed variables</span></li>
+<li>If <span class="math inline">\(Q \lt 0.675 \times X_{N-C-max}^{phy}\)</span> then phytoplankton is starved of nutrients and swims downwards at a rate <span class="math inline">\(V_{mot}^{phy}\)</span></li>
+<li>If <span class="math inline">\(Q \gt 0.750 \times X_{N-C-max}^{phy}\)</span> then phytoplankton is replete of nutrients and:
+<ul>
+<li>If local photosynthetically available radiation is greater than <span class="math inline">\(I_{K-mot}\)</span> then phytoplankton swim up at <span class="math inline">\(V_{mot}^{phy}\)</span></li>
+<li>If local photosynthetically available radiation is less than <span class="math inline">\(I_{K-mot}\)</span> then phytoplankton are not motile</li>
+</ul></li>
+<li>If <span class="math inline">\(0.675 \times X_{N-C-max}^{phy} \lt Q \lt 0.750 \times X_{N-C-max}^{phy}\)</span> then phytoplankton are not motile</li>
 </ul>
+<p><a href="AppParams.html#WQParMotV"><span class="math inline">\(V_{mot}^{phy}\)</span></a> is the user specified motility velocity where a negative value is treated as a downwards motility, <span class="math inline">\(Q\)</span> is the instantaneous ratio of phytoplankton internal nitrogen to carbon computed by the WQM (N/C), <a href="AppParams.html#WQParMaxNClim"><span class="math inline">\(X_{N-C-max}^{phy}\)</span></a> is the maximum internal nitrogen to carbon concentration ratio either user specified (or default) in the advanced constituent model and <a href="AppParams.html#WQParKmotSett"><span class="math inline">\(I_{K-mot}\)</span></a> is the half saturation constant for light limitation of growth. A value of <span class="math inline">\(I_{K-mot}\)</span> specified in the settling model will be ignored if it has been specified in the light limitation model.</p>
+<p>Overriding all of the above is the condition that if local photosynthetically available radiation is greater than 95% of the water surface value, motility is set to zero as phytoplankton are considered to already be at the surface of the model domain.</p>
 <p><img src="images/WQFooter.jpg" width="100%" /></p>
 
+</div>
 </div>
 </div>
             </section>
@@ -495,8 +543,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="Architecture-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="AppPhy.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="PhyLimits-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

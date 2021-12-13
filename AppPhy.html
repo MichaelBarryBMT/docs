@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 1 Overview | TUFLOW FV Water Quality Module User Manual</title>
-  <meta name="description" content="Section 1 Overview | TUFLOW FV Water Quality Module User Manual" />
+  <title>Appendix I Processes: phyto general | TUFLOW FV Water Quality Module User Manual</title>
+  <meta name="description" content="Appendix I Processes: phyto general | TUFLOW FV Water Quality Module User Manual" />
   <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 1 Overview | TUFLOW FV Water Quality Module User Manual" />
+  <meta property="og:title" content="Appendix I Processes: phyto general | TUFLOW FV Water Quality Module User Manual" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="/images/tuflow.png" />
-  <meta property="og:description" content="Section 1 Overview | TUFLOW FV Water Quality Module User Manual" />
+  <meta property="og:description" content="Appendix I Processes: phyto general | TUFLOW FV Water Quality Module User Manual" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 1 Overview | TUFLOW FV Water Quality Module User Manual" />
+  <meta name="twitter:title" content="Appendix I Processes: phyto general | TUFLOW FV Water Quality Module User Manual" />
   
-  <meta name="twitter:description" content="Section 1 Overview | TUFLOW FV Water Quality Module User Manual" />
+  <meta name="twitter:description" content="Appendix I Processes: phyto general | TUFLOW FV Water Quality Module User Manual" />
   <meta name="twitter:image" content="/images/tuflow.png" />
 
 
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introduction.html"/>
-<link rel="next" href="Architecture-1.html"/>
+<link rel="prev" href="AppIP.html"/>
+<link rel="next" href="PhyRates-3.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -411,83 +411,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="Overview-1" class="section level1" number="1">
-<h1><span class="header-section-number">Section 1</span> Overview</h1>
-<div id="OverviewContext-2" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Context</h2>
-<p>The TUFLOW Water Quality Module (WQM) enables the two- or three-dimensional simulation of water quality and ecological processes in natural and constructed waterways such as (but not limited to) lakes, tidal estuaries, river systems and coastal oceans. The module’s design is flexible so as to support tailoring of its setup to meet individual application demands and complexity. TUFLOW’s WQM is currently supported for use with <a href="https://www.tuflow.com/products/tuflow-fv/">TUFLOW FV</a>. <span class="math inline">\(\newcommand{\blockindent}{\hspace{0.5cm}}\)</span></p>
+<div id="AppPhy" class="section level1" number="13">
+<h1><span class="header-section-number">Appendix I</span> Processes: phyto general</h1>
+<div id="PhyGeneral-3" class="section level2" number="13.1">
+<h2><span class="header-section-number">I.1</span> General</h2>
+<p>Any number of phytoplankton groups may be simulated within the WQM, however the majority of environmental modelling applications rarely require (or have data to justify) including more than a relatively small number. Each phytoplankton group can have its properties set independently, where these properties typically relate to interaction with temperature, light, salinity and nutrients.</p>
+<p>The WQM offers two constituent models for the simulation of phytoplankton. These are referred to as basic and advanced, and are primarily differentiated on the basis of whether internal nutrients are simulated, as:</p>
+<ul>
+<li>Constituent model basic does not include simulation of internal phytoplanktonic nutrients</li>
+<li>Constituent model advanced does include simulation of internal phytoplanktonic nutrients</li>
+</ul>
+<p>This constituent model naming is intended to reflect a view that excluding simulation of internal nutrients is a simpler, more rudimentary, approach to phytoplankton modelling. Similarly, internal nutrient simulation generally requires specification of a larger suite of parameters than when the process is excluded, so is often considered to be a more complex and involved approach to phytoplankton simulation.</p>
+<p>A WQM simulation can include any combination of these two constituent models if multiple phytoplankton groups are simulated. For example, if three phytoplankton groups are to be simulated, two groups could be set to use the basic constituent model, and one to use the advanced constituent model.</p>
+<p>Where WQM calculations are completed differently between these two constituent models, their respective approaches are presented in a complementary but distinct manner following.</p>
 </div>
-<div id="Features-2" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Features</h2>
-<div id="Usability-3" class="section level3" number="1.2.1">
-<h3><span class="header-section-number">1.2.1</span> Usability</h3>
-<p>Several key features have been included in the design of the WQM to support its use. Some are listed below.</p>
-<ul>
-<li><strong>Simulation units</strong>. The units of simulation (including specification of initial conditions, boundary conditions and computed variable parameters) can be selected as either the commonly used mg/L (and <span class="math inline">\(\mu\)</span>g/L for phytoplankton) system, or the mmol/m<span class="math inline">\(^3\)</span> system</li>
-<li><strong>Library defaults</strong>. The WQM comes packaged with a fully populated library of default settings for all computed variable parameters. This means that users can quickly set up water quality simulations that automatically draw on these library defaults, with a view to then progressively overriding these defaults and therefore customising simulations to suit</li>
-<li><strong>Command syntax</strong>. The WQM uses familiar TUFLOW style <code>command == argument(s)</code> syntax that has a long established pedigree within other TUFLOW products, for example:</li>
-</ul>
-<blockquote>
-<p><span class="math inline">\(\blockindent\)</span> oxygen benthic == 5.0, 1.07</p>
-</blockquote>
-<ul>
-<li><strong>Log file user feedback</strong>. WQM simulations generate a log file that reports all simulation configuration details for immediate review</li>
-<li><strong>Output variable names</strong>. The WQM output variable names are descriptive and include the units used, for example <code>WQ_DISSOLVED_OXYGEN_MGL</code></li>
-<li><strong>Specification of concentration limits</strong>. The WQM allows users to optionally specify minimum and maximum concentation limits for each computed variable, and the WQM will reset concentrations to these limits if exceedences are detected. All instances of resetting are reported to the WQM log file as continuous commentary</li>
-<li><span style="color: red"> <strong>Inbuilt guidance on parameter specification</strong>. The WQM checks all user specified parameters and compares them to typical ranges. If a parameter’s specified value falls outside a typical range, then a warning is reported to the WQM log file. These ranges are listed in Appendix <a href="AppParams.html#AppParams">O</a> of this manual </span></li>
-</ul>
-</div>
-<div id="CnsFeats-3" class="section level3" number="1.2.2">
-<h3><span class="header-section-number">1.2.2</span> Constituents and processes</h3>
-<p>Constituents currently simulated by the WQM include:</p>
-<ul>
-<li>Dissolved oxygen</li>
-<li>Silicate</li>
-<li>Inorganic nitrogen</li>
-<li>Inorganic phosphorus</li>
-<li>Organic matter (labile and refractory), and</li>
-<li>Phytoplankton (multiple groups)</li>
-</ul>
-<p>Processes captured by the WQM include:</p>
-<ul>
-<li>Water column transformations between constituents (e.g. nitrification)</li>
-<li>Benthic sediment – water column interactions (e.g. sediment oxygen consumption)</li>
-<li>Atmospheric exchange (e.g. oxygen dissolution and rainfall deposition)</li>
-<li>Primary productivity, respiration and exudation of one or more phytoplankton groups</li>
-</ul>
-<p>Future near-term releases of the WQM will include the ability to simulate:</p>
-<ul>
-<li>Pathogens</li>
-<li>Zooplankton</li>
-<li>Biogeochemical particles (linked dynamically to TUFLOW FV’s Particle Tracking Module (PTM))</li>
-<li>Benthos (e.g. bivalves and macrophytes)</li>
-</ul>
-<p>Future mid-term releases will include:</p>
-<ul>
-<li>Sediment diagenesis</li>
-<li>Geochemistry</li>
-</ul>
-</div>
-</div>
-<div id="Science-2" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Science</h2>
-<p>The science underpinning the WQM is that developed at the School of Agriculture and Environment’s <a href="https://research-repository.uwa.edu.au/en/organisations/oceans-institute" target="_blank">Oceans Institute</a> at <a href="https://www.uwa.edu.au/" target="_blank">The University of Western Australia</a>. The WQM has wrapped this world class science into a form that is easily accessed via familiar TUFLOW style commands and workflows, and offers the additional features described in Section <a href="Overview-1.html#Usability-3">1.2.1</a>.</p>
-</div>
-<div id="Support-2" class="section level2" number="1.4">
-<h2><span class="header-section-number">1.4</span> Support</h2>
-<p>BMT sells, distributes and supports the WQM. Contact <a href="mailto:support@tuflow.com" class="email">support@tuflow.com</a> or <a href="mailto:sales@tuflow.com" class="email">sales@tuflow.com</a> for support and sales inquiries, respectively.</p>
-<p>Several supporting appendices have also been included in this manual. These contain interactive content to assist users in understanding and applying the WQM, beyond what might typically be included in a static user manual. These Appendices are:</p>
-<ul>
-<li>Appendix <a href="AppSyntax.html#AppSyntax">A</a> Description of command syntax and nomenclature</li>
-<li>Appendix <a href="AppCommands.html#AppCommands">B</a> Listing of all commands, and their syntax, arguments, descriptions and cross references</li>
-<li>Appendix <a href="AppConstits.html#AppConstits">C</a> Listing and descriptions of all computed variables, with chemical information</li>
-<li>Appendices <a href="AppDemoModel.html#AppDemoModel">D</a> to <a href="AppphyOther.html#AppphyOther">N</a> Detailed process descriptions, including worked examples using a purpose built small demonstration model</li>
-<li>Appendix <a href="AppParams.html#AppParams">O</a> Explanations of all parameters, with symbology, minimums and maximum values, units and commentary</li>
-<li>Appendix <a href="AppCompQuans.html#AppCompQuans">P</a> Listing and explanation of intermediate quantities that influence the evolution of simulated computed variables</li>
-<li>Appendix <a href="AppMBal.html#AppMBal">Q</a> <span style="color: red">Demonstration of the mass balance properties of core WQM computed variables</span></li>
-</ul>
-<p><img src="images/WQFooter.jpg" width="100%" /></p>
-
+<div id="PhyUnits-3" class="section level2" number="13.2">
+<h2><span class="header-section-number">I.2</span> Units</h2>
+<p>Phytoplankton is accounted within the WQM in units of carbon, however carbon need not be explicitly simulated within the WQM to support this approach. If this is the case, then uptake or loss of carbon by phytoplankton is still computed, but the associated carbon sources and sinks are assumed to be large and not specifically accounted for as carbonaceous computed variables. A user specified (or default) conversion ratio between mg of carbon and mg of chlorophyll <em>a</em>, <span class="math inline">\(X_{cc}^{phy}\)</span>[WQParXcc], is used to present model outputs in units of <span class="math inline">\(\mu\)</span>/L chlorophyll <em>a</em> when necessary.</p>
 </div>
 </div>
             </section>
@@ -495,8 +435,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="Architecture-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="AppIP.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="PhyRates-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
