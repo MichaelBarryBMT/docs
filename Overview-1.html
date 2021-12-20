@@ -415,7 +415,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Section 1</span> Overview</h1>
 <div id="OverviewContext-2" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Context</h2>
-<p>The TUFLOW Water Quality Module (WQM) enables the two- or three-dimensional simulation of water quality and ecological processes in natural and constructed waterways such as (but not limited to) lakes, tidal estuaries, river systems and coastal oceans. The module’s design is flexible so as to support tailoring of its setup to meet individual application demands and complexity. TUFLOW’s WQM is currently supported for use with <a href="https://www.tuflow.com/products/tuflow-fv/">TUFLOW FV</a>. <span class="math inline">\(\newcommand{\blockindent}{\hspace{0.5cm}}\)</span></p>
+<p>The TUFLOW Water Quality Module (WQM) enables the two- or three-dimensional simulation of water quality and ecological processes in natural and constructed waterways such as (but not limited to) lakes, tidal estuaries, river systems and coastal oceans. The module’s design is flexible so as to support tailoring of its setup to meet individual application demands and complexity. TUFLOW’s WQM is currently supported for use with <a href="https://www.tuflow.com/products/tuflow-fv/" target="_blank">TUFLOW FV</a>. <span class="math inline">\(\newcommand{\blockindent}{\hspace{0.5cm}}\)</span></p>
 </div>
 <div id="Features-2" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> Features</h2>
@@ -428,13 +428,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Command syntax</strong>. The WQM uses familiar TUFLOW style <code>command == argument(s)</code> syntax that has a long established pedigree within other TUFLOW products, for example:</li>
 </ul>
 <blockquote>
-<p><span class="math inline">\(\blockindent\)</span> oxygen benthic == 5.0, 1.07</p>
+<p><span class="math inline">\(\blockindent\)</span> oxygen benthic == 4.0, 1.07</p>
 </blockquote>
 <ul>
 <li><strong>Log file user feedback</strong>. WQM simulations generate a log file that reports all simulation configuration details for immediate review</li>
 <li><strong>Output variable names</strong>. The WQM output variable names are descriptive and include the units used, for example <code>WQ_DISSOLVED_OXYGEN_MGL</code></li>
 <li><strong>Specification of concentration limits</strong>. The WQM allows users to optionally specify minimum and maximum concentation limits for each computed variable, and the WQM will reset concentrations to these limits if exceedences are detected. All instances of resetting are reported to the WQM log file as continuous commentary</li>
-<li><span style="color: red"> <strong>Inbuilt guidance on parameter specification</strong>. The WQM checks all user specified parameters and compares them to typical ranges. If a parameter’s specified value falls outside a typical range, then a warning is reported to the WQM log file. These ranges are listed in Appendix <a href="AppParams.html#AppParams">O</a> of this manual </span></li>
+<li><strong>Inbuilt guidance on parameter specification</strong>. The WQM checks all user specified parameters and compares them to typical ranges. If a parameter’s specified value falls outside a typical range, then a warning is reported to the WQM log file. These ranges are listed in Appendix <a href="AppParams.html#AppParams">O</a> of this manual</li>
 </ul>
 </div>
 <div id="CnsFeats-3" class="section level3" number="1.2.2">

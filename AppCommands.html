@@ -1027,7 +1027,7 @@ Used in a phytoplankton constituent model block to set silicate limitation param
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="WQPhyLghtLbasic"><bmtpink>light limitation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyLimits-3.html#PhyLimBasic-5">basic</a>,<a href="AppParams.html#WQParKSilim"><span class="math inline">\(I_{K-bas}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="WQPhyLghtLbasic"><bmtpink>light limitation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyLimits-3.html#PhyLimBasic-5">basic</a>,<a href="AppParams.html#WQParKephy"><span class="math inline">\(Ke^{phy}\)</span></a>,<a href="AppParams.html#WQParKbasLghtlim"><span class="math inline">\(I_{K-bas}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
 Used in a phytoplankton constituent model block to set basic light limitation parameters for the basic and advanced phytoplankton constituent models. If stokes settling is used then the vlaue of <span class="math inline">\(I_K\)</span> specified in this command overrides any value specified using the <a href="AppCommands.html#WQPhySettStokes">settling == stokes , <span class="math inline">\(I_K\)</span></a> command. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
@@ -1038,7 +1038,7 @@ Used in a phytoplankton constituent model block to set basic light limitation pa
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="WQPhyLghtLmonod"><bmtpink>light limitation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyLimits-3.html#PhyLimMonod-5">monod</a>,<a href="AppParams.html#WQParKbasLghtlim"><span class="math inline">\(I_{K-mon}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="WQPhyLghtLmonod"><bmtpink>light limitation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyLimits-3.html#PhyLimMonod-5">monod</a>,<a href="AppParams.html#WQParKephy"><span class="math inline">\(Ke^{phy}\)</span></a>,<a href="AppParams.html#WQParKmonLghtlim"><span class="math inline">\(I_{K-mon}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
 Used in a phytoplankton constituent model block to set monod light limitation parameters for the basic and advanced phytoplankton constituent models. If stokes settling is used then the vlaue of <span class="math inline">\(I_K\)</span> specified in this command overrides any value specified using the <a href="AppCommands.html#WQPhySettStokes">settling == stokes , <span class="math inline">\(I_K\)</span></a> command. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
@@ -1049,7 +1049,7 @@ Used in a phytoplankton constituent model block to set monod light limitation pa
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="WQPhyLghtLsteele"><bmtpink>light limitation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyLimits-3.html#PhyLimSteele-5">steele</a>,<a href="AppParams.html#WQParKmonLghtlim"><span class="math inline">\(I_{S-ste}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="WQPhyLghtLsteele"><bmtpink>light limitation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyLimits-3.html#PhyLimSteele-5">steele</a>,<a href="AppParams.html#WQParKephy"><span class="math inline">\(Ke^{phy}\)</span></a>,<a href="AppParams.html#WQParSatsteLghtlim"><span class="math inline">\(I_{S-ste}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
 Used in a phytoplankton constituent model block to set steele light limitation parameters for the basic and advanced phytoplankton constituent models. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
@@ -1060,7 +1060,7 @@ Used in a phytoplankton constituent model block to set steele light limitation p
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="WQPhyLghtLwebb"><bmtpink>light limitation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyLimits-3.html#PhyLimWebb-5">webb</a>,<a href="AppParams.html#WQParSatsteLghtlim"><span class="math inline">\(I_{K-web}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="WQPhyLghtLwebb"><bmtpink>light limitation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyLimits-3.html#PhyLimWebb-5">webb</a>,<a href="AppParams.html#WQParKephy"><span class="math inline">\(Ke^{phy}\)</span></a>,<a href="AppParams.html#WQParKwebLghtlim"><span class="math inline">\(I_{K-web}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
 Used in a phytoplankton constituent model block to set webb light limitation parameters for the basic and advanced phytoplankton constituent models. If stokes settling is used then the vlaue of <span class="math inline">\(I_K\)</span> specified in this command overrides any value specified using the <a href="AppCommands.html#WQPhySettStokes">settling == stokes , <span class="math inline">\(I_K\)</span></a> command. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
@@ -1071,7 +1071,7 @@ Used in a phytoplankton constituent model block to set webb light limitation par
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="WQPhyLghtLjassby"><bmtpink>light limitation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyLimits-3.html#PhyLimJassby-5">jassby</a>,<a href="AppParams.html#WQParKwebLghtlim"><span class="math inline">\(I_{K-jas}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="WQPhyLghtLjassby"><bmtpink>light limitation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyLimits-3.html#PhyLimJassby-5">jassby</a>,<a href="AppParams.html#WQParKephy"><span class="math inline">\(Ke^{phy}\)</span></a>,<a href="AppParams.html#WQParKjasLghtlim"><span class="math inline">\(I_{K-jas}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
 Used in a phytoplankton constituent model block to set jassby light limitation parameters for the basic and advanced phytoplankton constituent models. If stokes settling is used then the vlaue of <span class="math inline">\(I_K\)</span> specified in this command overrides any value specified using the <a href="AppCommands.html#WQPhySettStokes">settling == stokes , <span class="math inline">\(I_K\)</span></a> command. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
@@ -1082,7 +1082,7 @@ Used in a phytoplankton constituent model block to set jassby light limitation p
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="WQPhyLghtLchalker"><bmtpink>light limitation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyLimits-3.html#PhyLimChalker-5">chalker</a>,<a href="AppParams.html#WQParKjasLghtlim"><span class="math inline">\(I_{K-cha}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="WQPhyLghtLchalker"><bmtpink>light limitation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyLimits-3.html#PhyLimChalker-5">chalker</a>,<a href="AppParams.html#WQParKephy"><span class="math inline">\(Ke^{phy}\)</span></a>,<a href="AppParams.html#WQParKchaLghtlim"><span class="math inline">\(I_{K-cha}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
 Used in a phytoplankton constituent model block to set chalker light limitation parameters for the basic and advanced phytoplankton constituent models. If stokes settling is used then the vlaue of <span class="math inline">\(I_K\)</span> specified in this command overrides any value specified using the <a href="AppCommands.html#WQPhySettStokes">settling == stokes , <span class="math inline">\(I_K\)</span></a> command. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
@@ -1093,7 +1093,7 @@ Used in a phytoplankton constituent model block to set chalker light limitation 
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="WQPhyLghtLklepper"><bmtpink>light limitation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyLimits-3.html#PhyLimKlepper-5">klepper</a>,<a href="AppParams.html#WQParKchaLghtlim"><span class="math inline">\(I_{S-kle}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="WQPhyLghtLklepper"><bmtpink>light limitation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyLimits-3.html#PhyLimKlepper-5">klepper</a>,<a href="AppParams.html#WQParKephy"><span class="math inline">\(Ke^{phy}\)</span></a>,<a href="AppParams.html#WQParSatkleLghtlim"><span class="math inline">\(I_{S-kle}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
 Used in a phytoplankton constituent model block to set klepper light limitation parameters for the basic and advanced phytoplankton constituent models. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
@@ -1104,7 +1104,7 @@ Used in a phytoplankton constituent model block to set klepper light limitation 
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="WQPhyLghtLintegrated"><bmtpink>light limitation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyLimits-3.html#PhyLimIntegrated-5">integrated</a>,<a href="AppParams.html#WQParSatkleLghtlim"><span class="math inline">\(I_{S-int}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="WQPhyLghtLintegrated"><bmtpink>light limitation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyLimits-3.html#PhyLimIntegrated-5">integrated</a>,<a href="AppParams.html#WQParKephy"><span class="math inline">\(Ke^{phy}\)</span></a>,<a href="AppParams.html#WQParSatintLghtlim"><span class="math inline">\(I_{S-int}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
 Used in a phytoplankton constituent model block to set integrated light limitation parameters for the basic and advanced phytoplankton constituent models. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyLghtLim-6">4.7.3.5.1.3</a>.
@@ -1188,6 +1188,182 @@ Used in a phytoplankton constituent model block to compute settling velocity via
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhySettNone">none</a>,<a href="AppCommands.html#WQPhySettConst">constant</a>,<br><a href="AppCommands.html#WQPhySettRho">thermal</a>,<a href="AppCommands.html#WQPhySettStokes">stokes</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="WQPhyXcc"><bmtpink>carbon chla ratio ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParXcc"><span class="math inline">\(X_{cc}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Used in a phytoplankton constituent model block to set the ratio of phytoplankton cell carbon biomass to chlorophyll <em>a</em> . Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyXcc-6">4.7.3.5.1.10</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="WQPhyModEnd"><bmtpink>end phyto model </bmtpink></a>
+</td>
+<td style="text-align:left;">
+Used to terminate a phytoplankton constituent model block. Must follow an phyto model == ](#WQPhyMod) command. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyTerm-6">4.7.3.5.1.13</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="WQPhyNFixRate"><bmtpink>nitrogen fixing ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParRNFix"><span class="math inline">\(R_{nfix}^{N_2}\)</span></a>,<a href="AppParams.html#WQParkNFix"><span class="math inline">\(f_{nfix}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Used in a phytoplankton constituent model block to set the nitrogen fixing parameters of a phytoplankton constituent model. The first parameter sets the rate of nitrogen fixing and the second dictates the influence of nitrogen fixing on primary productivity. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyNFix-6">4.7.3.5.1.11</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="WQPhyGrowth"><bmtpink>growth ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParRPrimProd"><span class="math inline">\(R_{prod}^{phy}\)</span></a>,<a href="AppParams.html#WQParthetagrowthPhy"><span class="math inline">\(\theta_{prod}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Used in a phytoplankton constituent model block to set primary productivity parameters of a phytoplankton constituent model. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyPP-6">4.7.3.5.1.8</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="WQPhyResp"><bmtpink>respiration ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParRRespPhy"><span class="math inline">\(R_{resp}^{phy}\)</span></a>,<a href="AppParams.html#WQParthetarespphy"><span class="math inline">\(\theta_{resp}^{phy}\)</span></a>,<a href="AppParams.html#WQParftrueresp"><span class="math inline">\(f_{true-resp}^{phy}\)</span></a>,<a href="AppParams.html#WQParfdomloss"><span class="math inline">\(f_{DOM-loss}^{phy}\)</span></a>,<a href="AppParams.html#WQParfracexud"><span class="math inline">\(f_{exud}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Used in a phytoplankton constituent model block to set respiration and exudation parameters of a phytoplankton constituent model. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyResp-6">4.7.3.5.1.9</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="FVActivateWQM"><bmtpink>water quality model ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#FVActivateWQM">tuflow</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Instruct TUFLOW FV to activate TUFLOW WQM. Simulation construction section <a href="SimulationConstruction-1.html#WQMActivation-3">4.4.1</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="FVWQMCtrlFl"><bmtpink>water quality control file ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#FVWQMCtrlFl">water quality control file name</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Name of WQM control file, with no path. If this file is not in the FV control file directory, then additionally use command <a href="AppCommands.html#FVWQMCtrlDr">water quality mode directory ==</a>. Simulation construction section <a href="SimulationConstruction-1.html#WQMActivation-3">4.4.1</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="FVWQMCtrlDr"><bmtpink>water quality model directory ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#FVWQMCtrlDr">water quality control file directory</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Relative path from location of FV control file to the WQM control file directory, including last backslash, e.g. “..". Simulation construction section <a href="SimulationConstruction-1.html#WQMActivation-3">4.4.1</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="FVRestart"><bmtpink>restart ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#FVRestart">restart file path and name</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Specification of full path and name of previously saved restart file. Simulation construction section <a href="SimulationConstruction-1.html#ICGeneral-4">4.4.2.1</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="FVInitWQGlob"><bmtpink>initial wq concentration ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#FVInitWQGlob">initial conditon file name and path</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Ordered individual computed variable initial conditions. Simulation construction section <a href="SimulationConstruction-1.html#ICGeneral-4">4.4.2.1</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="FVInitWQProf"><bmtpink>initial scalar profile ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#FVInitWQProf">initial conditon file name and path</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Ordered individual computed variable initial conditions. Simulation construction section <a href="SimulationConstruction-1.html#ICGeneral-4">4.4.2.1</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="FVInitWQ2D"><bmtpink>initial condition 2d ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#FVInitWQ2D">initial conditon file name and path</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Ordered individual computed variable initial conditions. Simulation construction section <a href="SimulationConstruction-1.html#ICGeneral-4">4.4.2.1</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="FVInitWQ3D"><bmtpink>initial condition 3d ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#FVInitWQ3D">initial conditon file name and path</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Ordered individual computed variable initial conditions. Simulation construction section <a href="SimulationConstruction-1.html#ICGeneral-4">4.4.2.1</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="WQInitMatBlck"><bmtpink>material ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#WQInitMatBlck">Up to 10 comma separated material integers</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Command to initiate a materials block. Commands within this block apply to the material numbers listed in this command. Simulation construction section <a href="SimulationConstruction-1.html#MatSpecs-3">4.5.3</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="WQEndMatBlck"><bmtpink>end material </bmtpink></a>
+</td>
+<td style="text-align:left;">
+Command to terminate a materials block. This command must be paired with a corresponding <a href="AppCommands.html#WQInitMatBlck">material</a> command to initiate the block. Simulation construction section <a href="SimulationConstruction-1.html#MatSpecs-3">4.5.3</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="FVIncludeSed"><bmtpink>include sediment ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="#">include sediment transport calculations</a>,<a href="#">include sediment in density calculation</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+TUFLOW FV command to include sediment simulation. Sediment must be simulated if adsorbed phosphorus is included in a WQM simulation. Simulation construction section @ref().
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
 </td>
 </tr>
 </tbody>

@@ -471,15 +471,15 @@ Figure 4.1: <strong>Simulation Coordination</strong>
 <h3><span class="header-section-number">4.4.1</span> WQM activation</h3>
 <p>Activation of the WQM is affected by specification of the following mandatory command in the TUFLOW control file:</p>
 <blockquote>
-<p><a href="#FVActivateWQM">water quality model ==</a> <a href="#FVActivateWQM">TUFLOW</a></p>
+<p><a href="AppCommands.html#FVActivateWQM">water quality model ==</a> <a href="AppCommands.html#FVActivateWQM">TUFLOW</a></p>
 </blockquote>
 <p>Following this activation, TUFLOW FV will look for the specification of the name of the separate WQM control file via the following mandatory command:</p>
 <blockquote>
-<p><a href="#FVWQMCtrlFl">water quality control file ==</a> <a href="#FVWQMCtrlFl"><water quality control file name>.fvwq</a></p>
+<p><a href="AppCommands.html#FVWQMCtrlFl">water quality control file ==</a> <a href="AppCommands.html#FVWQMCtrlFl"><water quality control file name>.fvwq</a></p>
 </blockquote>
 <p>This *.fvwq is separate to the *.fvc and contains user specified information that describes the configuration of the water quality simulation. If the *.fvwq is located in the same directory as the *.fvc, then this filename specification needs no associated path. It is recommended however that the *.fvwq be located in a directory separate to the *.fvc so that log and other related water quality specific files can be easily curated. If this approach is adopted, the following additional *.fvc command is required, noting that the folder path is specified as relative to the folder in which the *.fvc resides:</p>
 <blockquote>
-<p><a href="#FVWQMCtrlDr">water quality model directory ==</a> <a href="#FVWQMCtrlDr">&lt;relative path ..<span class="math inline">\(\backslash\)</span>.. to WQ directory&gt;<span class="math inline">\(\backslash\)</span></a></p>
+<p><a href="AppCommands.html#FVWQMCtrlDr">water quality model directory ==</a> <a href="AppCommands.html#FVWQMCtrlDr">&lt;relative path ..<span class="math inline">\(\backslash\)</span>.. to WQ directory&gt;<span class="math inline">\(\backslash\)</span></a></p>
 </blockquote>
 <p>This command must terminate in a <span class="math inline">\(\backslash\)</span> character.</p>
 <p>An example block of these three commands that together activate the WQM and point TUFLOW to the water quality control file ..<span class="math inline">\(\backslash\)</span>WQ<span class="math inline">\(\backslash\)</span>Model_000.fvwq is:</p>
@@ -496,32 +496,32 @@ water quality control file == .\Model_000.fvwq</code></pre>
 <p>There are currently a number of ways that water quality initial conditions may be specified, and all are affected through TUFLOW FV commands. If no water quality initial conditions are specified, then a simulation will not execute.</p>
 <p>Restart files generated from previous simulations can be used to initialise water quality simulations, provided that the restart and simulation model geometries, and water quality simulation computed variables and units are identical. A restart file is specified for all simulated quantities (not just water quality) and is controlled through commands described in the TUFLOW FV user manual. The key command is</p>
 <blockquote>
-<p><a href="#FVRestart">restart ==</a> <a href="#FVRestart"><restart file name>.rst</a></p>
+<p><a href="AppCommands.html#FVRestart">restart ==</a> <a href="AppCommands.html#FVRestart"><restart file name>.rst</a></p>
 </blockquote>
 <p>Other than a restart file, there are a number of ways that water quality initial conditions can be specified, all of which utilise existing TUFLOW FV methods. These are described in the TUFLOW FV user manual, of which some of the following are included:</p>
 <ul>
 <li>Globally uniform<br></li>
 </ul>
 <blockquote>
-<p><a href="#FVInitWQGlob">initial wq concentration ==</a> <a href="#FVInitWQGlob">ordered initial conditions</a></p>
+<p><a href="AppCommands.html#FVInitWQGlob">initial wq concentration ==</a> <a href="AppCommands.html#FVInitWQGlob">ordered initial conditions</a></p>
 </blockquote>
 <ul>
 <li>Globally laterally uniform, but varying with depth<br></li>
 </ul>
 <blockquote>
-<p><a href="#FVInitWQProf">initial scalar profile ==</a> <a href="#FVInitWQProf"><initial condition file name>.csv</a></p>
+<p><a href="AppCommands.html#FVInitWQProf">initial scalar profile ==</a> <a href="AppCommands.html#FVInitWQProf"><initial condition file name>.csv</a></p>
 </blockquote>
 <ul>
 <li>Globally vertically uniform, but varying laterally<br></li>
 </ul>
 <blockquote>
-<p><a href="#FVInitWQ2D">initial condition 2d ==</a> <a href="#FVInitWQ2D"><initial condition file name>.csv</a></p>
+<p><a href="AppCommands.html#FVInitWQ2D">initial condition 2d ==</a> <a href="AppCommands.html#FVInitWQ2D"><initial condition file name>.csv</a></p>
 </blockquote>
 <ul>
 <li>Three dimensional spatially varying<br></li>
 </ul>
 <blockquote>
-<p><a href="#FVInitWQ3D">initial condition 3d ==</a> <a href="#FVInitWQ3D"><initial condition file name>.csv</a></p>
+<p><a href="AppCommands.html#FVInitWQ3D">initial condition 3d ==</a> <a href="AppCommands.html#FVInitWQ3D"><initial condition file name>.csv</a></p>
 </blockquote>
 <p>Initial conditions that use columnar data structures (e.g. *.csv files, and all of the above commands) are interpreted using the <a href="SimulationConstruction-1.html#Ordering-4">ordering rules</a> noted below. The required ordering for each WQM simulation class is provided subsequently (sections <a href="SimulationConstruction-1.html#SimSetSimClDO-2">4.6</a>, <a href="SimulationConstruction-1.html#SimSetSimClInorg-2">4.7</a> and <a href="SimulationConstruction-1.html#SimSetSimClOrg-2">4.8</a> for simulation classes DO, inorganics and organics, respectively).</p>
 </div>
@@ -539,7 +539,7 @@ water quality control file == .\Model_000.fvwq</code></pre>
 <h5><span class="header-section-number">4.4.2.3.1</span> Initial Conditions</h5>
 <p>Initial conditions, if set using means other than a restart file, must be specified with water quality constituents in a preset order. Header information is not used in setting water quality initial conditions - the ordering of values or columns is the sole means by which text based initial conditions are set. For example, the following *.fvc command sets globally uniform initial conditions for a typical inorganics simulation class:</p>
 <blockquote>
-<p><a href="#FVInitWQGlob">initial wq concentration ==</a> 7.5, 0.0, 4.2, 10.5, 0.6, 5.5</p>
+<p><a href="AppCommands.html#FVInitWQGlob">initial wq concentration ==</a> 7.5, 0.0, 4.2, 10.5, 0.6, 5.5</p>
 </blockquote>
 <p>There are no references to headers or variable names, but TUFLOW FV assumes that these numbers correspond to the ordered variables of the particular configuration of the inorganics simulation class returned to it from the WQM. In this example, this ordering is:</p>
 <ul>
@@ -660,11 +660,11 @@ end phosphorus model</code></pre>
 <h3><span class="header-section-number">4.5.3</span> Part 3: Material specifications</h3>
 <p>The final part of the water quality control file (*.fvwq) provides for specification of benthic (sediment) fluxes, via material blocks. The commands required to commence and terminate a materials block are as follows:</p>
 <blockquote>
-<p><a href="#WQInitMatBlck">material ==</a> <a href="#WQInitMatBlck">&lt;up to 10 comma separated material numbers, or “default”&gt;</a></p>
+<p><a href="AppCommands.html#WQInitMatBlck">material ==</a> <a href="AppCommands.html#WQInitMatBlck">&lt;up to 10 comma separated material numbers, or “default”&gt;</a></p>
 </blockquote>
 <p>and</p>
 <blockquote>
-<p><a href="#WQEndMatBlck">end material</a></p>
+<p><a href="AppCommands.html#WQEndMatBlck">end material</a></p>
 </blockquote>
 <p>This material block nomenclature mirrors that used in the TUFLOW FV and sediment transport control files. An example of specifying oxygen and nitrate benthic fluxes for materials 2, 7 and 12 is:</p>
 <pre><code>material == 2, 7, 12
@@ -689,12 +689,12 @@ end material</code></pre>
 <ul>
 <li>Add at least the following commands to TUFLOW FV control file (*.fvc):
 <ul>
-<li><a href="#FVActivateWQM">water quality model ==</a> TUFLOW</li>
-<li><a href="#FVWQMCtrlFl">water quality control file ==</a> <water quality control file name>.fvwq</li>
+<li><a href="AppCommands.html#FVActivateWQM">water quality model ==</a> TUFLOW</li>
+<li><a href="AppCommands.html#FVWQMCtrlFl">water quality control file ==</a> <water quality control file name>.fvwq</li>
 </ul></li>
 <li>Optionally add a folder path command to the TUFLOW FV control file (*.fvc) with a trailing backslash:
 <ul>
-<li><a href="#FVWQMCtrlDr">water quality model dir ==</a> &lt;relative path to *.fvwq file&gt;<br />
+<li><a href="AppCommands.html#FVWQMCtrlDr">water quality model dir ==</a> &lt;relative path to *.fvwq file&gt;<br />
 </li>
 </ul></li>
 <li>Add appropriate initial conditions for all water quality constituents, observing <a href="SimulationConstruction-1.html#OrderIC-5">ordering rules</a></li>
@@ -1157,7 +1157,7 @@ end material</code></pre>
 <h6><span class="header-section-number">4.7.3.5.1.8</span> Primary productivity</h6>
 <p>Primary productivity (growth) parameters (used in Equation <a href="PhyRates-3.html#eq:eq-pel-phy-pprod">(J.2)</a>) are set via the command:</p>
 <blockquote>
-<p><a href="#WQPhyGrowth"><span class="math inline">\(\blockindent\)</span> growth ==</a> <a href="#WQParRPrimProd"><span class="math inline">\(R_{prod}^{phy}\)</span></a>, <a href="#WQParthetatempPhy"><span class="math inline">\(\theta_{prod}^{phy}\)</span></a></p>
+<p><a href="AppCommands.html#WQPhyGrowth"><span class="math inline">\(\blockindent\)</span> growth ==</a> <a href="AppParams.html#WQParRPrimProd"><span class="math inline">\(R_{prod}^{phy}\)</span></a>, <a href="#WQParthetatempPhy"><span class="math inline">\(\theta_{prod}^{phy}\)</span></a></p>
 </blockquote>
 <hr>
 </div>
@@ -1165,7 +1165,7 @@ end material</code></pre>
 <h6><span class="header-section-number">4.7.3.5.1.9</span> Respiration</h6>
 <p>Respiration parameters are set via the following command. The first two parameters are used directly to compute the respiration rate <span class="math inline">\(R_{resp\langle computed\rangle}^{phy}\)</span> via Equation <a href="PhyRates-3.html#eq:eq-pel-phy-resp">(J.6)</a>. The third and fourth parameters are used to compute excretive and mortality fluxes in Equations <a href="PhyLosses-3.html#eq:eq-pel-phy-Cexcr">(M.1)</a> and <a href="PhyLosses-3.html#eq:eq-pel-phy-Cmort">(M.2)</a>, respectively. Both these equations use the respiration rate computed from the first two parameters <span class="math inline">\(R_{resp}^{phy}\)</span> and <span class="math inline">\(\theta_{resp}^{phy}\)</span>. Although not strictly related to respiration, the final parameter does represent a reduction of biomass and is used to compute exudation loss using Equation <a href="PhyRates-3.html#eq:eq-pel-phy-exud">(J.8)</a>.</p>
 <blockquote>
-<p><a href="#WQPhyResp"><span class="math inline">\(\blockindent\)</span> respiration ==</a> <a href="#WQParRRespPhy"><span class="math inline">\(R_{resp}^{phy}\)</span></a>, <a href="#WQParthetarespphy"><span class="math inline">\(\theta_{resp}^{phy}\)</span></a>, <a href="#WQParftrueresp"><span class="math inline">\(f_{true-resp}^{phy}\)</span></a>, <a href="#WQParfdomloss"><span class="math inline">\(f_{DOM-loss}^{phy}\)</span></a>, <a href="#WQParfracexud"><span class="math inline">\(f_{exud}^{phy}\)</span></a></p>
+<p><a href="AppCommands.html#WQPhyResp"><span class="math inline">\(\blockindent\)</span> respiration ==</a> <a href="AppParams.html#WQParRRespPhy"><span class="math inline">\(R_{resp}^{phy}\)</span></a>, <a href="AppParams.html#WQParthetarespphy"><span class="math inline">\(\theta_{resp}^{phy}\)</span></a>, <a href="AppParams.html#WQParftrueresp"><span class="math inline">\(f_{true-resp}^{phy}\)</span></a>, <a href="AppParams.html#WQParfdomloss"><span class="math inline">\(f_{DOM-loss}^{phy}\)</span></a>, <a href="AppParams.html#WQParfracexud"><span class="math inline">\(f_{exud}^{phy}\)</span></a></p>
 </blockquote>
 <hr>
 </div>
@@ -1173,7 +1173,7 @@ end material</code></pre>
 <h6><span class="header-section-number">4.7.3.5.1.10</span> Carbon to Chlorophyll <em>a</em> ratio</h6>
 <p>The carbon to chlorophyll <em>a</em> ratio (used in converting between simulation units, and reporting total chlorophyll <em>a</em> as a diagnostic variable if the mmmol units system is used) is specified via the command:</p>
 <blockquote>
-<p><a href="#WQPhyXcc"><span class="math inline">\(\blockindent\)</span> carbon chla ratio ==</a> <a href="#WQParXcc"><span class="math inline">\(X_{cc}^{phy}\)</span></a></p>
+<p><a href="AppCommands.html#WQPhyXcc"><span class="math inline">\(\blockindent\)</span> carbon chla ratio ==</a> <a href="AppParams.html#WQParXcc"><span class="math inline">\(X_{cc}^{phy}\)</span></a></p>
 </blockquote>
 <hr>
 </div>
@@ -1181,7 +1181,7 @@ end material</code></pre>
 <h6><span class="header-section-number">4.7.3.5.1.11</span> Nitrogen fixing</h6>
 <p>Nitrogen fixing parameters are specified as follows. The first parameter is used in Equation <a href="PhyUptake-3.html#eq:eq-pel-phy-NUp">(L.2)</a> to compute the nitrogen fixation flux, and the second parameter modifies computed primary productivity via Equation <a href="PhyRates-3.html#eq:eq-pel-phy-pprodNfx">(J.3)</a>.</p>
 <blockquote>
-<p><a href="#WQPhyNFixRate"><span class="math inline">\(\blockindent\)</span> nitrogen fixing ==</a> <a href="#WQParRNFix"><span class="math inline">\(R_{nfix}^{N_2}\)</span></a>, <a href="#WQParkNFix"><span class="math inline">\(f_{nfix}^{phy}\)</span></a></p>
+<p><a href="AppCommands.html#WQPhyNFixRate"><span class="math inline">\(\blockindent\)</span> nitrogen fixing ==</a> <a href="AppParams.html#WQParRNFix"><span class="math inline">\(R_{nfix}^{N_2}\)</span></a>, <a href="AppParams.html#WQParkNFix"><span class="math inline">\(f_{nfix}^{phy}\)</span></a></p>
 </blockquote>
 <p>Setting this command triggers nitrogen fixing to be on, otherwise it is off by default.</p>
 <hr>
@@ -1223,7 +1223,7 @@ end material</code></pre>
 <h6><span class="header-section-number">4.7.3.5.1.13</span> Termination</h6>
 <p>This constituent model block must be terminated using the command:</p>
 <blockquote>
-<p><a href="#WQPhyModEnd">end phyto model</a></p>
+<p><a href="AppCommands.html#WQPhyModEnd">end phyto model</a></p>
 </blockquote>
 </div>
 </div>
@@ -1264,7 +1264,7 @@ end material</code></pre>
 <p><a href="SimulationConstruction-1.html#ConModPhySettleB-6"><span class="math inline">\(\blockindent\)</span> settling ==</a></p>
 </blockquote>
 <blockquote>
-<p><a href="#WQPhyModEnd">end phyto model</a></p>
+<p><a href="AppCommands.html#WQPhyModEnd">end phyto model</a></p>
 </blockquote>
 <p>The following commands differ for the advanced phytoplankton model compared to the basic model.</p>
 <hr>
