@@ -524,7 +524,7 @@ Figure 4.1: <strong>Simulation Coordination</strong>
 <p>This command must terminate in a <span class="math inline">\(\backslash\)</span> character.</p>
 <p>An example block of these three commands that together activate the WQM and point TUFLOW to the water quality control file ..<span class="math inline">\(\backslash\)</span>WQ<span class="math inline">\(\backslash\)</span>Model_000.fvwq is:</p>
 <pre><code>water quality model == TUFLOW
-water quality model dir == ..\WQ\
+water quality model directory == ..\WQ\
 water quality control file == .\Model_000.fvwq</code></pre>
 </div>
 <div id="InitBCCond-3" class="section level3" number="4.4.2">
@@ -830,11 +830,11 @@ end material</code></pre>
 <p>Following is an example of all the available WQM <code>simulation class == DO</code> commands. A single material applied as zeros everywhere as the default, other than for materials 1 and 4 where the default flux is overwritten.</p>
 <pre><code>simulation class == DO
 wq dt == 3600
-units == mgl
+wq units == mgl
 
 oxygen model == O2
     oxygen benthic == 4.0, 1.05
-    min max == 0.0, 25.0
+    min max == 0.0, 15.0
 end oxygen model
 
 material == default
@@ -1490,7 +1490,7 @@ end material</code></pre>
 <p>Following is an example of all the available WQM <code>simulation class == inorganics</code> commands, with a single material applied as zeros everywhere as the default, and then modified by a further specification for materials 3 and 7. Two phytoplankton groups (one each of the basic and advanced models) are set.</p>
 <pre><code>simulation class == inorganics
 wq dt == 3600
-units == mgl
+wq units == mgl
 
 oxygen model == O2
     benthic == 4.0, 1.05
@@ -1828,7 +1828,7 @@ end material</code></pre>
 <p>Following is an example of all the available WQM <code>simulation class == organics</code> commands, with a single material applied as zeros everywhere as the default, and then modified by a further specification for materials 3 and 7. Two phytoplankton groups (one each of the basic and advanced models) are set, and the refractory organic matter constituent model deployed.</p>
 <pre><code>simulation class == organics
 wq dt == 3600
-units == mgl
+wq units == mgl
 
 oxygen model == O2
     benthic == 4.0, 1.05
