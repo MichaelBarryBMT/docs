@@ -27,11 +27,12 @@
 }
 .level5 .header-section-number {
   display: inline-block;
-  color: black;
+  color: rgb(26,189,201);
   font-weight: normal;
 }
 .level6 .header-section-number {
   display: inline-block;
+  color: rgb(0,0,0);
   font-weight: normal;
 }
 /* Individual header section titles*/
@@ -62,12 +63,13 @@
   font-style: italic;
 }
 .level1 h5 {
-  color: black;
+  color: rgb(26,189,201);
   font-weight: normal;
 }
 .level1 h6 {
   color: black;
   font-weight: normal;
+  font-style: italic;
 }
 
 .book .book-body .page-wrapper .page-inner {
