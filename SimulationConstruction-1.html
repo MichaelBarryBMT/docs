@@ -430,7 +430,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="O" data-path="AppConstits.html"><a href="AppConstits.html"><i class="fa fa-check"></i><b>O</b> Computed variables</a></li>
 <li class="chapter" data-level="P" data-path="AppDiags.html"><a href="AppDiags.html"><i class="fa fa-check"></i><b>P</b> Diagnostic variables</a></li>
 <li class="chapter" data-level="Q" data-path="AppParams.html"><a href="AppParams.html"><i class="fa fa-check"></i><b>Q</b> Parameters</a></li>
-<li class="chapter" data-level="R" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>R</b> Mass Balance</a></li>
+<li class="chapter" data-level="R" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>R</b> Mass Conservation</a>
+<ul>
+<li class="chapter" data-level="R.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDO"><i class="fa fa-check"></i><b>R.1</b> Simulation class: DO</a></li>
+<li class="chapter" data-level="R.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>R.2</b> Simulation class: Inorganics</a>
+<ul>
+<li class="chapter" data-level="R.2.1" data-path="AppMBal.html"><a href="AppMBal.html#zero-phytoplankton-productivity-and-respiration"><i class="fa fa-check"></i><b>R.2.1</b> Zero phytoplankton productivity and respiration</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://www.tuflow.com"><img src="images/tuflow.png" style="width:246px;height:68px;"></a></li>
 
@@ -987,9 +994,8 @@ end material</code></pre>
 </blockquote>
 <p>Wet atmospheric deposition parameters (used in Equation <a href="AppIP.html#eq:equ-pel-atm-frp-wflux">(G.2)</a>) are set via the command:</p>
 <blockquote>
-<p><a href="AppCommands.html#WQAtmPPars"><span class="math inline">\(\blockindent\)</span> atmospheric deposition ==</a> <a href="AppParams.html#WQParAtmWetFRP"><span class="math inline">\(\left[FRP\right]_{rain}\)</span></a>, <a href="AppParams.html#WQParAtmDryFRP"><span class="math inline">\(R_{atm-dry}^{FRP}\)</span></a></p>
+<p><a href="AppCommands.html#WQAtmPPars"><span class="math inline">\(\blockindent\)</span> atmospheric deposition ==</a> <a href="AppParams.html#WQParAtmWetFRP"><span class="math inline">\(\left[FRP\right]_{rain}\)</span></a></p>
 </blockquote>
-<p><span class="math inline">\(R_{atm-dry}^{FRP}\)</span> (dry deposition) is ignored if adsorbed phosphorus is not included as a computed variable. Adsorbed phosphorus can be included via use of constituent model FRPhsads, which is described below.</p>
 <p>This constituent model block must be terminated using the command:</p>
 <blockquote>
 <p><a href="AppCommands.html#WQFRPModEnd">end inorganic phosphorus model</a></p>
@@ -1015,7 +1021,7 @@ end material</code></pre>
 <blockquote>
 <p><a href="AppCommands.html#WQAdsFRPParsQ"><span class="math inline">\(\blockindent\)</span> adsorption ==</a> quadratic, <a href="AppParams.html#WQParQSorpRatio"><span class="math inline">\(K_{ads-Q}^{FRP}\)</span></a>, <a href="AppParams.html#WQParQSorpMax"><span class="math inline">\(Q_{max}^{FRP}\)</span></a>, <a href="AppParams.html#WQParD50Sorp"><span class="math inline">\(D50_{ads-max}^{FRP}\)</span></a></p>
 </blockquote>
-<p>Dry atmospheric deposition of FRP is activated in this simulation model (used in Equation <a href="AppIP.html#eq:equ-pel-atm-frp-dflux">(G.3)</a>) and is specified via the same command as wet deposition:</p>
+<p>Dry atmospheric deposition of FRP is activated in this simulation model (used in Equation <a href="AppIP.html#eq:equ-pel-atm-frp-dflux">(G.3)</a>) and is specified via the same command as wet deposition, but with one additional argument. This additional argument is ignored if the FRPhsads constituent model has not been set:</p>
 <blockquote>
 <p><a href="AppCommands.html#WQAtmPPars"><span class="math inline">\(\blockindent\)</span> atmospheric deposition ==</a> <a href="AppParams.html#WQParAtmWetFRP"><span class="math inline">\(\left[FRP\right]_{rain}\)</span></a>, <a href="AppParams.html#WQParAtmDryFRP"><span class="math inline">\(R_{atm-dry}^{FRP}\)</span></a></p>
 </blockquote>
@@ -1032,9 +1038,9 @@ end material</code></pre>
 <h5><span class="header-section-number">4.7.3.5.1</span> Constituent model: Basic</h5>
 <p>This constituent model is specified as:</p>
 <blockquote>
-<p><a href="AppCommands.html#WQPhyMod">phyto model ==</a> basic, <group_name></p>
+<p><a href="AppCommands.html#WQPhyMod">phyto model ==</a> basic, <em>groupname</em></p>
 </blockquote>
-<p><group_name> is any user specified phytoplankton group name that uses only alphanumeric characters with no spaces.</p>
+<p><em>groupname</em> is any user specified phytoplankton group name that uses only alphanumeric characters with no spaces.</p>
 <p>Minimum and maximum concentrations for a phytoplankton group are specified as follows. No prefix keyword (as was the case for constituents such as “ammonium”) is required:</p>
 <blockquote>
 <p><a href="AppCommands.html#WQPhyMinMax"><span class="math inline">\(\blockindent\)</span> min max ==</a> <a href="AppParams.html#WQParMinPHY"><span class="math inline">\(\left[PHY\right]_{min}^{PHY}\)</span></a>, <a href="AppParams.html#WQParMaxPHY"><span class="math inline">\(\left[PHY\right]_{max}^{PHY}\)</span></a></p>
@@ -1197,7 +1203,7 @@ end material</code></pre>
 <h6><span class="header-section-number">4.7.3.5.1.8</span> Primary productivity</h6>
 <p>Primary productivity (growth) parameters (used in Equation <a href="PhyRates-3.html#eq:eq-pel-phy-pprod">(I.2)</a>) are set via the command:</p>
 <blockquote>
-<p><a href="AppCommands.html#WQPhyGrowth"><span class="math inline">\(\blockindent\)</span> growth ==</a> <a href="AppParams.html#WQParRPrimProd"><span class="math inline">\(R_{prod}^{phy}\)</span></a>, <a href="#WQParthetatempPhy"><span class="math inline">\(\theta_{prod}^{phy}\)</span></a></p>
+<p><a href="AppCommands.html#WQPhyGrowth"><span class="math inline">\(\blockindent\)</span> primary productivity ==</a> <a href="AppParams.html#WQParRPrimProd"><span class="math inline">\(R_{prod}^{phy}\)</span></a>, <a href="#WQParthetatempPhy"><span class="math inline">\(\theta_{prod}^{phy}\)</span></a></p>
 </blockquote>
 <hr>
 </div>
@@ -1271,9 +1277,9 @@ end material</code></pre>
 <h5><span class="header-section-number">4.7.3.5.2</span> Constituent model: Advanced</h5>
 <p>This constituent model is specified as:</p>
 <blockquote>
-<p><a href="AppCommands.html#WQPhyMod">phyto model ==</a> advanced, <group_name></p>
+<p><a href="AppCommands.html#WQPhyMod">phyto model ==</a> advanced, <em>groupname</em></p>
 </blockquote>
-<p><group_name> is any user specified phytoplankton group name that uses only alphanumeric characters with no spaces.</p>
+<p><em>groupname</em> is any user specified phytoplankton group name that uses only alphanumeric characters with no spaces.</p>
 <hr>
 <p>The following commands are the same as those described for the basic phytoplankton model in Section <a href="SimulationConstruction-1.html#ConModPhyBas-5">4.7.3.5.1</a>:</p>
 <blockquote>
@@ -1289,7 +1295,7 @@ end material</code></pre>
 <p><a href="#ConModPhySiLim-6"><span class="math inline">\(\blockindent\)</span> silicate limitation ==</a></p>
 </blockquote>
 <blockquote>
-<p><a href="#"><span class="math inline">\(\blockindent\)</span> growth ==</a></p>
+<p><a href="#"><span class="math inline">\(\blockindent\)</span> primary productivity ==</a></p>
 </blockquote>
 <blockquote>
 <p><a href="#"><span class="math inline">\(\blockindent\)</span> respiration ==</a></p>
@@ -1534,7 +1540,7 @@ phyto model == basic, green
     silicate limitation == 0.5, 7.0
     uptake == 4.7, 0.6, 8.9
     carbon chla ratio == 32.0
-    growth == 2.0, 1.06
+    primary productivity == 2.0, 1.06
     respiration == 0.02, 1.04, 0.1, 0.05, 0.6
 end phyto model
 
@@ -1550,7 +1556,7 @@ phyto model == advanced, bluegreen
     uptake == 0.05, 0.05, 8.9
     carbon chla ratio == 27.0
     nitrogen fixing == 0.100, 0.100
-    growth == 1.0, 1.08
+    primary productivity == 1.0, 1.08
     respiration == 0.01, 1.01, 0.2, 0.0, 0.4
 end phyto model
 
@@ -1872,7 +1878,7 @@ phyto model == basic, green
     silicate limitation == 0.5, 7.0
     uptake == 4.7, 0.6, 8.9
     carbon chla ratio == 32.0
-    growth == 2.0, 1.06
+    primary productivity == 2.0, 1.06
     respiration == 0.02, 1.04, 0.1, 0.05, 0.6
 end phyto model
 
@@ -1888,7 +1894,7 @@ phyto model == advanced, bluegreen
     uptake == 0.05, 0.05, 8.9
     carbon chla ratio == 27.0
     nitrogen fixing == 0.100, 0.100
-    growth == 1.0, 1.08
+    primary productivity == 1.0, 1.08
     respiration == 0.01, 1.01, 0.2, 0.0, 0.4
 end phyto model
 
@@ -1973,7 +1979,7 @@ end output </code></pre>
 end output </code></pre>
 <p>Water quality outputs are often voluminous. In order to avoid potentially cumbersome data handling issues around large output files, the <code>output parameters ==</code> command arguments can be tailored to list only those computed or diagnostic variables required for analysis, rather than using the blanket wq_all and wq_diag_all arguments. An example of such an output command block that only reports dissolved oxygen concentration and atmospheric oxygen exchange is:</p>
 <pre><code>output == netcdf
-   output parameters == h, WQ_DISS_OXY_MGL, WQ_DIAG_O2_ATMOS_EXCHANGE_MG_M2_D
+   output parameters == h, WQ_DISS_OXYGEN_MGL, WQ_DIAG_O2_ATMOS_EXCHANGE_MG_M2_D
    output interval == 3600.00
 end output </code></pre>
 </div>

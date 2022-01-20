@@ -201,6 +201,12 @@ eq:equ-pel-rsedmtn-flux
 tab:tab-variables2
 tab:tab-diags
 tab:tab-parameters
+eq:equ-mb-pct1
+eq:equ-mb-pct2
+fig:fig-DOMassBal
+fig:fig-DOF
+fig:fig-InorgMassBal1
+fig:fig-InorgF1
 Overview-1
 OverviewContext-2
 Features-2
@@ -451,3 +457,6 @@ AppConstits
 AppDiags
 AppParams
 AppMBal
+AppMBalDO
+AppMBalInorg
+zero-phytoplankton-productivity-and-respiration

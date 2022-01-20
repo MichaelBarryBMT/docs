@@ -430,7 +430,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="O" data-path="AppConstits.html"><a href="AppConstits.html"><i class="fa fa-check"></i><b>O</b> Computed variables</a></li>
 <li class="chapter" data-level="P" data-path="AppDiags.html"><a href="AppDiags.html"><i class="fa fa-check"></i><b>P</b> Diagnostic variables</a></li>
 <li class="chapter" data-level="Q" data-path="AppParams.html"><a href="AppParams.html"><i class="fa fa-check"></i><b>Q</b> Parameters</a></li>
-<li class="chapter" data-level="R" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>R</b> Mass Balance</a></li>
+<li class="chapter" data-level="R" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>R</b> Mass Conservation</a>
+<ul>
+<li class="chapter" data-level="R.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDO"><i class="fa fa-check"></i><b>R.1</b> Simulation class: DO</a></li>
+<li class="chapter" data-level="R.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>R.2</b> Simulation class: Inorganics</a>
+<ul>
+<li class="chapter" data-level="R.2.1" data-path="AppMBal.html"><a href="AppMBal.html#zero-phytoplankton-productivity-and-respiration"><i class="fa fa-check"></i><b>R.2.1</b> Zero phytoplankton productivity and respiration</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://www.tuflow.com"><img src="images/tuflow.png" style="width:246px;height:68px;"></a></li>
 
@@ -3152,7 +3159,7 @@ A rate modifier that accounts for the metabolic cost of nitrogen fixing on prima
 The phytoplankton primary productivity (growth) rate at 20<span class="math inline">\(^o\)</span>C with no light, temperature, salinty, silicate or nutrient limitation. This rate is multiplied by ambient phytoplankton concentration to derive initial carbon, nutrient and silicate uptake fluxes
 </td>
 <td style="text-align:left;width: 12%; ">
-<a href="AppCommands.html#WQPhyGrowth">growth ==</a><br>
+<a href="AppCommands.html#WQPhyGrowth">primary productivity ==</a><br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 <a href="PhyRates-3.html#PhyProd-4">science</a>
 </td>
@@ -3177,7 +3184,7 @@ The phytoplankton primary productivity (growth) rate at 20<span class="math inli
 The factor to which (<span class="math inline">\(T\)</span>-20) is raised to account for temperature effects on phytoplankton growth in the standard temperature limitation function. A value of 1.0 will remove the effect of temperature
 </td>
 <td style="text-align:left;width: 12%; ">
-<a href="AppCommands.html#WQPhyGrowth">growth ==</a><br>
+<a href="AppCommands.html#WQPhyGrowth">primary productivity ==</a><br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 <a href="PhyLimits-3.html#PhyLimT1">science</a>
 </td>
