@@ -433,10 +433,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="R" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>R</b> Mass Conservation</a>
 <ul>
 <li class="chapter" data-level="R.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDO"><i class="fa fa-check"></i><b>R.1</b> Simulation class: DO</a></li>
-<li class="chapter" data-level="R.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>R.2</b> Simulation class: Inorganics</a>
-<ul>
-<li class="chapter" data-level="R.2.1" data-path="AppMBal.html"><a href="AppMBal.html#zero-phytoplankton-productivity-and-respiration"><i class="fa fa-check"></i><b>R.2.1</b> Zero phytoplankton productivity and respiration</a></li>
-</ul></li>
+<li class="chapter" data-level="R.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>R.2</b> Simulation class: Inorganics</a></li>
+<li class="chapter" data-level="R.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalOrg"><i class="fa fa-check"></i><b>R.3</b> Simulation class: Organics</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://www.tuflow.com"><img src="images/tuflow.png" style="width:246px;height:68px;"></a></li>
@@ -1678,15 +1676,11 @@ end material</code></pre>
 <blockquote>
 <p><a href="AppCommands.html#WQPOMHydPars"><span class="math inline">\(\blockindent\)</span> hydrolysis ==</a> <a href="AppParams.html#WQParRhydPOC"><span class="math inline">\(R_{hyd}^{POC}\)</span></a>, <a href="AppParams.html#WQParRhydPON"><span class="math inline">\(R_{hyd}^{PON}\)</span></a>, <a href="AppParams.html#WQParRhydPOP"><span class="math inline">\(R_{hyd}^{POP}\)</span></a>, <a href="AppParams.html#WQParKhydPOM"><span class="math inline">\(K_{hyd-O_2}^{POM}\)</span></a>, <a href="AppParams.html#WQParthetahydPOM"><span class="math inline">\(\theta_{hyd}^{POM}\)</span></a></p>
 </blockquote>
-<p>Dissolved organic mineralisation parameters (used in <a href="AppOrg.html#eq:equ-pel-miner-rate">(N.8)</a> and therefore <a href="AppOrg.html#eq:equ-pel-miner-fluxcons">(N.9)</a>) are set in a single command as:</p>
+<p>Dissolved organic mineralisation parameters (used in <a href="AppOrg.html#eq:equ-pel-miner-rate">(N.8)</a> and therefore <a href="AppOrg.html#eq:equ-pel-miner-fluxcons">(N.9)</a>) are set in a single command, together with the corresponding denitrification parameters describing associated consumption of nitrate due to mineralisation (used in Equations <a href="AppOrg.html#eq:equ-pel-miner-dosink">(N.10)</a> and <a href="AppOrg.html#eq:equ-pel-miner-flux-no3sink">(N.14)</a>) as:</p>
 <blockquote>
-<p><a href="AppCommands.html#WQDOMMinerPars"><span class="math inline">\(\blockindent\)</span> mineralisation ==</a> <a href="AppParams.html#WQParRminerDOM"><span class="math inline">\(R_{miner}^{DOM}\)</span></a>, <a href="AppParams.html#WQParKminerDOM"><span class="math inline">\(K_{miner-O_2}^{DOM}\)</span></a>, <a href="AppParams.html#WQParthetaminerDOM"><span class="math inline">\(\theta_{miner}^{DOM}\)</span></a></p>
+<p><a href="AppCommands.html#WQDOMMinerPars"><span class="math inline">\(\blockindent\)</span> mineralisation ==</a> <a href="AppParams.html#WQParRminerDOM"><span class="math inline">\(R_{miner}^{DOM}\)</span></a>, <a href="AppParams.html#WQParKminerDOM"><span class="math inline">\(K_{miner-O_2}^{DOM}\)</span></a>, <a href="AppParams.html#WQParthetaminerDOM"><span class="math inline">\(\theta_{miner}^{DOM}\)</span></a>, <a href="AppParams.html#WQParfanminer"><span class="math inline">\(f_{an}\)</span></a>, <a href="AppParams.html#WQParKminerNitDOM"><span class="math inline">\(K_{miner-NO_3}^{NO_3}\)</span></a></p>
 </blockquote>
-<p>Denitrification of nitrate due to anaerobic mineralisation of dissolved organic carbon parameters (used in Equations <a href="AppOrg.html#eq:equ-pel-miner-dosink">(N.10)</a> and <a href="AppOrg.html#eq:equ-pel-miner-flux-no3">(N.16)</a>) are set in a single command as:</p>
-<blockquote>
-<p><a href="AppCommands.html#WQDOMDenitPars"><span class="math inline">\(\blockindent\)</span> denitrification ==</a> <a href="AppParams.html#WQParfanminer"><span class="math inline">\(f_{an}\)</span></a>, <a href="AppParams.html#WQParKminerNitDOM"><span class="math inline">\(K_{miner-NO_3}^{NO_3}\)</span></a></p>
-</blockquote>
-<p>Self shading due to the presence of labile organics (used in Equation <a href="AppOrg.html#eq:eq-pel-org-selfshad">(N.27)</a>) parameters are set as:</p>
+<p>Self shading due to the presence of labile organics (used in Equation <a href="AppOrg.html#eq:eq-pel-org-selfshad">(N.26)</a>) parameters are set as:</p>
 <blockquote>
 <p><a href="AppCommands.html#WQDOMSelShadPars"><span class="math inline">\(\blockindent\)</span> self shading ==</a> <a href="AppParams.html#WQParKePOM"><span class="math inline">\(Ke^{POM}\)</span></a>, <a href="AppParams.html#WQParKeDOM"><span class="math inline">\(Ke^{DOM}\)</span></a></p>
 </blockquote>
@@ -1716,17 +1710,17 @@ end material</code></pre>
 <blockquote>
 <p><a href="AppCommands.html#WQRPOMbdnPars"><span class="math inline">\(\blockindent\)</span> ref breakdown ==</a> <a href="AppParams.html#WQParRbdnRPOM"><span class="math inline">\(R_{bdn}^{RPOM}\)</span></a>, <a href="AppParams.html#WQParXNRPOM"><span class="math inline">\(X_N^{RPOM}\)</span></a>, <a href="AppParams.html#WQParXPRPOM"><span class="math inline">\(X_P^{RPOM}\)</span></a></p>
 </blockquote>
-<p>The activation of refractory dissolved organic matter to labile dissolved organic matter (used in Equations <a href="AppOrg.html#eq:equ-pel-active-rate">(N.18)</a> and <a href="AppOrg.html#eq:equ-pel-active-fluxcons">(N.19)</a>) parameter is set as:</p>
+<p>The activation of refractory dissolved organic matter to labile dissolved organic matter (used in Equations <a href="AppOrg.html#eq:equ-pel-active-rate">(N.17)</a> and <a href="AppOrg.html#eq:equ-pel-active-fluxcons">(N.18)</a>) parameter is set as:</p>
 <blockquote>
 <p><a href="AppCommands.html#WQRDOMactPars"><span class="math inline">\(\blockindent\)</span> ref activation ==</a> <a href="AppParams.html#WQParRactRDOM"><span class="math inline">\(R_{act}^{RDOM}\)</span></a></p>
 </blockquote>
-<p>The photolysis of refractory organics (used in Equation <a href="AppOrg.html#eq:eq-pel-rorg-selfshad">(N.28)</a>) parameter is set as:</p>
+<p>The photolysis of refractory organics (used in Equation <a href="AppOrg.html#eq:eq-pel-rorg-selfshad">(N.27)</a>) is not turned on unless the following command is issued. It sets the parameter that proportions the split of photolysed refractory dissolved organics to labile dissolved organics and inorganics:</p>
 <blockquote>
 <p><a href="AppCommands.html#WQRefphotoPars"><span class="math inline">\(\blockindent\)</span> ref photolysis ==</a> <a href="AppParams.html#WQParfphotoDOM"><span class="math inline">\(f_{photo}^{RDOM}\)</span></a></p>
 </blockquote>
-<p>Self shading due to the presence of refractory organics (used in Equation <a href="AppOrg.html#eq:eq-pel-rorg-selfshad">(N.28)</a>) parameters are set as:</p>
+<p>Self shading due to the presence of refractory organics (used in Equation <a href="AppOrg.html#eq:eq-pel-rorg-selfshad">(N.27)</a>) parameters are set as:</p>
 <blockquote>
-<p><a href="AppCommands.html#WQDOMRSelShadPars"><span class="math inline">\(\blockindent\)</span> ref self shading ==</a> <a href="AppParams.html#WQParKePOM"><span class="math inline">\(Ke^{RPOM}\)</span></a>, <a href="AppParams.html#WQParKeDOM"><span class="math inline">\(R_{CDOM}^{RDOM}\)</span></a></p>
+<p><a href="AppCommands.html#WQDOMRSelShadPars"><span class="math inline">\(\blockindent\)</span> ref self shading ==</a> <a href="AppParams.html#WQParKeRPOM"><span class="math inline">\(Ke^{RPOM}\)</span></a>, <a href="AppParams.html#WQParKeRDOM"><span class="math inline">\(R_{CDOM}^{RDOM}\)</span></a></p>
 </blockquote>
 <p>This constituent model block must be terminated using the command:</p>
 <blockquote>
@@ -1759,7 +1753,7 @@ end material</code></pre>
 <a href="AppCommands.html#WQDONBenFlx"><span class="math inline">\(\blockindent\)</span> DON flux ==</a> <a href="AppDiags.html#WQParFsedDON"><span class="math inline">\(F_{sed}^{DON}\)</span></a> <br> <br>
 <a href="AppCommands.html#WQDOPBenFlx"><span class="math inline">\(\blockindent\)</span> DOP flux ==</a> <a href="AppDiags.html#WQParFsedDOP"><span class="math inline">\(F_{sed}^{DOP}\)</span></a></p>
 </blockquote>
-<p>No adsorbed FRP or phytoplankton fluxes are required.</p>
+<p>No adsorbed FRP, phytoplankton or particulate organic fluxes are required.</p>
 </div>
 <div id="ConOrdOrg-3" class="section level3" number="4.8.5">
 <h3><span class="header-section-number">4.8.5</span> Constituent ordering</h3>

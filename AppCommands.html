@@ -433,10 +433,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="R" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>R</b> Mass Conservation</a>
 <ul>
 <li class="chapter" data-level="R.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDO"><i class="fa fa-check"></i><b>R.1</b> Simulation class: DO</a></li>
-<li class="chapter" data-level="R.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>R.2</b> Simulation class: Inorganics</a>
-<ul>
-<li class="chapter" data-level="R.2.1" data-path="AppMBal.html"><a href="AppMBal.html#zero-phytoplankton-productivity-and-respiration"><i class="fa fa-check"></i><b>R.2.1</b> Zero phytoplankton productivity and respiration</a></li>
-</ul></li>
+<li class="chapter" data-level="R.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>R.2</b> Simulation class: Inorganics</a></li>
+<li class="chapter" data-level="R.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalOrg"><i class="fa fa-check"></i><b>R.3</b> Simulation class: Organics</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://www.tuflow.com"><img src="images/tuflow.png" style="width:246px;height:68px;"></a></li>
@@ -1529,10 +1527,10 @@ Used in an organics constituent model block to parameterise particulate organic 
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="WQDOMMinerPars"><bmtpink>mineralisation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParRminerDOM"><span class="math inline">\(R_{miner}^{DOM}\)</span></a>,<a href="AppParams.html#WQParKminerDOM"><span class="math inline">\(K_{miner-O_2}^{DOM}\)</span></a>,<a href="AppParams.html#WQParthetaminerDOM"><span class="math inline">\(\theta_{miner}^{DOM}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="WQDOMMinerPars"><bmtpink>mineralisation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParRminerDOM"><span class="math inline">\(R_{miner}^{DOM}\)</span></a>,<a href="AppParams.html#WQParKminerDOM"><span class="math inline">\(K_{miner-O_2}^{DOM}\)</span></a>,<a href="AppParams.html#WQParthetaminerDOM"><span class="math inline">\(\theta_{miner}^{DOM}\)</span></a>,<a href="AppParams.html#WQParfanminer"><span class="math inline">\(f_{an}\)</span></a>,<a href="AppParams.html#WQParKminerNitDOM"><span class="math inline">\(K_{miner-NO_3}^{NO_3}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an organics constituent model block to parameterise dissolved organic matter (carbon, nitrogen and phosphorus) mineralisation. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLab-5">4.8.3.5.1</a>.
+Used in an organics constituent model block to parameterise dissolved organic matter (carbon, nitrogen and phosphorus) mineralisation. It includes the parameters that govern anaerobic mineralisation, that is, the consumption of nitrate in the dissolved organic matter mineralisation process. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLab-5">4.8.3.5.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>

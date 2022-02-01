@@ -433,10 +433,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="R" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>R</b> Mass Conservation</a>
 <ul>
 <li class="chapter" data-level="R.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDO"><i class="fa fa-check"></i><b>R.1</b> Simulation class: DO</a></li>
-<li class="chapter" data-level="R.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>R.2</b> Simulation class: Inorganics</a>
-<ul>
-<li class="chapter" data-level="R.2.1" data-path="AppMBal.html"><a href="AppMBal.html#zero-phytoplankton-productivity-and-respiration"><i class="fa fa-check"></i><b>R.2.1</b> Zero phytoplankton productivity and respiration</a></li>
-</ul></li>
+<li class="chapter" data-level="R.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>R.2</b> Simulation class: Inorganics</a></li>
+<li class="chapter" data-level="R.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalOrg"><i class="fa fa-check"></i><b>R.3</b> Simulation class: Organics</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://www.tuflow.com"><img src="images/tuflow.png" style="width:246px;height:68px;"></a></li>
@@ -831,7 +829,7 @@ The flux of settling labile particulate organic carbon that leaves the water col
 <a href="ProcessDescriptions-1.html#ConModOrgOrg-3">Organic matter</a>:<br><a href="ProcessDescriptions-1.html#ConModOrgLab-4">Labile</a>
 </td>
 <td style="text-align:left;width: 5%; ">
-Equation <a href="AppOrg.html#eq:equ-pel-lsedmtn-flux">(N.29)</a>
+Equation <a href="AppOrg.html#eq:equ-pel-lsedmtn-flux">(N.28)</a>
 </td>
 </tr>
 <tr>
@@ -858,7 +856,7 @@ The flux of settling labile particulate organic nitrogen that leaves the water c
 <a href="ProcessDescriptions-1.html#ConModOrgOrg-3">Organic matter</a>:<br><a href="ProcessDescriptions-1.html#ConModOrgLab-4">Labile</a>
 </td>
 <td style="text-align:left;width: 5%; ">
-Equation <a href="AppOrg.html#eq:equ-pel-lsedmtn-flux">(N.29)</a>
+Equation <a href="AppOrg.html#eq:equ-pel-lsedmtn-flux">(N.28)</a>
 </td>
 </tr>
 <tr>
@@ -885,7 +883,7 @@ The flux of settling labile particulate organic phosphorus that leaves the water
 <a href="ProcessDescriptions-1.html#ConModOrgOrg-3">Organic matter</a>:<br><a href="ProcessDescriptions-1.html#ConModOrgLab-4">Labile</a>
 </td>
 <td style="text-align:left;width: 5%; ">
-Equation <a href="AppOrg.html#eq:equ-pel-lsedmtn-flux">(N.29)</a>
+Equation <a href="AppOrg.html#eq:equ-pel-lsedmtn-flux">(N.28)</a>
 </td>
 </tr>
 <tr>
@@ -902,13 +900,13 @@ CDOM
 /m
 </td>
 <td style="text-align:left;width: 60%; ">
-Chromorphic dissolved organic matter. It is the equivalent extinction coefficient for absorption of radiation at 440 nm. It is computed from DOC (and RDOC if refractory organic matter is simulated) and uses the relationship of Equation <a href="AppOrg.html#eq:eq-pel-rorg-cdom">(N.23)</a>
+Chromorphic dissolved organic matter. It is the equivalent extinction coefficient for absorption of radiation at 440 nm. It is computed from DOC (and RDOC if refractory organic matter is simulated) and uses the relationship of Equation <a href="AppOrg.html#eq:eq-pel-rorg-cdom">(N.22)</a>
 </td>
 <td style="text-align:left;width: 5%; ">
 <a href="ProcessDescriptions-1.html#ConModOrgOrg-3">Organic matter</a>:<br><a href="ProcessDescriptions-1.html#ConModOrgRef-4">Refractory</a>
 </td>
 <td style="text-align:left;width: 5%; ">
-Equation <a href="AppOrg.html#eq:eq-pel-rorg-cdom">(N.23)</a>
+Equation <a href="AppOrg.html#eq:eq-pel-rorg-cdom">(N.22)</a>
 </td>
 </tr>
 <tr>
@@ -994,7 +992,7 @@ Equation <a href="AppOrg.html#eq:equ-sed-org-flux">(N.1)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagPOCHydrol">WQ_DIAG_POC_HYDROL_MG_M3_D<br>
+<a id="WQDiagPOCHydrol">WQ_DIAG_POC_HYDROL_MG_L_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_POC_HYDROL_MMOL_M3_D</a>
 </td>
@@ -1021,7 +1019,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-hydrolysis-fluxcons">(N.3)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagDOCMiner">WQ_DIAG_DOC_MINERL_MG_M3_D<br>
+<a id="WQDiagDOCMiner">WQ_DIAG_DOC_MINERL_MG_L_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_DOC_MINERL_MMOL_M3_D</a>
 </td>
@@ -1048,7 +1046,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-miner-fluxcons">(N.9)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagPONHydrol">WQ_DIAG_PON_HYDROL_MG_M3_D<br>
+<a id="WQDiagPONHydrol">WQ_DIAG_PON_HYDROL_MG_L_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_PON_HYDROL_MMOL_M3_D</a>
 </td>
@@ -1075,7 +1073,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-hydrolysis-fluxcons">(N.3)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagDONMiner">WQ_DIAG_DON_MINERL_MG_M3_D<br>
+<a id="WQDiagDONMiner">WQ_DIAG_DON_MINERL_MG_L_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_DON_MINERL_MMOL_M3_D</a>
 </td>
@@ -1102,7 +1100,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-miner-fluxcons">(N.9)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagPOPHydrol">WQ_DIAG_POP_HYDROL_MG_M3_D<br>
+<a id="WQDiagPOPHydrol">WQ_DIAG_POP_HYDROL_MG_L_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_POP_HYDROL_MMOL_M3_D</a>
 </td>
@@ -1129,7 +1127,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-hydrolysis-fluxcons">(N.3)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagDOPMiner">WQ_DIAG_DOP_MINERL_MG_M3_D<br>
+<a id="WQDiagDOPMiner">WQ_DIAG_DOP_MINERL_MG_L_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_DOP_MINERL_MMOL_M3_D</a>
 </td>
@@ -1156,15 +1154,15 @@ Equation <a href="AppOrg.html#eq:equ-pel-miner-fluxcons">(N.9)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagOrgAnResp">WQ_DIAG_ORG_ANAER_MET_MG_M3_D<br>
+<a id="WQDiagDOCAnMiner">WQ_DIAG_DOC_MINERL_AN_MG_L_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-WQ_DIAG_ORG_ANAER_MET_MMOL_M3_D</a>
+WQ_DIAG_DOC_MINERL_AN_MMOL_M3_D</a>
 </td>
 <td style="text-align:center;width: 10%; ">
 DOC anaerobic mineralisation flux
 </td>
 <td style="text-align:left;width: 10%; ">
-<span class="math inline">\(F_{miner-anaer\langle computed\rangle}^{DOC}\)</span>
+<span class="math inline">\(F_{miner\langle computed\rangle}^{an}\)</span>
 </td>
 <td style="text-align:center;width: 10%; ">
 mg/L/d<br>
@@ -1172,23 +1170,23 @@ mg/L/d<br>
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
 <td style="text-align:left;width: 60%; ">
-The component of the mineralisation flux of dissolved organic carbon that is anaerobic. The difference between this value and the mineralisation of DOC is the aerobic component. Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be mineralised in that interval
+The component of the mineralisation flux of labile dissolved organic carbon that is anaerobic, i.e. the mineralisation that occurs after oxygen has been consumed from both diatomic dissolved oxygen and nitrate. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) of carbon that would be anaerobically mineralised in that interval. Reporting units of this diagnostic are carbon
 </td>
 <td style="text-align:left;width: 5%; ">
 <a href="ProcessDescriptions-1.html#ConModOrgOrg-3">Organic matter</a>:<br><a href="ProcessDescriptions-1.html#ConModOrgLab-4">Labile</a>
 </td>
 <td style="text-align:left;width: 5%; ">
-Equation <a href="AppOrg.html#eq:equ-pel-miner-no3sink">(N.14)</a>
+Equation <a href="AppOrg.html#eq:equ-pel-miner-balance">(N.15)</a>
 </td>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagOrgDenitrif">WQ_DIAG_ORG_DENIT_MG_M3_D<br>
+<a id="WQDiagDOCDenitrif">WQ_DIAG_DOC_MINERL_DENIT_MG_L_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-WQ_DIAG_ORG_DENIT_MMOL_M3_D</a>
+WQ_DIAG_DOC_MINERL_DENIT_MMOL_M3_D</a>
 </td>
 <td style="text-align:center;width: 10%; ">
-Organic matter mineralisation denitrification
+DOC denitification mineralisation
 </td>
 <td style="text-align:left;width: 10%; ">
 <span class="math inline">\(F_{miner\langle computed\rangle}^{NO_3}\)</span>
@@ -1199,18 +1197,18 @@ mg/L/d<br>
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
 <td style="text-align:left;width: 60%; ">
-The flux of nitrate to free nitrogen gas as a result of labile dissolved organic matter anaerobic mineralisation. Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be denitrified in that interval. This rate is also referred to as denitrification
+The component of the mineralisation flux of labile dissolved organic carbon that occurs following consumption of dissolved oxygen, and that sources its oxygen from stripping (denitrifying) nitrate. It is the mineralisation that occurs after oxygen has been consumed from diatomic dissolved oxygen but before anaerobic mineralisation occurs. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) of carbon that would be aerobically mineralised in that interval. The same number of moles of nitrate N will be consumed. Reporting units of this diagnostic are carbon
 </td>
 <td style="text-align:left;width: 5%; ">
 <a href="ProcessDescriptions-1.html#ConModOrgOrg-3">Organic matter</a>:<br><a href="ProcessDescriptions-1.html#ConModOrgLab-4">Labile</a>
 </td>
 <td style="text-align:left;width: 5%; ">
-Equation <a href="AppOrg.html#eq:equ-pel-miner-flux-no3">(N.16)</a>
+Equation <a href="AppOrg.html#eq:equ-pel-miner-flux-no3sink">(N.14)</a>
 </td>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagOrgBDO5">WQ_DIAG_ORG_BOD5_MG_L</a>
+<a id="WQDiagDOCBDO5">WQ_DIAG_DOC_BOD5_MG_L</a>
 </td>
 <td style="text-align:center;width: 10%; ">
 BOD5
@@ -1251,7 +1249,7 @@ The computed settling velocity of labile particulate organic carbon, nitrogen an
 <a href="ProcessDescriptions-1.html#ConModOrgOrg-3">Organic matter</a>:<br><a href="ProcessDescriptions-1.html#ConModOrgLab-4">Labile</a>
 </td>
 <td style="text-align:left;width: 5%; ">
-Equation <a href="AppOrg.html#eq:equ-pel-lsedmtn-flux">(N.29)</a>
+Equation <a href="AppOrg.html#eq:equ-pel-lsedmtn-flux">(N.28)</a>
 </td>
 </tr>
 <tr>
@@ -1278,7 +1276,7 @@ The flux of settling refractory particulate organic matter that leaves the water
 <a href="ProcessDescriptions-1.html#ConModOrgOrg-3">Organic matter</a>:<br><a href="ProcessDescriptions-1.html#ConModOrgRef-4">Refractory</a>
 </td>
 <td style="text-align:left;width: 5%; ">
-Equation <a href="AppOrg.html#eq:equ-pel-rsedmtn-flux">(N.30)</a>
+Equation <a href="AppOrg.html#eq:equ-pel-rsedmtn-flux">(N.29)</a>
 </td>
 </tr>
 <tr>
@@ -1299,13 +1297,13 @@ mg/L/d<br>
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
 <td style="text-align:left;width: 60%; ">
-The flux of refractory dissolved organic carbon to labile dissolved organic carbon and potentially DIC (if <span class="math inline">\(f_{photo}^{DOM}\)</span> is not 1.0). This flux is always positive and is the carbon fraction only. Equivalent nitrogen and phosphorus fraction fluxes can be computed as per Equation <a href="AppOrg.html#eq:equ-pel-photor-fluxcons">(N.24)</a>
+The flux of refractory dissolved organic carbon to labile dissolved organic carbon and potentially DIC (if <span class="math inline">\(f_{photo}^{DOM}\)</span> is not 1.0). This flux is always positive and is the carbon fraction only. Equivalent nitrogen and phosphorus fraction fluxes can be computed as per Equation <a href="AppOrg.html#eq:equ-pel-photor-fluxcons">(N.23)</a>
 </td>
 <td style="text-align:left;width: 5%; ">
 <a href="ProcessDescriptions-1.html#ConModOrgOrg-3">Organic matter</a>:<br><a href="ProcessDescriptions-1.html#ConModOrgRef-4">Refractory</a>
 </td>
 <td style="text-align:left;width: 5%; ">
-Equation <a href="AppOrg.html#eq:equ-pel-photor-fluxcons">(N.24)</a>
+Equation <a href="AppOrg.html#eq:equ-pel-photor-fluxcons">(N.23)</a>
 </td>
 </tr>
 <tr>
@@ -1328,7 +1326,7 @@ The computed settling velocity of refractory particulate organic matter. Positiv
 <a href="ProcessDescriptions-1.html#ConModOrgOrg-3">Organic matter</a>:<br><a href="ProcessDescriptions-1.html#ConModOrgRef-4">Refractory</a>
 </td>
 <td style="text-align:left;width: 5%; ">
-Equation <a href="AppOrg.html#eq:equ-pel-rsedmtn-flux">(N.30)</a>
+Equation <a href="AppOrg.html#eq:equ-pel-rsedmtn-flux">(N.29)</a>
 </td>
 </tr>
 <tr>

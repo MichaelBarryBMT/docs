@@ -433,10 +433,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="R" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>R</b> Mass Conservation</a>
 <ul>
 <li class="chapter" data-level="R.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDO"><i class="fa fa-check"></i><b>R.1</b> Simulation class: DO</a></li>
-<li class="chapter" data-level="R.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>R.2</b> Simulation class: Inorganics</a>
-<ul>
-<li class="chapter" data-level="R.2.1" data-path="AppMBal.html"><a href="AppMBal.html#zero-phytoplankton-productivity-and-respiration"><i class="fa fa-check"></i><b>R.2.1</b> Zero phytoplankton productivity and respiration</a></li>
-</ul></li>
+<li class="chapter" data-level="R.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>R.2</b> Simulation class: Inorganics</a></li>
+<li class="chapter" data-level="R.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalOrg"><i class="fa fa-check"></i><b>R.3</b> Simulation class: Organics</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://www.tuflow.com"><img src="images/tuflow.png" style="width:246px;height:68px;"></a></li>
@@ -4103,10 +4101,10 @@ The factor to which (<span class="math inline">\(T\)</span>-20) is raised to acc
 0
 </td>
 <td style="text-align:left;width: 47%; ">
-The factor applied to the Michaelis-Menten formulation of anaerobic mineralisation of labile dissolved organic matter. A value of 0.0 will entirely suppress anaerobic labile dissolved organic mineralisation and a value of 1.0 will allow the same process to proceed entirely uninhibited, albeit under a Michaelis-Menten formulation and subject to the availability of nitrate oxygen. A non-zero value of this parameter will see oxygen sourced from ambient nitrate, which in turn is reduced to free diatomic nitrogen gas. As such, this nitrate consumption process can therefore also be switched off by setting this parameter to zero. This same factor is also applied to the activation of refractory dissolved organic carbon, nitrogen and phosphorus
+The factor applied to the compenent of mineralisation of labile dissolved organic matter that does not consume dissolved oxygen. A value of 0.0 will entirely suppress labile dissolved organic mineralisation that does not consume dissolved oxygen and a value of 1.0 will allow the same process to proceed entirely uninhibited. A non-zero value of this parameter will see oxygen sourced from ambient nitrate, which in turn is reduced to free diatomic nitrogen gas when its oxygen is stripped. As such, this nitrate consumption process can therefore also be switched off by setting this parameter to zero. This same factor is also applied to the activation of refractory dissolved organic carbon, nitrogen and phosphorus to their labile equivalents. If activation is to be simulated then the command `<code>mineralisation ==</code> will need to be issued to set <span class="math inline">\(f_{an]\)</span>. In this case, and if the simulation of dissolved organic matter mineralisation is not desired, then set <span class="math inline">\(R_{miner}^{DOM}\)</span> to be zero in the same mineralisation command
 </td>
 <td style="text-align:left;width: 12%; ">
-<a href="AppCommands.html#WQDOMDenitPars">denitrification ==</a><br>
+<a href="AppCommands.html#WQDOMMinerPars">mineralisation ==</a><br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 <a href="AppOrg.html#Miner-3">science</a>
 </td>
@@ -4137,7 +4135,7 @@ mmol/m<span class="math inline">\(^3\)</span> NO<span class="math inline">\(_3\)
 The nitrate concentration for which the computed consumption of nitrate due to anaerobic mineralisation is half the corresponding anaerobic mineralisation of labile dissolved organic carbon. Cannot be varied spatially
 </td>
 <td style="text-align:left;width: 12%; ">
-<a href="AppCommands.html#WQDOMDenitPars">denitrification ==</a><br>
+<a href="AppCommands.html#WQDOMMinerPars">mineralisation ==</a><br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 <a href="AppOrg.html#Miner-3">science</a>
 </td>
