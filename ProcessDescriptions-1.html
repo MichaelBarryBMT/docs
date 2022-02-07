@@ -606,7 +606,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="AppSil.html#SedSilProd-3"><bmtgreen>Sediment flux</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(cdot\blockindent\)</span>Sediment properties
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Sediment properties
 </td>
 </tr>
 </tbody>
@@ -765,7 +765,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 </tr>
 </tbody>
 </table>
-<p>This is a slightly more complex model than those described previously, and this reflects the complexity of nitrogenous environmental chemistry. In addition to specification of two computed variables and their respective sediment flux properties, rates and related parameters for nitrification and denitrification are also specifiable. By design, the library defaults for these processes are set to zero so that all processes are initially inactive. Users may activate these processes by specifying non-zero rate parameters.</p>
+<p>This is a slightly more complex model than those described previously, and this reflects the complexity of inorganic nitrogenous environmental chemistry. In addition to specification of two computed variables and their respective sediment flux properties, rates and related parameters for nitrification and denitrification are also specifiable. By design, the library defaults for these processes are set to zero so that all processes are initially inactive. Users may activate these processes by specifying non-zero rate parameters.</p>
 <p>Whilst dissolved oxygen potentially modifies some processes described to this point (e.g. computed sediment flux rates), nitrification is the first of these processes that also potentially consumes dissolved oxygen. Specifically, if nitrification is simulated (i.e. non-zero rate parameters are specified) and allowed to include the effect of dissolved oxygen (the default), then dissolved oxygen concentrations are drawn down as the process operates.</p>
 <table>
 <caption>
@@ -999,7 +999,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <p><a href="AppCommands.html#FVIncludeSed">include sediment == 1,1</a> ! Include sediment in density calculations</p>
 </blockquote>
 <ul>
-<li>This (or these) sediment fractions must be designated as supporting FRP adsorption and desorption. This is achieved through specification of an upper threshold D<span class="math inline">\(_50\)</span> for adsorption.</li>
+<li>This (or these) sediment fractions must be designated as supporting FRP adsorption and desorption. This is achieved through specification of an upper threshold D<span class="math inline">\(_{50}\)</span> for adsorption.</li>
 </ul>
 <p>If multiple sediment fractions are specified to be simulated by the STM, then TUFLOW FV sends all these fractions individually through the API to the WQM, together with their respective metadata fields. Specifically, for each sediment fraction simulated in the TUFLOW FV STM, the WQM is sent:</p>
 <ul>
@@ -1084,7 +1084,7 @@ Interacting Quantities
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtpink>Excretion</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1096,7 +1096,7 @@ Interacting Quantities
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtpink>Mortality</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1154,7 +1154,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtgreen>Primary productivity</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1180,7 +1180,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1192,7 +1192,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Excretion</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1204,7 +1204,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Mortality</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1218,7 +1218,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1232,7 +1232,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1244,7 +1244,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Excretion</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1256,12 +1256,12 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Mortality</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="AppConstits.html#WQVarSi">Silicate</a>
+<a href="AppConstits.html#WQVarSi">Silicate (if activated)</a>
 </td>
 <td style="text-align:left;">
 mg/L or mmol/m<span class="math inline">\(^3\)</span>
@@ -1346,7 +1346,7 @@ Interacting Quantities
 <a href="PhyRates-3.html#PhyProd-4"><bmtgreen>Primary productivity</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1370,7 +1370,7 @@ Interacting Quantities
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtpink>Excretion</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1382,7 +1382,7 @@ Interacting Quantities
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtpink>Mortality</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1408,7 +1408,7 @@ mg N/L or mmol N/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1420,7 +1420,7 @@ mg N/L or mmol N/m<span class="math inline">\(^3\)</span>
 <a href="PhyUptake-3.html#PhyUptake-3"><bmtgreen>Uptake</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1444,7 +1444,7 @@ mg N/L or mmol N/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtpink>Excretion</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1456,7 +1456,7 @@ mg N/L or mmol N/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtpink>Mortality</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1482,7 +1482,7 @@ mg P/L or mmol P/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1494,7 +1494,7 @@ mg P/L or mmol P/m<span class="math inline">\(^3\)</span>
 <a href="PhyUptake-3.html#PhyUptake-3"><bmtgreen>Uptake</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1518,7 +1518,7 @@ mg P/L or mmol P/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtpink>Excretion</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1530,7 +1530,7 @@ mg P/L or mmol P/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtpink>Mortality</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -1588,7 +1588,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtgreen>Primary productivity</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if simulated)
 </td>
 </tr>
 <tr>
@@ -1614,7 +1614,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if simulated)
 </td>
 </tr>
 <tr>
@@ -1626,7 +1626,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Excretion</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if simulated)
 </td>
 </tr>
 <tr>
@@ -1638,7 +1638,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Mortality</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if simulated)
 </td>
 </tr>
 <tr>
@@ -1652,7 +1652,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if simulated)
 </td>
 </tr>
 <tr>
@@ -1666,7 +1666,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if simulated)
 </td>
 </tr>
 <tr>
@@ -1678,7 +1678,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Excretion</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if simulated)
 </td>
 </tr>
 <tr>
@@ -1690,12 +1690,12 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Mortality</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if simulated)
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="AppConstits.html#WQVarSi">Silicate</a>
+<a href="AppConstits.html#WQVarSi">Silicate (if simulated)</a>
 </td>
 <td style="text-align:left;">
 mg/L or mmol/m<span class="math inline">\(^3\)</span>
@@ -1775,7 +1775,7 @@ Figure 3.8: <strong>Simulation class: Inorganics</strong>
 </div>
 <div id="ConModOrgOrg-3" class="section level3" number="3.3.6">
 <h3><span class="header-section-number">3.3.6</span> Model Class: Organic matter</h3>
-<p>The following constituent models are available to select from within the organic matter model class. The differentiator between constituent models is the inclusion of refractory organic matter.</p>
+<p>The following constituent models are available to select from within the organic matter model class. The differentiator between constituent models is the exclusion or inclusion of refractory organic matter.</p>
 <div id="ConModOrgLab-4" class="section level4" number="3.3.6.1">
 <h4><span class="header-section-number">3.3.6.1</span> Constituent Model: Labile</h4>
 <p>This organic matter constituent model considers only labile particulate and dissolved organic matter. The constituent model code and associated computed variables, processes and potentially interacting simulated quantities are provided in Figure <a href="ProcessDescriptions-1.html#fig:fig-NtwkOrgLab">3.9</a> and Table <a href="ProcessDescriptions-1.html#tab:tab-ConModOrgLab">3.11</a>. Both the Figure and Table (and Table <a href="ProcessDescriptions-1.html#tab:tab-ConModOrgLabEx">3.12</a>) make reference to dissolved inorganic carbon (DIC). This is for completeness only because the WQM does not currently support simulation of DIC. Doing so is not required in order to deploy either the labile or refractory organic matter constituent model within the WQM.</p>
@@ -2045,7 +2045,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="AppOrg.html#Miner-3"><bmtpink>Mineralisation</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>DOC
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>DON<br><span class="math inline">\(\cdot\blockindent\)</span>DOP
 </td>
 </tr>
 <tr>
@@ -2059,7 +2059,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="AppOrg.html#Miner-3"><bmtpink>Mineralisation</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>DOC
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>DON<br><span class="math inline">\(\cdot\blockindent\)</span>DOP
 </td>
 </tr>
 <tr>
@@ -2314,7 +2314,7 @@ mg C/L or mmol C/m<span class="math inline">\(^3\)</span>
 <a href="AppOrg.html#OrgPhot-3"><bmtgreen>Photolysis</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Radiation<br><span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>RDOC
+<span class="math inline">\(\cdot\blockindent\)</span>Radiation<br><span class="math inline">\(\cdot\blockindent\)</span>RDOC
 </td>
 </tr>
 <tr>
@@ -2376,7 +2376,7 @@ mg N/L or mmol N/m<span class="math inline">\(^3\)</span>
 <a href="AppOrg.html#OrgPhot-3"><bmtgreen>Photolysis</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Radiation<br><span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>RDON
+<span class="math inline">\(\cdot\blockindent\)</span>Radiation<br><span class="math inline">\(\cdot\blockindent\)</span>RDON
 </td>
 </tr>
 <tr>
@@ -2438,7 +2438,7 @@ mg P/L or mmol P/m<span class="math inline">\(^3\)</span>
 <a href="AppOrg.html#OrgPhot-3"><bmtgreen>Photolysis</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Radiation<br><span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>RDOP
+<span class="math inline">\(\cdot\blockindent\)</span>Radiation<br><span class="math inline">\(\cdot\blockindent\)</span>RDOP
 </td>
 </tr>
 <tr>
@@ -2490,7 +2490,7 @@ mg C/L or mmol C/m<span class="math inline">\(^3\)</span>
 <a href="AppOrg.html#OrgPhot-3"><bmtpink>Photolysis</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Radiation<br><span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>RDOC
+<span class="math inline">\(\cdot\blockindent\)</span>Radiation<br><span class="math inline">\(\cdot\blockindent\)</span>RDOC
 </td>
 </tr>
 <tr>
@@ -2516,7 +2516,7 @@ mg N/L or mmol N/m<span class="math inline">\(^3\)</span>
 <a href="AppOrg.html#OrgPhot-3"><bmtpink>Photolysis</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Radiation<br><span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>RDOC<br><span class="math inline">\(\cdot\blockindent\)</span>RDON
+<span class="math inline">\(\cdot\blockindent\)</span>Radiation<br><span class="math inline">\(\cdot\blockindent\)</span>RDOC<br><span class="math inline">\(\cdot\blockindent\)</span>RDON
 </td>
 </tr>
 <tr>
@@ -2547,11 +2547,14 @@ mg N/L or mmol N/m<span class="math inline">\(^3\)</span>
 </tr>
 </tbody>
 </table>
-<p>The four processes that govern (labile and refractory) organic matter behaviour in this constituent model are:</p>
+<p>The processes that govern (labile and refractory) organic matter behaviour in this constituent model are:</p>
 <ul>
 <li>Sediment flux</li>
 <li>Hydrolysis (the conversion of particulate organics to dissolved organics)</li>
-<li>Mineralisation (the conversion of dissolved organics to inorganics), and</li>
+<li>Mineralisation (the conversion of dissolved organics to inorganics)</li>
+<li>Breakdown (the conversion of refractory particulate organic matter to labile particulate organic matter)</li>
+<li>Photolysis (the conversion of refractory dissolved organic matter to labile dissolved organic matter and corresponding inorganics)</li>
+<li>Activation (the conversion of refractory dissolved to labile dissolved organic matter)</li>
 <li>Settling, of only particulate organics</li>
 </ul>
 <p>A range of rate constants can be specified to control these processes, or the defaults used. By design, the library default rates are set to zero so as to render all processes initially inactive. Specification of non-zero rates activates these processes.</p>
@@ -2588,7 +2591,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="AppOrg.html#Miner-3"><bmtpink>Mineralisation</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>DOC
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen
 </td>
 </tr>
 <tr>
@@ -2602,7 +2605,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="AppOrg.html#Miner-3"><bmtpink>Mineralisation</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>DOC
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate
 </td>
 </tr>
 <tr>
@@ -2616,7 +2619,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="AppOrg.html#Miner-3"><bmtgreen>Mineralisation</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>DON
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate
 </td>
 </tr>
 <tr>
@@ -2628,7 +2631,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="AppOrg.html#OrgPhot-3"><bmtgreen>Photolysis</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Radiation<br><span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>RDON
+<span class="math inline">\(\cdot\blockindent\)</span>Radiation<br><span class="math inline">\(\cdot\blockindent\)</span>RDON
 </td>
 </tr>
 <tr>
@@ -2642,7 +2645,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="AppOrg.html#Miner-3"><bmtgreen>Mineralisation</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>DOP
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate
 </td>
 </tr>
 <tr>
@@ -2654,7 +2657,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="AppOrg.html#OrgPhot-3"><bmtgreen>Photolysis</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Radiation<br><span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>RDOP
+<span class="math inline">\(\cdot\blockindent\)</span>Radiation<br><span class="math inline">\(\cdot\blockindent\)</span>RDOP
 </td>
 </tr>
 <tr>
@@ -2667,7 +2670,7 @@ DIC
 <a href="AppOrg.html#Miner-3"><bmtgreen>Mineralisation</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>DOC
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate
 </td>
 </tr>
 <tr>
@@ -2679,7 +2682,7 @@ DIC
 <a href="AppOrg.html#OrgPhot-3"><bmtgreen>Photolysis</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Radiation<br><span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>RDOC
+<span class="math inline">\(\cdot\blockindent\)</span>Radiation<br><span class="math inline">\(\cdot\blockindent\)</span>RDOC
 </td>
 </tr>
 </tbody>
@@ -2759,7 +2762,7 @@ Interacting Quantities
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtpink>Excretion</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>DON<br><span class="math inline">\(\cdot\blockindent\)</span>DOP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>DON<br><span class="math inline">\(\cdot\blockindent\)</span>DOP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -2771,7 +2774,7 @@ Interacting Quantities
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtpink>Mortality</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>POC<br><span class="math inline">\(\cdot\blockindent\)</span>PON<br><span class="math inline">\(\cdot\blockindent\)</span>POP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>POC<br><span class="math inline">\(\cdot\blockindent\)</span>PON<br><span class="math inline">\(\cdot\blockindent\)</span>POP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -2829,7 +2832,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtgreen>Primary productivity</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -2855,7 +2858,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -2869,7 +2872,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -2883,12 +2886,12 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="AppConstits.html#WQVarSi">Silicate</a>
+<a href="AppConstits.html#WQVarSi">Silicate (if activated)</a>
 </td>
 <td style="text-align:left;">
 mg/L or mmol/m<span class="math inline">\(^3\)</span>
@@ -2935,7 +2938,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Mortality</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>PON<br><span class="math inline">\(\cdot\blockindent\)</span>POP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>PON<br><span class="math inline">\(\cdot\blockindent\)</span>POP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -2949,7 +2952,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Mortality</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>POC<br><span class="math inline">\(\cdot\blockindent\)</span>POP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>POC<br><span class="math inline">\(\cdot\blockindent\)</span>POP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -2963,7 +2966,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Mortality</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>POC<br><span class="math inline">\(\cdot\blockindent\)</span>PON<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>POC<br><span class="math inline">\(\cdot\blockindent\)</span>PON<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -2977,7 +2980,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Excretion</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>DON<br><span class="math inline">\(\cdot\blockindent\)</span>DOP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>DON<br><span class="math inline">\(\cdot\blockindent\)</span>DOP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -2991,7 +2994,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Excretion</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>DOP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>DOP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3005,7 +3008,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Excretion</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>DON<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>DON<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 </tbody>
@@ -3057,7 +3060,7 @@ Interacting Quantities
 <a href="PhyRates-3.html#PhyProd-4"><bmtgreen>Primary productivity</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3081,7 +3084,7 @@ Interacting Quantities
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtpink>Excretion</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>DON<br><span class="math inline">\(\cdot\blockindent\)</span>DOP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>DON<br><span class="math inline">\(\cdot\blockindent\)</span>DOP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3093,7 +3096,7 @@ Interacting Quantities
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtpink>Mortality</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>POC<br><span class="math inline">\(\cdot\blockindent\)</span>PON<br><span class="math inline">\(\cdot\blockindent\)</span>POP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>POC<br><span class="math inline">\(\cdot\blockindent\)</span>PON<br><span class="math inline">\(\cdot\blockindent\)</span>POP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3119,7 +3122,7 @@ mg N/L or mmol N/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3131,7 +3134,7 @@ mg N/L or mmol N/m<span class="math inline">\(^3\)</span>
 <a href="PhyUptake-3.html#PhyUptake-3"><bmtgreen>Uptake</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3155,7 +3158,7 @@ mg N/L or mmol N/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtpink>Excretion</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>DON<br><span class="math inline">\(\cdot\blockindent\)</span>DOP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>DON<br><span class="math inline">\(\cdot\blockindent\)</span>DOP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3167,7 +3170,7 @@ mg N/L or mmol N/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtpink>Mortality</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>POC<br><span class="math inline">\(\cdot\blockindent\)</span>PON<br><span class="math inline">\(\cdot\blockindent\)</span>POP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>POC<br><span class="math inline">\(\cdot\blockindent\)</span>PON<br><span class="math inline">\(\cdot\blockindent\)</span>POP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3193,7 +3196,7 @@ mg P/L or mmol P/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3205,7 +3208,7 @@ mg P/L or mmol P/m<span class="math inline">\(^3\)</span>
 <a href="PhyUptake-3.html#PhyUptake-3"><bmtgreen>Uptake</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3229,7 +3232,7 @@ mg P/L or mmol P/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtpink>Excretion</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>DON<br><span class="math inline">\(\cdot\blockindent\)</span>DOP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>DON<br><span class="math inline">\(\cdot\blockindent\)</span>DOP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3241,7 +3244,7 @@ mg P/L or mmol P/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtpink>Mortality</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>POC<br><span class="math inline">\(\cdot\blockindent\)</span>PON<br><span class="math inline">\(\cdot\blockindent\)</span>POP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>POC<br><span class="math inline">\(\cdot\blockindent\)</span>PON<br><span class="math inline">\(\cdot\blockindent\)</span>POP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3299,7 +3302,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtgreen>Primary productivity</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3325,7 +3328,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3339,7 +3342,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>FRP<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3353,12 +3356,12 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyRates-3.html#PhyProd-4"><bmtpink>Primary productivity</bmtpink></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>Water temperature<br><span class="math inline">\(\cdot\blockindent\)</span>Salinity<br><span class="math inline">\(\cdot\blockindent\)</span>Light<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-<a href="AppConstits.html#WQVarSi">Silicate</a>
+<a href="AppConstits.html#WQVarSi">Silicate (if activated)</a>
 </td>
 <td style="text-align:left;">
 mg/L or mmol/m<span class="math inline">\(^3\)</span>
@@ -3405,7 +3408,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Mortality</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>PON<br><span class="math inline">\(\cdot\blockindent\)</span>POP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>PON<br><span class="math inline">\(\cdot\blockindent\)</span>POP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3419,7 +3422,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Mortality</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>POC<br><span class="math inline">\(\cdot\blockindent\)</span>POP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>POC<br><span class="math inline">\(\cdot\blockindent\)</span>POP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3433,7 +3436,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Mortality</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>POC<br><span class="math inline">\(\cdot\blockindent\)</span>PON<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>POC<br><span class="math inline">\(\cdot\blockindent\)</span>PON<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3447,7 +3450,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Excretion</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>DON<br><span class="math inline">\(\cdot\blockindent\)</span>DOP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>DON<br><span class="math inline">\(\cdot\blockindent\)</span>DOP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3461,7 +3464,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Excretion</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>DOP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>DOP<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 <tr>
@@ -3475,7 +3478,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <a href="PhyLosses-3.html#PhyLosses-3"><bmtgreen>Excretion</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
-<span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>DON<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate
+<span class="math inline">\(\cdot\blockindent\)</span>DOC<br><span class="math inline">\(\cdot\blockindent\)</span>DON<br><span class="math inline">\(\cdot\blockindent\)</span>Internal nitrogen<br><span class="math inline">\(\cdot\blockindent\)</span>Internal phosphorus<br><span class="math inline">\(\cdot\blockindent\)</span>Silicate (if activated)
 </td>
 </tr>
 </tbody>

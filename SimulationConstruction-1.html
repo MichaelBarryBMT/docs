@@ -480,7 +480,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   n = \frac{m}{M} \tag{4.1}
 \end{equation}\]</span>
 where <span class="math inline">\(n\)</span> is millimoles (mmol), <span class="math inline">\(m\)</span> is mass (mg) and <span class="math inline">\(M\)</span> is molar weight (mg/mmol). A similar concept applies to concentration and flux quantities. As such, the WQM assigns values to <span class="math inline">\(M\)</span> in converting from milligrams to millimoles, i.e. from user specified milligram initial conditions, boundary conditions and computed variable parameters, to the equivalent millimole quantities. The complete list of values of <span class="math inline">\(M\)</span> for all simulated constituents is provided in Table <a href="AppConstits.html#tab:tab-variables2">O.1</a>. The two possibilities for units for each parameter are provided in Appendix <a href="AppParams.html#AppParams">Q</a>, where relevant.</p>
-<p>As an example, if a user specifies the milligrams per litre units system (or allows the same default to be set) and a <code>FRP flux == 3.1</code> in a materials block, then this value of 3.1 is assumed to be mg/m<span class="math inline">\(^2\)</span>/day. Consistent with typical laboratory reporting conventions (see below), this mass flux is taken to be that of elemental phosphorus <span class="math inline">\(P\)</span>, not that of the phosphate molecule <span class="math inline">\(PO_4^{3-}\)</span>. This would mean (using Table <a href="AppConstits.html#tab:tab-variables2">O.1</a> and Equation <a href="SimulationConstruction-1.html#eq:equ-massmoles">(4.1)</a>) that the equivalent millimole rate would be computed as:
+<p>As an example, if a user specifies the milligrams per litre units system (or allows the same default to be set) and sets <code>FRP flux == 3.1</code> in a materials block, then this value of 3.1 is assumed to be mg/m<span class="math inline">\(^2\)</span>/day. Consistent with typical laboratory reporting conventions (see below), this mass flux is taken to be that of elemental phosphorus <span class="math inline">\(P\)</span>, not that of the phosphate molecule <span class="math inline">\(PO_4^{3-}\)</span>. This would mean (using Table <a href="AppConstits.html#tab:tab-variables2">O.1</a> and Equation <a href="SimulationConstruction-1.html#eq:equ-massmoles">(4.1)</a>) that the equivalent millimole rate would be computed as:
 <span class="math display" id="eq:equ-massmoleseg">\[\begin{equation}
   n = \frac{3.1}{31} = 0.1 \hspace{0.1cm} \text{mmol/m$^2$/day of P} \tag{4.2}
 \end{equation}\]</span></p>
@@ -541,7 +541,7 @@ water quality control file == .\Model_000.fvwq</code></pre>
 <p>There are currently a number of ways that water quality initial conditions may be specified, and all are affected through TUFLOW FV commands. If no water quality initial conditions are specified, then a simulation will not execute.</p>
 <p>Restart files generated from previous simulations can be used to initialise water quality simulations, provided that the restart and simulation model geometries, and water quality simulation computed variables and units are identical. A restart file is specified for all simulated quantities (not just water quality) and is controlled through commands described in the TUFLOW FV user manual. The key command is</p>
 <blockquote>
-<p><a href="AppCommands.html#FVRestart">restart ==</a> <a href="AppCommands.html#FVRestart">&lt;restart <span class="math inline">\(\hspace{0.0cm}\)</span>file name&gt;.rst</a></p>
+<p><a href="AppCommands.html#FVRestart">restart ==</a> <a href="AppCommands.html#FVRestart">&lt;<em>restart file name</em>&gt;.rst</a></p>
 </blockquote>
 <p>Other than a restart file, there are a number of ways that water quality initial conditions can be specified, all of which utilise existing TUFLOW FV methods. These are described in the TUFLOW FV user manual, of which some of the following are included:</p>
 <ul>
@@ -554,19 +554,19 @@ water quality control file == .\Model_000.fvwq</code></pre>
 <li>Globally laterally uniform, but varying with depth<br></li>
 </ul>
 <blockquote>
-<p><a href="AppCommands.html#FVInitWQProf">initial scalar profile ==</a> <a href="AppCommands.html#FVInitWQProf">&lt;initial <span class="math inline">\(\hspace{0.0cm}\)</span>condition file name&gt;.csv</a></p>
+<p><a href="AppCommands.html#FVInitWQProf">initial scalar profile ==</a> <a href="AppCommands.html#FVInitWQProf">&lt;<em>initial condition file name</em>&gt;.csv</a></p>
 </blockquote>
 <ul>
 <li>Globally vertically uniform, but varying laterally<br></li>
 </ul>
 <blockquote>
-<p><a href="AppCommands.html#FVInitWQ2D">initial condition 2d ==</a> <a href="AppCommands.html#FVInitWQ2D">&lt;initial <span class="math inline">\(\hspace{0.0cm}\)</span>condition file name&gt;.csv</a></p>
+<p><a href="AppCommands.html#FVInitWQ2D">initial condition 2d ==</a> <a href="AppCommands.html#FVInitWQ2D">&lt;<em>initial condition file name</em>&gt;.csv</a></p>
 </blockquote>
 <ul>
 <li>Three dimensional spatially varying<br></li>
 </ul>
 <blockquote>
-<p><a href="AppCommands.html#FVInitWQ3D">initial condition 3d ==</a> <a href="AppCommands.html#FVInitWQ3D">&lt;initial <span class="math inline">\(\hspace{0.0cm}\)</span>condition file name&gt;.csv</a></p>
+<p><a href="AppCommands.html#FVInitWQ3D">initial condition 3d ==</a> <a href="AppCommands.html#FVInitWQ3D">&lt;<em>initial condition file name</em>&gt;.csv</a></p>
 </blockquote>
 <p>Initial conditions that use columnar data structures (e.g. *.csv files, and all of the above commands) are interpreted using the <a href="SimulationConstruction-1.html#Ordering-4">ordering rules</a> noted below. The required ordering for each WQM simulation class is provided subsequently (sections <a href="SimulationConstruction-1.html#SimSetSimClDO-2">4.6</a>, <a href="SimulationConstruction-1.html#SimSetSimClInorg-2">4.7</a> and <a href="SimulationConstruction-1.html#SimSetSimClOrg-2">4.8</a> for simulation classes DO, inorganics and organics, respectively).</p>
 </div>
@@ -592,7 +592,7 @@ water quality control file == .\Model_000.fvwq</code></pre>
 <li>Silicate (0.0 mg/L)</li>
 <li>Ammonium (4.2 mg/L)</li>
 <li>Nitrate (10.5 mg/L)</li>
-<li>Free reactive phosphorus (0.6 mg/L), and</li>
+<li>Filterable reactive phosphorus (0.6 mg/L), and</li>
 <li>One phytoplankton group (5.5 <span class="math inline">\(\mu\)</span>g/L)</li>
 </ul>
 <p>Similarly, the expected ordering of columns in profile, 2D or 3D options is the only means by which TUFLOW FV interprets initial conditions: headers in these files are ignored.</p>
@@ -609,7 +609,7 @@ water quality control file == .\Model_000.fvwq</code></pre>
 <li>Silicate</li>
 <li>Ammonium</li>
 <li>Nitrate</li>
-<li>Free reactive phosphorus</li>
+<li>Filterable reactive phosphorus</li>
 <li>One (assumed for this example, but can be multiple) phytoplankton group</li>
 </ul>
 <p>These will eventually need proper boundary condition specification in boundary condition blocks and have supporting data provided in (usually) text files. In a simple model with only one WL boundary condition, a <code>bc block</code> of the following form would be required as a minimum to properly specify the hydrodynamic and water quality boundaries:</p>
@@ -631,7 +631,7 @@ end bc <br></p>
 <li>SiO4 <span class="math inline">\(\rightarrow\)</span> Silicate</li>
 <li>NH41 <span class="math inline">\(\rightarrow\)</span> Ammonium</li>
 <li>nitr <span class="math inline">\(\rightarrow\)</span> Nitrate</li>
-<li>frph <span class="math inline">\(\rightarrow\)</span> Free reactive phosphorus</li>
+<li>frph <span class="math inline">\(\rightarrow\)</span> Filterable reactive phosphorus</li>
 <li>bluegreen <span class="math inline">\(\rightarrow\)</span> Phytoplankton group one</li>
 </ol></li>
 <li><p>TUFLOW then matches the user specified names to the expected simulation variables, based on this ordering, to then interrogate boundary condition files.</p></li>
@@ -681,7 +681,7 @@ wq units == mgl</code></pre>
 <li>Specify the constituent model to be used within each preset constituent model class. These are referred to as constituent model blocks</li>
 <li>Set the parameters for each of these constituent models, as commands within these blocks</li>
 </ul>
-<p>All are optional, however if a constituent model block is initiated then it requires an <code>end XXXX model</code> command to terminate the block, where XXXX is the name of the constituent model class, such as nitrogen. An example of a user selecting to use the adsorbed free reactive phosphorous constituent model (that is a model available within the inorganic phosphorus constituent model class), and setting some parameters within that model is as follows:</p>
+<p>All are optional, however if a constituent model block is initiated then it requires an <code>end XXXX model</code> command to terminate the block, where XXXX is the name of the constituent model class, such as inorganic nitrogen. An example of a user selecting to use the adsorbed filterable reactive phosphorous constituent model (that is a model available within the inorganic phosphorus constituent model class), and setting some parameters within that model is as follows:</p>
 <pre><code>inorganic phosphorus model == frpads
   atmospheric deposition == 12.6, 0.5
 end inorganic phosphorus model</code></pre>
@@ -691,7 +691,7 @@ end inorganic phosphorus model</code></pre>
 <li>Time and model cell information is written to the WQM log file in real time. This allows for easy identification of potential model issues via periodic examination of the WQM log file, rather than waiting for simulation completion</li>
 <li>The WQM resets the computed concentration to the relevant specified minimum or maximum concentration</li>
 </ul>
-<p>The above resetting will result in mass conservation errors. It should not be relied on in any circumstances to artificially control the behaviour of an otherwise unstable or runaway water quality simulation. Rather, this functionality should be used as a convenient way to check model performance and flag potential issues, with a view to then implementing corrective action.</p>
+<p>The above resetting will result in mass conservation errors. It should not be relied on to artificially control the behaviour of an otherwise unstable or runaway water quality simulation. Rather, this functionality should be used as a convenient way to check model performance and flag potential issues, with a view to then implementing corrective action.</p>
 <p>These limits are optionally specified in each constituent model block. An example that sets these limits for ammonium is:</p>
 <blockquote>
 <p>ammonium min max == 0.0, 25.0</p>
@@ -735,11 +735,11 @@ end material</code></pre>
 <li>Add at least the following commands to TUFLOW FV control file (*.fvc):
 <ul>
 <li><a href="AppCommands.html#FVActivateWQM">water quality model ==</a> TUFLOW</li>
-<li><a href="AppCommands.html#FVWQMCtrlFl">water quality control file ==</a> (water quality control file name).fvwq</li>
+<li><a href="AppCommands.html#FVWQMCtrlFl">water quality control file ==</a> &lt;<em>water quality control file name</em>&gt;.fvwq</li>
 </ul></li>
 <li>Optionally add a folder path command to the TUFLOW FV control file (*.fvc) with a trailing backslash:
 <ul>
-<li><a href="AppCommands.html#FVWQMCtrlDr">water quality model dir ==</a> &lt;relative path to *.fvwq file&gt;<span class="math inline">\(\backslash\)</span></li>
+<li><a href="AppCommands.html#FVWQMCtrlDr">water quality model dir ==</a> &lt;<em>relative path to *.fvwq file</em>&gt;<span class="math inline">\(\backslash\)</span></li>
 </ul></li>
 <li>Add appropriate initial conditions for all water quality constituents, observing <a href="SimulationConstruction-1.html#OrderIC-5">ordering rules</a></li>
 <li>Initially optionally add boundary conditions for all water quality constituents, observing <a href="SimulationConstruction-1.html#OrderBC-5">ordering rules</a> in <code>bc header ==</code> commands</li>
@@ -834,12 +834,12 @@ end material</code></pre>
 <h3><span class="header-section-number">4.6.6</span> Example</h3>
 <p>Following is an example of all the available WQM <code>simulation class == DO</code> commands. A single material applied as zeros everywhere as the default, other than for materials 1 and 4 where the default flux is overwritten.</p>
 <pre><code>simulation class == DO
-wq dt == 3600
+wq dt == 600
 wq units == mgl
 
 oxygen model == O2
     oxygen benthic == 4.0, 1.05
-    min max == 0.0, 15.0
+    oxygen min max == 0.0, 15.0
 end oxygen model
 
 material == default
@@ -847,7 +847,7 @@ material == default
 end material
 
 material == 1, 4
-    oxygen flux == -637.0
+    oxygen flux == -137.0
 end material</code></pre>
 
 </div>
@@ -860,7 +860,7 @@ end material</code></pre>
 <li>Silicate</li>
 <li>Ammonium</li>
 <li>Nitrate</li>
-<li>Free reactive phosphorus</li>
+<li>Filterable reactive phosphorus</li>
 <li>One phytoplankton group named ‘dummy’ that uses the basic phytoplankton constituent model</li>
 </ul>
 <div id="PrereqInorg-3" class="section level3" number="4.7.1">
@@ -947,18 +947,18 @@ end material</code></pre>
 </blockquote>
 <p>Denitrification parameters (used in Equation <a href="AppIN.html#eq:equ-pel-denit-rateMM">(F.5)</a> or Equation <a href="AppIN.html#eq:equ-pel-denit-rateExp">(F.6)</a>) are also set in a single command as:</p>
 <blockquote>
-<p><a href="AppCommands.html#WQDenitrifParsMM"><span class="math inline">\(\blockindent\)</span> denitrification ==</a> Michaelis Menten, <a href="AppParams.html#WQParRdenit"><span class="math inline">\(R_{denitrif}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParKdenitO2MM"><span class="math inline">\(K_{denitrif-O_2-MM}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParthetadenit"><span class="math inline">\(\theta_{denitrif}^{NO_3}\)</span></a></p>
+<p><a href="AppCommands.html#WQDenitrifParsMM"><span class="math inline">\(\blockindent\)</span> denitrification ==</a> Michaelis Menten, <a href="AppParams.html#WQParRdenit"><span class="math inline">\(R_{denit}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParKdenitO2MM"><span class="math inline">\(K_{denit-O_2-MM}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParthetadenit"><span class="math inline">\(\theta_{denit}^{NO_3}\)</span></a></p>
 </blockquote>
 <p>or</p>
 <blockquote>
-<p><a href="AppCommands.html#WQDenitrifParsExp"><span class="math inline">\(\blockindent\)</span> denitrification ==</a> exponential, <a href="AppParams.html#WQParRdenit"><span class="math inline">\(R_{denitrif}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParKdenitO2Exp"><span class="math inline">\(K_{denitrif-O_2-exp}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParthetadenit"><span class="math inline">\(\theta_{denitrif}^{NO_3}\)</span></a></p>
+<p><a href="AppCommands.html#WQDenitrifParsExp"><span class="math inline">\(\blockindent\)</span> denitrification ==</a> exponential, <a href="AppParams.html#WQParRdenit"><span class="math inline">\(R_{denit}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParKdenitO2Exp"><span class="math inline">\(K_{denit-O_2-exp}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParthetadenit"><span class="math inline">\(\theta_{denit}^{NO_3}\)</span></a></p>
 </blockquote>
 <p>The first argument (either “michaelis menten” or “exponential”) activates a different denitrification model (Equation <a href="AppIN.html#eq:equ-pel-denit-rateMM">(F.5)</a> or Equation <a href="AppIN.html#eq:equ-pel-denit-rateExp">(F.6)</a>, respectively).</p>
 <p>Ammonium and nitrate sediment flux, nitrification and denitrification calculations are all set to be dependent on dissolved oxygen concentrations by default. Although not recommended, the following will switch off this dependence for all these processes by setting the term labelled “Influence of oxygen” in Equations <a href="AppIN.html#eq:equ-sed-amm-flux">(F.1)</a>, <a href="AppIN.html#eq:equ-pel-nitrif-rate">(F.3)</a> and <a href="AppIN.html#eq:equ-pel-denit-rateMM">(F.5)</a> or <a href="AppIN.html#eq:equ-pel-denit-rateExp">(F.6)</a> to a value of 1.0.</p>
 <blockquote>
 <p><a href="AppCommands.html#WQAmmOxy"><span class="math inline">\(\blockindent\)</span> oxygen ==</a> off</p>
 </blockquote>
-<p>This command overrides any previously specified values of <span class="math inline">\(K_{sed-O_2}^{NH_4}\)</span>, <span class="math inline">\(K_{sed-O_2}^{NO_3}\)</span>, <span class="math inline">\(K_{nitrif-O_2}^{NH_4}\)</span>, <span class="math inline">\(K_{denitrif-O_2-MM}^{NO_3}\)</span> and <span class="math inline">\(K_{denitrif-O_2-exp}^{NO_3}\)</span>. It should be specified after all other related commands if the influence of oxygen on nitrogen processes is to be switched off.</p>
+<p>This command overrides any previously specified values of <span class="math inline">\(K_{sed-O_2}^{NH_4}\)</span>, <span class="math inline">\(K_{sed-O_2}^{NO_3}\)</span>, <span class="math inline">\(K_{nitrif-O_2}^{NH_4}\)</span>, <span class="math inline">\(K_{denit-O_2-MM}^{NO_3}\)</span> and <span class="math inline">\(K_{denit-O_2-exp}^{NO_3}\)</span>. It should be specified after all other related commands if the influence of oxygen on nitrogen processes is to be switched off.</p>
 <p>Atmospheric deposition parameters (used in Equations <a href="AppIN.html#eq:equ-pel-atm-TN-wammsplit">(F.8)</a>, <a href="AppIN.html#eq:equ-pel-atm-TN-wnitsplit">(F.9)</a>, <a href="AppIN.html#eq:equ-pel-atm-TN-dammsplit">(F.12)</a> and <a href="AppIN.html#eq:equ-pel-atm-TN-ditsplit">(F.13)</a>) are set via the command:</p>
 <blockquote>
 <p><a href="AppCommands.html#WQAtmNPars"><span class="math inline">\(\blockindent\)</span> atmospheric deposition ==</a> <a href="AppParams.html#WQParAtmWetTN"><span class="math inline">\(\left[TN\right]_{rain}\)</span></a>, <a href="AppParams.html#WQParAtmDryTN"><span class="math inline">\(R_{atm-dry}^{TN}\)</span></a>, <a href="AppParams.html#WQParAtmWetNFrac"><span class="math inline">\(f_{TN}^{NO_3}\)</span></a></p>
@@ -1083,14 +1083,14 @@ end material</code></pre>
 <li>Marine (used in Equation <a href="PhyLimits-3.html#eq:eq-pel-phy-SalLim2">(J.28)</a>)</li>
 </ul>
 <blockquote>
-<p><a href="AppCommands.html#WQPhySLmarine"><span class="math inline">\(\blockindent\)</span> salinity limitation ==</a> <a href="AppCommands.html#WQPhySLmarine">marine</a>, <a href="AppParams.html#WQParSoptmarinePHY"><span class="math inline">\(S_{opt-marine}^{phy}\)</span></a>, <a href="AppParams.html#WQParLzeromarinePHY"><span class="math inline">\(L_{zero}^{phy}\)</span></a></p>
+<p><a href="AppCommands.html#WQPhySLmarine"><span class="math inline">\(\blockindent\)</span> salinity limitation ==</a> <a href="AppCommands.html#WQPhySLmarine">marine</a>, <a href="AppParams.html#WQParSoptmarinePHY"><span class="math inline">\(S_{opt-marine}^{phy}\)</span></a>, <a href="AppParams.html#WQParLzeromarinePHY"><span class="math inline">\(L_{zero-marine}^{phy}\)</span></a></p>
 </blockquote>
 <p>or</p>
 <ul>
 <li>Mixed (used in Equation <a href="PhyLimits-3.html#eq:eq-pel-phy-SalLim3">(J.29)</a>)</li>
 </ul>
 <blockquote>
-<p><a href="AppCommands.html#WQPhySLmixed"><span class="math inline">\(\blockindent\)</span> salinity limitation ==</a> <a href="AppCommands.html#WQPhySLmixed">mixed</a>, <a href="AppParams.html#WQParSoptmixPHY"><span class="math inline">\(S_{opt-mix}^{phy}\)</span></a>, <a href="AppParams.html#WQParSmaxmixPHY"><span class="math inline">\(S_{max-mix}^{phy}\)</span></a>, <a href="AppParams.html#WQParLzeromixPHY"><span class="math inline">\(L_{zero}^{phy}\)</span></a></p>
+<p><a href="AppCommands.html#WQPhySLmixed"><span class="math inline">\(\blockindent\)</span> salinity limitation ==</a> <a href="AppCommands.html#WQPhySLmixed">mixed</a>, <a href="AppParams.html#WQParSoptmixPHY"><span class="math inline">\(S_{opt-mix}^{phy}\)</span></a>, <a href="AppParams.html#WQParSmaxmixPHY"><span class="math inline">\(S_{max-mix}^{phy}\)</span></a>, <a href="AppParams.html#WQParLzeromixPHY"><span class="math inline">\(L_{zero-mix}^{phy}\)</span></a></p>
 </blockquote>
 <p>or</p>
 <ul>
@@ -1334,7 +1334,7 @@ end material</code></pre>
 <h6><span class="header-section-number">4.7.3.5.2.3</span> Uptake</h6>
 <p>Nutrient uptake parameters for nitrogen, phosphorus and silicate (if relevant) (used in Equations <a href="PhyUptake-3.html#eq:eq-pel-phy-NUpA">(K.4)</a>, <a href="PhyUptake-3.html#eq:eq-pel-phy-PUpA">(K.8)</a> and <a href="PhyUptake-3.html#eq:eq-pel-phy-SiUp">(K.9)</a> respectively) are set via the command:</p>
 <blockquote>
-<p><a href="AppCommands.html#WQPhyUptakeAdv"><span class="math inline">\(\blockindent\)</span> uptake ==</a> <a href="AppParams.html#WQParNuptake"><span class="math inline">\(R_{upt-N}^{phy}\)</span></a>, <a href="AppParams.html#WQParPuptake"><span class="math inline">\(R_{upt-P}^{phy}\)</span></a>, <a href="AppParams.html#WQParConSiCRat"><span class="math inline">\(X_{Si-C-con}^{phy}\)</span></a></p>
+<p><a href="AppCommands.html#WQPhyUptakeAdv"><span class="math inline">\(\blockindent\)</span> uptake ==</a> <a href="AppParams.html#WQParNuptake"><span class="math inline">\(R_{N-uptake}^{phy}\)</span></a>, <a href="AppParams.html#WQParPuptake"><span class="math inline">\(R_{P-uptake}^{phy}\)</span></a>, <a href="AppParams.html#WQParConSiCRat"><span class="math inline">\(X_{Si-C-con}^{phy}\)</span></a></p>
 </blockquote>
 <p>The value of <span class="math inline">\(X_{Si-C-con}^{phy}\)</span> is ignored if silicate uptake has not been triggered through specification of a silicate limitation function.</p>
 <hr>
@@ -1412,7 +1412,7 @@ end material</code></pre>
 <p>Each phytoplankton group is specified using a cluster of values (initial conditions) or headers (bc block) and these clusters must appear in the same order as phytoplankton groups are specified in the water quality control file. The content of each phytoplankton cluster is determined both by the phytoplankton constituent model used and the settling model selected. These are described below, using a placeholder for preceding (non-phytoplankton) computed variables for clarity. These are described above and can be interpreted as either of the orderings specified in sections <a href="SimulationConstruction-1.html#ConOrdInorgFRPhs-5">4.7.5.1.1</a> or <a href="SimulationConstruction-1.html#ConOrdInorgFRPhsads-5">4.7.5.1.2</a>.</p>
 <p>Two phytoplankton groups are used in all examples.</p>
 <div id="ConOrdPhyBas-5" class="section level5" number="4.7.5.2.1">
-<h5><span class="header-section-number">4.7.5.2.1</span> Phytoplankton model basic</h5>
+<h5><span class="header-section-number">4.7.5.2.1</span> Basic phytoplankton mode</h5>
 <p>If the basic phytoplankton constituent model is used, then in all columnar and list style initial conditions, computed variables are expected in the following order:</p>
 <blockquote>
 <p>initial wq concentration == {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{[PHY_1]}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{[PHY_2]}_{\text{Cluster 2}}\)</span></p>
@@ -1450,10 +1450,10 @@ end material</code></pre>
 <p>The same notes provided above apply to these commands.</p>
 </div>
 <div id="ConOrdPhyAdv-5" class="section level5" number="4.7.5.2.2">
-<h5><span class="header-section-number">4.7.5.2.2</span> Phytoplankton model advanced</h5>
+<h5><span class="header-section-number">4.7.5.2.2</span> Advanced phytoplankton model</h5>
 <p>If the advanced phytoplankton constituent model is used, then in all columnar and list style initial conditions, computed variables are expected in the following order:</p>
 <blockquote>
-<p>initial wq concentration == {non-phytoplankton placeholderss} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{[PHY_1],[N_1]_{in},[P_1]_{in}}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{[PHY_2],[N_2]_{in},[P_2]_{in}}_{\text{Cluster 2}}\)</span></p>
+<p>initial wq concentration == {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{[PHY_1],[N_1]_{in},[P_1]_{in}}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{[PHY_2],[N_2]_{in},[P_2]_{in}}_{\text{Cluster 2}}\)</span></p>
 </blockquote>
 <p>In order to match water quality control file groups with initial conditions, it is assumed that the groups’ initial conditions are specified above in the same order that <code>phyto model ==</code> blocks are presented in the water quality control file.</p>
 <p>Similarly, in a <code>bc header ==</code> command within a bc block, the following order of computed variables is expected after hydrodynamic and non-phytoplankton boundary conditions:</p>
@@ -1497,21 +1497,21 @@ wq dt == 3600
 wq units == mgl
 
 oxygen model == O2
-    benthic == 4.0, 1.05
-    min max == 0.0, 25.0
+    oxygen benthic == 4.0, 1.05
+    oxygen min max == 0.0, 25.0
 end oxygen model
 
 silicate model == si
-    benthic == 4.0, 1.05
-    min max == 0.0, 2500.0
+    silicate benthic == 4.0, 1.05
+    silicate min max == 0.0, 2500.0
     oxygen == on
 end silicate model  
 
 inorganic nitrogen model == AmmoniumNitrate
     ammonium benthic == 4.0, 1.05
     nitrate benthic == 4.0, 1.05
-    ammonium min max == 0.0, 150.0
-    nitrate min max == 0.0, 250.0
+    ammonium min max == 0.0, 50.0
+    nitrate min max == 0.0, 110.0
     nitrification == 0.1, 4.0, 1.05
     denitrification == exponential, 0.5, 8.0, 1.05
     atmospheric deposition == 10.0, 2.4, 0.15
@@ -1520,8 +1520,8 @@ end inorganic nitrogen model
     
 inorganic phosphorus model == frphsads
     frp benthic == 4.0, 1.05
-    frp min max == 0.0, 150.0
-    frpads min max == 0.0, 150.0
+    frp min max == 0.0, 50.0
+    frpads min max == 0.0, 50.0
     atmospheric deposition == 5.0, 1.4
     adsorption == quadratic, 1.5, 0.5, 0.00005
     oxygen == on
@@ -1567,7 +1567,7 @@ material == default
 end material
 
 material == 3, 7
-    oxygen flux == -4800.0 
+    oxygen flux == -800.0 
     silicate flux == 122.0 
     ammonium flux == 37.0 
     nitrate flux == 3.7 
@@ -1584,7 +1584,7 @@ end material</code></pre>
 <li>Silicate</li>
 <li>Ammonium</li>
 <li>Nitrate</li>
-<li>Free reactive phosphorus</li>
+<li>Filterable reactive phosphorus</li>
 <li>Dissolved organic carbon</li>
 <li>Particulate organic carbon</li>
 <li>Dissolved organic nitrogen</li>
@@ -1827,25 +1827,25 @@ end material</code></pre>
 <h3><span class="header-section-number">4.8.6</span> Example</h3>
 <p>Following is an example of all the available WQM <code>simulation class == organics</code> commands, with a single material applied as zeros everywhere as the default, and then modified by a further specification for materials 3 and 7. Two phytoplankton groups (one each of the basic and advanced models) are set, and the refractory organic matter constituent model deployed.</p>
 <pre><code>simulation class == organics
-wq dt == 3600
+wq dt == 900
 wq units == mgl
 
 oxygen model == O2
-    benthic == 4.0, 1.05
-    min max == 0.0, 25.0
+    oxygen benthic == 4.0, 1.05
+    oxygen min max == 0.0, 25.0
 end oxygen model
 
 silicate model == si
-    benthic == 4.0, 1.05
-    min max == 0.0, 2500.0
+    silicate benthic == 4.0, 1.05
+    silicate min max == 0.0, 2500.0
     oxygen == on
 end silicate model  
 
 inorganic nitrogen model == AmmoniumNitrate
     ammonium benthic == 4.0, 1.05
     nitrate benthic == 4.0, 1.05
-    ammonium min max == 0.0, 150.0
-    nitrate min max == 0.0, 250.0
+    ammonium min max == 0.0, 50.0
+    nitrate min max == 0.0, 50.0
     nitrification == 0.1, 4.0, 1.05
     denitrification == exponential, 0.5, 8.0, 1.05
     atmospheric deposition == 10.0, 2.4, 0.15
@@ -1854,8 +1854,8 @@ end inorganic nitrogen model
     
 inorganic phosphorus model == frphsads
     frp benthic == 4.0, 1.05
-    frp min max == 0.0, 150.0
-    frpads min max == 0.0, 150.0
+    frp min max == 0.0, 35.0
+    frpads min max == 0.0, 35.0
     atmospheric deposition == 5.0, 1.4
     adsorption == quadratic, 1.5, 0.5, 0.00005
     oxygen == on
@@ -1922,9 +1922,9 @@ material == default
 end material
 
 material == 3, 7
-    oxygen flux == -4800.0 
-    silicate flux == 122.0 
-    ammonium flux == 37.0 
+    oxygen flux == -400.0 
+    silicate flux == 12.0 
+    ammonium flux == 33.0 
     nitrate flux == 3.7 
     frp flux == 1.4 
     DOC flux == 12.0
@@ -1939,7 +1939,7 @@ end material</code></pre>
 <ul>
 <li>WQM outputs:
 <ul>
-<li>Computed variables, i.e. time varying concentrations of simulated quantities (e.g. dissolved oxygen). See Appendix @(AppConstits)</li>
+<li>Computed variables, i.e. time varying concentrations of simulated quantities (e.g. dissolved oxygen). See Appendix <a href="AppConstits.html#AppConstits">O</a></li>
 <li>Diagnostic variables, i.e. time varying quantities that describe rates, and similar such processes which modify computed variables (e.g. sediment flux of nitrate). See Appendix <a href="AppDiags.html#AppDiags">P</a></li>
 </ul></li>
 <li>TUFLOW FV integrated outputs of WQM variables:

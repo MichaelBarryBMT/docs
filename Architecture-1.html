@@ -773,7 +773,7 @@ Inorganic Phosphorus
 FRPhs
 </td>
 <td style="text-align:left;">
-Free reactive phosphorus (FRP)
+Filterable reactive phosphorus (FRP)
 </td>
 </tr>
 <tr>
@@ -865,7 +865,7 @@ Figure 2.4: <strong>WQM simulation class and model class instances, available co
 </div>
 <div id="ProcessDescriptionsLight-3" class="section level3" number="2.3.2">
 <h3><span class="header-section-number">2.3.2</span> Treatment of light</h3>
-<p>The TUFLOW FV heat module must be activated in order to use the WQM. One reason for this (beyond the need to compute water temperature) is that the heat module includes calculation of the light field within the model domain. This light field is used by various WQM constituent models, with the most notable being phytoplankton which uses photosynthetically available radiation (PAR).</p>
+<p>The TUFLOW FV heat module must be activated in order to use the WQM. One reason for this (beyond the need to compute water temperature) is that the heat module includes calculation of the light field within the model domain. This light field is used by various WQM constituent models.</p>
 <p>In order to provide this light field, TUFLOW FV splits the shortwave radiation specified in the heat module into four bands:</p>
 <ul>
 <li>near infrared (NIR)</li>
@@ -874,7 +874,7 @@ Figure 2.4: <strong>WQM simulation class and model class instances, available co
 <li>ultraviolet B (UVB)</li>
 </ul>
 <p>This split can be executed using TUFLOW FV defaults, or be user specified. The corresponding band extinction coefficients in water with zero suspended sediment can also be specified in TUFLOW FV. Defaults are also available for all these coefficients. TUFLOW FV uses these coefficients, along with other simulation properties, to compute the four light band intensities at the faces and centroids of each computational cell. These intensities are passed to the WQM for use in constituent model calculations. This approach ensures consistency in the treatment of light between TUFLOW FV and the WQM.</p>
-<p>The WQM can also modify the light field sent to it from TUFLOW FV via calculation of phytoplankton self shading (section <a href="AppphyOther.html#PhySelfShad-3">M.1</a>) and the absorption of light due to the presence of organic matter. If this occurs, the WQM returns a modified light extinction coefficient field to TUFLOW FV that is then used in subsequent hydrodynamic heat and light calculations. This modification of light by water quality computed variables only occurs for simulation classes beyond DO.</p>
+<p>The WQM can also modify the light field sent to it from TUFLOW FV via calculation of phytoplankton self shading (section <a href="AppphyOther.html#PhySelfShad-3">M.1</a>), the absorption of light due to the presence of organic matter and other processes. If this occurs, the WQM returns a modified light extinction coefficient field to TUFLOW FV that is then used in subsequent hydrodynamic heat and light calculations. This modification of light by water quality computed variables only occurs for simulation classes beyond DO.</p>
 </div>
 </div>
 <div id="ArchAPI" class="section level2" number="2.4">

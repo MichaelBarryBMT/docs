@@ -477,7 +477,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <ul>
 <li><strong>Log file user feedback</strong>. WQM simulations generate a log file that reports all simulation configuration details for review</li>
-<li><strong>Output variable names</strong>. The WQM output variable names are descriptive and include the units used, for example <code>WQ_DISSOLVED_OXYGEN_MGL</code></li>
+<li><strong>Output variable names</strong>. The WQM output variable names are descriptive and include the units used, for example <code>WQ_DISS_OXYGEN_MGL</code></li>
 <li><strong>Specification of concentration limits</strong>. The WQM allows users to optionally specify minimum and maximum concentation limits for each computed variable, and the WQM will reset concentrations to these limits if exceedences are detected. All instances of resetting are reported to the WQM log file as continuous commentary</li>
 <li><strong>Inbuilt guidance on parameter specification</strong>. The WQM checks all user specified parameters and compares them to typical ranges. If a parameter’s specified value falls outside a typical range, then a warning is reported to the WQM log file. These ranges are listed in Appendix <a href="AppParams.html#AppParams">Q</a> of this manual</li>
 </ul>
@@ -488,10 +488,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Dissolved oxygen</li>
 <li>Silicate</li>
-<li>Inorganic nitrogen</li>
-<li>Inorganic phosphorus</li>
-<li>Organic matter (labile and refractory), and</li>
-<li>Phytoplankton (multiple groups)</li>
+<li>Inorganic nitrogen
+<ul>
+<li>Ammonium</li>
+<li>Nitrate</li>
+</ul></li>
+<li>Inorganic phosphorus
+<ul>
+<li>Filterable reactive phosphorus</li>
+<li>Adsorbed filterable reactive phosphorus</li>
+</ul></li>
+<li>Organic matter (labile and refractory)
+<ul>
+<li>Particulate organic carbon</li>
+<li>Dissolved organic carbon</li>
+<li>Particulate organic nitrogen</li>
+<li>Dissolved organic nitrogen</li>
+<li>Particulate organic phosphorus</li>
+<li>Dissolved organic phosphorus</li>
+<li>Refractory dissolved organic carbon</li>
+<li>Refractory dissolved organic nitrogen</li>
+<li>Refractory dissolved organic phosphorus</li>
+<li>Refractory particulate organic matter</li>
+</ul></li>
+<li>Phytoplankton (multiple groups)
+<ul>
+<li>Basic (excludes internal nutrient simulation)</li>
+<li>Advanced (includes internal nutrient simulation)</li>
+</ul></li>
 </ul>
 <p>Processes captured by the WQM include:</p>
 <ul>
@@ -521,7 +545,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="Support-2" class="section level2" number="1.4">
 <h2><span class="header-section-number">1.4</span> Support</h2>
 <p>BMT sells, distributes and supports the WQM. Contact <a href="mailto:support@tuflow.com" class="email">support@tuflow.com</a> or <a href="mailto:sales@tuflow.com" class="email">sales@tuflow.com</a> for support and sales inquiries.</p>
-<p>Several supporting appendices have also been included in this manual. These contain interactive content to assist users in understanding and applying the WQM, beyond what might typically be included in a static user manual. These Appendices are:</p>
+<p>Several supporting appendices have also been included in this manual. These contain interactive content to assist users in understanding and applying the WQM, beyond what might typically be included in a static user manual. These Appendices are interlinked and hyperlinked with content from the body of the manual where appropriate, and are:</p>
 <ul>
 <li>Appendix <a href="AppSyntax.html#AppSyntax">A</a> Description of command syntax and nomenclature</li>
 <li>Appendix <a href="AppCommands.html#AppCommands">B</a> Listing of all commands, and their syntax, arguments, descriptions and cross references</li>
@@ -529,7 +553,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Appendix <a href="AppConstits.html#AppConstits">O</a> Listing and descriptions of all computed variables, with supporting information</li>
 <li>Appendix <a href="AppDiags.html#AppDiags">P</a> Listing and descriptions of all computed diagnostic variables, with supporting information</li>
 <li>Appendix <a href="AppParams.html#AppParams">Q</a> Explanations of all parameters, with symbology, minimums and maximum values, units and commentary</li>
-<li>Appendix <a href="AppMBal.html#AppMBal">R</a> <span style="color: red">Demonstration of the mass balance properties of core WQM computed variables</span></li>
+<li>Appendix <a href="AppMBal.html#AppMBal">R</a> Demonstration of the mass balance properties of all WQM computed variables</li>
 </ul>
 <p><img src="images/WQFooter.jpg" width="100%" /></p>
 
