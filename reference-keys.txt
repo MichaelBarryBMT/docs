@@ -167,8 +167,6 @@ eq:eq-pel-phy-selfshad
 eq:eq-pel-phy-incrdens
 eq:eq-pel-phy-decrdens
 eq:equ-sed-org-flux
-fig:fig-OrgKSatDODyn
-fig:fig-OrgTDODyn
 eq:equ-pel-hydrolysis-rate
 eq:equ-pel-hydrolysis-fluxcons
 eq:equ-pel-hydrolysis-fluxprod

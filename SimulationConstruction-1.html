@@ -307,7 +307,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="G.1" data-path="AppIP.html"><a href="AppIP.html#SedFRPhsProd-3"><i class="fa fa-check"></i><b>G.1</b> Sediment FRP flux</a></li>
 <li class="chapter" data-level="G.2" data-path="AppIP.html"><a href="AppIP.html#WetDepIP-3"><i class="fa fa-check"></i><b>G.2</b> Wet deposition of inorganic phosphorus</a></li>
 <li class="chapter" data-level="G.3" data-path="AppIP.html"><a href="AppIP.html#DryDepIP-3"><i class="fa fa-check"></i><b>G.3</b> Dry deposition of inorganic phosphorus</a></li>
-<li class="chapter" data-level="G.4" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>G.4</b> Adsorption and Desorption</a></li>
+<li class="chapter" data-level="G.4" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>G.4</b> Adsorption and desorption</a></li>
 <li class="chapter" data-level="G.5" data-path="AppIP.html"><a href="AppIP.html#SettlingIP-3"><i class="fa fa-check"></i><b>G.5</b> Settling</a></li>
 </ul></li>
 <li class="chapter" data-level="H" data-path="AppPhy.html"><a href="AppPhy.html"><i class="fa fa-check"></i><b>H</b> Processes: phyto general</a>
@@ -939,7 +939,7 @@ end material</code></pre>
 <p><a href="AppCommands.html#WQAmmBenFlxPars"><span class="math inline">\(\blockindent\)</span> ammonium benthic ==</a> <a href="AppParams.html#WQParKsedAmm"><span class="math inline">\(K_{sed-O_2}^{NH_4}\)</span></a>, <a href="AppParams.html#WQParthetasedAmm"><span class="math inline">\(\theta_{sed}^{NH_4}\)</span></a></p>
 </blockquote>
 <blockquote>
-<p><a href="AppCommands.html#WQAmmBenFlxPars"><span class="math inline">\(\blockindent\)</span> nitrate benthic ==</a> <a href="AppParams.html#WQParKsedNit"><span class="math inline">\(K_{sed-O_2}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParthetasedNit"><span class="math inline">\(\theta_{sed}^{NO_3}\)</span></a></p>
+<p><a href="AppCommands.html#WQNitBenFlxPars"><span class="math inline">\(\blockindent\)</span> nitrate benthic ==</a> <a href="AppParams.html#WQParKsedNit"><span class="math inline">\(K_{sed-O_2}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParthetasedNit"><span class="math inline">\(\theta_{sed}^{NO_3}\)</span></a></p>
 </blockquote>
 <p>Nitrification parameters (used in <a href="AppIN.html#eq:equ-pel-nitrif-rate">(F.3)</a> and therefore <a href="AppIN.html#eq:equ-pel-nitrif-flux">(F.4)</a>) are set in a single command as:</p>
 <blockquote>
@@ -1097,7 +1097,7 @@ end material</code></pre>
 <li>Estuarine (used in Equation <a href="PhyLimits-3.html#eq:eq-pel-phy-SalLim4">(J.30)</a>)</li>
 </ul>
 <blockquote>
-<p><a href="#"><span class="math inline">\(\blockindent\)</span> salinity limitation ==</a> <a href="PhyLimits-3.html#PhyLimEstuarine-5">estuarine</a>, <a href="AppParams.html#WQParSoptestPHY"><span class="math inline">\(S_{opt-est}^{phy}\)</span></a>, <a href="AppParams.html#WQParSmaxestPHY"><span class="math inline">\(S_{max-est}^{phy}\)</span></a>, <a href="AppParams.html#WQParPestPHY"><span class="math inline">\(P_{est}^{phy}\)</span></a></p>
+<p><a href="AppCommands.html#WQPhySLestuarine"><span class="math inline">\(\blockindent\)</span> salinity limitation ==</a> <a href="AppCommands.html#WQPhySLestuarine">estuarine</a>, <a href="AppParams.html#WQParSoptestPHY"><span class="math inline">\(S_{opt-est}^{phy}\)</span></a>, <a href="AppParams.html#WQParSmaxestPHY"><span class="math inline">\(S_{max-est}^{phy}\)</span></a>, <a href="AppParams.html#WQParPestPHY"><span class="math inline">\(P_{est}^{phy}\)</span></a></p>
 </blockquote>
 <hr>
 </div>
@@ -1157,7 +1157,7 @@ end material</code></pre>
 <li>Integrated (used in Equation <a href="PhyLimits-3.html#eq:eq-pel-phy-LightLim7">(J.26)</a>)</li>
 </ul>
 <blockquote>
-<p><a href="AppCommands.html#WQPhyLghtLintegrated"><span class="math inline">\(\blockindent\)</span> light limitation ==</a> <a href="AppCommands.html#WQPhyLghtLintegrated">integrated</a>, <a href="AppParams.html#WQParKephy"><span class="math inline">\(Ke^{phy}\)</span></a>, <a href="#WQParSatinyLghtlim"><span class="math inline">\(I_{S-int}\)</span></a></p>
+<p><a href="AppCommands.html#WQPhyLghtLintegrated"><span class="math inline">\(\blockindent\)</span> light limitation ==</a> <a href="AppCommands.html#WQPhyLghtLintegrated">integrated</a>, <a href="AppParams.html#WQParKephy"><span class="math inline">\(Ke^{phy}\)</span></a>, <a href="AppParams.html#WQParSatintLghtlim"><span class="math inline">\(I_{S-int}\)</span></a></p>
 </blockquote>
 <hr>
 </div>
@@ -1192,7 +1192,7 @@ end material</code></pre>
 <h6><span class="header-section-number">4.7.3.5.1.7</span> Uptake</h6>
 <p>Nutrient uptake parameters for nitrogen, phosphorus and silicate (if relevant) (used in Equations <a href="PhyUptake-3.html#eq:eq-pel-phy-NUp">(K.2)</a>, <a href="PhyUptake-3.html#eq:eq-pel-phy-PUp">(K.7)</a> and <a href="PhyUptake-3.html#eq:eq-pel-phy-SiUp">(K.9)</a> respectively) are set via the command:</p>
 <blockquote>
-<p><a href="#WQPhyConstIntRat"><span class="math inline">\(\blockindent\)</span> uptake ==</a> <a href="AppParams.html#WQParConNCRat"><span class="math inline">\(X_{N-C-con}^{phy}\)</span></a>, <a href="AppParams.html#WQParConPCRat"><span class="math inline">\(X_{P-C-con}^{phy}\)</span></a>, <a href="AppParams.html#WQParConSiCRat"><span class="math inline">\(X_{Si-C-con}^{phy}\)</span></a></p>
+<p><a href="AppCommands.html#WQPhyUptakeBas"><span class="math inline">\(\blockindent\)</span> uptake ==</a> <a href="AppParams.html#WQParConNCRat"><span class="math inline">\(X_{N-C-con}^{phy}\)</span></a>, <a href="AppParams.html#WQParConPCRat"><span class="math inline">\(X_{P-C-con}^{phy}\)</span></a>, <a href="AppParams.html#WQParConSiCRat"><span class="math inline">\(X_{Si-C-con}^{phy}\)</span></a></p>
 </blockquote>
 <p>If specified, the value of <span class="math inline">\(X_{Si-C-con}^{phy}\)</span> is ignored if silicate uptake has not been triggered via specification of silicate limitation parameters via <a href="AppCommands.html#WQPhyNSiBas">silicate limitation ==</a>.</p>
 <hr>
@@ -1201,7 +1201,7 @@ end material</code></pre>
 <h6><span class="header-section-number">4.7.3.5.1.8</span> Primary productivity</h6>
 <p>Primary productivity (growth) parameters (used in Equation <a href="PhyRates-3.html#eq:eq-pel-phy-pprod">(I.2)</a>) are set via the command:</p>
 <blockquote>
-<p><a href="AppCommands.html#WQPhyGrowth"><span class="math inline">\(\blockindent\)</span> primary productivity ==</a> <a href="AppParams.html#WQParRPrimProd"><span class="math inline">\(R_{prod}^{phy}\)</span></a>, <a href="#WQParthetatempPhy"><span class="math inline">\(\theta_{prod}^{phy}\)</span></a></p>
+<p><a href="AppCommands.html#WQPhyGrowth"><span class="math inline">\(\blockindent\)</span> primary productivity ==</a> <a href="AppParams.html#WQParRPrimProd"><span class="math inline">\(R_{prod}^{phy}\)</span></a>, <a href="AppParams.html#WQParthetagrowthPhy"><span class="math inline">\(\theta_{prod}^{phy}\)</span></a></p>
 </blockquote>
 <hr>
 </div>
@@ -1251,7 +1251,7 @@ end material</code></pre>
 <li>Constant with density correction (as per Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settdens">(I.12)</a>)</li>
 </ul>
 <blockquote>
-<p><a href="AppCommands.html#WQPhySettRho"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="AppCommands.html#WQPhySettRho">thermal</a>, <a href="AppParams.html#WQParThermV"><span class="math inline">\(V_{settle}^{phy}\)</span></a></p>
+<p><a href="AppCommands.html#WQPhySettRho"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="AppCommands.html#WQPhySettRho">thermal</a>, <a href="#WQParThermV"><span class="math inline">\(V_{settle}^{phy}\)</span></a></p>
 </blockquote>
 <p>or</p>
 <ul>
@@ -1358,7 +1358,7 @@ end material</code></pre>
 <p>Oxygen, silicate, ammonium, nitrate and FRP benthic fluxes are specified within both default and numbered material blocks as:</p>
 <blockquote>
 <p><a href="AppCommands.html#WQOxyBenFlx"><span class="math inline">\(\blockindent\)</span> oxygen flux ==</a> <a href="AppDiags.html#WQParFsedO2"><span class="math inline">\(F_{sed}^{O_2}\)</span></a> <br> <br>
-<a href="AppCommands.html#WQSilBenFlx"><span class="math inline">\(\blockindent\)</span> silicate flux ==</a> <a href="#WQParFsedSil"><span class="math inline">\(F_{sed}^{sil}\)</span></a> <br> <br>
+<a href="AppCommands.html#WQSilBenFlx"><span class="math inline">\(\blockindent\)</span> silicate flux ==</a> <a href="AppDiags.html#WQParFsedSi"><span class="math inline">\(F_{sed}^{sil}\)</span></a> <br> <br>
 <a href="AppCommands.html#WQAmmBenFlx"><span class="math inline">\(\blockindent\)</span> ammonium flux ==</a> <a href="AppDiags.html#WQParFsedAmm"><span class="math inline">\(F_{sed}^{NH_4}\)</span></a> <br> <br>
 <a href="AppCommands.html#WQNitBenFlx"><span class="math inline">\(\blockindent\)</span> nitrate flux ==</a> <a href="AppDiags.html#WQParFsedNit"><span class="math inline">\(F_{sed}^{NO_3}\)</span></a> <br> <br>
 <a href="AppCommands.html#WQFRPBenFlx"><span class="math inline">\(\blockindent\)</span> FRP flux ==</a> <a href="AppDiags.html#WQParFsedFRP"><span class="math inline">\(F_{sed}^{FRP}\)</span></a></p>
@@ -1669,7 +1669,7 @@ end material</code></pre>
 </blockquote>
 <p>Global benthic flux parameters (used in Equation <a href="AppOrg.html#eq:equ-sed-org-flux">(N.1)</a>) are specified as:</p>
 <blockquote>
-<p><a href="#WQDOMBenFlxPars"><span class="math inline">\(\blockindent\)</span> organics benthic ==</a> <a href="AppParams.html#WQParKsedDOM"><span class="math inline">\(K_{sed-O_2}^{DOM}\)</span></a>, <a href="#WQParthetasedDM"><span class="math inline">\(\theta_{sed}^{DOM}\)</span></a></p>
+<p><a href="AppCommands.html#WQOrgBenFlxPars"><span class="math inline">\(\blockindent\)</span> organics benthic ==</a> <a href="AppParams.html#WQParKsedDOM"><span class="math inline">\(K_{sed-O_2}^{DOM}\)</span></a>, <a href="AppParams.html#WQParthetasedDOM"><span class="math inline">\(\theta_{sed}^{DOM}\)</span></a></p>
 </blockquote>
 <p>Although not strictly necessary, the use of “organics” to prefix the above block command is deliberate so as to maintain consistency of command style with other constituent model blocks that include more than one computed variable, such as nitrogen and phosphorus. The command will also be accepted simply as <code>benthic ==</code>.</p>
 <p>Particulate organic hydrolysis parameters (used in <a href="AppOrg.html#eq:equ-pel-hydrolysis-rate">(N.2)</a> and therefore <a href="AppOrg.html#eq:equ-pel-hydrolysis-fluxcons">(N.3)</a>) are set in a single command as:</p>
@@ -1745,7 +1745,7 @@ end material</code></pre>
 <p>Oxygen, silicate, ammonium, nitrate FRP, dissolved organic carbon, dissolved organic nitrogen and dissolved organic phosphorus benthic fluxes are specified within both default and numbered material blocks as:</p>
 <blockquote>
 <p><a href="AppCommands.html#WQOxyBenFlx"><span class="math inline">\(\blockindent\)</span> oxygen flux ==</a> <a href="AppDiags.html#WQParFsedO2"><span class="math inline">\(F_{sed}^{O_2}\)</span></a> <br> <br>
-<a href="AppCommands.html#WQSilBenFlx"><span class="math inline">\(\blockindent\)</span> silicate flux ==</a> <a href="#WQParFsedSil"><span class="math inline">\(F_{sed}^{sil}\)</span></a> <br> <br>
+<a href="AppCommands.html#WQSilBenFlx"><span class="math inline">\(\blockindent\)</span> silicate flux ==</a> <a href="AppDiags.html#WQParFsedSi"><span class="math inline">\(F_{sed}^{sil}\)</span></a> <br> <br>
 <a href="AppCommands.html#WQAmmBenFlx"><span class="math inline">\(\blockindent\)</span> ammonium flux ==</a> <a href="AppDiags.html#WQParFsedAmm"><span class="math inline">\(F_{sed}^{NH_4}\)</span></a> <br> <br>
 <a href="AppCommands.html#WQNitBenFlx"><span class="math inline">\(\blockindent\)</span> nitrate flux ==</a> <a href="AppDiags.html#WQParFsedNit"><span class="math inline">\(F_{sed}^{NO_3}\)</span></a> <br> <br>
 <a href="AppCommands.html#WQFRPBenFlx"><span class="math inline">\(\blockindent\)</span> FRP flux ==</a> <a href="AppDiags.html#WQParFsedFRP"><span class="math inline">\(F_{sed}^{FRP}\)</span></a> <br> <br>

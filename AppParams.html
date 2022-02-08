@@ -307,7 +307,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="G.1" data-path="AppIP.html"><a href="AppIP.html#SedFRPhsProd-3"><i class="fa fa-check"></i><b>G.1</b> Sediment FRP flux</a></li>
 <li class="chapter" data-level="G.2" data-path="AppIP.html"><a href="AppIP.html#WetDepIP-3"><i class="fa fa-check"></i><b>G.2</b> Wet deposition of inorganic phosphorus</a></li>
 <li class="chapter" data-level="G.3" data-path="AppIP.html"><a href="AppIP.html#DryDepIP-3"><i class="fa fa-check"></i><b>G.3</b> Dry deposition of inorganic phosphorus</a></li>
-<li class="chapter" data-level="G.4" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>G.4</b> Adsorption and Desorption</a></li>
+<li class="chapter" data-level="G.4" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>G.4</b> Adsorption and desorption</a></li>
 <li class="chapter" data-level="G.5" data-path="AppIP.html"><a href="AppIP.html#SettlingIP-3"><i class="fa fa-check"></i><b>G.5</b> Settling</a></li>
 </ul></li>
 <li class="chapter" data-level="H" data-path="AppPhy.html"><a href="AppPhy.html"><i class="fa fa-check"></i><b>H</b> Processes: phyto general</a>
@@ -1152,7 +1152,7 @@ The maximum allowable nitrate concentration. If the WQM detects a concentration 
 /d
 </td>
 <td style="text-align:center;width: 8%; ">
-(0, 5)
+(0, 1)
 </td>
 <td style="text-align:center;width: 2%; ">
 0<br>
@@ -2936,7 +2936,7 @@ Used to compute the uptake of phosphorus during growth in the advanced phytoplan
 <a id="WQParConV">Constant rate of phytoplankton settling</a>
 </td>
 <td style="text-align:center;width: 4%; vertical-align:middle;">
-<span class="math inline">\(V_{sett-con}^{phy}\)</span>
+<span class="math inline">\(V_{settle}^{phy}\)</span>
 </td>
 <td style="text-align:center;width: 12%; ">
 m/d
@@ -2948,37 +2948,12 @@ m/d
 0
 </td>
 <td style="text-align:left;width: 47%; ">
-The constant settling velocity applied to phytoplankton using either the basic or advanced phytoplankton constituent model. A negative value is a downwards velocity
+The constant settling velocity applied to phytoplankton using either the basic or advanced phytoplankton constituent model. It is applied as a constant (in the constant settling model) or modified by density (using the density correction model). A negative value is a downwards velocity
 </td>
 <td style="text-align:left;width: 12%; ">
 <a href="AppCommands.html#WQPhySettConst">settling ==</a><br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 <a href="PhyRates-3.html#PhySettleConst-5">science</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 15%; vertical-align:top;">
-<a id="WQParThermV">Constant rate of phytoplankton settling with thermal adjustment</a>
-</td>
-<td style="text-align:center;width: 4%; vertical-align:middle;">
-<span class="math inline">\(V_{sett-thr}^{phy}\)</span>
-</td>
-<td style="text-align:center;width: 12%; ">
-m/d
-</td>
-<td style="text-align:center;width: 8%; ">
-(0, 50)
-</td>
-<td style="text-align:center;width: 2%; ">
-0
-</td>
-<td style="text-align:left;width: 47%; ">
-The constant settling velocity applied to phytoplankton, that is then modified by local water temperature (via viscosity). It can be applied to either the basic or advanced phytoplankton constituent model. A negative value is a downwards velocity
-</td>
-<td style="text-align:left;width: 12%; ">
-<a href="AppCommands.html#WQPhySettRho">settling ==</a><br>
-<hr style="margin-top:1px;margin-bottom:1px;height:2px">
-<a href="PhyRates-3.html#PhySettleConstD-5">science</a>
 </td>
 </tr>
 <tr>
@@ -4101,7 +4076,7 @@ The factor to which (<span class="math inline">\(T\)</span>-20) is raised to acc
 0
 </td>
 <td style="text-align:left;width: 47%; ">
-The factor applied to the compenent of mineralisation of labile dissolved organic matter that does not consume dissolved oxygen. A value of 0.0 will entirely suppress labile dissolved organic mineralisation that does not consume dissolved oxygen and a value of 1.0 will allow the same process to proceed entirely uninhibited. A non-zero value of this parameter will see oxygen sourced from ambient nitrate, which in turn is reduced to free diatomic nitrogen gas when its oxygen is stripped. As such, this nitrate consumption process can therefore also be switched off by setting this parameter to zero. This same factor is also applied to the activation of refractory dissolved organic carbon, nitrogen and phosphorus to their labile equivalents. If activation is to be simulated then the command `<code>mineralisation ==</code> will need to be issued to set <span class="math inline">\(f_{an]\)</span>. In this case, and if the simulation of dissolved organic matter mineralisation is not desired, then set <span class="math inline">\(R_{miner}^{DOM}\)</span> to be zero in the same mineralisation command
+The factor applied to the compenent of mineralisation of labile dissolved organic matter that does not consume dissolved oxygen. A value of 0.0 will entirely suppress labile dissolved organic mineralisation that does not consume dissolved oxygen and a value of 1.0 will allow the same process to proceed entirely uninhibited. A non-zero value of this parameter will see oxygen sourced from ambient nitrate, which in turn is reduced to free diatomic nitrogen gas when its oxygen is stripped. As such, this nitrate consumption process can therefore also be switched off by setting this parameter to zero. This same factor is also applied to the activation of refractory dissolved organic carbon, nitrogen and phosphorus to their labile equivalents. If activation is to be simulated then the command `<code>mineralisation ==</code> will need to be issued to set <span class="math inline">\(f_{an}\)</span>. In this case, and if the simulation of dissolved organic matter mineralisation is not desired, then set <span class="math inline">\(R_{miner}^{DOM}\)</span> to be zero in the same mineralisation command
 </td>
 <td style="text-align:left;width: 12%; ">
 <a href="AppCommands.html#WQDOMMinerPars">mineralisation ==</a><br>
@@ -4204,7 +4179,7 @@ The rate at which light is attenuated by labile dissolved organic matter. This c
 </tr>
 <tr>
 <td style="text-align:left;width: 15%; vertical-align:top;">
-<a id="WQParRbdnRPOM">RDOM breakdown rate</a>
+<a id="WQParRbdnRPOM">RPOM breakdown rate</a>
 </td>
 <td style="text-align:center;width: 4%; vertical-align:middle;">
 <span class="math inline">\(R_{bdn}^{RPOM}\)</span>
@@ -4612,10 +4587,10 @@ The linear multiplicative factor applied to the calculated value of CDOM for use
 </tr>
 <tr>
 <td style="text-align:left;width: 15%; vertical-align:top;">
-<a id="WQParfphotoDOM">DOM photolysis fraction</a>
+<a id="WQParfphotoDOM">RDOM photolysis fraction</a>
 </td>
 <td style="text-align:center;width: 4%; vertical-align:middle;">
-<span class="math inline">\(f_{photo}^{DOM}\)</span>
+<span class="math inline">\(f_{photo}^{RDOM}\)</span>
 </td>
 <td style="text-align:center;width: 12%; ">
 [-]

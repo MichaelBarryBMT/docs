@@ -307,7 +307,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="G.1" data-path="AppIP.html"><a href="AppIP.html#SedFRPhsProd-3"><i class="fa fa-check"></i><b>G.1</b> Sediment FRP flux</a></li>
 <li class="chapter" data-level="G.2" data-path="AppIP.html"><a href="AppIP.html#WetDepIP-3"><i class="fa fa-check"></i><b>G.2</b> Wet deposition of inorganic phosphorus</a></li>
 <li class="chapter" data-level="G.3" data-path="AppIP.html"><a href="AppIP.html#DryDepIP-3"><i class="fa fa-check"></i><b>G.3</b> Dry deposition of inorganic phosphorus</a></li>
-<li class="chapter" data-level="G.4" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>G.4</b> Adsorption and Desorption</a></li>
+<li class="chapter" data-level="G.4" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>G.4</b> Adsorption and desorption</a></li>
 <li class="chapter" data-level="G.5" data-path="AppIP.html"><a href="AppIP.html#SettlingIP-3"><i class="fa fa-check"></i><b>G.5</b> Settling</a></li>
 </ul></li>
 <li class="chapter" data-level="H" data-path="AppPhy.html"><a href="AppPhy.html"><i class="fa fa-check"></i><b>H</b> Processes: phyto general</a>
@@ -526,7 +526,7 @@ Oxygen saturation
 %
 </td>
 <td style="text-align:left;width: 60%; ">
-Dissolved oxygen percentage saturation that is the equivalent of the dissolved oxygen concentration
+Dissolved oxygen percentage saturation that is the equivalent of the dissolved oxygen concentration at current temperature, salinity and pressure conditions
 </td>
 <td style="text-align:left;width: 5%; ">
 <a href="ProcessDescriptions-1.html#ConModDODO-3">Oxygen</a>:<br><a href="ProcessDescriptions-1.html#ConModDOO2-4">O2</a>
@@ -943,7 +943,7 @@ Equation <a href="AppOrg.html#eq:equ-sed-org-flux">(N.1)</a>
 WQ_DIAG_ACTUAL_DON_SED_FLUX_MMOL_M2_D</a>
 </td>
 <td style="text-align:center;width: 10%; ">
-DOP sediment flux
+DON sediment flux
 </td>
 <td style="text-align:left;width: 10%; ">
 <span class="math inline">\(F_{sed\langle computed\rangle}^{DON}\)</span>
@@ -1281,7 +1281,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-rsedmtn-flux">(N.29)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagPhoto">WQ_DIAG_PHOTOLYSIS_MG_M3_D<br>
+<a id="WQDiagPhoto">WQ_DIAG_PHOTOLYSIS_MG_L_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_PHOTOLYSIS_MMOL_M3_D</a>
 </td>
@@ -1595,9 +1595,9 @@ Section <a href="PhyRates-3.html#PhySettle-4">I.4</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagCPhySedmtn">WQ_DIAG_PHY_COM_SEDMTN_MICG_M2_D<br>
+<a id="WQDiagCPhySedmtn">WQ_DIAG_PHYTO_COM_SEDMTN_MICG_M2_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-WQ_DIAG_PHY_COM_SEDMTN_MMOL_M2_D</a>
+WQ_DIAG_PHYTO_COM_SEDMTN_MMOL_M2_D</a>
 </td>
 <td style="text-align:center;width: 10%; ">
 Community phytoplankton sedimentation
@@ -1622,9 +1622,9 @@ Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settflx">(I.11)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagCPhyPriProd">WQ_DIAG_PHY_COM_PRIM_PROD_MICG_L_D<br>
+<a id="WQDiagCPhyPriProd">WQ_DIAG_PHYTO_COM_PRIM_PROD_MICG_L_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-WQ_DIAG_PHY_COM_PRIM_PROD_MMOL_M3_D</a>
+WQ_DIAG_PHYTO_COM_PRIM_PROD_MMOL_M3_D</a>
 </td>
 <td style="text-align:center;width: 10%; ">
 Community primary productivity
@@ -1649,9 +1649,9 @@ Equation <a href="PhyRates-3.html#eq:eq-pel-phy-pprodflx">(I.5)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagCPhyNetProd">WQ_DIAG_PHY_COM_NET_PROD_MICG_L_D<br>
+<a id="WQDiagCPhyNetProd">WQ_DIAG_PHYTO_COM_NET_PROD_MICG_L_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-WQ_DIAG_PHY_COM_NET_PROD_MMOL_M3_D</a>
+WQ_DIAG_PHYTO_COM_NET_PROD_MMOL_M3_D</a>
 </td>
 <td style="text-align:center;width: 10%; ">
 Community net primary productivity
@@ -1676,7 +1676,7 @@ Equation <a href="PhyRates-3.html#eq:eq-pel-phy-netppflx">(I.9)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagCPhyProdRat">WQ_DIAG_PHY_COM_PROD_RESP_R_ </a>
+<a id="WQDiagCPhyProdRat">WQ_DIAG_PHYTO_COM_PROD_RESP_R_ </a>
 </td>
 <td style="text-align:center;width: 10%; ">
 Community primary productivity ratio
@@ -1698,7 +1698,7 @@ Ratio of primary productivity to true respiration, summed over all phytoplankton
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagCPhyNetRespRat">WQ_DIAG_PHY_COM_NET_RESP_R_ </a>
+<a id="WQDiagCPhyNetRespRat">WQ_DIAG_PHYTO_COM_NET_RESP_R_ </a>
 </td>
 <td style="text-align:center;width: 10%; ">
 Community net primary productivity ratio
@@ -1720,9 +1720,9 @@ Ratio of net primary productivity to true respiration, summed over all phytoplan
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagCPhyNO3Up">WQ_DIAG_PHY_COM_NO3_UPTAKE_MG_L_D<br>
+<a id="WQDiagCPhyNO3Up">WQ_DIAG_PHYTO_COM_NO3_UPTAKE_MG_L_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-WQ_DIAG_PHY_COM_NO3_UPTAKE_MMOL_M3_D</a>
+WQ_DIAG_PHYTO_COM_NO3_UPTAKE_MMOL_M3_D</a>
 </td>
 <td style="text-align:center;width: 10%; ">
 Community nitrate uptake
@@ -1747,9 +1747,9 @@ Equation <a href="PhyUptake-3.html#eq:eq-pel-phy-NUp2">(K.3)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagCPhyNH4Up">WQ_DIAG_PHY_COM_NH4_UPTAKE_MG_L_D<br>
+<a id="WQDiagCPhyNH4Up">WQ_DIAG_PHYTO_COM_NH4_UPTAKE_MG_L_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-WQ_DIAG_PHY_COM_NH4_UPTAKE_MMOL_M3_D</a>
+WQ_DIAG_PHYTO_COM_NH4_UPTAKE_MMOL_M3_D</a>
 </td>
 <td style="text-align:center;width: 10%; ">
 Community ammonium uptake
@@ -1774,9 +1774,9 @@ Equation <a href="PhyUptake-3.html#eq:eq-pel-phy-NUp2">(K.3)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagCPhyPUp">WQ_DIAG_PHY_COM_P_UPTAKE_MG_L_D<br>
+<a id="WQDiagCPhyPUp">WQ_DIAG_PHYTO_COM_P_UPTAKE_MG_L_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-WQ_DIAG_PHY_COM_P_UPTAKE_MMOL_M3_D</a>
+WQ_DIAG_PHYTO_COM_P_UPTAKE_MMOL_M3_D</a>
 </td>
 <td style="text-align:center;width: 10%; ">
 Community FRP uptake
@@ -1801,9 +1801,9 @@ Equation <a href="PhyUptake-3.html#eq:eq-pel-phy-PUp">(K.7)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagCPhyCUp">WQ_DIAG_PHY_COM_C_UPTAKE_MG_L_D<br>
+<a id="WQDiagCPhyCUp">WQ_DIAG_PHYTO_COM_C_UPTAKE_MG_L_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-WQ_DIAG_PHY_COM_C_UPTAKE_MMOL_M3_D</a>
+WQ_DIAG_PHYTO_COM_C_UPTAKE_MMOL_M3_D</a>
 </td>
 <td style="text-align:center;width: 10%; ">
 Community carbon uptake
@@ -1828,7 +1828,7 @@ Equation <a href="PhyUptake-3.html#eq:eq-pel-phy-CUp">(K.1)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagCPAR">WQ_DIAG_PHY_COM_PAR_W_M2</a>
+<a id="WQDiagCPAR">WQ_DIAG_PHYTO_COM_PAR_W_M2</a>
 </td>
 <td style="text-align:center;width: 10%; ">
 Community PAR
@@ -1851,7 +1851,7 @@ Section <a href="Architecture-1.html#ProcessDescriptionsLight-3">2.3.2</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagCTChla">WQ_DIAG_PHY_COM_TCHLA_MICG_L</a>
+<a id="WQDiagCTChla">WQ_DIAG_PHYTO_COM_TCHLA_MICG_L</a>
 </td>
 <td style="text-align:center;width: 10%; ">
 Community chlorophyll <strong>a</strong>
@@ -1873,9 +1873,9 @@ The total chlorophyll <strong>a</strong> summed across all phytoplankton groups
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagCTPhy">WQ_DIAG_PHY_COM_TPHY_MICG_L<br>
+<a id="WQDiagCTPhy">WQ_DIAG_PHYTO_COM_TPHY_MMOL_C_M3<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-WQ_DIAG_PHY_COM_TPHY_MMOL_M3</a>
+WQ_DIAG_PHYTO_COM_TPHY_MMOL_C_M3</a>
 </td>
 <td style="text-align:center;width: 10%; ">
 Community phytoplankton concentration
@@ -1899,9 +1899,9 @@ The concentration of phytoplankton, summed over all phytoplankton groups (i.e. 
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagCTInNit">WQ_DIAG_PHY_COM_T_IN_N_MG_L<br>
+<a id="WQDiagCTInNit">WQ_DIAG_PHYTO_COM_T_IN_N_MG_L<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-WQ_DIAG_PHY_COM_T_IN_N_MMOL_M3</a>
+WQ_DIAG_PHYTO_COM_T_IN_N_MMOL_M3</a>
 </td>
 <td style="text-align:center;width: 10%; ">
 Community internal nitrogen concentration
@@ -1926,9 +1926,9 @@ Section <a href="PhyUptake-3.html#PhyLimUPNA-5">K.2.2</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagCTInPhs">WQ_DIAG_PHY_COM_T_IN_P_MG_L<br>
+<a id="WQDiagCTInPhs">WQ_DIAG_PHYTO_COM_T_IN_P_MG_L<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-WQ_DIAG_PHY_COM_T_IN_P_MMOL_M3</a>
+WQ_DIAG_PHYTO_COM_T_IN_P_MMOL_M3</a>
 </td>
 <td style="text-align:center;width: 10%; ">
 Community internal phosphorus concentration
@@ -2120,7 +2120,7 @@ Equation <a href="AppOrg.html#eq:equ-sed-org-flux">(N.1)</a>
 WQ_DIAG_INPUT_DON_FLUX_MMOL_M2_D</a>
 </td>
 <td style="text-align:center;width: 10%; ">
-DOP user defined sediment flux
+DON user defined sediment flux
 </td>
 <td style="text-align:left;width: 10%; ">
 <span class="math inline">\(F_{sed}^{DON}\)</span>
@@ -2131,7 +2131,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
 <td style="text-align:left;width: 60%; ">
-The user defined (or model default) flux of DOP across the sediment water interface. This value is reported for completeness and should not change in time for a given cell. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. This diagnostic cannot be used in mass balance or other related calculations
+The user defined (or model default) flux of DON across the sediment water interface. This value is reported for completeness and should not change in time for a given cell. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. This diagnostic cannot be used in mass balance or other related calculations
 </td>
 <td style="text-align:left;width: 5%; ">
 <a href="ProcessDescriptions-1.html#ConModOrgOrg-3">Organic matter</a>:<br><a href="ProcessDescriptions-1.html#ConModOrgLab-4">Labile</a>
@@ -2165,6 +2165,118 @@ The user defined (or model default) flux of DOP across the sediment water interf
 </td>
 <td style="text-align:left;width: 5%; ">
 Equation <a href="AppOrg.html#eq:equ-sed-org-flux">(N.1)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagTN">WQ_DIAG_TOTAL_NITROGEN_MG_L<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_TOTAL_NITROGEN_MMOL_M3</a>
+</td>
+<td style="text-align:center;width: 10%; ">
+Total nitrogen
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(TN\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;width: 60%; ">
+The sum of relevant nitrogen species. These are:<br>
+Simulation class DO: none<br>
+Simulation class inorganics: ammonium, nitrate, phytoplankton internal nitrogen (whether it is a simulated variable or not it still contributes to total nitrogen)<br>
+Simulation class organics: ammonium, nitrate, phytoplankton internal nitrogen, DON, PON and RDON if refractory organic constituent model is used
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagTP">WQ_DIAG_TOTAL_PHOSPHORUS_MG_L<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_TOTAL_PHOSPHORUS_MMOL_M3</a>
+</td>
+<td style="text-align:center;width: 10%; ">
+Total phosphorus
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(TP\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;width: 60%; ">
+The sum of relevant phosphorus species. These are:<br>
+Simulation class DO: none<br>
+Simulation class inorganics: FRP, adsorbed FRP if simulated, phytoplankton internal phosphorus (whether it is a simulated variable or not it still contributes to total phosphorus)<br>
+Simulation class organics: FRP, adsorbed FRP if simulated, phytoplankton internal phosphorus, DOP, POP and RDOP if refractory organic constituent model is used
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagTKN">WQ_DIAG_TOTAL_KJELDAHL_NITROGEN_MG_L<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_TOTAL_KJELDAHL_NITROGEN_MMOL_M3</a>
+</td>
+<td style="text-align:center;width: 10%; ">
+Total Kjeldahl nitrogen
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(TKN\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;width: 60%; ">
+The sum of relevant nitrogen species. These are:<br>
+Simulation class DO: none<br>
+Simulation class inorganics: ammonium, phytoplankton internal nitrogen (whether it is a simulated variable or not it still contributes to total nitrogen)<br>
+Simulation class organics: ammonium, phytoplankton internal nitrogen, DON, PON and RDON if refractory organic constituent model is used
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagTOC">WQ_DIAG_TOTAL_ORGANIC_CARBON_MG_L<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_TOTAL_ORGANIC_CARBON_MMOL_M3</a>
+</td>
+<td style="text-align:center;width: 10%; ">
+Total organic carbon
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(TOC\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>
+</td>
+<td style="text-align:left;width: 60%; ">
+The sum of relevant carbon species. These are:<br>
+Simulation class DO: none<br>
+Simulation class inorganics: phytoplankton carbon<br>
+Simulation class organics: phytoplankton carbon, DOC, POC, and RDOC and RPOM if refractory organic constituent model is used
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+<td style="text-align:left;width: 5%; ">
 </td>
 </tr>
 </tbody>

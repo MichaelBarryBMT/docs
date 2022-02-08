@@ -307,7 +307,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="G.1" data-path="AppIP.html"><a href="AppIP.html#SedFRPhsProd-3"><i class="fa fa-check"></i><b>G.1</b> Sediment FRP flux</a></li>
 <li class="chapter" data-level="G.2" data-path="AppIP.html"><a href="AppIP.html#WetDepIP-3"><i class="fa fa-check"></i><b>G.2</b> Wet deposition of inorganic phosphorus</a></li>
 <li class="chapter" data-level="G.3" data-path="AppIP.html"><a href="AppIP.html#DryDepIP-3"><i class="fa fa-check"></i><b>G.3</b> Dry deposition of inorganic phosphorus</a></li>
-<li class="chapter" data-level="G.4" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>G.4</b> Adsorption and Desorption</a></li>
+<li class="chapter" data-level="G.4" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>G.4</b> Adsorption and desorption</a></li>
 <li class="chapter" data-level="G.5" data-path="AppIP.html"><a href="AppIP.html#SettlingIP-3"><i class="fa fa-check"></i><b>G.5</b> Settling</a></li>
 </ul></li>
 <li class="chapter" data-level="H" data-path="AppPhy.html"><a href="AppPhy.html"><i class="fa fa-check"></i><b>H</b> Processes: phyto general</a>
@@ -477,7 +477,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 <p>The WQM’s computed variables, and the core (lowest order) constituent model class and instance where each is deployed are listed below. Output variable names are also included for cross referencing. Some TUFLOW FV variables are included in the table for completeness. With regard to naming:</p>
 <ul>
-<li>Units are included in the variable names, with “ND” signifying “no dimension”</li>
 <li>The text “NAME” in variable names is a placeholder for the user defined phytoplankton group name. “WQ_PHY_NAME_INT_N_MGL” list in the table would be named “WQ_PHY_GREEN_INT_N_MGL” if a user defined phytoplankton group name was “green”</li>
 </ul>
 <p>It is recommended that this Appendix be viewed with the left hand pane table of contents hidden. Use the ‘s’ key to toggle this pane on and off. Output computed variable names are exact, and can therefore be copied and pasted directly into output blocks of control files, for example. The exception is phytoplankton variables, where the user specified group name is included within the variable name, so will need to be inserted by the user.</p>
@@ -1029,7 +1028,7 @@ WQ_PHY_NAME_CONC_MMM3
 <a id="WQVarPhyRho">Cell density</a>
 </td>
 <td style="text-align:center;">
-<span class="math inline">\(\rho\)</span>
+<span class="math inline">\(\rho_{PHY}\)</span>
 </td>
 <td style="text-align:center;width: 10%; ">
 kg/m<span class="math inline">\(^3\)</span>

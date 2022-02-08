@@ -307,7 +307,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="G.1" data-path="AppIP.html"><a href="AppIP.html#SedFRPhsProd-3"><i class="fa fa-check"></i><b>G.1</b> Sediment FRP flux</a></li>
 <li class="chapter" data-level="G.2" data-path="AppIP.html"><a href="AppIP.html#WetDepIP-3"><i class="fa fa-check"></i><b>G.2</b> Wet deposition of inorganic phosphorus</a></li>
 <li class="chapter" data-level="G.3" data-path="AppIP.html"><a href="AppIP.html#DryDepIP-3"><i class="fa fa-check"></i><b>G.3</b> Dry deposition of inorganic phosphorus</a></li>
-<li class="chapter" data-level="G.4" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>G.4</b> Adsorption and Desorption</a></li>
+<li class="chapter" data-level="G.4" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>G.4</b> Adsorption and desorption</a></li>
 <li class="chapter" data-level="G.5" data-path="AppIP.html"><a href="AppIP.html#SettlingIP-3"><i class="fa fa-check"></i><b>G.5</b> Settling</a></li>
 </ul></li>
 <li class="chapter" data-level="H" data-path="AppPhy.html"><a href="AppPhy.html"><i class="fa fa-check"></i><b>H</b> Processes: phyto general</a>
@@ -977,7 +977,7 @@ Used in a phytoplankton constituent model block to select the freshwater phytopl
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="WQPhySLmarine"><bmtpink>salinity limitation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyLimits-3.html#PhyLimMarine-5">marine</a>,<a href="AppParams.html#WQParSoptmarinePHY"><span class="math inline">\(S_{opt-marine}^{phy}\)</span></a>,<a href="AppParams.html#WQParLzeromarinePHY"><span class="math inline">\(L_{max-fresh}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="WQPhySLmarine"><bmtpink>salinity limitation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyLimits-3.html#PhyLimMarine-5">marine</a>,<a href="AppParams.html#WQParSoptmarinePHY"><span class="math inline">\(S_{opt-marine}^{phy}\)</span></a>,<a href="AppParams.html#WQParLzeromarinePHY"><span class="math inline">\(L_{zero-marine}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
 Used in a phytoplankton constituent model block to select the marine phytoplankton group salinity limitation. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySLim-6">4.7.3.5.1.2</a>.
@@ -1197,7 +1197,7 @@ Used in a phytoplankton constituent model block to set a constant settling veloc
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="WQPhySettRho"><bmtpink>settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyRates-3.html#PhySettleConstD-5">thermal</a>,<a href="AppParams.html#WQParThermV"><span class="math inline">\(V_{sett-thr}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="WQPhySettRho"><bmtpink>settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyRates-3.html#PhySettleConstD-5">thermal</a>,<a href="#WQParThermV"><span class="math inline">\(V_{sett-thr}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
 Used in a phytoplankton constituent model block to set a constant settling velocity in both basic and advanced phytoplankton constituent models, allowing for temperature effects to settling. A negative value specified in this command is a downwards velocity. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySettleB-6">4.7.3.5.1.12</a>.
@@ -1329,7 +1329,7 @@ Specification of full path and name of previously saved restart file. Simulation
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="FVInitWQGlob"><bmtpink>initial wq concentration ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#FVInitWQGlob">initial conditon file name and path</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="FVInitWQGlob"><bmtpink>initial wq concentration ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#FVInitWQGlob">comma separated wq initial conditions</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
 Ordered individual computed variable initial conditions. Simulation construction section <a href="SimulationConstruction-1.html#ICGeneral-4">4.4.2.1</a>.
@@ -1340,21 +1340,10 @@ Ordered individual computed variable initial conditions. Simulation construction
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="FVInitWQProf"><bmtpink>initial scalar profile ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#FVInitWQProf">initial conditon file name and path</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="FVInitWQProf"><bmtpink>initial scalar profile ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#FVInitWQProf">initial condition file name and path</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Ordered individual computed variable initial conditions. Simulation construction section <a href="SimulationConstruction-1.html#ICGeneral-4">4.4.2.1</a>.
-</td>
-<td style="text-align:left;">
-<span class="math inline">\(\text{ }\)</span>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="FVInitWQ2D"><bmtpink>initial condition 2d ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#FVInitWQ2D">initial conditon file name and path</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
-</td>
-<td style="text-align:left;">
-Ordered individual computed variable initial conditions. Simulation construction section <a href="SimulationConstruction-1.html#ICGeneral-4">4.4.2.1</a>.
+Ordered individual computed variable initial conditions in a columnar text file. Simulation construction section <a href="SimulationConstruction-1.html#ICGeneral-4">4.4.2.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1362,10 +1351,21 @@ Ordered individual computed variable initial conditions. Simulation construction
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="FVInitWQ3D"><bmtpink>initial condition 3d ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#FVInitWQ3D">initial conditon file name and path</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="FVInitWQ2D"><bmtpink>initial condition 2d ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#FVInitWQ2D">initial condition file name and path</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Ordered individual computed variable initial conditions. Simulation construction section <a href="SimulationConstruction-1.html#ICGeneral-4">4.4.2.1</a>.
+Ordered individual computed variable initial conditions in a columnar text file. Simulation construction section <a href="SimulationConstruction-1.html#ICGeneral-4">4.4.2.1</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="FVInitWQ3D"><bmtpink>initial condition 3d ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#FVInitWQ3D">initial condition file name and path</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Ordered individual computed variable initial conditions in a columnar text file. Simulation construction section <a href="SimulationConstruction-1.html#ICGeneral-4">4.4.2.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1398,7 +1398,7 @@ Command to terminate a materials block. This command must be paired with a corre
 <a id="FVIncludeSed"><bmtpink>include sediment ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="#">include sediment transport calculations</a>,<a href="#">include sediment in density calculation</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-TUFLOW FV command to include sediment simulation. Sediment must be simulated if adsorbed phosphorus is included in a WQM simulation. Simulation construction section @ref().
+TUFLOW FV command to include sediment simulation. Sediment must be simulated if adsorbed phosphorus is included in a WQM simulation. Simulation construction section <a href="SimulationConstruction-1.html#ConOrdInorgFRPhsads-5">4.7.5.1.2</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
