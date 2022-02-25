@@ -1038,7 +1038,12 @@ end material</code></pre>
 <blockquote>
 <p><a href="AppCommands.html#WQPhyMod">phyto model ==</a> basic, <em>groupname</em></p>
 </blockquote>
-<p><em>groupname</em> is any user specified phytoplankton group name that uses only alphanumeric characters with no spaces.</p>
+<p><em>groupname</em> is any user specified phytoplankton group name that:</p>
+<ul>
+<li>Uses only alphanumeric characters</li>
+<li>Has no spaces, and</li>
+<li>Is not the keyword ‘COM’</li>
+</ul>
 <p>Minimum and maximum concentrations for a phytoplankton group are specified as follows. No prefix keyword (as was the case for constituents such as “ammonium”) is required:</p>
 <blockquote>
 <p><a href="AppCommands.html#WQPhyMinMax"><span class="math inline">\(\blockindent\)</span> min max ==</a> <a href="AppParams.html#WQParMinPHY"><span class="math inline">\(\left[PHY\right]_{min}^{PHY}\)</span></a>, <a href="AppParams.html#WQParMaxPHY"><span class="math inline">\(\left[PHY\right]_{max}^{PHY}\)</span></a></p>
@@ -1064,7 +1069,12 @@ end material</code></pre>
 </div>
 <div id="ConModPhySLim-6" class="section level6" number="4.7.3.5.1.2">
 <h6><span class="header-section-number">4.7.3.5.1.2</span> Salinity limitation</h6>
-<p>Salinity limitation can be specified by one of the following models:</p>
+<p>Salinity limitation can be specified by one of the following models. All functions can be applied to either (not both) primary productivity or respiration, except for the estuarine limitation model which can only be applied to primary productivity. Specifically:</p>
+<ul>
+<li>Specifying respective function limitation values (i.e. <span class="math inline">\(L_{max-fresh}^{phy}\)</span> or <span class="math inline">\(L_{zero-marine}^{phy}\)</span> or <span class="math inline">\(L_{zero-mix}^{phy}\)</span>) to be between zero and one will set a function to apply to primary productivity rates as a reducer</li>
+<li>Specifying respective function limitation values (i.e. <span class="math inline">\(L_{max-fresh}^{phy}\)</span> or <span class="math inline">\(L_{zero-marine}^{phy}\)</span> or <span class="math inline">\(L_{zero-mix}^{phy}\)</span>) to be greater than one will set a function to apply to respiration rates as an enhancer</li>
+</ul>
+<p>The available models are as follows:</p>
 <ul>
 <li>None (no salinity limitation applied)</li>
 </ul>
@@ -1080,21 +1090,21 @@ end material</code></pre>
 </blockquote>
 <p>or</p>
 <ul>
-<li>Marine (used in Equation <a href="PhyLimits-3.html#eq:eq-pel-phy-SalLim2">(J.28)</a>)</li>
+<li>Marine (used in Equation <a href="PhyLimits-3.html#eq:eq-pel-phy-SalLim2">(J.30)</a>)</li>
 </ul>
 <blockquote>
 <p><a href="AppCommands.html#WQPhySLmarine"><span class="math inline">\(\blockindent\)</span> salinity limitation ==</a> <a href="AppCommands.html#WQPhySLmarine">marine</a>, <a href="AppParams.html#WQParSoptmarinePHY"><span class="math inline">\(S_{opt-marine}^{phy}\)</span></a>, <a href="AppParams.html#WQParLzeromarinePHY"><span class="math inline">\(L_{zero-marine}^{phy}\)</span></a></p>
 </blockquote>
 <p>or</p>
 <ul>
-<li>Mixed (used in Equation <a href="PhyLimits-3.html#eq:eq-pel-phy-SalLim3">(J.29)</a>)</li>
+<li>Mixed (used in Equation <a href="PhyLimits-3.html#eq:eq-pel-phy-SalLim3">(J.33)</a>)</li>
 </ul>
 <blockquote>
 <p><a href="AppCommands.html#WQPhySLmixed"><span class="math inline">\(\blockindent\)</span> salinity limitation ==</a> <a href="AppCommands.html#WQPhySLmixed">mixed</a>, <a href="AppParams.html#WQParSoptmixPHY"><span class="math inline">\(S_{opt-mix}^{phy}\)</span></a>, <a href="AppParams.html#WQParSmaxmixPHY"><span class="math inline">\(S_{max-mix}^{phy}\)</span></a>, <a href="AppParams.html#WQParLzeromixPHY"><span class="math inline">\(L_{zero-mix}^{phy}\)</span></a></p>
 </blockquote>
 <p>or</p>
 <ul>
-<li>Estuarine (used in Equation <a href="PhyLimits-3.html#eq:eq-pel-phy-SalLim4">(J.30)</a>)</li>
+<li>Estuarine (used in Equation <a href="PhyLimits-3.html#eq:eq-pel-phy-SalLim4">(J.36)</a>)</li>
 </ul>
 <blockquote>
 <p><a href="AppCommands.html#WQPhySLestuarine"><span class="math inline">\(\blockindent\)</span> salinity limitation ==</a> <a href="AppCommands.html#WQPhySLestuarine">estuarine</a>, <a href="AppParams.html#WQParSoptestPHY"><span class="math inline">\(S_{opt-est}^{phy}\)</span></a>, <a href="AppParams.html#WQParSmaxestPHY"><span class="math inline">\(S_{max-est}^{phy}\)</span></a>, <a href="AppParams.html#WQParPestPHY"><span class="math inline">\(P_{est}^{phy}\)</span></a></p>
@@ -1251,7 +1261,7 @@ end material</code></pre>
 <li>Constant with density correction (as per Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settdens">(I.12)</a>)</li>
 </ul>
 <blockquote>
-<p><a href="AppCommands.html#WQPhySettRho"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="AppCommands.html#WQPhySettRho">thermal</a>, <a href="#WQParThermV"><span class="math inline">\(V_{settle}^{phy}\)</span></a></p>
+<p><a href="#WQPhySettRho"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="#WQPhySettRho">thermal</a>, <a href="#WQParThermV"><span class="math inline">\(V_{settle}^{phy}\)</span></a></p>
 </blockquote>
 <p>or</p>
 <ul>
@@ -1453,7 +1463,7 @@ end material</code></pre>
 <h5><span class="header-section-number">4.7.5.2.2</span> Advanced phytoplankton model</h5>
 <p>If the advanced phytoplankton constituent model is used, then in all columnar and list style initial conditions, computed variables are expected in the following order:</p>
 <blockquote>
-<p>initial wq concentration == {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{[PHY_1],[N_1]_{in},[P_1]_{in}}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{[PHY_2],[N_2]_{in},[P_2]_{in}}_{\text{Cluster 2}}\)</span></p>
+<p>initial wq concentration == {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{[PHY_1],[IN_1],[IP_1]}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{[PHY_2],[IN_2],[IP_2]}_{\text{Cluster 2}}\)</span></p>
 </blockquote>
 <p>In order to match water quality control file groups with initial conditions, it is assumed that the groups’ initial conditions are specified above in the same order that <code>phyto model ==</code> blocks are presented in the water quality control file.</p>
 <p>Similarly, in a <code>bc header ==</code> command within a bc block, the following order of computed variables is expected after hydrodynamic and non-phytoplankton boundary conditions:</p>
@@ -1472,7 +1482,7 @@ end material</code></pre>
 </ul>
 <p>If the command <code>settling == stokes</code> is used for a phytoplankton group, then phytoplankton cell density must be simulated as a computed variable that requires initial and boundary conditions. This therefore affects the clustering of phytoplankton initial and boundary conditions. If the first phytoplankton group above used the advanced phytoplankton model with the stokes settling model, and the second group used the basic phytoplankton model without stokes settling, then the following commands would be required:</p>
 <blockquote>
-<p>initial wq concentration == {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{[PHY_1],\rho_{phy_1},[N_1]_{in},[P_1]_{in}}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{[PHY_2]}_{\text{Cluster 2}}\)</span></p>
+<p>initial wq concentration == {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{[PHY_1],\rho_{phy_1},[IN_1],[IP_1]}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{[PHY_2]}_{\text{Cluster 2}}\)</span></p>
 </blockquote>
 <p>Similarly, in a <code>bc header ==</code> command within a bc block, the following order of computed variables is expected after hydrodynamic and non-phytoplankton boundary conditions:</p>
 <blockquote>
@@ -1480,7 +1490,7 @@ end material</code></pre>
 </blockquote>
 <p>If both phytoplankton groups simulated density, again with the first and second groups using the advanced and basic models respectively, then the corresponding commands would be as follows:</p>
 <blockquote>
-<p>initial wq concentration == {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{[PHY_1],\rho_{phy_1},[N_1]_{in},[P_1]_{in}}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{[PHY_2],\rho_{phy_2}}_{\text{Cluster 2}}\)</span></p>
+<p>initial wq concentration == {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{[PHY_1],\rho_{phy_1},[IN_1],[IP_1]}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{[PHY_2],\rho_{phy_2}}_{\text{Cluster 2}}\)</span></p>
 </blockquote>
 <blockquote>
 <p><span class="math inline">\(\blockindent\)</span>bc header == {HD BCs} <span class="math inline">\(\ldots\)</span> {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{\text{phyto_gr, gr_dens, gr_intN, gr_intP}}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{\text{phyto_blgr, blgr_dens}}_{\text{Cluster 2}}\)</span></p>

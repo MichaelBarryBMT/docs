@@ -1468,19 +1468,42 @@ Section <a href="PhyLimits-3.html#PhyLimT-4">J.2</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagSalLim">WQ_DIAG_PHY_NAME_SAL_LIM_ND</a>
+<a id="WQDiagSalRLim">WQ_DIAG_PHY_NAME_SAL_LIM_ND</a>
 </td>
 <td style="text-align:center;width: 10%; ">
 Salinity limitation function
 </td>
 <td style="text-align:left;width: 10%; ">
-<span class="math inline">\(L_{sal}^{phy}\)</span>
+<span class="math inline">\(L_{sal-r}^{phy}\)</span>
 </td>
 <td style="text-align:center;width: 10%; ">
 [-]
 </td>
 <td style="text-align:left;width: 60%; ">
-The dynamically computed salinity limitation function for a phytoplankton group. It varies between 0 (complete limitation) and 1 (no limitation)
+The dynamically computed salinity limitation function applied to respiration of a phytoplankton group. It is always greater than 1 (no limitation). The same diagnostic variable name is used for the corollary primary productivity salinity limitation function because the two limitation functions are mutually exclusive
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Section <a href="PhyLimits-3.html#PhyLimSal-4">J.7</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagSalPPLim">WQ_DIAG_PHY_NAME_SAL_LIM_ND</a>
+</td>
+<td style="text-align:center;width: 10%; ">
+Salinity limitation function
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(L_{sal-pp}^{phy}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+[-]
+</td>
+<td style="text-align:left;width: 60%; ">
+The dynamically computed salinity limitation function applied to primary production of a phytoplankton group. It varies between 0 (complete limitation) and 1 (no limitation). The same diagnostic variable name is used for the corollary respiration salinity limitation function because the two limitation functions are mutually exclusive
 </td>
 <td style="text-align:left;width: 5%; ">
 <a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>

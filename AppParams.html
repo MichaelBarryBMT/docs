@@ -2058,7 +2058,7 @@ Used to compute the freshwater salinity limitation function. It is the maximum s
 0
 </td>
 <td style="text-align:left;width: 47%; ">
-Used to compute the freshwater salinity limitation function. It is the value of the freshwater limitation function at a salinity of <span class="math inline">\(S_{max-fresh}\)</span>
+Used to compute the freshwater salinity limitation function. It is the value of the freshwater limitation function at a salinity of <span class="math inline">\(S_{max-fresh}\)</span>. If this limitation function value is set to be between zero and one (greater than one), then the computed limitation will be applied as a reductive (enhancement) factor to primary productivity (respiration).
 </td>
 <td style="text-align:left;width: 12%; ">
 <a href="AppCommands.html#WQPhySLfresh">salinity limitation ==</a><br>
@@ -2108,7 +2108,7 @@ Used to compute the marine salinity limitation function. It is the minimum salin
 0
 </td>
 <td style="text-align:left;width: 47%; ">
-Used to compute the marine salinity limitation function. It is the value of the marine limitation function at a salinity of zero
+Used to compute the marine salinity limitation function. It is the value of the marine limitation function at a salinity of zero. If this limitation function value is set to be between zero and one (greater than one), then the computed limitation will be applied as a reductive (enhancement) factor to primary productivity (respiration).
 </td>
 <td style="text-align:left;width: 12%; ">
 <a href="AppCommands.html#WQPhySLmarine">salinity limitation ==</a><br>
@@ -2183,7 +2183,7 @@ Used to compute the mixed salinity limitation function. It is the maximum salini
 0
 </td>
 <td style="text-align:left;width: 47%; ">
-Used to compute the mixed salinity limitation function. It is the value of the mixed limitation function at a salinity of zero and (<span class="math inline">\(S_{opt-mix}^{phy} + S_{max-mix}^{phy}\)</span>)
+Used to compute the mixed salinity limitation function. It is the value of the mixed limitation function at a salinity of zero and (<span class="math inline">\(S_{opt-mix}^{phy} + S_{max-mix}^{phy}\)</span>). If this limitation function value is set to be between zero and one (greater than one), then the computed limitation will be applied as a reductive (enhancement) factor to primary productivity (respiration).
 </td>
 <td style="text-align:left;width: 12%; ">
 <a href="AppCommands.html#WQPhySLmixed">salinity limitation ==</a><br>
@@ -4076,7 +4076,7 @@ The factor to which (<span class="math inline">\(T\)</span>-20) is raised to acc
 0
 </td>
 <td style="text-align:left;width: 47%; ">
-The factor applied to the compenent of mineralisation of labile dissolved organic matter that does not consume dissolved oxygen. A value of 0.0 will entirely suppress labile dissolved organic mineralisation that does not consume dissolved oxygen and a value of 1.0 will allow the same process to proceed entirely uninhibited. A non-zero value of this parameter will see oxygen sourced from ambient nitrate, which in turn is reduced to free diatomic nitrogen gas when its oxygen is stripped. As such, this nitrate consumption process can therefore also be switched off by setting this parameter to zero. This same factor is also applied to the activation of refractory dissolved organic carbon, nitrogen and phosphorus to their labile equivalents. If activation is to be simulated then the command `<code>mineralisation ==</code> will need to be issued to set <span class="math inline">\(f_{an}\)</span>. In this case, and if the simulation of dissolved organic matter mineralisation is not desired, then set <span class="math inline">\(R_{miner}^{DOM}\)</span> to be zero in the same mineralisation command
+The factor applied to the compenent of mineralisation of labile dissolved organic matter that does not consume dissolved oxygen. A value of 0.0 will entirely suppress the Michaelis-Menten weighting that non dissolved oxygen based processes have in calculating overall mineralisation of labile dissolved organic matter. Setting this parameter to zero does not suppress non dissolved oxygen mineralisation. This same factor is also applied to the activation of refractory dissolved organic carbon, nitrogen and phosphorus to their labile equivalents. If activation is to be simulated then the command <code>mineralisation ==</code> will need to be issued to set <span class="math inline">\(f_{an}\)</span>. In this case, and if the simulation of dissolved organic matter mineralisation is not desired, then set <span class="math inline">\(R_{miner}^{DOM}\)</span> to be zero in the same mineralisation command
 </td>
 <td style="text-align:left;width: 12%; ">
 <a href="AppCommands.html#WQDOMMinerPars">mineralisation ==</a><br>

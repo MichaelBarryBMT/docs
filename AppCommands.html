@@ -1164,10 +1164,10 @@ Used in a phytoplankton constituent model block to set constant nitrogen, phosph
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="WQPhyUptakeAdv"><bmtpink>uptake ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParNuptake"><span class="math inline">\(R_{N-uptake}^{phy}\)</span></a>,<a href="AppParams.html#WQParPuptake"><span class="math inline">\(R_{P-uptake}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="WQPhyUptakeAdv"><bmtpink>uptake ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParNuptake"><span class="math inline">\(R_{N-uptake}^{phy}\)</span></a>,<a href="AppParams.html#WQParPuptake"><span class="math inline">\(R_{P-uptake}^{phy}\)</span></a>,<a href="AppParams.html#WQParConSiCRat"><span class="math inline">\(X_{Si-C-con}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in a phytoplankton constituent model block to set nitrogen and phosphorus uptake rates for the advanced phytoplankton constituent model only. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyUptakeA-6">4.7.3.5.2.3</a>.
+Used in a phytoplankton constituent model block to set nitrogen and phosphorus (and optionally silicate) uptake rates for the advanced phytoplankton constituent model only. The silicate internal concentration ratio is ignored if silicate uptake is not activated. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhyUptakeA-6">4.7.3.5.2.3</a>.
 </td>
 <td style="text-align:left;">
 <a href="AppCommands.html#WQPhyUptakeBas">basic</a>
@@ -1181,23 +1181,22 @@ Used in a phytoplankton constituent model block to set nitrogen and phosphorus u
 Used in a phytoplankton constituent model block to turn off settling in both basic and advanced phytoplankton constituent models. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySettleB-6">4.7.3.5.1.12</a>.
 </td>
 <td style="text-align:left;">
-<a href="AppCommands.html#WQPhySettConst">constant</a>,<a href="AppCommands.html#WQPhySettRho">thermal</a>,<br><a href="AppCommands.html#WQPhySettStokes">stokes</a>,<a href="AppCommands.html#WQPhySettMotile">motile</a>
+<a href="AppCommands.html#WQPhySettConst">constant</a>,<a href="#WQPhySettRho">thermal</a>,<br><a href="AppCommands.html#WQPhySettStokes">stokes</a>,<a href="AppCommands.html#WQPhySettMotile">motile</a>
 </td>
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="WQPhySettConst"><bmtpink>settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyRates-3.html#PhySettleConst-5">constant</a>,<a href="AppParams.html#WQParConV"><span class="math inline">\(V_{sett-con}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="WQPhySettConst"><bmtpink>settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyRates-3.html#PhySettleConst-5">constant</a>,<a href="AppParams.html#WQParConV"><span class="math inline">\(V_{settle}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
 Used in a phytoplankton constituent model block to set a constant settling velocity in both basic and advanced phytoplankton constituent models. A negative value specified in this command is a downwards velocity. Setting the settling velocity to zero in this model is the same as using settling == none. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySettleB-6">4.7.3.5.1.12</a>.
 </td>
 <td style="text-align:left;">
-<a href="AppCommands.html#WQPhySettNone">none</a>,<a href="AppCommands.html#WQPhySettRho">thermal</a>,<br><a href="AppCommands.html#WQPhySettStokes">stokes</a>,<a href="AppCommands.html#WQPhySettMotile">motile</a>
+<a href="AppCommands.html#WQPhySettNone">none</a>,<a href="#WQPhySettRho">thermal</a>,<br><a href="AppCommands.html#WQPhySettStokes">stokes</a>,<a href="AppCommands.html#WQPhySettMotile">motile</a>
 </td>
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="WQPhySettRho"><bmtpink>settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyRates-3.html#PhySettleConstD-5">thermal</a>,<a href="#WQParThermV"><span class="math inline">\(V_{sett-thr}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
 Used in a phytoplankton constituent model block to set a constant settling velocity in both basic and advanced phytoplankton constituent models, allowing for temperature effects to settling. A negative value specified in this command is a downwards velocity. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySettleB-6">4.7.3.5.1.12</a>.
@@ -1214,7 +1213,7 @@ Used in a phytoplankton constituent model block to set a constant settling veloc
 Used in a phytoplankton constituent model block to compute settling velocity via stokes settling laws in both basic and advanced phytoplankton constituent models. Density must be simulated as a computed variable for each phytoplankton group that uses this model, so must have cell density initial conditions and boundary conditions specified as per ordering rules. The specification of <span class="math inline">\(I_K\)</span> is not mandatory in this command. If it is not specified then the <span class="math inline">\(I_K\)</span> specified in the phytoplankton constituent model’s light limitation model will be used. If a light limitaton model is not specified, or uses <span class="math inline">\(I_S\)</span> instead of <span class="math inline">\(I_K\)</span>, then the library default value of <span class="math inline">\(I_K\)</span> is used. If <span class="math inline">\(I_K\)</span> is specified both in this stokes settling command and a phytoplankton constituent model light limitation function, then the value specified in the “light limitation ==” command is used, and the value specified in this command is ignored. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySettleB-6">4.7.3.5.1.12</a>.
 </td>
 <td style="text-align:left;">
-<a href="AppCommands.html#WQPhySettNone">none</a>,<a href="AppCommands.html#WQPhySettConst">constant</a>,<br><a href="AppCommands.html#WQPhySettRho">thermal</a>,<a href="AppCommands.html#WQPhySettMotile">motile</a>
+<a href="AppCommands.html#WQPhySettNone">none</a>,<a href="AppCommands.html#WQPhySettConst">constant</a>,<br><a href="#WQPhySettRho">thermal</a>,<a href="AppCommands.html#WQPhySettMotile">motile</a>
 </td>
 </tr>
 <tr>
@@ -1225,7 +1224,7 @@ Used in a phytoplankton constituent model block to compute settling velocity via
 Used in a phytoplankton constituent model block to compute settling velocity via motility functions that depend on ambient conditions, in only the advanced phytoplankton constituent model. The specification of <span class="math inline">\(I_K\)</span> is not mandatory in this command. If it is not specified then the <span class="math inline">\(I_K\)</span> specified in the phytoplankton constituent model’s light limitation model will be used. If a light limitaton model is not specified, or uses <span class="math inline">\(I_S\)</span> instead of <span class="math inline">\(I_K\)</span>, then the library default value of <span class="math inline">\(I_K\)</span> is used. If <span class="math inline">\(I_K\)</span> is specified both in this motile settling command and a phytoplankton constituent model light limitation function, then the value specified in the “light limitation ==” command is used, and the value specified in this command is ignored. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySettleA-6">4.7.3.5.2.4</a>.
 </td>
 <td style="text-align:left;">
-<a href="AppCommands.html#WQPhySettNone">none</a>,<a href="AppCommands.html#WQPhySettConst">constant</a>,<br><a href="AppCommands.html#WQPhySettRho">thermal</a>,<a href="AppCommands.html#WQPhySettStokes">stokes</a>
+<a href="AppCommands.html#WQPhySettNone">none</a>,<a href="AppCommands.html#WQPhySettConst">constant</a>,<br><a href="#WQPhySettRho">thermal</a>,<a href="AppCommands.html#WQPhySettStokes">stokes</a>
 </td>
 </tr>
 <tr>
@@ -1626,7 +1625,7 @@ Used in an organics constituent model block to parameterise light attenuation du
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="WQRefphotoPars"><bmtpink>ref photolysis ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParfphotoDOM"><span class="math inline">\(f_{photo}^{DOM}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="WQRefphotoPars"><bmtpink>ref photolysis ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParfphotoDOM"><span class="math inline">\(f_{photo}^{RDOM}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
 Used in an organics constituent model block to parameterise the proportion of photolysis of refractory dissolved organic matter that produces labile dissolved organic matter. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLRef-5">4.8.3.5.2</a>.
