@@ -221,6 +221,7 @@ fig:fig-InorgF3
 fig:fig-InorgF4
 fig:fig-InorgF5
 fig:fig-InorgF6
+fig:fig-InorgTNTP
 fig:fig-OrgMassBalLab
 fig:fig-OrgF1
 fig:fig-OrgF2
@@ -238,6 +239,7 @@ fig:fig-OrgF14
 fig:fig-OrgF15
 fig:fig-OrgF16
 fig:fig-OrgF17
+fig:fig-OrgTNTP
 Overview-1
 OverviewContext-2
 Features-2
