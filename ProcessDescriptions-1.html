@@ -299,8 +299,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="F.1" data-path="AppIN.html"><a href="AppIN.html#SedAmmNitProd-3"><i class="fa fa-check"></i><b>F.1</b> Sediment ammonium and nitrate flux</a></li>
 <li class="chapter" data-level="F.2" data-path="AppIN.html"><a href="AppIN.html#Nitrif-3"><i class="fa fa-check"></i><b>F.2</b> Nitrification</a></li>
 <li class="chapter" data-level="F.3" data-path="AppIN.html"><a href="AppIN.html#Denitrif-3"><i class="fa fa-check"></i><b>F.3</b> Denitrification</a></li>
-<li class="chapter" data-level="F.4" data-path="AppIN.html"><a href="AppIN.html#WetDepIN-3"><i class="fa fa-check"></i><b>F.4</b> Wet deposition of inorganic nitrogen</a></li>
-<li class="chapter" data-level="F.5" data-path="AppIN.html"><a href="AppIN.html#DryDepIN-3"><i class="fa fa-check"></i><b>F.5</b> Dry deposition of inorganic nitrogen</a></li>
+<li class="chapter" data-level="F.4" data-path="AppIN.html"><a href="AppIN.html#Anammox-3"><i class="fa fa-check"></i><b>F.4</b> Anaerobic oxidation of ammonium</a></li>
+<li class="chapter" data-level="F.5" data-path="AppIN.html"><a href="AppIN.html#DRNA-3"><i class="fa fa-check"></i><b>F.5</b> Dissimilatory reduction of nitrate to ammonium</a></li>
+<li class="chapter" data-level="F.6" data-path="AppIN.html"><a href="AppIN.html#WetDepIN-3"><i class="fa fa-check"></i><b>F.6</b> Wet deposition of inorganic nitrogen</a></li>
+<li class="chapter" data-level="F.7" data-path="AppIN.html"><a href="AppIN.html#DryDepIN-3"><i class="fa fa-check"></i><b>F.7</b> Dry deposition of inorganic nitrogen</a></li>
 </ul></li>
 <li class="chapter" data-level="G" data-path="AppIP.html"><a href="AppIP.html"><i class="fa fa-check"></i><b>G</b> Processes: inorganic phosphorus</a>
 <ul>
@@ -629,7 +631,7 @@ Figure 3.3: <strong>Constituent model: AmmoniumNitrate</strong>
 </div>
 </center>
 <div id="htmlwidget-3c5a0e2e50cff3786001" style="width:100%;height:480px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3c5a0e2e50cff3786001">{"x":{"nodes":{"id":[1,2,3,4,5,6,7],"nodename":["Ammonium","Nitrate","Wet\r\ndeposition","Dry\r\ndeposition","Sediment\r\nflux","Nitrification","Denitrification"],"nodetype":["Computed variable","Computed variable","Source","Source","Source","Both","Sink"],"level":[2,2,1,1,3,2,2],"label":["Ammonium","Nitrate","Wet\r\ndeposition","Dry\r\ndeposition","Sediment\r\nflux","Nitrification","Denitrification"],"color.background":["#005581","#005581","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#E20177"],"color.border":["#005581","#005581","#1ABDC9","#1ABDC9","#1ABDC9","#E20177","#E20177"],"font.color":["#005581","#005581","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#E20177"],"shape":["square","square","dot","dot","dot","dot","dot"],"group":["Computed variable","Computed variable","Source","Source","Source","Both","Sink"],"x":[-0.646689359777615,0.0832883604915984,0.37173856714508,-0.382566621969393,-1,-0.317049495332206,1],"y":[0.211288772739262,-0.176250815391748,0.70689866633848,1,-0.530073279323216,-1,-0.662926012929241]},"edges":{"from":["3","4","3","4","5","5","1","6","2"],"to":["1","1","2","2","1","2","6","2","7"],"origin":["Wet\r\ndeposition","Dry\r\ndeposition","Wet\r\ndeposition","Dry\r\ndeposition","Sediment\r\nflux","Sediment\r\nflux","Ammonium","Nitrification","Nitrate"],"destination":["Ammonium","Ammonium","Nitrate","Nitrate","Ammonium","Nitrate","Nitrification","Nitrate","Denitrification"],"flux":["source","source","source","source","source","source","sink","source","sink"],"label":[null,null,null,null,"DO, T","DO, T","DO, T","DO, T","DO,T\r\nNO3"],"color":["#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#E20177","#1ABDC9","#E20177"],"font.color":["#9c734e","#9c734e","#9c734e","#9c734e","#9c734e","#9c734e","#9c734e","#9c734e","#9c734e"],"font.size":[10,10,10,10,10,10,10,10,10]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false,"shadow":{"enabled":true,"size":10}},"manipulation":{"enabled":false},"edges":{"smooth":false,"arrows":"to"},"physics":{"stabilization":false},"layout":{"randomSeed":3,"hierarchical":{"enabled":true,"blockShifting":true,"edgeMinimization":false}},"interaction":{"hover":true},"autoResize":true,"clickToUse":true},"groups":["Computed variable","Source","Both","Sink"],"width":"100%","height":null,"idselection":{"enabled":true,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","igraphlayout":{"type":"square"},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);","highlight":{"enabled":true,"hoverNearest":true,"degree":1,"algorithm":"all","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":false,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-3c5a0e2e50cff3786001">{"x":{"nodes":{"id":[1,2,3,4,5,6,7,8,9],"nodename":["Ammonium","Nitrate","Wet\r\ndeposition","Dry\r\ndeposition","Sediment\r\nflux","Nitrification","Denitrification","Anammox","DRNA"],"nodetype":["Computed variable","Computed variable","Source","Source","Source","Both","Sink","Sink","Both"],"label":["Ammonium","Nitrate","Wet\r\ndeposition","Dry\r\ndeposition","Sediment\r\nflux","Nitrification","Denitrification","Anammox","DRNA"],"color.background":["#005581","#005581","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#E20177","#E20177","#1ABDC9"],"color.border":["#005581","#005581","#1ABDC9","#1ABDC9","#1ABDC9","#E20177","#E20177","#E20177","#E20177"],"font.color":["#005581","#005581","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#E20177","#E20177","#1ABDC9"],"shape":["square","square","dot","dot","dot","dot","dot","dot","dot"],"group":["Computed variable","Computed variable","Source","Source","Source","Both","Sink","Sink","Both"],"x":[-0.259658457147286,0.215444351540541,-0.742642393475698,-0.0197252123381236,0.390066491010361,-0.426797022274237,1,-1,0.875682923150873],"y":[-0.211650048575815,0.136001978009113,0.711265242150891,1,-0.983507223413091,-1,0.692063847500973,-0.100481004910917,-0.403528784873478]},"edges":{"from":["3","4","3","4","5","5","1","6","2","1","2","2","9"],"to":["1","1","2","2","1","2","6","2","7","8","8","9","1"],"origin":["Wet\r\ndeposition","Dry\r\ndeposition","Wet\r\ndeposition","Dry\r\ndeposition","Sediment\r\nflux","Sediment\r\nflux","Ammonium","Nitrification","Nitrate","Ammonium","Nitrate","Nitrate","DRNA"],"destination":["Ammonium","Ammonium","Nitrate","Nitrate","Ammonium","Nitrate","Nitrification","Nitrate","Denitrification","Anammox","Anammox","DRNA","Ammonium"],"flux":["source","source","source","source","source","source","sink","source","sink","sink","sink","sink","source"],"label":[null,null,null,null,"DO, T","DO, T","DO, T","DO, T","DO,T\r\nNO3","DO","DO","DO","DO"],"color":["#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#1ABDC9","#E20177","#1ABDC9","#E20177","#E20177","#E20177","#E20177","#1ABDC9"],"font.color":["#9c734e","#9c734e","#9c734e","#9c734e","#9c734e","#9c734e","#9c734e","#9c734e","#9c734e","#9c734e","#9c734e","#9c734e","#9c734e"],"font.size":[10,10,10,10,10,10,10,10,10,10,10,10,10]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false,"shadow":{"enabled":true,"size":10}},"manipulation":{"enabled":false},"edges":{"smooth":false,"arrows":"to"},"physics":{"stabilization":false},"layout":{"randomSeed":23},"interaction":{"hover":true},"autoResize":false,"clickToUse":true},"groups":["Computed variable","Source","Both","Sink"],"width":"100%","height":null,"idselection":{"enabled":true,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","igraphlayout":{"type":"square"},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);","highlight":{"enabled":true,"hoverNearest":true,"degree":1,"algorithm":"all","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":false,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"}},"evals":[],"jsHooks":[]}</script>
 <table>
 <caption>
 <span id="tab:tab-ConModAmmNit">Table 3.3: </span><strong>Constituent model properties: AmmoniumNitrate</strong>
@@ -703,6 +705,30 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 </tr>
 <tr>
 <td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppIN.html#Anammox-3"><bmtpink>Anaerobic oxidation of ammonium</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Anammox parameters<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppIN.html#DRNA-3"><bmtpink>Dissimilatory reduction of nitrate to ammonium</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>DNRA parameters
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 <a href="AppConstits.html#WQVarNit">Nitrate</a>
 </td>
 <td style="text-align:left;">
@@ -763,10 +789,35 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <span class="math inline">\(\cdot\blockindent\)</span>Atmospheric parameters
 </td>
 </tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppIN.html#Anammox-3"><bmtpink>Anaerobic oxidation of ammonium</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>Anammox parameters<br><span class="math inline">\(\cdot\blockindent\)</span>Ammonium<br><span class="math inline">\(\cdot\blockindent\)</span>Nitrate
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+<a href="AppIN.html#DRNA-3"><bmtpink>Dissimilatory reduction of nitrate to ammonium</bmtpink></a>
+</td>
+<td style="text-align:left;width: 40%; ">
+<span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>DNRA parameters
+</td>
+</tr>
 </tbody>
 </table>
-<p>This is a slightly more complex model than those described previously, and this reflects the complexity of inorganic nitrogenous environmental chemistry. In addition to specification of two computed variables and their respective sediment flux properties, rates and related parameters for nitrification and denitrification are also specifiable. By design, the library defaults for these processes are set to zero so that all processes are initially inactive. Users may activate these processes by specifying non-zero rate parameters.</p>
-<p>Whilst dissolved oxygen potentially modifies some processes described to this point (e.g. computed sediment flux rates), nitrification is the first of these processes that also potentially consumes dissolved oxygen. Specifically, if nitrification is simulated (i.e. non-zero rate parameters are specified) and allowed to include the effect of dissolved oxygen (the default), then dissolved oxygen concentrations are drawn down as the process operates.</p>
+<p>This is a slightly more complex model than those described previously, and this reflects the complexity of inorganic nitrogenous environmental chemistry. In addition to specification of two computed variables and their respective sediment flux properties, rates and related parameters for nitrification and denitrification are also specifiable. By design, the library defaults for these processes are set to zero so that all processes are initially inactive. Users may activate these processes by specifying non-zero rate parameters.
+odel class: Inorganic nitrogen
+Whilst dissolved oxygen potentially modifies some processes described to this point (e.g. computed sediment flux rates), nitrification is the first of these processes that also potentially consumes dissolved oxygen. Specifically, if nitrification is simulated (i.e. non-zero rate parameters are specified) and allowed to include the effect of dissolved oxygen (the default), then dissolved oxygen concentrations are drawn down as the process operates.</p>
 <table>
 <caption>
 <span id="tab:tab-ConModANDO">Table 3.4: </span><strong>Complementary lower order computed variables: AmmoniumNitrate</strong>
@@ -804,7 +855,6 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 </tr>
 </tbody>
 </table>
-<p>Other inorganic nitrogen processes are also available within the WQM, including anaerobic oxidation of ammonia and dissimilatory nitrate reduction to ammonium (DNRA), however these require the intermediate nitrogen computed variables noted in Appendix <a href="AppIN.html#Nitrif-3">F.2</a>. Contact <a href="mailto:support@tuflow.com" class="email">support@tuflow.com</a> for assistance.</p>
 </div>
 </div>
 <div id="ConModInorgP-3" class="section level3" number="3.2.5">

@@ -299,8 +299,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="F.1" data-path="AppIN.html"><a href="AppIN.html#SedAmmNitProd-3"><i class="fa fa-check"></i><b>F.1</b> Sediment ammonium and nitrate flux</a></li>
 <li class="chapter" data-level="F.2" data-path="AppIN.html"><a href="AppIN.html#Nitrif-3"><i class="fa fa-check"></i><b>F.2</b> Nitrification</a></li>
 <li class="chapter" data-level="F.3" data-path="AppIN.html"><a href="AppIN.html#Denitrif-3"><i class="fa fa-check"></i><b>F.3</b> Denitrification</a></li>
-<li class="chapter" data-level="F.4" data-path="AppIN.html"><a href="AppIN.html#WetDepIN-3"><i class="fa fa-check"></i><b>F.4</b> Wet deposition of inorganic nitrogen</a></li>
-<li class="chapter" data-level="F.5" data-path="AppIN.html"><a href="AppIN.html#DryDepIN-3"><i class="fa fa-check"></i><b>F.5</b> Dry deposition of inorganic nitrogen</a></li>
+<li class="chapter" data-level="F.4" data-path="AppIN.html"><a href="AppIN.html#Anammox-3"><i class="fa fa-check"></i><b>F.4</b> Anaerobic oxidation of ammonium</a></li>
+<li class="chapter" data-level="F.5" data-path="AppIN.html"><a href="AppIN.html#DRNA-3"><i class="fa fa-check"></i><b>F.5</b> Dissimilatory reduction of nitrate to ammonium</a></li>
+<li class="chapter" data-level="F.6" data-path="AppIN.html"><a href="AppIN.html#WetDepIN-3"><i class="fa fa-check"></i><b>F.6</b> Wet deposition of inorganic nitrogen</a></li>
+<li class="chapter" data-level="F.7" data-path="AppIN.html"><a href="AppIN.html#DryDepIN-3"><i class="fa fa-check"></i><b>F.7</b> Dry deposition of inorganic nitrogen</a></li>
 </ul></li>
 <li class="chapter" data-level="G" data-path="AppIP.html"><a href="AppIP.html"><i class="fa fa-check"></i><b>G</b> Processes: inorganic phosphorus</a>
 <ul>
@@ -954,12 +956,20 @@ end material</code></pre>
 <p><a href="AppCommands.html#WQDenitrifParsExp"><span class="math inline">\(\blockindent\)</span> denitrification ==</a> exponential, <a href="AppParams.html#WQParRdenit"><span class="math inline">\(R_{denit}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParKdenitO2Exp"><span class="math inline">\(K_{denit-O_2-exp}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParthetadenit"><span class="math inline">\(\theta_{denit}^{NO_3}\)</span></a></p>
 </blockquote>
 <p>The first argument (either “michaelis menten” or “exponential”) activates a different denitrification model (Equation <a href="AppIN.html#eq:equ-pel-denit-rateMM">(F.5)</a> or Equation <a href="AppIN.html#eq:equ-pel-denit-rateExp">(F.6)</a>, respectively).</p>
-<p>Ammonium and nitrate sediment flux, nitrification and denitrification calculations are all set to be dependent on dissolved oxygen concentrations by default. Although not recommended, the following will switch off this dependence for all these processes by setting the term labelled “Influence of oxygen” in Equations <a href="AppIN.html#eq:equ-sed-amm-flux">(F.1)</a>, <a href="AppIN.html#eq:equ-pel-nitrif-rate">(F.3)</a> and <a href="AppIN.html#eq:equ-pel-denit-rateMM">(F.5)</a> or <a href="AppIN.html#eq:equ-pel-denit-rateExp">(F.6)</a> to a value of 1.0.</p>
+<p>Anaerobic oxidation of ammonium parameters (used in Equation <a href="AppIN.html#eq:equ-pel-anammox-rate">(F.9)</a>) are also set in a single command as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQAnammoxPars"><span class="math inline">\(\blockindent\)</span> anaerobic oxidation of ammonium ==</a> <a href="AppParams.html#WQParRanmx"><span class="math inline">\(R_{anmx}^{NH_4,NO_3}\)</span></a>, <a href="AppParams.html#WQParKanmxAmm"><span class="math inline">\(K_{anmx-NH_4}^{NH_4,NO_3}\)</span></a>, <a href="AppParams.html#WQParKanmxNit"><span class="math inline">\(K_{anmx-NO_3}^{NH_4,NO_3}\)</span></a></p>
+</blockquote>
+<p>Dissimilatory reduction of nitrate to ammonium parameters (used in Equation <a href="#eq:equ-pel-dnra-rate">(<strong>??</strong>)</a>) are set in a single command as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQDRNAPars"><span class="math inline">\(\blockindent\)</span> diss nitrate reduction to ammonium ==</a> <a href="AppParams.html#WQParRdrna"><span class="math inline">\(R_{DRNA}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParKdrna"><span class="math inline">\(K_{DRNA-O_2}^{NO_3}\)</span></a></p>
+</blockquote>
+<p>Ammonium and nitrate sediment flux, nitrification, denitrification, anammox and DRNA calculations are all set to be dependent on dissolved oxygen concentrations by default. Although not recommended, the following will switch off this dependence for all these processes.</p>
 <blockquote>
 <p><a href="AppCommands.html#WQAmmOxy"><span class="math inline">\(\blockindent\)</span> oxygen ==</a> off</p>
 </blockquote>
-<p>This command overrides any previously specified values of <span class="math inline">\(K_{sed-O_2}^{NH_4}\)</span>, <span class="math inline">\(K_{sed-O_2}^{NO_3}\)</span>, <span class="math inline">\(K_{nitrif-O_2}^{NH_4}\)</span>, <span class="math inline">\(K_{denit-O_2-MM}^{NO_3}\)</span> and <span class="math inline">\(K_{denit-O_2-exp}^{NO_3}\)</span>. It should be specified after all other related commands if the influence of oxygen on nitrogen processes is to be switched off.</p>
-<p>Atmospheric deposition parameters (used in Equations <a href="AppIN.html#eq:equ-pel-atm-TN-wammsplit">(F.8)</a>, <a href="AppIN.html#eq:equ-pel-atm-TN-wnitsplit">(F.9)</a>, <a href="AppIN.html#eq:equ-pel-atm-TN-dammsplit">(F.12)</a> and <a href="AppIN.html#eq:equ-pel-atm-TN-ditsplit">(F.13)</a>) are set via the command:</p>
+<p>This command overrides any previously specified values of <span class="math inline">\(K_{sed-O_2}^{NH_4}\)</span>, <span class="math inline">\(K_{sed-O_2}^{NO_3}\)</span>, <span class="math inline">\(K_{nitrif-O_2}^{NH_4}\)</span>, <span class="math inline">\(K_{denit-O_2-MM}^{NO_3}\)</span> and <span class="math inline">\(K_{denit-O_2-exp}^{NO_3}\)</span>. It should be specified after all other related commands if the influence of oxygen on nitrogen processes is to be switched off. Setting this command to ‘off’ will completely disable anammox and DRNA calculations.</p>
+<p>Atmospheric deposition parameters (used in Equations <a href="AppIN.html#eq:equ-pel-atm-TN-wammsplit">(F.13)</a>, <a href="AppIN.html#eq:equ-pel-atm-TN-wnitsplit">(F.14)</a>, <a href="AppIN.html#eq:equ-pel-atm-TN-dammsplit">(F.17)</a> and <a href="AppIN.html#eq:equ-pel-atm-TN-ditsplit">(F.18)</a>) are set via the command:</p>
 <blockquote>
 <p><a href="AppCommands.html#WQAtmNPars"><span class="math inline">\(\blockindent\)</span> atmospheric deposition ==</a> <a href="AppParams.html#WQParAtmWetTN"><span class="math inline">\(\left[TN\right]_{rain}\)</span></a>, <a href="AppParams.html#WQParAtmDryTN"><span class="math inline">\(R_{atm-dry}^{TN}\)</span></a>, <a href="AppParams.html#WQParAtmWetNFrac"><span class="math inline">\(f_{TN}^{NO_3}\)</span></a></p>
 </blockquote>
@@ -1217,7 +1227,7 @@ end material</code></pre>
 </div>
 <div id="ConModPhyResp-6" class="section level6" number="4.7.3.5.1.9">
 <h6><span class="header-section-number">4.7.3.5.1.9</span> Respiration</h6>
-<p>Respiration parameters are set via the following command. The first two parameters are used directly to compute the respiration rate <span class="math inline">\(R_{resp\langle computed\rangle}^{phy}\)</span> via Equation <a href="PhyRates-3.html#eq:eq-pel-phy-resp">(I.6)</a>. The third and fourth parameters are used to compute excretive and mortality fluxes in Equations <a href="PhyLosses-3.html#eq:eq-pel-phy-Cexcr">(L.1)</a> and <a href="PhyLosses-3.html#eq:eq-pel-phy-Cmort">(L.2)</a>, respectively. Both these equations use the respiration rate computed from the first two parameters <span class="math inline">\(R_{resp}^{phy}\)</span> and <span class="math inline">\(\theta_{resp}^{phy}\)</span>. Although not strictly related to respiration, the final parameter does represent a reduction of biomass and is used to compute exudation loss using Equation <a href="PhyRates-3.html#eq:eq-pel-phy-exud">(I.10)</a>.</p>
+<p>Respiration parameters are set via the following command. The first two parameters are used directly to compute the respiration rate <span class="math inline">\(R_{resp\langle computed\rangle}^{phy}\)</span> via Equation <a href="PhyRates-3.html#eq:eq-pel-phy-resp">(I.6)</a>. The third and fourth parameters are used to compute excretive and mortality fluxes in Equations <a href="PhyLosses-3.html#eq:eq-pel-phy-Cexcr">(L.1)</a> and <a href="PhyLosses-3.html#eq:eq-pel-phy-Cmort">(L.2)</a>, respectively. Both these equations use the respiration rate computed from the first two parameters <span class="math inline">\(R_{resp}^{phy}\)</span> and <span class="math inline">\(\theta_{resp}^{phy}\)</span>. Although not strictly related to respiration, the final parameter does represent a reduction of biomass and is used to compute exudation loss using Equation <a href="PhyRates-3.html#eq:eq-pel-phy-exud">(I.11)</a>.</p>
 <blockquote>
 <p><a href="AppCommands.html#WQPhyResp"><span class="math inline">\(\blockindent\)</span> respiration ==</a> <a href="AppParams.html#WQParRRespPhy"><span class="math inline">\(R_{resp}^{phy}\)</span></a>, <a href="AppParams.html#WQParthetarespphy"><span class="math inline">\(\theta_{resp}^{phy}\)</span></a>, <a href="AppParams.html#WQParftrueresp"><span class="math inline">\(f_{true-resp}^{phy}\)</span></a>, <a href="AppParams.html#WQParfdomloss"><span class="math inline">\(f_{excr-loss}^{phy}\)</span></a>, <a href="AppParams.html#WQParfracexud"><span class="math inline">\(f_{exud}^{phy}\)</span></a></p>
 </blockquote>
@@ -1258,14 +1268,14 @@ end material</code></pre>
 </blockquote>
 <p>or</p>
 <ul>
-<li>Constant with density correction (as per Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settdens">(I.12)</a>)</li>
+<li>Constant with density correction (as per Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settdens">(I.17)</a>)</li>
 </ul>
 <blockquote>
-<p><a href="#WQPhySettRho"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="#WQPhySettRho">thermal</a>, <a href="#WQParThermV"><span class="math inline">\(V_{settle}^{phy}\)</span></a></p>
+<p><a href="AppCommands.html#WQPhySettRho"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="AppCommands.html#WQPhySettRho">thermal</a>, <a href="#WQParThermV"><span class="math inline">\(V_{settle}^{phy}\)</span></a></p>
 </blockquote>
 <p>or</p>
 <ul>
-<li>Stokes (used in Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settstokes">(I.13)</a>), where density is required to be simulated as a computed variable, and thus requires the specification of <span class="math inline">\(I_K\)</span>.</li>
+<li>Stokes (used in Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settstokes">(I.18)</a>), where density is required to be simulated as a computed variable, and thus requires the specification of <span class="math inline">\(I_K\)</span>.</li>
 </ul>
 <blockquote>
 <p><a href="AppCommands.html#WQPhySettStokes"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="AppCommands.html#WQPhySettStokes">stokes</a>, <a href="AppParams.html#WQParKstoSett"><span class="math inline">\(I_{K-sto}\)</span></a></p>

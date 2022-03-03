@@ -299,8 +299,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="F.1" data-path="AppIN.html"><a href="AppIN.html#SedAmmNitProd-3"><i class="fa fa-check"></i><b>F.1</b> Sediment ammonium and nitrate flux</a></li>
 <li class="chapter" data-level="F.2" data-path="AppIN.html"><a href="AppIN.html#Nitrif-3"><i class="fa fa-check"></i><b>F.2</b> Nitrification</a></li>
 <li class="chapter" data-level="F.3" data-path="AppIN.html"><a href="AppIN.html#Denitrif-3"><i class="fa fa-check"></i><b>F.3</b> Denitrification</a></li>
-<li class="chapter" data-level="F.4" data-path="AppIN.html"><a href="AppIN.html#WetDepIN-3"><i class="fa fa-check"></i><b>F.4</b> Wet deposition of inorganic nitrogen</a></li>
-<li class="chapter" data-level="F.5" data-path="AppIN.html"><a href="AppIN.html#DryDepIN-3"><i class="fa fa-check"></i><b>F.5</b> Dry deposition of inorganic nitrogen</a></li>
+<li class="chapter" data-level="F.4" data-path="AppIN.html"><a href="AppIN.html#Anammox-3"><i class="fa fa-check"></i><b>F.4</b> Anaerobic oxidation of ammonium</a></li>
+<li class="chapter" data-level="F.5" data-path="AppIN.html"><a href="AppIN.html#DRNA-3"><i class="fa fa-check"></i><b>F.5</b> Dissimilatory reduction of nitrate to ammonium</a></li>
+<li class="chapter" data-level="F.6" data-path="AppIN.html"><a href="AppIN.html#WetDepIN-3"><i class="fa fa-check"></i><b>F.6</b> Wet deposition of inorganic nitrogen</a></li>
+<li class="chapter" data-level="F.7" data-path="AppIN.html"><a href="AppIN.html#DryDepIN-3"><i class="fa fa-check"></i><b>F.7</b> Dry deposition of inorganic nitrogen</a></li>
 </ul></li>
 <li class="chapter" data-level="G" data-path="AppIP.html"><a href="AppIP.html"><i class="fa fa-check"></i><b>G</b> Processes: inorganic phosphorus</a>
 <ul>
@@ -4608,6 +4610,153 @@ The proportion of photolysed refractory dissolved organic matter that is is conv
 <a href="AppCommands.html#WQRefphotoPars">ref photolysis ==</a><br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 <a href="AppOrg.html#OrgPhot-3">science</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 15%; vertical-align:top;">
+<a id="WQParRanmx">Anaerobic oxidation of ammonium rate</a>
+</td>
+<td style="text-align:center;width: 4%; vertical-align:middle;">
+<span class="math inline">\(R_{anmx}^{NH_4,NO_3}\)</span>
+</td>
+<td style="text-align:center;width: 12%; ">
+/d
+</td>
+<td style="text-align:center;width: 8%; ">
+(0, 0.05)
+</td>
+<td style="text-align:center;width: 2%; ">
+0<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+0
+</td>
+<td style="text-align:left;width: 47%; ">
+The rate at which ammonium is oxidised (consuming nitrate) to nitrogen gas N<span class="math inline">\(_2\)</span> at 20<span class="math inline">\(^o\)</span>C excluding the influence of ambient ammonium and nitrate concentrations. A value of 0.0 will switch off anammox
+</td>
+<td style="text-align:left;width: 12%; ">
+<a href="AppCommands.html#WQAnammoxPars">anaerobic oxidation of ammonium ==</a><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+<a href="AppIN.html#Anammox-3">science</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 15%; vertical-align:top;">
+<a id="WQParKanmxAmm">Half saturation ammonium concentration for anammox</a>
+</td>
+<td style="text-align:center;width: 4%; vertical-align:middle;">
+<span class="math inline">\(K_{anmx-NH_4}^{NH_4,NO_3}\)</span>
+</td>
+<td style="text-align:center;width: 12%; ">
+mg/L NH<span class="math inline">\(_4\)</span>-N<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span> NH<span class="math inline">\(_4\)</span>-N
+</td>
+<td style="text-align:center;width: 8%; ">
+(0, 10)<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+(0, 714)
+</td>
+<td style="text-align:center;width: 2%; ">
+1.75<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+125
+</td>
+<td style="text-align:left;width: 47%; ">
+The ammonium concentration for which the computed consumption of ammonium due to anaerobic oxidation would be half the corresponding anaerobic oxidation rate, excluding the influence of nitrate. Cannot be varied spatially
+</td>
+<td style="text-align:left;width: 12%; ">
+<a href="AppCommands.html#WQAnammoxPars">anaerobic oxidation of ammonium ==</a><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+<a href="AppIN.html#Anammox-3">science</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 15%; vertical-align:top;">
+<a id="WQParKanmxNit">Half saturation nitrate concentration for anammox</a>
+</td>
+<td style="text-align:center;width: 4%; vertical-align:middle;">
+<span class="math inline">\(K_{anmx-NO_3}^{NH_4,NO_3}\)</span>
+</td>
+<td style="text-align:center;width: 12%; ">
+mg/L NO<span class="math inline">\(_3\)</span>-N<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span> NO<span class="math inline">\(_3\)</span>-N
+</td>
+<td style="text-align:center;width: 8%; ">
+(0, 10)<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+(0, 714)
+</td>
+<td style="text-align:center;width: 2%; ">
+1.75<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+125
+</td>
+<td style="text-align:left;width: 47%; ">
+The nitrate concentration for which the computed consumption of ammonium due to anaerobic oxidation would be half the corresponding anaerobic oxidation rate, excluding the influence of ammonium. Cannot be varied spatially
+</td>
+<td style="text-align:left;width: 12%; ">
+<a href="AppCommands.html#WQAnammoxPars">anaerobic oxidation of ammonium ==</a><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+<a href="AppIN.html#Anammox-3">science</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 15%; vertical-align:top;">
+<a id="WQParRdrna">Anaerobic oxidation of ammonium rate</a>
+</td>
+<td style="text-align:center;width: 4%; vertical-align:middle;">
+<span class="math inline">\(R_{DRNA}^{NO_3}\)</span>
+</td>
+<td style="text-align:center;width: 12%; ">
+/d
+</td>
+<td style="text-align:center;width: 8%; ">
+(0, 0.05)
+</td>
+<td style="text-align:center;width: 2%; ">
+0<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+0
+</td>
+<td style="text-align:left;width: 47%; ">
+The rate at which nitrate is reduced to ammonium at 20<span class="math inline">\(^o\)</span>C excluding the influence of ambient nitrate concentrations. A value of 0.0 will switch off DRNA
+</td>
+<td style="text-align:left;width: 12%; ">
+<a href="AppCommands.html#WQDRNAPars">diss nitrate reduction to ammonium ==</a><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+<a href="AppIN.html#DRNA-3">science</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 15%; vertical-align:top;">
+<a id="WQParKdrna">Half saturation oxygen concentration for DRNA</a>
+</td>
+<td style="text-align:center;width: 4%; vertical-align:middle;">
+<span class="math inline">\(K_{DRNA-O_2}^{NO_3}\)</span>
+</td>
+<td style="text-align:center;width: 12%; ">
+mg/L O<span class="math inline">\(_2\)</span><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span> O<span class="math inline">\(_2\)</span>
+</td>
+<td style="text-align:center;width: 8%; ">
+(0, 10)<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+(0, 312.5)
+</td>
+<td style="text-align:center;width: 2%; ">
+4<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+125
+</td>
+<td style="text-align:left;width: 47%; ">
+The oxygen concentration for which the computed reduction of nitrate to ammonium would be half the corresponding rate. Cannot be varied spatially
+</td>
+<td style="text-align:left;width: 12%; ">
+<a href="AppCommands.html#WQDRNAPars">diss nitrate reduction to ammonium ==</a><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+<a href="AppIN.html#DRNA-3">science</a>
 </td>
 </tr>
 </tbody>

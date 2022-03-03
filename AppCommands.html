@@ -299,8 +299,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="F.1" data-path="AppIN.html"><a href="AppIN.html#SedAmmNitProd-3"><i class="fa fa-check"></i><b>F.1</b> Sediment ammonium and nitrate flux</a></li>
 <li class="chapter" data-level="F.2" data-path="AppIN.html"><a href="AppIN.html#Nitrif-3"><i class="fa fa-check"></i><b>F.2</b> Nitrification</a></li>
 <li class="chapter" data-level="F.3" data-path="AppIN.html"><a href="AppIN.html#Denitrif-3"><i class="fa fa-check"></i><b>F.3</b> Denitrification</a></li>
-<li class="chapter" data-level="F.4" data-path="AppIN.html"><a href="AppIN.html#WetDepIN-3"><i class="fa fa-check"></i><b>F.4</b> Wet deposition of inorganic nitrogen</a></li>
-<li class="chapter" data-level="F.5" data-path="AppIN.html"><a href="AppIN.html#DryDepIN-3"><i class="fa fa-check"></i><b>F.5</b> Dry deposition of inorganic nitrogen</a></li>
+<li class="chapter" data-level="F.4" data-path="AppIN.html"><a href="AppIN.html#Anammox-3"><i class="fa fa-check"></i><b>F.4</b> Anaerobic oxidation of ammonium</a></li>
+<li class="chapter" data-level="F.5" data-path="AppIN.html"><a href="AppIN.html#DRNA-3"><i class="fa fa-check"></i><b>F.5</b> Dissimilatory reduction of nitrate to ammonium</a></li>
+<li class="chapter" data-level="F.6" data-path="AppIN.html"><a href="AppIN.html#WetDepIN-3"><i class="fa fa-check"></i><b>F.6</b> Wet deposition of inorganic nitrogen</a></li>
+<li class="chapter" data-level="F.7" data-path="AppIN.html"><a href="AppIN.html#DryDepIN-3"><i class="fa fa-check"></i><b>F.7</b> Dry deposition of inorganic nitrogen</a></li>
 </ul></li>
 <li class="chapter" data-level="G" data-path="AppIP.html"><a href="AppIP.html"><i class="fa fa-check"></i><b>G</b> Processes: inorganic phosphorus</a>
 <ul>
@@ -1181,7 +1183,7 @@ Used in a phytoplankton constituent model block to set nitrogen and phosphorus (
 Used in a phytoplankton constituent model block to turn off settling in both basic and advanced phytoplankton constituent models. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySettleB-6">4.7.3.5.1.12</a>.
 </td>
 <td style="text-align:left;">
-<a href="AppCommands.html#WQPhySettConst">constant</a>,<a href="#WQPhySettRho">thermal</a>,<br><a href="AppCommands.html#WQPhySettStokes">stokes</a>,<a href="AppCommands.html#WQPhySettMotile">motile</a>
+<a href="AppCommands.html#WQPhySettConst">constant</a>,<a href="AppCommands.html#WQPhySettRho">thermal</a>,<br><a href="AppCommands.html#WQPhySettStokes">stokes</a>,<a href="AppCommands.html#WQPhySettMotile">motile</a>
 </td>
 </tr>
 <tr>
@@ -1192,11 +1194,12 @@ Used in a phytoplankton constituent model block to turn off settling in both bas
 Used in a phytoplankton constituent model block to set a constant settling velocity in both basic and advanced phytoplankton constituent models. A negative value specified in this command is a downwards velocity. Setting the settling velocity to zero in this model is the same as using settling == none. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySettleB-6">4.7.3.5.1.12</a>.
 </td>
 <td style="text-align:left;">
-<a href="AppCommands.html#WQPhySettNone">none</a>,<a href="#WQPhySettRho">thermal</a>,<br><a href="AppCommands.html#WQPhySettStokes">stokes</a>,<a href="AppCommands.html#WQPhySettMotile">motile</a>
+<a href="AppCommands.html#WQPhySettNone">none</a>,<a href="AppCommands.html#WQPhySettRho">thermal</a>,<br><a href="AppCommands.html#WQPhySettStokes">stokes</a>,<a href="AppCommands.html#WQPhySettMotile">motile</a>
 </td>
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="WQPhySettRho"><bmtpink>settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="PhyRates-3.html#PhySettleConstD-5">thermal</a>,<a href="AppParams.html#WQParConV"><span class="math inline">\(V_{settle}^{phy}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
 Used in a phytoplankton constituent model block to set a constant settling velocity in both basic and advanced phytoplankton constituent models, allowing for temperature effects to settling. A negative value specified in this command is a downwards velocity. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySettleB-6">4.7.3.5.1.12</a>.
@@ -1213,7 +1216,7 @@ Used in a phytoplankton constituent model block to set a constant settling veloc
 Used in a phytoplankton constituent model block to compute settling velocity via stokes settling laws in both basic and advanced phytoplankton constituent models. Density must be simulated as a computed variable for each phytoplankton group that uses this model, so must have cell density initial conditions and boundary conditions specified as per ordering rules. The specification of <span class="math inline">\(I_K\)</span> is not mandatory in this command. If it is not specified then the <span class="math inline">\(I_K\)</span> specified in the phytoplankton constituent model’s light limitation model will be used. If a light limitaton model is not specified, or uses <span class="math inline">\(I_S\)</span> instead of <span class="math inline">\(I_K\)</span>, then the library default value of <span class="math inline">\(I_K\)</span> is used. If <span class="math inline">\(I_K\)</span> is specified both in this stokes settling command and a phytoplankton constituent model light limitation function, then the value specified in the “light limitation ==” command is used, and the value specified in this command is ignored. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySettleB-6">4.7.3.5.1.12</a>.
 </td>
 <td style="text-align:left;">
-<a href="AppCommands.html#WQPhySettNone">none</a>,<a href="AppCommands.html#WQPhySettConst">constant</a>,<br><a href="#WQPhySettRho">thermal</a>,<a href="AppCommands.html#WQPhySettMotile">motile</a>
+<a href="AppCommands.html#WQPhySettNone">none</a>,<a href="AppCommands.html#WQPhySettConst">constant</a>,<br><a href="AppCommands.html#WQPhySettRho">thermal</a>,<a href="AppCommands.html#WQPhySettMotile">motile</a>
 </td>
 </tr>
 <tr>
@@ -1224,7 +1227,7 @@ Used in a phytoplankton constituent model block to compute settling velocity via
 Used in a phytoplankton constituent model block to compute settling velocity via motility functions that depend on ambient conditions, in only the advanced phytoplankton constituent model. The specification of <span class="math inline">\(I_K\)</span> is not mandatory in this command. If it is not specified then the <span class="math inline">\(I_K\)</span> specified in the phytoplankton constituent model’s light limitation model will be used. If a light limitaton model is not specified, or uses <span class="math inline">\(I_S\)</span> instead of <span class="math inline">\(I_K\)</span>, then the library default value of <span class="math inline">\(I_K\)</span> is used. If <span class="math inline">\(I_K\)</span> is specified both in this motile settling command and a phytoplankton constituent model light limitation function, then the value specified in the “light limitation ==” command is used, and the value specified in this command is ignored. Simulation construction section <a href="SimulationConstruction-1.html#ConModPhySettleA-6">4.7.3.5.2.4</a>.
 </td>
 <td style="text-align:left;">
-<a href="AppCommands.html#WQPhySettNone">none</a>,<a href="AppCommands.html#WQPhySettConst">constant</a>,<br><a href="#WQPhySettRho">thermal</a>,<a href="AppCommands.html#WQPhySettStokes">stokes</a>
+<a href="AppCommands.html#WQPhySettNone">none</a>,<a href="AppCommands.html#WQPhySettConst">constant</a>,<br><a href="AppCommands.html#WQPhySettRho">thermal</a>,<a href="AppCommands.html#WQPhySettStokes">stokes</a>
 </td>
 </tr>
 <tr>
@@ -1507,7 +1510,7 @@ Used to terminate an organics constituent model block. Must follow an <a href="A
 <a id="WQOrgOxy"><bmtpink>oxygen ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppOrg.html#SedDissOrgProd-3">on;off</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an organics constituent model block to switch the dependence of all processes on dissolved oxygen on or off. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLab-5">4.8.3.5.1</a>.
+Used in an organics constituent model block to switch the dependence of all processes on dissolved oxygen on or off. Anammox and DRNA processes will be switched off entirely if this command is issued asnd set to ‘off’. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLab-5">4.8.3.5.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1629,6 +1632,28 @@ Used in an organics constituent model block to parameterise light attenuation du
 </td>
 <td style="text-align:left;">
 Used in an organics constituent model block to parameterise the proportion of photolysis of refractory dissolved organic matter that produces labile dissolved organic matter. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLRef-5">4.8.3.5.2</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="WQAnammoxPars"><bmtpink>anaerobic oxidation of ammonium ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParRanmx"><span class="math inline">\(R_{anmx}^{NH_4,NO_3}\)</span></a>,<a href="AppParams.html#WQParKanmxAmm"><span class="math inline">\(K_{anmx-NH_4}^{NH_4,NO_3}\)</span></a>,<a href="AppParams.html#WQParKanmxNit"><span class="math inline">\(K_{anmx-NO_3}^{NH_4,NO_3}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Used in an inorganic nitrogen constituent model block to control anaerobic oxidation of ammonium and its response to ambient ammonium and nitrate concentrations. Simulation construction section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="WQDRNAPars"><bmtpink>diss nitrate reduction to ammonium ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParRdrna"><span class="math inline">\(R_{DRNA}^{NO_3}\)</span></a>,<a href="AppParams.html#WQParKdrna"><span class="math inline">\(K_{DRNA-O_2}^{NO_3}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Used in an inorganic nitrogen constituent model block to control dissimilatory reduction of nitrate to ammonium and its response to ambient oxygen concentrations. Simulation construction section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>

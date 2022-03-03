@@ -299,8 +299,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="F.1" data-path="AppIN.html"><a href="AppIN.html#SedAmmNitProd-3"><i class="fa fa-check"></i><b>F.1</b> Sediment ammonium and nitrate flux</a></li>
 <li class="chapter" data-level="F.2" data-path="AppIN.html"><a href="AppIN.html#Nitrif-3"><i class="fa fa-check"></i><b>F.2</b> Nitrification</a></li>
 <li class="chapter" data-level="F.3" data-path="AppIN.html"><a href="AppIN.html#Denitrif-3"><i class="fa fa-check"></i><b>F.3</b> Denitrification</a></li>
-<li class="chapter" data-level="F.4" data-path="AppIN.html"><a href="AppIN.html#WetDepIN-3"><i class="fa fa-check"></i><b>F.4</b> Wet deposition of inorganic nitrogen</a></li>
-<li class="chapter" data-level="F.5" data-path="AppIN.html"><a href="AppIN.html#DryDepIN-3"><i class="fa fa-check"></i><b>F.5</b> Dry deposition of inorganic nitrogen</a></li>
+<li class="chapter" data-level="F.4" data-path="AppIN.html"><a href="AppIN.html#Anammox-3"><i class="fa fa-check"></i><b>F.4</b> Anaerobic oxidation of ammonium</a></li>
+<li class="chapter" data-level="F.5" data-path="AppIN.html"><a href="AppIN.html#DRNA-3"><i class="fa fa-check"></i><b>F.5</b> Dissimilatory reduction of nitrate to ammonium</a></li>
+<li class="chapter" data-level="F.6" data-path="AppIN.html"><a href="AppIN.html#WetDepIN-3"><i class="fa fa-check"></i><b>F.6</b> Wet deposition of inorganic nitrogen</a></li>
+<li class="chapter" data-level="F.7" data-path="AppIN.html"><a href="AppIN.html#DryDepIN-3"><i class="fa fa-check"></i><b>F.7</b> Dry deposition of inorganic nitrogen</a></li>
 </ul></li>
 <li class="chapter" data-level="G" data-path="AppIP.html"><a href="AppIP.html"><i class="fa fa-check"></i><b>G</b> Processes: inorganic phosphorus</a>
 <ul>
@@ -543,7 +545,7 @@ Sediment fluxes of particulate organic matter cannot be specified using this app
 <h3><span class="header-section-number">N.3.1</span> Consumption</h3>
 <p>The breakdown rate from Equation <a href="AppOrg.html#eq:equ-pel-bdown-rate">(N.5)</a> is multiplied by the ambient refractory particulate organic matter concentration to compute its consumptive flux (loss) at each model timestep in each model cell via Equation <a href="AppOrg.html#eq:equ-pel-bdown-fluxcons">(N.6)</a>.</p>
 <p><span class="math display" id="eq:equ-pel-bdown-fluxcons">\[\begin{equation}
-  F_{bdn\langle computed\rangle}^{RPOM} = R_{bdn\langle computed\rangle}^{RPOM} \times \left[ RPOM \right]
+  \href{AppDiags.html#WQDiagBdn}{F_{bdn\langle computed\rangle}^{RPOM}} = R_{bdn\langle computed\rangle}^{RPOM} \times \left[ RPOM \right]
   \tag{N.6}
 \end{equation}\]</span></p>
 </div>
@@ -657,11 +659,11 @@ Sediment fluxes of particulate organic matter cannot be specified using this app
 <p>The activation rate from Equation <a href="AppOrg.html#eq:equ-pel-active-rate">(N.17)</a> is multiplied by the ambient refractory dissolved carbon, nitrogen and phosphorus concentrations to compute their respective consumptive fluxes (losses) at each model timestep in each model cell via Equation <a href="AppOrg.html#eq:equ-pel-active-fluxcons">(N.18)</a>.</p>
 <p><span class="math display" id="eq:equ-pel-active-fluxcons">\[\begin{equation}
 \left.\begin{aligned}
-  F_{act\langle computed\rangle}^{RDOC} =&amp; R_{act\langle computed\rangle}^{RDOM} \times \left[ RDOC \right]
+  \href{AppDiags.html#WQDiagActC}{F_{act\langle computed\rangle}^{RDOC}} =&amp; R_{act\langle computed\rangle}^{RDOM} \times \left[ RDOC \right]
 \\ \\  
-  F_{act\langle computed\rangle}^{RDON} =&amp; R_{act\langle computed\rangle}^{RDOM} \times \left[ RDON \right]
+  \href{AppDiags.html#WQDiagActN}{F_{act\langle computed\rangle}^{RDON}} =&amp; R_{act\langle computed\rangle}^{RDOM} \times \left[ RDON \right]
 \\ \\  
-  F_{act\langle computed\rangle}^{RDOP} =&amp; R_{act\langle computed\rangle}^{RDOM} \times \left[ RDOP \right]
+  \href{AppDiags.html#WQDiagActP}{F_{act\langle computed\rangle}^{RDOP}} =&amp; R_{act\langle computed\rangle}^{RDOM} \times \left[ RDOP \right]
 \end{aligned}\right\}
   \tag{N.18}
 \end{equation}\]</span></p>

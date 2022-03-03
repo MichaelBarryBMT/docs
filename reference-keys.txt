@@ -64,6 +64,11 @@ eq:equ-pel-denit-rateExp
 eq:equ-pel-denit-flux
 fig:fig-DeNitT
 fig:fig-DeNitK
+eq:equ-pel-anammox-stoi
+eq:equ-pel-anammox-rate
+eq:equ-pel-anmmox-flux
+eq:equ-pel-drna-rate
+eq:equ-pel-drna-flux
 eq:equ-pel-atm-TN-wammsplit
 eq:equ-pel-atm-TN-wnitsplit
 eq:equ-pel-atm-amm-wflux
@@ -93,9 +98,14 @@ eq:eq-pel-phy-resp
 fig:fig-PhyRtheta
 eq:eq-pel-phy-respSal
 eq:eq-pel-phy-respflx
-eq:eq-pel-phy-netppflx
+eq:eq-pel-phy-respflxN
+eq:eq-pel-phy-respflxP
 eq:eq-pel-phy-exud
 eq:eq-pel-phy-settflx
+eq:eq-pel-phy-settflxNB
+eq:eq-pel-phy-settflxNA
+eq:eq-pel-phy-settflxPB
+eq:eq-pel-phy-settflxPA
 eq:eq-pel-phy-settdens
 eq:eq-pel-phy-settstokes
 eq:eq-pel-phy-TLim1
@@ -401,6 +411,8 @@ AppIN
 SedAmmNitProd-3
 Nitrif-3
 Denitrif-3
+Anammox-3
+DRNA-3
 WetDepIN-3
 DryDepIN-3
 AppIP

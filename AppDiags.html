@@ -299,8 +299,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="F.1" data-path="AppIN.html"><a href="AppIN.html#SedAmmNitProd-3"><i class="fa fa-check"></i><b>F.1</b> Sediment ammonium and nitrate flux</a></li>
 <li class="chapter" data-level="F.2" data-path="AppIN.html"><a href="AppIN.html#Nitrif-3"><i class="fa fa-check"></i><b>F.2</b> Nitrification</a></li>
 <li class="chapter" data-level="F.3" data-path="AppIN.html"><a href="AppIN.html#Denitrif-3"><i class="fa fa-check"></i><b>F.3</b> Denitrification</a></li>
-<li class="chapter" data-level="F.4" data-path="AppIN.html"><a href="AppIN.html#WetDepIN-3"><i class="fa fa-check"></i><b>F.4</b> Wet deposition of inorganic nitrogen</a></li>
-<li class="chapter" data-level="F.5" data-path="AppIN.html"><a href="AppIN.html#DryDepIN-3"><i class="fa fa-check"></i><b>F.5</b> Dry deposition of inorganic nitrogen</a></li>
+<li class="chapter" data-level="F.4" data-path="AppIN.html"><a href="AppIN.html#Anammox-3"><i class="fa fa-check"></i><b>F.4</b> Anaerobic oxidation of ammonium</a></li>
+<li class="chapter" data-level="F.5" data-path="AppIN.html"><a href="AppIN.html#DRNA-3"><i class="fa fa-check"></i><b>F.5</b> Dissimilatory reduction of nitrate to ammonium</a></li>
+<li class="chapter" data-level="F.6" data-path="AppIN.html"><a href="AppIN.html#WetDepIN-3"><i class="fa fa-check"></i><b>F.6</b> Wet deposition of inorganic nitrogen</a></li>
+<li class="chapter" data-level="F.7" data-path="AppIN.html"><a href="AppIN.html#DryDepIN-3"><i class="fa fa-check"></i><b>F.7</b> Dry deposition of inorganic nitrogen</a></li>
 </ul></li>
 <li class="chapter" data-level="G" data-path="AppIP.html"><a href="AppIP.html"><i class="fa fa-check"></i><b>G</b> Processes: inorganic phosphorus</a>
 <ul>
@@ -516,7 +518,7 @@ Links
 <td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagDOSat">WQ_DIAG_O2_SAT_PCT</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Oxygen saturation
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -525,7 +527,7 @@ Oxygen saturation
 <td style="text-align:center;width: 10%; ">
 %
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 Dissolved oxygen percentage saturation that is the equivalent of the dissolved oxygen concentration at current temperature, salinity and pressure conditions
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -541,7 +543,7 @@ Equation <a href="AppO.html#eq:equ-oxy-sat">(D.3)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_ACTUAL_O2_SED_FLUX_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Oxygen sediment flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -552,7 +554,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The dynamically computed flux of oxygen across the sediment water interface. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be exchanged in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -568,7 +570,7 @@ Equation <a href="AppO.html#eq:equ-sed-do-flux">(D.4)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_O2_ATMOS_EXCHANGE_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Oxygen atmospheric flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -579,7 +581,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of atmospheric oxygen entering the water column. Positive (negative) values are fluxes to (from) the water column from (to) the atmosphere. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be exchanged in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -595,7 +597,7 @@ Equation <a href="AppO.html#eq:equ-atm-rear">(D.2)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_ACTUAL_SI_SED_FLUX_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Silicate sediment flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -606,7 +608,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The dynamically computed flux of silicate across the sediment water interface. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be exchanged in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -622,7 +624,7 @@ Equation <a href="AppSil.html#eq:equ-sed-sil-flux">(E.1)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_ACTUAL_NH4_SED_FLUX_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Ammonium sediment flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -633,7 +635,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The dynamically computed flux of ammonium across the sediment water interface. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be exchanged in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -649,7 +651,7 @@ Equation <a href="AppIN.html#eq:equ-sed-amm-flux">(F.1)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_ACTUAL_NO3_SED_FLUX_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Nitrate sediment flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -660,7 +662,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The dynamically computed flux of nitrate across the sediment water interface. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be exchanged in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -676,7 +678,7 @@ Equation <a href="AppIN.html#eq:equ-sed-amm-flux">(F.1)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_NITRIFICATION_MMOL_M3_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Nitrification flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -687,7 +689,7 @@ mg/L/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of ammonium N to nitrate N due to nitrification. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be exchanged in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -703,7 +705,7 @@ Equation <a href="AppIN.html#eq:equ-pel-nitrif-flux">(F.4)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_DENITRIFICATION_MMOL_M3_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Denitrification flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -714,7 +716,7 @@ mg/L/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of nitrate N to nitrogen gas N due to denitrification. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be exchanged in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -730,7 +732,7 @@ Equation <a href="AppIN.html#eq:equ-pel-denit-flux">(F.7)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_DIN_ATMOS_EXCHANGE_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Nitrogen atmospheric flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -741,14 +743,14 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The combined wet (rainfall) and dry deposition of inorganic nitrogen across the atmosphere water interface. Positive values are fluxes to the water column from the atmosphere. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be exchanged in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
 <a href="ProcessDescriptions-1.html#ConModInorgN-3">Inorganic nitrogen</a>:<br><a href="ProcessDescriptions-1.html#ConModNAmmNit-4">AmmoniumNitrate</a>
 </td>
 <td style="text-align:left;width: 5%; ">
-Equation <a href="AppIN.html#eq:equ-pel-atm-din-flux">(F.16)</a>
+Equation <a href="AppIN.html#eq:equ-pel-atm-din-flux">(F.21)</a>
 </td>
 </tr>
 <tr>
@@ -757,7 +759,7 @@ Equation <a href="AppIN.html#eq:equ-pel-atm-din-flux">(F.16)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_ACTUAL_FRP_SED_FLUX_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 FRP sediment flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -768,7 +770,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The dynamically computed flux of FRP across the sediment water interface. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be exchanged in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -784,7 +786,7 @@ Equation <a href="AppIP.html#eq:equ-sed-frp-flux">(G.1)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_DIP_ATMOS_EXCHANGE_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Phosphorus atmospheric flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -795,7 +797,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The combined wet (rainfall) and dry deposition of inorganic phosphorus across the atmosphere water interface. Only FRP (FRPads) contributes to wet (dry) deposition. Positive values are fluxes to the water column from the atmosphere. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be exchanged in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -811,7 +813,7 @@ Equation <a href="AppIP.html#eq:equ-pel-atm-dip-flux">(G.4)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_POC_SEDMTN_FLUX_MMOL_M2_S</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 POC sedimentation flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -822,7 +824,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of settling labile particulate organic carbon that leaves the water column and enters the sediment. This is not flux of POC from the sediments. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be exchanged in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -838,7 +840,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-lsedmtn-flux">(N.28)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_PON_SEDMTN_FLUX_MMOL_M2_S</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 PON sedimentation flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -849,7 +851,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of settling labile particulate organic nitrogen that leaves the water column and enters the sediment. This is not flux of PO from the sediments. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be exchanged in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -865,7 +867,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-lsedmtn-flux">(N.28)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_POP_SEDMTN_FLUX_MMOL_M2_S</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 POP sedimentation flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -876,7 +878,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of settling labile particulate organic phosphorus that leaves the water column and enters the sediment. This is not flux of POP from the sediments. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be exchanged in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -890,7 +892,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-lsedmtn-flux">(N.28)</a>
 <td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagCDOM">WQ_DIAG_CHRMPHIC_DISS_ORGS_M</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 CDOM
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -899,7 +901,7 @@ CDOM
 <td style="text-align:center;width: 10%; ">
 /m
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 Chromorphic dissolved organic matter. It is the equivalent extinction coefficient for absorption of radiation at 440 nm. It is computed from DOC (and RDOC if refractory organic matter is simulated) and uses the relationship of Equation <a href="AppOrg.html#eq:eq-pel-rorg-cdom">(N.22)</a>
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -915,7 +917,7 @@ Equation <a href="AppOrg.html#eq:eq-pel-rorg-cdom">(N.22)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_ACTUAL_DOC_SED_FLUX_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 DOC sediment flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -926,7 +928,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The dynamically computed flux of DOC across the sediment water interface. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be exchanged in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -942,7 +944,7 @@ Equation <a href="AppOrg.html#eq:equ-sed-org-flux">(N.1)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_ACTUAL_DON_SED_FLUX_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 DON sediment flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -953,7 +955,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The dynamically computed flux of DON across the sediment water interface. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be exchanged in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -969,7 +971,7 @@ Equation <a href="AppOrg.html#eq:equ-sed-org-flux">(N.1)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_ACTUAL_DOP_SED_FLUX_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 DOP sediment flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -980,7 +982,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The dynamically computed flux of DOP across the sediment water interface. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be exchanged in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -996,7 +998,7 @@ Equation <a href="AppOrg.html#eq:equ-sed-org-flux">(N.1)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_POC_HYDROL_MMOL_M3_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 POC hydrolysis flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1007,7 +1009,7 @@ mg/L/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of labile POC to labile DOC due to hydrolysis. Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be hydrolysed in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1023,7 +1025,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-hydrolysis-fluxcons">(N.3)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_DOC_MINERL_MMOL_M3_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 DOC mineralisation flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1034,7 +1036,7 @@ mg/L/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of labile DOC to DIC due to mineralisation. Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be mineralised in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1050,7 +1052,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-miner-fluxcons">(N.9)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_PON_HYDROL_MMOL_M3_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 PON hydrolysis flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1061,7 +1063,7 @@ mg/L/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of labile PON to labile DON due to hydrolysis. Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be hydrolysed in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1077,7 +1079,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-hydrolysis-fluxcons">(N.3)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_DON_MINERL_MMOL_M3_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 DON mineralisation flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1088,7 +1090,7 @@ mg/L/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of labile DON to ammonium due to mineralisation. Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be mineralised in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1104,7 +1106,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-miner-fluxcons">(N.9)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_POP_HYDROL_MMOL_M3_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 POP hydrolysis flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1115,7 +1117,7 @@ mg/L/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of labile POP to labile DOP due to hydrolysis. Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be hydrolysed in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1131,7 +1133,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-hydrolysis-fluxcons">(N.3)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_DOP_MINERL_MMOL_M3_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 DOP mineralisation flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1142,7 +1144,7 @@ mg/L/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of labile DOP to FRP due to mineralisation. Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be mineralised in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1158,7 +1160,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-miner-fluxcons">(N.9)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_DOC_MINERL_AN_MMOL_M3_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 DOC anaerobic mineralisation flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1169,7 +1171,7 @@ mg/L/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The component of the mineralisation flux of labile dissolved organic carbon that is anaerobic, i.e. the mineralisation that occurs after oxygen has been consumed from both diatomic dissolved oxygen and nitrate. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) of carbon that would be anaerobically mineralised in that interval. Reporting units of this diagnostic are carbon
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1185,7 +1187,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-miner-balance">(N.15)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_DOC_MINERL_DENIT_MMOL_M3_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 DOC denitification mineralisation
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1196,7 +1198,7 @@ mg/L/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The component of the mineralisation flux of labile dissolved organic carbon that occurs following consumption of dissolved oxygen, and that sources its oxygen from stripping (denitrifying) nitrate. It is the mineralisation that occurs after oxygen has been consumed from diatomic dissolved oxygen but before anaerobic mineralisation occurs. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) of carbon that would be aerobically mineralised in that interval. The same number of moles of nitrate N will be consumed. Reporting units of this diagnostic are carbon
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1210,7 +1212,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-miner-flux-no3sink">(N.14)</a>
 <td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagDOCBDO5">WQ_DIAG_DOC_BOD5_MG_L</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 BOD5
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1219,7 +1221,7 @@ BOD5
 <td style="text-align:center;width: 10%; ">
 mg/L
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The reduction in the concentration of dissolved oxygen that would result by the action of aerobic mineralisation of dissolved organic carbon over a period of 5 days. It is computed at the instantaneous oxygen consumption rate
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1233,7 +1235,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-miner-BOD5-aerO2">(N.13)</a>
 <td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagPOMVVel">WQ_DIAG_POM_VERT_VEL_M_S</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 POM settling velocity
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1242,7 +1244,7 @@ POM settling velocity
 <td style="text-align:center;width: 10%; ">
 m/s
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The computed settling velocity of labile particulate organic carbon, nitrogen and phosphorus (which all have the same velocity). Positive (negative) values are upwards (downwards)
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1258,7 +1260,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-lsedmtn-flux">(N.28)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_RPOM_SEDMTN_FLUX_MMOL_M2_S</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 RPOM sedimentation flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1269,7 +1271,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of settling refractory particulate organic matter that leaves the water column and enters the sediment. This is not flux of RPOM from the sediments. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be exchanged in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1285,7 +1287,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-rsedmtn-flux">(N.29)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_PHOTOLYSIS_MMOL_M3_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 RPOM Photolysis
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1296,7 +1298,7 @@ mg/L/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of refractory dissolved organic carbon to labile dissolved organic carbon and potentially DIC (if <span class="math inline">\(f_{photo}^{DOM}\)</span> is not 1.0). This flux is always positive and is the carbon fraction only. Equivalent nitrogen and phosphorus fraction fluxes can be computed as per Equation <a href="AppOrg.html#eq:equ-pel-photor-fluxcons">(N.23)</a>
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1310,7 +1312,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-photor-fluxcons">(N.23)</a>
 <td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagRPOMVVel">WQ_DIAG_RPOM_VERT_VEL_M_S</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 RPOM settling velocity
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1319,7 +1321,7 @@ RPOM settling velocity
 <td style="text-align:center;width: 10%; ">
 m/s
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The computed settling velocity of refractory particulate organic matter. Positive (negative) values are upwards (downwards)
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1333,7 +1335,7 @@ Equation <a href="AppOrg.html#eq:equ-pel-rsedmtn-flux">(N.29)</a>
 <td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagPhyInIpRat">WQ_DIAG_PHY_NAME_INT_NUTR_RATIO_ND</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Ratio of internal nutrients
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1342,7 +1344,7 @@ Ratio of internal nutrients
 <td style="text-align:center;width: 10%; ">
 [-]
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The ratio of internal nitrogen to internal phosphorus for a phytoplankton group. This quantity is reported for both the basic and advanced phytoplankton constituent models, with the former being the constant quotient of user (or default) internal nitrogen and phosphorus to carbon ratios. If the latter, this diagnostic will vary between the quotients of the user defined (or default) minimum and maximum limits of internal nitrogen and phosphorus to carbon ratios. Although noted here as being dimensionless, this quantity can be thought of as having units of (N concentration) / (P concentration)
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1355,7 +1357,7 @@ The ratio of internal nitrogen to internal phosphorus for a phytoplankton group.
 <td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagLghtLim">WQ_DIAG_PHY_NAME_LGHT_LIM_ND</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Light limitation function
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1364,7 +1366,7 @@ Light limitation function
 <td style="text-align:center;width: 10%; ">
 0
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The dynamically computed light limitation function for a phytoplankton group. It varies between 0 (complete limitation) and 1 (no limitation)
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1378,7 +1380,7 @@ Section <a href="PhyLimits-3.html#PhyLimLght-4">J.6</a>
 <td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagNLim">WQ_DIAG_PHY_NAME_N_LIM_ND</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Nitrogen limitation function
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1387,7 +1389,7 @@ Nitrogen limitation function
 <td style="text-align:center;width: 10%; ">
 [-]
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The dynamically computed nitrogen limitation function for a phytoplankton group. It varies between 0 (complete limitation) and 1 (no limitation)
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1401,7 +1403,7 @@ Section <a href="PhyLimits-3.html#PhyLimN-4">J.3</a>
 <td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagPLim">WQ_DIAG_PHY_NAME_P_LIM_ND</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Phosphorus limitation function
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1410,7 +1412,7 @@ Phosphorus limitation function
 <td style="text-align:center;width: 10%; ">
 [-]
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The dynamically computed phosphorus limitation function for a phytoplankton group. It varies between 0 (complete limitation) and 1 (no limitation)
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1424,7 +1426,7 @@ Section <a href="PhyLimits-3.html#PhyLimP-4">J.4</a>
 <td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagSiLim">WQ_DIAG_PHY_NAME_SI_LIM_ND</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Silicate limitation function
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1433,7 +1435,7 @@ Silicate limitation function
 <td style="text-align:center;width: 10%; ">
 [-]
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The dynamically computed silicate limitation function for a phytoplankton group. It varies between 0 (complete limitation) and 1 (no limitation)
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1447,7 +1449,7 @@ Section <a href="PhyLimits-3.html#PhyLimSi-4">J.5</a>
 <td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagTLim">WQ_DIAG_PHY_NAME_TMPTR_LIM_ND</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Temperature limitation function
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1456,7 +1458,7 @@ Temperature limitation function
 <td style="text-align:center;width: 10%; ">
 [-]
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The dynamically computed temperature limitation function for a phytoplankton group. It varies between 0 (complete limitation) and 1 (no limitation)
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1470,7 +1472,7 @@ Section <a href="PhyLimits-3.html#PhyLimT-4">J.2</a>
 <td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagSalRLim">WQ_DIAG_PHY_NAME_SAL_LIM_ND</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Salinity limitation function
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1479,7 +1481,7 @@ Salinity limitation function
 <td style="text-align:center;width: 10%; ">
 [-]
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The dynamically computed salinity limitation function applied to respiration of a phytoplankton group. It is always greater than 1 (no limitation). The same diagnostic variable name is used for the corollary primary productivity salinity limitation function because the two limitation functions are mutually exclusive
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1493,7 +1495,7 @@ Section <a href="PhyLimits-3.html#PhyLimSal-4">J.7</a>
 <td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagSalPPLim">WQ_DIAG_PHY_NAME_SAL_LIM_ND</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Salinity limitation function
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1502,7 +1504,7 @@ Salinity limitation function
 <td style="text-align:center;width: 10%; ">
 [-]
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The dynamically computed salinity limitation function applied to primary production of a phytoplankton group. It varies between 0 (complete limitation) and 1 (no limitation). The same diagnostic variable name is used for the corollary respiration salinity limitation function because the two limitation functions are mutually exclusive
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1518,8 +1520,8 @@ Section <a href="PhyLimits-3.html#PhyLimSal-4">J.7</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_PHY_NAME_PRIM_PROD_MMOL_M3_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
-Primary productivity
+<td style="text-align:center;width: 15%; ">
+Phytoplankton primary productivity
 </td>
 <td style="text-align:left;width: 10%; ">
 <span class="math inline">\(F_{prod\langle computed\rangle}^{phy}\)</span>
@@ -1529,8 +1531,8 @@ Primary productivity
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
-The flux of carbon (and nutrients) to phytoplankton as a result of productivity, without accounting for respiration, for a phytoplankton group. Also referred to as growth or gross primary productivity, and typically associated with daytime phytoplankton photosynthesis. Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be taken up via productivity in that interval
+<td style="text-align:left;width: 45%; ">
+The flux of carbon to phytoplankton as a result of productivity, without accounting for respiration, for a phytoplankton group. Also referred to as growth or gross primary productivity, and typically associated with daytime phytoplankton photosynthesis. Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be taken up via productivity in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
 <a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>
@@ -1541,38 +1543,11 @@ Equation <a href="PhyRates-3.html#eq:eq-pel-phy-pprodflx">(I.5)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagPhyNetProd">WQ_DIAG_PHY_NAME_NET_PROD_MICG_L_D<br>
-<hr style="margin-top:1px;margin-bottom:1px;height:2px">
-WQ_DIAG_PHY_NAME_NET_PROD_MMOL_M3_D</a>
-</td>
-<td style="text-align:center;width: 10%; ">
-Net primary productivity
-</td>
-<td style="text-align:left;width: 10%; ">
-<span class="math inline">\(F_{netprod\langle computed\rangle}^{phy}\)</span>
-</td>
-<td style="text-align:center;width: 10%; ">
-<span class="math inline">\(\mu\)</span>g/L/d<br>
-<hr style="margin-top:1px;margin-bottom:1px;height:2px">
-mmol/m<span class="math inline">\(^3\)</span>/d
-</td>
-<td style="text-align:left;width: 60%; ">
-The flux of carbon (and nutrients) to phytoplankton as a result of productivity, accounting for respiration losses due only to the consumption of stored energy, for a phytoplankton group. Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be taken up via net productivity in that interval
-</td>
-<td style="text-align:left;width: 5%; ">
-<a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>
-</td>
-<td style="text-align:left;width: 5%; ">
-Equation <a href="PhyRates-3.html#eq:eq-pel-phy-netppflx">(I.9)</a>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagPhySedmtn">WQ_DIAG_PHY_NAME_SEDMTN_MICG_M2_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_PHY_NAME_SEDMTN_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Phytoplankton sedimentation
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1583,21 +1558,21 @@ Phytoplankton sedimentation
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
-The flux of phytoplankton into the sediments as a result of settling for a phytoplankton group. Values are only losss and are only negative. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be lost to settling in that interval
+<td style="text-align:left;width: 45%; ">
+The flux of phytoplankton carbon into the sediments as a result of settling for a phytoplankton group. Values are only losss and are only negative. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be lost to settling in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
 <a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>
 </td>
 <td style="text-align:left;width: 5%; ">
-Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settflx">(I.11)</a>
+Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settflx">(I.12)</a>
 </td>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagPhyVVel">WQ_DIAG_PHY_NAME_VERT_VEL_M_S</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Phytoplankton settling velocity
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1606,7 +1581,7 @@ Phytoplankton settling velocity
 <td style="text-align:center;width: 10%; ">
 m/s
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 Phytoplankton settling velocity, as computed from the user specified (or default) method, for a phytoplankton group. Upwards (downwards) is negaitve (positive)
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1622,7 +1597,7 @@ Section <a href="PhyRates-3.html#PhySettle-4">I.4</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_PHYTO_COM_SEDMTN_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Community phytoplankton sedimentation
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1633,14 +1608,14 @@ Community phytoplankton sedimentation
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of phytoplankton into the sediments as a result of settling, summed over all phytoplankton groups (i.e. a simulation’s phytoplankton community). Values are only losss and are only negative. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be lost to settling in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
 <a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>
 </td>
 <td style="text-align:left;width: 5%; ">
-Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settflx">(I.11)</a>
+Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settflx">(I.12)</a>
 </td>
 </tr>
 <tr>
@@ -1649,7 +1624,7 @@ Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settflx">(I.11)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_PHYTO_COM_PRIM_PROD_MMOL_M3_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Community primary productivity
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1660,7 +1635,7 @@ Community primary productivity
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of carbon (and nutrients) to phytoplankton as a result of productivity, without accounting for respiration, summed over all phytoplankton groups (i.e. a simulation’s phytoplankton community). Also referred to as growth, and typically associated with daytime phytoplankton photosynthesis. Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be taken up via productivity in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1676,7 +1651,7 @@ Equation <a href="PhyRates-3.html#eq:eq-pel-phy-pprodflx">(I.5)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_PHYTO_COM_NET_PROD_MMOL_M3_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Community net primary productivity
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1687,21 +1662,21 @@ Community net primary productivity
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of carbon (and nutrients) to phytoplankton as a result of productivity, accounting for respiration losses due only to the consumption of stored energy, summed over all phytoplankton groups (i.e. a simulation’s phytoplankton community). Also referred to as net primary productivity. Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be taken up via net productivity in that interval
 </td>
 <td style="text-align:left;width: 5%; ">
 <a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>
 </td>
 <td style="text-align:left;width: 5%; ">
-Equation <a href="PhyRates-3.html#eq:eq-pel-phy-netppflx">(I.9)</a>
+Equation <a href="#eq:eq-pel-phy-netppflx">(<strong>??</strong>)</a>
 </td>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagCPhyProdRat">WQ_DIAG_PHYTO_COM_PROD_RESP_R_ </a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Community primary productivity ratio
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1710,8 +1685,8 @@ Community primary productivity ratio
 <td style="text-align:center;width: 10%; ">
 [-]
 </td>
-<td style="text-align:left;width: 60%; ">
-Ratio of primary productivity to true respiration, summed over all phytoplankton groups (i.e. a simulation’s phytoplankton community). Currently inactive and reported as -999
+<td style="text-align:left;width: 45%; ">
+Ratio of primary productivity to true respiration, summed over all phytoplankton groups (i.e. a simulation’s phytoplankton community). Currently inactive and reported as 999
 </td>
 <td style="text-align:left;width: 5%; ">
 <a href="#">Phytoplankton</a>:<br><a href="#"></a>
@@ -1723,7 +1698,7 @@ Ratio of primary productivity to true respiration, summed over all phytoplankton
 <td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagCPhyNetRespRat">WQ_DIAG_PHYTO_COM_NET_RESP_R_ </a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Community net primary productivity ratio
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1732,8 +1707,8 @@ Community net primary productivity ratio
 <td style="text-align:center;width: 10%; ">
 [-]
 </td>
-<td style="text-align:left;width: 60%; ">
-Ratio of net primary productivity to true respiration, summed over all phytoplankton groups (i.e. a simulation’s phytoplankton community). Currently inactive and reported as -999
+<td style="text-align:left;width: 45%; ">
+Ratio of net primary productivity to true respiration, summed over all phytoplankton groups (i.e. a simulation’s phytoplankton community). Currently inactive and reported as 999
 </td>
 <td style="text-align:left;width: 5%; ">
 <a href="#">Phytoplankton</a>:<br><a href="#"></a>
@@ -1747,7 +1722,7 @@ Ratio of net primary productivity to true respiration, summed over all phytoplan
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_PHYTO_COM_NO3_UPTAKE_MMOL_M3_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Community nitrate uptake
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1758,7 +1733,7 @@ mg/L/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of nitrate to phytoplankton as a result of productivity, summed over all phytoplankton groups (i.e. a simulation’s phytoplankton community). Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be taken up in that interval. Although computed differently for the basic and advanced phytoplankton constituent models, the interpretation of this quantity is the same for both
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1774,7 +1749,7 @@ Equation <a href="PhyUptake-3.html#eq:eq-pel-phy-NUp2">(K.3)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_PHYTO_COM_NH4_UPTAKE_MMOL_M3_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Community ammonium uptake
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1785,7 +1760,7 @@ mg/L/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of ammonium to phytoplankton as a result of productivity, summed over all phytoplankton groups (i.e. a simulation’s phytoplankton community). Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be taken up in that interval. Although computed differently for the basic and advanced phytoplankton constituent models, the interpretation of this quantity is the same for both
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1801,7 +1776,7 @@ Equation <a href="PhyUptake-3.html#eq:eq-pel-phy-NUp2">(K.3)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_PHYTO_COM_P_UPTAKE_MMOL_M3_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Community FRP uptake
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1812,7 +1787,7 @@ mg/L/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of FRP to phytoplankton as a result of productivity, summed over all phytoplankton groups (i.e. a simulation’s phytoplankton community). Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be taken up in that interval. Although computed differently for the basic and advanced phytoplankton constituent models, the interpretation of this quantity is the same for both
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1828,7 +1803,7 @@ Equation <a href="PhyUptake-3.html#eq:eq-pel-phy-PUp">(K.7)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_PHYTO_COM_C_UPTAKE_MMOL_M3_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Community carbon uptake
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1839,7 +1814,7 @@ Community carbon uptake
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The flux of carbon (and nutrients) to phytoplankton as a result of productivity, without accounting for respiration, summed over all phytoplankton groups (i.e. a simulation’s phytoplankton community). Also referred to as growth, and typically associated with daytime phytoplankton photosynthesis. Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be taken up via productivity in that interval. This is numerically the same as primary productivity
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1853,7 +1828,7 @@ Equation <a href="PhyUptake-3.html#eq:eq-pel-phy-CUp">(K.1)</a>
 <td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagCPAR">WQ_DIAG_PHYTO_COM_PAR_W_M2</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Community PAR
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1862,7 +1837,7 @@ PAR
 <td style="text-align:center;width: 10%; ">
 W/m<span class="math inline">\(^2\)</span>
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The ambient PAR field in each computational cell, as set by the hydrodynamic model
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1876,7 +1851,7 @@ Section <a href="Architecture-1.html#ProcessDescriptionsLight-3">2.3.2</a>
 <td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagCTChla">WQ_DIAG_PHYTO_COM_TCHLA_MICG_L</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Community chlorophyll <strong>a</strong>
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1885,7 +1860,7 @@ Community chlorophyll <strong>a</strong>
 <td style="text-align:center;width: 10%; ">
 <span class="math inline">\(\mu\)</span>g/L
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The total chlorophyll <strong>a</strong> summed across all phytoplankton groups
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1900,7 +1875,7 @@ The total chlorophyll <strong>a</strong> summed across all phytoplankton groups
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_PHYTO_COM_TPHY_MMOL_C_M3</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Community phytoplankton concentration
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1911,7 +1886,7 @@ Community phytoplankton concentration
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The concentration of phytoplankton, summed over all phytoplankton groups (i.e. a simulation’s phytoplankton community). This will be the same numerical value as Community chlorophyll <strong>a</strong> if the MGL simulation units are used
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1926,7 +1901,7 @@ The concentration of phytoplankton, summed over all phytoplankton groups (i.e. 
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_PHYTO_COM_T_IN_N_MMOL_M3</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Community internal nitrogen concentration
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1937,7 +1912,7 @@ Community internal nitrogen concentration
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The internal nitrogen concentration of phytoplankton, summed over all phytoplankton groups (i.e. a simulation’s phytoplankton community), for both the basic and advanced phytoplankton constituent models
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1953,7 +1928,7 @@ Section <a href="PhyUptake-3.html#PhyLimUPNA-5">K.2.2</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_PHYTO_COM_T_IN_P_MMOL_M3</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Community internal phosphorus concentration
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1964,7 +1939,7 @@ Community internal phosphorus concentration
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The internal phosphorus concentration of phytoplankton, summed over all phytoplankton groups (i.e. a simulation’s phytoplankton community), for both the basic and advanced phytoplankton constituent models
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -1980,7 +1955,7 @@ Section <a href="PhyUptake-3.html#PhyLimUPPA-5">K.3.2</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_INPUT_O2_SED_FLUX_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Oxygen user defined sediment flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -1991,7 +1966,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The user defined (or model default) flux of oxygen across the sediment water interface. This value is reported for completeness and should not change in time for a given cell. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. This diagnostic cannot be used in mass balance or other related calculations
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -2007,7 +1982,7 @@ Equation <a href="AppO.html#eq:equ-sed-do-flux">(D.4)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_INPUT_SI_SED_FLUX_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Silicate user defined sediment flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -2018,7 +1993,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The user defined (or model default) flux of silicate across the sediment water interface. This value is reported for completeness and should not change in time for a given cell. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. This diagnostic cannot be used in mass balance or other related calculations
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -2034,7 +2009,7 @@ Equation <a href="AppSil.html#eq:equ-sed-sil-flux">(E.1)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_INPUT_NH4_SED_FLUX_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Ammonium user defined sediment flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -2045,7 +2020,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The user defined (or model default) flux of ammonium across the sediment water interface. This value is reported for completeness and should not change in time for a given cell. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. This diagnostic cannot be used in mass balance or other related calculations
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -2061,7 +2036,7 @@ Equation <a href="AppIN.html#eq:equ-sed-amm-flux">(F.1)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_INPUT_NO3_SED_FLUX_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Nitrate user defined sediment flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -2072,7 +2047,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The user defined (or model default) flux of nitrate across the sediment water interface. This value is reported for completeness and should not change in time for a given cell. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. This diagnostic cannot be used in mass balance or other related calculations
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -2088,7 +2063,7 @@ Equation <a href="AppIN.html#eq:equ-sed-amm-flux">(F.1)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_INPUT_FRP_SED_FLUX_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 FRP user defined sediment flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -2099,7 +2074,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The user defined (or model default) flux of FRP across the sediment water interface. This value is reported for completeness and should not change in time for a given cell. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. This diagnostic cannot be used in mass balance or other related calculations
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -2111,11 +2086,11 @@ Equation <a href="AppIP.html#eq:equ-sed-frp-flux">(G.1)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQParFsedDOC">WQ_DIAG_INPUT_DOC_FLUX_MG_M2_D<br>
+<a id="WQParFsedDOC">WQ_DIAG_INPUT_DOC_SED_FLUX_MG_M2_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-WQ_DIAG_INPUT_DOC_FLUX_MMOL_M2_D</a>
+WQ_DIAG_INPUT_DOC_SED_FLUX_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 DOC user defined sediment flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -2126,7 +2101,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The user defined (or model default) flux of DOC across the sediment water interface. This value is reported for completeness and should not change in time for a given cell. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. This diagnostic cannot be used in mass balance or other related calculations
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -2138,11 +2113,11 @@ Equation <a href="AppOrg.html#eq:equ-sed-org-flux">(N.1)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQParFsedDON">WQ_DIAG_INPUT_DON_FLUX_MG_M2_D<br>
+<a id="WQParFsedDON">WQ_DIAG_INPUT_DON_SED_FLUX_MG_M2_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-WQ_DIAG_INPUT_DON_FLUX_MMOL_M2_D</a>
+WQ_DIAG_INPUT_DON_SED_FLUX_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 DON user defined sediment flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -2153,7 +2128,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The user defined (or model default) flux of DON across the sediment water interface. This value is reported for completeness and should not change in time for a given cell. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. This diagnostic cannot be used in mass balance or other related calculations
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -2165,11 +2140,11 @@ Equation <a href="AppOrg.html#eq:equ-sed-org-flux">(N.1)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQParFsedDOP">WQ_DIAG_INPUT_DOP_FLUX_MG_M2_D<br>
+<a id="WQParFsedDOP">WQ_DIAG_INPUT_DOP_SED_FLUX_MG_M2_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-WQ_DIAG_INPUT_DOP_FLUX_MMOL_M2_D</a>
+WQ_DIAG_INPUT_DOP_SED_FLUX_MMOL_M2_D</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 DOP user defined sediment flux
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -2180,7 +2155,7 @@ mg/m<span class="math inline">\(^2\)</span>/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^2\)</span>/d
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The user defined (or model default) flux of DOP across the sediment water interface. This value is reported for completeness and should not change in time for a given cell. Positive (negative) values are fluxes to (from) the water column from (to) the sediment. This diagnostic cannot be used in mass balance or other related calculations
 </td>
 <td style="text-align:left;width: 5%; ">
@@ -2196,7 +2171,7 @@ Equation <a href="AppOrg.html#eq:equ-sed-org-flux">(N.1)</a>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_TOTAL_NITROGEN_MMOL_M3</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Total nitrogen
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -2207,7 +2182,7 @@ mg/L<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The sum of relevant nitrogen species. These are:<br>
 Simulation class DO: none<br>
 Simulation class inorganics: ammonium, nitrate, phytoplankton internal nitrogen (whether it is a simulated variable or not it still contributes to total nitrogen)<br>
@@ -2224,7 +2199,7 @@ Simulation class organics: ammonium, nitrate, phytoplankton internal nitrogen, D
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_TOTAL_PHOSPHORUS_MMOL_M3</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Total phosphorus
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -2235,7 +2210,7 @@ mg/L<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The sum of relevant phosphorus species. These are:<br>
 Simulation class DO: none<br>
 Simulation class inorganics: FRP, adsorbed FRP if simulated, phytoplankton internal phosphorus (whether it is a simulated variable or not it still contributes to total phosphorus)<br>
@@ -2252,7 +2227,7 @@ Simulation class organics: FRP, adsorbed FRP if simulated, phytoplankton interna
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_TOTAL_KJELDAHL_NITROGEN_MMOL_M3</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Total Kjeldahl nitrogen
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -2263,7 +2238,7 @@ mg/L<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The sum of relevant nitrogen species. These are:<br>
 Simulation class DO: none<br>
 Simulation class inorganics: ammonium, phytoplankton internal nitrogen (whether it is a simulated variable or not it still contributes to total nitrogen)<br>
@@ -2280,7 +2255,7 @@ Simulation class organics: ammonium, phytoplankton internal nitrogen, DON, PON a
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_TOTAL_ORGANIC_CARBON_MMOL_M3</a>
 </td>
-<td style="text-align:center;width: 10%; ">
+<td style="text-align:center;width: 15%; ">
 Total organic carbon
 </td>
 <td style="text-align:left;width: 10%; ">
@@ -2291,7 +2266,7 @@ mg/L<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>
 </td>
-<td style="text-align:left;width: 60%; ">
+<td style="text-align:left;width: 45%; ">
 The sum of relevant carbon species. These are:<br>
 Simulation class DO: none<br>
 Simulation class inorganics: phytoplankton carbon<br>
@@ -2300,6 +2275,885 @@ Simulation class organics: phytoplankton carbon, DOC, POC, and RDOC and RPOM if 
 <td style="text-align:left;width: 5%; ">
 </td>
 <td style="text-align:left;width: 5%; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQParFsedPOC">WQ_DIAG_INPUT_POC_SED_FLUX_MG_M2_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_INPUT_POC_SED_FLUX_MMOL_M2_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+POC user defined sediment flux
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{sed}^{POC}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/m<span class="math inline">\(^2\)</span>/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^2\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+Currently unused and reported as zero. Will be activated in future releases
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQParFsedPON">WQ_DIAG_INPUT_PON_SED_FLUX_MG_M2_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_INPUT_PON_SED_FLUX_MMOL_M2_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+PON user defined sediment flux
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{sed}^{PON}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/m<span class="math inline">\(^2\)</span>/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^2\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+Currently unused and reported as zero. Will be activated in future releases
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQParFsedPOP">WQ_DIAG_INPUT_POP_SED_FLUX_MG_M2_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_INPUT_POP_SED_FLUX_MMOL_M2_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+POP user defined sediment flux
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{sed}^{POP}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/m<span class="math inline">\(^2\)</span>/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^2\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+Currently unused and reported as zero. Will be activated in future releases
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagPOCSedFlx">WQ_DIAG_ACTUAL_POC_SED_FLUX_MG_M2_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_ACTUAL_POC_SED_FLUX_MMOL_M2_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+POC sediment flux
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{sed\langle computed\rangle}^{POC}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/m<span class="math inline">\(^2\)</span>/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^2\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+Currently unused and reported as zero. Will be activated in future releases. See WQ_DIAG_POC_SEDMTN_FLUX_MG_M2_D for the downwards sedimentation (settling) flux
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagPONSedFlx">WQ_DIAG_ACTUAL_PON_SED_FLUX_MG_M2_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_ACTUAL_PON_SED_FLUX_MMOL_M2_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+PON sediment flux
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{sed\langle computed\rangle}^{PON}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/m<span class="math inline">\(^2\)</span>/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^2\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+Currently unused and reported as zero. Will be activated in future releases. See WQ_DIAG_PON_SEDMTN_FLUX_MG_M2_D for the downwards sedimentation (settling) flux
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagPOPSedFlx">WQ_DIAG_ACTUAL_POP_SED_FLUX_MG_M2_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_ACTUAL_POP_SED_FLUX_MMOL_M2_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+POP sediment flux
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{sed\langle computed\rangle}^{POP}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/m<span class="math inline">\(^2\)</span>/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^2\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+Currently unused and reported as zero. Will be activated in future releases. See WQ_DIAG_POP_SEDMTN_FLUX_MG_M2_D for the downwards sedimentation (settling) flux
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagOCSedMass">WQ_DIAG_SEDIMENT_ORGC_MASS_MG_M2<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_SEDIMENT_ORGC_MASS_MMOL_M2</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Organic carbon sediment mass
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(M_{sed}^{OC}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/m<span class="math inline">\(^2\)</span><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^2\)</span>
+</td>
+<td style="text-align:left;width: 45%; ">
+Currently unused and reported as zero. Will be activated in future releases
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagONSedMass">WQ_DIAG_SEDIMENT_ORGN_MASS_MG_M2<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_SEDIMENT_ORGN_MASS_MMOL_M2</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Organic nitrogen sediment mass
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(M_{sed}^{ON}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/m<span class="math inline">\(^2\)</span><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^2\)</span>
+</td>
+<td style="text-align:left;width: 45%; ">
+Currently unused and reported as zero. Will be activated in future releases
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagOPSedMass">WQ_DIAG_SEDIMENT_ORGP_MASS_MG_M2<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_SEDIMENT_ORGP_MASS_MMOL_M2</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Organic phosphorus sediment mass
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(M_{sed}^{OP}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/m<span class="math inline">\(^2\)</span><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^2\)</span>
+</td>
+<td style="text-align:left;width: 45%; ">
+Currently unused and reported as zero. Will be activated in future releases
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagPOCResusFlx">WQ_DIAG_POC_RESUS_MG_M2_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_POC_RESUS_MMOL_M2_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+POC resuspension flux
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{resus}^{POC}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/m<span class="math inline">\(^2\)</span>/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^2\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+Currently unused and reported as zero. Will be activated in future releases
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagPONResusFlx">WQ_DIAG_PON_RESUS_MG_M2_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_PON_RESUS_MMOL_M2_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+PON resuspension flux
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{resus}^{PON}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/m<span class="math inline">\(^2\)</span>/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^2\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+Currently unused and reported as zero. Will be activated in future releases
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagPOPResusFlx">WQ_DIAG_POP_RESUS_MG_M2_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_POP_RESUS_MMOL_M2_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+POP resuspension flux
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{resus}^{POP}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/m<span class="math inline">\(^2\)</span>/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^2\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+Currently unused and reported as zero. Will be activated in future releases
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagCPhyResus">WQ_DIAG_PHYTO_COM_RESUS_MICG_M2_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_PHYTO_COM_RESUS_MMOL_M2_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Community resuspension
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{resus}^{comm}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+<span class="math inline">\(\mu\)</span>g/m<span class="math inline">\(^2\)</span>/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^2\)</span>
+</td>
+<td style="text-align:left;width: 45%; ">
+Currently unused and reported as zero. Will be activated in future releases
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagCPhyNFix">WQ_DIAG_PHYTO_COM_N2_UPTAKE_MG_L_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_PHYTO_COM_N2_UPTAKE_MMOL_M3_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Community nitrogen fixing uptake
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{N-fix}^{comm}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of atmospheric nitrogen fixed by phytoplankton, summed over all phytoplankton groups (i.e. a simulation’s phytoplankton community), for both the basic and advanced phytoplankton constituent models
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+<td style="text-align:left;width: 5%; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagAnammox">WQ_DIAG_ANAER_NH4_OX_MG_L_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_ANAER_NH4_OX_MMOL_M3_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Anaerobic oxidation of ammonium
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{anmx\langle computed\rangle}^{NH_4,NO_3}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of ammonium-N and nitrate-N to free diatomic nitrogen gas (also referred to as anammox). Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) on N that would be lost via anammox in that interval
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModInorgN-3">Inorganic nitrogen</a>:<br><a href="ProcessDescriptions-1.html#ConModNAmmNit-4">AmmoniumNitrate</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Equation <a href="AppIN.html#eq:equ-pel-anmmox-flux">(F.10)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagDNRA">WQ_DIAG_DISS_NO3_RED_MG_L_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_DISS_NO3_RED_MMOL_M3_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Dissimilatory reduction of nitrate to ammonium
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{DRNA\langle computed\rangle}^{NO_3}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of nitrate-N to ammonium-N (also referred to as DRNA). Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) on N that would be lost via DRNA in that interval
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModInorgN-3">Inorganic nitrogen</a>:<br><a href="ProcessDescriptions-1.html#ConModNAmmNit-4">AmmoniumNitrate</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Equation <a href="AppIN.html#eq:equ-pel-drna-flux">(F.12)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagBdn">WQ_DIAG_RPOM_BREAKDOWN_MG_L_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_RPOM_BREAKDOWN_MMOL_M3_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+RPOM breakdown
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{bdn\langle computed\rangle}^{RPOM}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of refractory particulate organic matter to labile particulate organic matter under microbial activity. This flux is always positive and is applied directly to the carbon fraction of RPOM. Equivalent nitrogen and phosphorus fraction fluxes are computed proportionately as per Equation <a href="AppOrg.html#eq:equ-pel-bdown-fluxprod">(N.7)</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModOrgOrg-3">Organic matter</a>:<br><a href="ProcessDescriptions-1.html#ConModOrgRef-4">Refractory</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Equation <a href="AppOrg.html#eq:equ-pel-bdown-fluxcons">(N.6)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagActC">WQ_DIAG_RDOC_ACTV_MG_L_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_RDOC_ACTV_MMOL_M3_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+RDOC activation
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{act\langle computed\rangle}^{RDOC}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of refractory dissolved organic carbon to labile dissolved organic carbon under microbial activity. This flux is always positive
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModOrgOrg-3">Organic matter</a>:<br><a href="ProcessDescriptions-1.html#ConModOrgRef-4">Refractory</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Equation <a href="AppOrg.html#eq:equ-pel-active-fluxcons">(N.18)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagActN">WQ_DIAG_RDON_ACTV_MG_L_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_RDON_ACTV_MMOL_M3_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+RDON activation
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{act\langle computed\rangle}^{RDON}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of refractory dissolved organic nitrogen to labile dissolved organic nitrogen under microbial activity. This flux is always positive
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModOrgOrg-3">Organic matter</a>:<br><a href="ProcessDescriptions-1.html#ConModOrgRef-4">Refractory</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Equation <a href="AppOrg.html#eq:equ-pel-active-fluxcons">(N.18)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagActP">WQ_DIAG_RDOP_ACTV_MG_L_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_RDOP_ACTV_MMOL_M3_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+RDOP activation
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{act\langle computed\rangle}^{RDOP}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of refractory dissolved organic phosphorus to labile dissolved organic phosphorus under microbial activity. This flux is always positive
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModOrgOrg-3">Organic matter</a>:<br><a href="ProcessDescriptions-1.html#ConModOrgRef-4">Refractory</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Equation <a href="AppOrg.html#eq:equ-pel-active-fluxcons">(N.18)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagPhyResp">WQ_DIAG_PHY_NAME_RESP_MICG_L_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_PHY_NAME_RESP_MMOL_M3_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Phytoplankton respiration
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{resp\langle computed\rangle}^{phy}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+<span class="math inline">\(\mu\)</span>g/L/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of carbon from phytoplankton as a result of energy consumption (referred to as true respiration). It is typically seen as a night time phytoplanktonic process but can also occur during the day. Values are only negative. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be lost via true respiration in that interval
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Equation <a href="PhyRates-3.html#eq:eq-pel-phy-respflx">(I.8)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagPhyRespN">WQ_DIAG_PHY_NAME_RESP_N_MG_L_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_PHY_NAME_RESP_N_MMOL_M3_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Phytoplankton respiration - nitrogen
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{resp-N\langle computed\rangle}^{phy}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of nitrogen from phytoplankton as a result of energy consumption (referred to as true respiration). It is typically seen as a night time phytoplanktonic process but can also occur during the day. Values are only negative. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be lost via true respiration in that interval
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Equation <a href="PhyRates-3.html#eq:eq-pel-phy-respflxN">(I.9)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagPhyRespP">WQ_DIAG_PHY_NAME_RESP_P_MG_L_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_PHY_NAME_RESP_P_MMOL_M3_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Phytoplankton respiration - phosphorus
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{resp-P\langle computed\rangle}^{phy}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of phosphorus from phytoplankton as a result of energy consumption (referred to as true respiration). It is typically seen as a night time phytoplanktonic process but can also occur during the day. Values are only negative. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be lost via true respiration in that interval
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Equation <a href="PhyRates-3.html#eq:eq-pel-phy-respflxP">(I.10)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagPhyPriProdN">WQ_DIAG_PHY_NAME_PRIM_PROD_N_MG_L_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_PHY_NAME_PRIM_PROD_N_MMOL_M3_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Phytoplankton primary productivity - nitrogen
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{N-uptake}^{phy}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of nitrogen to phytoplankton as a result of productivity, without accounting for respiration, for a phytoplankton group. Also referred to as growth or gross primary productivity, and typically associated with daytime phytoplankton photosynthesis. Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be taken up via productivity in that interval. This diagnostic varible name is used for both basic and advanced phytoplankton groups, even though the method to compute uptake differs between the two
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+<a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyAdv-4">Advanced</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Equation <a href="PhyUptake-3.html#eq:eq-pel-phy-NUp">(K.2)</a><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+Equation <a href="PhyUptake-3.html#eq:eq-pel-phy-NUpA">(K.4)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagPhyPriProdP">WQ_DIAG_PHY_NAME_PRIM_PROD_P_MG_L_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_PHY_NAME_PRIM_PROD_P_MMOL_M3_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Phytoplankton primary productivity - phosphorus
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{P-uptake}^{phy}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of phosphorus to phytoplankton as a result of productivity, without accounting for respiration, for a phytoplankton group. Also referred to as growth or gross primary productivity, and typically associated with daytime phytoplankton photosynthesis. Values are only positive. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be taken up via productivity in that interval. This diagnostic varible name is used for both basic and advanced phytoplankton groups, even though the method to compute uptake differs between the two
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+<a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyAdv-4">Advanced</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Equation <a href="PhyUptake-3.html#eq:eq-pel-phy-PUp">(K.7)</a><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+Equation <a href="PhyUptake-3.html#eq:eq-pel-phy-PUpA">(K.8)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagPhySedmtnN">WQ_DIAG_PHY_NAME_SEDMTN_N_MG_M2_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_PHY_NAME_SEDMTN_N_MMOL_M2_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Phytoplankton sedimentation - nitrogen
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{sedmtn-N\langle computed\rangle}^{phy}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/m<span class="math inline">\(^2\)</span>/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^2\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of phytoplankton nitrogen into the sediments as a result of settling for a phytoplankton group. Values are only losss and are only negative. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be lost to settling in that interval. This diagnostic varible name is used for both basic and advanced phytoplankton groups, even though the method to compute uptake differs between the two
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+<a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyAdv-4">Advanced</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settflxNB">(I.13)</a><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settflxNA">(I.14)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagPhySedmtnP">WQ_DIAG_PHY_NAME_SEDMTN_P_MG_M2_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_PHY_NAME_SEDMTN_P_MMOL_M2_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Phytoplankton sedimentation - phosphorus
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{sedmtn-P\langle computed\rangle}^{phy}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/m<span class="math inline">\(^2\)</span>/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^2\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of phytoplankton phosphorus into the sediments as a result of settling for a phytoplankton group. Values are only losss and are only negative. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be lost to settling in that interval. This diagnostic varible name is used for both basic and advanced phytoplankton groups, even though the method to compute uptake differs between the two
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+<a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyAdv-4">Advanced</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settflxPB">(I.15)</a><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settflxPA">(I.16)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagPhyExcr">WQ_DIAG_PHY_NAME_EXCR_MICG_L_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_PHY_NAME_EXCR_MMOL_M3_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Phytoplankton excretion
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{C-excr}^{phy}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of carbon from phytoplankton as a result of excretion for a phytoplankton group. Values are only negative. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be lost via excretion in that interval
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Equation <a href="PhyLosses-3.html#eq:eq-pel-phy-Cexcr">(L.1)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagPhyMort">WQ_DIAG_PHY_NAME_MORT_MICG_L_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_PHY_NAME_MORT_MMOL_M3_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Phytoplankton mortality
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{C-mort}^{phy}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of carbon from phytoplankton as a result of mortality for a phytoplankton group. Values are only negative. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be lost via mortality in that interval
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Equation <a href="PhyLosses-3.html#eq:eq-pel-phy-Cmort">(L.2)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagPhyExcrN">WQ_DIAG_PHY_NAME_EXCR_N_MG_L_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_PHY_NAME_EXCR_N_MMOL_M3_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Phytoplankton excretion - nitrogen
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{N-excr}^{phy}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of nitrogen from phytoplankton as a result of excretion for a phytoplankton group. Values are only negative. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be lost via excretion in that interval
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Equation <a href="PhyLosses-3.html#eq:eq-pel-phy-Nexcr">(L.3)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagPhyMortN">WQ_DIAG_PHY_NAME_MORT_N_MG_L_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_PHY_NAME_MORT_N_MMOL_M3_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Phytoplankton mortality - nitrogen
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{N-mort}^{phy}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of nitrogen from phytoplankton as a result of mortality for a phytoplankton group. Values are only negative. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be lost via mortality in that interval
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Equation <a href="PhyLosses-3.html#eq:eq-pel-phy-Nmort">(L.4)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagPhyExcrP">WQ_DIAG_PHY_NAME_EXCR_P_MG_L_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_PHY_NAME_EXCR_P_MMOL_M3_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Phytoplankton excretion - phosphorus
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{P-excr}^{phy}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of phosphorus from phytoplankton as a result of excretion for a phytoplankton group. Values are only negative. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be lost via excretion in that interval
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Equation <a href="PhyLosses-3.html#eq:eq-pel-phy-Pexcr">(L.5)</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 10%; vertical-align:top;">
+<a id="WQDiagPhyMortP">WQ_DIAG_PHY_NAME_MORT_P_MG_L_D<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_DIAG_PHY_NAME_MORT_P_MMOL_M3_D</a>
+</td>
+<td style="text-align:center;width: 15%; ">
+Phytoplankton mortality - phosphorus
+</td>
+<td style="text-align:left;width: 10%; ">
+<span class="math inline">\(F_{P-mort}^{phy}\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+mg/L/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol/m<span class="math inline">\(^3\)</span>/d
+</td>
+<td style="text-align:left;width: 45%; ">
+The flux of phosphorus from phytoplankton as a result of mortality for a phytoplankton group. Values are only negative. Multiply by cell volume (m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be lost via mortality in that interval
+</td>
+<td style="text-align:left;width: 5%; ">
+<a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>
+</td>
+<td style="text-align:left;width: 5%; ">
+Equation <a href="PhyLosses-3.html#eq:eq-pel-phy-Pmort">(L.6)</a>
 </td>
 </tr>
 </tbody>
