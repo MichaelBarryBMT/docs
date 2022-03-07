@@ -309,7 +309,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="G.1" data-path="AppIP.html"><a href="AppIP.html#SedFRPhsProd-3"><i class="fa fa-check"></i><b>G.1</b> Sediment FRP flux</a></li>
 <li class="chapter" data-level="G.2" data-path="AppIP.html"><a href="AppIP.html#WetDepIP-3"><i class="fa fa-check"></i><b>G.2</b> Wet deposition of inorganic phosphorus</a></li>
 <li class="chapter" data-level="G.3" data-path="AppIP.html"><a href="AppIP.html#DryDepIP-3"><i class="fa fa-check"></i><b>G.3</b> Dry deposition of inorganic phosphorus</a></li>
-<li class="chapter" data-level="G.4" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>G.4</b> Adsorption and desorption</a></li>
+<li class="chapter" data-level="G.4" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>G.4</b> Adsorption and desorption</a>
+<ul>
+<li class="chapter" data-level="G.4.1" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDspLin-4"><i class="fa fa-check"></i><b>G.4.1</b> Linear model</a></li>
+<li class="chapter" data-level="G.4.2" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDspQuad-4"><i class="fa fa-check"></i><b>G.4.2</b> Quadratic model</a></li>
+</ul></li>
 <li class="chapter" data-level="G.5" data-path="AppIP.html"><a href="AppIP.html#SettlingIP-3"><i class="fa fa-check"></i><b>G.5</b> Settling</a></li>
 </ul></li>
 <li class="chapter" data-level="H" data-path="AppPhy.html"><a href="AppPhy.html"><i class="fa fa-check"></i><b>H</b> Processes: phyto general</a>
@@ -427,7 +431,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="N.6.2" data-path="AppOrg.html"><a href="AppOrg.html#PhotProd-4"><i class="fa fa-check"></i><b>N.6.2</b> Production</a></li>
 </ul></li>
 <li class="chapter" data-level="N.7" data-path="AppOrg.html"><a href="AppOrg.html#OrgLight-3"><i class="fa fa-check"></i><b>N.7</b> Self shading</a></li>
-<li class="chapter" data-level="N.8" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettle-3"><i class="fa fa-check"></i><b>N.8</b> Settling</a></li>
+<li class="chapter" data-level="N.8" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettle-3"><i class="fa fa-check"></i><b>N.8</b> Settling</a>
+<ul>
+<li class="chapter" data-level="N.8.1" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettleNone-5"><i class="fa fa-check"></i><b>N.8.1</b> None</a></li>
+<li class="chapter" data-level="N.8.2" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettleConst-5"><i class="fa fa-check"></i><b>N.8.2</b> Constant</a></li>
+<li class="chapter" data-level="N.8.3" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettleConstD-5"><i class="fa fa-check"></i><b>N.8.3</b> Constant with density correction</a></li>
+<li class="chapter" data-level="N.8.4" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettleStokes-5"><i class="fa fa-check"></i><b>N.8.4</b> Stokes</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="O" data-path="AppConstits.html"><a href="AppConstits.html"><i class="fa fa-check"></i><b>O</b> Computed variables</a></li>
 <li class="chapter" data-level="P" data-path="AppDiags.html"><a href="AppDiags.html"><i class="fa fa-check"></i><b>P</b> Diagnostic variables</a></li>
@@ -891,7 +901,7 @@ Used in an inorganic phosphorus constituent model block to set minimum and maxim
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="WQAdsFRPParsL"><bmtpink>adsorption ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppIP.html#FRPhsAdsDsp-3">linear</a>,<a href="AppParams.html#WQParLinSorpL"><span class="math inline">\(K_{ads-L}^{FRP}\)</span></a>,<a href="AppParams.html#WQParD50Sorp"><span class="math inline">\(D50_{ads-max}^{FRP}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="WQAdsFRPParsL"><bmtpink>adsorption ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppIP.html#FRPhsAdsDsp-3">linear</a>,<a href="AppParams.html#WQParLinSorpL"><span class="math inline">\(K_{ads-L}^{FRP}\)</span></a>,<a href="#0"><span class="math inline">\(D50_{ads-max}^{FRP}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
 Used in an inorganic phosphorus constituent model block to set the paramters for the linear FRP adsorption model. Simulation construction section <a href="SimulationConstruction-1.html#ConModFRPhsAds-5">4.7.3.4.2</a>.
@@ -902,7 +912,7 @@ Used in an inorganic phosphorus constituent model block to set the paramters for
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="WQAdsFRPParsQ"><bmtpink>adsorption ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppIP.html#FRPhsAdsDsp-3">quadratic</a>,<a href="AppParams.html#WQParQSorpRatio"><span class="math inline">\(K_{ads-Q}^{FRP}\)</span></a>,<a href="AppParams.html#WQParQSorpMax"><span class="math inline">\(Q^{FRP}_{max}\)</span></a>,<a href="AppParams.html#WQParD50Sorp"><span class="math inline">\(D50_{ads-max}^{FRP}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="WQAdsFRPParsQ"><bmtpink>adsorption ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppIP.html#FRPhsAdsDsp-3">quadratic</a>,<a href="AppParams.html#WQParQSorpRatio"><span class="math inline">\(K_{ads-Q}^{FRP}\)</span></a>,<a href="AppParams.html#WQParQSorpMax"><span class="math inline">\(Q^{FRP}_{max}\)</span></a>,<a href="#0"><span class="math inline">\(D50_{ads-max}^{FRP}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
 Used in a constituent model block to set the paramters for the quadratic FRP adsorption model. Simulation construction section <a href="SimulationConstruction-1.html#ConModFRPhsAds-5">4.7.3.4.2</a>.
@@ -1441,7 +1451,7 @@ Used in an organic matter constituent model block to set minimum and maximum par
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="WQOrgMod"><bmtpink>organic matter model ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="SimulationConstruction-1.html#ConModOrgLab-5">labile</a>,<a href="SimulationConstruction-1.html#ConModOrgLRef-5">refractory</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="WQOrgMod"><bmtpink>organic matter model ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="SimulationConstruction-1.html#ConModOrgLab-5">labile</a>,<a href="SimulationConstruction-1.html#ConModOrgRef-5">refractory</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
 Used to commence an organics constituent model block via specification of a model from the organics constituent model class.. Simulation construction section <a href="SimulationConstruction-1.html#ConModClssOrgs-4">4.8.3.5</a>.
@@ -1565,7 +1575,7 @@ Used in an organics constituent model block to parameterise light attenuation du
 <a id="WQRPOMbdnPars"><bmtpink>ref breakdown ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParRbdnRPOM"><span class="math inline">\(R_{bdn}^{RPOM}\)</span></a>,<a href="AppParams.html#WQParXNRPOM"><span class="math inline">\(X_N^{RPOM}\)</span></a>,<a href="AppParams.html#WQParXPRPOM"><span class="math inline">\(X_P^{RPOM}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an organics constituent model block to parameterise the breakdown of refractory particulate organic matter. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLRef-5">4.8.3.5.2</a>.
+Used in an organics constituent model block to parameterise the breakdown of refractory particulate organic matter. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgRef-5">4.8.3.5.2</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1576,7 +1586,7 @@ Used in an organics constituent model block to parameterise the breakdown of ref
 <a id="WQROCMinMax"><bmtpink>ref carbon min max ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParMinRPOM"><span class="math inline">\(\left[RPOM\right]_{min}^{RPOM}\)</span></a>,<a href="AppParams.html#WQParMaxRPOM"><span class="math inline">\(\left[RPOM\right]_{max}^{RPOM}\)</span></a>,<a href="AppParams.html#WQParMinRDOC"><span class="math inline">\(\left[RDOC\right]_{min}^{RDOC}\)</span></a>,<a href="AppParams.html#WQParMaxRDOC"><span class="math inline">\(\left[RDOC\right]_{max}^{RDOC}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an organic matter constituent model block to set minimum and maximum refractory particulate organic matter and refractory dissolved organic carbon concentrations. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLRef-5">4.8.3.5.2</a>.
+Used in an organic matter constituent model block to set minimum and maximum refractory particulate organic matter and refractory dissolved organic carbon concentrations. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgRef-5">4.8.3.5.2</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1587,7 +1597,7 @@ Used in an organic matter constituent model block to set minimum and maximum ref
 <a id="WQRONMinMax"><bmtpink>ref nitrogen min max ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParMinRDON"><span class="math inline">\(\left[RDON\right]_{min}^{RDON}\)</span></a>,<a href="AppParams.html#WQParMaxRDON"><span class="math inline">\(\left[RDON\right]_{max}^{RDON}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an organic matter constituent model block to set minimum and maximum refractory dissolved organic nitrogen concentrations. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLRef-5">4.8.3.5.2</a>.
+Used in an organic matter constituent model block to set minimum and maximum refractory dissolved organic nitrogen concentrations. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgRef-5">4.8.3.5.2</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1598,7 +1608,7 @@ Used in an organic matter constituent model block to set minimum and maximum ref
 <a id="WQROPMinMax"><bmtpink>ref phosphorus min max ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParMinRDOP"><span class="math inline">\(\left[RDOP\right]_{min}^{RDOP}\)</span></a>,<a href="AppParams.html#WQParMaxRDOP"><span class="math inline">\(\left[RDOP\right]_{max}^{RDOP}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an organic matter constituent model block to set minimum and maximum refractory dissolved organic phosphorus concentrations. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLRef-5">4.8.3.5.2</a>.
+Used in an organic matter constituent model block to set minimum and maximum refractory dissolved organic phosphorus concentrations. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgRef-5">4.8.3.5.2</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1609,7 +1619,7 @@ Used in an organic matter constituent model block to set minimum and maximum ref
 <a id="WQRDOMactPars"><bmtpink>ref activation ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParRactRDOM"><span class="math inline">\(R_{act}^{RDOM}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an organic matter constituent model block to set the rate of activation of refractory dissolved organic carbon, nitrogen and phosphorus. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLRef-5">4.8.3.5.2</a>.
+Used in an organic matter constituent model block to set the rate of activation of refractory dissolved organic carbon, nitrogen and phosphorus. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgRef-5">4.8.3.5.2</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1620,7 +1630,7 @@ Used in an organic matter constituent model block to set the rate of activation 
 <a id="WQDOMRSelShadPars"><bmtpink>ref self shading ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParKeRPOM"><span class="math inline">\(Ke^{RPOM}\)</span></a>,<a href="AppParams.html#WQParKeRDOM"><span class="math inline">\(R_{CDOM}^{RDOM}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an organics constituent model block to parameterise light attenuation due to the presence of refractory particulate and dissolved organic matter. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLRef-5">4.8.3.5.2</a>.
+Used in an organics constituent model block to parameterise light attenuation due to the presence of refractory particulate and dissolved organic matter. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgRef-5">4.8.3.5.2</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1631,7 +1641,7 @@ Used in an organics constituent model block to parameterise light attenuation du
 <a id="WQRefphotoPars"><bmtpink>ref photolysis ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParfphotoDOM"><span class="math inline">\(f_{photo}^{RDOM}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an organics constituent model block to parameterise the proportion of photolysis of refractory dissolved organic matter that produces labile dissolved organic matter. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLRef-5">4.8.3.5.2</a>.
+Used in an organics constituent model block to parameterise the proportion of photolysis of refractory dissolved organic matter that produces labile dissolved organic matter. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgRef-5">4.8.3.5.2</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1654,6 +1664,105 @@ Used in an inorganic nitrogen constituent model block to control anaerobic oxida
 </td>
 <td style="text-align:left;">
 Used in an inorganic nitrogen constituent model block to control dissimilatory reduction of nitrate to ammonium and its response to ambient oxygen concentrations. Simulation construction section <a href="SimulationConstruction-1.html#ConModAmmNit-5">4.7.3.3.1</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="AdsFRPParsSettle"><bmtpink>settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParFRPadsV"><span class="math inline">\(V_{settle}^{FRP}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Used in an inorganic phosphorus constituent model block to control the settling rate of adsorbed FRP. This will be linked directly to the TUFLOW FV STM in future releases of the WQM. Simulation construction section <a href="SimulationConstruction-1.html#ConModFRPhsAds-5">4.7.3.4.2</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="WQOrgSettNone"><bmtpink>settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppOrg.html#OrgSettleNone-5">none</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Used in an organic matter constituent model block to set the settling rate of labile particulate organic matter to zero. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLab-5">4.8.3.5.1</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="WQOrgSettConst"><bmtpink>settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppOrg.html#OrgSettleConst-5">constant</a>,<a href="AppParams.html#WQParConVLOrg"><span class="math inline">\(V_{settle}^{lorg}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Used in an organic matter constituent model block to control the settling rate of labile particulate organic matter. This will be linked directly to the TUFLOW FV STM in future releases of the WQM. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLab-5">4.8.3.5.1</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="WQOrgSettRho"><bmtpink>settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppOrg.html#OrgSettleConstD-5">thermal</a>,<a href="AppParams.html#WQParConVLOrg"><span class="math inline">\(V_{settle}^{lorg}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Used in an organic matter constituent model block to control the settling rate of labile particulate organic matter. This will be linked directly to the TUFLOW FV STM in future releases of the WQM. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLab-5">4.8.3.5.1</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="WQOrgSettStokes"><bmtpink>settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppOrg.html#OrgSettleStokes-5">stokes</a>,<a href="AppParams.html#WQParDLOrg"><span class="math inline">\(d_{lorg}\)</span></a>,<a href="AppParams.html#WQParRhoLOrg"><span class="math inline">\(\rho_{lorg}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Used in an organic matter constituent model block to control the settling rate of labile particulate organic matter. This will be linked directly to the TUFLOW FV STM in future releases of the WQM. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLab-5">4.8.3.5.1</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="WQOrgSettNoneR"><bmtpink>ref settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppOrg.html#OrgSettleNone-5">none</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Used in an organic matter constituent model block to set the settling rate of refractory particulate organic matter to zero. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgRef-5">4.8.3.5.2</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="WQOrgSettConstR"><bmtpink>ref settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppOrg.html#OrgSettleConst-5">constant</a>,<a href="AppParams.html#WQParConVROrg"><span class="math inline">\(V_{settle}^{rorg}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Used in an organic matter constituent model block to control the settling rate of refractory particulate organic matter. This will be linked directly to the TUFLOW FV STM in future releases of the WQM. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgRef-5">4.8.3.5.2</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="WQOrgSettRhoR"><bmtpink>ref settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppOrg.html#OrgSettleConstD-5">thermal</a>,<a href="AppParams.html#WQParConVROrg"><span class="math inline">\(V_{settle}^{rorg}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Used in an organic matter constituent model block to control the settling rate of refractory particulate organic matter. This will be linked directly to the TUFLOW FV STM in future releases of the WQM. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgRef-5">4.8.3.5.2</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="WQOrgSettStokesR"><bmtpink>ref settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppOrg.html#OrgSettleStokes-5">stokes</a>,<a href="AppParams.html#WQParDROrg"><span class="math inline">\(d_{rorg}\)</span></a>,<a href="AppParams.html#WQParRhoROrg"><span class="math inline">\(\rho_{rorg}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Used in an organic matter constituent model block to control the settling rate of refractory particulate organic matter. This will be linked directly to the TUFLOW FV STM in future releases of the WQM. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgRef-5">4.8.3.5.2</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>

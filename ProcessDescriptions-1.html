@@ -309,7 +309,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="G.1" data-path="AppIP.html"><a href="AppIP.html#SedFRPhsProd-3"><i class="fa fa-check"></i><b>G.1</b> Sediment FRP flux</a></li>
 <li class="chapter" data-level="G.2" data-path="AppIP.html"><a href="AppIP.html#WetDepIP-3"><i class="fa fa-check"></i><b>G.2</b> Wet deposition of inorganic phosphorus</a></li>
 <li class="chapter" data-level="G.3" data-path="AppIP.html"><a href="AppIP.html#DryDepIP-3"><i class="fa fa-check"></i><b>G.3</b> Dry deposition of inorganic phosphorus</a></li>
-<li class="chapter" data-level="G.4" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>G.4</b> Adsorption and desorption</a></li>
+<li class="chapter" data-level="G.4" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>G.4</b> Adsorption and desorption</a>
+<ul>
+<li class="chapter" data-level="G.4.1" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDspLin-4"><i class="fa fa-check"></i><b>G.4.1</b> Linear model</a></li>
+<li class="chapter" data-level="G.4.2" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDspQuad-4"><i class="fa fa-check"></i><b>G.4.2</b> Quadratic model</a></li>
+</ul></li>
 <li class="chapter" data-level="G.5" data-path="AppIP.html"><a href="AppIP.html#SettlingIP-3"><i class="fa fa-check"></i><b>G.5</b> Settling</a></li>
 </ul></li>
 <li class="chapter" data-level="H" data-path="AppPhy.html"><a href="AppPhy.html"><i class="fa fa-check"></i><b>H</b> Processes: phyto general</a>
@@ -427,7 +431,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="N.6.2" data-path="AppOrg.html"><a href="AppOrg.html#PhotProd-4"><i class="fa fa-check"></i><b>N.6.2</b> Production</a></li>
 </ul></li>
 <li class="chapter" data-level="N.7" data-path="AppOrg.html"><a href="AppOrg.html#OrgLight-3"><i class="fa fa-check"></i><b>N.7</b> Self shading</a></li>
-<li class="chapter" data-level="N.8" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettle-3"><i class="fa fa-check"></i><b>N.8</b> Settling</a></li>
+<li class="chapter" data-level="N.8" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettle-3"><i class="fa fa-check"></i><b>N.8</b> Settling</a>
+<ul>
+<li class="chapter" data-level="N.8.1" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettleNone-5"><i class="fa fa-check"></i><b>N.8.1</b> None</a></li>
+<li class="chapter" data-level="N.8.2" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettleConst-5"><i class="fa fa-check"></i><b>N.8.2</b> Constant</a></li>
+<li class="chapter" data-level="N.8.3" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettleConstD-5"><i class="fa fa-check"></i><b>N.8.3</b> Constant with density correction</a></li>
+<li class="chapter" data-level="N.8.4" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettleStokes-5"><i class="fa fa-check"></i><b>N.8.4</b> Stokes</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="O" data-path="AppConstits.html"><a href="AppConstits.html"><i class="fa fa-check"></i><b>O</b> Computed variables</a></li>
 <li class="chapter" data-level="P" data-path="AppDiags.html"><a href="AppDiags.html"><i class="fa fa-check"></i><b>P</b> Diagnostic variables</a></li>
@@ -721,7 +731,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <td style="text-align:left;">
 </td>
 <td style="text-align:left;">
-<a href="AppIN.html#DRNA-3"><bmtpink>Dissimilatory reduction of nitrate to ammonium</bmtpink></a>
+<a href="AppIN.html#DRNA-3"><bmtgreen>Dissimilatory reduction of nitrate to ammonium</bmtgreen></a>
 </td>
 <td style="text-align:left;width: 40%; ">
 <span class="math inline">\(\cdot\blockindent\)</span>Dissolved oxygen<br><span class="math inline">\(\cdot\blockindent\)</span>DNRA parameters
@@ -1036,7 +1046,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 </tr>
 </tbody>
 </table>
-<p>In order for this constituent model to be used, the TUFLOW FV Sediment Transport module (STM) must be activated to simulate at least one fraction of suspended sediment that has been set to allow adsorption and desorption of FRP (several fractions may be so set). As such, a WQM simulation will not start if the TUFLOW STM is not activated. In order to use this FRPhsAds constituent model therefore, the following must be in place:</p>
+<p>In order for this constituent model to be used, the TUFLOW FV Sediment Transport module (STM) must be activated to simulate at least one fraction of suspended sediment (several fractions may be so set). A WQM simulation will not start if the TUFLOW STM is not activated. In order to use this FRPhsAds constituent model therefore, the following must be in place:</p>
 <ul>
 <li>The TUFLOW FV STM must be activated and implemented</li>
 <li>At least one sediment fraction must be set up and executed within TUFLOW FV via the inclusion of a sediment control file, and specification of either of the following TUFLOW FV commands:</li>
@@ -1048,17 +1058,11 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <blockquote>
 <p><a href="AppCommands.html#FVIncludeSed">include sediment == 1,1</a> ! Include sediment in density calculations</p>
 </blockquote>
+<p>If multiple sediment fractions are specified to be simulated by the STM, then TUFLOW FV sends all these fraction concentrations as a sum through the API to the WQM, and this sum is used as the sediment concentration against which adsorption is computed. The WQM uses this information to compute FRP adsorption and loss of adsorbed FRP through settling. It is recognised that there are limitations of this approach. Future releases of TUFLOW FV and the WQM will address some of these limitations and allow for:</p>
 <ul>
-<li>This (or these) sediment fractions must be designated as supporting FRP adsorption and desorption. This is achieved through specification of an upper threshold D<span class="math inline">\(_{50}\)</span> for adsorption.</li>
+<li>User control of which STM sediment fractions are used in adsorption calculations, and</li>
+<li>Use of the TUFLOW FV STM settling and resuspension routines to dynamically link settling and resuspension of adsorbed FRP</li>
 </ul>
-<p>If multiple sediment fractions are specified to be simulated by the STM, then TUFLOW FV sends all these fractions individually through the API to the WQM, together with their respective metadata fields. Specifically, for each sediment fraction simulated in the TUFLOW FV STM, the WQM is sent:</p>
-<ul>
-<li>Concentration</li>
-<li>Settling velocity</li>
-<li>Resuspension properties, and</li>
-<li>D<span class="math inline">\(_{50}\)</span> particle diameter</li>
-</ul>
-<p>The WQM uses this information to compute FRP adsorption and loss of adsorbed FRP through settling, using only those sediment fractions that meet a user specified maximum D<span class="math inline">\(_{50}\)</span> criterion.</p>
 </div>
 </div>
 <div id="ConModInorgPhy-3" class="section level3" number="3.2.6">

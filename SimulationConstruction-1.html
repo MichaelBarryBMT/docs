@@ -309,7 +309,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="G.1" data-path="AppIP.html"><a href="AppIP.html#SedFRPhsProd-3"><i class="fa fa-check"></i><b>G.1</b> Sediment FRP flux</a></li>
 <li class="chapter" data-level="G.2" data-path="AppIP.html"><a href="AppIP.html#WetDepIP-3"><i class="fa fa-check"></i><b>G.2</b> Wet deposition of inorganic phosphorus</a></li>
 <li class="chapter" data-level="G.3" data-path="AppIP.html"><a href="AppIP.html#DryDepIP-3"><i class="fa fa-check"></i><b>G.3</b> Dry deposition of inorganic phosphorus</a></li>
-<li class="chapter" data-level="G.4" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>G.4</b> Adsorption and desorption</a></li>
+<li class="chapter" data-level="G.4" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>G.4</b> Adsorption and desorption</a>
+<ul>
+<li class="chapter" data-level="G.4.1" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDspLin-4"><i class="fa fa-check"></i><b>G.4.1</b> Linear model</a></li>
+<li class="chapter" data-level="G.4.2" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDspQuad-4"><i class="fa fa-check"></i><b>G.4.2</b> Quadratic model</a></li>
+</ul></li>
 <li class="chapter" data-level="G.5" data-path="AppIP.html"><a href="AppIP.html#SettlingIP-3"><i class="fa fa-check"></i><b>G.5</b> Settling</a></li>
 </ul></li>
 <li class="chapter" data-level="H" data-path="AppPhy.html"><a href="AppPhy.html"><i class="fa fa-check"></i><b>H</b> Processes: phyto general</a>
@@ -427,7 +431,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="N.6.2" data-path="AppOrg.html"><a href="AppOrg.html#PhotProd-4"><i class="fa fa-check"></i><b>N.6.2</b> Production</a></li>
 </ul></li>
 <li class="chapter" data-level="N.7" data-path="AppOrg.html"><a href="AppOrg.html#OrgLight-3"><i class="fa fa-check"></i><b>N.7</b> Self shading</a></li>
-<li class="chapter" data-level="N.8" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettle-3"><i class="fa fa-check"></i><b>N.8</b> Settling</a></li>
+<li class="chapter" data-level="N.8" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettle-3"><i class="fa fa-check"></i><b>N.8</b> Settling</a>
+<ul>
+<li class="chapter" data-level="N.8.1" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettleNone-5"><i class="fa fa-check"></i><b>N.8.1</b> None</a></li>
+<li class="chapter" data-level="N.8.2" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettleConst-5"><i class="fa fa-check"></i><b>N.8.2</b> Constant</a></li>
+<li class="chapter" data-level="N.8.3" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettleConstD-5"><i class="fa fa-check"></i><b>N.8.3</b> Constant with density correction</a></li>
+<li class="chapter" data-level="N.8.4" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettleStokes-5"><i class="fa fa-check"></i><b>N.8.4</b> Stokes</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="O" data-path="AppConstits.html"><a href="AppConstits.html"><i class="fa fa-check"></i><b>O</b> Computed variables</a></li>
 <li class="chapter" data-level="P" data-path="AppDiags.html"><a href="AppDiags.html"><i class="fa fa-check"></i><b>P</b> Diagnostic variables</a></li>
@@ -960,7 +970,7 @@ end material</code></pre>
 <blockquote>
 <p><a href="AppCommands.html#WQAnammoxPars"><span class="math inline">\(\blockindent\)</span> anaerobic oxidation of ammonium ==</a> <a href="AppParams.html#WQParRanmx"><span class="math inline">\(R_{anmx}^{NH_4,NO_3}\)</span></a>, <a href="AppParams.html#WQParKanmxAmm"><span class="math inline">\(K_{anmx-NH_4}^{NH_4,NO_3}\)</span></a>, <a href="AppParams.html#WQParKanmxNit"><span class="math inline">\(K_{anmx-NO_3}^{NH_4,NO_3}\)</span></a></p>
 </blockquote>
-<p>Dissimilatory reduction of nitrate to ammonium parameters (used in Equation <a href="#eq:equ-pel-dnra-rate">(<strong>??</strong>)</a>) are set in a single command as:</p>
+<p>Dissimilatory reduction of nitrate to ammonium parameters (used in Equation <a href="AppIN.html#eq:equ-pel-drna-rate">(F.11)</a>) are set in a single command as:</p>
 <blockquote>
 <p><a href="AppCommands.html#WQDRNAPars"><span class="math inline">\(\blockindent\)</span> diss nitrate reduction to ammonium ==</a> <a href="AppParams.html#WQParRdrna"><span class="math inline">\(R_{DRNA}^{NO_3}\)</span></a>, <a href="AppParams.html#WQParKdrna"><span class="math inline">\(K_{DRNA-O_2}^{NO_3}\)</span></a></p>
 </blockquote>
@@ -1021,13 +1031,17 @@ end material</code></pre>
 <blockquote>
 <p><a href="AppCommands.html#WQAdsFRPMinMax"><span class="math inline">\(\blockindent\)</span> FRP ads min max ==</a> <a href="AppParams.html#WQParMinadsFRP"><span class="math inline">\(\left[FRPads\right]_{min}^{FRPads}\)</span></a>, <a href="AppParams.html#WQParMaxadsFRP"><span class="math inline">\(\left[FRPads\right]_{max}^{FRPads}\)</span></a></p>
 </blockquote>
-<p>Two FRP adsorption models are available, as per Equations <a href="AppIP.html#eq:equ-pel-frpads-ji">(G.6)</a> and <a href="AppIP.html#eq:equ-pel-frpads-chao">(G.7)</a>. These require specification of two (linear) or three (quadratic) parameters, respectively after specification of the model to be used:</p>
+<p>Two FRP adsorption models are available, as per Equations <a href="AppIP.html#eq:equ-pel-frpads-ji">(G.6)</a> and <a href="AppIP.html#eq:equ-pel-frpads-chao">(G.7)</a>. These require specification of one (linear) or two (quadratic) parameters, respectively after specification of the model to be used:</p>
 <blockquote>
-<p><a href="AppCommands.html#WQAdsFRPParsL"><span class="math inline">\(\blockindent\)</span> adsorption ==</a> linear, <a href="#WQParLinSorp"><span class="math inline">\(K_{ads-L}^{FRP}\)</span></a>, <a href="AppParams.html#WQParD50Sorp"><span class="math inline">\(D50_{ads-max}^{FRP}\)</span></a></p>
+<p><a href="AppCommands.html#WQAdsFRPParsL"><span class="math inline">\(\blockindent\)</span> adsorption ==</a> linear, <a href="#WQParLinSorp"><span class="math inline">\(K_{ads-L}^{FRP}\)</span></a></p>
 </blockquote>
 <p>or</p>
 <blockquote>
-<p><a href="AppCommands.html#WQAdsFRPParsQ"><span class="math inline">\(\blockindent\)</span> adsorption ==</a> quadratic, <a href="AppParams.html#WQParQSorpRatio"><span class="math inline">\(K_{ads-Q}^{FRP}\)</span></a>, <a href="AppParams.html#WQParQSorpMax"><span class="math inline">\(Q_{max}^{FRP}\)</span></a>, <a href="AppParams.html#WQParD50Sorp"><span class="math inline">\(D50_{ads-max}^{FRP}\)</span></a></p>
+<p><a href="AppCommands.html#WQAdsFRPParsQ"><span class="math inline">\(\blockindent\)</span> adsorption ==</a> quadratic, <a href="AppParams.html#WQParQSorpRatio"><span class="math inline">\(K_{ads-Q}^{FRP}\)</span></a>, <a href="AppParams.html#WQParQSorpMax"><span class="math inline">\(Q_{max}^{FRP}\)</span></a></p>
+</blockquote>
+<p>The settling velocity of adsorbed phosphorus is set as follows. Future releases of the WQM will dynamically link this settling velocity to the calculations of the TUFLOW FV STM.</p>
+<blockquote>
+<p><a href="AppCommands.html#AdsFRPParsSettle"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="AppParams.html#WQParFRPadsV"><span class="math inline">\(V_{settle}^{FRPads}\)</span></a></p>
 </blockquote>
 <p>Dry atmospheric deposition of FRP is activated in this simulation model (used in Equation <a href="AppIP.html#eq:equ-pel-atm-frp-dflux">(G.3)</a>) and is specified via the same command as wet deposition, but with one additional argument. This additional argument is ignored if the FRPhsads constituent model has not been set:</p>
 <blockquote>
@@ -1227,7 +1241,7 @@ end material</code></pre>
 </div>
 <div id="ConModPhyResp-6" class="section level6" number="4.7.3.5.1.9">
 <h6><span class="header-section-number">4.7.3.5.1.9</span> Respiration</h6>
-<p>Respiration parameters are set via the following command. The first two parameters are used directly to compute the respiration rate <span class="math inline">\(R_{resp\langle computed\rangle}^{phy}\)</span> via Equation <a href="PhyRates-3.html#eq:eq-pel-phy-resp">(I.6)</a>. The third and fourth parameters are used to compute excretive and mortality fluxes in Equations <a href="PhyLosses-3.html#eq:eq-pel-phy-Cexcr">(L.1)</a> and <a href="PhyLosses-3.html#eq:eq-pel-phy-Cmort">(L.2)</a>, respectively. Both these equations use the respiration rate computed from the first two parameters <span class="math inline">\(R_{resp}^{phy}\)</span> and <span class="math inline">\(\theta_{resp}^{phy}\)</span>. Although not strictly related to respiration, the final parameter does represent a reduction of biomass and is used to compute exudation loss using Equation <a href="PhyRates-3.html#eq:eq-pel-phy-exud">(I.11)</a>.</p>
+<p>Respiration parameters are set via the following command. The first two parameters are used directly to compute the respiration rate <span class="math inline">\(R_{resp\langle computed\rangle}^{phy}\)</span> via Equation <a href="PhyRates-3.html#eq:eq-pel-phy-resp">(I.6)</a>. The third and fourth parameters are used to compute excretive and mortality fluxes in Equations <a href="PhyLosses-3.html#eq:eq-pel-phy-Cexcr">(L.1)</a> and <a href="PhyLosses-3.html#eq:eq-pel-phy-Cmort">(L.2)</a>, respectively. Both these equations use the respiration rate computed from the first two parameters <span class="math inline">\(R_{resp}^{phy}\)</span> and <span class="math inline">\(\theta_{resp}^{phy}\)</span>. Although not strictly related to respiration, the final parameter does represent a reduction of biomass and is used to compute exudation loss using Equation <a href="PhyRates-3.html#eq:eq-pel-phy-exud">(I.12)</a>.</p>
 <blockquote>
 <p><a href="AppCommands.html#WQPhyResp"><span class="math inline">\(\blockindent\)</span> respiration ==</a> <a href="AppParams.html#WQParRRespPhy"><span class="math inline">\(R_{resp}^{phy}\)</span></a>, <a href="AppParams.html#WQParthetarespphy"><span class="math inline">\(\theta_{resp}^{phy}\)</span></a>, <a href="AppParams.html#WQParftrueresp"><span class="math inline">\(f_{true-resp}^{phy}\)</span></a>, <a href="AppParams.html#WQParfdomloss"><span class="math inline">\(f_{excr-loss}^{phy}\)</span></a>, <a href="AppParams.html#WQParfracexud"><span class="math inline">\(f_{exud}^{phy}\)</span></a></p>
 </blockquote>
@@ -1268,14 +1282,14 @@ end material</code></pre>
 </blockquote>
 <p>or</p>
 <ul>
-<li>Constant with density correction (as per Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settdens">(I.17)</a>)</li>
+<li>Constant with density correction (as per Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settdens">(I.18)</a>)</li>
 </ul>
 <blockquote>
 <p><a href="AppCommands.html#WQPhySettRho"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="AppCommands.html#WQPhySettRho">thermal</a>, <a href="#WQParThermV"><span class="math inline">\(V_{settle}^{phy}\)</span></a></p>
 </blockquote>
 <p>or</p>
 <ul>
-<li>Stokes (used in Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settstokes">(I.18)</a>), where density is required to be simulated as a computed variable, and thus requires the specification of <span class="math inline">\(I_K\)</span>.</li>
+<li>Stokes (used in Equation <a href="PhyRates-3.html#eq:eq-pel-phy-settstokes">(I.19)</a>), where density is required to be simulated as a computed variable, and thus requires the specification of <span class="math inline">\(I_K\)</span>.</li>
 </ul>
 <blockquote>
 <p><a href="AppCommands.html#WQPhySettStokes"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="AppCommands.html#WQPhySettStokes">stokes</a>, <a href="AppParams.html#WQParKstoSett"><span class="math inline">\(I_{K-sto}\)</span></a></p>
@@ -1543,7 +1557,8 @@ inorganic phosphorus model == frphsads
     frp min max == 0.0, 50.0
     frpads min max == 0.0, 50.0
     atmospheric deposition == 5.0, 1.4
-    adsorption == quadratic, 1.5, 0.5, 0.00005
+    adsorption == quadratic, 1.5, 0.5
+    settling == 0.000001
     oxygen == on
 end inorganic phosphorus model  
     
@@ -1700,6 +1715,34 @@ end material</code></pre>
 <blockquote>
 <p><a href="AppCommands.html#WQDOMMinerPars"><span class="math inline">\(\blockindent\)</span> mineralisation ==</a> <a href="AppParams.html#WQParRminerDOM"><span class="math inline">\(R_{miner}^{DOM}\)</span></a>, <a href="AppParams.html#WQParKminerDOM"><span class="math inline">\(K_{miner-O_2}^{DOM}\)</span></a>, <a href="AppParams.html#WQParthetaminerDOM"><span class="math inline">\(\theta_{miner}^{DOM}\)</span></a>, <a href="AppParams.html#WQParfanminer"><span class="math inline">\(f_{an}\)</span></a>, <a href="AppParams.html#WQParKminerNitDOM"><span class="math inline">\(K_{miner-NO_3}^{NO_3}\)</span></a></p>
 </blockquote>
+<p>Settling of labile particulate organic matter can be specified by one of the following models:</p>
+<ul>
+<li>None</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQOrgSettNone"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="AppCommands.html#WQOrgSettNone">none</a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Constant</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQOrgSettConst"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="AppCommands.html#WQOrgSettConst">constant</a>, <a href="AppParams.html#WQParConVLOrg"><span class="math inline">\(V_{settle}^{lorg}\)</span></a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Constant with density correction (as per Equation <a href="AppOrg.html#eq:eq-pel-org-settdens">(N.28)</a>)</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQOrgSettRho"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="AppCommands.html#WQOrgSettRho">thermal</a>, <a href="AppParams.html#WQParConVLOrg"><span class="math inline">\(V_{settle}^{lorg}\)</span></a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Stokes (used in Equation <a href="AppOrg.html#eq:eq-pel-org-settstokes1">(N.29)</a>)</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQOrgSettStokes"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="AppCommands.html#WQOrgSettStokes">stokes</a>, <a href="AppParams.html#WQParDLOrg"><span class="math inline">\(d_{lorg}\)</span></a>, <a href="AppParams.html#WQParRhoLOrg"><span class="math inline">\(\rho_{lorg}\)</span></a></p>
+</blockquote>
 <p>Self shading due to the presence of labile organics (used in Equation <a href="AppOrg.html#eq:eq-pel-org-selfshad">(N.26)</a>) parameters are set as:</p>
 <blockquote>
 <p><a href="AppCommands.html#WQDOMSelShadPars"><span class="math inline">\(\blockindent\)</span> self shading ==</a> <a href="AppParams.html#WQParKePOM"><span class="math inline">\(Ke^{POM}\)</span></a>, <a href="AppParams.html#WQParKeDOM"><span class="math inline">\(Ke^{DOM}\)</span></a></p>
@@ -1709,7 +1752,7 @@ end material</code></pre>
 <p><a href="AppCommands.html#WQOrgModEnd">end organic matter model</a></p>
 </blockquote>
 </div>
-<div id="ConModOrgLRef-5" class="section level5" number="4.8.3.5.2">
+<div id="ConModOrgRef-5" class="section level5" number="4.8.3.5.2">
 <h5><span class="header-section-number">4.8.3.5.2</span> Constituent model: Refractory</h5>
 <p>This constituent model encompasses all the functionality (and commands) of the labile organic matter constituent model, but offers further commands to simulate refractory organic processes, and their interaction with labile organic and inorganic computed variables.</p>
 <p>This constituent model is specified as:</p>
@@ -1738,6 +1781,35 @@ end material</code></pre>
 <blockquote>
 <p><a href="AppCommands.html#WQRefphotoPars"><span class="math inline">\(\blockindent\)</span> ref photolysis ==</a> <a href="AppParams.html#WQParfphotoDOM"><span class="math inline">\(f_{photo}^{RDOM}\)</span></a></p>
 </blockquote>
+<p>Settling of refractory particulate organic matter can be specified by one of the following models:</p>
+<ul>
+<li>None</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQOrgSettNoneR"><span class="math inline">\(\blockindent\)</span> ref settling ==</a> <a href="AppCommands.html#WQOrgSettNoneR">none</a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Constant</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQOrgSettConstR"><span class="math inline">\(\blockindent\)</span> ref settling ==</a> <a href="AppCommands.html#WQOrgSettConstR">constant</a>, <a href="AppParams.html#WQParConVROrg"><span class="math inline">\(V_{settle}^{rorg}\)</span></a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Constant with density correction (as per Equation <a href="AppOrg.html#eq:eq-pel-org-settdens">(N.28)</a>)</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQOrgSettRhoR"><span class="math inline">\(\blockindent\)</span> ref settling ==</a> <a href="AppCommands.html#WQOrgSettRhoR">thermal</a>, <a href="AppParams.html#WQParConVROrg"><span class="math inline">\(V_{settle}^{rorg}\)</span></a></p>
+</blockquote>
+<p>or</p>
+<ul>
+<li>Stokes (used in Equation <a href="AppOrg.html#eq:eq-pel-org-settstokes1">(N.29)</a>)</li>
+</ul>
+<blockquote>
+<p><a href="AppCommands.html#WQOrgSettStokesR"><span class="math inline">\(\blockindent\)</span> ref settling ==</a> <a href="AppCommands.html#WQOrgSettStokesR">stokes</a>, <a href="AppParams.html#WQParDROrg"><span class="math inline">\(d_{rorg}\)</span></a>, <a href="AppParams.html#WQParRhoROrg"><span class="math inline">\(\rho_{rorg}\)</span></a></p>
+</blockquote>
+<p>The settling model selected for the refractory particulate organic matter model must be the same as that of the labile particulate organic matter. The input parameters to this model may be different.</p>
 <p>Self shading due to the presence of refractory organics (used in Equation <a href="AppOrg.html#eq:eq-pel-rorg-selfshad">(N.27)</a>) parameters are set as:</p>
 <blockquote>
 <p><a href="AppCommands.html#WQDOMRSelShadPars"><span class="math inline">\(\blockindent\)</span> ref self shading ==</a> <a href="AppParams.html#WQParKeRPOM"><span class="math inline">\(Ke^{RPOM}\)</span></a>, <a href="AppParams.html#WQParKeRDOM"><span class="math inline">\(R_{CDOM}^{RDOM}\)</span></a></p>

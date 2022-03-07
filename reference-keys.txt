@@ -86,8 +86,8 @@ eq:equ-pel-atm-frp-dflux
 eq:equ-pel-atm-dip-flux
 eq:equ-pel-frpads-cons
 eq:equ-pel-frpads-ji
-eq:equ-pel-frpads-chao
 fig:fig-pel-frpads-lin
+eq:equ-pel-frpads-chao
 fig:fig-pel-frpads-quad
 eq:eq-pel-phy-gen
 eq:eq-pel-phy-pprod
@@ -98,6 +98,7 @@ eq:eq-pel-phy-resp
 fig:fig-PhyRtheta
 eq:eq-pel-phy-respSal
 eq:eq-pel-phy-respflx
+eq:eq-pel-phy-netppflx
 eq:eq-pel-phy-respflxN
 eq:eq-pel-phy-respflxP
 eq:eq-pel-phy-exud
@@ -215,6 +216,9 @@ eq:equ-pel-photo-fluxprodO
 eq:equ-pel-photo-fluxprodI
 eq:eq-pel-org-selfshad
 eq:eq-pel-rorg-selfshad
+eq:eq-pel-org-settdens
+eq:eq-pel-org-settstokes1
+eq:eq-pel-org-settstokes2
 eq:equ-pel-lsedmtn-flux
 eq:equ-pel-rsedmtn-flux
 tab:tab-variables2
@@ -384,7 +388,7 @@ ConModFRPhs-5a
 ConModFRPhsAds-5a
 ConModClssOrgs-4
 ConModOrgLab-5
-ConModOrgLRef-5
+ConModOrgRef-5
 ConModClssPhy-4a
 ConModPhyBas-5a
 ConModPhyAdv-5a
@@ -420,6 +424,8 @@ SedFRPhsProd-3
 WetDepIP-3
 DryDepIP-3
 FRPhsAdsDsp-3
+FRPhsAdsDspLin-4
+FRPhsAdsDspQuad-4
 SettlingIP-3
 AppPhy
 PhyGeneral-3
@@ -504,6 +510,10 @@ PhotCons-4
 PhotProd-4
 OrgLight-3
 OrgSettle-3
+OrgSettleNone-5
+OrgSettleConst-5
+OrgSettleConstD-5
+OrgSettleStokes-5
 AppConstits
 AppDiags
 AppParams

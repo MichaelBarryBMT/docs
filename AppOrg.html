@@ -309,7 +309,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="G.1" data-path="AppIP.html"><a href="AppIP.html#SedFRPhsProd-3"><i class="fa fa-check"></i><b>G.1</b> Sediment FRP flux</a></li>
 <li class="chapter" data-level="G.2" data-path="AppIP.html"><a href="AppIP.html#WetDepIP-3"><i class="fa fa-check"></i><b>G.2</b> Wet deposition of inorganic phosphorus</a></li>
 <li class="chapter" data-level="G.3" data-path="AppIP.html"><a href="AppIP.html#DryDepIP-3"><i class="fa fa-check"></i><b>G.3</b> Dry deposition of inorganic phosphorus</a></li>
-<li class="chapter" data-level="G.4" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>G.4</b> Adsorption and desorption</a></li>
+<li class="chapter" data-level="G.4" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDsp-3"><i class="fa fa-check"></i><b>G.4</b> Adsorption and desorption</a>
+<ul>
+<li class="chapter" data-level="G.4.1" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDspLin-4"><i class="fa fa-check"></i><b>G.4.1</b> Linear model</a></li>
+<li class="chapter" data-level="G.4.2" data-path="AppIP.html"><a href="AppIP.html#FRPhsAdsDspQuad-4"><i class="fa fa-check"></i><b>G.4.2</b> Quadratic model</a></li>
+</ul></li>
 <li class="chapter" data-level="G.5" data-path="AppIP.html"><a href="AppIP.html#SettlingIP-3"><i class="fa fa-check"></i><b>G.5</b> Settling</a></li>
 </ul></li>
 <li class="chapter" data-level="H" data-path="AppPhy.html"><a href="AppPhy.html"><i class="fa fa-check"></i><b>H</b> Processes: phyto general</a>
@@ -427,7 +431,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="N.6.2" data-path="AppOrg.html"><a href="AppOrg.html#PhotProd-4"><i class="fa fa-check"></i><b>N.6.2</b> Production</a></li>
 </ul></li>
 <li class="chapter" data-level="N.7" data-path="AppOrg.html"><a href="AppOrg.html#OrgLight-3"><i class="fa fa-check"></i><b>N.7</b> Self shading</a></li>
-<li class="chapter" data-level="N.8" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettle-3"><i class="fa fa-check"></i><b>N.8</b> Settling</a></li>
+<li class="chapter" data-level="N.8" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettle-3"><i class="fa fa-check"></i><b>N.8</b> Settling</a>
+<ul>
+<li class="chapter" data-level="N.8.1" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettleNone-5"><i class="fa fa-check"></i><b>N.8.1</b> None</a></li>
+<li class="chapter" data-level="N.8.2" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettleConst-5"><i class="fa fa-check"></i><b>N.8.2</b> Constant</a></li>
+<li class="chapter" data-level="N.8.3" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettleConstD-5"><i class="fa fa-check"></i><b>N.8.3</b> Constant with density correction</a></li>
+<li class="chapter" data-level="N.8.4" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettleStokes-5"><i class="fa fa-check"></i><b>N.8.4</b> Stokes</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="O" data-path="AppConstits.html"><a href="AppConstits.html"><i class="fa fa-check"></i><b>O</b> Computed variables</a></li>
 <li class="chapter" data-level="P" data-path="AppDiags.html"><a href="AppDiags.html"><i class="fa fa-check"></i><b>P</b> Diagnostic variables</a></li>
@@ -463,10 +473,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="SedDissOrgProd-3" class="section level2" number="18.1">
 <h2><span class="header-section-number">N.1</span> Sediment flux</h2>
 <p>Dissolved organic carbon, nitrogen and phosphorus are exchanged between the water column and sediments via specification of separate sediment fluxes. In all cases, this flux is most commonly out of the sediments, i.e. a positive specification of sediment flux. Although it is rare that sediments act as sinks of these species, TUFLOW WQM can be parameterised to allow for this if required. Only labile dissolved organic matter is released from the sediments in the WQM, and as such, references to organics in this section should be interpreted as labile organics.</p>
-<p style="color:red">
-Sediment fluxes of particulate organic matter cannot be specified using this approach. Exchange of particulate organic matter between the sediments and water column is simulated using the TUFLOW FV sediment transport module. See Section XXXX
-</p>
-<p>.</p>
 <p>The user specified rates of dissolved organic fluxes (which can be spatially varying) are modified by overlying ambient dissolved oxygen concentration (together with respective user specified half saturation oxygen concentrations) and water temperature. These modifications are simulated via Michaelis-Menten and Arrhenius models, respectively, as per Equation <a href="AppOrg.html#eq:equ-sed-org-flux">(N.1)</a>.
 <span class="math display" id="eq:equ-sed-org-flux">\[\begin{equation}
 \left.\begin{aligned}
@@ -761,30 +767,55 @@ Ke_{\langle computed \rangle}^{ROM} = R_{CDOM}^{RDOM} \times CDOM + Ke^{RPOM} \t
 </div>
 <div id="OrgSettle-3" class="section level2" number="18.8">
 <h2><span class="header-section-number">N.8</span> Settling</h2>
-<p><span style="color:red">To be written when FV/AED upgrades complete.
-Particulate organic matter settles. Depending on hydrodynamic conditions, these fluxes can represent consumption or production of particulate organic matter.</p>
-<p>V settle is computed as ….</p>
-<p>For labile organics, Equation <a href="AppOrg.html#eq:equ-pel-lsedmtn-flux">(N.28)</a> applies
-<span class="math display" id="eq:equ-pel-lsedmtn-flux">\[\begin{equation}
-\left.\begin{aligned}
-  \href{AppDiags.html#WQDiagPOCSedmtn}{F_{sedmtn\langle computed\rangle}^{POC}} =&amp; \href{AppDiags.html#WQDiagPOMVVel}{V_{settle\langle computed \rangle}^{POM} \times \left[ POC \right]}
-\\ \\  
-  \href{AppDiags.html#WQDiagPONSedmtn}{F_{sedmtn\langle computed\rangle}^{PON}} =&amp; \href{AppDiags.html#WQDiagPOMVVel}{V_{settle\langle computed \rangle}^{POM} \times \left[ PON \right]}
-\\ \\  
-  \href{AppDiags.html#WQDiagPOPSedmtn}{F_{sedmtn\langle computed\rangle}^{POP}} =&amp; \href{AppDiags.html#WQDiagPOMVVel}{V_{settle\langle computed \rangle}^{POM} \times \left[ POP \right]}
-\end{aligned}\right\}
+<p>Particulate organic matter is able to be settled within the WQM. Four settling models are available. These are able to be applied equally to both labile and refractory particulate organic matter to compute <span class="math inline">\(V_{settle}^{lorg}\)</span> and <span class="math inline">\(V_{settle}^{rorg}\)</span>, respectively. The same settling model must be applied to both types of particulates, although the parameters ascribed to a model can be different for labile and refractory particulates. Once computed, the same settling rate is applied to each of labile particulate organic carbon, nitrogen and phosphorus.</p>
+<div id="OrgSettleNone-5" class="section level3" number="18.8.1">
+<h3><span class="header-section-number">N.8.1</span> None</h3>
+<p>In this model, particulate organic settling is set to zero and organic matter is simply advected by the hydrodynamic flow field.</p>
+</div>
+<div id="OrgSettleConst-5" class="section level3" number="18.8.2">
+<h3><span class="header-section-number">N.8.2</span> Constant</h3>
+<p>In this model, <a href="AppParams.html#WQParConVLOrg"><span class="math inline">\(V_{settle}^{lorg}\)</span></a> and <a href="AppParams.html#WQParConVROrg"><span class="math inline">\(V_{settle}^{rorg}\)</span></a> are set to constant values, and matter is settled at these velocities. These can be different velocities for labile and refractory particulate organics. A negative specification of this quantity corresponds to a downwards settling velocity.</p>
+</div>
+<div id="OrgSettleConstD-5" class="section level3" number="18.8.3">
+<h3><span class="header-section-number">N.8.3</span> Constant with density correction</h3>
+<p>In this model, <a href="AppParams.html#WQParConVLOrg"><span class="math inline">\(V_{settle}^{lorg}\)</span></a> and <a href="AppParams.html#WQParConVROrg"><span class="math inline">\(V_{settle}^{rorg}\)</span></a> are set to constant values, and matter is settled at these velocities, but corrected for ambient water density effects, as per Equation <a href="AppOrg.html#eq:eq-pel-org-settdens">(N.28)</a>.</p>
+<p><span class="math display" id="eq:eq-pel-org-settdens">\[\begin{equation}
+  V_{sett\langle computed\rangle}^{org} = V_{settle}^{org} \times \frac{\mu_{20}\times\rho_w}{\mu\times\rho_{w20}}
   \tag{N.28}
 \end{equation}\]</span></p>
-<p><span class="math inline">\(V_{settle\langle computed \rangle}^{POM}\)</span> depends on the sed module.</p>
-<p>For refractory organics, Equation <a href="AppOrg.html#eq:equ-pel-rsedmtn-flux">(N.29)</a> applies.
-<span class="math display" id="eq:equ-pel-rsedmtn-flux">\[\begin{equation}
-  \href{AppDiags.html#WQDiagRPOMSedmtn}{F_{sedmtn\langle computed\rangle}^{RPOM}} = \href{AppDiags.html#WQDiagRPOMVVel}{V_{settle\langle computed \rangle}^{RPOM} \times \left[ RPOM \right]}
+<p><span class="math inline">\(V_{settle}^{org}\)</span> is <span class="math inline">\(V_{settle}^{lorg}\)</span> or <span class="math inline">\(V_{settle}^{rorg}\)</span> at 20<span class="math inline">\(^o\)</span>C, <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\rho_w\)</span> are the ambient water dynamic viscosity (in Ns/m<span class="math inline">\(^2\)</span>) and density (in kg/m<span class="math inline">\(^3\)</span>), respectively, and <span class="math inline">\(\mu_{20}\)</span> and <span class="math inline">\(\rho_{w20}\)</span> are the dynamic viscosity and density of freshwater at 20<span class="math inline">\(^o\)</span>C, respectively. A negative specification of <span class="math inline">\(V_{settle}^{org}\)</span> corresponds to a downwards settling velocity.</p>
+</div>
+<div id="OrgSettleStokes-5" class="section level3" number="18.8.4">
+<h3><span class="header-section-number">N.8.4</span> Stokes</h3>
+<p>In this model, particulate organic settling is computed using the Stokes equation and particle diameter and density, as per Equations <a href="AppOrg.html#eq:eq-pel-org-settstokes1">(N.29)</a> and <a href="AppOrg.html#eq:eq-pel-org-settstokes2">(N.30)</a>.</p>
+<p><span class="math display" id="eq:eq-pel-org-settstokes1">\[\begin{equation}
+  V_{sett\langle computed\rangle}^{lorg} = -g \times d_{lorg}^2 \times \frac{\left(\rho_{lorg}-\rho_w\right)}{18\mu}
   \tag{N.29}
 \end{equation}\]</span></p>
-<p><span class="math inline">\(V_{settle\langle computed \rangle}^{RPOM}\)</span> depends on the sed module.</p>
-<p></span></p>
+<p><span class="math display" id="eq:eq-pel-org-settstokes2">\[\begin{equation}
+  V_{sett\langle computed\rangle}^{rorg} = -g \times d_{rorg}^2 \times \frac{\left(\rho_{rorg}-\rho_w\right)}{18\mu}
+  \tag{N.30}
+\end{equation}\]</span>
+<span class="math inline">\(g\)</span> is acceleration due to gravity, <a href="AppParams.html#WQParDLOrg"><span class="math inline">\(d_{lorg}\)</span></a> and <a href="AppParams.html#WQParDROrg"><span class="math inline">\(d_{rorg}\)</span></a> are conceptualised diameters of labile and refractory particulate organic matter respectively, <a href="AppParams.html#WQParRhoLOrg"><span class="math inline">\(\rho_{lorg}\)</span></a> and <a href="AppParams.html#WQParRhoROrg"><span class="math inline">\(\rho_{rorg}\)</span></a> are labile and refractory particulate organic matter densities, respectively, and <span class="math inline">\(\rho_w\)</span> and <span class="math inline">\(\mu\)</span> are the ambient water density and dynamic viscosity, respectively.</p>
+<p>Once the settling velocities for labile and refractory particulate organic matter have been computed, the relevant fluxes are calculated as follows.</p>
+<p><span class="math display" id="eq:equ-pel-lsedmtn-flux">\[\begin{equation}
+\left.\begin{aligned}
+  \href{AppDiags.html#WQDiagPOCSedmtn}{F_{sedmtn\langle computed\rangle}^{POC}} =&amp; \href{AppDiags.html#WQDiagPOMVVel}{V_{settle\langle computed \rangle}^{lorg}} \times \left[ POC \right]
+\\ \\  
+  \href{AppDiags.html#WQDiagPONSedmtn}{F_{sedmtn\langle computed\rangle}^{PON}} =&amp; \href{AppDiags.html#WQDiagPOMVVel}{V_{settle\langle computed \rangle}^{lorg}} \times \left[ PON \right]
+\\ \\  
+  \href{AppDiags.html#WQDiagPOPSedmtn}{F_{sedmtn\langle computed\rangle}^{POP}} =&amp; \href{AppDiags.html#WQDiagPOMVVel}{V_{settle\langle computed \rangle}^{lorg}} \times \left[ POP \right]
+\end{aligned}\right\}
+  \tag{N.31}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:equ-pel-rsedmtn-flux">\[\begin{equation}
+  \href{AppDiags.html#WQDiagRPOMSedmtn}{F_{sedmtn\langle computed\rangle}^{RPOM}} = \href{AppDiags.html#WQDiagRPOMVVel}{V_{settle\langle computed \rangle}^{rorg}} \times \left[ RPOM \right]
+  \tag{N.32}
+\end{equation}\]</span></p>
+<p>The limitations of this approach to modelling particulate organic matter settling are recognised. Future releases of the WQM will offer direct linkages between the TUFLOW FV STM and WQM, and treat particulate organics as sediment fractions that are transported using the advanced techniques and models offered by the STM.</p>
 <p><img src="images/WQFooter.jpg" width="100%" /></p>
 
+</div>
 </div>
 </div>
             </section>
