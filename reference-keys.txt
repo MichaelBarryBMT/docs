@@ -65,7 +65,7 @@ eq:equ-pel-denit-flux
 fig:fig-DeNitT
 fig:fig-DeNitK
 eq:equ-pel-anammox-stoi
-eq:equ-pel-anammox-rate
+eq:equ-pel-anammox-no2no3
 eq:equ-pel-anmmox-flux
 eq:equ-pel-drna-rate
 eq:equ-pel-drna-flux

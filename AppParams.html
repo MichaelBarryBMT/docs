@@ -4627,13 +4627,17 @@ The proportion of photolysed refractory dissolved organic matter that is is conv
 <a id="WQParRanmx">Anaerobic oxidation of ammonium rate</a>
 </td>
 <td style="text-align:center;width: 4%; vertical-align:middle;">
-<span class="math inline">\(R_{anmx}^{NH_4,NO_3}\)</span>
+<span class="math inline">\(k_{anmx}^{N_2}\)</span>
 </td>
 <td style="text-align:center;width: 12%; ">
-/d
+mg N/L/d<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+mmol N/m<span class="math inline">\(^3\)</span>/d
 </td>
 <td style="text-align:center;width: 8%; ">
-(0, 0.05)
+(0, 0.5)<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+(0, 0.0357142857142857)
 </td>
 <td style="text-align:center;width: 2%; ">
 0<br>
@@ -4641,7 +4645,7 @@ The proportion of photolysed refractory dissolved organic matter that is is conv
 0
 </td>
 <td style="text-align:left;width: 47%; ">
-The rate at which ammonium is oxidised (consuming nitrate) to nitrogen gas N<span class="math inline">\(_2\)</span> at 20<span class="math inline">\(^o\)</span>C excluding the influence of ambient ammonium and nitrate concentrations. A value of 0.0 will switch off anammox
+The rate at which ammonium is oxidised (consuming nitrite) to nitrogen gas N<span class="math inline">\(_2\)</span> at 20<span class="math inline">\(^o\)</span>C excluding the influence of ambient ammonium and nitrite concentrations. This is not solely a per day rate, but is the mass (or mmol) rate of production of nitrogen in free nitrogen gas, per unit volume, per day. Anammox only operates when ambient dissolved oxygen concentrations are less than 0.1 mg/L. A value of 0.0 will switch off anammox
 </td>
 <td style="text-align:left;width: 12%; ">
 <a href="AppCommands.html#WQAnammoxPars">anaerobic oxidation of ammonium ==</a><br>
@@ -4654,7 +4658,7 @@ The rate at which ammonium is oxidised (consuming nitrate) to nitrogen gas N<spa
 <a id="WQParKanmxAmm">Half saturation ammonium concentration for anammox</a>
 </td>
 <td style="text-align:center;width: 4%; vertical-align:middle;">
-<span class="math inline">\(K_{anmx-NH_4}^{NH_4,NO_3}\)</span>
+<span class="math inline">\(K_{anmx-NH_4}^{N_2}\)</span>
 </td>
 <td style="text-align:center;width: 12%; ">
 mg/L NH<span class="math inline">\(_4\)</span>-N<br>
@@ -4672,7 +4676,7 @@ mmol/m<span class="math inline">\(^3\)</span> NH<span class="math inline">\(_4\)
 125
 </td>
 <td style="text-align:left;width: 47%; ">
-The ammonium concentration for which the computed consumption of ammonium due to anaerobic oxidation would be half the corresponding anaerobic oxidation rate, excluding the influence of nitrate. Cannot be varied spatially
+The ammonium concentration for which the computed consumption of ammonium due to anaerobic oxidation would be half the corresponding anaerobic oxidation rate, excluding the influence of nitrite. Cannot be varied spatially
 </td>
 <td style="text-align:left;width: 12%; ">
 <a href="AppCommands.html#WQAnammoxPars">anaerobic oxidation of ammonium ==</a><br>
@@ -4682,15 +4686,15 @@ The ammonium concentration for which the computed consumption of ammonium due to
 </tr>
 <tr>
 <td style="text-align:left;width: 15%; vertical-align:top;">
-<a id="WQParKanmxNit">Half saturation nitrate concentration for anammox</a>
+<a id="WQParKanmxNit">Half saturation nitrite concentration for anammox</a>
 </td>
 <td style="text-align:center;width: 4%; vertical-align:middle;">
-<span class="math inline">\(K_{anmx-NO_3}^{NH_4,NO_3}\)</span>
+<span class="math inline">\(K_{anmx-NO_2}^{N_2}\)</span>
 </td>
 <td style="text-align:center;width: 12%; ">
-mg/L NO<span class="math inline">\(_3\)</span>-N<br>
+mg/L NO<span class="math inline">\(_2\)</span>-N<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-mmol/m<span class="math inline">\(^3\)</span> NO<span class="math inline">\(_3\)</span>-N
+mmol/m<span class="math inline">\(^3\)</span> NO<span class="math inline">\(_2\)</span>-N
 </td>
 <td style="text-align:center;width: 8%; ">
 (0, 10)<br>
@@ -4703,7 +4707,7 @@ mmol/m<span class="math inline">\(^3\)</span> NO<span class="math inline">\(_3\)
 125
 </td>
 <td style="text-align:left;width: 47%; ">
-The nitrate concentration for which the computed consumption of ammonium due to anaerobic oxidation would be half the corresponding anaerobic oxidation rate, excluding the influence of ammonium. Cannot be varied spatially
+The nitrite concentration for which the computed consumption of ammonium due to anaerobic oxidation would be half the corresponding anaerobic oxidation rate, excluding the influence of ammonium. Cannot be varied spatially
 </td>
 <td style="text-align:left;width: 12%; ">
 <a href="AppCommands.html#WQAnammoxPars">anaerobic oxidation of ammonium ==</a><br>
