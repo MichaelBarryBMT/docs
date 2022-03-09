@@ -489,7 +489,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <ul>
 <li><strong>Log file user feedback</strong>. WQM simulations generate a log file that reports all simulation configuration details for review</li>
-<li><strong>Output variable names</strong>. The WQM output variable names are descriptive and include the units used, for example <code>WQ_DISS_OXYGEN_MGL</code></li>
+<li><strong>Output computed variable names</strong>. The WQM output variable names are descriptive and include the units used, for example <code>WQ_DISS_OXYGEN_MGL</code></li>
+<li><strong>Output diagnostic variable names</strong>. The WQM output diagnostic variable names are descriptive and include the units used, for example <code>WQ_DIAG_O2_ATMOS_EXCHANGE_MG_M2_D</code></li>
 <li><strong>Specification of concentration limits</strong>. The WQM allows users to optionally specify minimum and maximum concentation limits for each computed variable, and the WQM will reset concentrations to these limits if exceedences are detected. All instances of resetting are reported to the WQM log file as continuous commentary</li>
 <li><strong>Inbuilt guidance on parameter specification</strong>. The WQM checks all user specified parameters and compares them to typical ranges. If a parameter’s specified value falls outside a typical range, then a warning is reported to the WQM log file. These ranges are listed in Appendix <a href="AppParams.html#AppParams">Q</a> of this manual</li>
 </ul>

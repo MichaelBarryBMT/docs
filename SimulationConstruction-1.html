@@ -549,38 +549,98 @@ water quality control file == .\Model_000.fvwq</code></pre>
 <p>In addition to activating the WQM and specifying its control file, WQM initial and boundary condition information is also set through the TUFLOW FV control file. The processes for doing so are described below. These are followed by discussion of the related matter of constituent ordering within initial and boundary condition specifications.</p>
 <div id="ICGeneral-4" class="section level4" number="4.4.2.1">
 <h4><span class="header-section-number">4.4.2.1</span> Initial conditions</h4>
-<p>Water quality initial conditions are specified within the TUFLOW FV control file, akin to the manner in which the sediment initial conditions are set on behalf of the sediment transport module. This specification is mandatory.</p>
-<p>There are currently a number of ways that water quality initial conditions may be specified, and all are affected through TUFLOW FV commands. If no water quality initial conditions are specified, then a simulation will not execute.</p>
-<p>Restart files generated from previous simulations can be used to initialise water quality simulations, provided that the restart and simulation model geometries, and water quality simulation computed variables and units are identical. A restart file is specified for all simulated quantities (not just water quality) and is controlled through commands described in the TUFLOW FV user manual. The key command is</p>
+<p>Water quality initial conditions are specified within or via the TUFLOW FV control file, akin to the manner in which the sediment initial conditions are set on behalf of the sediment transport module. This specification is mandatory.</p>
+<p>There are currently a number of ways that water quality initial conditions may be specified. All are affected through TUFLOW FV commands which are described in the TUFLOW FV user manual. If no water quality initial conditions are specified, then a simulation will not execute. The specifications relevant to water quality simulations are described below. The potential limitations of some of these approaches are recognised and will be addressed in future release of the WQM.</p>
+<div id="ICRst-5" class="section level5" number="4.4.2.1.1">
+<h5><span class="header-section-number">4.4.2.1.1</span> Restart files</h5>
+<p>Restart files are binary files that are generated from previous simulations. These can be used as inputs to initialise water quality simulations, provided that the restart and simulation model geometries, and water quality simulation computed variables and units are identical. A restart file is specified for all simulated quantities (not just water quality) and is controlled through commands described in the TUFLOW FV user manual. The key command is</p>
 <blockquote>
 <p><a href="AppCommands.html#FVRestart">restart ==</a> <a href="AppCommands.html#FVRestart">&lt;<em>restart file name</em>&gt;.rst</a></p>
 </blockquote>
-<p>Other than a restart file, there are a number of ways that water quality initial conditions can be specified, all of which utilise existing TUFLOW FV methods. These are described in the TUFLOW FV user manual, of which some of the following are included:</p>
-<ul>
-<li>Globally uniform<br></li>
-</ul>
+<p>Most often, restart files are located in the <code>log</code> directory, but this is not mandatory.</p>
+</div>
+<div id="ICGlob-5" class="section level5" number="4.4.2.1.2">
+<h5><span class="header-section-number">4.4.2.1.2</span> Globally uniform</h5>
+<p>Globally uniform (i.e. across all spatial dimensions) initial conditions are set via a command issued from within the TUFLOW FV control file. This is often useful in setting initial conditions for simple small water bodies or at the commencement of a modelling process where initial conditions are set to be placeholders and updated at a later time. The command to do so is:</p>
 <blockquote>
 <p><a href="AppCommands.html#FVInitWQGlob">initial wq concentration ==</a> <a href="AppCommands.html#FVInitWQGlob">ordered initial conditions</a></p>
 </blockquote>
-<ul>
-<li>Globally laterally uniform, but varying with depth<br></li>
-</ul>
+<p>Each water quality computed variable is set to a single value everywhere. These initial concentrations must be specified in a particular order and this order is described in the following sections for different simulation classes. If the above command is used to set water quality initial conditions, then it must be accompanied by parallel commands that set globally uniform salinity, temperature (and optionally sediment) initial conditions:</p>
+<pre><code>initial temperature == 15.0
+initial Water Level == 1.00
+initial sediment concentration == 10.0 
+initial salinity == 3.5</code></pre>
+<p>Setting a mix of globally uniform and other initial conditions (such as profile, 2d or 3d) is not permitted.</p>
+</div>
+<div id="ICGlobLat-5" class="section level5" number="4.4.2.1.3">
+<h5><span class="header-section-number">4.4.2.1.3</span> Gobally laterally uniform</h5>
+<p>Globally laterally uniform initial conditions use an initial profile to set hydrodynamic and water quality computed variable concentrations to be everywhere the same laterally, but to vary vertically. This is often useful in setting initial conditions for deep stationary water bodies such as lakes or reservoirs. The command to do so is:</p>
 <blockquote>
 <p><a href="AppCommands.html#FVInitWQProf">initial scalar profile ==</a> <a href="AppCommands.html#FVInitWQProf">&lt;<em>initial condition file name</em>&gt;.csv</a></p>
 </blockquote>
-<ul>
-<li>Globally vertically uniform, but varying laterally<br></li>
-</ul>
+<p>An example of the form of the text file argument <em>initial condition file name</em>.csv for simulating five water quality constituents is:</p>
+<pre><code>Depth,Sal,temp,sed_1,WQ_1,WQ_2,WQ_3,WQ_4,WQ_5
+0.0,2.0,22.0,5.0,8.0,22.0,2.6,1.4,0.5
+10.0,2.5,15.0,15.0,5.0,32.0,2.6,1.4,0.2
+20.0,3.0,10.0,25.0,0.0,42.0,5.6,5.4,0.1</code></pre>
+<p>If the above command is used, then it must include profile information that also sets laterally uniform salinity, temperature (and optionally sediment) initial conditions. Setting a mix of laterally uniform and other initial conditions (such as globally uniform, 2d or 3d) is not permitted.</p>
+<p>The order of these columns in the argument csv file is not important, but the columns headers are keywords and must be used as shown. For example, the following structure for <em>initial condition file name</em>.csv is permitted:</p>
+<pre><code>Depth,temp,WQ_3,Sal,sed_1,WQ_4,WQ_1,WQ_2,WQ_5
+0,22,2.6,2,5,1.4,8,22,0.5
+10,15,2.6,2.5,15,1.4,5,32,0.2
+20,10,3,3,25,5.4,0,42,0.1</code></pre>
+<p>Notwithstanding this, it is still considered best practise to develop initial and boundary condition files that have a logically sequential order. Water quality initial conditions headers are labelled “WQ_1”, “WQ_2” onward, and the match between these header labels and water quality computed variables is set by the computed variable ordering of the simulation class deployed.</p>
+</div>
+<div id="ICGlobVert-5" class="section level5" number="4.4.2.1.4">
+<h5><span class="header-section-number">4.4.2.1.4</span> Gobally vertically uniform</h5>
+<p>Globally vertically uniform initial conditions use an initial two dimensional map to set hydrodynamic and water quality computed variable concentrations to be everywhere the same vertically, but to vary laterally. This is often useful in setting initial conditions for shallow water bodies that have horizontal concentration gradients such as small estuaries or urban lakes. The command to do so is:</p>
 <blockquote>
 <p><a href="AppCommands.html#FVInitWQ2D">initial condition 2d ==</a> <a href="AppCommands.html#FVInitWQ2D">&lt;<em>initial condition file name</em>&gt;.csv</a></p>
 </blockquote>
-<ul>
-<li>Three dimensional spatially varying<br></li>
-</ul>
+<p>An example of the form of the text file argument <em>initial condition file name</em>.csv for simulating five water quality constituents is:</p>
+<pre><code>ID,WL,sal,temp,sed_1,WQ_1
+1,1.0,3.5,15,10.0,8.0
+2,1.0,3.5,15,10.0,7.5
+3,1.0,3.5,15,10.0,7.0
+4,1.0,3.5,15,10.0,6.5</code></pre>
+<p>If the above command is used, then it must include information that also sets vertically uniform salinity and temperature (and optionally sediment) initial conditions, as well as water level. Setting a mix of vertically uniform and other initial conditions (such as globally uniform, laterally uniform or 3d) is not permitted.</p>
+<p>The order of these columns in the argument csv file is not important, but the columns headers are keywords and must be used as shown. For example, the following structure for <em>initial condition file name</em>.csv is permitted:</p>
+<pre><code>ID,WQ_1,WL,sed_1,sal,temp
+1,8.0,1.0,10.0,3.5,15
+2,7.5,1.0,10.0,3.5,15
+3,7.0,1.0,10.0,3.5,15
+4,6.5,1.0,10.0,3.5,15</code></pre>
+<p>Notwithstanding this, it is still considered best practise to develop initial and boundary condition files that have a logically sequential order. Water quality initial conditions headers are labelled “WQ_1”, “WQ_2” onward, and the match between these header labels and water quality computed variables is set by the computed variable ordering of the simulation class deployed.</p>
+</div>
+<div id="ICGlob3d-5" class="section level5" number="4.4.2.1.5">
+<h5><span class="header-section-number">4.4.2.1.5</span> Gobally varying</h5>
+<p>Globally variable initial conditions use an initial three dimensional map to set hydrodynamic and water quality computed variable concentrations at each 3D cell. This is analogous to using a restart file. The command to do so is:</p>
 <blockquote>
 <p><a href="AppCommands.html#FVInitWQ3D">initial condition 3d ==</a> <a href="AppCommands.html#FVInitWQ3D">&lt;<em>initial condition file name</em>&gt;.csv</a></p>
 </blockquote>
-<p>Initial conditions that use columnar data structures (e.g. *.csv files, and all of the above commands) are interpreted using the <a href="SimulationConstruction-1.html#Ordering-4">ordering rules</a> noted below. The required ordering for each WQM simulation class is provided subsequently (sections <a href="SimulationConstruction-1.html#SimSetSimClDO-2">4.6</a>, <a href="SimulationConstruction-1.html#SimSetSimClInorg-2">4.7</a> and <a href="SimulationConstruction-1.html#SimSetSimClOrg-2">4.8</a> for simulation classes DO, inorganics and organics, respectively).</p>
+<p>An example of the form of the text file argument <em>initial condition file name</em>.csv for simulating five water quality constituents is as follows, noting that the “ID” column refers to a three dimensional cell ID, rather than the two dimensional column ID used in the <code>initial condition 2d ==</code> command.</p>
+<pre><code>ID,WL,sal,temp,sed_1,WQ_1
+1,1.0,3.5,15,10.0,8.0
+2,1.0,3.5,14,10.0,7.5
+3,1.0,3.5,13,10.0,7.0
+4,1.0,3.5,12,8.0,6.5
+5,1.0,3.5,15,10.0,8.0
+6,1.0,3.5,14,10.0,7.4
+7,1.0,3.5,13,10.0,7.1
+8,1.0,3.5,11,9.0,6.6</code></pre>
+<p>If the above command is used, then it must include information that also sets globally varyiong salinity and temperature (and optionally sediment) initial conditions, as well as water level. Setting a mix of vertically uniform and other initial conditions (such as globally uniform, laterally uniform or 2d) is not permitted.</p>
+<p>The order of these columns in the argument csv file is not important, but the columns headers are keywords and must be used as shown. For example, the following structure for <em>initial condition file name</em>.csv is permitted:</p>
+<pre><code>ID,WQ_1,WL,sed_1,sal,temp
+1,8.0,1.0,10.0,3.5,15
+2,7.5,1.0,10.0,3.5,14
+3,7.0,1.0,10.0,3.5,13
+4,6.5,1.0,8.0,3.5,12
+5,8.0,1.0,10.0,3.5,15
+6,7.4,1.0,10.0,3.5,14
+7,7.1,1.0,10.0,3.5,13
+8,6.6,1.0,9.0,3.5,12</code></pre>
+<p>Notwithstanding this, it is still considered best practise to develop initial and boundary condition files that have a logically sequential order. Water quality initial conditions headers are labelled “WQ_1”, “WQ_2” onward, and the match between these header labels and water quality computed variables is set by the computed variable ordering of the simulation class deployed.</p>
+</div>
 </div>
 <div id="BCGeneral-4" class="section level4" number="4.4.2.2">
 <h4><span class="header-section-number">4.4.2.2</span> Boundary conditions</h4>
@@ -594,7 +654,8 @@ water quality control file == .\Model_000.fvwq</code></pre>
 <p>Future releases of TUFLOW FV will allow alternative methods for specification of initial and boundary conditions that do not rely on assumed ordering. In the interim however, the following applies.</p>
 <div id="OrderIC-5" class="section level5" number="4.4.2.3.1">
 <h5><span class="header-section-number">4.4.2.3.1</span> Initial Conditions</h5>
-<p>Initial conditions, if set using means other than a restart file, must be specified with water quality constituents in a preset order. Header information is not used in setting water quality initial conditions - the ordering of values or columns is the sole means by which text based initial conditions are set. For example, the following *.fvc command sets globally uniform initial conditions for a typical inorganics simulation class:</p>
+<p>Initial conditions, if set using means other than a restart file, must be specified with water quality constituents in a preset order (globally uniform), or be referenced using incrementally numbered headers as “WQ_1”, “WQ_2” etc (profile, 2d or 3d, see Section <a href="SimulationConstruction-1.html#ICGeneral-4">4.4.2.1</a>).</p>
+<p>For globally uniform initial conditions (Section <a href="SimulationConstruction-1.html#ICGlob-5">4.4.2.1.2</a>), the following *.fvc command can be used for a typical inorganics simulation class:</p>
 <blockquote>
 <p><a href="AppCommands.html#FVInitWQGlob">initial wq concentration ==</a> 7.5, 0.0, 4.2, 10.5, 0.6, 5.5</p>
 </blockquote>
@@ -607,8 +668,8 @@ water quality control file == .\Model_000.fvwq</code></pre>
 <li>Filterable reactive phosphorus (0.6 mg/L), and</li>
 <li>One phytoplankton group (5.5 <span class="math inline">\(\mu\)</span>g/L)</li>
 </ul>
-<p>Similarly, the expected ordering of columns in profile, 2D or 3D options is the only means by which TUFLOW FV interprets initial conditions: headers in these files are ignored.</p>
 <p>The expected ordering is the same as that for boundary condition specifications, as described below.</p>
+<p>For other initial condition specifications that involve providing csv files, the headers “WQ_1”, “WQ_2” etc must be used to denote water quality initial conditions. The ordering of the associated columns does not matter, however the assignment of a computed variable initial condition to a “WQ_XX” header (where XX is a number) does rely on the ordering described below - the first water quality computed variable expected should be headed “WQ_1” and so on.</p>
 </div>
 <div id="OrderBC-5" class="section level5" number="4.4.2.3.2">
 <h5><span class="header-section-number">4.4.2.3.2</span> Boundary Conditions</h5>
@@ -753,7 +814,7 @@ end material</code></pre>
 <ul>
 <li><a href="AppCommands.html#FVWQMCtrlDr">water quality model dir ==</a> &lt;<em>relative path to *.fvwq file</em>&gt;<span class="math inline">\(\backslash\)</span></li>
 </ul></li>
-<li>Add appropriate initial conditions for all water quality constituents, observing <a href="SimulationConstruction-1.html#OrderIC-5">ordering rules</a></li>
+<li>Add appropriate initial conditions for all water quality constituents, observing <a href="SimulationConstruction-1.html#OrderIC-5">ordering rules</a> where required</li>
 <li>Initially optionally add boundary conditions for all water quality constituents, observing <a href="SimulationConstruction-1.html#OrderBC-5">ordering rules</a> in <code>bc header ==</code> commands</li>
 </ul></li>
 <li>Create the water quality control file with the corresponding name and path</li>
@@ -832,7 +893,7 @@ end material</code></pre>
 </div>
 <div id="ConOrdDO-3" class="section level3" number="4.6.5">
 <h3><span class="header-section-number">4.6.5</span> Constituent ordering</h3>
-<p>Dissolved oxygen is the only constituent simulated by the WQM for this simulation class. In all columnar and list style initial conditions, oxygen concentration is specified as the first variable (shown in symbolic form below):</p>
+<p>Dissolved oxygen is the only constituent simulated by the WQM for this simulation class, and therefore oxygen concentration is specified as the first variable (shown in symbolic form below):</p>
 <blockquote>
 <p>initial wq concentration == <span class="math inline">\(\left[ DO \right]\)</span></p>
 </blockquote>
@@ -1401,13 +1462,13 @@ end material</code></pre>
 </div>
 <div id="ConOrdInorg-3" class="section level3" number="4.7.5">
 <h3><span class="header-section-number">4.7.5</span> Constituent ordering</h3>
-<p>Different constituent model selections result in different ordering requirements for specifying computed variable initial conditions and <code>bc header ==</code> commands. For clarity, these are initially presented below using only phytoplankton placeholders in lists. This is possible because phytoplankton specifications are always appended at the end of initial condition or <code>bc header ==</code> lists. Phytoplankton specifications are then presented as additive to these lists in subsequent sections. This is not meant to imply that phytoplankton simulation is optional in the inorganics simulation class - it is mandatory and has only been described separately here for clarity of presentation.</p>
+<p>Different constituent model selections result in different ordering requirements for specifying computed variable initial conditions (either globally with an implied order, or setting the ordered map from water quality computed variables to “WQ_1”, “WQ_2” etc) and <code>bc header ==</code> commands. For clarity, these are initially presented below using only phytoplankton placeholders in lists. This is possible because phytoplankton specifications are always appended at the end of initial condition or <code>bc header ==</code> lists. Phytoplankton specifications are then presented as additive to these lists in subsequent sections. This is not meant to imply that phytoplankton simulation is optional in the inorganics simulation class - it is mandatory and has only been described separately here only for clarity of presentation.</p>
 <div id="ConOrdExPhy-4" class="section level4" number="4.7.5.1">
 <h4><span class="header-section-number">4.7.5.1</span> Excluding phytoplankton</h4>
 <p>The only constituent model choice that influences ordering (other than phytoplankton) is the phosphorus model. These two possibilities are described below.</p>
 <div id="ConOrdInorgFRPhs-5" class="section level5" number="4.7.5.1.1">
 <h5><span class="header-section-number">4.7.5.1.1</span> Phosphorus model FRPhs</h5>
-<p>If adsorbed FRP is not simulated (i.e. <code>phosphorus model == FRPhs</code>), then in all columnar and list style initial conditions, computed variables are expected in the following order:</p>
+<p>If adsorbed FRP is not simulated (i.e. <code>phosphorus model == FRPhs</code>), then in all columnar and list style initial conditions, computed variables are expected in the following order (and map to “WQ_1” etc accordingly):</p>
 <blockquote>
 <p>initial wq concentration == <span class="math inline">\(\left[ DO \right]\)</span>, <span class="math inline">\(\left[ Si \right]\)</span>, <span class="math inline">\(\left[ NH_4 \right]\)</span>, <span class="math inline">\(\left[ NO_3 \right]\)</span>, <span class="math inline">\(\left[ FRP \right]\)</span>, <span class="math inline">\(\ldots\)</span> {phytoplankton placeholder/s}</p>
 </blockquote>
@@ -1424,7 +1485,7 @@ end material</code></pre>
 </div>
 <div id="ConOrdInorgFRPhsads-5" class="section level5" number="4.7.5.1.2">
 <h5><span class="header-section-number">4.7.5.1.2</span> Phosphorus model FRPhsads</h5>
-<p>If adsorbed FRP is simulated (i.e. <code>phosphorus model == FRPhsads</code>), then in all columnar and list style initial conditions, computed variables are expected in the following order:</p>
+<p>If adsorbed FRP is simulated (i.e. <code>phosphorus model == FRPhsads</code>), then in all columnar and list style initial conditions, computed variables are expected in the following order (and map to “WQ_1” etc accordingly):</p>
 <blockquote>
 <p>initial wq concentration == <span class="math inline">\(\left[ DO \right]\)</span>, <span class="math inline">\(\left[ Si \right]\)</span>, <span class="math inline">\(\left[ NH_4 \right]\)</span>, <span class="math inline">\(\left[ NO_3 \right]\)</span>, <span class="math inline">\(\left[ FRP \right]\)</span>, <span class="math inline">\(\left[ FRPads \right]\)</span>, <span class="math inline">\(\ldots\)</span> {phytoplankton placeholder/s}</p>
 </blockquote>
@@ -1447,7 +1508,7 @@ end material</code></pre>
 <p>Two phytoplankton groups are used in all examples.</p>
 <div id="ConOrdPhyBas-5" class="section level5" number="4.7.5.2.1">
 <h5><span class="header-section-number">4.7.5.2.1</span> Basic phytoplankton mode</h5>
-<p>If the basic phytoplankton constituent model is used, then in all columnar and list style initial conditions, computed variables are expected in the following order:</p>
+<p>If the basic phytoplankton constituent model is used, then in all columnar and list style initial conditions, computed variables are expected in the following order (and map to “WQ_XX” after the final computed variable number accordingly):</p>
 <blockquote>
 <p>initial wq concentration == {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{[PHY_1]}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{[PHY_2]}_{\text{Cluster 2}}\)</span></p>
 </blockquote>
@@ -1485,7 +1546,7 @@ end material</code></pre>
 </div>
 <div id="ConOrdPhyAdv-5" class="section level5" number="4.7.5.2.2">
 <h5><span class="header-section-number">4.7.5.2.2</span> Advanced phytoplankton model</h5>
-<p>If the advanced phytoplankton constituent model is used, then in all columnar and list style initial conditions, computed variables are expected in the following order:</p>
+<p>If the advanced phytoplankton constituent model is used, then in all columnar and list style initial conditions, computed variables are expected in the following orde (and map to “WQ_XX” after the final computed variable number accordingly)r:</p>
 <blockquote>
 <p>initial wq concentration == {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{[PHY_1],[IN_1],[IP_1]}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{[PHY_2],[IN_2],[IP_2]}_{\text{Cluster 2}}\)</span></p>
 </blockquote>
@@ -1869,11 +1930,11 @@ end material</code></pre>
 <li>Dissolved organic phosphorus</li>
 <li>Particulate organic phosphorus</li>
 </ul>
-<p>All columnar and list style initial condition computed variables are therefore expected in the following order</p>
+<p>All columnar and list style initial condition computed variables are therefore expected in the following order (and map to “WQ_1” etc accordingly)</p>
 <blockquote>
 <p>initial wq concentration == <span class="math inline">\(\left[ DO \right]\)</span>, <span class="math inline">\(\left[ Si \right]\)</span>, <span class="math inline">\(\left[ NH_4 \right]\)</span>, <span class="math inline">\(\left[ NO_3 \right]\)</span>, <span class="math inline">\(\left[ FRP \right]\)</span>, (optionally <span class="math inline">\(\left[ FRPads \right]\)</span>), <span class="math inline">\(\left[ DOC \right]\)</span>, <span class="math inline">\(\left[ POC \right]\)</span>, <span class="math inline">\(\left[ DON \right]\)</span>, <span class="math inline">\(\left[ PON \right]\)</span>, <span class="math inline">\(\left[ DOP \right]\)</span>, <span class="math inline">\(\left[ POP \right]\)</span>, <span class="math inline">\(\ldots\)</span> {phytoplankton placeholder/s}</p>
 </blockquote>
-<p>Similarly, in a <code>bc header ==</code> command within a bc block, the following order of computed variables is expected after hydrodynamic (HD BCs) boundary conditions:</p>
+<p>Similarly, in a <code>bc header ==</code> command within a bc block, the following order of computed variables is expected after hydrodynamic (HD BCs) boundary conditions (and map to “WQ_1” etc accordingly):</p>
 <blockquote>
 <p><span class="math inline">\(\blockindent\)</span>bc header == {HD BCs} <span class="math inline">\(\ldots\)</span> DO_mgL, Si_mgL, Amm_mgL, Nit_mgL, FRP_mgL, (optionally FRPads_mgL), DOC_mgL, POC_mgL, DON_mgL, PON_mgL, DOP_mgL, POP_mgL, <span class="math inline">\(\ldots\)</span> {phytoplankton placeholder/s}</p>
 </blockquote>
@@ -1899,11 +1960,11 @@ end material</code></pre>
 <li>Refractory dissolved organic phosphorus</li>
 <li>Refractory particulate organic matter</li>
 </ul>
-<p>All columnar and list style initial condition computed variables are therefore expected in the following order</p>
+<p>All columnar and list style initial condition computed variables are therefore expected in the following order (and map to “WQ_1” etc accordingly)</p>
 <blockquote>
 <p>initial wq concentration == <span class="math inline">\(\left[ DO \right]\)</span>, <span class="math inline">\(\left[ Si \right]\)</span>, <span class="math inline">\(\left[ NH_4 \right]\)</span>, <span class="math inline">\(\left[ NO_3 \right]\)</span>, <span class="math inline">\(\left[ FRP \right]\)</span>, (optionally <span class="math inline">\(\left[ FRPads \right]\)</span>), <span class="math inline">\(\left[ DOC \right]\)</span>, <span class="math inline">\(\left[ POC \right]\)</span>, <span class="math inline">\(\left[ DON \right]\)</span>, <span class="math inline">\(\left[ PON \right]\)</span>, <span class="math inline">\(\left[ DOP \right]\)</span>, <span class="math inline">\(\left[ POP \right]\)</span>, <span class="math inline">\(\left[ RDOC \right]\)</span>, <span class="math inline">\(\left[ RDON \right]\)</span>, <span class="math inline">\(\left[ RDOP \right]\)</span>, <span class="math inline">\(\left[ RPOM \right]\)</span>, <span class="math inline">\(\ldots\)</span> {phytoplankton placeholder/s}</p>
 </blockquote>
-<p>Similarly, in a <code>bc header ==</code> command within a bc block, the following order of computed variables is expected after hydrodynamic (HD BCs) boundary conditions:</p>
+<p>Similarly, in a <code>bc header ==</code> command within a bc block, the following order of computed variables is expected after hydrodynamic (HD BCs) boundary conditions (and map to “WQ_1” etc accordingly):</p>
 <blockquote>
 <p><span class="math inline">\(\blockindent\)</span>bc header == {HD BCs} <span class="math inline">\(\ldots\)</span> DO_mgL, Si_mgL, Amm_mgL, Nit_mgL, FRP_mgL, (optionally FRPads_mgL), DOC_mgL, POC_mgL, DON_mgL, PON_mgL, DOP_mgL, POP_mgL, RDOC_mgL, RDON_mgL, RDOP_mgL, RPOM_mgL, <span class="math inline">\(\ldots\)</span> {phytoplankton placeholder/s}</p>
 </blockquote>
