@@ -1776,6 +1776,7 @@ end material</code></pre>
 <blockquote>
 <p><a href="AppCommands.html#WQDOMMinerPars"><span class="math inline">\(\blockindent\)</span> mineralisation ==</a> <a href="AppParams.html#WQParRminerDOM"><span class="math inline">\(R_{miner}^{DOM}\)</span></a>, <a href="AppParams.html#WQParKminerDOM"><span class="math inline">\(K_{miner-O_2}^{DOM}\)</span></a>, <a href="AppParams.html#WQParthetaminerDOM"><span class="math inline">\(\theta_{miner}^{DOM}\)</span></a>, <a href="AppParams.html#WQParfanminer"><span class="math inline">\(f_{an}\)</span></a>, <a href="AppParams.html#WQParKminerNitDOM"><span class="math inline">\(K_{miner-NO_3}^{NO_3}\)</span></a></p>
 </blockquote>
+<p>If <span class="math inline">\(K_{miner-NO_3}^{NO_3}\)</span> is set to 0.0, then the consumption of nitrate due to mineralisation of organic matter is switched off.</p>
 <p>Settling of labile particulate organic matter can be specified by one of the following models:</p>
 <ul>
 <li>None</li>
@@ -2051,7 +2052,7 @@ organic matter model == refractory
   phosphorus min max == 0.0, 5.0, 0.0, 5.0 
   organics benthic == 4.5, 1.03  
   hydrolysis == 1.2, 0.19, 0.031, 4.2, 1.1  
-  mineralisation == 0.053, 4.1, 1.02  
+  mineralisation == 0.053, 4.1, 1.02, 0.6, 1.2  
   denitrification == 0.25, 5.1
   self shading == 0.0003, 0.00025  
   ref carbon min max == 0.0, 40.0, 0.0, 35.0 
@@ -2126,7 +2127,7 @@ end output </code></pre>
 end output </code></pre>
 <p>Water quality outputs are often voluminous. In order to avoid potentially cumbersome data handling issues around large output files, the <code>output parameters ==</code> command arguments can be tailored to list only those computed or diagnostic variables required for analysis, rather than using the blanket wq_all and wq_diag_all arguments. An example of such an output command block that only reports dissolved oxygen concentration and atmospheric oxygen exchange is:</p>
 <pre><code>output == netcdf
-   output parameters == h, WQ_DISS_OXYGEN_MGL, WQ_DIAG_O2_ATMOS_EXCHANGE_MG_M2_D
+   output parameters == h, WQ_DISS_OXYGEN_MG_L, WQ_DIAG_O2_ATMOS_EXCHANGE_MG_M2_D
    output interval == 3600.00
 end output </code></pre>
 </div>
