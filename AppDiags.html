@@ -494,6 +494,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The text “PHY_COM” indicated summed (community level) diagnostics and is not changed by user specification of individual phytoplankton group names</li>
 </ul>
 <p>It is recommended that this Appendix be viewed with the left hand pane table of contents hidden. Use the ‘s’ key to toggle this pane on and off. Output diagnostic variable names are exact, and can therefore be copied and pasted directly into output blocks of control files, for example. The exception is phytoplankton variables, where the user specified group name is included within the variable name, so will need to be inserted by the user.</p>
+<p>WQM water quality calculations are not performed on computational columns of cells that are shallow. In such instances, the reported diagnostic variables are set to NaN (not a number) to indicate that water quality calculations were switched off. As such, NaNs present in diagnostic variable outputs do not necessarily indicate a model instability has occurred, and should be interpreted carefully by the user.</p>
 <table>
 <caption>
 <span id="tab:tab-diags">Table P.1: </span><strong>TUFLOW WQM diagnostic variables</strong>
