@@ -628,7 +628,7 @@ initial salinity == 3.5</code></pre>
 6,1.0,3.5,14,10.0,7.4
 7,1.0,3.5,13,10.0,7.1
 8,1.0,3.5,11,9.0,6.6</code></pre>
-<p>If the above command is used, then it must include information that also sets globally varyiong salinity and temperature (and optionally sediment) initial conditions, as well as water level. Setting a mix of vertically uniform and other initial conditions (such as globally uniform, laterally uniform or 2d) is not permitted.</p>
+<p>If the above command is used, then it must include information that also sets globally varying salinity and temperature (and optionally sediment) initial conditions, as well as water level. Setting a mix of vertically uniform and other initial conditions (such as globally uniform, laterally uniform or 2d) is not permitted.</p>
 <p>The order of these columns in the argument csv file is not important, but the columns headers are keywords and must be used as shown. For example, the following structure for <em>initial condition file name</em>.csv is permitted:</p>
 <pre><code>ID,WQ_1,WL,sed_1,sal,temp
 1,8.0,1.0,10.0,3.5,15
@@ -1075,6 +1075,7 @@ end material</code></pre>
 <blockquote>
 <p><a href="AppCommands.html#WQAtmPPars"><span class="math inline">\(\blockindent\)</span> atmospheric deposition ==</a> <a href="AppParams.html#WQParAtmWetFRP"><span class="math inline">\(\left[FRP\right]_{rain}\)</span></a></p>
 </blockquote>
+<p>An additional parameter for dry atmospheric deposition is required in the FRPhsads constituent model (see Section <a href="SimulationConstruction-1.html#ConModFRPhsAds-5">4.7.3.4.2</a>).</p>
 <p>This constituent model block must be terminated using the command:</p>
 <blockquote>
 <p><a href="AppCommands.html#WQFRPModEnd">end inorganic phosphorus model</a></p>
@@ -2010,7 +2011,7 @@ inorganic phosphorus model == frphsads
     frp min max == 0.0, 35.0
     frpads min max == 0.0, 35.0
     atmospheric deposition == 5.0, 1.4
-    adsorption == quadratic, 1.5, 0.5, 0.00005
+    adsorption == quadratic, 1.5, 0.5
     oxygen == on
 end inorganic phosphorus model  
     
@@ -2052,7 +2053,6 @@ organic matter model == refractory
   organics benthic == 4.5, 1.03  
   hydrolysis == 1.2, 0.19, 0.031, 4.2, 1.1  
   mineralisation == 0.053, 4.1, 1.02, 0.6, 1.2  
-  denitrification == 0.25, 5.1
   self shading == 0.0003, 0.00025  
   ref carbon min max == 0.0, 40.0, 0.0, 35.0 
   ref nitrogen min max == 0.0, 25.0     
