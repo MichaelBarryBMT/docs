@@ -242,6 +242,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ConModSttngs-3"><i class="fa fa-check"></i><b>4.5.2</b> Part 2: Constituent model settings</a></li>
 <li class="chapter" data-level="4.5.3" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#MatSpecs-3"><i class="fa fa-check"></i><b>4.5.3</b> Part 3: Material specifications</a></li>
 <li class="chapter" data-level="4.5.4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimSetSum-2"><i class="fa fa-check"></i><b>4.5.4</b> Summary</a></li>
+<li class="chapter" data-level="4.5.5" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimSetLog-2"><i class="fa fa-check"></i><b>4.5.5</b> Log files</a></li>
 </ul></li>
 <li class="chapter" data-level="4.6" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimSetSimClDO-2"><i class="fa fa-check"></i><b>4.6</b> Simulation Class: DO</a>
 <ul>
@@ -442,11 +443,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="O" data-path="AppConstits.html"><a href="AppConstits.html"><i class="fa fa-check"></i><b>O</b> Computed variables</a></li>
 <li class="chapter" data-level="P" data-path="AppDiags.html"><a href="AppDiags.html"><i class="fa fa-check"></i><b>P</b> Diagnostic variables</a></li>
 <li class="chapter" data-level="Q" data-path="AppParams.html"><a href="AppParams.html"><i class="fa fa-check"></i><b>Q</b> Parameters</a></li>
-<li class="chapter" data-level="R" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>R</b> Mass Conservation</a>
+<li class="chapter" data-level="R" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>R</b> Mass Conservation Model</a>
 <ul>
-<li class="chapter" data-level="R.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDO"><i class="fa fa-check"></i><b>R.1</b> Simulation class: DO</a></li>
-<li class="chapter" data-level="R.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>R.2</b> Simulation class: Inorganics</a></li>
-<li class="chapter" data-level="R.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalOrg"><i class="fa fa-check"></i><b>R.3</b> Simulation class: Organics</a></li>
+<li class="chapter" data-level="R.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalIntent"><i class="fa fa-check"></i><b>R.1</b> Intent</a></li>
+<li class="chapter" data-level="R.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDescription"><i class="fa fa-check"></i><b>R.2</b> Description</a></li>
+<li class="chapter" data-level="R.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalMdel"><i class="fa fa-check"></i><b>R.3</b> Model suite</a></li>
+<li class="chapter" data-level="R.4" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalCalcs"><i class="fa fa-check"></i><b>R.4</b> Calculations</a></li>
+<li class="chapter" data-level="R.5" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalPerformance"><i class="fa fa-check"></i><b>R.5</b> Mass conservation performance</a>
+<ul>
+<li class="chapter" data-level="R.5.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDO"><i class="fa fa-check"></i><b>R.5.1</b> Simulation class: DO</a></li>
+<li class="chapter" data-level="R.5.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>R.5.2</b> Simulation class: Inorganics</a></li>
+<li class="chapter" data-level="R.5.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalOrg"><i class="fa fa-check"></i><b>R.5.3</b> Simulation class: Organics</a></li>
+</ul></li>
+<li class="chapter" data-level="R.6" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalExecuting"><i class="fa fa-check"></i><b>R.6</b> Access and execution</a>
+<ul>
+<li class="chapter" data-level="R.6.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalAccess"><i class="fa fa-check"></i><b>R.6.1</b> Access</a></li>
+<li class="chapter" data-level="R.6.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalExecu"><i class="fa fa-check"></i><b>R.6.2</b> Execution</a></li>
+</ul></li>
+<li class="chapter" data-level="R.7" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalRes"><i class="fa fa-check"></i><b>R.7</b> Results</a></li>
+<li class="chapter" data-level="R.8" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalMassCons"><i class="fa fa-check"></i><b>R.8</b> Mass conservation analysis</a>
+<ul>
+<li class="chapter" data-level="R.8.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBMatlab"><i class="fa fa-check"></i><b>R.8.1</b> Matlab</a></li>
+<li class="chapter" data-level="R.8.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPython"><i class="fa fa-check"></i><b>R.8.2</b> Python</a></li>
+</ul></li>
+<li class="chapter" data-level="R.9" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterp"><i class="fa fa-check"></i><b>R.9</b> Interpretation notes</a>
+<ul>
+<li class="chapter" data-level="R.9.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterpUnits"><i class="fa fa-check"></i><b>R.9.1</b> Units</a></li>
+<li class="chapter" data-level="R.9.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPrecision"><i class="fa fa-check"></i><b>R.9.2</b> Precision</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://www.tuflow.com"><img src="images/tuflow.png" style="width:246px;height:68px;"></a></li>
@@ -703,7 +727,6 @@ The timestep at which the WQM is called from the hydrodynamic model
 <td style="text-align:left;width: 12%; ">
 <a href="AppCommands.html#WQWqDt">wq dt ==</a><br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-<a href="#">science</a>
 </td>
 </tr>
 <tr>
@@ -1863,7 +1886,6 @@ Not yet used. Will be activated in future releases of the WQM
 <td style="text-align:left;width: 12%; ">
 <a href="AppCommands.html#WQAdsFRPParsL"></a><br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-<a href="#">science</a>
 </td>
 </tr>
 <tr>
@@ -1910,9 +1932,9 @@ The minimum allowable group phytoplankton concentration. If the WQM detects a co
 mmol/m<span class="math inline">\(^3\)</span> C
 </td>
 <td style="text-align:center;width: 8%; ">
-(0.01, 20)<br>
+(0.01, 50)<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-(0.0025, 45)
+(0.0025, 112.5)
 </td>
 <td style="text-align:center;width: 2%; ">
 NA<br>
@@ -4946,6 +4968,54 @@ The settling velocity applied to refractory particulate organic matter for const
 <a href="AppCommands.html#WQOrgSettConstR">ref settling ==</a><br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 <a href="AppOrg.html#OrgSettleConst-5">science</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 15%; vertical-align:top;">
+<a id="WQParMinWQDepth">Minimum water quality calculation depth</a>
+</td>
+<td style="text-align:center;width: 4%; vertical-align:middle;">
+<span class="math inline">\(d_{min-wq}\)</span>
+</td>
+<td style="text-align:center;width: 12%; ">
+m
+</td>
+<td style="text-align:center;width: 8%; ">
+(0, UD)
+</td>
+<td style="text-align:center;width: 2%; ">
+0.01
+</td>
+<td style="text-align:left;width: 47%; ">
+The minimum depth at which water calculations will be computed. This depth is the depth of the entire computational column that immediately overlies the sediment (bed) for a given 2D cell. The depth is specified in the TUFLOW FV control file
+</td>
+<td style="text-align:left;width: 12%; ">
+<a href="AppCommands.html#FVWQMmindpth">cell water quality depth ==</a><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 15%; vertical-align:top;">
+<a id="WQParDisableWQ">Disable water quality calculation</a>
+</td>
+<td style="text-align:center;width: 4%; vertical-align:middle;">
+<span class="math inline">\(B_{disable-wq}\)</span>
+</td>
+<td style="text-align:center;width: 12%; ">
+[-]
+</td>
+<td style="text-align:center;width: 8%; ">
+(0, 1)
+</td>
+<td style="text-align:center;width: 2%; ">
+0
+</td>
+<td style="text-align:left;width: 47%; ">
+A Boolean flag to disable (1) or enable (0) water quality calculations. The flag is specified in the TUFLOW FV control file
+</td>
+<td style="text-align:left;width: 12%; ">
+<a href="AppCommands.html#FVWQMdisableWQ">disable water quality model ==</a><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
 </td>
 </tr>
 </tbody>

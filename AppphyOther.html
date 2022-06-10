@@ -242,6 +242,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#ConModSttngs-3"><i class="fa fa-check"></i><b>4.5.2</b> Part 2: Constituent model settings</a></li>
 <li class="chapter" data-level="4.5.3" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#MatSpecs-3"><i class="fa fa-check"></i><b>4.5.3</b> Part 3: Material specifications</a></li>
 <li class="chapter" data-level="4.5.4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimSetSum-2"><i class="fa fa-check"></i><b>4.5.4</b> Summary</a></li>
+<li class="chapter" data-level="4.5.5" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimSetLog-2"><i class="fa fa-check"></i><b>4.5.5</b> Log files</a></li>
 </ul></li>
 <li class="chapter" data-level="4.6" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#SimSetSimClDO-2"><i class="fa fa-check"></i><b>4.6</b> Simulation Class: DO</a>
 <ul>
@@ -442,11 +443,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="O" data-path="AppConstits.html"><a href="AppConstits.html"><i class="fa fa-check"></i><b>O</b> Computed variables</a></li>
 <li class="chapter" data-level="P" data-path="AppDiags.html"><a href="AppDiags.html"><i class="fa fa-check"></i><b>P</b> Diagnostic variables</a></li>
 <li class="chapter" data-level="Q" data-path="AppParams.html"><a href="AppParams.html"><i class="fa fa-check"></i><b>Q</b> Parameters</a></li>
-<li class="chapter" data-level="R" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>R</b> Mass Conservation</a>
+<li class="chapter" data-level="R" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>R</b> Mass Conservation Model</a>
 <ul>
-<li class="chapter" data-level="R.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDO"><i class="fa fa-check"></i><b>R.1</b> Simulation class: DO</a></li>
-<li class="chapter" data-level="R.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>R.2</b> Simulation class: Inorganics</a></li>
-<li class="chapter" data-level="R.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalOrg"><i class="fa fa-check"></i><b>R.3</b> Simulation class: Organics</a></li>
+<li class="chapter" data-level="R.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalIntent"><i class="fa fa-check"></i><b>R.1</b> Intent</a></li>
+<li class="chapter" data-level="R.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDescription"><i class="fa fa-check"></i><b>R.2</b> Description</a></li>
+<li class="chapter" data-level="R.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalMdel"><i class="fa fa-check"></i><b>R.3</b> Model suite</a></li>
+<li class="chapter" data-level="R.4" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalCalcs"><i class="fa fa-check"></i><b>R.4</b> Calculations</a></li>
+<li class="chapter" data-level="R.5" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalPerformance"><i class="fa fa-check"></i><b>R.5</b> Mass conservation performance</a>
+<ul>
+<li class="chapter" data-level="R.5.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDO"><i class="fa fa-check"></i><b>R.5.1</b> Simulation class: DO</a></li>
+<li class="chapter" data-level="R.5.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>R.5.2</b> Simulation class: Inorganics</a></li>
+<li class="chapter" data-level="R.5.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalOrg"><i class="fa fa-check"></i><b>R.5.3</b> Simulation class: Organics</a></li>
+</ul></li>
+<li class="chapter" data-level="R.6" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalExecuting"><i class="fa fa-check"></i><b>R.6</b> Access and execution</a>
+<ul>
+<li class="chapter" data-level="R.6.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalAccess"><i class="fa fa-check"></i><b>R.6.1</b> Access</a></li>
+<li class="chapter" data-level="R.6.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalExecu"><i class="fa fa-check"></i><b>R.6.2</b> Execution</a></li>
+</ul></li>
+<li class="chapter" data-level="R.7" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalRes"><i class="fa fa-check"></i><b>R.7</b> Results</a></li>
+<li class="chapter" data-level="R.8" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalMassCons"><i class="fa fa-check"></i><b>R.8</b> Mass conservation analysis</a>
+<ul>
+<li class="chapter" data-level="R.8.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBMatlab"><i class="fa fa-check"></i><b>R.8.1</b> Matlab</a></li>
+<li class="chapter" data-level="R.8.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPython"><i class="fa fa-check"></i><b>R.8.2</b> Python</a></li>
+</ul></li>
+<li class="chapter" data-level="R.9" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterp"><i class="fa fa-check"></i><b>R.9</b> Interpretation notes</a>
+<ul>
+<li class="chapter" data-level="R.9.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterpUnits"><i class="fa fa-check"></i><b>R.9.1</b> Units</a></li>
+<li class="chapter" data-level="R.9.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPrecision"><i class="fa fa-check"></i><b>R.9.2</b> Precision</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://www.tuflow.com"><img src="images/tuflow.png" style="width:246px;height:68px;"></a></li>
