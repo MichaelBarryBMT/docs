@@ -233,7 +233,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#TFVGeneral-2"><i class="fa fa-check"></i><b>4.3</b> General arrangement</a></li>
 <li class="chapter" data-level="4.4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#TFVCommands-2"><i class="fa fa-check"></i><b>4.4</b> TUFLOW FV control file commands</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMActivation-3"><i class="fa fa-check"></i><b>4.4.1</b> WQM activation</a></li>
+<li class="chapter" data-level="4.4.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMActivation-3"><i class="fa fa-check"></i><b>4.4.1</b> WQ Module activation</a></li>
 <li class="chapter" data-level="4.4.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#InitBCCond-3"><i class="fa fa-check"></i><b>4.4.2</b> Initial and boundary conditions</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQctrlfil-2"><i class="fa fa-check"></i><b>4.5</b> Water quality control file commands</a>
@@ -273,7 +273,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.9" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#Outputs-3"><i class="fa fa-check"></i><b>4.9</b> Outputs</a>
 <ul>
-<li class="chapter" data-level="4.9.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMOutputs-4"><i class="fa fa-check"></i><b>4.9.1</b> WQM outputs</a></li>
+<li class="chapter" data-level="4.9.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMOutputs-4"><i class="fa fa-check"></i><b>4.9.1</b> WQ Module outputs</a></li>
 <li class="chapter" data-level="4.9.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#FVOutputs-4"><i class="fa fa-check"></i><b>4.9.2</b> TUFLOW FV outputs</a></li>
 </ul></li>
 </ul></li>
@@ -497,18 +497,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="PhyGeneral-3" class="section level2" number="12.1">
 <h2><span class="header-section-number">H.1</span> General</h2>
 <p>Any number of phytoplankton groups may be simulated within the WQM, however the majority of environmental modelling applications rarely require (or have data to justify) including more than a relatively small number. Each phytoplankton group can have its properties set independently, where these properties typically relate to interaction with temperature, light, salinity and nutrients.</p>
-<p>The WQM offers two constituent models for the simulation of phytoplankton. These are referred to as basic and advanced, and are primarily differentiated on the basis of whether internal nutrients are simulated, as:</p>
+<p>The WQ Module offers two constituent models for the simulation of phytoplankton. These are referred to as basic and advanced, and are primarily differentiated on the basis of whether internal nutrients are simulated, as:</p>
 <ul>
 <li>Constituent model basic does not include simulation of internal phytoplanktonic nutrients</li>
 <li>Constituent model advanced does include simulation of internal phytoplanktonic nutrients</li>
 </ul>
 <p>This constituent model naming is intended to reflect a view that excluding simulation of internal nutrients is a simpler, more rudimentary, approach to phytoplankton modelling. Similarly, internal nutrient simulation generally requires specification of a larger suite of parameters than when the process is excluded, so is often considered to be a more complex and involved approach to phytoplankton simulation.</p>
-<p>A WQM simulation can include any combination of these two constituent models if multiple phytoplankton groups are simulated. For example, if three phytoplankton groups are to be simulated, two groups could be set to use the basic constituent model, and one to use the advanced constituent model.</p>
-<p>Where WQM calculations are completed differently between these two constituent models, their respective approaches are presented in a complementary but distinct manner following.</p>
+<p>A WQ Module simulation can include any combination of these two constituent models if multiple phytoplankton groups are simulated. For example, if three phytoplankton groups are to be simulated, two groups could be set to use the basic constituent model, and one to use the advanced constituent model.</p>
+<p>Where WQ Module calculations are completed differently between these two constituent models, their respective approaches are presented in a complementary but distinct manner following.</p>
 </div>
 <div id="PhyUnits-3" class="section level2" number="12.2">
 <h2><span class="header-section-number">H.2</span> Units</h2>
-<p>Phytoplankton is accounted within the WQM in units of carbon, however carbon need not be explicitly simulated within the WQM as either inorganic (not yet available) or organic (labile and/or refractory) to support this approach. If this is the case, then uptake or loss of carbon by phytoplankton is still computed as it is the basis for accounting and reporting phytoplankton concentrations. The associated carbon sources and sinks that interact with phytoplankton carbon however, are assumed to be large and are not specifically accounted for as computed variables. A user specified (or default) conversion ratio between mg of carbon and mg of chlorophyll <em>a</em>, <a href="AppParams.html#WQParXcc"><span class="math inline">\(X_{cc}^{phy}\)</span></a>, is used to present carbon model outputs in units of <span class="math inline">\(\mu\)</span>/L chlorophyll <em>a</em> when necessary.</p>
+<p>Phytoplankton is accounted within the WQ Module in units of carbon, however carbon need not be explicitly simulated within the WQ Module as either inorganic (not yet available) or organic (labile and/or refractory) to support this approach. If this is the case, then uptake or loss of carbon by phytoplankton is still computed as it is the basis for accounting and reporting phytoplankton concentrations. The associated carbon sources and sinks that interact with phytoplankton carbon however, are assumed to be large and are not specifically accounted for as computed variables. A user specified (or default) conversion ratio between mg of carbon and mg of chlorophyll <em>a</em>, <a href="AppParams.html#WQParXcc"><span class="math inline">\(X_{cc}^{phy}\)</span></a>, is used to present carbon model outputs in units of <span class="math inline">\(\mu\)</span>/L chlorophyll <em>a</em> when necessary.</p>
 </div>
 </div>
             </section>

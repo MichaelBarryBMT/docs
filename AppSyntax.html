@@ -233,7 +233,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#TFVGeneral-2"><i class="fa fa-check"></i><b>4.3</b> General arrangement</a></li>
 <li class="chapter" data-level="4.4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#TFVCommands-2"><i class="fa fa-check"></i><b>4.4</b> TUFLOW FV control file commands</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMActivation-3"><i class="fa fa-check"></i><b>4.4.1</b> WQM activation</a></li>
+<li class="chapter" data-level="4.4.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMActivation-3"><i class="fa fa-check"></i><b>4.4.1</b> WQ Module activation</a></li>
 <li class="chapter" data-level="4.4.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#InitBCCond-3"><i class="fa fa-check"></i><b>4.4.2</b> Initial and boundary conditions</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQctrlfil-2"><i class="fa fa-check"></i><b>4.5</b> Water quality control file commands</a>
@@ -273,7 +273,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.9" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#Outputs-3"><i class="fa fa-check"></i><b>4.9</b> Outputs</a>
 <ul>
-<li class="chapter" data-level="4.9.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMOutputs-4"><i class="fa fa-check"></i><b>4.9.1</b> WQM outputs</a></li>
+<li class="chapter" data-level="4.9.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMOutputs-4"><i class="fa fa-check"></i><b>4.9.1</b> WQ Module outputs</a></li>
 <li class="chapter" data-level="4.9.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#FVOutputs-4"><i class="fa fa-check"></i><b>4.9.2</b> TUFLOW FV outputs</a></li>
 </ul></li>
 </ul></li>
@@ -495,16 +495,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="AppSyntax" class="section level1" number="5">
 <h1><span class="header-section-number">Appendix A</span> Syntax of command descriptions</h1>
 <p>The manual’s introduction should be reviewed for instructions regarding the use of interactive components deployed in this section.</p>
-<p>All WQM commands and descriptions are provided in Table <a href="AppCommands.html#tab:tab-commands2">B.1</a>. This Appendix describes the syntax of that table.</p>
+<p>All WQ Module commands and descriptions are provided in Table <a href="AppCommands.html#tab:tab-commands2">B.1</a>. This Appendix describes the syntax of that table.</p>
 <div id="Appcmds" class="section level2" number="5.1">
 <h2><span class="header-section-number">A.1</span> Commands</h2>
 <p>WQM commands are coloured, for example <bmtpink>frp adsorption parameters ==</bmtpink>. These can be copied and pasted directly into a *.fvwq (or *.fvc where appropriate) control file, and arguments added.</p>
 </div>
 <div id="Appargmts" class="section level2" number="5.2">
 <h2><span class="header-section-number">A.2</span> Arguments</h2>
-<p>Descriptions of the arguments expected by WQM commands (i.e. information provided after the <bmtpink>==</bmtpink>) are contrastingly <bmtgreen>coloured</bmtgreen> and always included in angle parentheses, as <bmtgreen> <span class="math inline">\(\langle\)</span>argument<span class="math inline">\(\rangle\)</span> </bmtgreen>. This argument content takes one of the following forms:</p>
+<p>Descriptions of the arguments expected by WQ Module commands (i.e. information provided after the <bmtpink>==</bmtpink>) are contrastingly <bmtgreen>coloured</bmtgreen> and always included in angle parentheses, as <bmtgreen> <span class="math inline">\(\langle\)</span>argument<span class="math inline">\(\rangle\)</span> </bmtgreen>. This argument content takes one of the following forms:</p>
 <ul>
-<li>A description. For example, for the <bmtpink>material ==</bmtpink> WQM command, the argument is described as <bmtgreen><span class="math inline">\(\langle\)</span>Up to 10 comma separated material numbers<span class="math inline">\(\rangle\)</span></bmtgreen>. An example of implementing this description would therefore be</li>
+<li>A description. For example, for the <bmtpink>material ==</bmtpink> WQ Module command, the argument is described as <bmtgreen><span class="math inline">\(\langle\)</span>Up to 10 comma separated material numbers<span class="math inline">\(\rangle\)</span></bmtgreen>. An example of implementing this description would therefore be</li>
 </ul>
 <blockquote>
 <p>material == 1, 6, 3</p>
@@ -533,7 +533,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="Appdflts" class="section level2" number="5.3">
 <h2><span class="header-section-number">A.3</span> Defaults</h2>
-<p>All WQM commands are optional (see Section <a href="SimulationConstruction-1.html#WQctrlfil-2">4.5</a>), and where not specified by the user, the WQM will use library default arguments. These defaults are listed in a separate column of Table <a href="AppCommands.html#tab:tab-commands2">B.1</a>. Where defaults are not appropriate, then “N/A” is listed in this column. Initial conditions must be specified via the *.fvc control file and do not have defaults.</p>
+<p>All WQ Module commands are optional (see Section <a href="SimulationConstruction-1.html#WQctrlfil-2">4.5</a>), and where not specified by the user, the WQ Module will use library default arguments. These defaults are listed in a separate column of Table <a href="AppCommands.html#tab:tab-commands2">B.1</a>. Where defaults are not appropriate, then “N/A” is listed in this column. Initial conditions must be specified via the *.fvc control file and do not have defaults.</p>
 <p><img src="images/WQFooter.jpg" width="100%" /></p>
 
 </div>

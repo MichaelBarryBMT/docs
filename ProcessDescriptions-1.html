@@ -233,7 +233,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#TFVGeneral-2"><i class="fa fa-check"></i><b>4.3</b> General arrangement</a></li>
 <li class="chapter" data-level="4.4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#TFVCommands-2"><i class="fa fa-check"></i><b>4.4</b> TUFLOW FV control file commands</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMActivation-3"><i class="fa fa-check"></i><b>4.4.1</b> WQM activation</a></li>
+<li class="chapter" data-level="4.4.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMActivation-3"><i class="fa fa-check"></i><b>4.4.1</b> WQ Module activation</a></li>
 <li class="chapter" data-level="4.4.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#InitBCCond-3"><i class="fa fa-check"></i><b>4.4.2</b> Initial and boundary conditions</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQctrlfil-2"><i class="fa fa-check"></i><b>4.5</b> Water quality control file commands</a>
@@ -273,7 +273,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.9" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#Outputs-3"><i class="fa fa-check"></i><b>4.9</b> Outputs</a>
 <ul>
-<li class="chapter" data-level="4.9.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMOutputs-4"><i class="fa fa-check"></i><b>4.9.1</b> WQM outputs</a></li>
+<li class="chapter" data-level="4.9.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMOutputs-4"><i class="fa fa-check"></i><b>4.9.1</b> WQ Module outputs</a></li>
 <li class="chapter" data-level="4.9.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#FVOutputs-4"><i class="fa fa-check"></i><b>4.9.2</b> TUFLOW FV outputs</a></li>
 </ul></li>
 </ul></li>
@@ -494,7 +494,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="ProcessDescriptions-1" class="section level1" number="3">
 <h1><span class="header-section-number">Section 3</span> Process Descriptions</h1>
-<p>Previous chapters have presented an overview of the architecture and capabilities of the WQM, together with a summary of its interactions with TUFLOW FV. This chapter presents the details of each simulation class (see Table <a href="Architecture-1.html#tab:tab-SimClasses">2.1</a>) in terms of its available model classes, the constituent models within those model classes, and the associated computed variables.</p>
+<p>Previous chapters have presented an overview of the architecture and capabilities of the WQ Module, together with a summary of its interactions with TUFLOW FV. This chapter presents the details of each simulation class (see Table <a href="Architecture-1.html#tab:tab-SimClasses">2.1</a>) in terms of its available model classes, the constituent models within those model classes, and the associated computed variables.</p>
 <p>Process descriptions are listed in this section primarily by name in tables and networks, without inclusion of detail. This is for clarity, with the detailed process descriptions and equations being provided in the Appendices. To facilitate this linkage with supporting material, each process tabulated in this section has been hyperlinked directly to the relevant Appendix, and these hyperlinks colour coded as <bmtgreen>sources</bmtgreen> or <bmtpink>sinks</bmtpink> relative to each computed variable presented.</p>
 <p>Again for clarity, potential interactions of a computed variable with higher order computed variables (for example oxygen with phytoplankton) are included in this section only in descriptions of those higher order variables and processes. Further:</p>
 <ul>
@@ -1085,7 +1085,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 </tr>
 </tbody>
 </table>
-<p>In order for this constituent model to be used, the TUFLOW FV Sediment Transport module (STM) must be activated to simulate at least one fraction of suspended sediment (several fractions may be so set). A WQM simulation will not start if the TUFLOW STM is not activated. In order to use this FRPhsAds constituent model therefore, the following must be in place:</p>
+<p>In order for this constituent model to be used, the TUFLOW FV Sediment Transport module (STM) must be activated to simulate at least one fraction of suspended sediment (several fractions may be so set). A WQ Module simulation will not start if the TUFLOW STM is not activated. In order to use this FRPhsAds constituent model therefore, the following must be in place:</p>
 <ul>
 <li>The TUFLOW FV STM must be activated and implemented</li>
 <li>At least one sediment fraction must be set up and executed within TUFLOW FV via the inclusion of a sediment control file, and specification of either of the following TUFLOW FV commands:</li>
@@ -1097,7 +1097,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <blockquote>
 <p><a href="AppCommands.html#FVIncludeSed">include sediment == 1,1</a> ! Include sediment in density calculations</p>
 </blockquote>
-<p>If multiple sediment fractions are specified to be simulated by the STM, then TUFLOW FV sends all these fraction concentrations as a sum through the API to the WQM, and this sum is used as the sediment concentration against which adsorption is computed. The WQM uses this information to compute FRP adsorption and loss of adsorbed FRP through settling. It is recognised that there are limitations of this approach. Future releases of TUFLOW FV and the WQM will address some of these limitations and allow for:</p>
+<p>If multiple sediment fractions are specified to be simulated by the STM, then TUFLOW FV sends all these fraction concentrations as a sum through the API to the WQ Module, and this sum is used as the sediment concentration against which adsorption is computed. The WQ Module uses this information to compute FRP adsorption and loss of adsorbed FRP through settling. It is recognised that there are limitations of this approach. Future releases of TUFLOW FV and the WQ Module will address some of these limitations and allow for:</p>
 <ul>
 <li>User control of which STM sediment fractions are used in adsorption calculations, and</li>
 <li>Use of the TUFLOW FV STM settling and resuspension routines to dynamically link settling and resuspension of adsorbed FRP</li>
@@ -1879,7 +1879,7 @@ Figure 3.11: <strong>Simulation Class: Organics (as an estuarine example)</stron
 <p>The following constituent models are available to select from within the organic matter model class. The differentiator between constituent models is the exclusion or inclusion of refractory organic matter.</p>
 <div id="ConModOrgLab-4" class="section level4" number="3.3.6.1">
 <h4><span class="header-section-number">3.3.6.1</span> Constituent Model: Labile</h4>
-<p>This organic matter constituent model considers only labile particulate and dissolved organic matter. The constituent model code and associated computed variables, processes and potentially interacting simulated quantities are provided in Figure <a href="ProcessDescriptions-1.html#fig:fig-NtwkOrgLab">3.12</a> and Table <a href="ProcessDescriptions-1.html#tab:tab-ConModOrgLab">3.11</a>. Both the Figure and Table (and Table <a href="ProcessDescriptions-1.html#tab:tab-ConModOrgLabEx">3.12</a>) make reference to dissolved inorganic carbon (DIC). This is for completeness only because the WQM does not currently support simulation of DIC. Doing so is not required in order to deploy either the labile or refractory organic matter constituent model within the WQM.</p>
+<p>This organic matter constituent model considers only labile particulate and dissolved organic matter. The constituent model code and associated computed variables, processes and potentially interacting simulated quantities are provided in Figure <a href="ProcessDescriptions-1.html#fig:fig-NtwkOrgLab">3.12</a> and Table <a href="ProcessDescriptions-1.html#tab:tab-ConModOrgLab">3.11</a>. Both the Figure and Table (and Table <a href="ProcessDescriptions-1.html#tab:tab-ConModOrgLabEx">3.12</a>) make reference to dissolved inorganic carbon (DIC). This is for completeness only because the WQ Module does not currently support simulation of DIC. Doing so is not required in order to deploy either the labile or refractory organic matter constituent model within the WQ Module.</p>
 <center>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-NtwkOrgLab"></span>
 <img src="images/NetworkFigureCaptionBlank.png" alt="**Constituent model: Labile**" width="1%" />
@@ -2210,7 +2210,7 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 </div>
 <div id="ConModOrgRef-4" class="section level4" number="3.3.6.2">
 <h4><span class="header-section-number">3.3.6.2</span> Constituent Model: Refractory</h4>
-<p>This organic matter constituent model considers both labile and refractory particulate and dissolved organic matter. The constituent model code and associated computed variables, processes and potentially interacting simulated quantities are provided in Figure <a href="ProcessDescriptions-1.html#fig:fig-NtwkOrgRef">3.13</a> and Table <a href="ProcessDescriptions-1.html#tab:tab-ConModOrgRef">3.13</a>. Both the Figure and Table (and Table <a href="ProcessDescriptions-1.html#tab:tab-ConModOrgRefEx">3.14</a>) make reference to dissolved inorganic carbon (DIC). This is for completeness only because the WQM does not currently support simulation of DIC. Doing so is not required in order to deploy either the labile or refractory organic matter constituent model within the WQM.</p>
+<p>This organic matter constituent model considers both labile and refractory particulate and dissolved organic matter. The constituent model code and associated computed variables, processes and potentially interacting simulated quantities are provided in Figure <a href="ProcessDescriptions-1.html#fig:fig-NtwkOrgRef">3.13</a> and Table <a href="ProcessDescriptions-1.html#tab:tab-ConModOrgRef">3.13</a>. Both the Figure and Table (and Table <a href="ProcessDescriptions-1.html#tab:tab-ConModOrgRefEx">3.14</a>) make reference to dissolved inorganic carbon (DIC). This is for completeness only because the WQ Module does not currently support simulation of DIC. Doing so is not required in order to deploy either the labile or refractory organic matter constituent model within the WQ Module.</p>
 <center>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-NtwkOrgRef"></span>
 <img src="images/NetworkFigureCaptionBlank.png" alt="**Constituent model: Refractory**" width="1%" />

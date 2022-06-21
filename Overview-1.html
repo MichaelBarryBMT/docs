@@ -233,7 +233,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#TFVGeneral-2"><i class="fa fa-check"></i><b>4.3</b> General arrangement</a></li>
 <li class="chapter" data-level="4.4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#TFVCommands-2"><i class="fa fa-check"></i><b>4.4</b> TUFLOW FV control file commands</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMActivation-3"><i class="fa fa-check"></i><b>4.4.1</b> WQM activation</a></li>
+<li class="chapter" data-level="4.4.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMActivation-3"><i class="fa fa-check"></i><b>4.4.1</b> WQ Module activation</a></li>
 <li class="chapter" data-level="4.4.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#InitBCCond-3"><i class="fa fa-check"></i><b>4.4.2</b> Initial and boundary conditions</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQctrlfil-2"><i class="fa fa-check"></i><b>4.5</b> Water quality control file commands</a>
@@ -273,7 +273,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.9" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#Outputs-3"><i class="fa fa-check"></i><b>4.9</b> Outputs</a>
 <ul>
-<li class="chapter" data-level="4.9.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMOutputs-4"><i class="fa fa-check"></i><b>4.9.1</b> WQM outputs</a></li>
+<li class="chapter" data-level="4.9.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMOutputs-4"><i class="fa fa-check"></i><b>4.9.1</b> WQ Module outputs</a></li>
 <li class="chapter" data-level="4.9.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#FVOutputs-4"><i class="fa fa-check"></i><b>4.9.2</b> TUFLOW FV outputs</a></li>
 </ul></li>
 </ul></li>
@@ -496,32 +496,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Section 1</span> Overview</h1>
 <div id="OverviewContext-2" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Context</h2>
-<p>The TUFLOW Water Quality Module (WQM) enables the two- or three-dimensional simulation of water quality and ecological processes in natural and constructed waterways such as (but not limited to) lakes, tidal estuaries, river systems and coastal oceans. The module’s design is flexible so as to support tailoring of its setup to meet individual application demands and complexity. TUFLOW’s WQM is currently supported for use with <a href="https://www.tuflow.com/products/tuflow-fv/" target="_blank">TUFLOW FV</a>. <span class="math inline">\(\newcommand{\blockindent}{\hspace{0.5cm}}\)</span></p>
+<p>The TUFLOW FV Water Quality (WQ) Module enables the two- or three-dimensional simulation of water quality and ecological processes in natural and constructed waterways such as (but not limited to) lakes, tidal estuaries, river systems and coastal oceans. The module’s design is flexible so as to support tailoring of its setup to meet individual application demands and complexity. The WQ Module is currently supported for use with <a href="https://www.tuflow.com/products/tuflow-fv/" target="_blank">TUFLOW FV</a>, for releases from 2022 onward. <span class="math inline">\(\newcommand{\blockindent}{\hspace{0.5cm}}\)</span></p>
 </div>
 <div id="Features-2" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> Features</h2>
 <div id="Usability-3" class="section level3" number="1.2.1">
 <h3><span class="header-section-number">1.2.1</span> Usability</h3>
-<p>Several key features have been included in the design of the WQM to support its use. Some are listed below.</p>
+<p>Several key features have been included in the design of the WQ Module to support its use. Some are listed below.</p>
 <ul>
 <li><strong>Simulation units</strong>. The units of simulation (including specification of initial conditions, boundary conditions and computed variable parameters) can be selected as either the commonly used mg/L (and <span class="math inline">\(\mu\)</span>g/L for phytoplankton) system, or the mmol/m<span class="math inline">\(^3\)</span> system</li>
-<li><strong>Library defaults</strong>. The WQM comes packaged with a fully populated library of default settings for all computed variable parameters. This means that users can quickly set up water quality simulations that automatically draw on these library defaults, with a view to then progressively overriding these defaults and therefore customising simulations to suit</li>
-<li><strong>Command syntax</strong>. The WQM uses familiar TUFLOW style <code>command == argument(s)</code> syntax that has a long established pedigree within other TUFLOW products, for example:</li>
+<li><strong>Library defaults</strong>. The WQ Module comes packaged with a fully populated library of default settings for all computed variable parameters. This means that users can quickly set up water quality simulations that automatically draw on these library defaults, with a view to then progressively overriding these defaults and therefore customising simulations to suit</li>
+<li><strong>Command syntax</strong>. The WQ Module uses familiar TUFLOW style <code>command == argument(s)</code> syntax that has a long established pedigree within other TUFLOW products, for example:</li>
 </ul>
 <blockquote>
 <p><span class="math inline">\(\blockindent\)</span> oxygen benthic == 4.0, 1.07</p>
 </blockquote>
 <ul>
-<li><strong>Log file user feedback</strong>. WQM simulations generate a log file that reports all simulation configuration details for review</li>
-<li><strong>Output computed variable names</strong>. The WQM output variable names are descriptive and include the units used, for example <code>WQ_DISS_OXYGEN_MGL</code></li>
-<li><strong>Output diagnostic variable names</strong>. The WQM output diagnostic variable names are descriptive and include the units used, for example <code>WQ_DIAG_O2_ATMOS_EXCHANGE_MG_M2_D</code></li>
-<li><strong>Specification of concentration limits</strong>. The WQM allows users to optionally specify minimum and maximum concentation limits for each computed variable, and the WQM will reset concentrations to these limits if exceedences are detected. All instances of resetting are reported to the WQM log file as continuous commentary</li>
-<li><strong>Inbuilt guidance on parameter specification</strong>. The WQM checks all user specified parameters and compares them to typical ranges. If a parameter’s specified value falls outside a typical range, then a warning is reported to the WQM log file. These ranges are listed in Appendix <a href="AppParams.html#AppParams">Q</a> of this manual</li>
+<li><strong>Log file user feedback</strong>. WQ Module simulations generate a log file that reports all simulation configuration details for review</li>
+<li><strong>Output computed variable names</strong>. The WQ Module output variable names are descriptive and include the units used, for example <code>WQ_DISS_OXYGEN_MGL</code></li>
+<li><strong>Output diagnostic variable names</strong>. The WQ Module output diagnostic variable names are descriptive and include the units used, for example <code>WQ_DIAG_O2_ATMOS_EXCHANGE_MG_M2_D</code></li>
+<li><strong>Specification of concentration limits</strong>. The WQ Module allows users to optionally specify minimum and maximum concentation limits for each computed variable, and the WQ Module will reset concentrations to these limits if exceedences are detected. All instances of resetting are reported to the WQ Module log file as continuous commentary</li>
+<li><strong>Inbuilt guidance on parameter specification</strong>. The WQ Module checks all user specified parameters and compares them to typical ranges. If a parameter’s specified value falls outside a typical range, then a warning is reported to the WQ Module log file. These ranges are listed in Appendix <a href="AppParams.html#AppParams">Q</a> of this manual</li>
 </ul>
 </div>
 <div id="CnsFeats-3" class="section level3" number="1.2.2">
 <h3><span class="header-section-number">1.2.2</span> Constituents and processes</h3>
-<p>Constituents currently simulated by the WQM include:</p>
+<p>Constituents currently simulated by the WQ Module include:</p>
 <ul>
 <li>Dissolved oxygen</li>
 <li>Silicate</li>
@@ -554,14 +554,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Advanced (includes internal nutrient simulation)</li>
 </ul></li>
 </ul>
-<p>Processes captured by the WQM include:</p>
+<p>Processes captured by the WQ Module include:</p>
 <ul>
 <li>Water column transformations between constituents (e.g. nitrification)</li>
 <li>Benthic sediment – water column interactions (e.g. sediment oxygen consumption)</li>
 <li>Atmospheric exchange (e.g. oxygen dissolution and rainfall deposition)</li>
 <li>Primary productivity, respiration and exudation of one or more phytoplankton groups</li>
 </ul>
-<p>Future near-term releases of the WQM will include the ability to simulate:</p>
+<p>Future near-term releases of the WQ Module will include the ability to simulate:</p>
 <ul>
 <li>Pathogens</li>
 <li>Zooplankton</li>
@@ -577,12 +577,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="Science-2" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> Science</h2>
-<p>The science underpinning the WQM is that developed at the School of Agriculture and Environment’s <a href="https://research-repository.uwa.edu.au/en/organisations/oceans-institute" target="_blank">Oceans Institute</a> at <a href="https://www.uwa.edu.au/" target="_blank">The University of Western Australia</a>. The WQM has wrapped this world class science into a form that is easily accessed via familiar TUFLOW style commands and workflows, and offers the additional features described in Section <a href="Overview-1.html#Usability-3">1.2.1</a>.</p>
+<p>The science underpinning the WQ Module is that developed at the School of Agriculture and Environment’s <a href="https://research-repository.uwa.edu.au/en/organisations/oceans-institute" target="_blank">Oceans Institute</a> at <a href="https://www.uwa.edu.au/" target="_blank">The University of Western Australia</a>. The WQ Module has wrapped this world class science into a form that is easily accessed via familiar TUFLOW style commands and workflows, and offers the additional features described in Section <a href="Overview-1.html#Usability-3">1.2.1</a>.</p>
 </div>
 <div id="Support-2" class="section level2" number="1.4">
 <h2><span class="header-section-number">1.4</span> Support</h2>
-<p>BMT sells, distributes and supports the WQM. Contact <a href="mailto:support@tuflow.com" class="email">support@tuflow.com</a> or <a href="mailto:sales@tuflow.com" class="email">sales@tuflow.com</a> for support and sales inquiries.</p>
-<p>Several supporting appendices have also been included in this manual. These contain interactive content to assist users in understanding and applying the WQM, beyond what might typically be included in a static user manual. These Appendices are interlinked and hyperlinked with content from the body of the manual where appropriate, and are:</p>
+<p>BMT sells, distributes and supports the WQ Module. Contact <a href="mailto:support@tuflow.com" class="email">support@tuflow.com</a> or <a href="mailto:sales@tuflow.com" class="email">sales@tuflow.com</a> for support and sales inquiries.</p>
+<p>Several supporting appendices have also been included in this manual. These contain interactive content to assist users in understanding and applying the WQ Module, beyond what might typically be included in a static user manual. These Appendices are interlinked and hyperlinked with content from the body of the manual where appropriate, and are:</p>
 <ul>
 <li>Appendix <a href="AppSyntax.html#AppSyntax">A</a> Description of command syntax and nomenclature</li>
 <li>Appendix <a href="AppCommands.html#AppCommands">B</a> Listing of all commands, and their syntax, arguments, descriptions and cross references</li>
@@ -590,7 +590,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Appendix <a href="AppConstits.html#AppConstits">O</a> Listing and descriptions of all computed variables, with supporting information</li>
 <li>Appendix <a href="AppDiags.html#AppDiags">P</a> Listing and descriptions of all computed diagnostic variables, with supporting information</li>
 <li>Appendix <a href="AppParams.html#AppParams">Q</a> Explanations of all parameters, with symbology, minimums and maximum values, units and commentary</li>
-<li>Appendix <a href="AppMBal.html#AppMBal">R</a> Demonstration of the mass balance properties of all WQM computed variables</li>
+<li>Appendix <a href="AppMBal.html#AppMBal">R</a> Demonstration of the mass balance properties of all WQ Module computed variables</li>
 </ul>
 <p><img src="images/WQFooter.jpg" width="100%" /></p>
 

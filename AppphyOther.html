@@ -233,7 +233,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#TFVGeneral-2"><i class="fa fa-check"></i><b>4.3</b> General arrangement</a></li>
 <li class="chapter" data-level="4.4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#TFVCommands-2"><i class="fa fa-check"></i><b>4.4</b> TUFLOW FV control file commands</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMActivation-3"><i class="fa fa-check"></i><b>4.4.1</b> WQM activation</a></li>
+<li class="chapter" data-level="4.4.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMActivation-3"><i class="fa fa-check"></i><b>4.4.1</b> WQ Module activation</a></li>
 <li class="chapter" data-level="4.4.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#InitBCCond-3"><i class="fa fa-check"></i><b>4.4.2</b> Initial and boundary conditions</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQctrlfil-2"><i class="fa fa-check"></i><b>4.5</b> Water quality control file commands</a>
@@ -273,7 +273,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.9" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#Outputs-3"><i class="fa fa-check"></i><b>4.9</b> Outputs</a>
 <ul>
-<li class="chapter" data-level="4.9.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMOutputs-4"><i class="fa fa-check"></i><b>4.9.1</b> WQM outputs</a></li>
+<li class="chapter" data-level="4.9.1" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#WQMOutputs-4"><i class="fa fa-check"></i><b>4.9.1</b> WQ Module outputs</a></li>
 <li class="chapter" data-level="4.9.2" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html#FVOutputs-4"><i class="fa fa-check"></i><b>4.9.2</b> TUFLOW FV outputs</a></li>
 </ul></li>
 </ul></li>
@@ -496,7 +496,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Appendix M</span> Processes: phyto other</h1>
 <div id="PhySelfShad-3" class="section level2" number="17.1">
 <h2><span class="header-section-number">M.1</span> Self shading</h2>
-<p>Photosynthetically available radiation is provided to the WQM from TUFLOW for each computational cell at each water quality timestep. It is this two- or three-dimensional field that the WQM uses to compute phytoplanktonic responses to light. The WQM allows, however, for modification of this TUFLOW field to incorporate the effect of light attenuation due to the presence of phytoplankton. This additional light extinction is computed dynamically at each water quality timestep, based on instantaneous phytoplanktonic concentrations in individual computational cells, as per Equation <a href="AppphyOther.html#eq:eq-pel-phy-selfshad">(M.1)</a>.</p>
+<p>Photosynthetically available radiation is provided to the WQ Module from TUFLOW for each computational cell at each water quality timestep. It is this two- or three-dimensional field that the WQ Module uses to compute phytoplanktonic responses to light. The WQ Module allows, however, for modification of this TUFLOW field to incorporate the effect of light attenuation due to the presence of phytoplankton. This additional light extinction is computed dynamically at each water quality timestep, based on instantaneous phytoplanktonic concentrations in individual computational cells, as per Equation <a href="AppphyOther.html#eq:eq-pel-phy-selfshad">(M.1)</a>.</p>
 <p><span class="math display" id="eq:eq-pel-phy-selfshad">\[\begin{equation}
 Ke_{\langle computed \rangle}^{phy} = Ke^{phy} \times \left[PHY\right]
 \tag{M.1}
@@ -505,7 +505,7 @@ Ke_{\langle computed \rangle}^{phy} = Ke^{phy} \times \left[PHY\right]
 </div>
 <div id="PhyCellDens-3" class="section level2" number="17.2">
 <h2><span class="header-section-number">M.2</span> Cell density</h2>
-<p>The principle of the WQM density calculations is that cell density is set to increase during daylight primary production (when carbohydrates are created via photosynthesis) and decrease during darkness respiration (when carbohydrates are consumed). Equations <a href="AppphyOther.html#eq:eq-pel-phy-incrdens">(M.2)</a> and <a href="AppphyOther.html#eq:eq-pel-phy-decrdens">(M.3)</a> are used to describe these processes, respectively.</p>
+<p>The principle of the WQ Module density calculations is that cell density is set to increase during daylight primary production (when carbohydrates are created via photosynthesis) and decrease during darkness respiration (when carbohydrates are consumed). Equations <a href="AppphyOther.html#eq:eq-pel-phy-incrdens">(M.2)</a> and <a href="AppphyOther.html#eq:eq-pel-phy-decrdens">(M.3)</a> are used to describe these processes, respectively.</p>
 <p><span class="math display" id="eq:eq-pel-phy-incrdens">\[\begin{equation}
 \rho_{PHY\langle computed \rangle} = \rho_{PHY} + \frac{0.124 \times \left(1.0 - e^{\frac{-PAR}{I_K}}\right) - 0.0230}{60}
 \tag{M.2}
@@ -514,7 +514,7 @@ Ke_{\langle computed \rangle}^{phy} = Ke^{phy} \times \left[PHY\right]
 \rho_{PHY\langle computed \rangle} = \rho_{PHY} - \frac{0.0230}{60}
 \tag{M.3}
 \end{equation}\]</span></p>
-<p><span class="math inline">\(\rho_{PHY\langle computed \rangle}\)</span> and <a href="AppConstits.html#WQVarPhyRho"><span class="math inline">\(\rho_{PHY}\)</span></a> are the computed and initial (previous timestep) cell densities, respectively and <span class="math inline">\(PAR\)</span> and <span class="math inline">\(I_K\)</span> are the ambient cell photosynthetically active radiation and half saturation light intensity, respectively. <span class="math inline">\(I_K\)</span> is specified via the light limitation function, or if not, then via the specification of the stokes settling model, or as the default. Computed cell densities are checked against specified (or default) global minima and maxima and reset to these limits if exceeded. Cell density is only used within the WQM to compute stokes settling, and need not be included as a computed variable if other settling models are deployed.</p>
+<p><span class="math inline">\(\rho_{PHY\langle computed \rangle}\)</span> and <a href="AppConstits.html#WQVarPhyRho"><span class="math inline">\(\rho_{PHY}\)</span></a> are the computed and initial (previous timestep) cell densities, respectively and <span class="math inline">\(PAR\)</span> and <span class="math inline">\(I_K\)</span> are the ambient cell photosynthetically active radiation and half saturation light intensity, respectively. <span class="math inline">\(I_K\)</span> is specified via the light limitation function, or if not, then via the specification of the stokes settling model, or as the default. Computed cell densities are checked against specified (or default) global minima and maxima and reset to these limits if exceeded. Cell density is only used within the WQ Module to compute stokes settling, and need not be included as a computed variable if other settling models are deployed.</p>
 <p><img src="images/WQFooter.jpg" width="100%" /></p>
 
 </div>
