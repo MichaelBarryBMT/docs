@@ -466,10 +466,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="R.8.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBMatlab"><i class="fa fa-check"></i><b>R.8.1</b> Matlab</a></li>
 <li class="chapter" data-level="R.8.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPython"><i class="fa fa-check"></i><b>R.8.2</b> Python</a></li>
 </ul></li>
-<li class="chapter" data-level="R.9" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterp"><i class="fa fa-check"></i><b>R.9</b> Interpretation notes</a>
+<li class="chapter" data-level="R.9" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterp"><i class="fa fa-check"></i><b>R.9</b> Notes</a>
 <ul>
 <li class="chapter" data-level="R.9.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterpUnits"><i class="fa fa-check"></i><b>R.9.1</b> Units</a></li>
 <li class="chapter" data-level="R.9.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPrecision"><i class="fa fa-check"></i><b>R.9.2</b> Precision</a></li>
+<li class="chapter" data-level="R.9.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPlatform"><i class="fa fa-check"></i><b>R.9.3</b> Platform</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -778,11 +779,13 @@ end bc <br></p>
 <li>Simulation class via <a href="AppCommands.html#WQSimulationClass">simulation class ==</a></li>
 <li>Timestep <a href="AppParams.html#WQdt">dt</a> (in seconds) at which TUFLOW calls the WQ Module via <a href="AppCommands.html#WQWqDt">wq dt ==</a></li>
 <li>Units of simulation via <a href="AppCommands.html#WQWqUnits">wq units ==</a></li>
+<li>Frequency of equilibrium substepping <a href="AppParams.html#WQFss">fess</a> (in number of timesteps) to execute non-kinetic equilibrium calculations via <a href="AppCommands.html#WQWqEQSS">wq equilibrium substeps ==</a></li>
 </ul>
 <p>A typical simulation control section might therefore look like the following:</p>
 <pre><code>simulation class == DO
 wq dt == 600.0
-wq units == mgl</code></pre>
+wq units == mgl
+wq equilibrium substeps == 1</code></pre>
 </div>
 <div id="ConModSttngs-3" class="section level3" number="4.5.2">
 <h3><span class="header-section-number">4.5.2</span> Part 2: Constituent model settings</h3>
@@ -1549,7 +1552,7 @@ end material</code></pre>
 <p>Each phytoplankton group is specified using a cluster of values (initial conditions) or headers (bc block) and these clusters must appear in the same order as phytoplankton groups are specified in the water quality control file. The content of each phytoplankton cluster is determined both by the phytoplankton constituent model used and the settling model selected. These are described below, using a placeholder for preceding (non-phytoplankton) computed variables for clarity. These are described above and can be interpreted as either of the orderings specified in sections <a href="SimulationConstruction-1.html#ConOrdInorgFRPhs-5">4.7.5.1.1</a> or <a href="SimulationConstruction-1.html#ConOrdInorgFRPhsads-5">4.7.5.1.2</a>.</p>
 <p>Two phytoplankton groups are used in all examples.</p>
 <div id="ConOrdPhyBas-5" class="section level5" number="4.7.5.2.1">
-<h5><span class="header-section-number">4.7.5.2.1</span> Basic phytoplankton mode</h5>
+<h5><span class="header-section-number">4.7.5.2.1</span> Basic phytoplankton model</h5>
 <p>If the basic phytoplankton constituent model is used, then in all columnar and list style initial conditions, computed variables are expected in the following order (and map to “WQ_XX” after the final computed variable number accordingly):</p>
 <blockquote>
 <p>initial wq concentration == {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{[PHY_1]}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{[PHY_2]}_{\text{Cluster 2}}\)</span></p>
@@ -1588,7 +1591,7 @@ end material</code></pre>
 </div>
 <div id="ConOrdPhyAdv-5" class="section level5" number="4.7.5.2.2">
 <h5><span class="header-section-number">4.7.5.2.2</span> Advanced phytoplankton model</h5>
-<p>If the advanced phytoplankton constituent model is used, then in all columnar and list style initial conditions, computed variables are expected in the following orde (and map to “WQ_XX” after the final computed variable number accordingly)r:</p>
+<p>If the advanced phytoplankton constituent model is used, then in all columnar and list style initial conditions, computed variables are expected in the following order (and map to “WQ_XX” after the final computed variable number accordingly):</p>
 <blockquote>
 <p>initial wq concentration == {non-phytoplankton placeholders} <span class="math inline">\(\ldots\)</span> <span class="math inline">\(\underbrace{[PHY_1],[IN_1],[IP_1]}_{\text{Cluster 1}}\)</span>, <span class="math inline">\(\underbrace{[PHY_2],[IN_2],[IP_2]}_{\text{Cluster 2}}\)</span></p>
 </blockquote>

@@ -466,10 +466,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="R.8.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBMatlab"><i class="fa fa-check"></i><b>R.8.1</b> Matlab</a></li>
 <li class="chapter" data-level="R.8.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPython"><i class="fa fa-check"></i><b>R.8.2</b> Python</a></li>
 </ul></li>
-<li class="chapter" data-level="R.9" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterp"><i class="fa fa-check"></i><b>R.9</b> Interpretation notes</a>
+<li class="chapter" data-level="R.9" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterp"><i class="fa fa-check"></i><b>R.9</b> Notes</a>
 <ul>
 <li class="chapter" data-level="R.9.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterpUnits"><i class="fa fa-check"></i><b>R.9.1</b> Units</a></li>
 <li class="chapter" data-level="R.9.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPrecision"><i class="fa fa-check"></i><b>R.9.2</b> Precision</a></li>
+<li class="chapter" data-level="R.9.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPlatform"><i class="fa fa-check"></i><b>R.9.3</b> Platform</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -617,10 +618,10 @@ Used in Part 1: Simulation controls of WQM control file to set the units used fo
 </tr>
 <tr>
 <td style="text-align:left;width: 35%; vertical-align:top;">
-<a id="WQWqDt"><bmtpink>wq dt ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQdt">timestep</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+<a id="WQWqDt"><bmtpink>wq dt ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQdt"><span class="math inline">\(dt\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in Part 1: Simulation controls of WQM control file to set the timestep at which TUFLOW calls the WQM to undertake noncenservative water quality calculations, in seconds. Simulation construction section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.
+Used in Part 1: Simulation controls of WQM control file to set the timestep at which TUFLOW calls the WQM to undertake non-conservative water quality calculations, in seconds. Simulation construction section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1798,6 +1799,17 @@ Instruct TUFLOW FV to not execute water quality calculations on cells that have 
 </td>
 <td style="text-align:left;">
 Instruct TUFLOW FV to disable (1) or enable (0) water quality calculations on all cells. Simulation construction section <a href="SimulationConstruction-1.html#WQMActivation-3">4.4.1</a>.
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\text{ }\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 35%; vertical-align:top;">
+<a id="WQWqEQSS"><bmtpink>wq equilibrium substeps ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQFss"><span class="math inline">\(fess\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
+</td>
+<td style="text-align:left;">
+Used in Part 1: Simulation controls of WQM control file to set the frequency of timesteps at which the WQM undertakes non-kinetic calculations, in number of water quality timesteps. This only applies to FRP adsorption. Simulation construction section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>

@@ -466,10 +466,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="R.8.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBMatlab"><i class="fa fa-check"></i><b>R.8.1</b> Matlab</a></li>
 <li class="chapter" data-level="R.8.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPython"><i class="fa fa-check"></i><b>R.8.2</b> Python</a></li>
 </ul></li>
-<li class="chapter" data-level="R.9" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterp"><i class="fa fa-check"></i><b>R.9</b> Interpretation notes</a>
+<li class="chapter" data-level="R.9" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterp"><i class="fa fa-check"></i><b>R.9</b> Notes</a>
 <ul>
 <li class="chapter" data-level="R.9.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterpUnits"><i class="fa fa-check"></i><b>R.9.1</b> Units</a></li>
 <li class="chapter" data-level="R.9.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPrecision"><i class="fa fa-check"></i><b>R.9.2</b> Precision</a></li>
+<li class="chapter" data-level="R.9.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPlatform"><i class="fa fa-check"></i><b>R.9.3</b> Platform</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -5015,6 +5016,30 @@ A Boolean flag to disable (1) or enable (0) water quality calculations. The flag
 </td>
 <td style="text-align:left;width: 12%; ">
 <a href="AppCommands.html#FVWQMdisableWQ">disable water quality model ==</a><br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 15%; vertical-align:top;">
+<a id="WQFss">Non-kinetic equilibrium substep frequency</a>
+</td>
+<td style="text-align:center;width: 4%; vertical-align:middle;">
+<span class="math inline">\(fess\)</span>
+</td>
+<td style="text-align:center;width: 12%; ">
+number of wqm timesteps
+</td>
+<td style="text-align:center;width: 8%; ">
+(1, UD)
+</td>
+<td style="text-align:center;width: 2%; ">
+1
+</td>
+<td style="text-align:left;width: 47%; ">
+The frequency (in WQ timesteps) at which the WQM calls non-kinetic equilibrium calculations. For example, a value of 12 will call non-kinetic calculations every twelfth time the WQ module is called
+</td>
+<td style="text-align:left;width: 12%; ">
+<a href="AppCommands.html#WQWqEQSS">wq equilibrium substeps ==</a><br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 </td>
 </tr>
