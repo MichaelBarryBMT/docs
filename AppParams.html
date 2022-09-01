@@ -527,6 +527,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li>Where numerical limits are provided for phytoplankton simulation parameters, the conversion bewteen <span class="math inline">\(\mu\)</span>g/L Clh <em>a</em> and mmol/m<span class="math inline">\(^3\)</span> or carbon is assumed to be 27.0 mg C/mg Chl <em>a</em></li>
 </ul>
+<p>Where parameter ranges are provided, these are not to be taken as fixed, but as indicative only. Some environmental settings may require parameterisation outside the ranges specified in this manual.</p>
 <table>
 <caption>
 <span id="tab:tab-parameters">Table Q.1: </span><strong>WQM parameters</strong>
@@ -4660,7 +4661,7 @@ mmol N/m<span class="math inline">\(^3\)</span>/d
 <td style="text-align:center;width: 8%; ">
 (0, 0.5)<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-(0, 0.0357142857142857)
+(0, 0.036)
 </td>
 <td style="text-align:center;width: 2%; ">
 0<br>
@@ -4740,7 +4741,7 @@ The nitrite concentration for which the computed consumption of ammonium due to 
 </tr>
 <tr>
 <td style="text-align:left;width: 15%; vertical-align:top;">
-<a id="WQParRdrna">Anaerobic oxidation of ammonium rate</a>
+<a id="WQParRdrna">Dissimilatory reduction of nitrate to ammonium rate</a>
 </td>
 <td style="text-align:center;width: 4%; vertical-align:middle;">
 <span class="math inline">\(R_{DRNA}^{NO_3}\)</span>
@@ -4832,10 +4833,10 @@ The constant settling velocity applied to adsorbed FRP. Future releases of the W
 m
 </td>
 <td style="text-align:center;width: 8%; ">
-(0.000000001, 0.000001)
+(1 e-09, 1 e -06)
 </td>
 <td style="text-align:center;width: 2%; ">
-1.0000000000000001E-9
+1 e-09
 </td>
 <td style="text-align:left;width: 47%; ">
 The conceptual diameter of labile particulate organic matter applied in stokes calculations of settling velocity. Future releases of the WQM will dynamically link settling velocity to calculations made by the TUFLOW FV STM
@@ -4907,10 +4908,10 @@ The settling velocity applied to labile particulate organic matter for constant 
 m
 </td>
 <td style="text-align:center;width: 8%; ">
-(0.000000001, 0.000001)
+(1 e-09, 1 e -06)
 </td>
 <td style="text-align:center;width: 2%; ">
-1.0000000000000001E-9
+1 e-09
 </td>
 <td style="text-align:left;width: 47%; ">
 The conceptual diameter of refractory particulate organic matter applied in stokes calculations of settling velocity. Future releases of the WQM will dynamically link settling velocity to calculations made by the TUFLOW FV STM
