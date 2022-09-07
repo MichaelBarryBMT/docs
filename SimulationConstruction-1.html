@@ -564,7 +564,7 @@ Figure 4.1: <strong>Simulation Coordination</strong>
 <blockquote>
 <p><a href="AppCommands.html#FVWQMCtrlDr">water quality model directory ==</a> <a href="AppCommands.html#FVWQMCtrlDr">&lt;<em>relative path to WQ directory</em>&gt;<span class="math inline">\(\backslash\)</span></a></p>
 </blockquote>
-<p>This command must terminate in a <span class="math inline">\(\backslash\)</span> character.</p>
+<p>This command must terminate in a <span class="math inline">\(\backslash\)</span> character. If this command is issued, then the *.fvwq water quality control file must be located in the directory specified.</p>
 <p>In certain circumstances, executing water quality calculations in shallow cells can cause numerical instabilities. To control this behaviour, the WQ Module allows for water quality calculations to be switched off in cells that have depths less than a specified minimum (advection dispersion calculations will however continue to be performed). This minimum depth (in meters) is specified in the TUFLOW FV *.fvc via the command:</p>
 <blockquote>
 <p><a href="AppCommands.html#FVWQMmindpth">cell water quality depth ==</a> <a href="AppParams.html#WQParMinWQDepth"><span class="math inline">\(d_{min-wq}\)</span></a></p>
@@ -1173,7 +1173,7 @@ end material</code></pre>
 <ul>
 <li>Uses only alphanumeric characters</li>
 <li>Has no spaces, and</li>
-<li>Is not the keyword ‘COM’</li>
+<li>Excludes the keywords ‘COM’ and ‘PHYTO’, or any combination of letters already included in a standard computed variable name, such as “INT_N_”, “INT_P” or “_rho”</li>
 </ul>
 <p>Minimum and maximum concentrations for a phytoplankton group are specified as follows. No prefix keyword (as was the case for constituents such as “ammonium”) is required:</p>
 <blockquote>
