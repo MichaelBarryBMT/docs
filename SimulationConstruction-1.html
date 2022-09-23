@@ -612,7 +612,7 @@ initial salinity == 3.5</code></pre>
 <p>Setting a mix of globally uniform and other initial conditions (such as profile, 2d or 3d) is not permitted.</p>
 </div>
 <div id="ICGlobLat-5" class="section level5" number="4.4.2.1.3">
-<h5><span class="header-section-number">4.4.2.1.3</span> Gobally laterally uniform</h5>
+<h5><span class="header-section-number">4.4.2.1.3</span> Globally laterally uniform</h5>
 <p>Globally laterally uniform initial conditions use an initial profile to set hydrodynamic and water quality computed variable concentrations to be everywhere the same laterally, but to vary vertically. This is often useful in setting initial conditions for deep stationary water bodies such as lakes or reservoirs. The command to do so is:</p>
 <blockquote>
 <p><a href="AppCommands.html#FVInitWQProf">initial scalar profile ==</a> <a href="AppCommands.html#FVInitWQProf">&lt;<em>initial condition file name</em>&gt;.csv</a></p>
@@ -631,7 +631,7 @@ initial salinity == 3.5</code></pre>
 <p>Notwithstanding this, it is still considered best practise to develop initial and boundary condition files that have a logically sequential order. Water quality initial conditions headers are labelled “WQ_1”, “WQ_2” onward, and the match between these header labels and water quality computed variables is set by the computed variable ordering of the simulation class deployed.</p>
 </div>
 <div id="ICGlobVert-5" class="section level5" number="4.4.2.1.4">
-<h5><span class="header-section-number">4.4.2.1.4</span> Gobally vertically uniform</h5>
+<h5><span class="header-section-number">4.4.2.1.4</span> Globally vertically uniform</h5>
 <p>Globally vertically uniform initial conditions use an initial two dimensional map to set hydrodynamic and water quality computed variable concentrations to be everywhere the same vertically, but to vary laterally. This is often useful in setting initial conditions for shallow water bodies that have horizontal concentration gradients such as small estuaries or urban lakes. The command to do so is:</p>
 <blockquote>
 <p><a href="AppCommands.html#FVInitWQ2D">initial condition 2d ==</a> <a href="AppCommands.html#FVInitWQ2D">&lt;<em>initial condition file name</em>&gt;.csv</a></p>
@@ -652,7 +652,7 @@ initial salinity == 3.5</code></pre>
 <p>Notwithstanding this, it is still considered best practise to develop initial and boundary condition files that have a logically sequential order. Water quality initial conditions headers are labelled “WQ_1”, “WQ_2” onward, and the match between these header labels and water quality computed variables is set by the computed variable ordering of the simulation class deployed.</p>
 </div>
 <div id="ICGlob3d-5" class="section level5" number="4.4.2.1.5">
-<h5><span class="header-section-number">4.4.2.1.5</span> Gobally varying</h5>
+<h5><span class="header-section-number">4.4.2.1.5</span> Globally varying</h5>
 <p>Globally variable initial conditions use an initial three dimensional map to set hydrodynamic and water quality computed variable concentrations at each 3D cell. This is analogous to using a restart file. The command to do so is:</p>
 <blockquote>
 <p><a href="AppCommands.html#FVInitWQ3D">initial condition 3d ==</a> <a href="AppCommands.html#FVInitWQ3D">&lt;<em>initial condition file name</em>&gt;.csv</a></p>
