@@ -289,7 +289,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="C" data-path="AppDemoModel.html"><a href="AppDemoModel.html"><i class="fa fa-check"></i><b>C</b> Demonstration model</a></li>
 <li class="chapter" data-level="D" data-path="AppO.html"><a href="AppO.html"><i class="fa fa-check"></i><b>D</b> Processes: oxygen</a>
 <ul>
-<li class="chapter" data-level="D.1" data-path="AppO.html"><a href="AppO.html#AtmosphericAeration-3"><i class="fa fa-check"></i><b>D.1</b> Atmospheric aeration</a></li>
+<li class="chapter" data-level="D.1" data-path="AppO.html"><a href="AppO.html#AtmosphericAeration-3"><i class="fa fa-check"></i><b>D.1</b> Atmospheric oxygen flux</a></li>
 <li class="chapter" data-level="D.2" data-path="AppO.html"><a href="AppO.html#SedOxyCons-3"><i class="fa fa-check"></i><b>D.2</b> Sediment oxygen flux</a></li>
 </ul></li>
 <li class="chapter" data-level="E" data-path="AppSil.html"><a href="AppSil.html"><i class="fa fa-check"></i><b>E</b> Processes: silicate</a>
@@ -917,10 +917,19 @@ end material</code></pre>
 <blockquote>
 <p><a href="AppCommands.html#WQOxyMinMax"><span class="math inline">\(\blockindent\)</span> oxygen min max ==</a> <a href="AppParams.html#WQParMinO2"><span class="math inline">\(\left[DO\right]_{min}^{O_2}\)</span></a>, <a href="AppParams.html#WQParMaxO2"><span class="math inline">\(\left[DO\right]_{max}^{O_2}\)</span></a></p>
 </blockquote>
-<p>Global benthic parameters (used in Equation <a href="AppO.html#eq:equ-sed-do-flux">(D.4)</a>) are specified as:</p>
+<p>Global benthic parameters (used in Equation <a href="AppO.html#eq:equ-sed-do-flux">(D.6)</a>) are specified as:</p>
 <blockquote>
 <p><a href="AppCommands.html#WQOxyBenFlxPars"><span class="math inline">\(\blockindent\)</span> oxygen benthic ==</a> <a href="AppParams.html#WQParKsedO2"><span class="math inline">\(K_{sed-O_2}^{O_2}\)</span></a>, <a href="AppParams.html#WQParthetasedO2"><span class="math inline">\(\theta_{sed}^{O_2}\)</span></a></p>
 </blockquote>
+<p>The oxygen piston model to be used (in either Equation <a href="AppO.html#eq:equ-atm-Pv1">(D.2)</a> or Equation <a href="AppO.html#eq:equ-atm-Pv4">(D.3)</a>) is specified as:</p>
+<blockquote>
+<p><a href="AppCommands.html#WQOxyPistMod1"><span class="math inline">\(\blockindent\)</span> oxygen piston model ==</a> Wanninkhof92</p>
+</blockquote>
+<p>or</p>
+<blockquote>
+<p><a href="AppCommands.html#WQOxyPistMod4"><span class="math inline">\(\blockindent\)</span> oxygen piston model ==</a> Ho16</p>
+</blockquote>
+<p>The argument (either “Wanninkhof92” or “Ho16”) activates a different oxygen piston model (Equation <a href="AppO.html#eq:equ-atm-Pv1">(D.2)</a> or Equation <a href="AppO.html#eq:equ-atm-Pv4">(D.3)</a>, respectively).</p>
 <p>Although not strictly necessary, the use of “oxygen” to prefix these block commands is deliberate so as to maintain consistency of command style with other constituent model blocks that include more than one computed variable, such as nitrogen, phosphorus and organics. Nonetheless, if the “oxygen” prefix is omitted within this constituent model block, the WQ Module will still interpret the above commands correctly.</p>
 <p>This constituent model block must be terminated using the command:</p>
 <blockquote>
@@ -931,7 +940,7 @@ end material</code></pre>
 </div>
 <div id="MatSpecsDO-3" class="section level3" number="4.6.4">
 <h3><span class="header-section-number">4.6.4</span> Part 3: Material specification</h3>
-<p>Oxygen benthic flux (used in Equation <a href="AppO.html#eq:equ-sed-do-flux">(D.4)</a>) is specified within both default and numbered material blocks as:</p>
+<p>Oxygen benthic flux (used in Equation <a href="AppO.html#eq:equ-sed-do-flux">(D.6)</a>) is specified within both default and numbered material blocks as:</p>
 <blockquote>
 <p><a href="AppCommands.html#WQOxyBenFlx"><span class="math inline">\(\blockindent\)</span> oxygen flux ==</a> <a href="AppDiags.html#WQParFsedO2"><span class="math inline">\(F_{sed}^{O_2}\)</span></a></p>
 </blockquote>

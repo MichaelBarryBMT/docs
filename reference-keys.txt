@@ -44,7 +44,9 @@ eq:equ-massmoles
 eq:equ-massmoleseg
 fig:fig-InteractionWithFV
 tab:tab-commands2
-eq:equ-atm-ScPv1
+eq:equ-atm-Sc2
+eq:equ-atm-Pv1
+eq:equ-atm-Pv4
 eq:equ-atm-rear
 eq:equ-oxy-sat
 eq:equ-sed-do-flux
