@@ -826,18 +826,19 @@ Ke_{\langle computed \rangle}^{ROM} = R_{CDOM}^{RDOM} \times CDOM + Ke^{RPOM} \t
 <p>Once the settling velocities for labile and refractory particulate organic matter have been computed, the relevant fluxes are calculated as follows.</p>
 <p><span class="math display" id="eq:equ-pel-lsedmtn-flux">\[\begin{equation}
 \left.\begin{aligned}
-  \href{AppDiags.html#WQDiagPOCSedmtn}{F_{sedmtn\langle computed\rangle}^{POC}} =&amp; \href{AppDiags.html#WQDiagPOMVVel}{V_{settle\langle computed \rangle}^{lorg}} \times \left[ POC \right]
+  \href{AppDiags.html#WQDiagPOCSedmtn}{F_{sedmtn\langle computed\rangle}^{POC}} =&amp; \frac{\href{AppDiags.html#WQDiagPOMVVel}{V_{settle\langle computed \rangle}^{lorg}}}{dz} \times \left[ POC \right]
 \\ \\  
-  \href{AppDiags.html#WQDiagPONSedmtn}{F_{sedmtn\langle computed\rangle}^{PON}} =&amp; \href{AppDiags.html#WQDiagPOMVVel}{V_{settle\langle computed \rangle}^{lorg}} \times \left[ PON \right]
+  \href{AppDiags.html#WQDiagPONSedmtn}{F_{sedmtn\langle computed\rangle}^{PON}} =&amp; \frac{\href{AppDiags.html#WQDiagPOMVVel}{V_{settle\langle computed \rangle}^{lorg}}}{dz} \times \left[ PON \right]
 \\ \\  
-  \href{AppDiags.html#WQDiagPOPSedmtn}{F_{sedmtn\langle computed\rangle}^{POP}} =&amp; \href{AppDiags.html#WQDiagPOMVVel}{V_{settle\langle computed \rangle}^{lorg}} \times \left[ POP \right]
+  \href{AppDiags.html#WQDiagPOPSedmtn}{F_{sedmtn\langle computed\rangle}^{POP}} =&amp; \frac{\href{AppDiags.html#WQDiagPOMVVel}{V_{settle\langle computed \rangle}^{lorg}}}{dz} \times \left[ POP \right]
 \end{aligned}\right\}
   \tag{N.31}
 \end{equation}\]</span></p>
 <p><span class="math display" id="eq:equ-pel-rsedmtn-flux">\[\begin{equation}
-  \href{AppDiags.html#WQDiagRPOMSedmtn}{F_{sedmtn\langle computed\rangle}^{RPOM}} = \href{AppDiags.html#WQDiagRPOMVVel}{V_{settle\langle computed \rangle}^{rorg}} \times \left[ RPOM \right]
+  \href{AppDiags.html#WQDiagRPOMSedmtn}{F_{sedmtn\langle computed\rangle}^{RPOM}} = \frac{\href{AppDiags.html#WQDiagRPOMVVel}{V_{settle\langle computed \rangle}^{rorg}}}{dz} \times \left[ RPOM \right]
   \tag{N.32}
-\end{equation}\]</span></p>
+\end{equation}\]</span>
+<span class="math inline">\(dz\)</span> is the relevant cell thickness, and divides the flux to produce a per volume result for consistency with other corresponding diagnostics.</p>
 <p>The limitations of this approach to modelling particulate organic matter settling are recognised. Future releases of the WQ Module will offer direct linkages between the TUFLOW FV STM and WQM, and treat particulate organics as sediment fractions that are transported using the advanced techniques and models offered by the STM.</p>
 <p><img src="images/WQFooter.jpg" width="100%" /></p>
 
