@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Appendix N Processes: organic matter | TUFLOW FV Water Quality Module User Manual</title>
-  <meta name="description" content="Appendix N Processes: organic matter | TUFLOW FV Water Quality Module User Manual" />
+  <title>Appendix N Processes: organic matter | TUFLOW FV Water Quality (WQ) Module User Manual</title>
+  <meta name="description" content="Appendix N Processes: organic matter | TUFLOW FV Water Quality (WQ) Module User Manual" />
   <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Appendix N Processes: organic matter | TUFLOW FV Water Quality Module User Manual" />
+  <meta property="og:title" content="Appendix N Processes: organic matter | TUFLOW FV Water Quality (WQ) Module User Manual" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="/images/tuflow.png" />
-  <meta property="og:description" content="Appendix N Processes: organic matter | TUFLOW FV Water Quality Module User Manual" />
+  <meta property="og:description" content="Appendix N Processes: organic matter | TUFLOW FV Water Quality (WQ) Module User Manual" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Appendix N Processes: organic matter | TUFLOW FV Water Quality Module User Manual" />
+  <meta name="twitter:title" content="Appendix N Processes: organic matter | TUFLOW FV Water Quality (WQ) Module User Manual" />
   
-  <meta name="twitter:description" content="Appendix N Processes: organic matter | TUFLOW FV Water Quality Module User Manual" />
+  <meta name="twitter:description" content="Appendix N Processes: organic matter | TUFLOW FV Water Quality (WQ) Module User Manual" />
   <meta name="twitter:image" content="/images/tuflow.png" />
 
 
@@ -486,7 +486,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><h0 style="color:rgb(0,85,129);">TUFLOW FV Water Quality Module User Manual</h0></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><h0 style="color:rgb(0,85,129);">TUFLOW FV Water Quality (WQ) Module User Manual</h0></a>
           </h1>
         </div>
 
@@ -498,7 +498,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Appendix N</span> Processes: organic matter</h1>
 <div id="SedDissOrgProd-3" class="section level2" number="18.1">
 <h2><span class="header-section-number">N.1</span> Sediment flux</h2>
-<p>Dissolved organic carbon, nitrogen and phosphorus are exchanged between the water column and sediments via specification of separate sediment fluxes. In all cases, this flux is most commonly out of the sediments, i.e. a positive specification of sediment flux. Although it is rare that sediments act as sinks of these species, TUFLOW WQ Module can be parameterised to allow for this if required. Only labile dissolved organic matter is released from the sediments in the WQM, and as such, references to organics in this section should be interpreted as labile organics.</p>
+<p>Dissolved organic carbon, nitrogen and phosphorus are exchanged between the water column and sediments via specification of separate sediment fluxes. In all cases, this flux is most commonly out of the sediments, i.e. a positive specification of sediment flux. Although it is rare that sediments act as sinks of these species, TUFLOW WQ Module can be parameterised to allow for this if required. Only labile dissolved organic matter is released from the sediments in the WQ Module, and as such, references to organics in this section should be interpreted as labile organics.</p>
 <p>The user specified rates of dissolved organic fluxes (which can be spatially varying) are modified by overlying ambient dissolved oxygen concentration (together with respective user specified half saturation oxygen concentrations) and water temperature. These modifications are simulated via Michaelis-Menten and Arrhenius models, respectively, as per Equation <a href="AppOrg.html#eq:equ-sed-org-flux">(N.1)</a>.
 <span class="math display" id="eq:equ-sed-org-flux">\[\begin{equation}
 \left.\begin{aligned}
@@ -518,7 +518,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="Hydrol-3" class="section level2" number="18.2">
 <h2><span class="header-section-number">N.2</span> Hydrolysis</h2>
-<p>Hydrolysis is the pelagic biological conversion of labile particulate organic matter to labile dissolved organic matter. It is therefore a source of dissolved carbon, nitrogen and phosphorus, and a sink of the corresponding particulates. Hydrolysis neither consumes or produces dissolved oxygen or bioavailable inorganic nutrients. Hydrolysis is implemented within the labile organics constituent model of the WQM, and the term organic matter in this section therefore refers to labile organic matter. Refractory organic matter processes are described elsewhere.</p>
+<p>Hydrolysis is the pelagic biological conversion of labile particulate organic matter to labile dissolved organic matter. It is therefore a source of dissolved carbon, nitrogen and phosphorus, and a sink of the corresponding particulates. Hydrolysis neither consumes or produces dissolved oxygen or bioavailable inorganic nutrients. Hydrolysis is implemented within the labile organics constituent model of the WQ Module, and the term organic matter in this section therefore refers to labile organic matter. Refractory organic matter processes are described elsewhere.</p>
 <p>The pelagic hydrolysis rate is computed within the labile organics constituent model via Equation <a href="AppOrg.html#eq:equ-pel-hydrolysis-rate">(N.2)</a>.</p>
 <p><span class="math display" id="eq:equ-pel-hydrolysis-rate">\[\begin{equation}
 \left.\begin{aligned}
@@ -599,7 +599,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="Miner-3" class="section level2" number="18.4">
 <h2><span class="header-section-number">N.4</span> Mineralisation</h2>
-<p>Mineralisation is the pelagic biological conversion of labile dissolved organic matter to dissolved inorganic carbon and nutrients. It is therefore a source of dissolved inorganic carbon, ammonium and filterable reactive phosphorus, and a sink of the corresponding labile dissolved organics. Mineralisation is conceptualised as comprising aerobic (i.e. consuming dissolved oxygen and (via denitrification) inorganic nitrate) and anaerobic components, and is implemented within the labile organics constituent model of the WQM. The term organic matter in this section therefore refers to labile organic matter.</p>
+<p>Mineralisation is the pelagic biological conversion of labile dissolved organic matter to dissolved inorganic carbon and nutrients. It is therefore a source of dissolved inorganic carbon, ammonium and filterable reactive phosphorus, and a sink of the corresponding labile dissolved organics. Mineralisation is conceptualised as comprising aerobic (i.e. consuming dissolved oxygen and (via denitrification) inorganic nitrate) and anaerobic components, and is implemented within the labile organics constituent model of the WQ Module. The term organic matter in this section therefore refers to labile organic matter.</p>
 <p>The same pelagic mineralisation rate is computed within the WQ Module for dissolved organic carbon, nitrogen and phosphorus via Equation <a href="AppOrg.html#eq:equ-pel-miner-rate">(N.8)</a>.
 <span class="math display" id="eq:equ-pel-miner-rate">\[\begin{equation}
   R_{miner\langle computed\rangle}^{DOM} = R_{miner}^{DOM} \times \underbrace{\left[\underbrace{\frac{\left[DO\right]}{K_{miner-O_2}^{DOM} + \left[DO\right]}}_{\text{O2 consumption}} + \underbrace{f_{an} \times \frac{K_{miner-O_2}^{DOM}}{K_{miner-O_2}^{DOM} + \left[DO\right]}}_{\text{non-O2 consumption}}\right]}_{\text{Influence of oxygen}} \times \underbrace{\vphantom{\left[\underbrace{\frac{\left[DO\right]}{K_{miner-O_2}^{DOM} + \left[DO\right]}}_{\text{aerobic}} + \underbrace{f_{an} \times \frac{K_{miner-O_2}^{DOM}}{K_{miner-O_2}^{DOM} + \left[DO\right]}}_{\text{anaerobic}}\right]}
@@ -793,7 +793,7 @@ Ke_{\langle computed \rangle}^{ROM} = R_{CDOM}^{RDOM} \times CDOM + Ke^{RPOM} \t
 </div>
 <div id="OrgSettle-3" class="section level2" number="18.8">
 <h2><span class="header-section-number">N.8</span> Settling</h2>
-<p>Particulate organic matter is able to be settled within the WQM. Four settling models are available. These are able to be applied equally to both labile and refractory particulate organic matter to compute <span class="math inline">\(V_{settle}^{lorg}\)</span> and <span class="math inline">\(V_{settle}^{rorg}\)</span>, respectively. The same settling model must be applied to both types of particulates, although the parameters ascribed to a model can be different for labile and refractory particulates. Once computed, the same settling rate is applied to each of labile particulate organic carbon, nitrogen and phosphorus.</p>
+<p>Particulate organic matter is able to be settled within the WQ Module. Four settling models are available. These are able to be applied equally to both labile and refractory particulate organic matter to compute <span class="math inline">\(V_{settle}^{lorg}\)</span> and <span class="math inline">\(V_{settle}^{rorg}\)</span>, respectively. The same settling model must be applied to both types of particulates, although the parameters ascribed to a model can be different for labile and refractory particulates. Once computed, the same settling rate is applied to each of labile particulate organic carbon, nitrogen and phosphorus.</p>
 <div id="OrgSettleNone-5" class="section level3" number="18.8.1">
 <h3><span class="header-section-number">N.8.1</span> None</h3>
 <p>In this model, particulate organic settling is set to zero and organic matter is simply advected by the hydrodynamic flow field.</p>
@@ -839,7 +839,7 @@ Ke_{\langle computed \rangle}^{ROM} = R_{CDOM}^{RDOM} \times CDOM + Ke^{RPOM} \t
   \tag{N.32}
 \end{equation}\]</span>
 <span class="math inline">\(dz\)</span> is the relevant cell thickness, and divides the flux to produce a per volume result for consistency with other corresponding diagnostics.</p>
-<p>The limitations of this approach to modelling particulate organic matter settling are recognised. Future releases of the WQ Module will offer direct linkages between the TUFLOW FV STM and WQM, and treat particulate organics as sediment fractions that are transported using the advanced techniques and models offered by the STM.</p>
+<p>The limitations of this approach to modelling particulate organic matter settling are recognised. Future releases of the WQ Module will offer direct linkages between the TUFLOW FV ST Module and WQ Module, and treat particulate organics as sediment fractions that are transported using the advanced techniques and models offered by the ST Module.</p>
 <p><img src="images/WQFooter.jpg" width="100%" /></p>
 
 </div>

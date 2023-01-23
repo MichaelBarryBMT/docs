@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 3 Process Descriptions | TUFLOW FV Water Quality Module User Manual</title>
-  <meta name="description" content="Section 3 Process Descriptions | TUFLOW FV Water Quality Module User Manual" />
+  <title>Section 3 Process Descriptions | TUFLOW FV Water Quality (WQ) Module User Manual</title>
+  <meta name="description" content="Section 3 Process Descriptions | TUFLOW FV Water Quality (WQ) Module User Manual" />
   <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 3 Process Descriptions | TUFLOW FV Water Quality Module User Manual" />
+  <meta property="og:title" content="Section 3 Process Descriptions | TUFLOW FV Water Quality (WQ) Module User Manual" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="/images/tuflow.png" />
-  <meta property="og:description" content="Section 3 Process Descriptions | TUFLOW FV Water Quality Module User Manual" />
+  <meta property="og:description" content="Section 3 Process Descriptions | TUFLOW FV Water Quality (WQ) Module User Manual" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 3 Process Descriptions | TUFLOW FV Water Quality Module User Manual" />
+  <meta name="twitter:title" content="Section 3 Process Descriptions | TUFLOW FV Water Quality (WQ) Module User Manual" />
   
-  <meta name="twitter:description" content="Section 3 Process Descriptions | TUFLOW FV Water Quality Module User Manual" />
+  <meta name="twitter:description" content="Section 3 Process Descriptions | TUFLOW FV Water Quality (WQ) Module User Manual" />
   <meta name="twitter:image" content="/images/tuflow.png" />
 
 
@@ -486,7 +486,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><h0 style="color:rgb(0,85,129);">TUFLOW FV Water Quality Module User Manual</h0></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><h0 style="color:rgb(0,85,129);">TUFLOW FV Water Quality (WQ) Module User Manual</h0></a>
           </h1>
         </div>
 
@@ -1087,9 +1087,9 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 </tr>
 </tbody>
 </table>
-<p>In order for this constituent model to be used, the TUFLOW FV Sediment Transport module (STM) must be activated to simulate at least one fraction of suspended sediment (several fractions may be so set). A WQ Module simulation will not start if the TUFLOW STM is not activated. In order to use this FRPhsAds constituent model therefore, the following must be in place:</p>
+<p>In order for this constituent model to be used, the TUFLOW FV Sediment Transport (ST) Module must be activated to simulate at least one fraction of suspended sediment (several fractions may be so set). A WQ Module simulation will not start if the TUFLOW ST Module is not activated. In order to use this FRPhsAds constituent model therefore, the following must be in place:</p>
 <ul>
-<li>The TUFLOW FV STM must be activated and implemented</li>
+<li>The TUFLOW FV ST Module must be activated and implemented</li>
 <li>At least one sediment fraction must be set up and executed within TUFLOW FV via the inclusion of a sediment control file, and specification of either of the following TUFLOW FV commands:</li>
 </ul>
 <blockquote>
@@ -1099,10 +1099,10 @@ mg/L or mmol/m<span class="math inline">\(^3\)</span>
 <blockquote>
 <p><a href="AppCommands.html#FVIncludeSed">include sediment == 1,1</a> ! Include sediment in density calculations</p>
 </blockquote>
-<p>If multiple sediment fractions are specified to be simulated by the STM, then TUFLOW FV sends all these fraction concentrations as a sum through the API to the WQ Module, and this sum is used as the sediment concentration against which adsorption is computed. The WQ Module uses this information to compute FRP adsorption and loss of adsorbed FRP through settling. It is recognised that there are limitations of this approach. Future releases of TUFLOW FV and the WQ Module will address some of these limitations and allow for:</p>
+<p>If multiple sediment fractions are specified to be simulated by the ST Module, then TUFLOW FV sends all these fraction concentrations as a sum through the API to the WQ Module, and this sum is used as the sediment concentration against which adsorption is computed. The WQ Module uses this information to compute FRP adsorption and loss of adsorbed FRP through settling. It is recognised that there are limitations of this approach. Future releases of TUFLOW FV and the WQ Module will address some of these limitations and allow for:</p>
 <ul>
-<li>User control of which STM sediment fractions are used in adsorption calculations, and</li>
-<li>Use of the TUFLOW FV STM settling and resuspension routines to dynamically link settling and resuspension of adsorbed FRP</li>
+<li>User control of which ST Module sediment fractions are used in adsorption calculations, and</li>
+<li>Use of the TUFLOW FV ST Module settling and resuspension routines to dynamically link settling and resuspension of adsorbed FRP</li>
 </ul>
 </div>
 </div>

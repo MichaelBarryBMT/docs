@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 4 Simulation Construction | TUFLOW FV Water Quality Module User Manual</title>
-  <meta name="description" content="Section 4 Simulation Construction | TUFLOW FV Water Quality Module User Manual" />
+  <title>Section 4 Simulation Construction | TUFLOW FV Water Quality (WQ) Module User Manual</title>
+  <meta name="description" content="Section 4 Simulation Construction | TUFLOW FV Water Quality (WQ) Module User Manual" />
   <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 4 Simulation Construction | TUFLOW FV Water Quality Module User Manual" />
+  <meta property="og:title" content="Section 4 Simulation Construction | TUFLOW FV Water Quality (WQ) Module User Manual" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="/images/tuflow.png" />
-  <meta property="og:description" content="Section 4 Simulation Construction | TUFLOW FV Water Quality Module User Manual" />
+  <meta property="og:description" content="Section 4 Simulation Construction | TUFLOW FV Water Quality (WQ) Module User Manual" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 4 Simulation Construction | TUFLOW FV Water Quality Module User Manual" />
+  <meta name="twitter:title" content="Section 4 Simulation Construction | TUFLOW FV Water Quality (WQ) Module User Manual" />
   
-  <meta name="twitter:description" content="Section 4 Simulation Construction | TUFLOW FV Water Quality Module User Manual" />
+  <meta name="twitter:description" content="Section 4 Simulation Construction | TUFLOW FV Water Quality (WQ) Module User Manual" />
   <meta name="twitter:image" content="/images/tuflow.png" />
 
 
@@ -486,7 +486,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><h0 style="color:rgb(0,85,129);">TUFLOW FV Water Quality Module User Manual</h0></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><h0 style="color:rgb(0,85,129);">TUFLOW FV Water Quality (WQ) Module User Manual</h0></a>
           </h1>
         </div>
 
@@ -535,7 +535,7 @@ where <span class="math inline">\(n\)</span> is millimoles (mmol), <span class="
 <h2><span class="header-section-number">4.3</span> General arrangement</h2>
 <p>A water quality simulation is set up and executed under the umbrella of a TUFLOW FV control file (Figure <a href="SimulationConstruction-1.html#fig:fig-InteractionWithFV">4.1</a>, with other optional modules shown for illustrative purposes). That is:</p>
 <ul>
-<li>The TUFLOW FV control file (*.fvc) file remains the central file that initiates and coordinates an overall simulation. This mirrors the way in which other TUFLOW FV modules, such as the STM and PTM, are activated and executed</li>
+<li>The TUFLOW FV control file (*.fvc) file remains the central file that initiates and coordinates an overall simulation. This mirrors the way in which other TUFLOW FV modules, such as the ST Module and PT Module, are activated and executed</li>
 <li>The TUFLOW FV control file contains a path to a separate WQ Module control file (*.fvwq) that in turn contains all the commands required to configure a WQ Module simulation</li>
 </ul>
 <span class="math inline">\(\newcommand{\blockindent}{\hspace{0.5cm}}\)</span>
@@ -999,7 +999,7 @@ end material</code></pre>
 <li>Temperature</li>
 <li>Heat module on (i.e. meteorological forcing is required)</li>
 </ul>
-<p>Simulation of suspended sediment (via TUFLOW FV’s sediment transport module) is required only if adsorbed phosphorus is to be simulated by the WQM. This is affected through specification of the adsorbed phosphorus constituent model within the phosphorus constituent model class.</p>
+<p>Simulation of suspended sediment (via TUFLOW FV’s sediment transport module) is required only if adsorbed phosphorus is to be simulated by the WQ Module. This is affected through specification of the adsorbed phosphorus constituent model within the phosphorus constituent model class.</p>
 </div>
 <div id="SimCtrlsInorg-3" class="section level3" number="4.7.2">
 <h3><span class="header-section-number">4.7.2</span> Part 1: Simulation specification</h3>
@@ -1141,7 +1141,7 @@ end material</code></pre>
 <blockquote>
 <p><a href="AppCommands.html#WQInorgFRPMod">inorganic phosphorus model ==</a> FRPhsads</p>
 </blockquote>
-<p>The TUFLOW FV sediment module (STM) must be used to simulate at least one sediment fraction in order to use this WQ Module constituent model.</p>
+<p>The TUFLOW FV Sediment Transport (ST) Module must be used to simulate at least one sediment fraction in order to use this WQ Module constituent model.</p>
 <p>In addition to the commands described in Section <a href="SimulationConstruction-1.html#ConModFRPhs-5">4.7.3.4.1</a>, the following commands are available in this constituent model.</p>
 <p>Minimum and maximum concentrations for adsorbed FRP are specified as:</p>
 <blockquote>
@@ -1155,7 +1155,7 @@ end material</code></pre>
 <blockquote>
 <p><a href="AppCommands.html#WQAdsFRPParsQ"><span class="math inline">\(\blockindent\)</span> adsorption ==</a> quadratic, <a href="AppParams.html#WQParQSorpRatio"><span class="math inline">\(K_{ads-Q}^{FRP}\)</span></a>, <a href="AppParams.html#WQParQSorpMax"><span class="math inline">\(Q_{max}^{FRP}\)</span></a></p>
 </blockquote>
-<p>The settling velocity of adsorbed phosphorus is set as follows. Future releases of the WQ Module will dynamically link this settling velocity to the calculations of the TUFLOW FV STM.</p>
+<p>The settling velocity of adsorbed phosphorus is set as follows. Future releases of the WQ Module will dynamically link this settling velocity to the calculations of the TUFLOW FV ST Module.</p>
 <blockquote>
 <p><a href="AppCommands.html#AdsFRPParsSettle"><span class="math inline">\(\blockindent\)</span> settling ==</a> <a href="AppParams.html#WQParFRPadsV"><span class="math inline">\(V_{settle}^{FRPads}\)</span></a></p>
 </blockquote>
@@ -1754,7 +1754,7 @@ end material</code></pre>
 <li>Temperature</li>
 <li>Heat module on (i.e. meteorological forcing is required)</li>
 </ul>
-<p>Simulation of suspended sediment (via TUFLOW FV’s sediment transport module) is required only if adsorbed phosphorus is to be simulated by the WQM.</p>
+<p>Simulation of suspended sediment (via TUFLOW FV’s sediment transport module) is required only if adsorbed phosphorus is to be simulated by the WQ Module.</p>
 </div>
 <div id="SimCtrlsOrg-3" class="section level3" number="4.8.2">
 <h3><span class="header-section-number">4.8.2</span> Part 1: Simulation specification</h3>
@@ -2142,7 +2142,7 @@ end material</code></pre>
 </div>
 <div id="Outputs-3" class="section level2" number="4.9">
 <h2><span class="header-section-number">4.9</span> Outputs</h2>
-<p>WQM outputs are set via commands specified in the TUFLOW FV control file, as described below. Available outputs include:</p>
+<p>WQ Module outputs are set via commands specified in the TUFLOW FV control file, as described below. Available outputs include:</p>
 <ul>
 <li>WQ Module outputs:
 <ul>
@@ -2155,7 +2155,7 @@ end material</code></pre>
 <li>Masses, e.g. the time varying integrated mass of a WQ Module computed or diagnostic variable, computed across the entire model domain</li>
 </ul></li>
 </ul>
-<p>Computed and diagnostic variables are output directly by the WQM, whilst integrated outputs are computed by TUFLOW FV, using WQ Module computed and diagnostic variables as inputs.</p>
+<p>Computed and diagnostic variables are output directly by the WQ Module, whilst integrated outputs are computed by TUFLOW FV, using WQ Module computed and diagnostic variables as inputs.</p>
 <p>All these types of outputs use the same structures as described in the TUFLOW FV user manual for hydrodynamic and other TUFLOW FV outputs, namely via specification of <code>output ==</code> blocks. The relevant sections of the TUFLOW FV manual should be reviewed to supplement the material presented here. WQ Module and TUFLOW FV outputs are described below.</p>
 <div id="WQMOutputs-4" class="section level3" number="4.9.1">
 <h3><span class="header-section-number">4.9.1</span> WQ Module outputs</h3>
@@ -2172,7 +2172,7 @@ end material</code></pre>
    output parameters == wq_all, wq_diag_all
    output interval == 3600.00
 end output </code></pre>
-<p>WQM outputs need not be in distinct output blocks of their own, but can be added to existing TUFLOW output blocks, for example:</p>
+<p>WQ Module outputs need not be in distinct output blocks of their own, but can be added to existing TUFLOW output blocks, for example:</p>
 <pre><code>output == datv
    output parameters == h, V, wq_all, wq_diag_all
    output interval == 3600.00

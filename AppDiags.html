@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Appendix P Diagnostic variables | TUFLOW FV Water Quality Module User Manual</title>
-  <meta name="description" content="Appendix P Diagnostic variables | TUFLOW FV Water Quality Module User Manual" />
+  <title>Appendix P Diagnostic variables | TUFLOW FV Water Quality (WQ) Module User Manual</title>
+  <meta name="description" content="Appendix P Diagnostic variables | TUFLOW FV Water Quality (WQ) Module User Manual" />
   <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Appendix P Diagnostic variables | TUFLOW FV Water Quality Module User Manual" />
+  <meta property="og:title" content="Appendix P Diagnostic variables | TUFLOW FV Water Quality (WQ) Module User Manual" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="/images/tuflow.png" />
-  <meta property="og:description" content="Appendix P Diagnostic variables | TUFLOW FV Water Quality Module User Manual" />
+  <meta property="og:description" content="Appendix P Diagnostic variables | TUFLOW FV Water Quality (WQ) Module User Manual" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Appendix P Diagnostic variables | TUFLOW FV Water Quality Module User Manual" />
+  <meta name="twitter:title" content="Appendix P Diagnostic variables | TUFLOW FV Water Quality (WQ) Module User Manual" />
   
-  <meta name="twitter:description" content="Appendix P Diagnostic variables | TUFLOW FV Water Quality Module User Manual" />
+  <meta name="twitter:description" content="Appendix P Diagnostic variables | TUFLOW FV Water Quality (WQ) Module User Manual" />
   <meta name="twitter:image" content="/images/tuflow.png" />
 
 
@@ -486,7 +486,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><h0 style="color:rgb(0,85,129);">TUFLOW FV Water Quality Module User Manual</h0></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><h0 style="color:rgb(0,85,129);">TUFLOW FV Water Quality (WQ) Module User Manual</h0></a>
           </h1>
         </div>
 
@@ -513,14 +513,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   max-width: 95%;
 }
 </style>
-<p>The WQM’s diagnostic output variables, and the core (lowest order) constituent model class and instance where each is deployed are listed below. With regard to naming:</p>
+<p>The WQ Module’s diagnostic output variables, and the core (lowest order) constituent model class and instance where each is deployed are listed below. With regard to naming:</p>
 <ul>
 <li>Units are included in the diagnostic variable names, with “ND” signifying “no dimension”</li>
 <li>The text “NAME” in variable names is a placeholder for the user defined phytoplankton group name. “WQ_PHYTO_NAME_INT_N_MGL” list in the table would actually be named “WQ_PHYTO_GREEN_INT_N_MGL” if a user defined phytoplankton group name was “green”</li>
 <li>The text “PHYTO_COM” indicates summed (community level) diagnostics and is not changed by user specification of individual phytoplankton group names</li>
 </ul>
 <p>It is recommended that this Appendix be viewed with the left hand pane table of contents hidden. Use the ‘s’ key to toggle this pane on and off. Output diagnostic variable names are exact, and can therefore be copied and pasted directly into output blocks of control files, for example. The exception is phytoplankton variables, where the user specified group name is included within the variable name, so will need to be inserted by the user.</p>
-<p>WQM water quality calculations are not performed on computational columns of cells that are shallow. In such instances, the reported diagnostic variables are carried from the previous water quality timestep and as such may not reflect actual diagnostics at the reported time. This matter will be addressed in future releases of the WQM, however in the interim, caution should be used in the interpretation of diagnostic variables in cells that are known to regularly wet and dry.</p>
+<p>WQ Module calculations are not performed on computational columns of cells that are shallow. In such instances, the reported diagnostic variables are carried from the previous water quality timestep and as such may not reflect actual diagnostics at the reported time. This matter will be addressed in future releases of the WQ Module, however in the interim, caution should be used in the interpretation of diagnostic variables in cells that are known to regularly wet and dry.</p>
 <p>In order to preserve shape consistency across all outputs, sheet style diagnostics such as benthic or atmospheric fluxes are reported as fully three dimensional fields. In all cases, these fluxes are reported in the bottom (bed) cell of each computational column (including surface atmospheric fluxes). All other three dimensional cell values are reported as zeros. Therefore, when viewing or interrogating these flux outputs in QGIS, python or Matlab, the bottom layer of each diagnostic variable should be selected.</p>
 <p>When interrogating three dimensional diagnostic variable results in netcdf format, the stat field of each output file indicates whether or not a 2D cell (and hence its associated 3D column) is wet or dry. The stat field is of dimension [number of 2D cells <span class="math inline">\(\times\)</span> number of timesteps] and a value of zero indicates that a 2D cell (and associated 3D column) is dry. Water quality diagnostic variables are reported as zero when 2D cells are dry, so using the stat field to filter out these dry cells is required when post processing results from models where cells wet and dry. Similarly, if viewing netcdf water quality diagnostic variables in QGIS using the TUFLOW Viewer, QGIS’s automatic colour bar (displayed in the layer legend and properties tab) will extend to zero if the model considered includes cells that wet and dry - QGIS does not use the stat field to filter out dry cells when automatically determining colour bar ranges. The user can manually adjust this colour bar range as required. The stat field is, however, used when water quality diagnostic variable results are viewed in plan or curtain mode in the map window when using the TUFLOW Viewer: dry cells are set to be transparent.</p>
 <table>
