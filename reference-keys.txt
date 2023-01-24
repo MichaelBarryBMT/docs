@@ -548,6 +548,8 @@ AppMBalInorg
 AppMBalOrg
 AppMBalExecuting
 AppMBalAccess
+AppMBalAccessZip
+AppMBalAccessGit
 AppMBalExecu
 AppMBalRes
 AppMBalMassCons

@@ -589,7 +589,7 @@ Used in an oxygen constituent model block to set minimum and maximum dissolved o
 <a id="WQSimulationClass"><bmtpink>simulation class ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="ProcessDescriptions-1.html#SimProcSimuClDO-2">DO</a>;<a href="ProcessDescriptions-1.html#SimProcSimuClInorg-2">inorganics</a>;<a href="ProcessDescriptions-1.html#SimProcSimuClOrg-2">organics</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in Part 1: Simulation controls of WQM control file to specify water quality simulation class. If not specified, “DO” is assumed and all associated “DO” class default parameters are applied. Simulation construction section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.
+Used in Part 1: Simulation controls of WQ Module control file to specify water quality simulation class. If not specified, “DO” is assumed and all associated “DO” class default parameters are applied. Simulation construction section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -611,7 +611,7 @@ Used to terminate an oxygen constituent model block. Must follow an <a href="App
 <a id="WQWqUnits"><bmtpink>wq units ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="SimulationConstruction-1.html#SimUnits-2">mgl;mmm</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in Part 1: Simulation controls of WQM control file to set the units used for water quality simulation. Milligrams per litre and millimoles per cubic metre are “mgl” and “mmm”, respectively. Simulation construction section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.
+Used in Part 1: Simulation controls of WQ Module control file to set the units used for water quality simulation. Milligrams per litre and millimoles per cubic metre are “mgl” and “mmm”, respectively. Simulation construction section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -622,7 +622,7 @@ Used in Part 1: Simulation controls of WQM control file to set the units used fo
 <a id="WQWqDt"><bmtpink>wq dt ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQdt"><span class="math inline">\(dt\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in Part 1: Simulation controls of WQM control file to set the timestep at which TUFLOW calls the WQM to undertake non-conservative water quality calculations, in seconds. Simulation construction section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.
+Used in Part 1: Simulation controls of WQ Module control file to set the timestep at which TUFLOW calls the WQ Module to undertake non-conservative water quality calculations, in seconds. Simulation construction section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1326,7 +1326,7 @@ Used in a phytoplankton constituent model block to set respiration and exudation
 <a id="FVActivateWQM"><bmtpink>water quality model ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#FVActivateWQM">tuflow</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Instruct TUFLOW FV to activate TUFLOW WQM. Simulation construction section <a href="SimulationConstruction-1.html#WQMActivation-3">4.4.1</a>.
+Instruct TUFLOW FV to activate TUFLOW WQ Module. Simulation construction section <a href="SimulationConstruction-1.html#WQMActivation-3">4.4.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1337,7 +1337,7 @@ Instruct TUFLOW FV to activate TUFLOW WQM. Simulation construction section <a hr
 <a id="FVWQMCtrlFl"><bmtpink>water quality control file ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#FVWQMCtrlFl">water quality control file name</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Name of WQM control file, with no path. If this file is not in the FV control file directory, then additionally use command <a href="AppCommands.html#FVWQMCtrlDr">water quality mode directory ==</a>. Simulation construction section <a href="SimulationConstruction-1.html#WQMActivation-3">4.4.1</a>.
+Name of WQ Module control file, with no path. If this file is not in the FV control file directory, then additionally use command <a href="AppCommands.html#FVWQMCtrlDr">water quality mode directory ==</a>. Simulation construction section <a href="SimulationConstruction-1.html#WQMActivation-3">4.4.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1348,7 +1348,7 @@ Name of WQM control file, with no path. If this file is not in the FV control fi
 <a id="FVWQMCtrlDr"><bmtpink>water quality model directory ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppCommands.html#FVWQMCtrlDr">water quality control file directory</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Relative path from location of FV control file to the WQM control file directory, including last backslash, e.g. “..<span class="math inline">\(\backslash\)</span>WQM<span class="math inline">\(\backslash\)</span>”. Simulation construction section <a href="SimulationConstruction-1.html#WQMActivation-3">4.4.1</a>.
+Relative path from location of FV control file to the WQ Module control file directory, including last backslash, e.g. “..<span class="math inline">\(\backslash\)</span>WQM<span class="math inline">\(\backslash\)</span>”. Simulation construction section <a href="SimulationConstruction-1.html#WQMActivation-3">4.4.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1436,7 +1436,7 @@ Command to terminate a materials block. This command must be paired with a corre
 <a id="FVIncludeSed"><bmtpink>include sediment ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="#">include sediment transport calculations</a>,<a href="#">include sediment in density calculation</a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-TUFLOW FV command to include sediment simulation. Sediment must be simulated if adsorbed phosphorus is included in a WQM simulation. Simulation construction section <a href="SimulationConstruction-1.html#ConOrdInorgFRPhsads-5">4.7.5.1.2</a>.
+TUFLOW FV command to include sediment simulation. Sediment must be simulated if adsorbed phosphorus is included in a WQ Module simulation. Simulation construction section <a href="SimulationConstruction-1.html#ConOrdInorgFRPhsads-5">4.7.5.1.2</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1689,7 +1689,7 @@ Used in an inorganic nitrogen constituent model block to control dissimilatory r
 <a id="AdsFRPParsSettle"><bmtpink>settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQParFRPadsV"><span class="math inline">\(V_{settle}^{FRP}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an inorganic phosphorus constituent model block to control the settling rate of adsorbed FRP. This will be linked directly to the TUFLOW FV STM in future releases of the WQM. Simulation construction section <a href="SimulationConstruction-1.html#ConModFRPhsAds-5">4.7.3.4.2</a>.
+Used in an inorganic phosphorus constituent model block to control the settling rate of adsorbed FRP. This will be linked directly to the TUFLOW FV ST Module in future releases of the WQ Module. Simulation construction section <a href="SimulationConstruction-1.html#ConModFRPhsAds-5">4.7.3.4.2</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1711,7 +1711,7 @@ Used in an organic matter constituent model block to set the settling rate of la
 <a id="WQOrgSettConst"><bmtpink>settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppOrg.html#OrgSettleConst-5">constant</a>,<a href="AppParams.html#WQParConVLOrg"><span class="math inline">\(V_{settle}^{lorg}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an organic matter constituent model block to control the settling rate of labile particulate organic matter. This will be linked directly to the TUFLOW FV STM in future releases of the WQM. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLab-5">4.8.3.5.1</a>.
+Used in an organic matter constituent model block to control the settling rate of labile particulate organic matter. This will be linked directly to the TUFLOW FV ST Module in future releases of the WQ Module. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLab-5">4.8.3.5.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1722,7 +1722,7 @@ Used in an organic matter constituent model block to control the settling rate o
 <a id="WQOrgSettRho"><bmtpink>settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppOrg.html#OrgSettleConstD-5">thermal</a>,<a href="AppParams.html#WQParConVLOrg"><span class="math inline">\(V_{settle}^{lorg}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an organic matter constituent model block to control the settling rate of labile particulate organic matter. This will be linked directly to the TUFLOW FV STM in future releases of the WQM. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLab-5">4.8.3.5.1</a>.
+Used in an organic matter constituent model block to control the settling rate of labile particulate organic matter. This will be linked directly to the TUFLOW FV ST Module in future releases of the WQ Module. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLab-5">4.8.3.5.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1733,7 +1733,7 @@ Used in an organic matter constituent model block to control the settling rate o
 <a id="WQOrgSettStokes"><bmtpink>settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppOrg.html#OrgSettleStokes-5">stokes</a>,<a href="AppParams.html#WQParDLOrg"><span class="math inline">\(d_{lorg}\)</span></a>,<a href="AppParams.html#WQParRhoLOrg"><span class="math inline">\(\rho_{lorg}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an organic matter constituent model block to control the settling rate of labile particulate organic matter. This will be linked directly to the TUFLOW FV STM in future releases of the WQM. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLab-5">4.8.3.5.1</a>.
+Used in an organic matter constituent model block to control the settling rate of labile particulate organic matter. This will be linked directly to the TUFLOW FV ST Module in future releases of the WQ Module. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgLab-5">4.8.3.5.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1755,7 +1755,7 @@ Used in an organic matter constituent model block to set the settling rate of re
 <a id="WQOrgSettConstR"><bmtpink>ref settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppOrg.html#OrgSettleConst-5">constant</a>,<a href="AppParams.html#WQParConVROrg"><span class="math inline">\(V_{settle}^{rorg}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an organic matter constituent model block to control the settling rate of refractory particulate organic matter. This will be linked directly to the TUFLOW FV STM in future releases of the WQM. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgRef-5">4.8.3.5.2</a>.
+Used in an organic matter constituent model block to control the settling rate of refractory particulate organic matter. This will be linked directly to the TUFLOW FV ST Module in future releases of the WQ Module. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgRef-5">4.8.3.5.2</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1766,7 +1766,7 @@ Used in an organic matter constituent model block to control the settling rate o
 <a id="WQOrgSettRhoR"><bmtpink>ref settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppOrg.html#OrgSettleConstD-5">thermal</a>,<a href="AppParams.html#WQParConVROrg"><span class="math inline">\(V_{settle}^{rorg}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an organic matter constituent model block to control the settling rate of refractory particulate organic matter. This will be linked directly to the TUFLOW FV STM in future releases of the WQM. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgRef-5">4.8.3.5.2</a>.
+Used in an organic matter constituent model block to control the settling rate of refractory particulate organic matter. This will be linked directly to the TUFLOW FV ST Module in future releases of the WQ Module. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgRef-5">4.8.3.5.2</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1777,7 +1777,7 @@ Used in an organic matter constituent model block to control the settling rate o
 <a id="WQOrgSettStokesR"><bmtpink>ref settling ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppOrg.html#OrgSettleStokes-5">stokes</a>,<a href="AppParams.html#WQParDROrg"><span class="math inline">\(d_{rorg}\)</span></a>,<a href="AppParams.html#WQParRhoROrg"><span class="math inline">\(\rho_{rorg}\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in an organic matter constituent model block to control the settling rate of refractory particulate organic matter. This will be linked directly to the TUFLOW FV STM in future releases of the WQM. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgRef-5">4.8.3.5.2</a>.
+Used in an organic matter constituent model block to control the settling rate of refractory particulate organic matter. This will be linked directly to the TUFLOW FV ST Module in future releases of the WQ Module. Simulation construction section <a href="SimulationConstruction-1.html#ConModOrgRef-5">4.8.3.5.2</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
@@ -1810,7 +1810,7 @@ Instruct TUFLOW FV to disable (1) or enable (0) water quality calculations on al
 <a id="WQWqEQSS"><bmtpink>wq equilibrium substeps ==<br></bmtpink></a> <bmtgreen><span class="math inline">\(\langle\)</span><a href="AppParams.html#WQFss"><span class="math inline">\(fess\)</span></a><span class="math inline">\(\rangle\)</span> </bmtgreen><br>
 </td>
 <td style="text-align:left;">
-Used in Part 1: Simulation controls of WQM control file to set the frequency of timesteps at which the WQM undertakes non-kinetic calculations, in number of water quality timesteps. This only applies to FRP adsorption. Simulation construction section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.
+Used in Part 1: Simulation controls of WQ Module control file to set the frequency of timesteps at which the WQ Module undertakes non-kinetic calculations, in number of water quality timesteps. This only applies to FRP adsorption. Simulation construction section <a href="SimulationConstruction-1.html#SimCtrls-3">4.5.1</a>.
 </td>
 <td style="text-align:left;">
 <span class="math inline">\(\text{ }\)</span>
