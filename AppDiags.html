@@ -1598,7 +1598,7 @@ Phytoplankton sedimentation
 mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
 <td style="text-align:left;width: 45%; ">
-The flux of phytoplankton chlorophyll a (or carbon) into the sediments as a result of settling for a phytoplankton group. Values are only losses and are only negative. Multiply by cell volume (L or m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be lost to settling in that interval. Although often thought of as being a per area (per m<span class="math inline">\(^2\)</span>) loss, the volumetric units of this diagnostic (per L or m<span class="math inline">\(^3\)</span>) have been chosen deliberately for consistency with other analogous volumetric losses such as mortality. This is intended to assist in simplifying post processing
+The flux of phytoplankton chlorophyll <em>a</em> (or carbon) into the sediments as a result of settling for a phytoplankton group. Values are only losses and are only negative. Multiply by cell volume (L or m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be lost to settling in that interval. Although often thought of as being a per area (per m<span class="math inline">\(^2\)</span>) loss, the volumetric units of this diagnostic (per L or m<span class="math inline">\(^3\)</span>) have been chosen deliberately for consistency with other analogous volumetric losses such as mortality. This is intended to assist in simplifying post processing
 </td>
 <td style="text-align:left;width: 5%; ">
 <a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>
@@ -1643,12 +1643,12 @@ Community phytoplankton sedimentation
 <span class="math inline">\(F_{sedmtn\langle computed\rangle}^{comm}\)</span>
 </td>
 <td style="text-align:center;width: 10%; ">
-<span class="math inline">\(\mu\)</span>g/m<span class="math inline">\(^2\)</span>/d<br>
+<span class="math inline">\(\mu\)</span>g/L/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-mmol/m<span class="math inline">\(^2\)</span>/d
+mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
 <td style="text-align:left;width: 45%; ">
-The flux of phytoplankton into the sediments as a result of settling, summed over all phytoplankton groups (i.e. a simulation’s phytoplankton community). Values are only losses and are only negative. Multiply by cell area (m<span class="math inline">\(^2\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be lost to settling in that interval. The units of this community settling flux are areal (per m<span class="math inline">\(2\)</span>), which is different to the corresponding volumetric (per m<span class="math inline">\(^3\)</span>) individual group sedimentation fluxes. This has been done deliberately to assist with post processing
+The flux of phytoplankton into the sediments as a result of settling, summed over all phytoplankton groups (i.e. a simulation’s phytoplankton community). Values are only losses and are only negative. Multiply by cell volume (L or m<span class="math inline">\(^3\)</span>) and time interval of interest (seconds/86400) to compute the mass (or moles) that would be lost to settling in that interval. Although often thought of as being a per area (per m<span class="math inline">\(^2\)</span>) loss, the volumetric units of this diagnostic (per L or m<span class="math inline">\(^3\)</span>) have been chosen deliberately for consistency with other analogous losses such as individual phytoplankton group sedimentation rates. This is intended to assist in simplifying post processing
 </td>
 <td style="text-align:left;width: 5%; ">
 <a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>
@@ -1891,7 +1891,7 @@ Section <a href="Architecture-1.html#ProcessDescriptionsLight-3">2.3.2</a>
 <a id="WQDiagCTChla">WQ_DIAG_PHYTO_COM_TCHLA_MICG_L</a>
 </td>
 <td style="text-align:center;width: 15%; ">
-Community chlorophyll <strong>a</strong>
+Community chlorophyll <em>a</em>
 </td>
 <td style="text-align:left;width: 10%; ">
 <span class="math inline">\(\left[Chla\right]^{comm}\)</span>
@@ -1900,7 +1900,7 @@ Community chlorophyll <strong>a</strong>
 <span class="math inline">\(\mu\)</span>g/L
 </td>
 <td style="text-align:left;width: 45%; ">
-The total chlorophyll <strong>a</strong> summed across all phytoplankton groups
+The total chlorophyll <em>a</em> summed across all phytoplankton groups
 </td>
 <td style="text-align:left;width: 5%; ">
 <a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>
@@ -1921,12 +1921,12 @@ Community phytoplankton concentration
 <span class="math inline">\(\left[Chla\right]^{comm}\)</span>
 </td>
 <td style="text-align:center;width: 10%; ">
-<span class="math inline">\(\mu\)</span>g/L<br>
+mmol/m<span class="math inline">\(^3\)</span><br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 mmol/m<span class="math inline">\(^3\)</span>
 </td>
 <td style="text-align:left;width: 45%; ">
-The concentration of phytoplankton, summed over all phytoplankton groups (i.e. a simulation’s phytoplankton community). This will be the same numerical value as Community chlorophyll <strong>a</strong> if the MGL simulation units are used
+The concentration of phytoplankton in mmols of carbon, summed over all phytoplankton groups (i.e. a simulation’s phytoplankton community). Multiplying this number by 12 and dividing (on a cell by cell basis) by the equivalent Community chlorophyll <em>a</em> value will result in an array of the average carbon to chlorophyll <em>a</em> ratio of the community for each cell. This is effectively a concentration weighted average of the individual phytoplankton group carbon to chlorophyll <em>a</em> ratios at any given time and in any given cell
 </td>
 <td style="text-align:left;width: 5%; ">
 <a href="ProcessDescriptions-1.html#ConModInorgPhy-3">Phytoplankton</a>:<br><a href="ProcessDescriptions-1.html#ConModPhyBas-4">Basic</a>
@@ -2618,31 +2618,6 @@ Currently unused and reported as zero. Will be activated in future releases
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagCPhyResus">WQ_DIAG_PHYTO_COM_RESUS_MICG_M2_D<br>
-<hr style="margin-top:1px;margin-bottom:1px;height:2px">
-WQ_DIAG_PHYTO_COM_RESUS_MMOL_M2_D</a>
-</td>
-<td style="text-align:center;width: 15%; ">
-Community resuspension
-</td>
-<td style="text-align:left;width: 10%; ">
-<span class="math inline">\(F_{resus}^{comm}\)</span>
-</td>
-<td style="text-align:center;width: 10%; ">
-<span class="math inline">\(\mu\)</span>g/m<span class="math inline">\(^2\)</span>/d<br>
-<hr style="margin-top:1px;margin-bottom:1px;height:2px">
-mmol/m<span class="math inline">\(^2\)</span>
-</td>
-<td style="text-align:left;width: 45%; ">
-Currently unused and reported as zero. Will be activated in future releases
-</td>
-<td style="text-align:left;width: 5%; ">
-</td>
-<td style="text-align:left;width: 5%; ">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 10%; vertical-align:top;">
 <a id="WQDiagCPhyNFix">WQ_DIAG_PHYTO_COM_N2_UPTAKE_MG_L_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
 WQ_DIAG_PHYTO_COM_N2_UPTAKE_MMOL_M3_D</a>
@@ -3197,9 +3172,9 @@ Equation <a href="PhyLosses-3.html#eq:eq-pel-phy-Pmort">(L.6)</a>
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagAdsFRPSedFlx">WQ_DIAG_FRP_ADS_SEDMTN_FLUX_MG_M2_D<br>
+<a id="WQDiagAdsFRPSedFlx">WQ_DIAG_FRP_ADS_SEDMTN_FLUX_MG_L_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-WQ_DIAG_FRP_ADS_SEDMTN_FLUX_MMOL_M2_D</a>
+WQ_DIAG_FRP_ADS_SEDMTN_FLUX_MMOL_M3_D</a>
 </td>
 <td style="text-align:center;width: 15%; ">
 Adsorbed FRP sedimentation rate
@@ -3208,9 +3183,9 @@ Adsorbed FRP sedimentation rate
 <span class="math inline">\(F_{sed\langle computed\rangle}^{FRPAds}\)</span>
 </td>
 <td style="text-align:center;width: 10%; ">
-mg/m<span class="math inline">\(^2\)</span>/d<br>
+mg/L/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-mmol/m<span class="math inline">\(^2\)</span>/d
+mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
 <td style="text-align:left;width: 45%; ">
 Currently unused and reported as zero. Will be activated in future releases
@@ -3222,9 +3197,9 @@ Currently unused and reported as zero. Will be activated in future releases
 </tr>
 <tr>
 <td style="text-align:left;width: 10%; vertical-align:top;">
-<a id="WQDiagAdsFRPResusFlx">WQ_DIAG_FRP_ADS_RESUS_FLUX_MG_M2_D<br>
+<a id="WQDiagAdsFRPResusFlx">WQ_DIAG_FRP_ADS_RESUS_FLUX_MG_L_D<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-WQ_DIAG_FRP_ADS_RESUS_FLUX_MMOL_M2_D</a>
+WQ_DIAG_FRP_ADS_RESUS_FLUX_MMOL_M3_D</a>
 </td>
 <td style="text-align:center;width: 15%; ">
 Adsorbed FRP resuspension rate
@@ -3233,9 +3208,9 @@ Adsorbed FRP resuspension rate
 <span class="math inline">\(F_{resus}^{FRPads}\)</span>
 </td>
 <td style="text-align:center;width: 10%; ">
-mg/m<span class="math inline">\(^2\)</span>/d<br>
+mg/L/d<br>
 <hr style="margin-top:1px;margin-bottom:1px;height:2px">
-mmol/m<span class="math inline">\(^2\)</span>/d
+mmol/m<span class="math inline">\(^3\)</span>/d
 </td>
 <td style="text-align:left;width: 45%; ">
 Currently unused and reported as zero. Will be activated in future releases
