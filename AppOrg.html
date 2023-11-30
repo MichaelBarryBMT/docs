@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Appendix N Processes: organic matter | TUFLOW FV Water Quality (WQ) Module User Manual</title>
   <meta name="description" content="Appendix N Processes: organic matter | TUFLOW FV Water Quality (WQ) Module User Manual" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Appendix N Processes: organic matter | TUFLOW FV Water Quality (WQ) Module User Manual" />
   <meta property="og:type" content="book" />
-  
   <meta property="og:image" content="/images/tuflow.png" />
   <meta property="og:description" content="Appendix N Processes: organic matter | TUFLOW FV Water Quality (WQ) Module User Manual" />
   
@@ -21,6 +20,7 @@
   <meta name="twitter:description" content="Appendix N Processes: organic matter | TUFLOW FV Water Quality (WQ) Module User Manual" />
   <meta name="twitter:image" content="/images/tuflow.png" />
 
+<meta name="author" content="" />
 
 
 
@@ -30,9 +30,9 @@
   
   <link rel="shortcut icon" href="images/TUFLOW.ico" type="image/x-icon" />
 <link rel="prev" href="AppphyOther.html"/>
-<link rel="next" href="AppConstits.html"/>
-<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<link rel="next" href="AppPath.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -48,23 +48,23 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.4.1/plotly.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
-<link href="libs/vis-4.20.1/vis.css" rel="stylesheet" />
-<script src="libs/vis-4.20.1/vis.min.js"></script>
-<script src="libs/visNetwork-binding-2.0.9/visNetwork.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<link href="libs/vis-9.1.0/vis-network.min.css" rel="stylesheet" />
+<script src="libs/vis-9.1.0/vis-network.min.js"></script>
+<script src="libs/visNetwork-binding-2.1.2/visNetwork.js"></script>
 
 
 
@@ -106,7 +106,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -119,7 +119,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -151,7 +151,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://www.tuflow.com"><img src="images/tuflow.png" style="width:246px;height:68px;"></a></li>
 
 <li class="divider"></li>
-<li><a href="index.html#section"></a></li>
+<li><a href="index.html#section" id="toc-section"></a></li>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a>
 <ul>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#about-this-manual"><i class="fa fa-check"></i>About this manual</a></li>
@@ -202,7 +202,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#DOOverview-3"><i class="fa fa-check"></i><b>3.1.1</b> Overview</a></li>
 <li class="chapter" data-level="3.1.2" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModDODO-3"><i class="fa fa-check"></i><b>3.1.2</b> Model Class: Oxygen</a></li>
-<li class="chapter" data-level="3.1.3" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#DOCompVars-3"><i class="fa fa-check"></i><b>3.1.3</b> Computed variables</a></li>
+<li class="chapter" data-level="3.1.3" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModDOPath-3"><i class="fa fa-check"></i><b>3.1.3</b> Model Class: Pathogens (optional)</a></li>
+<li class="chapter" data-level="3.1.4" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#DOCompVars-3"><i class="fa fa-check"></i><b>3.1.4</b> Computed variables</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#SimProcSimuClInorg-2"><i class="fa fa-check"></i><b>3.2</b> Simulation Class: Inorganics</a>
 <ul>
@@ -212,7 +213,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.4" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgN-3"><i class="fa fa-check"></i><b>3.2.4</b> Model Class: Inorganic nitrogen</a></li>
 <li class="chapter" data-level="3.2.5" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgP-3"><i class="fa fa-check"></i><b>3.2.5</b> Model Class: Inorganic phosphorus</a></li>
 <li class="chapter" data-level="3.2.6" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgPhy-3"><i class="fa fa-check"></i><b>3.2.6</b> Model Class: Phytoplankton</a></li>
-<li class="chapter" data-level="3.2.7" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#InorgCompVars-3"><i class="fa fa-check"></i><b>3.2.7</b> Computed variables</a></li>
+<li class="chapter" data-level="3.2.7" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgPath-3"><i class="fa fa-check"></i><b>3.2.7</b> Model Class: Pathogens (optional)</a></li>
+<li class="chapter" data-level="3.2.8" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#InorgCompVars-3"><i class="fa fa-check"></i><b>3.2.8</b> Computed variables</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#SimProcSimuClOrg-2"><i class="fa fa-check"></i><b>3.3</b> Simulation Class: Organics</a>
 <ul>
@@ -223,7 +225,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.5" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgP-3"><i class="fa fa-check"></i><b>3.3.5</b> Model Class: Inorganic phosphorus</a></li>
 <li class="chapter" data-level="3.3.6" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgOrg-3"><i class="fa fa-check"></i><b>3.3.6</b> Model Class: Organic matter</a></li>
 <li class="chapter" data-level="3.3.7" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgPhy-3"><i class="fa fa-check"></i><b>3.3.7</b> Model Class: Phytoplankton</a></li>
-<li class="chapter" data-level="3.3.8" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#OrgCompVars-3"><i class="fa fa-check"></i><b>3.3.8</b> Computed variables</a></li>
+<li class="chapter" data-level="3.3.8" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgPath-3"><i class="fa fa-check"></i><b>3.3.8</b> Model Class: Pathogens (optional)</a></li>
+<li class="chapter" data-level="3.3.9" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#OrgCompVars-3"><i class="fa fa-check"></i><b>3.3.9</b> Computed variables</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html"><i class="fa fa-check"></i><b>4</b> Simulation Construction</a>
@@ -441,37 +444,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="N.8.4" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettleStokes-5"><i class="fa fa-check"></i><b>N.8.4</b> Stokes</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="O" data-path="AppConstits.html"><a href="AppConstits.html"><i class="fa fa-check"></i><b>O</b> Computed variables</a></li>
-<li class="chapter" data-level="P" data-path="AppDiags.html"><a href="AppDiags.html"><i class="fa fa-check"></i><b>P</b> Diagnostic variables</a></li>
-<li class="chapter" data-level="Q" data-path="AppParams.html"><a href="AppParams.html"><i class="fa fa-check"></i><b>Q</b> Parameters</a></li>
-<li class="chapter" data-level="R" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>R</b> Mass Conservation Model</a>
+<li class="chapter" data-level="O" data-path="AppPath.html"><a href="AppPath.html"><i class="fa fa-check"></i><b>O</b> Processes: pathogens</a>
 <ul>
-<li class="chapter" data-level="R.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalIntent"><i class="fa fa-check"></i><b>R.1</b> Intent</a></li>
-<li class="chapter" data-level="R.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDescription"><i class="fa fa-check"></i><b>R.2</b> Description</a></li>
-<li class="chapter" data-level="R.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalMdel"><i class="fa fa-check"></i><b>R.3</b> Model suite</a></li>
-<li class="chapter" data-level="R.4" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalCalcs"><i class="fa fa-check"></i><b>R.4</b> Calculations</a></li>
-<li class="chapter" data-level="R.5" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalPerformance"><i class="fa fa-check"></i><b>R.5</b> Mass conservation performance</a>
+<li class="chapter" data-level="O.1" data-path="AppPath.html"><a href="AppPath.html#Mortal-3"><i class="fa fa-check"></i><b>O.1</b> Mortality</a></li>
+<li class="chapter" data-level="O.2" data-path="AppPath.html"><a href="AppPath.html#Inactivation-3"><i class="fa fa-check"></i><b>O.2</b> Inactivation</a></li>
+<li class="chapter" data-level="O.3" data-path="AppPath.html"><a href="AppPath.html#PathAttach-3"><i class="fa fa-check"></i><b>O.3</b> Attachment</a></li>
+<li class="chapter" data-level="O.4" data-path="AppPath.html"><a href="AppPath.html#PathSettling-3"><i class="fa fa-check"></i><b>O.4</b> Settling</a></li>
+<li class="chapter" data-level="O.5" data-path="AppPath.html"><a href="AppPath.html#Pathother-3"><i class="fa fa-check"></i><b>O.5</b> Other</a>
 <ul>
-<li class="chapter" data-level="R.5.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDO"><i class="fa fa-check"></i><b>R.5.1</b> Simulation class: DO</a></li>
-<li class="chapter" data-level="R.5.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>R.5.2</b> Simulation class: Inorganics</a></li>
-<li class="chapter" data-level="R.5.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalOrg"><i class="fa fa-check"></i><b>R.5.3</b> Simulation class: Organics</a></li>
+<li class="chapter" data-level="O.5.1" data-path="AppPath.html"><a href="AppPath.html#Pathtot-3"><i class="fa fa-check"></i><b>O.5.1</b> Total pathogens</a></li>
 </ul></li>
-<li class="chapter" data-level="R.6" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalExecuting"><i class="fa fa-check"></i><b>R.6</b> Access and execution</a>
-<ul>
-<li class="chapter" data-level="R.6.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalAccess"><i class="fa fa-check"></i><b>R.6.1</b> Access</a></li>
-<li class="chapter" data-level="R.6.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalExecu"><i class="fa fa-check"></i><b>R.6.2</b> Execution</a></li>
 </ul></li>
-<li class="chapter" data-level="R.7" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalRes"><i class="fa fa-check"></i><b>R.7</b> Results</a></li>
-<li class="chapter" data-level="R.8" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalMassCons"><i class="fa fa-check"></i><b>R.8</b> Mass conservation analysis</a>
+<li class="chapter" data-level="P" data-path="AppConstits.html"><a href="AppConstits.html"><i class="fa fa-check"></i><b>P</b> Computed variables</a></li>
+<li class="chapter" data-level="Q" data-path="AppDiags.html"><a href="AppDiags.html"><i class="fa fa-check"></i><b>Q</b> Diagnostic variables</a></li>
+<li class="chapter" data-level="R" data-path="AppParams.html"><a href="AppParams.html"><i class="fa fa-check"></i><b>R</b> Parameters</a></li>
+<li class="chapter" data-level="S" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>S</b> Mass Conservation Model</a>
 <ul>
-<li class="chapter" data-level="R.8.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBMatlab"><i class="fa fa-check"></i><b>R.8.1</b> MATLAB</a></li>
-<li class="chapter" data-level="R.8.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPython"><i class="fa fa-check"></i><b>R.8.2</b> Python</a></li>
+<li class="chapter" data-level="S.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalIntent"><i class="fa fa-check"></i><b>S.1</b> Intent</a></li>
+<li class="chapter" data-level="S.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDescription"><i class="fa fa-check"></i><b>S.2</b> Description</a></li>
+<li class="chapter" data-level="S.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalMdel"><i class="fa fa-check"></i><b>S.3</b> Model suite</a></li>
+<li class="chapter" data-level="S.4" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalCalcs"><i class="fa fa-check"></i><b>S.4</b> Calculations</a></li>
+<li class="chapter" data-level="S.5" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalPerformance"><i class="fa fa-check"></i><b>S.5</b> Mass conservation performance</a>
+<ul>
+<li class="chapter" data-level="S.5.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDO"><i class="fa fa-check"></i><b>S.5.1</b> Simulation class: DO</a></li>
+<li class="chapter" data-level="S.5.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>S.5.2</b> Simulation class: Inorganics</a></li>
+<li class="chapter" data-level="S.5.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalOrg"><i class="fa fa-check"></i><b>S.5.3</b> Simulation class: Organics</a></li>
 </ul></li>
-<li class="chapter" data-level="R.9" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterp"><i class="fa fa-check"></i><b>R.9</b> Notes</a>
+<li class="chapter" data-level="S.6" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalExecuting"><i class="fa fa-check"></i><b>S.6</b> Access and execution</a>
 <ul>
-<li class="chapter" data-level="R.9.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterpUnits"><i class="fa fa-check"></i><b>R.9.1</b> Units</a></li>
-<li class="chapter" data-level="R.9.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPrecision"><i class="fa fa-check"></i><b>R.9.2</b> Precision</a></li>
-<li class="chapter" data-level="R.9.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPlatform"><i class="fa fa-check"></i><b>R.9.3</b> Platform</a></li>
+<li class="chapter" data-level="S.6.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalAccess"><i class="fa fa-check"></i><b>S.6.1</b> Access</a></li>
+<li class="chapter" data-level="S.6.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalExecu"><i class="fa fa-check"></i><b>S.6.2</b> Execution</a></li>
+</ul></li>
+<li class="chapter" data-level="S.7" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalRes"><i class="fa fa-check"></i><b>S.7</b> Results</a></li>
+<li class="chapter" data-level="S.8" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalMassCons"><i class="fa fa-check"></i><b>S.8</b> Mass conservation analysis</a>
+<ul>
+<li class="chapter" data-level="S.8.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBMatlab"><i class="fa fa-check"></i><b>S.8.1</b> MATLAB</a></li>
+<li class="chapter" data-level="S.8.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPython"><i class="fa fa-check"></i><b>S.8.2</b> Python</a></li>
+</ul></li>
+<li class="chapter" data-level="S.9" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterp"><i class="fa fa-check"></i><b>S.9</b> Notes</a>
+<ul>
+<li class="chapter" data-level="S.9.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterpUnits"><i class="fa fa-check"></i><b>S.9.1</b> Units</a></li>
+<li class="chapter" data-level="S.9.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPrecision"><i class="fa fa-check"></i><b>S.9.2</b> Precision</a></li>
+<li class="chapter" data-level="S.9.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPlatform"><i class="fa fa-check"></i><b>S.9.3</b> Platform</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -494,10 +508,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="AppOrg" class="section level1" number="18">
-<h1><span class="header-section-number">Appendix N</span> Processes: organic matter</h1>
-<div id="SedDissOrgProd-3" class="section level2" number="18.1">
-<h2><span class="header-section-number">N.1</span> Sediment flux</h2>
+<div id="AppOrg" class="section level1 hasAnchor" number="18">
+<h1><span class="header-section-number">Appendix N</span> Processes: organic matter<a href="AppOrg.html#AppOrg" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="SedDissOrgProd-3" class="section level2 hasAnchor" number="18.1">
+<h2><span class="header-section-number">N.1</span> Sediment flux<a href="AppOrg.html#SedDissOrgProd-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Dissolved organic carbon, nitrogen and phosphorus are exchanged between the water column and sediments via specification of separate sediment fluxes. In all cases, this flux is most commonly out of the sediments, i.e. a positive specification of sediment flux. Although it is rare that sediments act as sinks of these species, TUFLOW WQ Module can be parameterised to allow for this if required. Only labile dissolved organic matter is released from the sediments in the WQ Module, and as such, references to organics in this section should be interpreted as labile organics.</p>
 <p>The user specified rates of dissolved organic fluxes (which can be spatially varying) are modified by overlying ambient dissolved oxygen concentration (together with respective user specified half saturation oxygen concentrations) and water temperature. These modifications are simulated via Michaelis-Menten and Arrhenius models, respectively, as per Equation <a href="AppOrg.html#eq:equ-sed-org-flux">(N.1)</a>.
 <span class="math display" id="eq:equ-sed-org-flux">\[\begin{equation}
@@ -516,8 +530,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a href="AppDiags.html#WQParFsedDOC"><span class="math inline">\(F_{sed}^{DOC}\)</span></a>, <a href="AppDiags.html#WQParFsedDON"><span class="math inline">\(F_{sed}^{DON}\)</span></a> and <a href="AppDiags.html#WQParFsedDOP"><span class="math inline">\(F_{sed}^{DOP}\)</span></a> are the user specified dissolved organic carbon, nitrogen and phosphorus sediment fluxes at 20<span class="math inline">\(^o\)</span>C without the influence of dissolved oxygen, <a href="AppConstits.html#WQVarDO"><span class="math inline">\(\left[DO\right]\)</span></a> is the overlying dissolved oxygen concentration, <a href="AppParams.html#WQParKsedDOM"><span class="math inline">\(K_{sed-O_2}^{DOM}\)</span></a> is the user specified half saturation concentration of dissolved oxygen for dissolved organic matter sediment flux, <a href="AppParams.html#WQParthetasedDOM"><span class="math inline">\(\theta_{sed}^{DOM}\)</span></a> is the corresponding temperature coefficient, and <a href="AppConstits.html#FVVarT"><span class="math inline">\(T\)</span></a> is ambient water temperature. The values of <span class="math inline">\(K_{sed-O_2}^{DOM}\)</span> and <span class="math inline">\(\theta_{sed}^{DOM}\)</span> are intentionally applied equally to dissolved organic carbon, nitrogen and phosphorus sediment fluxes. This is because there is one (not three) biological consumption process that generates these constituents: <span class="math inline">\(K_{sed-O_2}^{DOM}\)</span> and <span class="math inline">\(\theta_{sed}^{DOM}\)</span> apply to this single process. In a similar vein, the user specifications for <span class="math inline">\(F_{sed}^{DOC}\)</span>, <span class="math inline">\(F_{sed}^{DON}\)</span> and <span class="math inline">\(F_{sed}^{DOP}\)</span> should not vary significantly in their relative proportions from the ratio that these typically occur in the organic matter being consumed (e.g. the Redfield ratio).</p>
 <p>As per silicate sediment flux (see Section <a href="AppSil.html#SedSilProd-3">E.1</a>), the above equations lead to linearly varying ambient dissolved organics concentrations in the demonstration model when dissolved oxygen concentration, half saturation oxygen concentrations and ambient temperature are set to be constant. As per FRP simulation, the above equations also lead to the form of sediment release presented in Figures <a href="AppIP.html#fig:fig-FRPKSatDODyn">G.1</a> and <a href="AppIP.html#fig:fig-FRPTDODyn">G.2</a> when oxygen drawdown and temperature changes occur, respectively.</p>
 </div>
-<div id="Hydrol-3" class="section level2" number="18.2">
-<h2><span class="header-section-number">N.2</span> Hydrolysis</h2>
+<div id="Hydrol-3" class="section level2 hasAnchor" number="18.2">
+<h2><span class="header-section-number">N.2</span> Hydrolysis<a href="AppOrg.html#Hydrol-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Hydrolysis is the pelagic biological conversion of labile particulate organic matter to labile dissolved organic matter. It is therefore a source of dissolved carbon, nitrogen and phosphorus, and a sink of the corresponding particulates. Hydrolysis neither consumes or produces dissolved oxygen or bioavailable inorganic nutrients. Hydrolysis is implemented within the labile organics constituent model of the WQ Module, and the term organic matter in this section therefore refers to labile organic matter. Refractory organic matter processes are described elsewhere.</p>
 <p>The pelagic hydrolysis rate is computed within the labile organics constituent model via Equation <a href="AppOrg.html#eq:equ-pel-hydrolysis-rate">(N.2)</a>.</p>
 <p><span class="math display" id="eq:equ-pel-hydrolysis-rate">\[\begin{equation}
@@ -534,8 +548,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   \tag{N.2}
 \end{equation}\]</span>
 <a href="AppParams.html#WQParRhydPOC"><span class="math inline">\(R_{hyd}^{POC}\)</span></a>, <a href="AppParams.html#WQParRhydPON"><span class="math inline">\(R_{hyd}^{PON}\)</span></a> and <a href="AppParams.html#WQParRhydPOP"><span class="math inline">\(R_{hyd}^{POP}\)</span></a> are the user specified particulate organic carbon, nitrogen and phosphorus hydrolysis rates at 20<span class="math inline">\(^o\)</span>C without the influence of dissolved oxygen, <a href="AppConstits.html#WQVarDO"><span class="math inline">\(\left[DO\right]\)</span></a> is the ambient dissolved oxygen concentration, <a href="AppParams.html#WQParKhydPOM"><span class="math inline">\(K_{hyd-O_2}^{POM}\)</span></a> is the user specified half saturation concentration of dissolved oxygen for particulate organic matter hydrolysis, <a href="AppParams.html#WQParthetahydPOM"><span class="math inline">\(\theta_{hyd}^{POM}\)</span></a> is the corresponding temperature coefficient, and <a href="AppConstits.html#FVVarT"><span class="math inline">\(T\)</span></a> is ambient water temperature. As per sediment fluxes, the values of <span class="math inline">\(K_{hyd-O_2}^{POM}\)</span> and <span class="math inline">\(\theta_{hyd}^{POM}\)</span> are intentionally applied equally to particulate organic carbon, nitrogen and phosphorus hydrolysis. This is because there is one (not three) biological consumption process that generates these constituents: <span class="math inline">\(K_{hyd-O_2}^{POM}\)</span> and <span class="math inline">\(\theta_{hyd}^{POM}\)</span> apply to this single process. In a similar vein, the user specifications for <span class="math inline">\(R_{hyd}^{POC}\)</span>, <span class="math inline">\(R_{hyd}^{PON}\)</span> and <span class="math inline">\(R_{hyd}^{POP}\)</span> should not vary significantly in their relative proportions from the ratio that these typically occur in the organic matter being consumed (e.g. the Redfield ratio).</p>
-<div id="HydrolCons-4" class="section level3" number="18.2.1">
-<h3><span class="header-section-number">N.2.1</span> Consumption</h3>
+<div id="HydrolCons-4" class="section level3 hasAnchor" number="18.2.1">
+<h3><span class="header-section-number">N.2.1</span> Consumption<a href="AppOrg.html#HydrolCons-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The hydrolysis rates from Equation <a href="AppOrg.html#eq:equ-pel-hydrolysis-rate">(N.2)</a> are multiplied by their respective ambient particulate organic matter concentrations to compute their respective consumptive fluxes (losses) at each model timestep in each model cell via Equation <a href="AppOrg.html#eq:equ-pel-hydrolysis-fluxcons">(N.3)</a>.</p>
 <p><span class="math display" id="eq:equ-pel-hydrolysis-fluxcons">\[\begin{equation}
 \left.\begin{aligned}
@@ -548,8 +562,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   \tag{N.3}
 \end{equation}\]</span></p>
 </div>
-<div id="HydrolProd-4" class="section level3" number="18.2.2">
-<h3><span class="header-section-number">N.2.2</span> Production</h3>
+<div id="HydrolProd-4" class="section level3 hasAnchor" number="18.2.2">
+<h3><span class="header-section-number">N.2.2</span> Production<a href="AppOrg.html#HydrolProd-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The consumptive fluxes from Equation <a href="AppOrg.html#eq:equ-pel-hydrolysis-fluxcons">(N.3)</a> result in the dissolved organic productive fluxes in Equation <a href="AppOrg.html#eq:equ-pel-hydrolysis-fluxprod">(N.4)</a>.</p>
 <p><span class="math display" id="eq:equ-pel-hydrolysis-fluxprod">\[\begin{equation}
 \left.\begin{aligned}
@@ -563,8 +577,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \end{equation}\]</span></p>
 </div>
 </div>
-<div id="Break-3" class="section level2" number="18.3">
-<h2><span class="header-section-number">N.3</span> Breakdown</h2>
+<div id="Break-3" class="section level2 hasAnchor" number="18.3">
+<h2><span class="header-section-number">N.3</span> Breakdown<a href="AppOrg.html#Break-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Breakdown is the pelagic biological conversion of refractory particulate organic matter (which is a single computed variable) to three labile particulate organic matter computed variables. It is therefore a source of labile particulate organic carbon, nitrogen and phosphorus, and a sink of refractory particulate organic matter. Breakdown neither consumes or produces dissolved oxygen or bioavailable inorganic nutrients. Breakdown is implemented within the refractory organics constituent model of the WQ Module only, so the following does not apply if the labile organics constituent model is used.</p>
 <p>The pelagic breakdown rate of refractory particulate organic matter is computed via Equation <a href="AppOrg.html#eq:equ-pel-bdown-rate">(N.5)</a>.</p>
 <p><span class="math display" id="eq:equ-pel-bdown-rate">\[\begin{equation}
@@ -573,16 +587,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   \tag{N.5}
 \end{equation}\]</span>
 <a href="AppParams.html#WQParRbdnRPOM"><span class="math inline">\(R_{bdn}^{RPOM}\)</span></a>is the user specified (or default) refractory particulate organic matter breakdown rate at 20<span class="math inline">\(^o\)</span>C without the influence of dissolved oxygen, <a href="AppConstits.html#WQVarDO"><span class="math inline">\(\left[DO\right]\)</span></a> is the ambient dissolved oxygen concentration, <a href="AppParams.html#WQParKhydPOM"><span class="math inline">\(K_{hyd-O_2}^{POM}\)</span></a> is the user specified (or default) half saturation concentration of dissolved oxygen for labile particulate organic matter hydrolysis, <a href="AppParams.html#WQParthetahydPOM"><span class="math inline">\(\theta_{hyd}^{POM}\)</span></a> is the corresponding temperature coefficient, and <a href="AppConstits.html#FVVarT"><span class="math inline">\(T\)</span></a> is ambient water temperature. The parameters <span class="math inline">\(K_{hyd-O_2}^{POM}\)</span> and <span class="math inline">\(\theta_{hyd}^{POM}\)</span> used in Equation <a href="AppOrg.html#eq:equ-pel-bdown-rate">(N.5)</a> are the same as those used for the hydrolysis calculations described in Section <a href="AppOrg.html#Hydrol-3">N.2</a> and specified via the associated labile organic matter hydrolysis command.</p>
-<div id="BreakCons-4" class="section level3" number="18.3.1">
-<h3><span class="header-section-number">N.3.1</span> Consumption</h3>
+<div id="BreakCons-4" class="section level3 hasAnchor" number="18.3.1">
+<h3><span class="header-section-number">N.3.1</span> Consumption<a href="AppOrg.html#BreakCons-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The breakdown rate from Equation <a href="AppOrg.html#eq:equ-pel-bdown-rate">(N.5)</a> is multiplied by the ambient refractory particulate organic matter concentration to compute its consumptive flux (loss) at each model timestep in each model cell via Equation <a href="AppOrg.html#eq:equ-pel-bdown-fluxcons">(N.6)</a>.</p>
 <p><span class="math display" id="eq:equ-pel-bdown-fluxcons">\[\begin{equation}
   \href{AppDiags.html#WQDiagBdn}{F_{bdn\langle computed\rangle}^{RPOM}} = R_{bdn\langle computed\rangle}^{RPOM} \times \left[ RPOM \right]
   \tag{N.6}
 \end{equation}\]</span></p>
 </div>
-<div id="BreakProd-4" class="section level3" number="18.3.2">
-<h3><span class="header-section-number">N.3.2</span> Production</h3>
+<div id="BreakProd-4" class="section level3 hasAnchor" number="18.3.2">
+<h3><span class="header-section-number">N.3.2</span> Production<a href="AppOrg.html#BreakProd-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The consumptive flux from Equation <a href="AppOrg.html#eq:equ-pel-bdown-fluxcons">(N.6)</a> results in the labile particulate organic carbon, nitrogen and phosphorus productive fluxes in Equation <a href="AppOrg.html#eq:equ-pel-bdown-fluxprod">(N.7)</a>.</p>
 <p><span class="math display" id="eq:equ-pel-bdown-fluxprod">\[\begin{equation}
 \left.\begin{aligned}
@@ -597,8 +611,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a href="AppParams.html#WQParXNRPOM"><span class="math inline">\(X_N^{RPOM}\)</span></a> and <a href="AppParams.html#WQParXPRPOM"><span class="math inline">\(X_P^{RPOM}\)</span></a> are the user specified (or default) molar ratios of nitrogen and phosphorus to carbon within refractory particulate organic matter. These should not differ significantly from the Redfield ratios of 16/106 and 1/106, respectively.</p>
 </div>
 </div>
-<div id="Miner-3" class="section level2" number="18.4">
-<h2><span class="header-section-number">N.4</span> Mineralisation</h2>
+<div id="Miner-3" class="section level2 hasAnchor" number="18.4">
+<h2><span class="header-section-number">N.4</span> Mineralisation<a href="AppOrg.html#Miner-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Mineralisation is the pelagic biological conversion of labile dissolved organic matter to dissolved inorganic carbon and nutrients. It is therefore a source of dissolved inorganic carbon, ammonium and filterable reactive phosphorus, and a sink of the corresponding labile dissolved organics. Mineralisation is conceptualised as comprising aerobic (i.e. consuming dissolved oxygen and (via denitrification) inorganic nitrate) and anaerobic components, and is implemented within the labile organics constituent model of the WQ Module. The term organic matter in this section therefore refers to labile organic matter.</p>
 <p>The same pelagic mineralisation rate is computed within the WQ Module for dissolved organic carbon, nitrogen and phosphorus via Equation <a href="AppOrg.html#eq:equ-pel-miner-rate">(N.8)</a>.
 <span class="math display" id="eq:equ-pel-miner-rate">\[\begin{equation}
@@ -607,8 +621,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   \tag{N.8}
 \end{equation}\]</span>
 <a href="AppParams.html#WQParRminerDOM"><span class="math inline">\(R_{miner}^{DOM}\)</span></a> is the user specified (or default) dissolved organic matter (i.e. carbon, nitrogen and phosphorus) mineralisation rate at 20<span class="math inline">\(^o\)</span>C without the influence of dissolved oxygen, <a href="AppConstits.html#WQVarDO"><span class="math inline">\(\left[DO\right]\)</span></a> is the ambient dissolved oxygen concentration, <a href="AppParams.html#WQParKminerDOM"><span class="math inline">\(K_{miner-O_2}^{DOM}\)</span></a> is the user specified half saturation concentration of dissolved oxygen for dissolved organic matter mineralisation, <a href="AppParams.html#WQParthetaminerDOM"><span class="math inline">\(\theta_{miner}^{DOM}\)</span></a> is the corresponding temperature coefficient, <a href="AppParams.html#WQParfanminer"><span class="math inline">\(f_{an}\)</span></a> is a fractional multiplier that weights the Michaelis-Menten contribution of non-O<span class="math inline">\(_2\)</span> processes within the calculation of total mineralisation and <a href="AppConstits.html#FVVarT"><span class="math inline">\(T\)</span></a> is ambient water temperature. As per sediment fluxes and hydrolysis, the values of <span class="math inline">\(K_{miner-O_2}^{DOM}\)</span> and <span class="math inline">\(\theta_{miner}^{DOM}\)</span> are intentionally applied equally to dissolved organic carbon, nitrogen and phosphorus mineralisation. In addition, the rate at which mineralisation of dissolved organic matter (to inorganics) occurs is the same for all dissolved organic constituents. This is because there is one (not three) biological conversion process that is assumed to draw equally on all dissolved organic constituents. Finally, setting <span class="math inline">\(f_{an}\)</span> to zero does not suppress entirely non-O<span class="math inline">\(_2\)</span> mineralisation (see following section), but it does remove the Michaelis-Menten based influence of anaerobic processes on the calculation of total mineralisation.</p>
-<div id="MinerCons-4" class="section level3" number="18.4.1">
-<h3><span class="header-section-number">N.4.1</span> Consumption</h3>
+<div id="MinerCons-4" class="section level3 hasAnchor" number="18.4.1">
+<h3><span class="header-section-number">N.4.1</span> Consumption<a href="AppOrg.html#MinerCons-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The mineralisation rate from Equation <a href="AppOrg.html#eq:equ-pel-miner-rate">(N.8)</a> is multiplied by ambient labile dissolved organic carbon, nitrogen and phosphorus concentrations to compute their respective consumptive fluxes (losses) at each model timestep in each model cell via Equation <a href="AppOrg.html#eq:equ-pel-miner-fluxcons">(N.9)</a>.</p>
 <p><span class="math display" id="eq:equ-pel-miner-fluxcons">\[\begin{equation}
 \left.\begin{aligned}
@@ -660,8 +674,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>All these mineralisation diagnostic variables are reported in units of carbon.</p>
 </div>
-<div id="MinerProd-4" class="section level3" number="18.4.2">
-<h3><span class="header-section-number">N.4.2</span> Production</h3>
+<div id="MinerProd-4" class="section level3 hasAnchor" number="18.4.2">
+<h3><span class="header-section-number">N.4.2</span> Production<a href="AppOrg.html#MinerProd-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The consumptive flux from Equation <a href="AppOrg.html#eq:equ-pel-bdown-fluxcons">(N.6)</a> results in the inorganic carbon, ammonium and FRP productive fluxes in Equation <a href="AppOrg.html#eq:equ-pel-miner-fluxprod">(N.16)</a>.</p>
 <p><span class="math display" id="eq:equ-pel-miner-fluxprod">\[\begin{equation}
 \left.\begin{aligned}
@@ -676,8 +690,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The WQ Module does not currently support simulation of dissolved inorganic carbon (DIC) so the corresponding carbonic productive flux in Equation <a href="AppOrg.html#eq:equ-pel-miner-fluxprod">(N.16)</a> has no effect on inorganic water quality dynamics. Contact <a href="mailto:support@tuflow.com" class="email">support@tuflow.com</a> if the DIC model is required.</p>
 </div>
 </div>
-<div id="Active-3" class="section level2" number="18.5">
-<h2><span class="header-section-number">N.5</span> Activation</h2>
+<div id="Active-3" class="section level2 hasAnchor" number="18.5">
+<h2><span class="header-section-number">N.5</span> Activation<a href="AppOrg.html#Active-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Activation is the pelagic biological conversion of refractory dissolved organic carbon, nitrogen and phosphorus to their respective labile dissolved organic equivalents. It is therefore a source of dissolved labile organic carbon, nitrogen and phosphorus, and a sink of the corresponding refractory dissolved organics. Activation does not consume or produce any other computed variables, although its computed rate does depend on dissolved oxygen concentration.</p>
 <p>The pelagic activation rate is computed within the WQ Module for refractory dissolved organic carbon, nitrogen and phosphorus via Equation <a href="AppOrg.html#eq:equ-pel-active-rate">(N.17)</a>.</p>
 <p><span class="math display" id="eq:equ-pel-active-rate">\[\begin{equation}
@@ -686,8 +700,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   \tag{N.17}
 \end{equation}\]</span>
 <a href="AppParams.html#WQParRactRDOM"><span class="math inline">\(R_{act}^{RDOM}\)</span></a> is the user specified refractory dissolved organic matter (i.e. carbon, nitrogen and phosphorus) activation rate at 20<span class="math inline">\(^o\)</span>C without the influence of dissolved oxygen, <a href="AppConstits.html#WQVarDO"><span class="math inline">\(\left[DO\right]\)</span></a> is the ambient dissolved oxygen concentration, <a href="AppParams.html#WQParKminerDOM"><span class="math inline">\(K_{miner-O_2}^{DOM}\)</span></a> is the user specified half saturation concentration of dissolved oxygen for dissolved organic matter mineralisation, <a href="AppParams.html#WQParthetaminerDOM"><span class="math inline">\(\theta_{miner}^{DOM}\)</span></a> is the corresponding temperature coefficient, <a href="AppParams.html#WQParfanminer"><span class="math inline">\(f_{an}\)</span></a> is a fractional multiplier that weights the Michaelis-Menten contribution of non-O<span class="math inline">\(_2\)</span> processes within the calculation of total mineralisation and <a href="AppConstits.html#FVVarT"><span class="math inline">\(T\)</span></a> is ambient water temperature. The parameters <span class="math inline">\(K_{miner-O_2}^{DOM}\)</span>, <span class="math inline">\(f_{an}\)</span> and <span class="math inline">\(\theta_{miner}^{DOM}\)</span> used in Equation <a href="AppOrg.html#eq:equ-pel-active-rate">(N.17)</a> are the same as those used for the mineralisation calculations described in Section <a href="AppOrg.html#Miner-3">N.4</a> and specified via the associated labile organic matter mineralisation command. If this is the case and labile organic matter mineralisation is not required as a simulated process, then the command can still be issued but with the first argument, <span class="math inline">\(R_{miner}^{DOM}\)</span>, equal to zero.</p>
-<div id="ActiveCons-4" class="section level3" number="18.5.1">
-<h3><span class="header-section-number">N.5.1</span> Consumption</h3>
+<div id="ActiveCons-4" class="section level3 hasAnchor" number="18.5.1">
+<h3><span class="header-section-number">N.5.1</span> Consumption<a href="AppOrg.html#ActiveCons-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The activation rate from Equation <a href="AppOrg.html#eq:equ-pel-active-rate">(N.17)</a> is multiplied by the ambient refractory dissolved carbon, nitrogen and phosphorus concentrations to compute their respective consumptive fluxes (losses) at each model timestep in each model cell via Equation <a href="AppOrg.html#eq:equ-pel-active-fluxcons">(N.18)</a>.</p>
 <p><span class="math display" id="eq:equ-pel-active-fluxcons">\[\begin{equation}
 \left.\begin{aligned}
@@ -700,8 +714,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   \tag{N.18}
 \end{equation}\]</span></p>
 </div>
-<div id="ActiveProd-4" class="section level3" number="18.5.2">
-<h3><span class="header-section-number">N.5.2</span> Production</h3>
+<div id="ActiveProd-4" class="section level3 hasAnchor" number="18.5.2">
+<h3><span class="header-section-number">N.5.2</span> Production<a href="AppOrg.html#ActiveProd-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The consumptive flux from Equation <a href="AppOrg.html#eq:equ-pel-active-fluxcons">(N.18)</a> results in the labile dissolved organic carbon, nitrogen and phosphorus productive fluxes in Equation <a href="AppOrg.html#eq:equ-pel-active-fluxprod">(N.19)</a>.</p>
 <p><span class="math display" id="eq:equ-pel-active-fluxprod">\[\begin{equation}
 \left.\begin{aligned}
@@ -715,8 +729,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \end{equation}\]</span></p>
 </div>
 </div>
-<div id="OrgPhot-3" class="section level2" number="18.6">
-<h2><span class="header-section-number">N.6</span> Photolysis</h2>
+<div id="OrgPhot-3" class="section level2 hasAnchor" number="18.6">
+<h2><span class="header-section-number">N.6</span> Photolysis<a href="AppOrg.html#OrgPhot-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The WQ Module conceptualises photolysis as the conversion of refractory dissolved organic carbon, nitrogen and phosphorus to their labile dissolved and inorganic equivalents, under the action of photosynthetically active (PAR), ultraviolet A (UVA) and ultraviolet B (UVB) radiation. These radiation bands are provided to the WQ Module from TUFLOW for each computational cell at each water quality timestep. The WQ Module computes total photolysis of refractory dissolved organic carbon <span class="math inline">\(F_{photo-tot}^{RDOC}\)</span> as the sum of photolysis due to each of these three bands via Equation <a href="AppOrg.html#eq:eq-pel-rorg-phototot">(N.20)</a>.
 <span class="math display" id="eq:eq-pel-rorg-phototot">\[\begin{equation}
 F_{photo-tot}^{RDOC} = F_{photo-PAR}^{RDOC} + F_{photo-UVA}^{RDOC} + F_{photo-UVB}^{RDOC}
@@ -730,12 +744,12 @@ Each band’s photolysis is computed via Equation <a href="AppOrg.html#eq:eq-pel
 \end{equation}\]</span>
 where <span class="math inline">\(c\)</span> = 7.52, <span class="math inline">\(d\)</span> = 0.0122, <span class="math inline">\(\lambda_{band}\)</span> is each band’s characteristic wavelength, <span class="math inline">\(S\)</span> = 0.0188 and <span class="math inline">\(x\)</span> = 440.0 nm. <a href="AppDiags.html#WQDiagCDOM"><span class="math inline">\(CDOM\)</span></a> is chromomorphic dissolved organic matter and is computed via Equation <a href="AppOrg.html#eq:eq-pel-rorg-cdom">(N.22)</a>.
 <span class="math display" id="eq:eq-pel-rorg-cdom">\[\begin{equation}
-  \href{AppDiags.html#WQDiagCDOM}{CDOM_{\langle computed \rangle}} = 0.35 \times e^{0.1922\times \left( \left[DOC\right] + \left[RDOC\right]\right) \times (12/1000)} 
+  \href{AppDiags.html#WQDiagCDOM}{CDOM_{\langle computed \rangle}} = 0.35 \times e^{0.1922\times \left( \left[DOC\right] + \left[RDOC\right]\right) \times (12/1000)}
     \tag{N.22}
 \end{equation}\]</span>
 <a href="AppConstits.html#WQVarDOC"><span class="math inline">\(\left[DOC\right]\)</span></a> and <a href="AppConstits.html#WQVarRDOC"><span class="math inline">\(\left[RDOC\right]\)</span></a> and the ambient concentrations of labile and refractory dissolved organic carbon, respectively.</p>
-<div id="PhotCons-4" class="section level3" number="18.6.1">
-<h3><span class="header-section-number">N.6.1</span> Consumption</h3>
+<div id="PhotCons-4" class="section level3 hasAnchor" number="18.6.1">
+<h3><span class="header-section-number">N.6.1</span> Consumption<a href="AppOrg.html#PhotCons-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Once total photolysis has been computed, the associated consumptive fluxes (losses) of refractory dissolved organic carbon, nitrogen and phosphorus are computed via Equation <a href="AppOrg.html#eq:equ-pel-photor-fluxcons">(N.23)</a>, using ambient refractory dissolved nitrogen and phosphorus concentrations to proportion the computed fluxes.
 <span class="math display" id="eq:equ-pel-photor-fluxcons">\[\begin{equation}
 \left.\begin{aligned}
@@ -748,8 +762,8 @@ where <span class="math inline">\(c\)</span> = 7.52, <span class="math inline">\
   \tag{N.23}
 \end{equation}\]</span></p>
 </div>
-<div id="PhotProd-4" class="section level3" number="18.6.2">
-<h3><span class="header-section-number">N.6.2</span> Production</h3>
+<div id="PhotProd-4" class="section level3 hasAnchor" number="18.6.2">
+<h3><span class="header-section-number">N.6.2</span> Production<a href="AppOrg.html#PhotProd-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The consumptive fluxes from Equation <a href="AppOrg.html#eq:equ-pel-photor-fluxcons">(N.23)</a> result in the labile dissolved organic carbon, nitrogen and phosphorus productive fluxes in Equation <a href="AppOrg.html#eq:equ-pel-photo-fluxprodO">(N.24)</a>.
 <span class="math display" id="eq:equ-pel-photo-fluxprodO">\[\begin{equation}
 \left.\begin{aligned}
@@ -775,8 +789,8 @@ where <span class="math inline">\(c\)</span> = 7.52, <span class="math inline">\
 <p>The WQ Module does not currently support simulation of dissolved inorganic carbon (DIC) so the corresponding carbonic productive flux in Equation <a href="AppOrg.html#eq:equ-pel-photo-fluxprodI">(N.25)</a> has no effect on inorganic water quality dynamics. Contact <a href="mailto:support@tuflow.com" class="email">support@tuflow.com</a> if the DIC model is required.</p>
 </div>
 </div>
-<div id="OrgLight-3" class="section level2" number="18.7">
-<h2><span class="header-section-number">N.7</span> Self shading</h2>
+<div id="OrgLight-3" class="section level2 hasAnchor" number="18.7">
+<h2><span class="header-section-number">N.7</span> Self shading<a href="AppOrg.html#OrgLight-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Photosynthetically available radiation is provided to the WQ Module from TUFLOW for each computational cell at each water quality timestep. The WQ Module allows for modification of this TUFLOW field to incorporate the effect of light attenuation due to the presence of particulate and dissolved organic matter. This additional light extinction is computed dynamically at each water quality timestep, based on instantaneous organic matter concentrations in individual computational cells.</p>
 <p>For labile organics, the associated additive specific light attenuation coefficient is computed as per Equation <a href="AppOrg.html#eq:eq-pel-org-selfshad">(N.26)</a>.
 <span class="math display" id="eq:eq-pel-org-selfshad">\[\begin{equation}
@@ -791,19 +805,19 @@ Ke_{\langle computed \rangle}^{ROM} = R_{CDOM}^{RDOM} \times CDOM + Ke^{RPOM} \t
 \end{equation}\]</span>
 <a href="AppParams.html#WQParKeRDOM"><span class="math inline">\(R_{CDOM}^{RDOM}\)</span></a> is a user specified (or default) dimensionless multiplier applied to the CDOM computed in Equation <a href="AppOrg.html#eq:eq-pel-rorg-cdom">(N.22)</a>, where the same CDOM is used in photolysis calculations. <span class="math inline">\(R_{CDOM}^{RDOM}\)</span> is not a specific shading coefficient, but can be thought of as (light attenuation (/m) / CDOM (/m)), or the strength of CDOM in attenuating light. <a href="AppParams.html#WQParKeRPOM"><span class="math inline">\(Ke^{RPOM}\)</span></a> is the user specified (or default) specific shading coefficient for refractory particulate organic matter, and <a href="AppConstits.html#WQVarRPOM"><span class="math inline">\(\left[RPOM\right]\)</span></a> is the instantaneous refractory particulate organic matter concentration in each cell. For each cell and at each timestep, this quantity <span class="math inline">\(Ke_{\langle computed \rangle}^{ROM}\)</span> is computed and returned to TUFLOW as a two- or three-dimensional field which TUFLOW then includes these in subsequent light distribution calculations.</p>
 </div>
-<div id="OrgSettle-3" class="section level2" number="18.8">
-<h2><span class="header-section-number">N.8</span> Settling</h2>
+<div id="OrgSettle-3" class="section level2 hasAnchor" number="18.8">
+<h2><span class="header-section-number">N.8</span> Settling<a href="AppOrg.html#OrgSettle-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Particulate organic matter is able to be settled within the WQ Module. Four settling models are available. These are able to be applied equally to both labile and refractory particulate organic matter to compute <span class="math inline">\(V_{settle}^{lorg}\)</span> and <span class="math inline">\(V_{settle}^{rorg}\)</span>, respectively. The same settling model must be applied to both types of particulates, although the parameters ascribed to a model can be different for labile and refractory particulates. Once computed, the same settling rate is applied to each of labile particulate organic carbon, nitrogen and phosphorus.</p>
-<div id="OrgSettleNone-5" class="section level3" number="18.8.1">
-<h3><span class="header-section-number">N.8.1</span> None</h3>
+<div id="OrgSettleNone-5" class="section level3 hasAnchor" number="18.8.1">
+<h3><span class="header-section-number">N.8.1</span> None<a href="AppOrg.html#OrgSettleNone-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In this model, particulate organic settling is set to zero and organic matter is simply advected by the hydrodynamic flow field.</p>
 </div>
-<div id="OrgSettleConst-5" class="section level3" number="18.8.2">
-<h3><span class="header-section-number">N.8.2</span> Constant</h3>
+<div id="OrgSettleConst-5" class="section level3 hasAnchor" number="18.8.2">
+<h3><span class="header-section-number">N.8.2</span> Constant<a href="AppOrg.html#OrgSettleConst-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In this model, <a href="AppParams.html#WQParConVLOrg"><span class="math inline">\(V_{settle}^{lorg}\)</span></a> and <a href="AppParams.html#WQParConVROrg"><span class="math inline">\(V_{settle}^{rorg}\)</span></a> are set to constant values, and matter is settled at these velocities. These can be different velocities for labile and refractory particulate organics. A negative specification of this quantity corresponds to a downwards settling velocity.</p>
 </div>
-<div id="OrgSettleConstD-5" class="section level3" number="18.8.3">
-<h3><span class="header-section-number">N.8.3</span> Constant with density correction</h3>
+<div id="OrgSettleConstD-5" class="section level3 hasAnchor" number="18.8.3">
+<h3><span class="header-section-number">N.8.3</span> Constant with density correction<a href="AppOrg.html#OrgSettleConstD-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In this model, <a href="AppParams.html#WQParConVLOrg"><span class="math inline">\(V_{settle}^{lorg}\)</span></a> and <a href="AppParams.html#WQParConVROrg"><span class="math inline">\(V_{settle}^{rorg}\)</span></a> are set to constant values, and matter is settled at these velocities, but corrected for ambient water density effects, as per Equation <a href="AppOrg.html#eq:eq-pel-org-settdens">(N.28)</a>.</p>
 <p><span class="math display" id="eq:eq-pel-org-settdens">\[\begin{equation}
   V_{sett\langle computed\rangle}^{org} = V_{settle}^{org} \times \frac{\mu_{20}\times\rho_w}{\mu\times\rho_{w20}}
@@ -811,8 +825,8 @@ Ke_{\langle computed \rangle}^{ROM} = R_{CDOM}^{RDOM} \times CDOM + Ke^{RPOM} \t
 \end{equation}\]</span></p>
 <p><span class="math inline">\(V_{settle}^{org}\)</span> is <span class="math inline">\(V_{settle}^{lorg}\)</span> or <span class="math inline">\(V_{settle}^{rorg}\)</span> at 20<span class="math inline">\(^o\)</span>C, <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\rho_w\)</span> are the ambient water dynamic viscosity (in Ns/m<span class="math inline">\(^2\)</span>) and density (in kg/m<span class="math inline">\(^3\)</span>), respectively, and <span class="math inline">\(\mu_{20}\)</span> and <span class="math inline">\(\rho_{w20}\)</span> are the dynamic viscosity and density of freshwater at 20<span class="math inline">\(^o\)</span>C, respectively. A negative specification of <span class="math inline">\(V_{settle}^{org}\)</span> corresponds to a downwards settling velocity.</p>
 </div>
-<div id="OrgSettleStokes-5" class="section level3" number="18.8.4">
-<h3><span class="header-section-number">N.8.4</span> Stokes</h3>
+<div id="OrgSettleStokes-5" class="section level3 hasAnchor" number="18.8.4">
+<h3><span class="header-section-number">N.8.4</span> Stokes<a href="AppOrg.html#OrgSettleStokes-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In this model, particulate organic settling is computed using the Stokes equation and particle diameter and density, as per Equations <a href="AppOrg.html#eq:eq-pel-org-settstokes1">(N.29)</a> and <a href="AppOrg.html#eq:eq-pel-org-settstokes2">(N.30)</a>.</p>
 <p><span class="math display" id="eq:eq-pel-org-settstokes1">\[\begin{equation}
   V_{sett\langle computed\rangle}^{lorg} = -g \times d_{lorg}^2 \times \frac{\left(\rho_{lorg}-\rho_w\right)}{18\mu}
@@ -851,11 +865,10 @@ Ke_{\langle computed \rangle}^{ROM} = R_{CDOM}^{RDOM} \times CDOM + Ke^{RPOM} \t
         </div>
       </div>
 <a href="AppphyOther.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="AppConstits.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="AppPath.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -889,7 +902,7 @@ gitbook.start({
 },
 "download": null,
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {
@@ -905,7 +918,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

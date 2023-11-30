@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Section 1 Overview | TUFLOW FV Water Quality (WQ) Module User Manual</title>
   <meta name="description" content="Section 1 Overview | TUFLOW FV Water Quality (WQ) Module User Manual" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Section 1 Overview | TUFLOW FV Water Quality (WQ) Module User Manual" />
   <meta property="og:type" content="book" />
-  
   <meta property="og:image" content="/images/tuflow.png" />
   <meta property="og:description" content="Section 1 Overview | TUFLOW FV Water Quality (WQ) Module User Manual" />
   
@@ -21,6 +20,7 @@
   <meta name="twitter:description" content="Section 1 Overview | TUFLOW FV Water Quality (WQ) Module User Manual" />
   <meta name="twitter:image" content="/images/tuflow.png" />
 
+<meta name="author" content="" />
 
 
 
@@ -31,8 +31,8 @@
   <link rel="shortcut icon" href="images/TUFLOW.ico" type="image/x-icon" />
 <link rel="prev" href="introduction.html"/>
 <link rel="next" href="Architecture-1.html"/>
-<script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -48,23 +48,23 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.4.1/plotly.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
-<link href="libs/vis-4.20.1/vis.css" rel="stylesheet" />
-<script src="libs/vis-4.20.1/vis.min.js"></script>
-<script src="libs/visNetwork-binding-2.0.9/visNetwork.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<link href="libs/vis-9.1.0/vis-network.min.css" rel="stylesheet" />
+<script src="libs/vis-9.1.0/vis-network.min.js"></script>
+<script src="libs/visNetwork-binding-2.1.2/visNetwork.js"></script>
 
 
 
@@ -106,7 +106,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -119,7 +119,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -151,7 +151,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://www.tuflow.com"><img src="images/tuflow.png" style="width:246px;height:68px;"></a></li>
 
 <li class="divider"></li>
-<li><a href="index.html#section"></a></li>
+<li><a href="index.html#section" id="toc-section"></a></li>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a>
 <ul>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#about-this-manual"><i class="fa fa-check"></i>About this manual</a></li>
@@ -202,7 +202,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#DOOverview-3"><i class="fa fa-check"></i><b>3.1.1</b> Overview</a></li>
 <li class="chapter" data-level="3.1.2" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModDODO-3"><i class="fa fa-check"></i><b>3.1.2</b> Model Class: Oxygen</a></li>
-<li class="chapter" data-level="3.1.3" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#DOCompVars-3"><i class="fa fa-check"></i><b>3.1.3</b> Computed variables</a></li>
+<li class="chapter" data-level="3.1.3" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModDOPath-3"><i class="fa fa-check"></i><b>3.1.3</b> Model Class: Pathogens (optional)</a></li>
+<li class="chapter" data-level="3.1.4" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#DOCompVars-3"><i class="fa fa-check"></i><b>3.1.4</b> Computed variables</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#SimProcSimuClInorg-2"><i class="fa fa-check"></i><b>3.2</b> Simulation Class: Inorganics</a>
 <ul>
@@ -212,7 +213,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.4" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgN-3"><i class="fa fa-check"></i><b>3.2.4</b> Model Class: Inorganic nitrogen</a></li>
 <li class="chapter" data-level="3.2.5" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgP-3"><i class="fa fa-check"></i><b>3.2.5</b> Model Class: Inorganic phosphorus</a></li>
 <li class="chapter" data-level="3.2.6" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgPhy-3"><i class="fa fa-check"></i><b>3.2.6</b> Model Class: Phytoplankton</a></li>
-<li class="chapter" data-level="3.2.7" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#InorgCompVars-3"><i class="fa fa-check"></i><b>3.2.7</b> Computed variables</a></li>
+<li class="chapter" data-level="3.2.7" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgPath-3"><i class="fa fa-check"></i><b>3.2.7</b> Model Class: Pathogens (optional)</a></li>
+<li class="chapter" data-level="3.2.8" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#InorgCompVars-3"><i class="fa fa-check"></i><b>3.2.8</b> Computed variables</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#SimProcSimuClOrg-2"><i class="fa fa-check"></i><b>3.3</b> Simulation Class: Organics</a>
 <ul>
@@ -223,7 +225,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.5" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgP-3"><i class="fa fa-check"></i><b>3.3.5</b> Model Class: Inorganic phosphorus</a></li>
 <li class="chapter" data-level="3.3.6" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgOrg-3"><i class="fa fa-check"></i><b>3.3.6</b> Model Class: Organic matter</a></li>
 <li class="chapter" data-level="3.3.7" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgPhy-3"><i class="fa fa-check"></i><b>3.3.7</b> Model Class: Phytoplankton</a></li>
-<li class="chapter" data-level="3.3.8" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#OrgCompVars-3"><i class="fa fa-check"></i><b>3.3.8</b> Computed variables</a></li>
+<li class="chapter" data-level="3.3.8" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgPath-3"><i class="fa fa-check"></i><b>3.3.8</b> Model Class: Pathogens (optional)</a></li>
+<li class="chapter" data-level="3.3.9" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#OrgCompVars-3"><i class="fa fa-check"></i><b>3.3.9</b> Computed variables</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html"><i class="fa fa-check"></i><b>4</b> Simulation Construction</a>
@@ -441,37 +444,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="N.8.4" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettleStokes-5"><i class="fa fa-check"></i><b>N.8.4</b> Stokes</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="O" data-path="AppConstits.html"><a href="AppConstits.html"><i class="fa fa-check"></i><b>O</b> Computed variables</a></li>
-<li class="chapter" data-level="P" data-path="AppDiags.html"><a href="AppDiags.html"><i class="fa fa-check"></i><b>P</b> Diagnostic variables</a></li>
-<li class="chapter" data-level="Q" data-path="AppParams.html"><a href="AppParams.html"><i class="fa fa-check"></i><b>Q</b> Parameters</a></li>
-<li class="chapter" data-level="R" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>R</b> Mass Conservation Model</a>
+<li class="chapter" data-level="O" data-path="AppPath.html"><a href="AppPath.html"><i class="fa fa-check"></i><b>O</b> Processes: pathogens</a>
 <ul>
-<li class="chapter" data-level="R.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalIntent"><i class="fa fa-check"></i><b>R.1</b> Intent</a></li>
-<li class="chapter" data-level="R.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDescription"><i class="fa fa-check"></i><b>R.2</b> Description</a></li>
-<li class="chapter" data-level="R.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalMdel"><i class="fa fa-check"></i><b>R.3</b> Model suite</a></li>
-<li class="chapter" data-level="R.4" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalCalcs"><i class="fa fa-check"></i><b>R.4</b> Calculations</a></li>
-<li class="chapter" data-level="R.5" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalPerformance"><i class="fa fa-check"></i><b>R.5</b> Mass conservation performance</a>
+<li class="chapter" data-level="O.1" data-path="AppPath.html"><a href="AppPath.html#Mortal-3"><i class="fa fa-check"></i><b>O.1</b> Mortality</a></li>
+<li class="chapter" data-level="O.2" data-path="AppPath.html"><a href="AppPath.html#Inactivation-3"><i class="fa fa-check"></i><b>O.2</b> Inactivation</a></li>
+<li class="chapter" data-level="O.3" data-path="AppPath.html"><a href="AppPath.html#PathAttach-3"><i class="fa fa-check"></i><b>O.3</b> Attachment</a></li>
+<li class="chapter" data-level="O.4" data-path="AppPath.html"><a href="AppPath.html#PathSettling-3"><i class="fa fa-check"></i><b>O.4</b> Settling</a></li>
+<li class="chapter" data-level="O.5" data-path="AppPath.html"><a href="AppPath.html#Pathother-3"><i class="fa fa-check"></i><b>O.5</b> Other</a>
 <ul>
-<li class="chapter" data-level="R.5.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDO"><i class="fa fa-check"></i><b>R.5.1</b> Simulation class: DO</a></li>
-<li class="chapter" data-level="R.5.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>R.5.2</b> Simulation class: Inorganics</a></li>
-<li class="chapter" data-level="R.5.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalOrg"><i class="fa fa-check"></i><b>R.5.3</b> Simulation class: Organics</a></li>
+<li class="chapter" data-level="O.5.1" data-path="AppPath.html"><a href="AppPath.html#Pathtot-3"><i class="fa fa-check"></i><b>O.5.1</b> Total pathogens</a></li>
 </ul></li>
-<li class="chapter" data-level="R.6" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalExecuting"><i class="fa fa-check"></i><b>R.6</b> Access and execution</a>
-<ul>
-<li class="chapter" data-level="R.6.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalAccess"><i class="fa fa-check"></i><b>R.6.1</b> Access</a></li>
-<li class="chapter" data-level="R.6.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalExecu"><i class="fa fa-check"></i><b>R.6.2</b> Execution</a></li>
 </ul></li>
-<li class="chapter" data-level="R.7" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalRes"><i class="fa fa-check"></i><b>R.7</b> Results</a></li>
-<li class="chapter" data-level="R.8" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalMassCons"><i class="fa fa-check"></i><b>R.8</b> Mass conservation analysis</a>
+<li class="chapter" data-level="P" data-path="AppConstits.html"><a href="AppConstits.html"><i class="fa fa-check"></i><b>P</b> Computed variables</a></li>
+<li class="chapter" data-level="Q" data-path="AppDiags.html"><a href="AppDiags.html"><i class="fa fa-check"></i><b>Q</b> Diagnostic variables</a></li>
+<li class="chapter" data-level="R" data-path="AppParams.html"><a href="AppParams.html"><i class="fa fa-check"></i><b>R</b> Parameters</a></li>
+<li class="chapter" data-level="S" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>S</b> Mass Conservation Model</a>
 <ul>
-<li class="chapter" data-level="R.8.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBMatlab"><i class="fa fa-check"></i><b>R.8.1</b> MATLAB</a></li>
-<li class="chapter" data-level="R.8.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPython"><i class="fa fa-check"></i><b>R.8.2</b> Python</a></li>
+<li class="chapter" data-level="S.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalIntent"><i class="fa fa-check"></i><b>S.1</b> Intent</a></li>
+<li class="chapter" data-level="S.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDescription"><i class="fa fa-check"></i><b>S.2</b> Description</a></li>
+<li class="chapter" data-level="S.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalMdel"><i class="fa fa-check"></i><b>S.3</b> Model suite</a></li>
+<li class="chapter" data-level="S.4" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalCalcs"><i class="fa fa-check"></i><b>S.4</b> Calculations</a></li>
+<li class="chapter" data-level="S.5" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalPerformance"><i class="fa fa-check"></i><b>S.5</b> Mass conservation performance</a>
+<ul>
+<li class="chapter" data-level="S.5.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDO"><i class="fa fa-check"></i><b>S.5.1</b> Simulation class: DO</a></li>
+<li class="chapter" data-level="S.5.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>S.5.2</b> Simulation class: Inorganics</a></li>
+<li class="chapter" data-level="S.5.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalOrg"><i class="fa fa-check"></i><b>S.5.3</b> Simulation class: Organics</a></li>
 </ul></li>
-<li class="chapter" data-level="R.9" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterp"><i class="fa fa-check"></i><b>R.9</b> Notes</a>
+<li class="chapter" data-level="S.6" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalExecuting"><i class="fa fa-check"></i><b>S.6</b> Access and execution</a>
 <ul>
-<li class="chapter" data-level="R.9.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterpUnits"><i class="fa fa-check"></i><b>R.9.1</b> Units</a></li>
-<li class="chapter" data-level="R.9.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPrecision"><i class="fa fa-check"></i><b>R.9.2</b> Precision</a></li>
-<li class="chapter" data-level="R.9.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPlatform"><i class="fa fa-check"></i><b>R.9.3</b> Platform</a></li>
+<li class="chapter" data-level="S.6.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalAccess"><i class="fa fa-check"></i><b>S.6.1</b> Access</a></li>
+<li class="chapter" data-level="S.6.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalExecu"><i class="fa fa-check"></i><b>S.6.2</b> Execution</a></li>
+</ul></li>
+<li class="chapter" data-level="S.7" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalRes"><i class="fa fa-check"></i><b>S.7</b> Results</a></li>
+<li class="chapter" data-level="S.8" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalMassCons"><i class="fa fa-check"></i><b>S.8</b> Mass conservation analysis</a>
+<ul>
+<li class="chapter" data-level="S.8.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBMatlab"><i class="fa fa-check"></i><b>S.8.1</b> MATLAB</a></li>
+<li class="chapter" data-level="S.8.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPython"><i class="fa fa-check"></i><b>S.8.2</b> Python</a></li>
+</ul></li>
+<li class="chapter" data-level="S.9" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterp"><i class="fa fa-check"></i><b>S.9</b> Notes</a>
+<ul>
+<li class="chapter" data-level="S.9.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterpUnits"><i class="fa fa-check"></i><b>S.9.1</b> Units</a></li>
+<li class="chapter" data-level="S.9.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPrecision"><i class="fa fa-check"></i><b>S.9.2</b> Precision</a></li>
+<li class="chapter" data-level="S.9.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPlatform"><i class="fa fa-check"></i><b>S.9.3</b> Platform</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -494,16 +508,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="Overview-1" class="section level1" number="1">
-<h1><span class="header-section-number">Section 1</span> Overview</h1>
-<div id="OverviewContext-2" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Context</h2>
+<div id="Overview-1" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Section 1</span> Overview<a href="Overview-1.html#Overview-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="OverviewContext-2" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Context<a href="Overview-1.html#OverviewContext-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The TUFLOW FV Water Quality (WQ) Module enables the two- or three-dimensional simulation of water quality and ecological processes in natural and constructed waterways such as (but not limited to) lakes, tidal estuaries, river systems and coastal oceans. The module’s design is flexible so as to support tailoring of its setup to meet individual application demands and complexity. The WQ Module is currently supported for use with <a href="https://www.tuflow.com/products/tuflow-fv/" target="_blank">TUFLOW FV</a>, for releases from 2022 onward. <span class="math inline">\(\newcommand{\blockindent}{\hspace{0.5cm}}\)</span></p>
 </div>
-<div id="Features-2" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Features</h2>
-<div id="Usability-3" class="section level3" number="1.2.1">
-<h3><span class="header-section-number">1.2.1</span> Usability</h3>
+<div id="Features-2" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Features<a href="Overview-1.html#Features-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="Usability-3" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Usability<a href="Overview-1.html#Usability-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Several key features have been included in the design of the WQ Module to support its use. Some are listed below.</p>
 <ul>
 <li><strong>Simulation units</strong>. The units of simulation (including specification of initial conditions, boundary conditions and computed variable parameters) can be selected as either the commonly used mg/L (and <span class="math inline">\(\mu\)</span>g/L for phytoplankton) system, or the mmol/m<span class="math inline">\(^3\)</span> system</li>
@@ -518,11 +532,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Output computed variable names</strong>. The WQ Module output variable names are descriptive and include the units used, for example <code>WQ_DISS_OXYGEN_MGL</code></li>
 <li><strong>Output diagnostic variable names</strong>. The WQ Module output diagnostic variable names are descriptive and include the units used, for example <code>WQ_DIAG_O2_ATMOS_EXCHANGE_MG_M2_D</code></li>
 <li><strong>Specification of concentration limits</strong>. The WQ Module allows users to optionally specify minimum and maximum concentation limits for each computed variable, and the WQ Module will reset concentrations to these limits if exceedences are detected. All instances of resetting are reported to the WQ Module log file as continuous commentary</li>
-<li><strong>Inbuilt guidance on parameter specification</strong>. The WQ Module checks all user specified parameters and compares them to typical ranges. If a parameter’s specified value falls outside a typical range, then a warning is reported to the WQ Module log file. These ranges are listed in Appendix <a href="AppParams.html#AppParams">Q</a> of this manual</li>
+<li><strong>Inbuilt guidance on parameter specification</strong>. The WQ Module checks all user specified parameters and compares them to typical ranges. If a parameter’s specified value falls outside a typical range, then a warning is reported to the WQ Module log file. These ranges are listed in Appendix <a href="AppParams.html#AppParams">R</a> of this manual</li>
 </ul>
 </div>
-<div id="CnsFeats-3" class="section level3" number="1.2.2">
-<h3><span class="header-section-number">1.2.2</span> Constituents and processes</h3>
+<div id="CnsFeats-3" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Constituents and processes<a href="Overview-1.html#CnsFeats-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Constituents currently simulated by the WQ Module include:</p>
 <ul>
 <li>Dissolved oxygen</li>
@@ -555,6 +569,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Basic (excludes internal nutrient simulation)</li>
 <li>Advanced (includes internal nutrient simulation)</li>
 </ul></li>
+<li>Pathogens (multiple groups)
+<ul>
+<li>Free (excludes attachment/detachment to sediment)</li>
+<li>Attached (includes attachment/detachment to sediment)</li>
+</ul></li>
 </ul>
 <p>Processes captured by the WQ Module include:</p>
 <ul>
@@ -562,37 +581,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Benthic sediment – water column interactions (e.g. sediment oxygen consumption)</li>
 <li>Atmospheric exchange (e.g. oxygen dissolution and rainfall deposition)</li>
 <li>Primary productivity, respiration and exudation of one or more phytoplankton groups</li>
+<li>Mortality, inactivation, settling and attachment/detachment of one or more pathogen groups</li>
 </ul>
 <p>Future near-term releases of the WQ Module will include the ability to simulate:</p>
 <ul>
-<li>Pathogens</li>
-<li>Zooplankton</li>
-<li>Biogeochemical particles (linked dynamically to TUFLOW FV’s Particle Tracking (PT) Module)</li>
-<li>Benthos (e.g. bivalves and macrophytes)</li>
+<li>Macrophytes</li>
+<li>Particulate water quality constituents as sediment fractions (linked dynamically to TUFLOW FV’s Sediment Transport (ST) Module)</li>
 </ul>
 <p>Future mid-term releases will include:</p>
 <ul>
+<li>Zooplankton</li>
+<li>Biogeochemical particles (linked dynamically to TUFLOW FV’s Particle Tracking (PT) Module)</li>
 <li>Sediment diagenesis</li>
 <li>Geochemistry</li>
 </ul>
 </div>
 </div>
-<div id="Science-2" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Science</h2>
+<div id="Science-2" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Science<a href="Overview-1.html#Science-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The science underpinning the WQ Module is that developed at the School of Agriculture and Environment’s <a href="https://research-repository.uwa.edu.au/en/organisations/oceans-institute" target="_blank">Oceans Institute</a> at <a href="https://www.uwa.edu.au/" target="_blank">The University of Western Australia</a>. The WQ Module has wrapped this world class science into a form that is easily accessed via familiar TUFLOW style commands and workflows, and offers the additional features described in Section <a href="Overview-1.html#Usability-3">1.2.1</a>.</p>
 </div>
-<div id="Support-2" class="section level2" number="1.4">
-<h2><span class="header-section-number">1.4</span> Support</h2>
+<div id="Support-2" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Support<a href="Overview-1.html#Support-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>BMT sells, distributes and supports the WQ Module. Contact <a href="mailto:support@tuflow.com" class="email">support@tuflow.com</a> or <a href="mailto:sales@tuflow.com" class="email">sales@tuflow.com</a> for support and sales inquiries.</p>
 <p>Several supporting appendices have also been included in this manual. These contain interactive content to assist users in understanding and applying the WQ Module, beyond what might typically be included in a static user manual. These Appendices are interlinked and hyperlinked with content from the body of the manual where appropriate, and are:</p>
 <ul>
 <li>Appendix <a href="AppSyntax.html#AppSyntax">A</a> Description of command syntax and nomenclature</li>
 <li>Appendix <a href="AppCommands.html#AppCommands">B</a> Listing of all commands, and their syntax, arguments, descriptions and cross references</li>
 <li>Appendices <a href="AppDemoModel.html#AppDemoModel">C</a> to <a href="AppOrg.html#AppOrg">N</a> Detailed process descriptions, including worked examples using a purpose built small demonstration model</li>
-<li>Appendix <a href="AppConstits.html#AppConstits">O</a> Listing and descriptions of all computed variables, with supporting information</li>
-<li>Appendix <a href="AppDiags.html#AppDiags">P</a> Listing and descriptions of all computed diagnostic variables, with supporting information</li>
-<li>Appendix <a href="AppParams.html#AppParams">Q</a> Explanations of all parameters, with symbology, minimums and maximum values, units and commentary</li>
-<li>Appendix <a href="AppMBal.html#AppMBal">R</a> Demonstration of the mass balance properties of all WQ Module computed variables</li>
+<li>Appendix <a href="AppConstits.html#AppConstits">P</a> Listing and descriptions of all computed variables, with supporting information</li>
+<li>Appendix <a href="AppDiags.html#AppDiags">Q</a> Listing and descriptions of all computed diagnostic variables, with supporting information</li>
+<li>Appendix <a href="AppParams.html#AppParams">R</a> Explanations of all parameters, with symbology, minimums and maximum values, units and commentary</li>
+<li>Appendix <a href="AppMBal.html#AppMBal">S</a> Demonstration of the mass balance properties of all WQ Module computed variables</li>
 </ul>
 <p><img src="images/WQFooter.jpg" width="100%" /></p>
 
@@ -608,7 +628,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -642,7 +661,7 @@ gitbook.start({
 },
 "download": null,
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {
@@ -658,7 +677,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

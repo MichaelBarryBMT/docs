@@ -4,23 +4,23 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Appendix O Computed variables | TUFLOW FV Water Quality (WQ) Module User Manual</title>
-  <meta name="description" content="Appendix O Computed variables | TUFLOW FV Water Quality (WQ) Module User Manual" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <title>Appendix P Computed variables | TUFLOW FV Water Quality (WQ) Module User Manual</title>
+  <meta name="description" content="Appendix P Computed variables | TUFLOW FV Water Quality (WQ) Module User Manual" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Appendix O Computed variables | TUFLOW FV Water Quality (WQ) Module User Manual" />
+  <meta property="og:title" content="Appendix P Computed variables | TUFLOW FV Water Quality (WQ) Module User Manual" />
   <meta property="og:type" content="book" />
-  
   <meta property="og:image" content="/images/tuflow.png" />
-  <meta property="og:description" content="Appendix O Computed variables | TUFLOW FV Water Quality (WQ) Module User Manual" />
+  <meta property="og:description" content="Appendix P Computed variables | TUFLOW FV Water Quality (WQ) Module User Manual" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Appendix O Computed variables | TUFLOW FV Water Quality (WQ) Module User Manual" />
+  <meta name="twitter:title" content="Appendix P Computed variables | TUFLOW FV Water Quality (WQ) Module User Manual" />
   
-  <meta name="twitter:description" content="Appendix O Computed variables | TUFLOW FV Water Quality (WQ) Module User Manual" />
+  <meta name="twitter:description" content="Appendix P Computed variables | TUFLOW FV Water Quality (WQ) Module User Manual" />
   <meta name="twitter:image" content="/images/tuflow.png" />
 
+<meta name="author" content="" />
 
 
 
@@ -29,10 +29,10 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="images/TUFLOW.ico" type="image/x-icon" />
-<link rel="prev" href="AppOrg.html"/>
+<link rel="prev" href="AppPath.html"/>
 <link rel="next" href="AppDiags.html"/>
-<script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -48,23 +48,23 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
 <script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.4.1/plotly.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.2/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
-<link href="libs/vis-4.20.1/vis.css" rel="stylesheet" />
-<script src="libs/vis-4.20.1/vis.min.js"></script>
-<script src="libs/visNetwork-binding-2.0.9/visNetwork.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<link href="libs/vis-9.1.0/vis-network.min.css" rel="stylesheet" />
+<script src="libs/vis-9.1.0/vis-network.min.js"></script>
+<script src="libs/visNetwork-binding-2.1.2/visNetwork.js"></script>
 
 
 
@@ -106,7 +106,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -119,7 +119,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -151,7 +151,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://www.tuflow.com"><img src="images/tuflow.png" style="width:246px;height:68px;"></a></li>
 
 <li class="divider"></li>
-<li><a href="index.html#section"></a></li>
+<li><a href="index.html#section" id="toc-section"></a></li>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a>
 <ul>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#about-this-manual"><i class="fa fa-check"></i>About this manual</a></li>
@@ -202,7 +202,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#DOOverview-3"><i class="fa fa-check"></i><b>3.1.1</b> Overview</a></li>
 <li class="chapter" data-level="3.1.2" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModDODO-3"><i class="fa fa-check"></i><b>3.1.2</b> Model Class: Oxygen</a></li>
-<li class="chapter" data-level="3.1.3" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#DOCompVars-3"><i class="fa fa-check"></i><b>3.1.3</b> Computed variables</a></li>
+<li class="chapter" data-level="3.1.3" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModDOPath-3"><i class="fa fa-check"></i><b>3.1.3</b> Model Class: Pathogens (optional)</a></li>
+<li class="chapter" data-level="3.1.4" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#DOCompVars-3"><i class="fa fa-check"></i><b>3.1.4</b> Computed variables</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#SimProcSimuClInorg-2"><i class="fa fa-check"></i><b>3.2</b> Simulation Class: Inorganics</a>
 <ul>
@@ -212,7 +213,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.4" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgN-3"><i class="fa fa-check"></i><b>3.2.4</b> Model Class: Inorganic nitrogen</a></li>
 <li class="chapter" data-level="3.2.5" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgP-3"><i class="fa fa-check"></i><b>3.2.5</b> Model Class: Inorganic phosphorus</a></li>
 <li class="chapter" data-level="3.2.6" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgPhy-3"><i class="fa fa-check"></i><b>3.2.6</b> Model Class: Phytoplankton</a></li>
-<li class="chapter" data-level="3.2.7" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#InorgCompVars-3"><i class="fa fa-check"></i><b>3.2.7</b> Computed variables</a></li>
+<li class="chapter" data-level="3.2.7" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModInorgPath-3"><i class="fa fa-check"></i><b>3.2.7</b> Model Class: Pathogens (optional)</a></li>
+<li class="chapter" data-level="3.2.8" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#InorgCompVars-3"><i class="fa fa-check"></i><b>3.2.8</b> Computed variables</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#SimProcSimuClOrg-2"><i class="fa fa-check"></i><b>3.3</b> Simulation Class: Organics</a>
 <ul>
@@ -223,7 +225,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.5" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgP-3"><i class="fa fa-check"></i><b>3.3.5</b> Model Class: Inorganic phosphorus</a></li>
 <li class="chapter" data-level="3.3.6" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgOrg-3"><i class="fa fa-check"></i><b>3.3.6</b> Model Class: Organic matter</a></li>
 <li class="chapter" data-level="3.3.7" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgPhy-3"><i class="fa fa-check"></i><b>3.3.7</b> Model Class: Phytoplankton</a></li>
-<li class="chapter" data-level="3.3.8" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#OrgCompVars-3"><i class="fa fa-check"></i><b>3.3.8</b> Computed variables</a></li>
+<li class="chapter" data-level="3.3.8" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#ConModOrgPath-3"><i class="fa fa-check"></i><b>3.3.8</b> Model Class: Pathogens (optional)</a></li>
+<li class="chapter" data-level="3.3.9" data-path="ProcessDescriptions-1.html"><a href="ProcessDescriptions-1.html#OrgCompVars-3"><i class="fa fa-check"></i><b>3.3.9</b> Computed variables</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="SimulationConstruction-1.html"><a href="SimulationConstruction-1.html"><i class="fa fa-check"></i><b>4</b> Simulation Construction</a>
@@ -441,37 +444,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="N.8.4" data-path="AppOrg.html"><a href="AppOrg.html#OrgSettleStokes-5"><i class="fa fa-check"></i><b>N.8.4</b> Stokes</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="O" data-path="AppConstits.html"><a href="AppConstits.html"><i class="fa fa-check"></i><b>O</b> Computed variables</a></li>
-<li class="chapter" data-level="P" data-path="AppDiags.html"><a href="AppDiags.html"><i class="fa fa-check"></i><b>P</b> Diagnostic variables</a></li>
-<li class="chapter" data-level="Q" data-path="AppParams.html"><a href="AppParams.html"><i class="fa fa-check"></i><b>Q</b> Parameters</a></li>
-<li class="chapter" data-level="R" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>R</b> Mass Conservation Model</a>
+<li class="chapter" data-level="O" data-path="AppPath.html"><a href="AppPath.html"><i class="fa fa-check"></i><b>O</b> Processes: pathogens</a>
 <ul>
-<li class="chapter" data-level="R.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalIntent"><i class="fa fa-check"></i><b>R.1</b> Intent</a></li>
-<li class="chapter" data-level="R.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDescription"><i class="fa fa-check"></i><b>R.2</b> Description</a></li>
-<li class="chapter" data-level="R.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalMdel"><i class="fa fa-check"></i><b>R.3</b> Model suite</a></li>
-<li class="chapter" data-level="R.4" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalCalcs"><i class="fa fa-check"></i><b>R.4</b> Calculations</a></li>
-<li class="chapter" data-level="R.5" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalPerformance"><i class="fa fa-check"></i><b>R.5</b> Mass conservation performance</a>
+<li class="chapter" data-level="O.1" data-path="AppPath.html"><a href="AppPath.html#Mortal-3"><i class="fa fa-check"></i><b>O.1</b> Mortality</a></li>
+<li class="chapter" data-level="O.2" data-path="AppPath.html"><a href="AppPath.html#Inactivation-3"><i class="fa fa-check"></i><b>O.2</b> Inactivation</a></li>
+<li class="chapter" data-level="O.3" data-path="AppPath.html"><a href="AppPath.html#PathAttach-3"><i class="fa fa-check"></i><b>O.3</b> Attachment</a></li>
+<li class="chapter" data-level="O.4" data-path="AppPath.html"><a href="AppPath.html#PathSettling-3"><i class="fa fa-check"></i><b>O.4</b> Settling</a></li>
+<li class="chapter" data-level="O.5" data-path="AppPath.html"><a href="AppPath.html#Pathother-3"><i class="fa fa-check"></i><b>O.5</b> Other</a>
 <ul>
-<li class="chapter" data-level="R.5.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDO"><i class="fa fa-check"></i><b>R.5.1</b> Simulation class: DO</a></li>
-<li class="chapter" data-level="R.5.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>R.5.2</b> Simulation class: Inorganics</a></li>
-<li class="chapter" data-level="R.5.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalOrg"><i class="fa fa-check"></i><b>R.5.3</b> Simulation class: Organics</a></li>
+<li class="chapter" data-level="O.5.1" data-path="AppPath.html"><a href="AppPath.html#Pathtot-3"><i class="fa fa-check"></i><b>O.5.1</b> Total pathogens</a></li>
 </ul></li>
-<li class="chapter" data-level="R.6" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalExecuting"><i class="fa fa-check"></i><b>R.6</b> Access and execution</a>
-<ul>
-<li class="chapter" data-level="R.6.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalAccess"><i class="fa fa-check"></i><b>R.6.1</b> Access</a></li>
-<li class="chapter" data-level="R.6.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalExecu"><i class="fa fa-check"></i><b>R.6.2</b> Execution</a></li>
 </ul></li>
-<li class="chapter" data-level="R.7" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalRes"><i class="fa fa-check"></i><b>R.7</b> Results</a></li>
-<li class="chapter" data-level="R.8" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalMassCons"><i class="fa fa-check"></i><b>R.8</b> Mass conservation analysis</a>
+<li class="chapter" data-level="P" data-path="AppConstits.html"><a href="AppConstits.html"><i class="fa fa-check"></i><b>P</b> Computed variables</a></li>
+<li class="chapter" data-level="Q" data-path="AppDiags.html"><a href="AppDiags.html"><i class="fa fa-check"></i><b>Q</b> Diagnostic variables</a></li>
+<li class="chapter" data-level="R" data-path="AppParams.html"><a href="AppParams.html"><i class="fa fa-check"></i><b>R</b> Parameters</a></li>
+<li class="chapter" data-level="S" data-path="AppMBal.html"><a href="AppMBal.html"><i class="fa fa-check"></i><b>S</b> Mass Conservation Model</a>
 <ul>
-<li class="chapter" data-level="R.8.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBMatlab"><i class="fa fa-check"></i><b>R.8.1</b> MATLAB</a></li>
-<li class="chapter" data-level="R.8.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPython"><i class="fa fa-check"></i><b>R.8.2</b> Python</a></li>
+<li class="chapter" data-level="S.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalIntent"><i class="fa fa-check"></i><b>S.1</b> Intent</a></li>
+<li class="chapter" data-level="S.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDescription"><i class="fa fa-check"></i><b>S.2</b> Description</a></li>
+<li class="chapter" data-level="S.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalMdel"><i class="fa fa-check"></i><b>S.3</b> Model suite</a></li>
+<li class="chapter" data-level="S.4" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalCalcs"><i class="fa fa-check"></i><b>S.4</b> Calculations</a></li>
+<li class="chapter" data-level="S.5" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalPerformance"><i class="fa fa-check"></i><b>S.5</b> Mass conservation performance</a>
+<ul>
+<li class="chapter" data-level="S.5.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalDO"><i class="fa fa-check"></i><b>S.5.1</b> Simulation class: DO</a></li>
+<li class="chapter" data-level="S.5.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalInorg"><i class="fa fa-check"></i><b>S.5.2</b> Simulation class: Inorganics</a></li>
+<li class="chapter" data-level="S.5.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalOrg"><i class="fa fa-check"></i><b>S.5.3</b> Simulation class: Organics</a></li>
 </ul></li>
-<li class="chapter" data-level="R.9" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterp"><i class="fa fa-check"></i><b>R.9</b> Notes</a>
+<li class="chapter" data-level="S.6" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalExecuting"><i class="fa fa-check"></i><b>S.6</b> Access and execution</a>
 <ul>
-<li class="chapter" data-level="R.9.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterpUnits"><i class="fa fa-check"></i><b>R.9.1</b> Units</a></li>
-<li class="chapter" data-level="R.9.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPrecision"><i class="fa fa-check"></i><b>R.9.2</b> Precision</a></li>
-<li class="chapter" data-level="R.9.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPlatform"><i class="fa fa-check"></i><b>R.9.3</b> Platform</a></li>
+<li class="chapter" data-level="S.6.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalAccess"><i class="fa fa-check"></i><b>S.6.1</b> Access</a></li>
+<li class="chapter" data-level="S.6.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalExecu"><i class="fa fa-check"></i><b>S.6.2</b> Execution</a></li>
+</ul></li>
+<li class="chapter" data-level="S.7" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalRes"><i class="fa fa-check"></i><b>S.7</b> Results</a></li>
+<li class="chapter" data-level="S.8" data-path="AppMBal.html"><a href="AppMBal.html#AppMBalMassCons"><i class="fa fa-check"></i><b>S.8</b> Mass conservation analysis</a>
+<ul>
+<li class="chapter" data-level="S.8.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBMatlab"><i class="fa fa-check"></i><b>S.8.1</b> MATLAB</a></li>
+<li class="chapter" data-level="S.8.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPython"><i class="fa fa-check"></i><b>S.8.2</b> Python</a></li>
+</ul></li>
+<li class="chapter" data-level="S.9" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterp"><i class="fa fa-check"></i><b>S.9</b> Notes</a>
+<ul>
+<li class="chapter" data-level="S.9.1" data-path="AppMBal.html"><a href="AppMBal.html#AppMBInterpUnits"><i class="fa fa-check"></i><b>S.9.1</b> Units</a></li>
+<li class="chapter" data-level="S.9.2" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPrecision"><i class="fa fa-check"></i><b>S.9.2</b> Precision</a></li>
+<li class="chapter" data-level="S.9.3" data-path="AppMBal.html"><a href="AppMBal.html#AppMBPlatform"><i class="fa fa-check"></i><b>S.9.3</b> Platform</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -494,8 +508,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="AppConstits" class="section level1" number="19">
-<h1><span class="header-section-number">Appendix O</span> Computed variables</h1>
+<div id="AppConstits" class="section level1 hasAnchor" number="20">
+<h1><span class="header-section-number">Appendix P</span> Computed variables<a href="AppConstits.html#AppConstits" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <!-- Table properties -->
 <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="js/jquery.dataTables.js">
@@ -528,10 +542,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <p>It is recommended that this Appendix be viewed with the left hand pane table of contents hidden. Use the ‘s’ key to toggle this pane on and off. Output computed variable names are exact, and can therefore be copied and pasted directly into output blocks of control files, for example. The exception is phytoplankton variables, where the user specified group name is included within the variable name, so will need to be inserted by the user.</p>
-<p>When interrogating three dimensional computed variable results in netcdf format, the stat field of each output file indicates whether or not a 2D cell (and hence its associated 3D column) is wet or dry. The stat field is of dimension [number of 2D cells <span class="math inline">\(\times\)</span> number of timesteps] and a value of zero indicates that a 2D cell (and associated 3D column) is dry. Water quality computed variables are reported as zero when 2D cells are dry, so using the stat field to filter out these dry cells is required when post processing results from models where cells wet and dry. Similarly, if viewing netcdf water quality computed variables in QGIS using the TUFLOW Viewer, QGIS’s automatic colour bar (displayed in the layer legend and properties tab) will extend to zero if the model considered includes cells that wet and dry - QGIS does not use the stat field to filter out dry cells when automatically determining colour bar ranges. The user can manually adjust this colour bar range as required. The stat field is, however, used when water quality computed variable results are viewed in plan or curtain mode in the map window when using the TUFLOW Viewer: dry cells are set to be transparent.</p>
+<p>When interrogating three dimensional computed variable results in netcdf format, the stat field of each output file indicates whether or not a 2D cell (and hence its associated 3D column) is wet or dry. The stat field is of dimension [number of 2D cells <span class="math inline">\(\times\)</span> number of timesteps] and a value of zero indicates that a 2D cell (and associated 3D column) is dry. Water quality computed variables are reported as zero when 2D cells are dry, so using the stat field to filter out these dry cells is essential when post processing results from models where cells wet and dry. Similarly, if viewing netcdf water quality computed variables in QGIS using the TUFLOW Viewer, QGIS’s automatic colour bar (displayed in the layer legend and properties tab) will extend to zero if the model considered includes cells that wet and dry - QGIS does not use the stat field to filter out dry cells when automatically determining colour bar ranges. The user can manually adjust this colour bar range as required. The stat field is, however, used when water quality computed variable results are viewed in plan or curtain mode in the map window when using the TUFLOW Viewer: dry cells are set to be transparent, even though their ‘zero’ values may influence the automatic setting of the colour bar range.</p>
 <table>
 <caption>
-<span id="tab:tab-variables2">Table O.1: </span><strong>TUFLOW FV and WQ Module computed variables</strong>
+<span id="tab:tab-variables2">Table P.1: </span><strong>TUFLOW FV and WQ Module computed variables</strong>
 </caption>
 <thead>
 <tr>
@@ -1083,13 +1097,10 @@ WQ_PHYTO_NAME_CONC_MM_M3
 kg/m<span class="math inline">\(^3\)</span>
 </td>
 <td style="text-align:center;width: 5%; ">
-0
 </td>
 <td style="text-align:center;width: 5%; ">
-0
 </td>
 <td style="text-align:center;width: 5%; ">
-0
 </td>
 <td style="text-align:left;">
 WQ_PHYTO_NAME_DENS_KG_M3
@@ -1250,6 +1261,81 @@ mmol/m<span class="math inline">\(^3\)</span>
 <td style="text-align:left;">
 </td>
 </tr>
+<tr>
+<td style="text-align:left;width: 20%; vertical-align:top;">
+<a id="WQVarAlivePath">Alive pathogen</a>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(\left[PTH_a\right]\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+CFU/100mL
+</td>
+<td style="text-align:center;width: 5%; ">
+</td>
+<td style="text-align:center;width: 5%; ">
+</td>
+<td style="text-align:center;width: 5%; ">
+</td>
+<td style="text-align:left;">
+WQ_PATH_NAME_ALIVE_CFU_100ML<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_PATH_NAME_ALIVE_CFU_100ML
+</td>
+<td style="text-align:left;">
+<a href="ProcessDescriptions-1.html#ConModDOPath-3">Pathogens</a>:<br><a href="ProcessDescriptions-1.html#ConModPathFree-4">Free</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 20%; vertical-align:top;">
+<a id="WQVarDeadPath">Dead pathogen</a>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(\left[PTH_d\right]\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+CFU/100mL
+</td>
+<td style="text-align:center;width: 5%; ">
+</td>
+<td style="text-align:center;width: 5%; ">
+</td>
+<td style="text-align:center;width: 5%; ">
+</td>
+<td style="text-align:left;">
+WQ_PATH_NAME_DEAD_CFU_100ML<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_PATH_NAME_DEAD_CFU_100ML
+</td>
+<td style="text-align:left;">
+<a href="ProcessDescriptions-1.html#ConModDOPath-3">Pathogens</a>:<br><a href="ProcessDescriptions-1.html#ConModPathFree-4">Free</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 20%; vertical-align:top;">
+<a id="WQVarAttachPath">Attached pathogen</a>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(\left[PTH_t\right]\)</span>
+</td>
+<td style="text-align:center;width: 10%; ">
+CFU/100mL
+</td>
+<td style="text-align:center;width: 5%; ">
+</td>
+<td style="text-align:center;width: 5%; ">
+</td>
+<td style="text-align:center;width: 5%; ">
+</td>
+<td style="text-align:left;">
+WQ_PATH_NAME_ATTCHD_CFU_100ML<br>
+<hr style="margin-top:1px;margin-bottom:1px;height:2px">
+WQ_PATH_NAME_ATTCHD_CFU_100ML
+</td>
+<td style="text-align:left;">
+<a href="ProcessDescriptions-1.html#ConModDOPath-3">Pathogens</a>:<br><a href="ProcessDescriptions-1.html#ConModPathAtt-4">Attached</a>
+</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1258,12 +1344,11 @@ mmol/m<span class="math inline">\(^3\)</span>
           </div>
         </div>
       </div>
-<a href="AppOrg.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="AppPath.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="AppDiags.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1297,7 +1382,7 @@ gitbook.start({
 },
 "download": null,
 "search": {
-"engine": "lunr",
+"engine": "fuse",
 "options": null
 },
 "toc": {
@@ -1313,7 +1398,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
